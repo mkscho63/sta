@@ -1,0 +1,18 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="header-fields">
+        <div class="row">
+            <img class="img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+            <div class="column-x2">
+                <label>{{localize 'dishonored.actor.genericitem.name'}}</label>
+                <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+            </div>
+            <div class="column-x2">
+                <label>{{localize 'dishonored.actor.talent.type'}}</label>
+                <input type="text" name="data.type" value="{{data.type}}" />
+            </div>
+        </div>
+    </div>
+    <div class="description">
+        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

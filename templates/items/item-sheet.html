@@ -1,0 +1,22 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="header-fields">
+        <div class="row">
+            <img class="img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+            <div class="column-x3-big">
+                <label>{{localize 'dishonored.actor.genericitem.name'}}</label>
+                <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+            </div>
+            <div class="column-x2-x3-small">
+                <label>{{localize 'dishonored.actor.belonging.other.quantity'}}</label>
+                <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number" />
+            </div>
+            <div class="column-x2-x3-small">
+                <label>{{localize 'dishonored.actor.genericitem.cost'}}</label>
+                <input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" />
+            </div>
+        </div>
+    </div>
+    <div class="description">
+        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

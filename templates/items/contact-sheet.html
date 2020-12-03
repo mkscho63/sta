@@ -1,0 +1,27 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="header-fields">
+        <div class="row">
+            <img class="img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+            <div class="column-x2-big">
+                <label>{{localize 'dishonored.actor.genericitem.name'}}</label>
+                <input id="name" name="name" type="text" value="{{item.name}}" placeholder="Name" />
+            </div>
+            <div class="column-x2-x3-small">
+                <label>{{localize 'dishonored.actor.contact.relation'}}</label>
+                <select class="relationship" name="data.relationship"  data-type="String">
+                    {{#select item.data.relationship}}
+                    {{#each item.data.relationships as |relation key|}}
+                    <option value="{{localize relation.label}}">{{localize relation.label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="send2actor btn">{{localize 'dishonored.item.contact.send2actor'}}</div>
+        </div>
+    </div>
+    <div class="description">
+        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

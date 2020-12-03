@@ -1,0 +1,291 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="main-content">
+        <div style="display:none">
+            <div>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/fight-boldly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/fight-carefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/fight-cleverly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/fight-forcefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/fight-quietly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/fight-swiftly.svg"></img>
+            </div>
+            <div>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/move-boldly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/move-carefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/move-cleverly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/move-forcefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/move-quietly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/move-swiftly.svg"></img>
+            </div>
+            <div>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/study-boldly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/study-carefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/study-cleverly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/study-forcefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/study-quietly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/study-swiftly.svg"></img>
+            </div>
+            <div>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/survive-boldly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/survive-carefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/survive-cleverly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/survive-forcefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/survive-quietly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/survive-swiftly.svg"></img>
+            </div>
+            <div>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/talk-boldly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/talk-carefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/talk-cleverly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/talk-forcefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/talk-quietly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/talk-swiftly.svg"></img>
+            </div>
+            <div>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/tinker-boldly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/tinker-carefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/tinker-cleverly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/tinker-forcefully.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/tinker-quietly.svg"></img>
+                <img style="width: 50px" src="/systems/FVTT-StarTrekAdventures/icons/tinker-swiftly.svg"></img>
+            </div>
+        </div>
+        <div class="header-fields">
+            <div class="row">
+                <div class="column bold title" style="width:50%">
+                    {{localize 'dishonored.actor.character.name'}}
+                </div>
+                <div class="column bold title" style="width:40%">
+                    <div> {{localize 'dishonored.actor.character.truth'}} </div>
+                </div>
+                <div class="column bold title" style="width:10%">
+                    {{localize 'dishonored.actor.character.age'}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" style="width:50%">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                </div>
+                <div class="column" style="width:40%">
+                    <input name="data.truth1" type="text" value="{{data.truth1}}" />
+                </div>
+                <div class="column" style="width:10%">
+                    <input name="data.age" type="text" value="{{data.age}}" placeholder="21" />
+                </div>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="main">
+            <div class="row">
+                <div class="column">
+                    <div class="section skill">
+                        <div class="title">
+                            {{localize 'dishonored.actor.skill.title'}}
+                        </div>
+                        <div class="stat row">
+                            <div class="selector-space"></div>
+                            <div class="text bold">{{localize 'dishonored.actor.skill.name'}}</div>
+                            <div class="field bold">{{localize 'dishonored.actor.skisty.mod'}}</div>
+                        </div>
+                        {{#each data.skills as |skill key|}}
+                        <div class="stat row">
+                            <input class="selector skill" id="{{key}}.selector" type="checkbox" name="data.skills.{{key}}.selected" data-dtype="Boolean" {{checked skill.selected}}>
+                            <div class="text"> {{localize skill.label}} </div>
+                            <input class="field" id="{{key}}" name="data.skills.{{key}}.value" type="text" value="{{skill.value}}" />
+                        </div>
+                        {{/each}}
+                        <div class="separator"></div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="section stress">
+                        <div class="title bold">
+                            {{localize 'dishonored.actor.character.stress'}}
+                        </div>
+                        <div class="track">
+                            <input type="hidden" id="total-stress" name="data.stress.value" value="{{data.stress.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-stress" name="data.stress.max" value="{{data.stress.max}}" data-dtype="Number" />
+                            <div id="bar-stress-renderer" class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="section img">
+                        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+                    </div>
+                    <div class="separator"></div>
+                    <div class="check-button btn">{{localize 'dishonored.actor.skisty.check'}}</div>
+                </div>
+                <div class="column">
+                    <div class="section style">
+                        <div class="title">
+                            {{localize 'dishonored.actor.style.title'}}
+                        </div>
+                        <div class="stat row">
+                            <div class="field bold">{{localize 'dishonored.actor.skisty.mod'}}</div>
+                            <div class="text bold">{{localize 'dishonored.actor.style.name'}}</div>
+                            <div class="selector-space"></div>
+                        </div>
+                        {{#each data.styles as |style key|}}
+                        <div class="stat row">
+                            <input class="field" id="{{key}}" name="data.styles.{{key}}.value" type="text" value="{{style.value}}" placeholder="Name" />
+                            <div class="text"> {{localize style.label}} </div>
+                            <input class="selector style" id="{{key}}.selector" type="checkbox" name="data.styles.{{key}}.selected" data-dtype="Boolean" {{checked style.selected}}>
+                        </div>
+                        {{/each}}
+                        <div class="separator"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="section focuses">
+                        <div class="title">
+                            {{localize 'dishonored.actor.focus.title'}}
+                        </div>
+                        <div class="row item">
+                            <div class="image"></div>
+                            <div class="column-x2-big bold">{{localize 'dishonored.actor.genericitem.name'}}</div>
+                            <div class="column-x2-small bold">{{localize 'dishonored.actor.focus.rating'}}</div>
+                            <a class="control create" title="Create item" data-type="focus"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item id|}}
+                        {{#if (eq item.type "focus")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="column-x2-big">{{item.name}}</h4>
+                            <h4 class="column-x2-small">{{item.data.rating}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="section powers">
+                        <div class="title">
+                            {{localize 'dishonored.actor.power.title'}}
+                        </div>
+                        <div class="row item">
+                            <div class="image"></div>
+                            <div class="column-x1 bold">{{localize 'dishonored.actor.genericitem.name'}}</div>
+                            <a class="control create" title="Create item" data-type="power"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item type id|}}
+                        {{#if (eq item.type "power")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="column-x1">{{item.name}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="section belongings">
+                        <div class="title">
+                            {{localize 'dishonored.actor.belonging.title'}}
+                        </div>
+                        <div class="row item">
+                            <div class="column-x4 bold">{{localize 'dishonored.actor.belonging.collectable.coin'}}</div>
+                            <div class="column-x4 small"><input name="data.coins" type="text" value="{{data.coins}}" placeholder="0"/></div>
+                            <div class="column-x4 bold">{{localize 'dishonored.actor.belonging.collectable.rune'}}</div>
+                            <div class="column-x4 small"><input name="data.runes" type="text" value="{{data.runes}}" placeholder="0"/></div>
+                        </div>
+                        <div class="row item">
+                            <div class="image"></div>
+                            <div class="column-x2-big advisory">{{localize 'dishonored.actor.belonging.weapon.title'}}</div>
+                            <div class="column-x2-small advisory">{{localize 'dishonored.actor.belonging.weapon.dmg'}}</div>
+                            <a class="control create" title="Create item" data-type="weapon"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item type id|}}
+                        {{#if (eq item.type "weapon")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="column-x2-big">{{item.name}}</h4>
+                            <h4 class="column-x2-small">{{item.data.damage}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                        <div class="row item">
+                            <div class="image"></div>
+                            <div class="column-x2-big advisory">{{localize 'dishonored.actor.belonging.armor.title'}}</div>
+                            <div class="column-x2-small advisory">{{localize 'dishonored.actor.belonging.armor.protect'}}</div>
+                            <a class="control create" title="Create item" data-type="armor"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item type id|}}
+                        {{#if (eq item.type "armor")}}
+                        <li id="armor-{{item._id}}" class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="column-x2-big">{{item.name}}</h4>
+                            <h4 id="protectval-armor-{{item._id}}" class="column-x2-small">{{item.data.protection}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                        <div class="row item">
+                            <div class="image">
+                            </div>
+                            <div class="column-x1 advisory">{{localize 'dishonored.actor.belonging.bonecharm.title'}}</div>
+                            <a class="control create" title="Create item" data-type="bonecharm"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item type id|}}
+                        {{#if (eq item.type "bonecharm")}}
+                        <li class="row entry bonecharm" data-item-id="{{item._id}}" data-item-type="{{item.type}}" >
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="column-x1">{{item.name}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                        <div class="row item">
+                            <div class="image"></div>
+                            <div class="column-x2-big advisory">{{localize 'dishonored.actor.belonging.other.title'}}</div>
+                            <div class="column-x2-small advisory">{{localize 'dishonored.actor.belonging.other.qty'}}</div>
+                            <a class="control create" title="Create item" data-type="item"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item type id|}}
+                        {{#if (eq item.type "item")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="column-x2-big">{{item.name}}</h4>
+                            <h4 class="column-x2-small">{{item.data.quantity}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="section notes">
+                    <div class="title">
+                        {{localize 'dishonored.actor.note.title'}}
+                    </div>
+                    <div class="notes">
+                        {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

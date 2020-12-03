@@ -1,0 +1,186 @@
+{
+    "Actor": {
+        "types": ["character", "npc"],
+        "templates": {
+            "common": {
+                "age": 21,
+                "notes":"",
+                "stress": {
+                    "value": 0,
+                    "max": 4
+                },
+                "truth1": "",
+                "skills": {
+                    "fight": {
+                        "label": "dishonored.actor.skill.fight",
+                        "value": 4,
+                        "selected": true
+                    },
+                    "move": {
+                        "label": "dishonored.actor.skill.move",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "study": {
+                        "label": "dishonored.actor.skill.study",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "survive": {
+                        "label": "dishonored.actor.skill.survive",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "talk": {
+                        "label": "dishonored.actor.skill.talk",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "tinker": {
+                        "label": "dishonored.actor.skill.tinker",
+                        "value": 4,
+                        "selected": false
+                    }
+                },
+                "styles": {
+                    "boldly": {
+                        "label": "dishonored.actor.style.boldly",
+                        "value": 4,
+                        "selected": true
+                    },
+                    "carefully": {
+                        "label": "dishonored.actor.style.carefully",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "cleverly": {
+                        "label": "dishonored.actor.style.cleverly",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "forcefully": {
+                        "label": "dishonored.actor.style.forcefully",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "quietly": {
+                        "label": "dishonored.actor.style.quietly",
+                        "value": 4,
+                        "selected": false
+                    },
+                    "swiftly": {
+                        "label": "dishonored.actor.style.swiftly",
+                        "value": 4,
+                        "selected": false
+                    }
+                }
+            }
+        },
+        "character": {
+            "experience": 0,
+            "templates": ["common"],
+            "mana": {
+                "value": 0,
+                "max": 6
+            },
+            "truth2": "",
+            "archetype": "",
+            "outlook": "",
+            "void": {
+                "value": 3,
+                "max": 3
+            },
+            "momentum": {
+                "value": 0,
+                "max": 6
+            },
+            "coins": 0,
+            "runes": 0,
+            "bonecharmequipped": 0
+        },
+        "npc": {
+            "templates": ["common"]
+        }
+    },
+    "Item": {
+        "types": ["item", "focus", "bonecharm", "weapon", "armor", "talent", "contact", "power"],
+        "templates": {
+            "common": {
+                "description": ""
+            }
+        },
+        "item": {
+            "templates": ["common"],
+            "cost": 0,
+            "quantity": 1
+        },
+        "focus": {
+            "templates": ["common"],
+            "rating": 2
+        },
+        "bonecharm": {
+            "templates": ["common"],
+            "equipped": true
+        },
+        "weapon": {
+            "templates": ["common"],
+            "damage": 0,
+            "cost": 0,
+            "qualities": {
+                "armorpierce": false,
+                "awkward": false,
+                "blast": false,
+                "block": false,
+                "burn": false,
+                "concealed": false,
+                "melee": false,
+                "messy": false,
+                "mine": false,
+                "rangeddistant": false,
+                "rangednearby": false
+            }
+        },
+        "armor": {
+            "templates": ["common"],
+            "protection": 0,
+            "cost": 0,
+            "helmet": false,
+            "equipped": true
+        },
+        "talent": {
+            "templates": ["common"],
+            "type": ""
+        },
+        "contact": {
+            "templates": ["common"],
+            "relationship": "neutral",
+            "relationships": {
+                "great": {
+                    "label": "dishonored.contact.relation.great",
+                    "dtype": "String"
+                },
+                "fair": {
+                    "label": "dishonored.contact.relation.fair",
+                    "dtype": "String"
+                },
+                "neutral": {
+                    "label": "dishonored.contact.relation.neutral",
+                    "dtype": "String"
+                },
+                "poor": {
+                    "label": "dishonored.contact.relation.poor",
+                    "dtype": "String"
+                },
+                "dire": {
+                    "label": "dishonored.contact.relation.dire",
+                    "dtype": "String"
+                }
+            }
+        },
+        "power": {
+            "templates": ["common"],
+            "manacost": 0,
+            "runecost": 0
+        }
+    }
+}

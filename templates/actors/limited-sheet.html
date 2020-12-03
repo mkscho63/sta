@@ -1,0 +1,39 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="main-content">
+        <div class="header-fields">
+            <div class="row">
+                <div class="column bold title" style="width:90%">
+                    {{localize 'dishonored.actor.character.name'}}
+                </div>
+                <div class="column bold title" style="width:10%">
+                    {{localize 'dishonored.actor.character.age'}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="column title" style="width:90%">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                </div>
+                <div class="column title" style="width:10%">
+                    <input name="data.age" type="text" value="{{data.age}}" placeholder="21" />
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="row">
+                <div class="limited-only">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                </div>
+                <div class="column">
+                    <div class="section img">
+                        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+                    </div>
+                </div>
+                <div class="column">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
