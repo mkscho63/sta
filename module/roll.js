@@ -1,6 +1,6 @@
 import {
     getFoundryVersion
-} from './dishonored.js'
+} from './sta.js'
 
 export class DishonoredRoll {
 

@@ -16,11 +16,11 @@
     "dishonored.actor.character.secondTruth": "Second Truth",
     "dishonored.actor.character.archetype": "Archetype",
     "dishonored.actor.character.outlook": "Outlook",
-    "dishonored.actor.character.void": "Void Points Track",
-    "dishonored.actor.skisty.mod": "Modifier",
-    "dishonored.actor.skisty.check": "Perform Check",
-    "dishonored.actor.skill.title": "Skills",
-    "dishonored.actor.skill.name": "Skill Name",
+    "sta.actor.character.determination": "Determination",
+    "sta.actor.attdis.mod": "Modifier",
+    "sta.actor.attdis.task": "Perform Task",
+    "sta.actor.attribute.title": "Attributes",
+    "sta.actor.attribute.name": "Attribute Name",
     "dishonored.actor.skill.fight": "Fight",
     "dishonored.actor.skill.move": "Move",
     "dishonored.actor.skill.study": "Study",
@@ -104,8 +104,8 @@
     "dishonored.roll.item.quantity": "|#|x Items",
 
 
-    "dishonored.tracker.chaos": "Chaos",
-    "dishonored.tracker.momentum": "Momentum",
+    "sta.tracker.threat": "Threat",
+    "sta.tracker.momentum": "Momentum",
 
 
 

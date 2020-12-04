@@ -47,7 +47,7 @@ from "./macro.js";
 
 Hooks.once("init", function() {
     // Splash Screen
-    console.log(`Initializing Dishonored Tabletop Roleplaying Game System
+    console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
                                                             @@
              @                                            @@
     @         @@                     @      @@         @@@@
