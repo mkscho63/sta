@@ -3,13 +3,13 @@
         "types": ["character", "npc"],
         "templates": {
             "common": {
-                "age": 21,
+                "rank": "",
                 "notes":"",
                 "stress": {
                     "value": 0,
                     "max": 4
                 },
-                "truth1": "",
+                "environment": "",
                 "attributes": {
                     "control": {
                         "label": "sta.actor.attribute.control",
@@ -83,9 +83,9 @@
                 "value": 0,
                 "max": 6
             },
-            "truth2": "",
-            "archetype": "",
-            "outlook": "",
+            "upbringing": "",
+            "species": "",
+            "assignment": "",
             "void": {
                 "value": 3,
                 "max": 3
