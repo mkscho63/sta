@@ -1,13 +1,13 @@
 import {
-    DishonoredSharedActorFunctions
+    STASharedActorFunctions
 } from '../actor.js'
 
-export class DishonoredNPCSheet extends ActorSheet {
+export class STANPCSheet extends ActorSheet {
 
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["dishonored", "sheet", "actor", "npc"],
+            classes: ["sta", "sheet", "actor", "npc"],
             width: 700,
             height: 735,
             dragDrop: [{
@@ -32,36 +32,36 @@ export class DishonoredNPCSheet extends ActorSheet {
         const data = super.getData();
         data.dtypes = ["String", "Number", "Boolean"];
 
-        //Ensure skill and style values don't weigh over the max of 8.
-        if (data.data.skills.fight.value > 8) data.data.skills.fight.value = 8;
-        if (data.data.skills.move.value > 8) data.data.skills.move.value = 8;
-        if (data.data.skills.study.value > 8) data.data.skills.study.value = 8;
-        if (data.data.skills.survive.value > 8) data.data.skills.survive.value = 8;
-        if (data.data.skills.talk.value > 8) data.data.skills.talk.value = 8;
-        if (data.data.skills.tinker.value > 8) data.data.skills.tinker.value = 8;
-        if (data.data.styles.boldly.value > 8) data.data.styles.boldly.value = 8;
-        if (data.data.styles.carefully.value > 8) data.data.styles.carefully.value = 8;
-        if (data.data.styles.cleverly.value > 8) data.data.styles.cleverly.value = 8;
-        if (data.data.styles.forcefully.value > 8) data.data.styles.forcefully.value = 8;
-        if (data.data.styles.quietly.value > 8) data.data.styles.quietly.value = 8;
-        if (data.data.styles.swiftly.value > 8) data.data.styles.swiftly.value = 8;
+        //Ensure attribute and discipline values don't weigh over the max.
+        if (data.data.attributes.control.value > 12) data.data.attributes.control.value = 12;
+        if (data.data.attributes.daring.value > 12) data.data.attributes.daring.value = 12;
+        if (data.data.attributes.fitness.value > 12) data.data.attributes.fitness.value = 12;
+        if (data.data.attributes.insight.value > 12) data.data.attributes.insight.value = 12;
+        if (data.data.attributes.presence.value > 12) data.data.attributes.presence.value = 12;
+        if (data.data.attributes.reason.value > 12) data.data.attributes.reason.value = 12;
+        if (data.data.disciplines.command.value > 5) data.data.disciplines.command.value = 5;
+        if (data.data.disciplines.conn.value > 5) data.data.disciplines.conn.value = 5;
+        if (data.data.disciplines.engineering.value > 5) data.data.disciplines.engineering.value = 5;
+        if (data.data.disciplines.medicine.value > 5) data.data.disciplines.medicine.value = 5;
+        if (data.data.disciplines.science.value > 5) data.data.disciplines.science.value = 5;
+        if (data.data.disciplines.security.value > 5) data.data.disciplines.security.value = 5;
 
         // Checks if stress is larger than its max, if so, set to max. 
         if (data.data.stress.value > data.data.stress.max) data.data.stress.value = data.data.stress.max;
 
-        //Ensure skill and style values aren't lower than 4.
-        if (data.data.skills.fight.value < 4) data.data.skills.fight.value = 4;
-        if (data.data.skills.move.value < 4) data.data.skills.move.value = 4;
-        if (data.data.skills.study.value < 4) data.data.skills.study.value = 4;
-        if (data.data.skills.survive.value < 4) data.data.skills.survive.value = 4;
-        if (data.data.skills.talk.value < 4) data.data.skills.talk.value = 4;
-        if (data.data.skills.tinker.value < 4) data.data.skills.tinker.value = 4;
-        if (data.data.styles.boldly.value < 4) data.data.styles.boldly.value = 4;
-        if (data.data.styles.carefully.value < 4) data.data.styles.carefully.value = 4;
-        if (data.data.styles.cleverly.value < 4) data.data.styles.cleverly.value = 4;
-        if (data.data.styles.forcefully.value < 4) data.data.styles.forcefully.value = 4;
-        if (data.data.styles.quietly.value < 4) data.data.styles.quietly.value = 4;
-        if (data.data.styles.swiftly.value < 4) data.data.styles.swiftly.value = 4;
+        //Ensure attribute and discipline values aren't lower than their minimums.
+        if (data.data.attributes.control.value < 7) data.data.attributes.control.value = 7;
+        if (data.data.attributes.daring.value < 7) data.data.attributes.daring.value = 7;
+        if (data.data.attributes.fitness.value < 7) data.data.attributes.fitness.value = 7;
+        if (data.data.attributes.insight.value < 7) data.data.attributes.insight.value = 7;
+        if (data.data.attributes.presence.value < 7) data.data.attributes.presence.value = 7;
+        if (data.data.attributes.reason.value < 7) data.data.attributes.reason.value = 7;
+        if (data.data.disciplines.command.value < 0) data.data.disciplines.command.value = 0;
+        if (data.data.disciplines.conn.value < 0) data.data.disciplines.conn.value = 0;
+        if (data.data.disciplines.engineering.value < 0) data.data.disciplines.engineering.value = 0;
+        if (data.data.disciplines.medicine.value < 0) data.data.disciplines.medicine.value = 0;
+        if (data.data.disciplines.science.value < 0) data.data.disciplines.science.value = 0;
+        if (data.data.disciplines.security.value < 0) data.data.disciplines.security.value = 0;
 
         // Checks if stress is below 0, if so - set it to 0.
         if (data.data.stress.value < 0) data.data.stress.value = 0;
@@ -75,8 +75,8 @@ export class DishonoredNPCSheet extends ActorSheet {
     activateListeners(html) {
         super.activateListeners(html);
         
-        // Opens the class DishonoredSharedActorFunctions for access at various stages.
-        let dishonoredActor = new DishonoredSharedActorFunctions();
+        // Opens the class STASharedActorFunctions for access at various stages.
+        let staActor = new STASharedActorFunctions();
 
         // If the player has limited access to the actor, there is nothing to see here. Return.
         if ( !game.user.isGM && this.actor.limited) return;
@@ -84,9 +84,9 @@ export class DishonoredNPCSheet extends ActorSheet {
         // We use i alot in for loops. Best to assign it now for use later in multiple places.
         var i;
 
-        // This creates a dynamic Stress tracker. It polls for the value of the survive skill, adds any protection from armor. 
+        // This creates a dynamic Stress tracker. It polls for the value of the insight attribute, adds any protection from armor. 
         // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
-        var stressTrackMax = parseInt(html.find('#survive')[0].value);
+        var stressTrackMax = parseInt(html.find('#insight')[0].value);
         var armor = html.find('[id^="protectval-armor"]');
         for (i = 0; i < armor.length; i++) {
             stressTrackMax += parseInt(armor[i].innerHTML);
@@ -105,8 +105,8 @@ export class DishonoredNPCSheet extends ActorSheet {
             html.find('#bar-stress-renderer')[0].appendChild(div);
         }
 
-        // Fires the function dishonoredRenderTracks as soon as the parameters exist to do so.
-        dishonoredActor.dishonoredRenderTracks(html, stressTrackMax);
+        // Fires the function staRenderTracks as soon as the parameters exist to do so.
+        staActor.staRenderTracks(html, stressTrackMax);
 
         // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
         html.find('.control.edit').click(ev => {
@@ -117,7 +117,7 @@ export class DishonoredNPCSheet extends ActorSheet {
 
         // This if statement checks if the form is editable, if not it hides controls used by the owner, then aborts any more of the script.
         if (!this.options.editable) {
-            // This hides the ability to Perform a Skill Test for the character
+            // This hides the ability to Perform an Attribute Test for the character
             for (i = 0; i < html.find('.check-button').length; i++) {
                 html.find('.check-button')[i].style.display = 'none';
             }
@@ -128,7 +128,7 @@ export class DishonoredNPCSheet extends ActorSheet {
             for (i = 0; i < html.find('.control.delete').length; i++) {
                 html.find('.control.delete')[i].style.display = 'none';
             }
-            // This hides all skill and style check boxes (and titles)
+            // This hides all attribute and discipline check boxes (and titles)
             for (i = 0; i < html.find('.selector').length; i++) {
                 html.find('.selector')[i].style.display = 'none';
             }
@@ -146,7 +146,7 @@ export class DishonoredNPCSheet extends ActorSheet {
         html.find('.rollable').click(ev =>{
             var itemType = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-type");
             var itemId = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-id");
-            dishonoredActor.rollGenericItem(event, itemType, itemId, this.actor);
+            staActor.rollGenericItem(event, itemType, itemId, this.actor);
         })
 
         // Allows item-create images to create an item of a type defined individually by each button. This uses code found via the Foundry VTT System Tutorial.
@@ -205,44 +205,44 @@ export class DishonoredNPCSheet extends ActorSheet {
             }
         });
 
-        // Turns the Skill checkboxes into essentially a radio button. It removes any other ticks, and then checks the new skill.
+        // Turns the Attribute checkboxes into essentially a radio button. It removes any other ticks, and then checks the new attribute.
         // Finally a submit is required as data has changed.
-        html.find('.selector.skill').click(ev => {
+        html.find('.selector.attribute').click(ev => {
             for (i = 0; i <= 5; i++) {
-                html.find('.selector.skill')[i].checked = false;
+                html.find('.selector.attribute')[i].checked = false;
             }
             $(ev.currentTarget)[0].checked = true;
             this.submit();
         });
 
-        // Turns the Style checkboxes into essentially a radio button. It removes any other ticks, and then checks the new style.
+        // Turns the Discipline checkboxes into essentially a radio button. It removes any other ticks, and then checks the new discipline.
         // Finally a submit is required as data has changed.
-        html.find('.selector.style').click(ev => {
+        html.find('.selector.discipline').click(ev => {
             for (i = 0; i <= 5; i++) {
-                html.find('.selector.style')[i].checked = false;
+                html.find('.selector.discipline')[i].checked = false;
             }
             $(ev.currentTarget)[0].checked = true;
             this.submit();
         });
 
-        // If the check-button is clicked it grabs the selected skill and the selected style and fires the method rollSkillTest. See actor.js for further info.
+        // If the check-button is clicked it grabs the selected attribute and the selected discipline and fires the method rollAttributeTest. See actor.js for further info.
         html.find('.check-button').click(ev => {
             for (i = 0; i <= 5; i++) {
-                if (html.find('.selector.skill')[i].checked === true) {
-                    var selectedSkill = html.find('.selector.skill')[i].id;
-                    var selectedSkill = selectedSkill.slice(0, -9)
-                    var selectedSkillValue = html.find('#'+selectedSkill)[0].value;
+                if (html.find('.selector.attribute')[i].checked === true) {
+                    var selectedAttribute = html.find('.selector.attribute')[i].id;
+                    var selectedAttribute = selectedAttribute.slice(0, -9)
+                    var selectedAttributeValue = html.find('#'+selectedAttribute)[0].value;
                 }
             }
             for (i = 0; i <= 5; i++) {
-                if (html.find('.selector.style')[i].checked === true) {
-                    var selectedStyle = html.find('.selector.style')[i].id;
-                    var selectedStyle = selectedStyle.slice(0, -9)
-                    var selectedStyleValue = html.find('#'+selectedStyle)[0].value;
+                if (html.find('.selector.discipline')[i].checked === true) {
+                    var selectedDiscipline = html.find('.selector.discipline')[i].id;
+                    var selectedDiscipline = selectedDiscipline.slice(0, -9)
+                    var selectedDisciplineValue = html.find('#'+selectedDiscipline)[0].value;
                 }
             }
-            var checkTarget = parseInt(selectedSkillValue) + parseInt(selectedStyleValue);
-            dishonoredActor.rollSkillTest(event, checkTarget, selectedSkill, selectedStyle, this.actor);
+            var checkTarget = parseInt(selectedAttributeValue) + parseInt(selectedDisciplineValue);
+            staActor.rollAttributeTest(event, checkTarget, selectedAttribute, selectedDiscipline, this.actor);
         });
     }
 }

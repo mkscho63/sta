@@ -1,42 +1,42 @@
 // Import Modules
 import {
-    DishonoredActor
+    STAActor
 } from "./actors/actor.js";
 import {
-    DishonoredCharacterSheet
+    STACharacterSheet
 } from "./actors/sheets/character-sheet.js";
 import {
-    DishonoredNPCSheet
+    STANPCSheet
 } from "./actors/sheets/npc-sheet.js";
 import {
-    DishonoredItemSheet
+    STAItemSheet
 } from "./items/item-sheet.js";
 import {
-    DishonoredFocusSheet
+    STAFocusSheet
 } from "./items/focus-sheet.js";
 import {
-    DishonoredBonecharmSheet
+    STABonecharmSheet
 } from "./items/bonecharm-sheet.js";
 import {
-    DishonoredWeaponSheet
+    STAWeaponSheet
 } from "./items/weapon-sheet.js";
 import {
-    DishonoredArmorSheet
+    STAArmorSheet
 } from "./items/armor-sheet.js";
 import {
-    DishonoredTalentSheet
+    STATalentSheet
 } from "./items/talent-sheet.js";
 import {
-    DishonoredContactSheet
+    STAContactSheet
 } from "./items/contact-sheet.js";
 import {
-    DishonoredPowerSheet
+    STAPowerSheet
 } from "./items/power-sheet.js";
 import { 
-    DishonoredTracker 
+    STATracker 
 } from "./apps/tracker.js";
 import { 
-    DishonoredLogo
+    STALogo
 } from "./apps/logo.js";
 import * as macros 
 from "./macro.js";
@@ -74,68 +74,68 @@ Hooks.once("init", function() {
 
 
     // Create a namespace within the game global
-    game.dishonored = {
+    game.sta = {
         applications: {
-            DishonoredCharacterSheet,
-            DishonoredNPCSheet,
-            DishonoredItemSheet,
-            DishonoredFocusSheet,
-            DishonoredBonecharmSheet,
-            DishonoredWeaponSheet,
-            DishonoredArmorSheet,
-            DishonoredTalentSheet,
-            DishonoredContactSheet,
-            DishonoredPowerSheet,
+            STACharacterSheet,
+            STANPCSheet,
+            STAItemSheet,
+            STAFocusSheet,
+            STABonecharmSheet,
+            STAWeaponSheet,
+            STAArmorSheet,
+            STATalentSheet,
+            STAContactSheet,
+            STAPowerSheet,
         },
         entities: {
-            DishonoredActor,
+            STAActor,
         },
         macros: macros,
-        skillTest: macros.skillTest
+        attributeTest: macros.attributeTest
     };
 
     // Define initiative for the system.
     CONFIG.Combat.initiative = {
-        formula: "@styles.swiftly.value",
+        formula: "@disciplines.security.value",
         decimals: 0
     };
 
     // Define custom Entity classes
-    CONFIG.Actor.entityClass = DishonoredActor;
+    CONFIG.Actor.entityClass = STAActor;
 
     // Register sheet application classes
     Actors.unregisterSheet("core", ActorSheet);
-    Actors.registerSheet("dishonored", DishonoredCharacterSheet, {
+    Actors.registerSheet("sta", STACharacterSheet, {
         types: ["character"],
         makeDefault: true
     });
-    Actors.registerSheet("dishonored", DishonoredNPCSheet, {
+    Actors.registerSheet("sta", STANPCSheet, {
         types: ["npc"]
     });
     Items.unregisterSheet("core", ItemSheet);
-    Items.registerSheet("dishonored", DishonoredItemSheet, {
+    Items.registerSheet("sta", STAItemSheet, {
         types: ["item"],
         makeDefault: true
     });
-    Items.registerSheet("dishonored", DishonoredFocusSheet, {
+    Items.registerSheet("sta", STAFocusSheet, {
         types: ["focus"],
     });
-    Items.registerSheet("dishonored", DishonoredBonecharmSheet, {
+    Items.registerSheet("sta", STABonecharmSheet, {
         types: ["bonecharm"],
     });
-    Items.registerSheet("dishonored", DishonoredWeaponSheet, {
+    Items.registerSheet("sta", STAWeaponSheet, {
         types: ["weapon"],
     });
-    Items.registerSheet("dishonored", DishonoredArmorSheet, {
+    Items.registerSheet("sta", STAArmorSheet, {
         types: ["armor"],
     });
-    Items.registerSheet("dishonored", DishonoredTalentSheet, {
+    Items.registerSheet("sta", STATalentSheet, {
         types: ["talent"],
     });
-    Items.registerSheet("dishonored", DishonoredContactSheet, {
+    Items.registerSheet("sta", STAContactSheet, {
         types: ["contact"],
     });
-    Items.registerSheet("dishonored", DishonoredPowerSheet, {
+    Items.registerSheet("sta", STAPowerSheet, {
         types: ["power"],
     });
 
@@ -245,11 +245,11 @@ Hooks.once("init", function() {
             console.error("The Momentum Tracker User Role does not have permissions to Modify Configuration Settings. Please change one of these in Permission Configuration or System Settings.");
             ui.notifications.error("The Momentum Tracker User Role does not have permissions to Modify Configuration Settings. Please change one of these in Permission Configuration or System Settings.");
         }
-        let t = new DishonoredTracker()
+        let t = new STATracker()
         renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/tracker.html").then(html => {
             t.render(true);
         });
-        let l = new DishonoredLogo()
+        let l = new STALogo()
         renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/logo.html").then(html => {
             l.render(true);
         });

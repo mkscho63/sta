@@ -1,19 +1,19 @@
 import {
-    DishonoredRoll
+    STARoll
 } from './roll.js'
 
-export function skillTest(actor, skillName, styleName, focusRating, numberOfDice) {
+export function attributeTest(actor, attributeName, disciplineName, focusRating, numberOfDice) {
     let fail = false;  
     if (actor === undefined) {
         ui.notifications.warn("Please provide an actor to the macro!");
         fail = true;
     }
-    if (skillName === undefined) {
-        ui.notifications.warn("Please provide an skill to the macro!");
+    if (attributeName === undefined) {
+        ui.notifications.warn("Please provide an attribute to the macro!");
         fail = true;
     }
-    if (styleName === undefined) {
-        ui.notifications.warn("Please provide an style to the macro!");
+    if (disciplineName === undefined) {
+        ui.notifications.warn("Please provide an discipline to the macro!");
         fail = true;
     }
     if (focusRating < 1) {
@@ -37,9 +37,9 @@ export function skillTest(actor, skillName, styleName, focusRating, numberOfDice
     if (focusRating === undefined) {
         focusRating = 1;
     }
-    let skillValue = parseInt(actor.data.data.skills[skillName].value);
-    let styleValue = parseInt(actor.data.data.styles[styleName].value);
-    let dishonoredRoll = new DishonoredRoll();
-    dishonoredRoll.performSkillTest(numberOfDice, skillValue+styleValue, focusRating, skillName, styleName, actor);
+    let attributeValue = parseInt(actor.data.data.attributes[attributeName].value);
+    let disciplineValue = parseInt(actor.data.data.disciplines[disciplineName].value);
+    let staRoll = new STARoll();
+    staRoll.performAttributeTest(numberOfDice, attributeValue+disciplineValue, focusRating, attributeName, disciplineName, actor);
 }
   

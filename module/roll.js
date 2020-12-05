@@ -2,9 +2,9 @@ import {
     getFoundryVersion
 } from './sta.js'
 
-export class DishonoredRoll {
+export class STARoll {
 
-    async performSkillTest(dicePool, checkTarget, focusTarget, selectedSkill, selectedStyle, speaker) {
+    async performAttributeTest(dicePool, checkTarget, focusTarget, selectedAttribute, selectedDiscipline, speaker) {
         // Define some variables that we will be using later.
         let foundryVersion = getFoundryVersion();
         let i;
@@ -25,7 +25,7 @@ export class DishonoredRoll {
                     diceString += '<li class="roll die d20 max">' + result + '</li>';
                     success += 2;
                 } 
-                // If the result is less than or equal to the target (the style and skill added together), that counts as 1 success but we want to show the dice as normal.
+                // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
                 else if (result <= checkTarget) {
                     diceString += '<li class="roll die d20">' + result + '</li>';
                     success += 1;
@@ -54,7 +54,7 @@ export class DishonoredRoll {
                     diceString += '<li class="roll die d20 max">' + result + '</li>';
                     success += 2;
                 } 
-                // If the result is less than or equal to the target (the style and skill added together), that counts as 1 success but we want to show the dice as normal.
+                // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
                 else if (result <= checkTarget) {
                     diceString += '<li class="roll die d20">' + result + '</li>';
                     success += 1;
@@ -72,9 +72,9 @@ export class DishonoredRoll {
         }
         // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
         if (success == 1) {
-            var successText = success + game.i18n.format("dishonored.roll.success");
+            var successText = success + game.i18n.format("sta.roll.success");
         } else {
-            var successText = success + game.i18n.format("dishonored.roll.successPlural");
+            var successText = success + game.i18n.format("sta.roll.successPlural");
         }
 
         // Check if we allow multiple complications, or if only one complication ever happens.
@@ -84,21 +84,21 @@ export class DishonoredRoll {
         // If no complications exist then we don't even show this box.
         if (complication >= 1) {
             if (complication > 1 && multipleComplicationsAllowed === true) {
-                var localisedPluralisation = game.i18n.format("dishonored.roll.complicationPlural")
+                var localisedPluralisation = game.i18n.format("sta.roll.complicationPlural")
                 var complicationText = '<h4 class="dice-total failure"> ' + localisedPluralisation.replace('|#|', complication) + '</h4>';
             } else {
-                var complicationText = '<h4 class="dice-total failure"> ' + game.i18n.format("dishonored.roll.complication") + '</h4>';
+                var complicationText = '<h4 class="dice-total failure"> ' + game.i18n.format("sta.roll.complication") + '</h4>';
             }
         } else {
             var complicationText = '';
         }
 
-        // Set the flavour to "[Skill] [Style] Skill Test". This shows the chat what type of test occured.
-        let flavor = game.i18n.format("dishonored.actor.skill." + selectedSkill) + " " + game.i18n.format("dishonored.actor.style." + selectedStyle) + game.i18n.format("dishonored.roll.test");
+        // Set the flavour to "[Attribute] [Discipline] Attribute Test". This shows the chat what type of test occured.
+        let flavor = game.i18n.format("sta.actor.attribute." + selectedAttribute) + " " + game.i18n.format("sta.actor.discipline." + selectedDiscipline) + game.i18n.format("sta.roll.test");
 
         // Build a dynamic html using the variables from above.
         let html = `
-            <div class="dishonored roll skill">
+            <div class="sta roll attribute">
                 <div class="dice-roll">
                     <div class="dice-result">
                         <div class="dice-formula">
@@ -136,11 +136,11 @@ export class DishonoredRoll {
 
     async performItemRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
-        var variablePrompt = game.i18n.format("dishonored.roll.item.quantity");
+        var variablePrompt = game.i18n.format("sta.roll.item.quantity");
         let variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.quantity)+`</div>`;
         // Create dynamic tags div and populate it with localisation to use in the HTML.
         if (item.data.data.cost > 0) {
-            var costLocalisation = game.i18n.format("dishonored.roll.item.value");
+            var costLocalisation = game.i18n.format("sta.roll.item.value");
             var valueTag = "<div class='tag'> "+costLocalisation.replace('|#|', item.data.data.cost)+"</div>";
         }
         else {
@@ -152,7 +152,7 @@ export class DishonoredRoll {
 
     async performFocusRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
-        let variablePrompt = game.i18n.format("dishonored.roll.focus.rating");
+        let variablePrompt = game.i18n.format("sta.roll.focus.rating");
         let variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.rating)+`</div>`;
         // Send the divs to populate a HTML template and sends to chat.
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
@@ -165,38 +165,38 @@ export class DishonoredRoll {
 
     async performWeaponRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
-        var variablePrompt = game.i18n.format("dishonored.roll.weapon.damage");
+        var variablePrompt = game.i18n.format("sta.roll.weapon.damage");
         let variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.damage)+`</div>`;
         // Create dynamic tags div and populate it with localisation to use in the HTML.
         if (item.data.data.cost > 0) {
-            var costLocalisation = game.i18n.format("dishonored.roll.item.value");
+            var costLocalisation = game.i18n.format("sta.roll.item.value");
             var tags = "<div class='tag'> "+costLocalisation.replace('|#|', item.data.data.cost)+"</div>";
         }
         else {
             var tags = '';
         }
-        if (item.data.data.qualities.armorpierce) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.armorpierce")+"</div>";
-        if (item.data.data.qualities.awkward) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.awkward")+"</div>";
-        if (item.data.data.qualities.blast) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.blast")+"</div>";
-        if (item.data.data.qualities.block) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.block")+"</div>";
-        if (item.data.data.qualities.burn) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.burn")+"</div>";
-        if (item.data.data.qualities.concealed) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.concealed")+"</div>";
-        if (item.data.data.qualities.melee) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.melee")+"</div>";
-        if (item.data.data.qualities.messy) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.messy")+"</div>";
-        if (item.data.data.qualities.mine) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.mine")+"</div>";
-        if (item.data.data.qualities.rangeddistant) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.distant")+"</div>";
-        if (item.data.data.qualities.rangednearby) tags += "<div class='tag'> "+game.i18n.format("dishonored.actor.belonging.weapon.nearby")+"</div>";
+        if (item.data.data.qualities.armorpierce) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.armorpierce")+"</div>";
+        if (item.data.data.qualities.awkward) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.awkward")+"</div>";
+        if (item.data.data.qualities.blast) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.blast")+"</div>";
+        if (item.data.data.qualities.block) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.block")+"</div>";
+        if (item.data.data.qualities.burn) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.burn")+"</div>";
+        if (item.data.data.qualities.concealed) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.concealed")+"</div>";
+        if (item.data.data.qualities.melee) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.melee")+"</div>";
+        if (item.data.data.qualities.messy) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.messy")+"</div>";
+        if (item.data.data.qualities.mine) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.mine")+"</div>";
+        if (item.data.data.qualities.rangeddistant) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.distant")+"</div>";
+        if (item.data.data.qualities.rangednearby) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.nearby")+"</div>";
         // Send the divs to populate a HTML template and sends to chat.
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable, tags).then(html=>this.sendToChat(speaker, html));
     }
 
     async performArmorRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
-        let variablePrompt = game.i18n.format("dishonored.roll.armor.protect");
+        let variablePrompt = game.i18n.format("sta.roll.armor.protect");
         let variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.protection)+`</div>`;
         // Create dynamic tags div and populate it with localisation to use in the HTML.
         if (item.data.data.cost > 0) {
-            var costLocalisation = game.i18n.format("dishonored.roll.item.value");
+            var costLocalisation = game.i18n.format("sta.roll.item.value");
             var valueTag = "<div class='tag'> "+costLocalisation.replace('|#|', item.data.data.cost)+"</div>";
         }
         else {
@@ -208,7 +208,7 @@ export class DishonoredRoll {
 
     async performTalentRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
-        var variablePrompt = game.i18n.format("dishonored.roll.talent.type");
+        var variablePrompt = game.i18n.format("sta.roll.talent.type");
         var variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.type)+`</div>`;
         // Send the divs to populate a HTML template and sends to chat.
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
@@ -216,7 +216,7 @@ export class DishonoredRoll {
 
     async performContactRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
-        var variablePrompt = game.i18n.format("dishonored.roll.contact.relation");
+        var variablePrompt = game.i18n.format("sta.roll.contact.relation");
         var variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.relationship)+`</div>`;
         // Send the divs to populate a HTML template and sends to chat.
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
@@ -225,13 +225,13 @@ export class DishonoredRoll {
     async performPowerRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
         if (item.data.data.manacost > 0) {
-            var localisedContent = game.i18n.format("dishonored.roll.power.mana");
+            var localisedContent = game.i18n.format("sta.roll.power.mana");
             var variablePrompt = "<div class='dice-formula'> "+localisedContent.replace('|#|', item.data.data.manacost)+"</div>";
         }
         else {
             var variablePrompt = '';
         }
-        var runeValue = game.i18n.format("dishonored.roll.power.rune");
+        var runeValue = game.i18n.format("sta.roll.power.rune");
         // Create dynamic tags div and populate it with localisation to use in the HTML.
         var tags = `<div class = 'tag'>`+runeValue.replace('|#|', item.data.data.runecost)+`</div>`;
         // Send the divs to populate a HTML template and sends to chat.
@@ -245,7 +245,7 @@ export class DishonoredRoll {
         let varField = variable ? variable : '';
         // Builds a generic HTML template that is used for all items.
         let html = `
-            <div class='dishonored roll generic'>
+            <div class='sta roll generic'>
                 <div class='dice-roll'>
                     <div class="dice-result">
                         <div class='dice-formula title'>

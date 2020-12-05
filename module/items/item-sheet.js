@@ -1,9 +1,9 @@
-export class DishonoredItemSheet extends ItemSheet {
+export class STAItemSheet extends ItemSheet {
 
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["dishonored", "sheet", "item", "item"],
+            classes: ["sta", "sheet", "item", "item"],
             width: 500,
             height: 480,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]

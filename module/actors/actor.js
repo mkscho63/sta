@@ -1,21 +1,21 @@
 import {
-    DishonoredRollDialog
+    STARollDialog
 } from '../apps/roll-dialog.js'
 import {
-    DishonoredRoll
+    STARoll
 } from '../roll.js'
 
-export class DishonoredActor extends Actor {
+export class STAActor extends Actor {
 	prepareData() {
 		super.prepareData();
 		// const actorData = this.data;
 	}
 }
 
-export class DishonoredSharedActorFunctions {
+export class STASharedActorFunctions {
 
 	// This function renders all the tracks. This will be used every time the character sheet is loaded. It is a vital element as such it runs before most other code!
-	dishonoredRenderTracks(html, stressTrackMax, voidPointsMax, expPointsMax, momentumMax) {
+	staRenderTracks(html, stressTrackMax, voidPointsMax, expPointsMax, momentumMax) {
 		var i;
 		// Checks if details for the Stress Track was included, this should happen in all cases!
 		if (stressTrackMax) {
@@ -75,17 +75,17 @@ export class DishonoredSharedActorFunctions {
 		}
 	}
 
-    // This handles performing a skill test using the "Perform Check" button.
-    async rollSkillTest(event, checkTarget, selectedSkill, selectedStyle, speaker) {
+    // This handles performing an attribute test using the "Perform Check" button.
+    async rollAttributeTest(event, checkTarget, selectedAttribute, selectedDiscipline, speaker) {
 		event.preventDefault();
 		// This creates a dialog to gather details regarding the roll and waits for a response
-        let rolldialog = await DishonoredRollDialog.create();
+        let rolldialog = await STARollDialog.create();
         if (rolldialog) {
             let dicePool = rolldialog.get("dicePoolSlider");
 			let focusTarget = parseInt(rolldialog.get("dicePoolFocus"));
 			// Once the response has been collected it then sends it to be rolled.
-            let dishonoredRoll = new DishonoredRoll();
-            dishonoredRoll.performSkillTest(dicePool, checkTarget, focusTarget, selectedSkill, selectedStyle, speaker);
+            let staRoll = new STARoll();
+            staRoll.performAttributeTest(dicePool, checkTarget, focusTarget, selectedAttribute, selectedDiscipline, speaker);
         }
     }
 
@@ -93,32 +93,32 @@ export class DishonoredSharedActorFunctions {
     async rollGenericItem(event, type, id, speaker) {
         event.preventDefault();
         var item = speaker.items.get(id);
-        let dishonoredRoll = new DishonoredRoll();
+        let staRoll = new STARoll();
         // It will send it to a different method depending what item type was sent to it.
         switch(type) {
             case "item":
-                dishonoredRoll.performItemRoll(item, speaker);
+                staRoll.performItemRoll(item, speaker);
                 break;
             case "focus":
-                dishonoredRoll.performFocusRoll(item, speaker);
+                staRoll.performFocusRoll(item, speaker);
                 break;
             case "bonecharm":
-                dishonoredRoll.performBonecharmRoll(item, speaker);
+                staRoll.performBonecharmRoll(item, speaker);
                 break;
             case "weapon":
-                dishonoredRoll.performWeaponRoll(item, speaker);
+                staRoll.performWeaponRoll(item, speaker);
                 break;
             case "armor":
-                dishonoredRoll.performArmorRoll(item, speaker);
+                staRoll.performArmorRoll(item, speaker);
                 break;
             case "talent":
-                dishonoredRoll.performTalentRoll(item, speaker);
+                staRoll.performTalentRoll(item, speaker);
                 break;
             case "contact":
-                dishonoredRoll.performContactRoll(item, speaker);
+                staRoll.performContactRoll(item, speaker);
                 break;
             case "power":
-                dishonoredRoll.performPowerRoll(item, speaker);
+                staRoll.performPowerRoll(item, speaker);
                 break;
         }
     }

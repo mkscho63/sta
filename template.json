@@ -10,66 +10,66 @@
                     "max": 4
                 },
                 "truth1": "",
-                "skills": {
-                    "fight": {
-                        "label": "dishonored.actor.skill.fight",
+                "attributes": {
+                    "control": {
+                        "label": "sta.actor.attribute.control",
                         "value": 4,
                         "selected": true
                     },
-                    "move": {
-                        "label": "dishonored.actor.skill.move",
+                    "daring": {
+                        "label": "sta.actor.attribute.daring",
                         "value": 4,
                         "selected": false
                     },
-                    "study": {
-                        "label": "dishonored.actor.skill.study",
+                    "fitness": {
+                        "label": "sta.actor.attribute.fitness",
                         "value": 4,
                         "selected": false
                     },
-                    "survive": {
-                        "label": "dishonored.actor.skill.survive",
+                    "insight": {
+                        "label": "sta.actor.attribute.insight",
                         "value": 4,
                         "selected": false
                     },
-                    "talk": {
-                        "label": "dishonored.actor.skill.talk",
+                    "presence": {
+                        "label": "sta.actor.attribute.presence",
                         "value": 4,
                         "selected": false
                     },
-                    "tinker": {
-                        "label": "dishonored.actor.skill.tinker",
+                    "reason": {
+                        "label": "sta.actor.attribute.reason",
                         "value": 4,
                         "selected": false
                     }
                 },
-                "styles": {
-                    "boldly": {
-                        "label": "dishonored.actor.style.boldly",
+                "disciplines": {
+                    "command": {
+                        "label": "sta.actor.discipline.command",
                         "value": 4,
                         "selected": true
                     },
-                    "carefully": {
-                        "label": "dishonored.actor.style.carefully",
+                    "conn": {
+                        "label": "sta.actor.discipline.conn",
                         "value": 4,
                         "selected": false
                     },
-                    "cleverly": {
-                        "label": "dishonored.actor.style.cleverly",
+                    "engineering": {
+                        "label": "sta.actor.discipline.engineering",
                         "value": 4,
                         "selected": false
                     },
-                    "forcefully": {
-                        "label": "dishonored.actor.style.forcefully",
+                    "medicine": {
+                        "label": "sta.actor.discipline.medicine",
                         "value": 4,
                         "selected": false
                     },
-                    "quietly": {
-                        "label": "dishonored.actor.style.quietly",
+                    "science": {
+                        "label": "sta.actor.discipline.science",
                         "value": 4,
                         "selected": false
                     },
-                    "swiftly": {
-                        "label": "dishonored.actor.style.swiftly",
+                    "security": {
+                        "label": "sta.actor.discipline.security",
                         "value": 4,
                         "selected": false
                     }
@@ -156,23 +156,23 @@
             "relationship": "neutral",
             "relationships": {
                 "great": {
-                    "label": "dishonored.contact.relation.great",
+                    "label": "sta.contact.relation.great",
                     "dtype": "String"
                 },
                 "fair": {
-                    "label": "dishonored.contact.relation.fair",
+                    "label": "sta.contact.relation.fair",
                     "dtype": "String"
                 },
                 "neutral": {
-                    "label": "dishonored.contact.relation.neutral",
+                    "label": "sta.contact.relation.neutral",
                     "dtype": "String"
                 },
                 "poor": {
-                    "label": "dishonored.contact.relation.poor",
+                    "label": "sta.contact.relation.poor",
                     "dtype": "String"
                 },
                 "dire": {
-                    "label": "dishonored.contact.relation.dire",
+                    "label": "sta.contact.relation.dire",
                     "dtype": "String"
                 }
             }
