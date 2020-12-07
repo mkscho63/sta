@@ -47,13 +47,8 @@ export class STACharacterSheet extends ActorSheet {
         if (data.data.disciplines.security.value > 5) data.data.disciplines.security.value = 5;
 
         // Checks if any values are larger than their relevant max, if so, set to max. 
-        if (data.data.void.value > data.data.void.max) data.data.void.value = data.data.void.max;
+        if (data.data.determination.value > 3) data.data.determination.value = 3;
         if (data.data.stress.value > data.data.stress.max) data.data.stress.value = data.data.stress.max;
-        // For some reason - this is treated as a string, so this enforce use of integers here.
-        if (parseInt(data.data.mana.value) > parseInt(data.data.mana.max)) data.data.mana.value = data.data.mana.max;
-
-        // Checks if mana max is not equal to double the void max, if it isn't, set it so.
-        if (data.data.mana.max != 2*data.data.void.max) data.data.mana.max = 2*data.data.void.max;
 
         //Ensure attribute and discipline values aren't lower than 4.
         if (data.data.attributes.control.value < 7) data.data.attributes.control.value = 7;
@@ -70,12 +65,9 @@ export class STACharacterSheet extends ActorSheet {
         if (data.data.disciplines.security.value < 0) data.data.disciplines.security.value = 0;
 
         // Checks if any values are below their theoretical minimum, if so - set it to the very minimum.
-        if (data.data.void.value < 0) data.data.void.value = 0;
-        if (data.data.void.max < 1) data.data.void.max = 1;
+        if (data.data.determination.value < 0) data.data.determination.value = 0;
         if (data.data.stress.value < 0) data.data.stress.value = 0;
         if (data.data.experience < 0) data.data.experience = 0;
-        if (data.data.mana.value < 0) data.data.mana.value = 0;
-        if (data.data.mana.max < 2) data.data.mana.max = 2;
         
         return data;
     }
@@ -126,27 +118,25 @@ export class STACharacterSheet extends ActorSheet {
             html.find('.bonecharmCount')[0].style.color = "#ffffff";
         }
 
-        // This creates a dynamic Void Point tracker. It polls for the hidden control "max-void" and for the value, 
-        // creates a new div for each and places it under a child called "bar-void-renderer"
-        var voidPointsMax = html.find('#max-void')[0].value;
-        for (i = 1; i <= voidPointsMax; i++) {
+        // This creates a dynamic Determination Point tracker. It sets max determination to 3 (it is dynamic in Dishonored) and
+        // creates a new div for each and places it under a child called "bar-determination-renderer"
+        var determinationPointsMax = 3;
+        for (i = 1; i <= determinationPointsMax; i++) {
             var div = document.createElement("DIV");
             div.className = "box";
-            div.id = "void-" + i;
+            div.id = "determination-" + i;
             div.innerHTML = i;
-            div.style = "width: calc(100% / " + html.find('#max-void')[0].value + ");"
-            html.find('#bar-void-renderer')[0].appendChild(div);
+            div.style = "width: calc(100% / 3);"
+            html.find('#bar-determination-renderer')[0].appendChild(div);
         }
 
-        // This creates a dynamic Stress tracker. It polls for the value of the insight attribute, adds any protection from armor. 
+        // This creates a dynamic Stress tracker. It polls for the value of the fitenss attribute, security discipline, and checks for Resolute talent. 
         // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
         function stressTrackUpdate() {
-            stressTrackMax = parseInt(html.find('#insight')[0].value);
-            var armor = html.find('[data-item-type="armor"]');
-            for (i = 0; i < armor.length; i++) {
-                if (armor[i].getAttribute("data-item-equipped") == 'true') {
-                    stressTrackMax += parseInt($(armor[i]).children()[2].innerHTML);
-                }
+            stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
+            if(html.find('[data-talent-name="Resolute"]').length > 0)
+            {
+                stressTrackMax += 3;
             }
             // This checks that the max-stress hidden field is equal to the calculated Max Stress value, if not it makes it so.
             if (html.find('#max-stress')[0].value != stressTrackMax)
@@ -166,7 +156,7 @@ export class STACharacterSheet extends ActorSheet {
         stressTrackUpdate();
 
         // This creates a dynamic Experience tracker. For this it uses a max value of 30. This can be configured here. 
-        // It creates a new div for each and places it under a child called "bar-void-renderer"
+        // It creates a new div for each and places it under a child called "bar-exp-renderer"
         var expPointsMax = game.settings.get("FVTT-StarTrekAdventures", "maxNumberOfExperience");
         var i;
         for (i = 1; i <= expPointsMax; i++) {
@@ -178,22 +168,9 @@ export class STACharacterSheet extends ActorSheet {
             html.find('#bar-exp-renderer')[0].appendChild(div);
         }
 
-        // This creates a dynamic Momentum tracker. STA only has 6 momentum, so this should never be changed. But this can be configured here. 
-        // It creates a new div for each and places it under a child called "bar-mom-renderer"
-        // var momPointsMax = 6;
-        // var i;
-        // for (i = 1; i <= momPointsMax; i++) {
-        //     var div = document.createElement("DIV");
-        //     div.className = "box";
-        //     div.id = "mom-" + i;
-        //     div.innerHTML = i;
-        //     div.style = "width: calc(100% / " + momPointsMax + ");"
-        //     html.find('#bar-mom-renderer')[0].appendChild(div);
-        // }
-
         // Fires the function staRenderTracks as soon as the parameters exist to do so.
-        // staActor.staRenderTracks(html, stressTrackMax, voidPointsMax, expPointsMax, momPointsMax);
-        staActor.staRenderTracks(html, stressTrackMax, voidPointsMax, expPointsMax);
+        // staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, expPointsMax);
+        staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, expPointsMax);
 
         // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
         html.find('.control.edit').click(ev => {
@@ -207,10 +184,6 @@ export class STACharacterSheet extends ActorSheet {
             // This hides the ability to Perform an Attribute Test for the character.
             for (i = 0; i < html.find('.check-button').length; i++) {
                 html.find('.check-button')[i].style.display = 'none';
-            }
-            // This hides the ability to change the amount of Void Points the character has.
-            for (i = 0; i < html.find('.voidchange').length; i++) {
-                html.find('.voidchange')[i].style.display = 'none';
             }
             // This hides all toggle, add and delete item images.
             for (i = 0; i < html.find('.control.create').length; i++) {
@@ -351,32 +324,6 @@ export class STACharacterSheet extends ActorSheet {
             }
         });
 
-        // Reads if a momentum track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one.
-        // See line 186-220 for a more detailed break down on the context of each scenario. Momentum uses the same logic.
-        html.find('[id^="mom"]').click(ev => {
-            var newTotalObject = $(ev.currentTarget)[0];
-            var newTotal = newTotalObject.id.substring(4);
-            if (newTotalObject.getAttribute("data-selected") === "true") {
-                var nextCheck = 'mom-' + (parseInt(newTotal) + 1);
-                if (!html.find('#'+nextCheck)[0] || html.find('#'+nextCheck)[0].getAttribute("data-selected") != "true") {
-                    html.find('#total-mom')[0].value = html.find('#total-mom')[0].value - 1;
-                    this.submit();
-                } else {
-                    var total = html.find('#total-mom')[0].value;
-                    if (total != newTotal) {
-                        html.find('#total-mom')[0].value = newTotal;
-                        this.submit();
-                    }
-                }
-            } else {
-                var total = html.find('#total-mom')[0].value;
-                if (total != newTotal) {
-                    html.find('#total-mom')[0].value = newTotal;
-                    this.submit();
-                }
-            }
-        });
-
         // Reads if a stress track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one.
         // See line 186-220 for a more detailed break down on the context of each scenario. Stress uses the same logic.
         html.find('[id^="stress"]').click(ev => {
@@ -403,46 +350,30 @@ export class STACharacterSheet extends ActorSheet {
             }
         });
 
-        // Reads if a void track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one.
-        // See line 186-220 for a more detailed break down on the context of each scenario. Void uses the same logic.
-        html.find('[id^="void"]').click(ev => {
+        // Reads if a determination track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one.
+        // See line 186-220 for a more detailed break down on the context of each scenario. Determination uses the same logic.
+        html.find('[id^="determination"]').click(ev => {
             var newTotalObject = $(ev.currentTarget)[0];
             var newTotal = newTotalObject.id.replace(/\D/g, '');
             if (newTotalObject.getAttribute("data-selected") === "true") {
-                var nextCheck = 'void-' + (parseInt(newTotal) + 1);
+                var nextCheck = 'determination-' + (parseInt(newTotal) + 1);
                 if (!html.find('#'+nextCheck)[0] || html.find('#'+nextCheck)[0].getAttribute("data-selected") != "true") {
-                    html.find('#total-void')[0].value = html.find('#total-void')[0].value - 1;
+                    html.find('#total-determination')[0].value = html.find('#total-determination')[0].value - 1;
                     this.submit();
                 } else {
-                    var total = html.find('#total-void')[0].value;
+                    var total = html.find('#total-determination')[0].value;
                     if (total != newTotal) {
-                        html.find('#total-void')[0].value = newTotal;
+                        html.find('#total-determination')[0].value = newTotal;
                         this.submit();
                     }
                 }
             } else {
-                var total = html.find('#total-void')[0].value;
+                var total = html.find('#total-determination')[0].value;
                 if (total != newTotal) {
-                    html.find('#total-void')[0].value = newTotal;
+                    html.find('#total-determination')[0].value = newTotal;
                     this.submit();
                 }
             }
-        });
-        
-        // If the decrease-void-max button is clicked it removes a point off the max-void and two points from max-mana.
-        html.find('[id="decrease-void-max"]').click(ev => {
-            html.find('#max-void')[0].value--;
-            html.find('#max-mana')[0].value--;
-            html.find('#max-mana')[0].value--;
-            this.submit();
-        });
-
-        // If the increase-void-max button is clicked it adds a point to the max-void and two points to max-mana.
-        html.find('[id="increase-void-max"]').click(ev => {
-            html.find('#max-void')[0].value++;
-            html.find('#max-mana')[0].value++;
-            html.find('#max-mana')[0].value++;
-            this.submit();
         });
 
         // Turns the Attribute checkboxes into essentially a radio button. It removes any other ticks, and then checks the new attribute.

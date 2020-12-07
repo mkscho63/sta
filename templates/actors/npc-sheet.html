@@ -164,28 +164,6 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="section powers">
-                        <div class="title">
-                            {{localize 'sta.actor.power.title'}}
-                        </div>
-                        <div class="row item">
-                            <div class="image"></div>
-                            <div class="column-x1 bold">{{localize 'sta.actor.genericitem.name'}}</div>
-                            <a class="control create" title="Create item" data-type="power"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "power")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x1">{{item.name}}</h4>
-                            <div class="control">
-                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </div>
                 </div>
                 <div class="column">
                     <div class="section belongings">
@@ -195,8 +173,6 @@
                         <div class="row item">
                             <div class="column-x4 bold">{{localize 'sta.actor.belonging.collectable.coin'}}</div>
                             <div class="column-x4 small"><input name="data.coins" type="text" value="{{data.coins}}" placeholder="0"/></div>
-                            <div class="column-x4 bold">{{localize 'sta.actor.belonging.collectable.rune'}}</div>
-                            <div class="column-x4 small"><input name="data.runes" type="text" value="{{data.runes}}" placeholder="0"/></div>
                         </div>
                         <div class="row item">
                             <div class="image"></div>

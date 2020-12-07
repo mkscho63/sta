@@ -15,7 +15,7 @@ export class STAActor extends Actor {
 export class STASharedActorFunctions {
 
 	// This function renders all the tracks. This will be used every time the character sheet is loaded. It is a vital element as such it runs before most other code!
-	staRenderTracks(html, stressTrackMax, voidPointsMax, expPointsMax, momentumMax) {
+	staRenderTracks(html, stressTrackMax, determinationPointsMax, expPointsMax) {
 		var i;
 		// Checks if details for the Stress Track was included, this should happen in all cases!
 		if (stressTrackMax) {
@@ -31,17 +31,17 @@ export class STASharedActorFunctions {
 				}
 			}
 		}
-		// Checks if details for the Void Track was included, this should happen for all Characters!
-		if (voidPointsMax) {
-			for (i = 0; i < voidPointsMax; i++) {
-				if (i + 1 <= html.find('#total-void')[0].value) {
-					html.find('[id^="void"]')[i].setAttribute("data-selected", "true");
-					html.find('[id^="void"]')[i].style.backgroundColor = "#191813";
-					html.find('[id^="void"]')[i].style.color = "#ffffff";
+		// Checks if details for the Determination Track was included, this should happen for all Characters!
+		if (determinationPointsMax) {
+			for (i = 0; i < determinationPointsMax; i++) {
+				if (i + 1 <= html.find('#total-determination')[0].value) {
+					html.find('[id^="determination"]')[i].setAttribute("data-selected", "true");
+					html.find('[id^="determination"]')[i].style.backgroundColor = "#191813";
+					html.find('[id^="determination"]')[i].style.color = "#ffffff";
 				} else {
-					html.find('[id^="void"]')[i].removeAttribute("data-selected");
-					html.find('[id^="void"]')[i].style.backgroundColor = "rgb(255, 255, 255, 0.3)";
-					html.find('[id^="void"]')[i].style.color = "";
+					html.find('[id^="determination"]')[i].removeAttribute("data-selected");
+					html.find('[id^="determination"]')[i].style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+					html.find('[id^="determination"]')[i].style.color = "";
 				}
 			}
 		}
@@ -56,20 +56,6 @@ export class STASharedActorFunctions {
 					html.find('[id^="exp"]')[i].removeAttribute("data-selected");
 					html.find('[id^="exp"]')[i].style.backgroundColor = "rgb(255, 255, 255, 0.3)";
 					html.find('[id^="exp"]')[i].style.color = "";
-				}
-			}
-		}
-		// Checks if details for the Momentum Track was included, this should happen for all Characters!
-		if(momentumMax) {
-			for (i = 0; i < 6; i++) {
-				if (i + 1 <= html.find('#total-mom')[0].value) {
-					html.find('[id^="mom"]')[i].setAttribute("data-selected", "true");
-					html.find('[id^="mom"]')[i].style.backgroundColor = "#191813";
-					html.find('[id^="mom"]')[i].style.color = "#ffffff";
-				} else {
-					html.find('[id^="mom"]')[i].removeAttribute("data-selected");
-					html.find('[id^="mom"]')[i].style.backgroundColor = "rgb(255, 255, 255, 0.3)";
-					html.find('[id^="mom"]')[i].style.color = "";
 				}
 			}
 		}
@@ -116,9 +102,6 @@ export class STASharedActorFunctions {
                 break;
             case "contact":
                 staRoll.performContactRoll(item, speaker);
-                break;
-            case "power":
-                staRoll.performPowerRoll(item, speaker);
                 break;
         }
     }

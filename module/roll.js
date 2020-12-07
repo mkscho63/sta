@@ -222,22 +222,6 @@ export class STARoll {
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
     }
 
-    async performPowerRoll(item, speaker) {
-        // Create variable div and populate it with localisation to use in the HTML.
-        if (item.data.data.manacost > 0) {
-            var localisedContent = game.i18n.format("sta.roll.power.mana");
-            var variablePrompt = "<div class='dice-formula'> "+localisedContent.replace('|#|', item.data.data.manacost)+"</div>";
-        }
-        else {
-            var variablePrompt = '';
-        }
-        var runeValue = game.i18n.format("sta.roll.power.rune");
-        // Create dynamic tags div and populate it with localisation to use in the HTML.
-        var tags = `<div class = 'tag'>`+runeValue.replace('|#|', item.data.data.runecost)+`</div>`;
-        // Send the divs to populate a HTML template and sends to chat.
-        this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variablePrompt, tags).then(html=>this.sendToChat(speaker, html));
-    }
-
     async genericItemTemplate(img, name, description, variable, tags) {
         // Checks if the following are empty/undefined. If so sets to blank.
         let descField = description ? description : '';

@@ -158,14 +158,6 @@
 
 
 
-/* Actor - Main Section - Specific - Trackers */
-
-.sta.sheet.actor .main .row .column .section .track .bar .voidchange {
-    width: 5%;
-}
-
-
-
 /* Actor - Main Section - Specific - Attributes/Disciplines */
 
 .sta.sheet.actor .main .row .column .section .stat.row .field {

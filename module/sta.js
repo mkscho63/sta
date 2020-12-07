@@ -29,9 +29,6 @@ import {
 import {
     STAContactSheet
 } from "./items/contact-sheet.js";
-import {
-    STAPowerSheet
-} from "./items/power-sheet.js";
 import { 
     STATracker 
 } from "./apps/tracker.js";
@@ -85,7 +82,6 @@ Hooks.once("init", function() {
             STAArmorSheet,
             STATalentSheet,
             STAContactSheet,
-            STAPowerSheet,
         },
         entities: {
             STAActor,
@@ -134,9 +130,6 @@ Hooks.once("init", function() {
     });
     Items.registerSheet("sta", STAContactSheet, {
         types: ["contact"],
-    });
-    Items.registerSheet("sta", STAPowerSheet, {
-        types: ["power"],
     });
 
     // Register system settings

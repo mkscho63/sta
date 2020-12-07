@@ -104,15 +104,6 @@
                     <input name="data.upbringing" type="text" value="{{data.upbringing}}" />
                 </div>
             </div>
-            <!-- <div class="section momentum">
-                <div class="title bold">
-                    {{localize 'sta.actor.character.momentum'}}
-                </div>
-                <div class="track">
-                    <input type="hidden" id="total-mom" name="data.momentum.value" value="{{data.momentum.value}}" data-dtype="Number" />
-                    <div id="bar-mom-renderer" class=" bar"></div>
-                </div>
-            </div> -->
         </div>
         <div class="separator"></div>
         <div class="main">
@@ -155,17 +146,14 @@
                         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
                     </div>
                     <div class="separator"></div>
-                    <div class="section void">
+                    <div class="section determination">
                         <div class="title bold">
                             {{localize 'sta.actor.character.determination'}}
                         </div>
                         <div class="track">
-                            <input type="hidden" id="total-void" name="data.void.value" value="{{data.void.value}}" data-dtype="Number" />
-                            <input type="hidden" id="max-void" name="data.void.max" value="{{data.void.max}}" data-dtype="Number" />
+                            <input type="hidden" id="total-determination" name="data.determination.value" value="{{data.determination.value}}" data-dtype="Number" />
                             <div class="bar">
-                                <div class="voidchange box" id="decrease-void-max"><i class="fas fa-minus"></i></div>
-                                <div id="bar-void-renderer" class="bar"></div>
-                                <div class="voidchange box" id="increase-void-max"><i class="fas fa-plus"></i></div>
+                                <div id="bar-determination-renderer" class="bar"></div>
                             </div>
                             
                         </div>
@@ -234,7 +222,7 @@
                         {{#if (eq item.type "talent")}}
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x1">{{item.name}}</h4>
+                            <h4 class="column-x1" data-talent-name="{{item.name}}">{{item.name}}</h4>
                             <div class="control">
                                 <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -283,33 +271,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="section powers">
-                        <div class="title">
-                            {{localize 'sta.actor.power.title'}}
-                        </div>
-                        <div class="row item">
-                            <div class="image"></div>
-                            <div class="column-x1 bold">{{localize 'sta.actor.genericitem.name'}}</div>
-                            <a class="control create" title="Create item" data-type="power"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "power")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x1">{{item.name}}</h4>
-                            <div class="control">
-                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                        <div class="row item">
-                            <div class="small"><input name="data.mana.value" type="text" value="{{data.mana.value}}" placeholder="0"/></div>
-                            <div class="advisory">/</div>
-                            <div class="small disabled"><input id="max-mana" name="data.mana.max" type="text" value="{{data.mana.max}}" readonly/></div>
-                        </div>
-                    </div>
+                    <!-- something goes here -->
                 </div>
                 <div class="column">
                     <div class="section belongings">
@@ -319,8 +281,6 @@
                         <div class="row item">
                             <div class="column-x4 bold">{{localize 'sta.actor.belonging.collectable.coin'}}</div>
                             <div class="column-x4 small"><input name="data.coins" type="text" value="{{data.coins}}" placeholder="0"/></div>
-                            <div class="column-x4 bold">{{localize 'sta.actor.belonging.collectable.rune'}}</div>
-                            <div class="column-x4 small"><input name="data.runes" type="text" value="{{data.runes}}" placeholder="0"/></div>
                         </div>
                         <div class="row item">
                             <div class="image"></div>

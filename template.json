@@ -79,23 +79,14 @@
         "character": {
             "experience": 0,
             "templates": ["common"],
-            "mana": {
-                "value": 0,
-                "max": 6
-            },
             "upbringing": "",
             "species": "",
             "assignment": "",
-            "void": {
+            "determination": {
                 "value": 3,
                 "max": 3
             },
-            "momentum": {
-                "value": 0,
-                "max": 6
-            },
             "coins": 0,
-            "runes": 0,
             "bonecharmequipped": 0
         },
         "npc": {
@@ -103,7 +94,7 @@
         }
     },
     "Item": {
-        "types": ["item", "focus", "bonecharm", "weapon", "armor", "talent", "contact", "power"],
+        "types": ["item", "focus", "bonecharm", "weapon", "armor", "talent", "contact"],
         "templates": {
             "common": {
                 "description": ""
@@ -176,11 +167,6 @@
                     "dtype": "String"
                 }
             }
-        },
-        "power": {
-            "templates": ["common"],
-            "manacost": 0,
-            "runecost": 0
         }
     }
 }
