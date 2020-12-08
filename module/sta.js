@@ -15,9 +15,6 @@ import {
     STAFocusSheet
 } from "./items/focus-sheet.js";
 import {
-    STABonecharmSheet
-} from "./items/bonecharm-sheet.js";
-import {
     STAWeaponSheet
 } from "./items/weapon-sheet.js";
 import {
@@ -26,9 +23,6 @@ import {
 import {
     STATalentSheet
 } from "./items/talent-sheet.js";
-import {
-    STAContactSheet
-} from "./items/contact-sheet.js";
 import { 
     STATracker 
 } from "./apps/tracker.js";
@@ -77,11 +71,9 @@ Hooks.once("init", function() {
             STANPCSheet,
             STAItemSheet,
             STAFocusSheet,
-            STABonecharmSheet,
             STAWeaponSheet,
             STAArmorSheet,
             STATalentSheet,
-            STAContactSheet,
         },
         entities: {
             STAActor,
@@ -116,9 +108,6 @@ Hooks.once("init", function() {
     Items.registerSheet("sta", STAFocusSheet, {
         types: ["focus"],
     });
-    Items.registerSheet("sta", STABonecharmSheet, {
-        types: ["bonecharm"],
-    });
     Items.registerSheet("sta", STAWeaponSheet, {
         types: ["weapon"],
     });
@@ -127,9 +116,6 @@ Hooks.once("init", function() {
     });
     Items.registerSheet("sta", STATalentSheet, {
         types: ["talent"],
-    });
-    Items.registerSheet("sta", STAContactSheet, {
-        types: ["contact"],
     });
 
     // Register system settings
@@ -140,22 +126,6 @@ Hooks.once("init", function() {
         type: Boolean,
         default: true,
         config: true
-    });
-
-    game.settings.register("FVTT-StarTrekAdventures", "send2ActorPermissionLevel", {
-        name: 'Send2Actor User Role:',
-        hint: 'The contact item type has the ability to create an NPC, who should be allowed to see & use this functionality?',
-        scope: "world",
-        type: String,
-        default: "ASSISTANT",
-        config: true,
-        choices: {
-          "NONE": "Switch Off Send2Actor",
-          "PLAYER": "Players",
-          "TRUSTED": "Trusted Players",
-          "ASSISTANT": "Assistant Gamemaster",
-          "GAMEMASTER": "Gamemasters",
-        }
     });
 
     game.settings.register("FVTT-StarTrekAdventures", "chaosPermissionLevel", {

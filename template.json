@@ -86,15 +86,14 @@
                 "value": 3,
                 "max": 3
             },
-            "coins": 0,
-            "bonecharmequipped": 0
+            "coins": 0
         },
         "npc": {
             "templates": ["common"]
         }
     },
     "Item": {
-        "types": ["item", "focus", "bonecharm", "weapon", "armor", "talent", "contact"],
+        "types": ["item", "focus", "weapon", "armor", "talent"],
         "templates": {
             "common": {
                 "description": ""
@@ -108,10 +107,6 @@
         "focus": {
             "templates": ["common"],
             "rating": 2
-        },
-        "bonecharm": {
-            "templates": ["common"],
-            "equipped": true
         },
         "weapon": {
             "templates": ["common"],
@@ -141,32 +136,6 @@
         "talent": {
             "templates": ["common"],
             "type": ""
-        },
-        "contact": {
-            "templates": ["common"],
-            "relationship": "neutral",
-            "relationships": {
-                "great": {
-                    "label": "sta.contact.relation.great",
-                    "dtype": "String"
-                },
-                "fair": {
-                    "label": "sta.contact.relation.fair",
-                    "dtype": "String"
-                },
-                "neutral": {
-                    "label": "sta.contact.relation.neutral",
-                    "dtype": "String"
-                },
-                "poor": {
-                    "label": "sta.contact.relation.poor",
-                    "dtype": "String"
-                },
-                "dire": {
-                    "label": "sta.contact.relation.dire",
-                    "dtype": "String"
-                }
-            }
         }
     }
 }

@@ -87,10 +87,9 @@ export class STACharacterSheet extends ActorSheet {
         // We use i alot in for loops. Best to assign it now for use later in multiple places.
         var i;
 
-        // Here we are checking how many bonecharms, helmets and armors are equipped. 
-        // The player can only have three bonecharms, and one of each armor type. As such, we will use this later.
+        // Here we are checking how many helmets and armors are equipped. 
+        // The player can only have one of each armor type. As such, we will use this later.
         var armorNumber = 0;
-        var bonecharmNumber = 0;
         var helmetNumber = 0;
         var stressTrackMax = 0;
         function armorCount(currentActor) {
@@ -103,20 +102,7 @@ export class STACharacterSheet extends ActorSheet {
                 }
             });
         }
-        function bonecharmCount(currentActor) {
-            bonecharmNumber = 0;
-            currentActor.actor.items.forEach((values) => {
-                if (values.type == "bonecharm" && values.data.data.equipped == true) bonecharmNumber+= 1;
-            });
-            html.find('[name ="data.bonecharmequipped"]')[0].value = bonecharmNumber;
-        }
         armorCount(this);
-        bonecharmCount(this);
-        // For ease of access we may as well turn the tooltip for bonecharm counts red.
-        if(bonecharmNumber > 3) {
-            html.find('.bonecharmCount')[0].style.backgroundColor = "#fd0000";
-            html.find('.bonecharmCount')[0].style.color = "#ffffff";
-        }
 
         // This creates a dynamic Determination Point tracker. It sets max determination to 3 (it is dynamic in Dishonored) and
         // creates a new div for each and places it under a child called "bar-determination-renderer"
@@ -222,16 +208,10 @@ export class STACharacterSheet extends ActorSheet {
                 this.actor.items.get(itemId).data.data.equipped = false;
                 $(ev.currentTarget).children()[0].classList.remove("fa-toggle-on");
                 $(ev.currentTarget).children()[0].classList.add("fa-toggle-off");
-                if (itemType == "bonecharm") bonecharmCount(this);
-                else {
-                    $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "false")
-                    armorCount(this);
-                    stressTrackUpdate();
-                    staActor.staRenderTracks(html, stressTrackMax);
-                }
-            }
-            else if (itemType == "bonecharm" && bonecharmNumber >= 3) {
-                ui.notifications.error("The current actor has 3 equipped bonecharms already! Doing Nothing.");
+                $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "false")
+                armorCount(this);
+                stressTrackUpdate();
+                staActor.staRenderTracks(html, stressTrackMax);
             }
             else if (itemType == "armor" && isHelmet == 'false' && armorNumber >= 1) {
                 ui.notifications.error("The current actor has an equipped armor already! Doing Nothing.");
@@ -243,13 +223,10 @@ export class STACharacterSheet extends ActorSheet {
                 this.actor.items.get(itemId).data.data.equipped = true;
                 $(ev.currentTarget).children()[0].classList.remove("fa-toggle-off");
                 $(ev.currentTarget).children()[0].classList.add("fa-toggle-on");
-                if (itemType == "bonecharm") bonecharmCount(this);
-                else {
-                    $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "true")
-                    armorCount(this);
-                    stressTrackUpdate();
-                    staActor.staRenderTracks(html, stressTrackMax);
-                }
+                $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "true")
+                armorCount(this);
+                stressTrackUpdate();
+                staActor.staRenderTracks(html, stressTrackMax);
             }
         });
 
@@ -267,11 +244,7 @@ export class STACharacterSheet extends ActorSheet {
             const type = header.dataset.type;
             const data = duplicate(header.dataset);
             const name = `New ${type.capitalize()}`;
-            if (type == "bonecharm" && bonecharmNumber >= 3) {
-                ui.notifications.info("The current actor has 3 equipped bonecharms already. Adding unequipped.");
-                data.equipped = false;
-            }
-            if (type == "armor" && bonecharmNumber >= 1) {
+            if (type == "armor" && armorNumber >= 1) {
                 ui.notifications.info("The current actor has an equipped armor already. Adding unequipped.");
                 data.equipped = false;
             }

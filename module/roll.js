@@ -158,11 +158,6 @@ export class STARoll {
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
     }
 
-    async performBonecharmRoll(item, speaker) {
-        // Populate a HTML template and sends to chat.
-        this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description).then(html=>this.sendToChat(speaker, html));
-    }
-
     async performWeaponRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
         var variablePrompt = game.i18n.format("sta.roll.weapon.damage");
@@ -210,14 +205,6 @@ export class STARoll {
         // Create variable div and populate it with localisation to use in the HTML.
         var variablePrompt = game.i18n.format("sta.roll.talent.type");
         var variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.type)+`</div>`;
-        // Send the divs to populate a HTML template and sends to chat.
-        this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
-    }
-
-    async performContactRoll(item, speaker) {
-        // Create variable div and populate it with localisation to use in the HTML.
-        var variablePrompt = game.i18n.format("sta.roll.contact.relation");
-        var variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.relationship)+`</div>`;
         // Send the divs to populate a HTML template and sends to chat.
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
     }

@@ -277,17 +277,6 @@
 }
 
 
-
-/* Actor - Main Section - Specific - Bonecharm Specific */
-
-.sta.sheet.actor .main .row .column .section.belongings .row .bonecharm input {
-    padding: 0;
-    min-width: 0;
-    width: 10px
-}
-
-
-
 /* Item - Globals */
 
 .sta.sheet.item .header-fields {
@@ -332,22 +321,6 @@
 .sta.sheet.item .description .editor {
     height: 100%;
 }
-
-
-
-/* Item - Contact Specific */
-
-.sta.sheet.item.contact .header-fields .row .send2actor {
-    width: 100%;
-    height: 20px;
-    line-height: 20px;
-    font-size: 14pt;
-}
-
-.sta.sheet.item.contact .description {
-    height: calc(100% - 70px);
-}
-
 
 
 /* Item - Weapon Specific */

@@ -183,30 +183,6 @@
             </div>
             <div class="row">
                 <div class="column">
-                    <div class="section contacts">
-                        <div class="title">
-                            {{localize 'sta.actor.contact.title'}}
-                        </div>
-                        <div class="row item">
-                            <div class="image"></div>
-                            <div class="column-x2 bold">{{localize 'sta.actor.genericitem.name'}}</div>
-                            <div class="column-x2 bold">{{localize 'sta.actor.contact.relation'}}</div>
-                            <a class="control create" title="Create item" data-type="contact"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item id|}}
-                        {{#if (eq item.type "contact")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x2">{{item.name}}</h4>
-                            <h4 class="column-x2">{{item.data.relationship}}</h4>
-                            <div class="control">
-                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </div>
                 </div>
                 <div class="column">
                     <div class="section talents">
@@ -313,26 +289,6 @@
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="column-x2-big">{{item.name}}</h4>
                             <h4 id="protectval-armor-{{item._id}}" class="column-x2-small">{{item.data.protection}}</h4>
-                            <div class="control">
-                                <a class="control toggle"><i class="fas fa-toggle-{{#if (eq item.data.equipped true)}}on{{else}}off{{/if}}"></i></a>
-                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                        <div class="row item equipable">
-                            <div class="image bonecharmCount">
-                                <span class="small bonecharm disabled"><input name="data.bonecharmequipped" type="text" value="{{data.bonecharmequipped}}" readonly/></span>/3
-                            </div>
-                            <div class="column-x1">{{localize 'sta.actor.belonging.bonecharm.title'}}</div>
-                            <a class="control create" title="Create item" data-type="bonecharm"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "bonecharm")}}
-                        <li class="row entry bonecharm equipable" data-item-id="{{item._id}}" data-item-type="{{item.type}}" >
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x1">{{item.name}}</h4>
                             <div class="control">
                                 <a class="control toggle"><i class="fas fa-toggle-{{#if (eq item.data.equipped true)}}on{{else}}off{{/if}}"></i></a>
                                 <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>

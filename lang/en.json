@@ -37,8 +37,6 @@
     "sta.actor.discipline.security": "Security",
     "sta.actor.genericitem.name": "Name",
     "sta.actor.genericitem.cost": "Value",
-    "sta.actor.contact.title": "Contacts",
-    "sta.actor.contact.relation": "Relation",
     "sta.actor.talent.title": "Talents",
     "sta.actor.talent.type": "Type",
     "sta.actor.focus.title": "Focuses",
@@ -65,19 +63,12 @@
     "sta.actor.belonging.armor.title": "Armor",
     "sta.actor.belonging.armor.protect": "Protect",
     "sta.actor.belonging.armor.protection": "Protection",
-    "sta.actor.belonging.bonecharm.title": "Bonecharms",
     "sta.actor.belonging.other.title": "Other Items",
     "sta.actor.belonging.other.qty": "Qty",
     "sta.actor.belonging.other.quantity": "Quantity",
-    "sta.contact.relation.great": "Great",
-    "sta.contact.relation.fair": "Fair",
-    "sta.contact.relation.neutral": "Neutral",
-    "sta.contact.relation.poor": "Poor",
-    "sta.contact.relation.dire": "Dire",
-
+    
     "sta.item.armor.helmet": "Is Helmet?",
-    "sta.item.contact.send2actor": "Send to Actor",
-
+    
     "sta.apps.dicepoolwindow": "Dice Pool",
     "sta.apps.focus": "Focus Rating",
     "sta.apps.pool": "Number of Dice in Pool",
@@ -89,7 +80,6 @@
     "sta.roll.complication": "There was a complication!",
     "sta.roll.complicationPlural": "There were |#| complications!",
 
-    "sta.roll.contact.relation": "<b>|#|</b> Relationship with Contact",
     "sta.roll.focus.rating": "Focus with Rating of <b>|#|</b>",
     "sta.roll.weapon.damage": "<b>|#|</b> Damage",
     "sta.roll.armor.protect": "<b>|#|</b> Protection",

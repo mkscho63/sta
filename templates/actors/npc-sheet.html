@@ -213,24 +213,6 @@
                         {{/if}}
                         {{/each}}
                         <div class="row item">
-                            <div class="image">
-                            </div>
-                            <div class="column-x1 advisory">{{localize 'sta.actor.belonging.bonecharm.title'}}</div>
-                            <a class="control create" title="Create item" data-type="bonecharm"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "bonecharm")}}
-                        <li class="row entry bonecharm" data-item-id="{{item._id}}" data-item-type="{{item.type}}" >
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x1">{{item.name}}</h4>
-                            <div class="control">
-                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                        <div class="row item">
                             <div class="image"></div>
                             <div class="column-x2-big advisory">{{localize 'sta.actor.belonging.other.title'}}</div>
                             <div class="column-x2-small advisory">{{localize 'sta.actor.belonging.other.qty'}}</div>

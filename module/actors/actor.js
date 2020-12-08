@@ -88,9 +88,6 @@ export class STASharedActorFunctions {
             case "focus":
                 staRoll.performFocusRoll(item, speaker);
                 break;
-            case "bonecharm":
-                staRoll.performBonecharmRoll(item, speaker);
-                break;
             case "weapon":
                 staRoll.performWeaponRoll(item, speaker);
                 break;
@@ -99,9 +96,6 @@ export class STASharedActorFunctions {
                 break;
             case "talent":
                 staRoll.performTalentRoll(item, speaker);
-                break;
-            case "contact":
-                staRoll.performContactRoll(item, speaker);
                 break;
         }
     }
