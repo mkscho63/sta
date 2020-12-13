@@ -6,6 +6,9 @@ import {
     STACharacterSheet
 } from "./actors/sheets/character-sheet.js";
 import {
+    STACharacterSheetV2
+} from "./actors/sheets/character-sheet-v2.js";
+import {
     STANPCSheet
 } from "./actors/sheets/npc-sheet.js";
 import {
@@ -68,6 +71,7 @@ Hooks.once("init", function() {
     game.sta = {
         applications: {
             STACharacterSheet,
+            STACharacterSheetV2,
             STANPCSheet,
             STAItemSheet,
             STAFocusSheet,
@@ -96,6 +100,9 @@ Hooks.once("init", function() {
     Actors.registerSheet("sta", STACharacterSheet, {
         types: ["character"],
         makeDefault: true
+    });
+    Actors.registerSheet("sta", STACharacterSheetV2, {
+        types: ["characterv2"]
     });
     Actors.registerSheet("sta", STANPCSheet, {
         types: ["npc"]
@@ -175,16 +182,7 @@ Hooks.once("init", function() {
         default: 5,
         config: true
     });
-
-    // game.settings.register("FVTT-StarTrekAdventures", "individualMomentum", {
-    //     name: 'Indvidual Momentum:',
-    //     hint: 'Should the system use individual momentum instead of global momentum. This is homebrew and not recommended.',
-    //     scope: "world",
-    //     type: Boolean,
-    //     default: false,
-    //     config: true
-    // });
-
+    
     game.settings.register("FVTT-StarTrekAdventures", "chaos", {
         scope: "world",
         type: Number,
