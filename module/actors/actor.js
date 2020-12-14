@@ -15,7 +15,7 @@ export class STAActor extends Actor {
 export class STASharedActorFunctions {
 
 	// This function renders all the tracks. This will be used every time the character sheet is loaded. It is a vital element as such it runs before most other code!
-	staRenderTracks(html, stressTrackMax, determinationPointsMax, expPointsMax) {
+	staRenderTracks(html, stressTrackMax, determinationPointsMax, repPointsMax) {
 		var i;
 		// Checks if details for the Stress Track was included, this should happen in all cases!
 		if (stressTrackMax) {
@@ -45,17 +45,17 @@ export class STASharedActorFunctions {
 				}
 			}
 		}
-		// Checks if details for the Experience Track was included, this should happen for all Characters!
-		if (expPointsMax) {
-			for (i = 0; i < expPointsMax; i++) {
-				if (i + 1 <= html.find('#total-exp')[0].value) {
-					html.find('[id^="exp"]')[i].setAttribute("data-selected", "true");
-					html.find('[id^="exp"]')[i].style.backgroundColor = "#191813";
-					html.find('[id^="exp"]')[i].style.color = "#ffffff";
+		// Checks if details for the Reputation Track was included, this should happen for all Characters!
+		if (repPointsMax) {
+			for (i = 0; i < repPointsMax; i++) {
+				if (i + 1 <= html.find('#total-rep')[0].value) {
+					html.find('[id^="rep"]')[i].setAttribute("data-selected", "true");
+					html.find('[id^="rep"]')[i].style.backgroundColor = "#191813";
+					html.find('[id^="rep"]')[i].style.color = "#ffffff";
 				} else {
-					html.find('[id^="exp"]')[i].removeAttribute("data-selected");
-					html.find('[id^="exp"]')[i].style.backgroundColor = "rgb(255, 255, 255, 0.3)";
-					html.find('[id^="exp"]')[i].style.color = "";
+					html.find('[id^="rep"]')[i].removeAttribute("data-selected");
+					html.find('[id^="rep"]')[i].style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+					html.find('[id^="rep"]')[i].style.color = "";
 				}
 			}
 		}

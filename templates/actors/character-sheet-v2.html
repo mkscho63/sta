@@ -1,26 +1,66 @@
 <form class="{{cssClass}}" autocomplete="off">
   <div class="container">
     <header id="main_header">
-        <div class="header_inner">
-            <hgroup>
-                <h1>LCARS UI</h1>
-                <h2>test <span>|</span> sheet <span>|</span> example</h2>
-            </hgroup>
-  
-            <div class="menu-btn_wrapper">
-                <input id="viewport-btn" type="image" style="width: 75px" src="/systems/FVTT-StarTrekAdventures/icons/cog.svg" />
-                <input id="menu-btn" type="image" style="width: 75px" src="/systems/FVTT-StarTrekAdventures/icons/hamburger-menu.svg" />
+      <div class="header_inner">
+        <hgroup>
+          <h1>{{localize 'sta.actor.character.sheet.title'}}</h1>
+          <div class="row">
+            <div class="column bold title" style="width:40%">
+              {{localize 'sta.actor.character.name'}}
             </div>
-  
-            <nav id="main_nav">
-                <ul>
-                    <li><a class="nav-button" href="#"><span>Link 1</span></a></li>
-                    <li><a class="nav-button" href="#"><span>Nav Link II</span></a></li>
-                    <li><a class="nav-button" href="#"><span>Another Link</span></a></li>
-                    <li><a class="nav-button" href="#"><span>Link Four</span></a></li>
-                </ul>
-            </nav>
-        </div> <!-- END header_inner -->
+            <div class="column bold title" style="width:25%">
+              {{localize 'sta.actor.character.species'}}
+            </div>
+            <div class="column bold title" style="width:25%">
+              {{localize 'sta.actor.character.assignment'}}
+            </div>
+            <div class="column bold title" style="width:10%">
+              {{localize 'sta.actor.character.rank'}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="column" style="width:40%">
+              <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+            </div>
+            <div class="column" style="width:25%">
+              <input name="data.species" type="text" value="{{data.species}}" placeholder="Species" />
+            </div>
+            <div class="column" style="width:25%">
+              <input name="data.assignment" type="text" value="{{data.assignment}}" placeholder="Assignment" />
+            </div>
+            <div class="column" style="width:10%">
+              <input name="data.rank" type="text" value="{{data.rank}}" placeholder="Rank" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="column bold title" style="width:50%">
+              <div> {{localize 'sta.actor.character.environment'}} </div>
+            </div>
+            <div class="column bold title" style="width:50%">
+              <div> {{localize 'sta.actor.character.upbringing'}} </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column" style="width:50%">
+              <input name="data.environment" type="text" value="{{data.environment}}" placeholder="Environment" />
+            </div>
+            <div class="column" style="width:50%">
+              <input name="data.upbringing" type="text" value="{{data.upbringing}}" placeholder="Upbringing" />
+            </div>
+          </div>
+        </hgroup>
+        <div class="menu-btn_wrapper">
+          <input id="menu-btn" type="image" style="width: 75px" src="/systems/FVTT-StarTrekAdventures/icons/hamburger-menu.svg" />
+        </div>
+        <nav id="main_nav">
+          <ul>
+            <li><a class="nav-button" href="#"><span>Link 1</span></a></li>
+            <li><a class="nav-button" href="#"><span>Nav Link II</span></a></li>
+            <li><a class="nav-button" href="#"><span>Another Link</span></a></li>
+            <li><a class="nav-button" href="#"><span>Link Four</span></a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <div class="content_wrapper">
@@ -28,47 +68,14 @@
           <input type="text" class="tab-button" value="Main" readonly />
           <input type="text" class="tab-button" value="Milestones" readonly />
         </div>
-          <div class="content_container">
-          <article>
-            <header>
-              <h2>An Article Heading 2</h2>
-            </header>
-            
-            <div class="article_content">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptate delectus ipsum eveniet illo reiciendis vitae quia quibusdam dignissimos sapiente.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nobis est asperiores? Explicabo debitis suscipit aut ex quia quos rem eaque? Omnis alias ea deserunt necessitatibus at fuga laborum exercitationem.</p>
-            </div>
-            
-            <footer>
-              <p>Lorem ipsum dolor sit amet.</p>
-              <p>Lorem, ipsum dolor.</p>
-              <div class="footer_bar"></div>
-            </footer>
-          </article>
-          <article>
-            <header>
-              <h3>An Article Heading 3</h3>
-            </header>
-          
-            <div class="article_content">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptate delectus ipsum eveniet illo reiciendis vitae quia quibusdam dignissimos sapiente.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nobis est asperiores? Explicabo debitis suscipit aut ex quia quos rem eaque? Omnis alias ea deserunt necessitatibus at fuga laborum exercitationem.</p>
-            </div>
-          
-            <footer>
-              <p>Lorem ipsum dolor sit amet.</p>
-              <div class="footer_bar"></div>
-            </footer>
-          </article>
-          </div> <!--END .content_container -->
-      </div> <!-- END .content_wrapper -->
+        <div class="content_container">
+          TO BE FILLED LATER
+        </div>
+      </div>
     </main>
     <footer id="main_footer">
-        <div class="main_footer_content">
-            <p>It's a work in progress . . . </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, soluta!</p>
-            <p><small>CC-BY-SA Space animation video: <a href="https://audiosoundclips.com/space-animation-video-background/" target="_blank" title="Opens in a new tab">Source</a></small></p>
-        </div>
+      <div class="main_footer_content">
+      </div>
     </footer>
   </div>
 </form>

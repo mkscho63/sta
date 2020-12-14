@@ -5,6 +5,8 @@
             "common": {
                 "rank": "",
                 "notes":"",
+                "milestones": "",
+                "injuries": "",
                 "stress": {
                     "value": 0,
                     "max": 4
@@ -77,7 +79,7 @@
             }
         },
         "character": {
-            "experience": 0,
+            "reputation": 0,
             "templates": ["common"],
             "upbringing": "",
             "species": "",
@@ -96,7 +98,7 @@
         }
     },
     "Item": {
-        "types": ["item", "focus", "weapon", "armor", "talent"],
+        "types": ["item", "focus", "weapon", "armor", "talent", "milestone", "injury"],
         "templates": {
             "common": {
                 "description": ""

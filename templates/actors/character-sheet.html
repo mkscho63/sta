@@ -51,40 +51,40 @@
             </div>
         </div>
         <div class="header-fields">
-            <div class="section experience">
+            <div class="section reputation">
                 <div class="title bold">
-                    {{localize 'sta.actor.character.experience'}}
+                    {{localize 'sta.actor.character.reputation'}}
                 </div>
                 <div class="track">
-                    <input type="hidden" id="total-exp" name="data.experience" value="{{data.experience}}" data-dtype="Number" />
-                    <div id="bar-exp-renderer" class=" bar"></div>
+                    <input type="hidden" id="total-rep" name="data.reputation" value="{{data.reputation}}" data-dtype="Number" />
+                    <div id="bar-rep-renderer" class=" bar"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="column bold title" discipline="width:40%">
+                <div class="column bold title" style="width:40%">
                     {{localize 'sta.actor.character.name'}}
                 </div>
-                <div class="column bold title" discipline="width:25%">
+                <div class="column bold title" style="width:25%">
                     {{localize 'sta.actor.character.species'}}
                 </div>
-                <div class="column bold title" discipline="width:25%">
+                <div class="column bold title" style="width:25%">
                     {{localize 'sta.actor.character.assignment'}}
                 </div>
-                <div class="column bold title" discipline="width:10%">
+                <div class="column bold title" style="width:10%">
                     {{localize 'sta.actor.character.rank'}}
                 </div>
             </div>
             <div class="row">
-                <div class="column" discipline="width:40%">
+                <div class="column" style="width:40%">
                     <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
                 </div>
-                <div class="column" discipline="width:25%">
+                <div class="column" style="width:25%">
                     <input name="data.species" type="text" value="{{data.species}}" />
                 </div>
-                <div class="column" discipline="width:25%">
-                    <input name="data.Assignment" type="text" value="{{data.assignment}}" />
+                <div class="column" style="width:25%">
+                    <input name="data.assignment" type="text" value="{{data.assignment}}" />
                 </div>
-                <div class="column" discipline="width:10%">
+                <div class="column" style="width:10%">
                     <input name="data.rank" type="text" value="{{data.rank}}" placeholder="21" />
                 </div>
             </div>
@@ -183,6 +183,44 @@
             </div>
             <div class="row">
                 <div class="column">
+                    <!-- <div class="section milestones">
+                        <div class="title">
+                            {{localize 'sta.actor.character.milestone'}}
+                        </div>
+                        <div class="row item">
+                            <div class="column-x1 bold">{{localize 'sta.actor.milestone.title'}}</div>
+                            <a class="control create" title="{{localize sta.actor.milestone.add}}" data-type="milestone"><i class="fas fa-plus"></i></a>
+                            <a class="control edit" title="{{localize sta.actor.milestone.edit}}"><i class="fas fa-edit"></i></a>
+                        </div>
+                        <div class="row entry">
+                            {{#if data.milestones.edit}}
+                            {{#each actor.milestones as |milestone id|}}
+                            <li class="milestone editmilestone" data-item-id="{{milestone._id}}">
+                                <div class="item-controls">
+                                    <a class="control delete" title="{{localize 'sta.actor.milestone.delete'}}"><i class="fas fa-trash"></i></a>
+                                </div>
+                                <input type="text" name="milestone.name" data-target="name" value="{{milestone.name}}" />
+                                <textarea name="milestone.data.description" data-target="milestone.data.description">{{milestone.data.description}}</textarea>
+                            </li>
+                            {{/each}}
+                            {{else}}
+                            {{#each actor.milestones as |milestone id|}}
+                            <li class="row entry" data-item-id="{{milestone._id}}">
+                                <label class="resource-label" for="milestone.name">{{milestone.name}}</label>
+                                <div class="milestonedescription">{{{milestone.data.description}}}</div>
+                            </li>
+                            {{/each}}
+                            {{/if}}
+                        </div>
+                    </div> -->
+                    <div class="section milestone">
+                        <div class="title">
+                            {{localize 'sta.actor.milestone.title'}}
+                        </div>
+                        <div class="milestone">
+                            {{editor content=data.milestones target="data.milestones" button=true owner=owner editable=editable}}
+                        </div>
+                    </div>
                 </div>
                 <div class="column">
                     <div class="section talents">
@@ -237,17 +275,24 @@
             </div>
             <div class="row">
                 <div class="column">
-                    <div class="section notes">
+                    <div class="section note">
                         <div class="title">
                             {{localize 'sta.actor.note.title'}}
                         </div>
-                        <div class="notes">
+                        <div class="note">
                             {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
                         </div>
                     </div>
                 </div>
                 <div class="column">
-                    <!-- something goes here -->
+                    <div class="section injury">
+                        <div class="title">
+                            {{localize 'sta.actor.injury.title'}}
+                        </div>
+                        <div class="injury">
+                            {{editor content=data.injuries target="data.injuries" button=true owner=owner editable=editable}}
+                        </div>
+                    </div>
                 </div>
                 <div class="column">
                     <div class="section belongings">

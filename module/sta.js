@@ -165,12 +165,12 @@ Hooks.once("init", function() {
         }
     });
 
-    game.settings.register("FVTT-StarTrekAdventures", "maxNumberOfExperience", {
-        name: 'Maximum amount of Experience:',
-        hint: 'Max number of experience that can be given to a character. 30 is default, anything past 50 becomes almost unreadable.',
+    game.settings.register("FVTT-StarTrekAdventures", "maxNumberOfReputation", {
+        name: 'Maximum amount of Reputation:',
+        hint: 'Max number of reputation that can be given to a character. 10 is default.',
         scope: "world",
         type: Number,
-        default: 30,
+        default: 20,
         config: true
     });
 

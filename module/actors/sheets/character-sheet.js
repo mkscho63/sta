@@ -9,7 +9,7 @@ export class STACharacterSheet extends ActorSheet {
         return mergeObject(super.defaultOptions, {
             classes: ["sta", "sheet", "actor", "character"],
             width: 700,
-            height: 735,
+            height: 890,
             dragDrop: [{
                 dragSelector: ".item-list .item",
                 dropSelector: null
@@ -67,7 +67,7 @@ export class STACharacterSheet extends ActorSheet {
         // Checks if any values are below their theoretical minimum, if so - set it to the very minimum.
         if (data.data.determination.value < 0) data.data.determination.value = 0;
         if (data.data.stress.value < 0) data.data.stress.value = 0;
-        if (data.data.experience < 0) data.data.experience = 0;
+        if (data.data.reputation < 0) data.data.reputation = 0;
         
         return data;
     }
@@ -141,22 +141,22 @@ export class STACharacterSheet extends ActorSheet {
         }
         stressTrackUpdate();
 
-        // This creates a dynamic Experience tracker. For this it uses a max value of 30. This can be configured here. 
-        // It creates a new div for each and places it under a child called "bar-exp-renderer"
-        var expPointsMax = game.settings.get("FVTT-StarTrekAdventures", "maxNumberOfExperience");
+        // This creates a dynamic Reputation tracker. For this it uses a max value of 30. This can be configured here. 
+        // It creates a new div for each and places it under a child called "bar-rep-renderer"
+        var repPointsMax = game.settings.get("FVTT-StarTrekAdventures", "maxNumberOfReputation");
         var i;
-        for (i = 1; i <= expPointsMax; i++) {
+        for (i = 1; i <= repPointsMax; i++) {
             var div = document.createElement("DIV");
             div.className = "box";
-            div.id = "exp-" + i;
+            div.id = "rep-" + i;
             div.innerHTML = i;
-            div.style = "width: calc(100% / " + expPointsMax + ");"
-            html.find('#bar-exp-renderer')[0].appendChild(div);
+            div.style = "width: calc(100% / " + repPointsMax + ");"
+            html.find('#bar-rep-renderer')[0].appendChild(div);
         }
 
         // Fires the function staRenderTracks as soon as the parameters exist to do so.
-        // staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, expPointsMax);
-        staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, expPointsMax);
+        // staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, repPointsMax);
+        staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, repPointsMax);
 
         // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
         html.find('.control.edit').click(ev => {
@@ -264,34 +264,34 @@ export class STACharacterSheet extends ActorSheet {
             li.slideUp(200, () => this.render(false));
         });
 
-        // Reads if a experience track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one. 
+        // Reads if a reputation track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one. 
         // This check is dependent on various requirements, see comments in code.
-        html.find('[id^="exp"]').click(ev => {
+        html.find('[id^="rep"]').click(ev => {
             var newTotalObject = $(ev.currentTarget)[0];
             var newTotal = newTotalObject.id.replace(/\D/g, '');
             // data-selected stores whether the track box is currently activated or not. This checks that the box is activated
             if (newTotalObject.getAttribute("data-selected") === "true") {
                 // Now we check that the "next" track box is not activated. 
                 // If there isn't one, or it isn't activated, we only want to decrease the value by 1 rather than setting the value.
-                var nextCheck = 'exp-' + (parseInt(newTotal) + 1);
+                var nextCheck = 'rep-' + (parseInt(newTotal) + 1);
                 if (!html.find('#'+nextCheck)[0] || html.find('#'+nextCheck)[0].getAttribute("data-selected") != "true") {
-                    html.find('#total-exp')[0].value = html.find('#total-exp')[0].value - 1;
+                    html.find('#total-rep')[0].value = html.find('#total-rep')[0].value - 1;
                     this.submit();
                 } 
                 // If it isn't caught by the if, the next box is likely activated. If something happened, its safer to set the value anyway.
                 else {
-                    var total = html.find('#total-exp')[0].value;
+                    var total = html.find('#total-rep')[0].value;
                     if (total != newTotal) {
-                        html.find('#total-exp')[0].value = newTotal;
+                        html.find('#total-rep')[0].value = newTotal;
                         this.submit();
                     }
                 }
             } 
             // If the clicked box wasn't activated, we need to activate it now.
             else {
-                var total = html.find('#total-exp')[0].value;
+                var total = html.find('#total-rep')[0].value;
                 if (total != newTotal) {
-                    html.find('#total-exp')[0].value = newTotal;
+                    html.find('#total-rep')[0].value = newTotal;
                     this.submit();
                 }
             }
