@@ -183,12 +183,34 @@
             </div>
             <div class="row">
                 <div class="column">
+                    <div class="section talents">
+                        <div class="title">
+                            {{localize 'sta.actor.talent.title'}}
+                        </div>
+                        <div class="row item">
+                            <div class="image"></div>
+                            <div class="one-column-with-roll bold">{{localize 'sta.actor.genericitem.name'}}</div>
+                            <a class="control create" title="Create item" data-type="talent"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item id|}}
+                        {{#if (eq item.type "talent")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="one-column-with-roll" data-talent-name="{{item.name}}">{{item.name}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
                     <!-- <div class="section milestones">
                         <div class="title">
                             {{localize 'sta.actor.character.milestone'}}
                         </div>
                         <div class="row item">
-                            <div class="column-x1 bold">{{localize 'sta.actor.milestone.title'}}</div>
+                            <div class="one-column-with-roll bold">{{localize 'sta.actor.milestone.title'}}</div>
                             <a class="control create" title="{{localize sta.actor.milestone.add}}" data-type="milestone"><i class="fas fa-plus"></i></a>
                             <a class="control edit" title="{{localize sta.actor.milestone.edit}}"><i class="fas fa-edit"></i></a>
                         </div>
@@ -213,30 +235,20 @@
                             {{/if}}
                         </div>
                     </div> -->
-                    <div class="section milestone">
-                        <div class="title">
-                            {{localize 'sta.actor.milestone.title'}}
-                        </div>
-                        <div class="milestone">
-                            {{editor content=data.milestones target="data.milestones" button=true owner=owner editable=editable}}
-                        </div>
-                    </div>
                 </div>
                 <div class="column">
-                    <div class="section talents">
+                    <div class="section values">
                         <div class="title">
-                            {{localize 'sta.actor.talent.title'}}
+                            {{localize 'sta.actor.value.title'}}
                         </div>
                         <div class="row item">
-                            <div class="image"></div>
-                            <div class="column-x1 bold">{{localize 'sta.actor.genericitem.name'}}</div>
-                            <a class="control create" title="Create item" data-type="talent"><i class="fas fa-plus"></i></a>
+                            <div class="one-column-no-roll bold">{{localize 'sta.actor.genericitem.name'}}</div>
+                            <a class="control create" title="Create item" data-type="value"><i class="fas fa-plus"></i></a>
                         </div>
                         {{#each actor.items as |item id|}}
-                        {{#if (eq item.type "talent")}}
+                        {{#if (eq item.type "value")}}
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x1" data-talent-name="{{item.name}}">{{item.name}}</h4>
+                            <h4 class="one-column-no-roll">{{item.name}}</h4>
                             <div class="control">
                                 <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -252,17 +264,13 @@
                             {{localize 'sta.actor.focus.title'}}
                         </div>
                         <div class="row item">
-                            <div class="image"></div>
-                            <div class="column-x2-big bold">{{localize 'sta.actor.genericitem.name'}}</div>
-                            <div class="column-x2-small bold">{{localize 'sta.actor.focus.rating'}}</div>
+                            <div class="one-column-no-roll bold">{{localize 'sta.actor.genericitem.name'}}</div>
                             <a class="control create" title="Create item" data-type="focus"><i class="fas fa-plus"></i></a>
                         </div>
                         {{#each actor.items as |item id|}}
                         {{#if (eq item.type "focus")}}
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x2-big">{{item.name}}</h4>
-                            <h4 class="column-x2-small">{{item.data.rating}}</h4>
+                            <h4 class="one-column-no-roll">{{item.name}}</h4>
                             <div class="control">
                                 <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -300,42 +308,18 @@
                             {{localize 'sta.actor.belonging.title'}}
                         </div>
                         <div class="row item">
-                            <div class="column-x4 bold">{{localize 'sta.actor.belonging.collectable.coin'}}</div>
-                            <div class="column-x4 small"><input name="data.coins" type="text" value="{{data.coins}}" placeholder="0"/></div>
-                        </div>
-                        <div class="row item">
                             <div class="image"></div>
-                            <div class="column-x2-big advisory">{{localize 'sta.actor.belonging.weapon.title'}}</div>
-                            <div class="column-x2-small advisory">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
+                            <div class="two-column-with-roll-primary advisory">{{localize 'sta.actor.belonging.weapon.title'}}</div>
+                            <div class="two-column-with-roll-secondary advisory">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
                             <a class="control create" title="Create item" data-type="weapon"><i class="fas fa-plus"></i></a>
                         </div>
                         {{#each actor.items as |item type id|}}
                         {{#if (eq item.type "weapon")}}
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x2-big">{{item.name}}</h4>
-                            <h4 class="column-x2-small">{{item.data.damage}}</h4>
+                            <h4 class="two-column-with-roll-primary">{{item.name}}</h4>
+                            <h4 class="two-column-with-roll-secondary">{{item.data.damage}}</h4>
                             <div class="control">
-                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                        <div class="row item equipable">
-                            <div class="image"></div>
-                            <div class="column-x2-big advisory">{{localize 'sta.actor.belonging.armor.title'}}</div>
-                            <div class="column-x2-small advisory">{{localize 'sta.actor.belonging.armor.protect'}}</div>
-                            <a class="control create" title="Create item" data-type="armor"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "armor")}}
-                        <li id="armor-{{item._id}}" class="row entry equipable" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-helmet="{{item.data.helmet}}" data-item-equipped="{{item.data.equipped}}">
-                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x2-big">{{item.name}}</h4>
-                            <h4 id="protectval-armor-{{item._id}}" class="column-x2-small">{{item.data.protection}}</h4>
-                            <div class="control">
-                                <a class="control toggle"><i class="fas fa-toggle-{{#if (eq item.data.equipped true)}}on{{else}}off{{/if}}"></i></a>
                                 <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
                             </div>
@@ -344,16 +328,35 @@
                         {{/each}}
                         <div class="row item">
                             <div class="image"></div>
-                            <div class="column-x2-big advisory">{{localize 'sta.actor.belonging.other.title'}}</div>
-                            <div class="column-x2-small advisory">{{localize 'sta.actor.belonging.other.qty'}}</div>
+                            <div class="two-column-with-roll-primary advisory">{{localize 'sta.actor.belonging.armor.title'}}</div>
+                            <div class="two-column-with-roll-secondary advisory">{{localize 'sta.actor.belonging.armor.protect'}}</div>
+                            <a class="control create" title="Create item" data-type="armor"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each actor.items as |item type id|}}
+                        {{#if (eq item.type "armor")}}
+                        <li id="armor-{{item._id}}" class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-helmet="{{item.data.helmet}}">
+                            <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="two-column-with-roll-primary">{{item.name}}</h4>
+                            <h4 id="protectval-armor-{{item._id}}" class="two-column-with-roll-secondary">{{item.data.protection}}</h4>
+                            <div class="control">
+                                <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                        <div class="row item">
+                            <div class="image"></div>
+                            <div class="two-column-with-roll-primary advisory">{{localize 'sta.actor.belonging.other.title'}}</div>
+                            <div class="two-column-with-roll-secondary advisory">{{localize 'sta.actor.belonging.other.qty'}}</div>
                             <a class="control create" title="Create item" data-type="item"><i class="fas fa-plus"></i></a>
                         </div>
                         {{#each actor.items as |item type id|}}
                         {{#if (eq item.type "item")}}
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="column-x2-big">{{item.name}}</h4>
-                            <h4 class="column-x2-small">{{item.data.quantity}}</h4>
+                            <h4 class="two-column-with-roll-primary">{{item.name}}</h4>
+                            <h4 class="two-column-with-roll-secondary">{{item.data.quantity}}</h4>
                             <div class="control">
                                 <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>

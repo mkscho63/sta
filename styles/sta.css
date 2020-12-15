@@ -225,27 +225,43 @@
 }
 
 .sta.sheet.actor .main .row .column .section .row .control {
-    width: 32px;
+  width: 32px;
 }
 
-.sta.sheet.actor .main .row .column .section .row .column-x1 {
-    width: calc(100% - 58px);
+.sta.sheet.actor .main .row .column .section .row .one-column-with-roll {
+  width: calc(100% - 58px);
+}
+
+.sta.sheet.actor .main .row .column .section .row .one-column-no-roll {
+  width: calc(100% - 32px);
+}
+
+.sta.sheet.actor .main .row .column .section .row .two-column-with-roll-primary {
+  width: calc((100% - 58px)*0.75);
+}
+
+.sta.sheet.actor .main .row .column .section .row .two-column-with-roll-secondary {
+  width: calc((100% - 58px)*0.25);
 }
 
 .sta.sheet.actor .main .row .column .section .row .column-x2 {
-    width: calc((100% - 58px)/2);
+    width: 90%;
+    padding-left: 10%;
 }
 
 .sta.sheet.actor .main .row .column .section .row .column-x2-big {
-    width: calc(3*((100% - 58px)/4));
+    width: 90%;
+    padding-left: 10%;
 }
 
 .sta.sheet.actor .main .row .column .section .row .column-x2-small {
-    width: calc((100% - 58px)/4);
+    width: 90%;
+    padding-left: 10%;
 }
 
 .sta.sheet.actor .main .row .column .section .row .column-x4 {
-    width: calc(100% /4);
+    width: 90%;
+    padding-left: 10%;
 }
 
 .sta.sheet.actor .main .row .column .section .row .small input {
@@ -264,10 +280,6 @@
 
 .sta.sheet.actor .main .row .column .section .row.equipable .control {
     width: 56px;
-}
-
-.sta.sheet.actor .main .row .column .section .row.equipable .column-x1 {
-    width: calc(100% - 80px);
 }
 
 .sta.sheet.actor .main .row .column .section .row.equipable .column-x2 {
@@ -312,7 +324,7 @@
     width: calc(80% - 50px);
 }
 
-.sta.sheet.item .header-fields .row .column-x1 {
+.sta.sheet.item .header-fields .row .one-column-with-roll {
     width: calc(100% - 50px);
 }
 

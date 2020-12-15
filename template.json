@@ -87,8 +87,7 @@
             "determination": {
                 "value": 3,
                 "max": 3
-            },
-            "coins": 0
+            }
         },
         "characterv2": {
             "templates": ["common"]
@@ -98,7 +97,7 @@
         }
     },
     "Item": {
-        "types": ["item", "focus", "weapon", "armor", "talent", "milestone", "injury"],
+        "types": ["item", "focus", "value", "weapon", "armor", "talent", "milestone", "injury"],
         "templates": {
             "common": {
                 "description": ""
@@ -110,8 +109,10 @@
             "quantity": 1
         },
         "focus": {
-            "templates": ["common"],
-            "rating": 2
+            "templates": ["common"]
+        },
+        "value": {
+            "templates": ["common"]
         },
         "weapon": {
             "templates": ["common"],

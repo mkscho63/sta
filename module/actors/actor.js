@@ -88,6 +88,9 @@ export class STASharedActorFunctions {
             case "focus":
                 staRoll.performFocusRoll(item, speaker);
                 break;
+						case "value":
+								staRoll.performValueRoll(item, speaker);
+								break;
             case "weapon":
                 staRoll.performWeaponRoll(item, speaker);
                 break;

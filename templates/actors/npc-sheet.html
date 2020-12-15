@@ -145,7 +145,6 @@
                         <div class="row item">
                             <div class="image"></div>
                             <div class="column-x2-big bold">{{localize 'sta.actor.genericitem.name'}}</div>
-                            <div class="column-x2-small bold">{{localize 'sta.actor.focus.rating'}}</div>
                             <a class="control create" title="Create item" data-type="focus"><i class="fas fa-plus"></i></a>
                         </div>
                         {{#each actor.items as |item id|}}
@@ -153,7 +152,6 @@
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="column-x2-big">{{item.name}}</h4>
-                            <h4 class="column-x2-small">{{item.data.rating}}</h4>
                             <div class="control">
                                 <a class="control edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="control delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -169,10 +167,6 @@
                     <div class="section belongings">
                         <div class="title">
                             {{localize 'sta.actor.belonging.title'}}
-                        </div>
-                        <div class="row item">
-                            <div class="column-x4 bold">{{localize 'sta.actor.belonging.collectable.coin'}}</div>
-                            <div class="column-x4 small"><input name="data.coins" type="text" value="{{data.coins}}" placeholder="0"/></div>
                         </div>
                         <div class="row item">
                             <div class="image"></div>

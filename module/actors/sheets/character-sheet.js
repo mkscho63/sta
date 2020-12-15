@@ -8,8 +8,8 @@ export class STACharacterSheet extends ActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["sta", "sheet", "actor", "character"],
-            width: 700,
-            height: 890,
+            width: 725,
+            height: 765,
             dragDrop: [{
                 dragSelector: ".item-list .item",
                 dropSelector: null
@@ -200,35 +200,35 @@ export class STACharacterSheet extends ActorSheet {
         };
 
         // This toggles whether the item is equipped or not. Equipped items count towards item caps.
-        html.find('.control.toggle').click(ev => {
-            var itemType = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-type");
-            var itemId = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-id");
-            if (itemType == "armor") var isHelmet = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-helmet");
-            if (this.actor.items.get(itemId).data.data.equipped == true) {
-                this.actor.items.get(itemId).data.data.equipped = false;
-                $(ev.currentTarget).children()[0].classList.remove("fa-toggle-on");
-                $(ev.currentTarget).children()[0].classList.add("fa-toggle-off");
-                $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "false")
-                armorCount(this);
-                stressTrackUpdate();
-                staActor.staRenderTracks(html, stressTrackMax);
-            }
-            else if (itemType == "armor" && isHelmet == 'false' && armorNumber >= 1) {
-                ui.notifications.error("The current actor has an equipped armor already! Doing Nothing.");
-            }
-            else if (itemType == "armor" && isHelmet == 'true' && helmetNumber >= 1) {
-                ui.notifications.error("The current actor has an equipped helmet already! Doing Nothing.");
-            }
-            else {
-                this.actor.items.get(itemId).data.data.equipped = true;
-                $(ev.currentTarget).children()[0].classList.remove("fa-toggle-off");
-                $(ev.currentTarget).children()[0].classList.add("fa-toggle-on");
-                $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "true")
-                armorCount(this);
-                stressTrackUpdate();
-                staActor.staRenderTracks(html, stressTrackMax);
-            }
-        });
+        // html.find('.control.toggle').click(ev => {
+        //     var itemType = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-type");
+        //     var itemId = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-id");
+        //     if (itemType == "armor") var isHelmet = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-helmet");
+        //     if (this.actor.items.get(itemId).data.data.equipped == true) {
+        //         this.actor.items.get(itemId).data.data.equipped = false;
+        //         $(ev.currentTarget).children()[0].classList.remove("fa-toggle-on");
+        //         $(ev.currentTarget).children()[0].classList.add("fa-toggle-off");
+        //         $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "false")
+        //         armorCount(this);
+        //         stressTrackUpdate();
+        //         staActor.staRenderTracks(html, stressTrackMax);
+        //     }
+        //     else if (itemType == "armor" && isHelmet == 'false' && armorNumber >= 1) {
+        //         ui.notifications.error("The current actor has an equipped armor already! Doing Nothing.");
+        //     }
+        //     else if (itemType == "armor" && isHelmet == 'true' && helmetNumber >= 1) {
+        //         ui.notifications.error("The current actor has an equipped helmet already! Doing Nothing.");
+        //     }
+        //     else {
+        //         this.actor.items.get(itemId).data.data.equipped = true;
+        //         $(ev.currentTarget).children()[0].classList.remove("fa-toggle-off");
+        //         $(ev.currentTarget).children()[0].classList.add("fa-toggle-on");
+        //         $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-equipped", "true")
+        //         armorCount(this);
+        //         stressTrackUpdate();
+        //         staActor.staRenderTracks(html, stressTrackMax);
+        //     }
+        // });
 
         // This allows for all items to be rolled, it gets the current targets type and id and sends it to the rollGenericItem function.
         html.find('.rollable').click(ev =>{

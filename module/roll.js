@@ -158,6 +158,11 @@ export class STARoll {
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
     }
 
+    async performValueRoll(item, speaker) {
+        // Send the divs to populate a HTML template and sends to chat.
+        this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
+    }
+
     async performWeaponRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
         var variablePrompt = game.i18n.format("sta.roll.weapon.damage");
