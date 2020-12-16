@@ -160,7 +160,12 @@ export class STARoll {
 
     async performValueRoll(item, speaker) {
         // Send the divs to populate a HTML template and sends to chat.
-        this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable).then(html=>this.sendToChat(speaker, html));
+        this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, null).then(html=>this.sendToChat(speaker, html));
+    }
+
+    async performInjuryRoll(item, speaker) {
+        // Send the divs to populate a HTML template and sends to chat.
+        this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, null).then(html=>this.sendToChat(speaker, html));
     }
 
     async performWeaponRoll(item, speaker) {

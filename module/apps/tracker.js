@@ -9,15 +9,15 @@ export class STATracker extends Application {
     }
 
     activateListeners(html) {
-        let chaos = game.settings.get("FVTT-StarTrekAdventures", "chaos");
+        let threat = game.settings.get("FVTT-StarTrekAdventures", "threat");
         let momentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
         renderTracker()
         this.checkUpdates();
 
-        if (!game.user.hasRole(game.settings.get("FVTT-StarTrekAdventures", "chaosPermissionLevel"))) {
-            html.find('#sta-chaos-track-decrease')[0].style.display = 'none';
-            html.find('#sta-chaos-track-increase')[0].style.display = 'none';
-            html.find('#sta-track-chaos')[0].disabled = true;
+        if (!game.user.hasRole(game.settings.get("FVTT-StarTrekAdventures", "threatPermissionLevel"))) {
+            html.find('#sta-threat-track-decrease')[0].style.display = 'none';
+            html.find('#sta-threat-track-increase')[0].style.display = 'none';
+            html.find('#sta-track-threat')[0].disabled = true;
         }
 
         if (!game.user.hasRole(game.settings.get("FVTT-StarTrekAdventures", "momentumPermissionLevel"))) {
@@ -37,25 +37,25 @@ export class STATracker extends Application {
             renderTracker();
         });
 
-        html.find('#sta-chaos-track-decrease').click(ev => {
-            chaos = parseInt(document.getElementById("sta-track-chaos").value);
-            if (chaos === 0) {
-                ui.notifications.warn("You can't set Chaos to a value below 0!");
+        html.find('#sta-threat-track-decrease').click(ev => {
+            threat = parseInt(document.getElementById("sta-track-threat").value);
+            if (threat === 0) {
+                ui.notifications.warn("You can't set Threat to a value below 0!");
                 return false;
             }
-            chaos = chaos - 1;
-            game.settings.set("FVTT-StarTrekAdventures", "chaos", chaos);
+            threat = threat - 1;
+            game.settings.set("FVTT-StarTrekAdventures", "threat", threat);
             renderTracker();
         });
 
-        html.find('#sta-chaos-track-increase').click(ev => {
-            if (chaos === 99999999) {
+        html.find('#sta-threat-track-increase').click(ev => {
+            if (threat === 99999999) {
                 ui.notifications.error("THERE IS TOO MUCH CHAOS!");
                 return false;
             }
-            chaos = parseInt(document.getElementById("sta-track-chaos").value);
-            chaos = chaos + 1;
-            game.settings.set("FVTT-StarTrekAdventures", "chaos", chaos);
+            threat = parseInt(document.getElementById("sta-track-threat").value);
+            threat = threat + 1;
+            game.settings.set("FVTT-StarTrekAdventures", "threat", threat);
             renderTracker();
         });
 
@@ -70,9 +70,9 @@ export class STATracker extends Application {
             renderTracker();
         });
 
-        html.find('#sta-track-chaos').keydown(ev => {
+        html.find('#sta-track-threat').keydown(ev => {
             if (ev.keyCode == 13) {
-                html.find('#sta-track-chaos').blur();
+                html.find('#sta-track-threat').blur();
             }
         })
 
@@ -82,19 +82,19 @@ export class STATracker extends Application {
             }
         })
 
-        html.find('#sta-track-chaos').change(ev => {
-            if (document.getElementById("sta-track-chaos").value < 0) {
-                document.getElementById("sta-track-chaos").value = chaos;
-                ui.notifications.warn("You can't set Chaos to a value below 0!");
+        html.find('#sta-track-threat').change(ev => {
+            if (document.getElementById("sta-track-threat").value < 0) {
+                document.getElementById("sta-track-threat").value = threat;
+                ui.notifications.warn("You can't set Threat to a value below 0!");
                 return false;
             }
-            if (document.getElementById("sta-track-chaos").value > 99999999) {
-                document.getElementById("sta-track-chaos").value = chaos;
+            if (document.getElementById("sta-track-threat").value > 99999999) {
+                document.getElementById("sta-track-threat").value = threat;
                 ui.notifications.error("THAT IS TOO MUCH CHAOS!");
                 return false;
             }
-            chaos = document.getElementById("sta-track-chaos").value;
-            game.settings.set("FVTT-StarTrekAdventures", "chaos", chaos);
+            threat = document.getElementById("sta-track-threat").value;
+            game.settings.set("FVTT-StarTrekAdventures", "threat", threat);
             renderTracker();
         });
 
@@ -115,7 +115,7 @@ export class STATracker extends Application {
         });
 
         function renderTracker() {
-            document.getElementById("sta-track-chaos").value = chaos;
+            document.getElementById("sta-track-threat").value = threat;
             document.getElementById("sta-track-momentum").value = momentum;
         }
 
@@ -124,14 +124,14 @@ export class STATracker extends Application {
     async checkUpdates() {
         let refreshRate = game.settings.get("FVTT-StarTrekAdventures", "trackerRefreshRate") * 1000;
         function check() {
-            let chaos = document.getElementById("sta-track-chaos").value;
+            let threat = document.getElementById("sta-track-threat").value;
             let momentum = document.getElementById("sta-track-momentum").value;
-            let storedChaos = game.settings.get("FVTT-StarTrekAdventures", "chaos");
+            let storedThreat = game.settings.get("FVTT-StarTrekAdventures", "threat");
             let storedMomentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
 
-            if ($("#sta-track-chaos").is(':focus') == false) {
-                if (storedChaos != chaos) {
-                    document.getElementById("sta-track-chaos").value = storedChaos;
+            if ($("#sta-track-threat").is(':focus') == false) {
+                if (storedThreat != threat) {
+                    document.getElementById("sta-track-threat").value = storedThreat;
                 }
             }
             if ($("#sta-track-momentum").is(':focus') == false) {

@@ -14,9 +14,9 @@ import {
 import {
     STAItemSheet
 } from "./items/item-sheet.js";
-import {
-    STAFocusSheet
-} from "./items/focus-sheet.js";
+// import {
+//     STAFocusSheet
+// } from "./items/focus-sheet.js";
 import {
     STAWeaponSheet
 } from "./items/weapon-sheet.js";
@@ -26,6 +26,9 @@ import {
 import {
     STATalentSheet
 } from "./items/talent-sheet.js";
+import {
+    STAGenericSheet
+} from "./items/generic-sheet.js";
 import { 
     STATracker 
 } from "./apps/tracker.js";
@@ -42,29 +45,20 @@ from "./macro.js";
 Hooks.once("init", function() {
     // Splash Screen
     console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
-                                                            @@
-             @                                            @@
-    @         @@                     @      @@         @@@@
-      @@       @@@                 @@@   @@@        @@@@
-        @@@@     @@@@@@@@@@@@@@@@@@@@    @@      @@@@@
-          @@@@    @@@@            @@   @@@     @@@@@
-            @@@@@   @     @@@@@@@@   @@@    @@@@@      @@
-      @@@      @@@@ @@@@@@@       @@@@@  @@@@@@    @@@@
-          @@@@    @@@@              @ @@@@@@   @@@@@
-              @@@@   @              @@@@@@  @@@  @@@
-                        @@@@@@@@@@@@@@@@          @@@
-                      @@@@        @@@@            @@@
-                      @@    @@@@@   @@@  @@@@@     @@
-                            @@@@   @@@   @@@@@     @@
-                        @@@       @@@@            @@@
-            @@@@  @  @@@@@@@@@@@@@@               @@
-            @@ @@  @@@@@                         @@@
-                 @@@@                    @@    @@@
-                @@                         @@@@@@
-              @                              @@@@
-                                                @@@
-                                                   @@@
-                                                      @@`)
+                 .
+                .:.
+               .:::.
+              .:::::.
+          ***.:::::::.***
+     *******.:::::::::.*******       
+   ********.:::::::::::.********     
+  ********.:::::::::::::.********    
+  *******.::::::'***\::::.*******    
+  ******.::::'*********\`::.******    
+   ****.:::'*************\`:.****
+     *.::'*****************\`.*
+     .:'  ***************    .
+    .`)
 
 
     // Create a namespace within the game global
@@ -74,10 +68,11 @@ Hooks.once("init", function() {
             STACharacterSheetV2,
             STANPCSheet,
             STAItemSheet,
-            STAFocusSheet,
+            // STAFocusSheet,
             STAWeaponSheet,
             STAArmorSheet,
             STATalentSheet,
+            STAGenericSheet,
         },
         entities: {
             STAActor,
@@ -112,9 +107,6 @@ Hooks.once("init", function() {
         types: ["item"],
         makeDefault: true
     });
-    Items.registerSheet("sta", STAFocusSheet, {
-        types: ["focus"],
-    });
     Items.registerSheet("sta", STAWeaponSheet, {
         types: ["weapon"],
     });
@@ -124,6 +116,16 @@ Hooks.once("init", function() {
     Items.registerSheet("sta", STATalentSheet, {
         types: ["talent"],
     });
+    Items.registerSheet("sta", STAGenericSheet, {
+        types: ["value"],
+    });
+    Items.registerSheet("sta", STAGenericSheet, {
+        types: ["focus"],
+    });
+    Items.registerSheet("sta", STAGenericSheet, {
+        types: ["injury"],
+    });
+
 
     // Register system settings
     game.settings.register("FVTT-StarTrekAdventures", "multipleComplications", {
@@ -135,9 +137,9 @@ Hooks.once("init", function() {
         config: true
     });
 
-    game.settings.register("FVTT-StarTrekAdventures", "chaosPermissionLevel", {
-        name: 'Chaos Tracker User Role:',
-        hint: 'Who should be allowed to amend the chaos tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
+    game.settings.register("FVTT-StarTrekAdventures", "threatPermissionLevel", {
+        name: 'Threat Tracker User Role:',
+        hint: 'Who should be allowed to amend the threat tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
         scope: "world",
         type: String,
         default: "ASSISTANT",
@@ -175,7 +177,7 @@ Hooks.once("init", function() {
     });
 
     game.settings.register("FVTT-StarTrekAdventures", "trackerRefreshRate", {
-        name: 'Refresh Rate of Chaos & Momentum:',
+        name: 'Refresh Rate of Threat & Momentum:',
         hint: 'In seconds, how often should the tracker refresh. It is inadvisable to set this too low. Up this if it appears to be causing optimisation issues.',
         scope: "world",
         type: Number,
@@ -183,7 +185,7 @@ Hooks.once("init", function() {
         config: true
     });
     
-    game.settings.register("FVTT-StarTrekAdventures", "chaos", {
+    game.settings.register("FVTT-StarTrekAdventures", "threat", {
         scope: "world",
         type: Number,
         default: 0,

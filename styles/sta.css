@@ -234,6 +234,7 @@
 
 .sta.sheet.actor .main .row .column .section .row .one-column-no-roll {
   width: calc(100% - 32px);
+  padding-left: 26px;
 }
 
 .sta.sheet.actor .main .row .column .section .row .two-column-with-roll-primary {
@@ -435,7 +436,7 @@
     border: 1px solid black;
 }
 
-.sta.tracker.chaos {
+.sta.tracker.threat {
     bottom: 0;
     right: 304px;
 }

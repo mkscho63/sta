@@ -99,7 +99,10 @@ export class STASharedActorFunctions {
                 break;
             case "talent":
                 staRoll.performTalentRoll(item, speaker);
-                break;
+								break;
+						case "talent":
+								staRoll.performInjuryRoll(item, speaker);
+								break;
         }
     }
 }

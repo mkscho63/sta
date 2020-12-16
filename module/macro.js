@@ -16,10 +16,6 @@ export function attributeTest(actor, attributeName, disciplineName, focusRating,
         ui.notifications.warn("Please provide an discipline to the macro!");
         fail = true;
     }
-    if (focusRating < 1) {
-        ui.notifications.warn("Focus cannot be less than 1!");
-        fail = true;
-    }
     if (numberOfDice > 5) {
         ui.notifications.warn("You cannot roll more than 5 die!");
         fail = true;

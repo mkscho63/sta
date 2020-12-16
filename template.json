@@ -6,10 +6,8 @@
                 "rank": "",
                 "notes":"",
                 "milestones": "",
-                "injuries": "",
                 "stress": {
-                    "value": 0,
-                    "max": 4
+                    "value": 0
                 },
                 "environment": "",
                 "attributes": {
@@ -142,6 +140,9 @@
         "talent": {
             "templates": ["common"],
             "type": ""
+        },
+        "injury": {
+            "templates": ["common"]
         }
     }
 }
