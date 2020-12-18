@@ -14,9 +14,6 @@ import {
 import {
     STAItemSheet
 } from "./items/item-sheet.js";
-// import {
-//     STAFocusSheet
-// } from "./items/focus-sheet.js";
 import {
     STAWeaponSheet
 } from "./items/weapon-sheet.js";
@@ -35,8 +32,7 @@ import {
 import { 
     STALogo
 } from "./apps/logo.js";
-import * as macros 
-from "./macro.js";
+import * as macros from "./macro.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -68,7 +64,6 @@ Hooks.once("init", function() {
             STACharacterSheetV2,
             STANPCSheet,
             STAItemSheet,
-            // STAFocusSheet,
             STAWeaponSheet,
             STAArmorSheet,
             STATalentSheet,

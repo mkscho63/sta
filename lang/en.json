@@ -6,6 +6,7 @@
     "sta.counting.three": "3",
     "sta.counting.four": "4",
     "sta.counting.five": "5",
+    "sta.counting.six": "6",
     "sta.actor.character.sheet.title": "Starfleet Personnel File",
     "sta.actor.character.momentum": "Momentum Track",
     "sta.actor.character.reputation": "Reputation Track",
@@ -74,13 +75,16 @@
     "sta.item.armor.helmet": "Is Helmet?",
     
     "sta.apps.dicepoolwindow": "Dice Pool",
-    "sta.apps.focus": "Focus Rating",
+    "sta.apps.focus": "Using focus?",
+    "sta.apps.determination": "Using determination?",
+    "sta.apps.complicationrange": "Complication range (1 is default)?",
     "sta.apps.pool": "Number of Dice in Pool",
     "sta.apps.rolldice": "Roll Dice",
 
     "sta.roll.success": " Success",
     "sta.roll.successPlural": " Successes",
     "sta.roll.test": " Attribute Test",
+    "sta.roll.complicationrange": "Complication range is ",
     "sta.roll.complication": "There was a complication!",
     "sta.roll.complicationPlural": "There were |#| complications!",
 

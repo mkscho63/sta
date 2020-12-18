@@ -360,6 +360,13 @@
     height: calc(100% - 128px);
 }
 
+/* Dice Pool */
+
+.dice-pool .flexrow {
+  padding: 4px 5px;
+
+}
+
 
 
 /* Roll - Globals */

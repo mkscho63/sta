@@ -82,7 +82,7 @@
                     <input name="data.species" type="text" value="{{data.species}}" />
                 </div>
                 <div class="column" style="width:10%">
-                    <input name="data.rank" type="text" value="{{data.rank}}" placeholder="21" />
+                    <input name="data.rank" type="text" value="{{data.rank}}" />
                 </div>
                 <div class="column" style="width:25%">
                     <input name="data.assignment" type="text" value="{{data.assignment}}" />
@@ -205,36 +205,6 @@
                         {{/if}}
                         {{/each}}
                     </div>
-                    <!-- <div class="section milestones">
-                        <div class="title">
-                            {{localize 'sta.actor.character.milestone'}}
-                        </div>
-                        <div class="row item">
-                            <div class="one-column-with-roll bold">{{localize 'sta.actor.milestone.title'}}</div>
-                            <a class="control create" title="{{localize sta.actor.milestone.add}}" data-type="milestone"><i class="fas fa-plus"></i></a>
-                            <a class="control edit" title="{{localize sta.actor.milestone.edit}}"><i class="fas fa-edit"></i></a>
-                        </div>
-                        <div class="row entry">
-                            {{#if data.milestones.edit}}
-                            {{#each actor.milestones as |milestone id|}}
-                            <li class="milestone editmilestone" data-item-id="{{milestone._id}}">
-                                <div class="item-controls">
-                                    <a class="control delete" title="{{localize 'sta.actor.milestone.delete'}}"><i class="fas fa-trash"></i></a>
-                                </div>
-                                <input type="text" name="milestone.name" data-target="name" value="{{milestone.name}}" />
-                                <textarea name="milestone.data.description" data-target="milestone.data.description">{{milestone.data.description}}</textarea>
-                            </li>
-                            {{/each}}
-                            {{else}}
-                            {{#each actor.milestones as |milestone id|}}
-                            <li class="row entry" data-item-id="{{milestone._id}}">
-                                <label class="resource-label" for="milestone.name">{{milestone.name}}</label>
-                                <div class="milestonedescription">{{{milestone.data.description}}}</div>
-                            </li>
-                            {{/each}}
-                            {{/if}}
-                        </div>
-                    </div> -->
                 </div>
                 <div class="column">
                     <div class="section values">
