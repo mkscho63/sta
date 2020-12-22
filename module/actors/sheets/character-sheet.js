@@ -8,8 +8,8 @@ export class STACharacterSheet extends ActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["sta", "sheet", "actor", "character"],
-            width: 725,
-            height: 765,
+            width: 850,
+            height: 900,
             dragDrop: [{
                 dragSelector: ".item-list .item",
                 dropSelector: null

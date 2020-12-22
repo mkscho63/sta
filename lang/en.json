@@ -19,7 +19,7 @@
     "sta.actor.character.species": "Species",
     "sta.actor.character.assignment": "Assignment",
     "sta.actor.character.determination": "Determination",
-    "sta.actor.attdis.mod": "Modifier",
+    "sta.actor.attdis.mod": "Mod",
     "sta.actor.attdis.task": "Perform Task",
     "sta.actor.attribute.title": "Attributes",
     "sta.actor.attribute.name": "Attribute Name",
