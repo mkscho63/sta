@@ -1,6 +1,6 @@
 {
     "Actor": {
-        "types": ["character", "characterv2", "npc"],
+        "types": ["character", "npc"],
         "templates": {
             "common": {
                 "rank": "",
@@ -86,9 +86,6 @@
                 "value": 3,
                 "max": 3
             }
-        },
-        "characterv2": {
-            "templates": ["common"]
         },
         "npc": {
             "templates": ["common"]

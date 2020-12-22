@@ -6,9 +6,6 @@ import {
     STACharacterSheet
 } from "./actors/sheets/character-sheet.js";
 import {
-    STACharacterSheetV2
-} from "./actors/sheets/character-sheet-v2.js";
-import {
     STANPCSheet
 } from "./actors/sheets/npc-sheet.js";
 import {
@@ -61,7 +58,6 @@ Hooks.once("init", function() {
     game.sta = {
         applications: {
             STACharacterSheet,
-            STACharacterSheetV2,
             STANPCSheet,
             STAItemSheet,
             STAWeaponSheet,
@@ -90,9 +86,6 @@ Hooks.once("init", function() {
     Actors.registerSheet("sta", STACharacterSheet, {
         types: ["character"],
         makeDefault: true
-    });
-    Actors.registerSheet("sta", STACharacterSheetV2, {
-        types: ["characterv2"]
     });
     Actors.registerSheet("sta", STANPCSheet, {
         types: ["npc"]
