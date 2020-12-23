@@ -1,98 +1,185 @@
 {
     "Actor": {
-        "types": ["character", "npc"],
+        "types": ["character", "starship"],
         "templates": {
             "common": {
-                "rank": "",
-                "notes":"",
-                "milestones": "",
-                "stress": {
-                    "value": 0
-                },
-                "environment": "",
-                "attributes": {
-                    "control": {
-                        "label": "sta.actor.attribute.control",
-                        "value": 4,
-                        "selected": true
-                    },
-                    "daring": {
-                        "label": "sta.actor.attribute.daring",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "fitness": {
-                        "label": "sta.actor.attribute.fitness",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "insight": {
-                        "label": "sta.actor.attribute.insight",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "presence": {
-                        "label": "sta.actor.attribute.presence",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "reason": {
-                        "label": "sta.actor.attribute.reason",
-                        "value": 4,
-                        "selected": false
-                    }
-                },
-                "disciplines": {
-                    "command": {
-                        "label": "sta.actor.discipline.command",
-                        "value": 4,
-                        "selected": true
-                    },
-                    "conn": {
-                        "label": "sta.actor.discipline.conn",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "engineering": {
-                        "label": "sta.actor.discipline.engineering",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "medicine": {
-                        "label": "sta.actor.discipline.medicine",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "science": {
-                        "label": "sta.actor.discipline.science",
-                        "value": 4,
-                        "selected": false
-                    },
-                    "security": {
-                        "label": "sta.actor.discipline.security",
-                        "value": 4,
-                        "selected": false
-                    }
-                }
+                "notes":""
             }
         },
         "character": {
-            "reputation": 0,
             "templates": ["common"],
-            "upbringing": "",
-            "species": "",
             "assignment": "",
+            "attributes": {
+                "control": {
+                    "label": "sta.actor.character.attribute.control",
+                    "value": 7,
+                    "selected": true
+                },
+                "daring": {
+                    "label": "sta.actor.character.attribute.daring",
+                    "value": 7,
+                    "selected": false
+                },
+                "fitness": {
+                    "label": "sta.actor.character.attribute.fitness",
+                    "value": 7,
+                    "selected": false
+                },
+                "insight": {
+                    "label": "sta.actor.character.attribute.insight",
+                    "value": 7,
+                    "selected": false
+                },
+                "presence": {
+                    "label": "sta.actor.character.attribute.presence",
+                    "value": 7,
+                    "selected": false
+                },
+                "reason": {
+                    "label": "sta.actor.character.attribute.reason",
+                    "value": 7,
+                    "selected": false
+                }
+            },
             "determination": {
                 "value": 3,
                 "max": 3
-            }
+            },
+            "disciplines": {
+                "command": {
+                    "label": "sta.actor.character.discipline.command",
+                    "value": 4,
+                    "selected": true
+                },
+                "conn": {
+                    "label": "sta.actor.character.discipline.conn",
+                    "value": 4,
+                    "selected": false
+                },
+                "engineering": {
+                    "label": "sta.actor.character.discipline.engineering",
+                    "value": 4,
+                    "selected": false
+                },
+                "medicine": {
+                    "label": "sta.actor.character.discipline.medicine",
+                    "value": 4,
+                    "selected": false
+                },
+                "science": {
+                    "label": "sta.actor.character.discipline.science",
+                    "value": 4,
+                    "selected": false
+                },
+                "security": {
+                    "label": "sta.actor.character.discipline.security",
+                    "value": 4,
+                    "selected": false
+                }
+            },
+            "environment": "",
+            "milestones": "",
+            "rank": "",
+            "reputation": 0,
+            "species": "",
+            "stress": {
+                "value": 0
+            },
+            "upbringing": ""
         },
-        "npc": {
-            "templates": ["common"]
+        "starship": {
+            "templates": ["common"],
+            "crew": {
+                "value": 0
+            },
+            "departments": {
+                "command": {
+                    "label": "sta.actor.starship.department.command",
+                    "value": 4,
+                    "selected": true
+                },
+                "conn": {
+                    "label": "sta.actor.starship.department.conn",
+                    "value": 4,
+                    "selected": false
+                },
+                "engineering": {
+                    "label": "sta.actor.starship.department.engineering",
+                    "value": 4,
+                    "selected": false
+                },
+                "medicine": {
+                    "label": "sta.actor.starship.department.medicine",
+                    "value": 4,
+                    "selected": false
+                },
+                "science": {
+                    "label": "sta.actor.starship.department.science",
+                    "value": 4,
+                    "selected": false
+                },
+                "security": {
+                    "label": "sta.actor.starship.department.security",
+                    "value": 4,
+                    "selected": false
+                }
+            },
+            "designation": "",
+            "missionprofile": "",
+            "power": {
+                "value": 0
+            },
+            "refit": "",
+            "resistance": 0,
+            "scale": 1,
+            "shields": {
+                "value": 0
+            },
+            "servicedate": "",
+            "spaceframe": "",
+            "systems": {
+                "communications": {
+                    "label": "sta.actor.starship.system.communications",
+                    "value": 7,
+                    "selected": true,
+                    "breaches": 0
+                },
+                "computers": {
+                    "label": "sta.actor.starship.system.computers",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "engines": {
+                    "label": "sta.actor.starship.system.engines",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "sensors": {
+                    "label": "sta.actor.starship.system.sensors",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "structure": {
+                    "label": "sta.actor.starship.system.structure",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "weapons": {
+                    "label": "sta.actor.starship.system.weapons",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                }
+            },
+            "traits": ""
         }
     },
     "Item": {
-        "types": ["item", "focus", "value", "weapon", "armor", "talent", "milestone", "injury"],
+        "types": ["item", "focus", "value", "weapon", "armor", "talent", "milestone", "injury", "smallcraft"],
         "templates": {
             "common": {
                 "description": ""
@@ -139,6 +226,9 @@
             "type": ""
         },
         "injury": {
+            "templates": ["common"]
+        },
+        "smallcraft": {
             "templates": ["common"]
         }
     }

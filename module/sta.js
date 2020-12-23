@@ -6,8 +6,8 @@ import {
     STACharacterSheet
 } from "./actors/sheets/character-sheet.js";
 import {
-    STANPCSheet
-} from "./actors/sheets/npc-sheet.js";
+    STAStarshipSheet
+} from "./actors/sheets/starship-sheet.js";
 import {
     STAItemSheet
 } from "./items/item-sheet.js";
@@ -58,7 +58,7 @@ Hooks.once("init", function() {
     game.sta = {
         applications: {
             STACharacterSheet,
-            STANPCSheet,
+            STAStarshipSheet,
             STAItemSheet,
             STAWeaponSheet,
             STAArmorSheet,
@@ -87,8 +87,8 @@ Hooks.once("init", function() {
         types: ["character"],
         makeDefault: true
     });
-    Actors.registerSheet("sta", STANPCSheet, {
-        types: ["npc"]
+    Actors.registerSheet("sta", STAStarshipSheet, {
+        types: ["starship"]
     });
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("sta", STAItemSheet, {

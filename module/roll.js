@@ -106,7 +106,14 @@ export class STARoll {
         }
 
         // Set the flavour to "[Attribute] [Discipline] Attribute Test". This shows the chat what type of test occured.
-        let flavor = game.i18n.format("sta.actor.attribute." + selectedAttribute) + " " + game.i18n.format("sta.actor.discipline." + selectedDiscipline) + game.i18n.format("sta.roll.test");
+        let flavor = "";
+        switch(speaker.data.type) {
+            case "character":
+                flavor = game.i18n.format("sta.actor.character.attribute." + selectedAttribute) + " " + game.i18n.format("sta.actor.character.discipline." + selectedDiscipline) + " " + game.i18n.format("sta.roll.test");
+                break;
+            case "starship":
+                flavor = game.i18n.format("sta.actor.starship.system." + selectedAttribute) + " " + game.i18n.format("sta.actor.starship.department." + selectedDiscipline) + " " + game.i18n.format("sta.roll.test");
+        }
 
         // Build a dynamic html using the variables from above.
         let html = `

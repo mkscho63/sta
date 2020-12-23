@@ -13,10 +13,6 @@
 
 /* Globals */
 
-.sta .bold {
-  font-weight: bold;
-}
-
 .sta .title {
   text-align: center;
   font-size: 14pt;
@@ -34,10 +30,9 @@
 }
 
 .sta .btn {
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 4px;
-  border: 1px solid #ffffff;
+  background-color: #DD4444;
+  color: #0F0F0F;
+  border-radius: 20px;
 }
 
 .sta .btn:hover {
@@ -68,7 +63,8 @@
 
 .sta .track .bar .box {
   height: 14px;
-  border: 1px solid #0f0f0f;
+  border: 1px solid #666688;
+  border-radius: 14px;
   border-collapse: collapse;
   padding: 0px;
   display: block;
@@ -84,89 +80,88 @@
 
 /* Actor - LCARS Layout */
 
-/* .sta.sheet.actor .editable {
-  display: flex;
-} */
-
 .sta.sheet.actor .header {
   display: flex;
 }
 
 .sta.sheet.actor .lcars-column {
   flex: 10%;
+  display:flex;
+  flex-flow: column;
 }
 
 .sta.sheet.actor .lcars-header-block1 {
-  height: 30%;
+  flex: 3;
   background-color: #9944FF;
   border-bottom: 4px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-header-block2 {
-  height: 70%;
+  flex: 7;
   background-color: #4455FF;
   border-bottom: 4px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-column .lcars-attribute-title-block {
-  height: 47px;
   background-color: #444A77;
-  border-bottom-left-radius: 100px;
+  border-bottom-left-radius: 40px;
+  flex: 0 1 47px;
 }
 
 .sta.sheet.actor .lcars-column .lcars-item1-connect-block, 
 .sta.sheet.actor .lcars-column .lcars-item2-connect-block {
-  height: 40px;
+  flex: 0 1 40px;
   background-color: #444A77;
-  border-top-left-radius: 100px;
+  border-top-left-radius: 40px;
 }
 
 .sta.sheet.actor .lcars-column .lcars-item1-top-block {
-  height: 30px;
-  background-color: #9944FF;
+  flex: 0 1 30px;
+  background-color: transparent;
   border-bottom: 5px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-column .lcars-item2-top-block {
-  height: 30px;
+  flex: 0 1 30px;
   background-color: #7788FF;
   border-bottom: 5px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-column .lcars-attribute-general-block1 {
   background-color: #CC33FF;
-  height: 25%;
-  border-top-left-radius: 100px;
+  flex: 1;
+  border-top-left-radius: 40px;
   border-top: 5px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-column .lcars-attribute-general-block2 {
   background-color: #FF7700;
-  height: 40%;
+  flex: 2;
   border-top: 5px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-column .lcars-attribute-general-block3 {
   background-color: #9944FF;
-  height: 25%;
+  flex: 1;
   border-top: 5px solid #0F0F0F;
+  border-bottom-left-radius: 40px;
 }
 
 .sta.sheet.actor .lcars-column .lcars-item1-general-block {
   background-color: #7788FF;
-  height: 80%;
+  flex: 1;
   border-top: 5px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-column .lcars-item2-general-block1 {
   background-color: #FF2200;
-  height: 30%;
+  flex: 1;
   border-top: 5px solid #0F0F0F;
 }
 
 .sta.sheet.actor .lcars-column .lcars-item2-general-block2 {
   background-color: #FFAA00;
-  height: 50%;
+  flex: 2;
   border-top: 5px solid #0F0F0F;
 }
 
@@ -174,12 +169,17 @@
 /* Actor - Text Fields - Colors */
 
 .sta.sheet.actor .title {
-  color: #DD4444;
   height: 30px;
 }
 
+.sta.sheet.actor .title,
+.sta-form .label {
+  color: #FAA41B;
+}
+
 .sta.sheet.actor .list-entry,
-.sta.sheet.actor .editor {
+.sta.sheet.actor .editor,
+.app.dialog .window-content .dialog-content {
   color: #33CCCC;
 }
 
@@ -191,7 +191,11 @@
   color: #0f0f0f;
 }
 
-.sta.sheet.actor .numeric-entry {
+.sta.sheet.actor .numeric-entry,
+.sta.sheet.actor .text-entry,
+.sta-form .numeric-entry,
+.app.dialog .window-content .form-fields input, 
+.app.dialog .window-content .form-fields select { 
   color: #CC88FF;
 }
 
@@ -201,6 +205,10 @@
   padding-left: 2px;
   padding-right: 2px;
   border-bottom: 2px solid #0F0F0F;
+}
+
+.sta.sheet.actor .tox.tox-tinymce .tox-edit-area__iframe{
+  background-color: #FFFFFF;
 }
 
 /* Actor - Header Section - Globals */
@@ -231,7 +239,7 @@
 }
 
 .sta.sheet.actor .main .row {
-  max-height: 250px;
+  max-height: 300px;
 }
 
 .sta.sheet.actor .main .row .limited-only {
@@ -265,7 +273,6 @@
 
 .sta.sheet.actor .main .row .column .section .title {
   font-size: 18pt;
-  font-weight: bold;
 }
 
 .sta.sheet.actor .main .row .column .section .row {
@@ -325,6 +332,43 @@
   line-height: 30px;
   margin: 5px 12.5%;
   font-size: 14pt;
+}
+
+.sta.sheet.actor .main .row .column .section.scale, 
+.sta.sheet.actor .main .row .column .section.resistance {
+  display: flex;
+  background-color: #9944FF;
+  height: 41px;
+}
+
+.sta.sheet.actor .main .row .column .section.scale .title, 
+.sta.sheet.actor .main .row .column .section.resistance .title {
+  background-color: #0F0F0F;
+  width: 75%;
+  margin-top: 5px;
+}
+
+
+.sta.sheet.actor .main .row .column .section.scale .title {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 10%;
+}
+
+.sta.sheet.actor .main .row .column .section.scale .field.numeric-entry, 
+.sta.sheet.actor .main .row .column .section.resistance .field.numeric-entry {
+  width: 15%;
+  height: 30px;
+  border: none;
+  border-radius: 0px;
+  margin-top: 5px;
+  background-color: #0F0F0F;
+}
+
+.sta.sheet.actor .main .row .column .section.section.resistance .field.numeric-entry{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-right: 10%;
 }
 
 
@@ -422,10 +466,9 @@
 }
 
 
-/* Item - Globals */
+/* Item/Form - Globals */
 
 .sta.sheet.item .header-fields {
-  font-weight: bold;
   font-size: 12pt;
 }
 
@@ -567,44 +610,102 @@
 }
 
 
+/* Generic Dialog */
+
+.dialog > .window-content {
+  padding: 0px;
+}
+
+.dialog > .window-content > .dialog-content {
+  background-color: #0F0F0F;
+  padding: 8px;
+}
+
+.window-content .dialog-buttons {
+  background-color: #0F0F0F;
+}
+
+.window-content .dialog-button.roll.default, 
+.window-content .dialog-button.ok.default, 
+.window-content .dialog-button.yes.default, 
+.window-content .dialog-button.no { 
+  background-color: #DD4444;
+  color: #0F0F0F;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
 
 /* Tracker - Generic */
 
 .sta.tracker {
   position: absolute;
   display: block;
-  width: 200px;
-  height: 70px;
-  margin: 5px;
   margin-right: 0;
-  border: 1px solid black;
+  height: 100px;
+  width: 200px;
+  background: none;
+  border-radius: 0px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding: 0;
+  clip-path: inset(-20px 0px -20px -20px);
 }
 
 .sta.tracker.threat {
   bottom: 0;
-  right: 304px;
+  right: 0px;
+  background-color: #FF2200;
 }
 
 .sta.tracker.momentum {
-  bottom: 80px;
-  right: 304px;
+  bottom: 105px;
+  right: 0px;
+  background-color: #5588FF;
 }
+
+#sidebar:not(.collapsed) ~ .sta.tracker.momentum, 
+#sidebar:not(.collapsed) ~ .sta.tracker.threat {
+  right: 354px;
+}
+
 
 .sta.tracker .header {
   text-align: center;
   font-size: 1.75em;
   text-transform: uppercase;
-  padding-bottom: 5px;
+  background-color: #0F0F0F;
+  border-bottom-left-radius: 30px;
+  width: 185px;
+  height: 35px;
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
 
 .sta.tracker .button-group {
   display: flex;
   font-size: 1.5em;
+  background-color: #0F0F0F;
+  border-top-left-radius: 30px;
+  width: 185px;
+  height: 35px;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 .sta.tracker .button-group .button {
-  padding: 0 10px;
   cursor: pointer;
+}
+
+.sta.tracker .button-group .button.decrease {
+  padding-left: 50px;
+  padding-right: 10px;
+}
+
+.sta.tracker .button-group .button.increase {
+  padding-left: 10px;
+  padding-right: 50px;
 }
 
 .sta.tracker .button-group .button:hover {
@@ -614,6 +715,8 @@
 .sta.tracker .button-group .input {
   color: #CC88FF;
   text-align: center;
+  border: none;
+  width: 100%;
 }
 
 
@@ -639,6 +742,115 @@
   font-size: 30px;
   line-height: 0.7;
   text-align: center;
+}
+
+/* Sidebar */
+
+#sidebar:not(.collapsed) {
+  background: none;
+  border:none;
+  background-color: #FFAA00;
+  width: 350px;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 0;
+}
+
+#sidebar::before {
+  content: "";
+  position: absolute;
+  bottom: 60%;
+  right: 300px;
+  height: 25%;
+  width: 50px;
+  background-color: #33CCCC; 
+  border-top: 5px solid #0F0F0F;
+  border-bottom: 5px solid #0F0F0F;
+}
+
+#sidebar::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  right: 300px;
+  height: 20%;
+  width: 50px;
+  background-color: #FF7700; 
+  border-top: 5px solid #0F0F0F;
+  border-bottom: 5px solid #0F0F0F;
+}
+
+#sidebar > #sidebar-tabs {
+  color: #0F0F0F;
+  margin-bottom: 0;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+#sidebar:not(.collapsed) > #sidebar-tabs {
+  margin-left: 50px;
+}
+
+#sidebar-tabs > .item {
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+  color: #0F0F0F;
+}
+
+#sidebar-tabs > .collapse {
+  background-color: #CC88FF;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+  color: #0F0F0F;
+}
+
+#sidebar:not(.collapsed) > #sidebar-tabs > .item {
+  border-left: 4px solid #0F0F0F;
+}
+
+#sidebar:not(.collapsed) > #sidebar-tabs > .item.active {
+  border-left: 4px solid #0F0F0F;
+}
+
+#sidebar:not(.collapsed) > #sidebar-tabs > .collapse {
+  border-left: 4px solid #0F0F0F;
+  border-right: 4px solid #0F0F0F;
+}
+
+#sidebar-tabs > .item:nth-child(odd) {
+  background-color: #CC88FF;
+}
+
+#sidebar-tabs > .item:nth-child(even) {
+  background-color: #4455FF;
+}
+
+#sidebar-tabs > .item.active {
+  box-shadow: none;
+  background-color: #DD4444;
+  border-bottom: none;
+  border-top: none;
+  color: #FEFEFF;
+}
+
+#sidebar .sidebar-tab {
+  background: #0F0F0F;
+  border-top: 5px solid #0F0F0F;
+  width: 300px;
+  margin-left: 50px;
+}
+
+
+/* Chat Log */
+
+.app .chat-message.message{
+  background: #0F0F0F
+}
+
+.app .chat-message.message .message-header, 
+.app .chat-message.message .message-content {
+  color: #FEFEFF;
 }
 
 
@@ -687,19 +899,4 @@
   to {
     transform: translateY(0);
   }
-}
-
-@font-face {
-  font-family: Okuda;
-  src: url("/systems/FVTT-StarTrekAdventures/styles/fonts/Okuda.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "Context Ultra Condensed";
-  src: url("/systems/FVTT-StarTrekAdventures/styles/fonts/Context Ultra Condensed.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Swiss 911 Ultra Compressed";
-  src: url("/systems/FVTT-StarTrekAdventures/styles/fonts/Swiss 911 Ultra Compressed.ttf") format("truetype");
 }

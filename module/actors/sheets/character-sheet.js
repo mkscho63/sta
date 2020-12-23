@@ -116,7 +116,7 @@ export class STACharacterSheet extends ActorSheet {
             html.find('#bar-determination-renderer')[0].appendChild(div);
         }
 
-        // This creates a dynamic Stress tracker. It polls for the value of the fitenss attribute, security discipline, and checks for Resolute talent. 
+        // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute, security discipline, and checks for Resolute talent. 
         // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
         function stressTrackUpdate() {
             stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
@@ -159,7 +159,7 @@ export class STACharacterSheet extends ActorSheet {
         staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, repPointsMax);
 
         // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
-        html.find('.control.edit').click(ev => {
+        html.find('.control .edit').click(ev => {
             const li = $(ev.currentTarget).parents(".entry");
             const item = this.actor.getOwnedItem(li.data("itemId"));
             item.sheet.render(true);
@@ -175,11 +175,8 @@ export class STACharacterSheet extends ActorSheet {
             for (i = 0; i < html.find('.control.create').length; i++) {
                 html.find('.control.create')[i].style.display = 'none';
             }
-            for (i = 0; i < html.find('.control.delete').length; i++) {
-                html.find('.control.delete')[i].style.display = 'none';
-            }
-            for (i = 0; i < html.find('.control.toggle').length; i++) {
-                html.find('.control.delete')[i].style.display = 'none';
+            for (i = 0; i < html.find('.control .delete').length; i++) {
+                html.find('.control .delete')[i].style.display = 'none';
             }
             // This hides all attribute and discipline check boxes (and titles)
             for (i = 0; i < html.find('.selector').length; i++) {
@@ -227,7 +224,7 @@ export class STACharacterSheet extends ActorSheet {
         });
 
         // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
-        html.find('.control.delete').click(ev => {
+        html.find('.control .delete').click(ev => {
             const li = $(ev.currentTarget).parents(".entry");
             this.actor.deleteOwnedItem(li.data("itemId"));
             li.slideUp(200, () => this.render(false));
