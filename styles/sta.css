@@ -179,6 +179,7 @@
 
 .sta.sheet.actor .list-entry,
 .sta.sheet.actor .editor,
+.sta.sheet.item .label,
 .app.dialog .window-content .dialog-content {
   color: #33CCCC;
 }
@@ -207,7 +208,8 @@
   border-bottom: 2px solid #0F0F0F;
 }
 
-.sta.sheet.actor .tox.tox-tinymce .tox-edit-area__iframe{
+.sta.sheet.actor .tox.tox-tinymce .tox-edit-area__iframe, 
+.sta.sheet.item .tox.tox-tinymce .tox-edit-area__iframe {
   background-color: #FFFFFF;
 }
 
@@ -480,10 +482,17 @@
 }
 
 .sta.sheet.item input[type="text"],
+.sta.sheet.item input[type="number"],
 .sta.sheet.item .text,
 .sta.sheet.item .entry,
 .sta.sheet.item .editor {
   color: #CC88FF;
+}
+
+.sta.sheet.item input[type="number"] {
+  text-align: center;
+  width: 50px;
+  margin-left: 10px;
 }
 
 .sta.sheet.item .editor .editor-edit {
@@ -727,8 +736,8 @@
   display: block;
   margin-right: 0;
   left: 110px;
-  top: 15px;
-  z-index: 61;
+  top: 55px;
+  z-index: 1;
   color: #000;
   text-decoration: none;
 }

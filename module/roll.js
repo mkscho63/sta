@@ -196,17 +196,25 @@ export class STARoll {
         else {
             var tags = '';
         }
-        if (item.data.data.qualities.armorpierce) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.armorpierce")+"</div>";
-        if (item.data.data.qualities.awkward) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.awkward")+"</div>";
-        if (item.data.data.qualities.blast) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.blast")+"</div>";
-        if (item.data.data.qualities.block) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.block")+"</div>";
-        if (item.data.data.qualities.burn) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.burn")+"</div>";
-        if (item.data.data.qualities.concealed) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.concealed")+"</div>";
         if (item.data.data.qualities.melee) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.melee")+"</div>";
-        if (item.data.data.qualities.messy) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.messy")+"</div>";
-        if (item.data.data.qualities.mine) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.mine")+"</div>";
-        if (item.data.data.qualities.rangeddistant) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.distant")+"</div>";
-        if (item.data.data.qualities.rangednearby) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.nearby")+"</div>";
+        if (item.data.data.qualities.ranged) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.ranged")+"</div>";
+        if (item.data.data.qualities.area) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.area")+"</div>";
+        if (item.data.data.qualities.intense) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.intense")+"</div>";
+        if (item.data.data.qualities.knockdown) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.knockdown")+"</div>";
+        if (item.data.data.qualities.accurate) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.accurate")+"</div>";
+        if (item.data.data.qualities.charge) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.charge")+"</div>";
+        if (item.data.data.qualities.cumbersome) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.cumbersome")+"</div>";
+        if (item.data.data.qualities.deadly) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.deadly")+"</div>";
+        if (item.data.data.qualities.debilitating) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.debilitating")+"</div>";
+        if (item.data.data.qualities.grenade) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.grenade")+"</div>";
+        if (item.data.data.qualities.inaccurate) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.inaccurate")+"</div>";
+        if (item.data.data.qualities.nonlethal) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.nonlethal")+"</div>";
+
+        if (item.data.data.qualities.hiddenx > 0) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.hiddenx") + " " + item.data.data.qualities.hiddenx +"</div>";
+        if (item.data.data.qualities.piercingx > 0) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.piercingx") + " " + item.data.data.qualities.piercingx +"</div>";
+        if (item.data.data.qualities.viciousx > 0) tags += "<div class='tag'> "+game.i18n.format("sta.actor.belonging.weapon.viciousx") + " " + item.data.data.qualities.viciousx +"</div>";
+
+        
         // Send the divs to populate a HTML template and sends to chat.
         this.genericItemTemplate(item.data.img, item.data.name, item.data.data.description, variable, tags).then(html=>this.sendToChat(speaker, html));
     }

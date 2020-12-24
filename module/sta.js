@@ -113,6 +113,9 @@ Hooks.once("init", function() {
     Items.registerSheet("sta", STAGenericSheet, {
         types: ["injury"],
     });
+    Items.registerSheet("sta", STAItemSheet, {
+        types: ["smallcraft"],
+    });
 
 
     // Register system settings

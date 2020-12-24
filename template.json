@@ -201,17 +201,22 @@
             "damage": 0,
             "cost": 0,
             "qualities": {
-                "armorpierce": false,
-                "awkward": false,
-                "blast": false,
-                "block": false,
-                "burn": false,
-                "concealed": false,
                 "melee": false,
-                "messy": false,
-                "mine": false,
-                "rangeddistant": false,
-                "rangednearby": false
+                "ranged": true,
+                "area": false,
+                "intense": false,
+                "knockdown": false,
+                "accurate": false,
+                "charge": false,
+                "cumbersome": false,
+                "deadly": false,
+                "debilitating": false,
+                "grenade": false,
+                "inaccurate": false,
+                "nonlethal": false,
+                "hiddenx": 0,
+                "piercingx": 0,
+                "viciousx": 0
             }
         },
         "armor": {
