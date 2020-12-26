@@ -182,7 +182,7 @@
                         </div>
                         {{#each actor.items as |item id|}}
                         {{#if (eq item.type "talent")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="one-column-with-roll list-entry" data-talent-name="{{item.name}}">{{item.name}}</h4>
                             <div class="control">
@@ -206,7 +206,7 @@
                         </div>
                         {{#each actor.items as |item id|}}
                         {{#if (eq item.type "value")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="one-column-with-roll list-entry">{{item.name}}</h4>
                             <div class="control">
@@ -230,7 +230,7 @@
                         </div>
                         {{#each actor.items as |item id|}}
                         {{#if (eq item.type "smallcraft")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="one-column-with-roll list-entry">{{item.name}}</h4>
                             <div class="control">
@@ -274,7 +274,7 @@
                         </div>
                         {{#each actor.items as |item id|}}
                         {{#if (eq item.type "injury")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <h4 class="one-column-no-roll list-entry">{{item.name}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
@@ -298,7 +298,7 @@
                         </div>
                         {{#each actor.items as |item type id|}}
                         {{#if (eq item.type "weapon")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
                             <h4 class="two-column-with-roll-secondary list-entry">{{item.data.damage}}</h4>
@@ -317,7 +317,7 @@
                         </div>
                         {{#each actor.items as |item type id|}}
                         {{#if (eq item.type "item")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
                             <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>

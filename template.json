@@ -194,7 +194,8 @@
             "templates": ["common"]
         },
         "value": {
-            "templates": ["common"]
+            "templates": ["common"],
+            "used": false
         },
         "weapon": {
             "templates": ["common"],

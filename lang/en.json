@@ -43,6 +43,7 @@
     "sta.actor.talent.type": "Type",
     "sta.actor.focus.title": "Focuses",
     "sta.actor.value.title": "Values",
+    "sta.actor.value.used": "Used?",
     "sta.actor.note.title": "Notes",
     "sta.actor.milestone.title": "Milestones",
     "sta.actor.milestone.add": "Add Milestone",

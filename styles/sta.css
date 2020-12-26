@@ -336,6 +336,10 @@
   font-size: 14pt;
 }
 
+.sta.sheet.actor .row  .column .value-used {
+  height: 17px;
+}
+
 .sta.sheet.actor .main .row .column .section.scale, 
 .sta.sheet.actor .main .row .column .section.resistance {
   display: flex;
@@ -395,7 +399,14 @@
 
 .sta.sheet.actor .main .row .column .section .row .control {
   color: #FFCC33;
-  width: 34px;
+}
+
+.sta.sheet.actor .main .row .column .section .row .control .delete {
+  color: #DD4444;
+}
+
+.sta.sheet.actor .main .row .column .section .row .control {
+  width: 40px;
   padding-right: 2px;
 }
 
