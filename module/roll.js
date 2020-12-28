@@ -153,6 +153,102 @@ export class STARoll {
         };
     }
 
+    async performChallengeRoll(dicePool, speaker) {
+        // Define some variables that we will be using later.
+        let i;
+        let result = 0;
+        let diceString = "";
+        let success = 0;
+        let effect = 0;
+        
+        // Define r as our dice roll we want to perform (#d6). We will then roll it.
+        var r = new Roll(dicePool+"d6")
+        r.roll();
+        // Now for each dice in the dice pool we want to check what the individual result was.
+        for (i = 0; i < dicePool; i++) {
+            result = r.terms[0].results[i].result;
+            
+            switch(result) {
+                case 1:
+                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success1_small.png" /></li>'
+                    success += 1;
+                    break;
+                case 2:
+                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success2_small.png" /></li>'
+                    success += 2
+                    break;
+                case 5:
+                case 6:
+                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Effect_small.png" /></li>'
+                    success += 1;
+                    effect += 1;
+                    break;
+                case 3:
+                case 4:
+                default:
+                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success0_small.png" /></li>'
+                    break;
+            }
+        }
+
+        // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
+        if (success == 1) {
+            var successText = success + game.i18n.format("sta.roll.success");
+        } else {
+            var successText = success + game.i18n.format("sta.roll.successPlural");
+        }
+
+        // If there is any effect, we want to crate a string for this. If we have multiple effects and they exist, we want to pluralise this also.
+        // If no effects exist then we don't even show this box.
+        if (effect >= 1) {
+            if (effect > 1) {
+                var localisedPluralisation = game.i18n.format("sta.roll.effectPlural")
+                var effectText = '<h4 class="dice-total effect"> ' + localisedPluralisation.replace('|#|', effect) + '</h4>';
+            } else {
+                var effectText = '<h4 class="dice-total effect"> ' + game.i18n.format("sta.roll.effect") + '</h4>';
+            }
+        } else {
+            var effectText = '';
+        }
+
+        let flavor = game.i18n.format("sta.roll.test");
+                
+        // Build a dynamic html using the variables from above.
+        let html = `
+            <div class="sta roll attribute">
+                <div class="dice-roll">
+                    <div class="dice-result">
+                        <div class="dice-formula">
+                            <table class="aim">
+                                <tr>
+                                    <td> ` + dicePool + `d6 </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="dice-tooltip">
+                            <section class="tooltip-part">
+                                <div class="dice">
+                                    <ol class="dice-rolls">` + diceString + `</ol>
+                                </div>
+                            </section>
+                        </div>` +
+                        effectText +
+                        `<h4 class="dice-total">` + successText + `</h4>
+                    </div>
+                </div>
+            </div>
+        `
+        // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
+        if(game.dice3d) {
+            game.dice3d.showForRoll(r).then(displayed => {
+                this.sendToChat(speaker, html, r, flavor);
+            });
+        }
+        else {
+            this.sendToChat(speaker, html, r, flavor);
+        };
+    }
+
     async performItemRoll(item, speaker) {
         // Create variable div and populate it with localisation to use in the HTML.
         var variablePrompt = game.i18n.format("sta.roll.item.quantity");

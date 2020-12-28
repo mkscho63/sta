@@ -1,9 +1,9 @@
-export class STAWeaponSheet extends ItemSheet {
+export class STAStarshipWeaponSheet extends ItemSheet {
 
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["sta", "sheet", "item", "weapon"],
+            classes: ["sta", "sheet", "item", "starshipweapon"],
             width: 565,
             height: 400,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -19,7 +19,7 @@ export class STAWeaponSheet extends ItemSheet {
 	        ui.notifications.warn("You do not have permission to view this item!");
             return;
         }
-        return `systems/FVTT-StarTrekAdventures/templates/items/weapon-sheet.html`;
+        return `systems/FVTT-StarTrekAdventures/templates/items/starship-weapon-sheet.html`;
       }
 
     /* -------------------------------------------- */
@@ -51,6 +51,5 @@ export class STAWeaponSheet extends ItemSheet {
 
         // Everything below here is only needed if the sheet is editable
         if (!this.options.editable) return;
-
     }
 }

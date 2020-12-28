@@ -89,7 +89,7 @@
                             <input class="field numeric-entry" id="{{key}}.breaches" name="data.systems.{{key}}.breaches" type="number" value="{{system.breaches}}" />
                         </div>
                         {{/each}}
-                        <div class="check-button btn">{{localize 'sta.actor.attdis.task'}}</div>
+                        <div class="check-button btn challenge">{{localize 'sta.actor.challenge.roll'}}</div>
                     </div>
                     <div class="section scale">
                         <div class="title">
@@ -154,7 +154,7 @@
                             <input class="selector department" id="{{key}}.selector" type="checkbox" name="data.departments.{{key}}.selected" data-dtype="Boolean" {{checked department.selected}}>
                         </div>
                         {{/each}}
-                        <div class="check-button btn">{{localize 'sta.actor.attdis.task'}}</div>
+                        <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
                     </div>
                     <div class="section resistance">
                         <div class="title">
@@ -294,10 +294,10 @@
                             <div class="image"></div>
                             <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.weapon.title'}}</div>
                             <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
-                            <a class="control create" title="Create item" data-type="weapon"><i class="fas fa-plus"></i></a>
+                            <a class="control create" title="Create item" data-type="starshipweapon"><i class="fas fa-plus"></i></a>
                         </div>
                         {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "weapon")}}
+                        {{#if (eq item.type "starshipweapon")}}
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>

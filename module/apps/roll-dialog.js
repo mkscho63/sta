@@ -1,8 +1,13 @@
 export class STARollDialog {
 
-    static async create() {
-        // Grab the RollDialog HTML file/
-        const html = await renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/dicepool.html");
+    static async create(isAttribute) {
+        var html = "";
+        if(isAttribute) {
+            // Grab the RollDialog HTML file/
+            html = await renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/dicepool-attribute.html");
+        } else {
+            html = await renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/dicepool-challenge.html");
+        }
         // Create a new promise for the HTML above.
         return new Promise((resolve) => {
             let formData = null;
@@ -22,8 +27,8 @@ export class STARollDialog {
                 default: "roll",
                 close: () => {}
             });
-            // Render the dialog
-            dlg.render(true);
+        // Render the dialog
+        dlg.render(true);
         });
     }
 }

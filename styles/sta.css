@@ -61,7 +61,8 @@
   flex-direction: row;
 }
 
-.sta .track .bar .box {
+.sta .track .bar .box, 
+.sta .extendedtask-track .extendedtask-bar .extendedtask-box {
   height: 14px;
   border: 1px solid #666688;
   border-radius: 14px;
@@ -70,6 +71,11 @@
   display: block;
   font-size: 8pt;
   text-align: center;
+}
+
+.sta .extendedtask-track .extendedtask-bar .extendedtask-box {
+  height: 28px;
+  font-size: 16pt;
 }
 
 .sta .track .bar .box:hover {
@@ -165,6 +171,55 @@
   border-top: 5px solid #0F0F0F;
 }
 
+.sta.sheet.actor .lcars-column-extendedtask {
+  display:flex;
+  flex-flow: column;
+  width: 10%;
+}
+
+.sta.sheet.actor .lcars-header-extendedtask1 {
+  background-color: #CC33FF;
+  border-bottom: 5px solid #0F0F0F;
+  flex: 1;
+  width: 100%;
+}
+
+
+.sta.sheet.actor .lcars-header-extendedtask2 {
+  background-color: #FFAA00;
+  border-bottom: 5px solid #0F0F0F;
+  flex: 1;
+  width: 100%;
+}
+
+.sta.sheet.actor .lcars-header-extendedtask3 {
+  background-color: #444A77;
+  flex: 1;
+  width: 100%;
+}
+
+.sta.sheet.actor .lcars-header-extendedtask4 {
+  background-color: #444A77;
+  flex: 0 1 27px;
+  width: 100%;
+  border-bottom: 5px solid #0F0F0F;
+  border-bottom-left-radius: 40px;
+}
+
+.sta.sheet.actor .lcars-body-extendedtask1 {
+  background-color: #0F0F0F;
+  flex: 0 1 33px;
+  width: 100%;
+}
+
+.sta.sheet.actor .lcars-body-extendedtask2 {
+  background-color: #444A77;
+  flex: 1 1 auto;
+  width: 100%;
+  border-top-left-radius: 40px;
+}
+
+
 
 /* Actor - Text Fields - Colors */
 
@@ -179,6 +234,7 @@
 
 .sta.sheet.actor .list-entry,
 .sta.sheet.actor .editor,
+.sta.sheet.actor .label,
 .sta.sheet.item .label,
 .app.dialog .window-content .dialog-content {
   color: #33CCCC;
@@ -328,7 +384,7 @@
   cursor: pointer;
 }
 
-.sta.sheet.actor .main .row .column .section .check-button {
+.sta.sheet.actor .check-button {
   width: 75%;
   height: 30px;
   line-height: 30px;
@@ -432,7 +488,7 @@
   padding-left: 10%;
 }
 
-.sta.sheet.actor .main .row .column .section .row .column-x2-big {
+.sta.sheet.actor .row .column-x2-big {
   width: 90%;
   padding-left: 10%;
 }
@@ -458,6 +514,9 @@
   color: grey;
 }
 
+.sta.sheet.actor .list-entry.strike-through {
+  text-decoration: line-through;
+}
 
 
 /* Actor - Main Section - Specific - Equipable Specific */
@@ -479,6 +538,47 @@
 }
 
 
+/* Actor - Extended Tasks */
+
+.sta.sheet.actor .row .column-headerfields1-extendedtasks {
+  width: 60%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.sta.sheet.actor .row .column-headerfields2-extendedtasks {
+  width: 30%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.sta.sheet.actor .column-headerfields1-extendedtasks .numeric-entry, 
+.sta.sheet.actor .column-headerfields2-extendedtasks .numeric-entry {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.sta.sheet.actor .extendedtask.check-button.btn {
+  margin-top: 15px;
+  width: 65%;
+}
+
+.sta.sheet.actor .row .extendedtask-track {
+  width:90%;
+}
+
+.sta.sheet.actor .extendedtask-divider {
+  background-color:#444A77; 
+  width:100%; 
+  color:#0F0F0F; 
+  text-align:center; 
+  margin-top:5px; 
+  margin-bottom:5px; 
+  font-weight:bold;
+}
+
+
 /* Item/Form - Globals */
 
 .sta.sheet.item .header-fields {
@@ -494,10 +594,15 @@
 
 .sta.sheet.item input[type="text"],
 .sta.sheet.item input[type="number"],
+.sta.sheet.item select,
 .sta.sheet.item .text,
 .sta.sheet.item .entry,
 .sta.sheet.item .editor {
   color: #CC88FF;
+}
+
+.sta.sheet.item option {
+  background-color: #0F0F0F;
 }
 
 .sta.sheet.item input[type="number"] {
@@ -545,19 +650,22 @@
 
 /* Item - Weapon Specific */
 
-.sta.sheet.item.weapon .header-fields .row .column-x4 {
+.sta.sheet.item.characterweapon .header-fields .row .column-x4,
+.sta.sheet.item.starshipweapon .header-fields .row .column-x4 {
   width: 25%;
   display: flex;
   flex-direction: row;
   text-align: left;
 }
 
-.sta.sheet.item.weapon .header-fields .row .column-x4 .label {
+.sta.sheet.item.characterweapon .header-fields .row .column-x4 .label,
+.sta.sheet.item.starshipweapon .header-fields .row .column-x4 .label {
   font-size: 14px;
   line-height: 26px;
 }
 
-.sta.sheet.item.weapon .description {
+.sta.sheet.item.characterweapon .description,
+.sta.sheet.item.starshipweapon .description {
   height: calc(100% - 128px);
 }
 
@@ -588,6 +696,7 @@
 .sta.roll.attribute .dice-roll .dice-result .dice-tooltip .dice .dice-rolls {
   display: flex; 
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 
@@ -627,6 +736,10 @@
   border: 0.5px solid black;
   border-radius: 3px;
   background-color: rgb(255, 255, 255, 0.3);
+}
+
+.dice-roll .dice-total.effect {
+  color: #33CCCC;
 }
 
 

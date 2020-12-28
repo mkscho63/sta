@@ -9,8 +9,8 @@ export class STATracker extends Application {
     }
 
     activateListeners(html) {
-        let threat = game.settings.get("FVTT-StarTrekAdventures", "threat");
-        let momentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
+        var threat = game.settings.get("FVTT-StarTrekAdventures", "threat");
+        var momentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
         renderTracker()
         this.checkUpdates();
 
@@ -27,6 +27,7 @@ export class STATracker extends Application {
         }
 
         html.find('#sta-momentum-track-decrease').click(ev => {
+            threat = game.settings.get("FVTT-StarTrekAdventures", "threat");
             momentum = parseInt(document.getElementById("sta-track-momentum").value);
             if (momentum === 0) {
                 ui.notifications.warn("You can't set Momentum to a value below 0!");
@@ -38,6 +39,7 @@ export class STATracker extends Application {
         });
 
         html.find('#sta-threat-track-decrease').click(ev => {
+            momentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
             threat = parseInt(document.getElementById("sta-track-threat").value);
             if (threat === 0) {
                 ui.notifications.warn("You can't set Threat to a value below 0!");
@@ -49,8 +51,9 @@ export class STATracker extends Application {
         });
 
         html.find('#sta-threat-track-increase').click(ev => {
+            momentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
             if (threat === 99999999) {
-                ui.notifications.error("THERE IS TOO MUCH CHAOS!");
+                ui.notifications.error("THERE IS TOO MUCH THREAT!");
                 return false;
             }
             threat = parseInt(document.getElementById("sta-track-threat").value);
@@ -60,6 +63,7 @@ export class STATracker extends Application {
         });
 
         html.find('#sta-momentum-track-increase').click(ev => {
+            threat = game.settings.get("FVTT-StarTrekAdventures", "threat");
             if (momentum === 6) {
                 ui.notifications.error("THERE IS TOO MUCH MOMENTUM!");
                 return false;
@@ -83,6 +87,8 @@ export class STATracker extends Application {
         })
 
         html.find('#sta-track-threat').change(ev => {
+            threat = game.settings.get("FVTT-StarTrekAdventures", "threat");
+            momentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
             if (document.getElementById("sta-track-threat").value < 0) {
                 document.getElementById("sta-track-threat").value = threat;
                 ui.notifications.warn("You can't set Threat to a value below 0!");
@@ -99,6 +105,8 @@ export class STATracker extends Application {
         });
 
         html.find('#sta-track-momentum').change(ev => {
+        threat = game.settings.get("FVTT-StarTrekAdventures", "threat");
+        momentum = game.settings.get("FVTT-StarTrekAdventures", "momentum");
             if (document.getElementById("sta-track-momentum").value < 0) {
                 document.getElementById("sta-track-momentum").value = momentum;
                 ui.notifications.warn("You can't set Momentum to a value below 0!");

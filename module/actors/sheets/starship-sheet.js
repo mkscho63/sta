@@ -350,7 +350,7 @@ export class STAStarshipSheet extends ActorSheet {
         });
 
         // If the check-button is clicked it grabs the selected system and the selected department and fires the method rollSystemTest. See actor.js for further info.
-        html.find('.check-button').click(ev => {
+        html.find('.check-button.attribute').click(ev => {
             for (i = 0; i <= 5; i++) {
                 if (html.find('.selector.system')[i].checked === true) {
                     var selectedSystem = html.find('.selector.system')[i].id;
@@ -367,6 +367,11 @@ export class STAStarshipSheet extends ActorSheet {
             }
             
             staActor.rollAttributeTest(event, selectedSystem, parseInt(selectedSystemValue), selectedDepartment, parseInt(selectedDepartmentValue), this.actor);
+        });
+        
+        // If the check-button is clicked it fires the method challenge roll method. See actor.js for further info.
+        html.find('.check-button.challenge').click(ev => {
+            staActor.rollChallengeRoll(event, this.actor);
         });
     }
 }

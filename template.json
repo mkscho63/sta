@@ -1,6 +1,6 @@
 {
     "Actor": {
-        "types": ["character", "starship"],
+        "types": ["character", "starship", "extendedtask"],
         "templates": {
             "common": {
                 "notes":""
@@ -176,10 +176,20 @@
                 }
             },
             "traits": ""
+        },
+        "extendedtask": {
+            "templates": ["common"],
+            "magnitude": 1,
+            "difficulty": 0,
+            "work": 1,
+            "resistance": 0,
+            "worktracks": 1,
+            "tracklength": 1,
+            "workprogress": 0
         }
     },
     "Item": {
-        "types": ["item", "focus", "value", "weapon", "armor", "talent", "milestone", "injury", "smallcraft"],
+        "types": ["item", "focus", "value", "characterweapon", "starshipweapon", "armor", "talent", "milestone", "injury", "smallcraft"],
         "templates": {
             "common": {
                 "description": ""
@@ -197,13 +207,12 @@
             "templates": ["common"],
             "used": false
         },
-        "weapon": {
+        "characterweapon": {
             "templates": ["common"],
             "damage": 0,
             "cost": 0,
+            "range": "",
             "qualities": {
-                "melee": false,
-                "ranged": true,
                 "area": false,
                 "intense": false,
                 "knockdown": false,
@@ -218,6 +227,24 @@
                 "hiddenx": 0,
                 "piercingx": 0,
                 "viciousx": 0
+            }
+        },
+        "starshipweapon": {
+            "templates": ["common"],
+            "damage": 0,
+            "range": "",
+            "qualities": {
+                "area": false,
+                "spread": false,
+                "dampening": false,
+                "calibration": false,
+                "devastating": false,
+                "highyield": false,
+                "persistentx": 0,
+                "piercingx": 0,
+                "viciousx": 0,
+                "hiddenx": 0,
+                "versatilex": 0
             }
         },
         "armor": {

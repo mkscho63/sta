@@ -171,12 +171,15 @@ export class STACharacterSheet extends ActorSheet {
             for (i = 0; i < html.find('.check-button').length; i++) {
                 html.find('.check-button')[i].style.display = 'none';
             }
-            // This hides all toggle, add and delete item images.
+            // This hides all toggle, add, and delete item images.
             for (i = 0; i < html.find('.control.create').length; i++) {
                 html.find('.control.create')[i].style.display = 'none';
             }
             for (i = 0; i < html.find('.control .delete').length; i++) {
                 html.find('.control .delete')[i].style.display = 'none';
+            }
+            for (i = 0; i < html.find('.control.toggle').length; i++) {
+                html.find('.control.delete')[i].style.display = 'none';
             }
             // This hides all attribute and discipline check boxes (and titles)
             for (i = 0; i < html.find('.selector').length; i++) {
@@ -195,6 +198,36 @@ export class STACharacterSheet extends ActorSheet {
 
             return;
         };
+
+        // This toggles whether the value is used or not.
+        html.find('.control.toggle').click(ev => {
+            var itemType = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-type");
+            var itemId = $(ev.currentTarget).parents(".entry")[0].getAttribute("data-item-id");
+            var state =this.actor.items.get(itemId).data.data.used;
+            if (state) {
+                this.actor.items.get(itemId).data.data.used = false;
+                $(ev.currentTarget).children()[0].classList.remove("fa-toggle-on");
+                $(ev.currentTarget).children()[0].classList.add("fa-toggle-off");
+                $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-used", "false")
+                $(ev.currentTarget).parents(".entry")[0].style.textDecoration = "none";
+                
+            }
+            else {
+                this.actor.items.get(itemId).data.data.used = true;
+                $(ev.currentTarget).children()[0].classList.remove("fa-toggle-off");
+                $(ev.currentTarget).children()[0].classList.add("fa-toggle-on");
+                $(ev.currentTarget).parents(".entry")[0].setAttribute("data-item-used", "true");
+                $(ev.currentTarget).parents(".entry")[0].style.textDecoration = "line-through";
+
+            }
+
+            let itemData = {
+                _id: itemId,
+                "data.used": !state
+            };
+
+            this.actor.updateOwnedItem(itemData);
+        });
 
         // This allows for all items to be rolled, it gets the current targets type and id and sends it to the rollGenericItem function.
         html.find('.rollable').click(ev =>{
@@ -356,6 +389,11 @@ export class STACharacterSheet extends ActorSheet {
             }
             
             staActor.rollAttributeTest(event, selectedAttribute, parseInt(selectedAttributeValue), selectedDiscipline, parseInt(selectedDisciplineValue), this.actor);
+        });
+        
+        // If the check-button is clicked it fires the method challenge roll method. See actor.js for further info.
+        html.find('.check-button.challenge').click(ev => {
+            staActor.rollChallengeRoll(event, this.actor);
         });
     }
 }

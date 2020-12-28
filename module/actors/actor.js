@@ -104,7 +104,7 @@ export class STASharedActorFunctions {
 	}
 
     // This handles performing an attribute test using the "Perform Check" button.
-    async rollAttributeTest(event, selectedAttribute, selectedAttributeValue, selectedDiscipline, selectedDisciplineValue, speaker, isCharacter) {
+    async rollAttributeTest(event, selectedAttribute, selectedAttributeValue, selectedDiscipline, selectedDisciplineValue, speaker) {
 				event.preventDefault();
 				// This creates a dialog to gather details regarding the roll and waits for a response
         let rolldialog = await STARollDialog.create();
@@ -115,9 +115,22 @@ export class STASharedActorFunctions {
 						let complicationRange = parseInt(rolldialog.get("complicationRange"));
 						// Once the response has been collected it then sends it to be rolled.
             let staRoll = new STARoll();
-            staRoll.performAttributeTest(dicePool, usingFocus, usingDetermination, selectedAttribute, selectedAttributeValue, selectedDiscipline, selectedDisciplineValue, complicationRange, speaker, isCharacter);
+            staRoll.performAttributeTest(dicePool, usingFocus, usingDetermination, selectedAttribute, selectedAttributeValue, selectedDiscipline, selectedDisciplineValue, complicationRange, speaker);
         }
-    }
+		}
+		
+		// This handles performing an challenge roll using the "Perform Challenge Roll" button.
+    async rollChallengeRoll(event, speaker) {
+			event.preventDefault();
+			// This creates a dialog to gather details regarding the roll and waits for a response
+			let rolldialog = await STARollDialog.create();
+			if (rolldialog) {
+					let dicePool = rolldialog.get("dicePoolValue");
+					// Once the response has been collected it then sends it to be rolled.
+					let staRoll = new STARoll();
+					staRoll.performChallengeRoll(dicePool, speaker);
+			}
+		}
 
     // This handles performing an "item" roll by clicking the item's image.
     async rollGenericItem(event, type, id, speaker) {

@@ -9,11 +9,17 @@ import {
     STAStarshipSheet
 } from "./actors/sheets/starship-sheet.js";
 import {
+    STAExtendedTaskSheet
+} from "./actors/sheets/extended-task-sheet.js";
+import {
     STAItemSheet
 } from "./items/item-sheet.js";
 import {
-    STAWeaponSheet
-} from "./items/weapon-sheet.js";
+    STACharacterWeaponSheet
+} from "./items/character-weapon-sheet.js";
+import {
+    STAStarshipWeaponSheet
+} from "./items/starship-weapon-sheet.js";
 import {
     STAArmorSheet
 } from "./items/armor-sheet.js";
@@ -59,8 +65,10 @@ Hooks.once("init", function() {
         applications: {
             STACharacterSheet,
             STAStarshipSheet,
+            STAExtendedTaskSheet,
             STAItemSheet,
-            STAWeaponSheet,
+            STACharacterWeaponSheet,
+            STAStarshipWeaponSheet,
             STAArmorSheet,
             STATalentSheet,
             STAGenericSheet,
@@ -78,6 +86,16 @@ Hooks.once("init", function() {
         decimals: 0
     };
 
+    // Set up custom challenge dice
+    // CONFIG.sta.CHALLENGE_RESULTS = {
+    //     1: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success1.svg'/>`, success: 1, effect: 0 },
+    //     2: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success2.svg'/>`, success: 2, effect: 0 },
+    //     3: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
+    //     4: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
+    //     5: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
+    //     6: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
+    //   };
+
     // Define custom Entity classes
     CONFIG.Actor.entityClass = STAActor;
 
@@ -90,13 +108,19 @@ Hooks.once("init", function() {
     Actors.registerSheet("sta", STAStarshipSheet, {
         types: ["starship"]
     });
+    Actors.registerSheet("sta", STAExtendedTaskSheet, {
+        types: ["extendedtask"]
+    });
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("sta", STAItemSheet, {
         types: ["item"],
         makeDefault: true
     });
-    Items.registerSheet("sta", STAWeaponSheet, {
-        types: ["weapon"],
+    Items.registerSheet("sta", STACharacterWeaponSheet, {
+        types: ["characterweapon"],
+    });
+    Items.registerSheet("sta", STAStarshipWeaponSheet, {
+        types: ["starshipweapon"],
     });
     Items.registerSheet("sta", STAArmorSheet, {
         types: ["armor"],
@@ -208,6 +232,20 @@ Hooks.once("init", function() {
             l.render(true);
         });
     });
+
+    // Hooks.once("diceSoNiceReady", (dice3d) => {
+    //     dice3d.addSystem({ id: "sta", name: "Star Trek Adventures" }, true);
+
+    //     dice3d.addDicePreset(
+    //         {
+    //           type: "dc",
+    //           labels: ["", "", "s", "s  \n  a", "a  \n  a", "a"],
+    //           colorset: "blue",
+    //           system: "sta",
+    //         },
+    //         "d6"
+    //     );
+    // });
 });
 
 

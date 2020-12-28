@@ -1,0 +1,50 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <div class="main-content">
+    <div class="row">
+      <div class="lcars-column-extendedtask">
+        <div class="lcars-header-extendedtask1"></div>
+      </div>
+      <div class="column-headerfields1-extendedtasks">
+        <label class="label">{{localize 'sta.actor.genericitem.name'}}</label>
+        <input name="name" type="text" class="text-entry" value="{{actor.name}}" placeholder="{{localize 'sta.actor.genericitem.name'}}" />
+      </div>
+      <div class="column-headerfields2-extendedtasks">
+        <label class="label">{{localize 'sta.actor.extendedtask.difficulty'}}</label>
+        <input name="data.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{data.difficulty}}" min="0" data-dtype="Number" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="lcars-column-extendedtask">
+        <div class="lcars-header-extendedtask2"></div>
+      </div>
+      <div class="column-headerfields2-extendedtasks">
+        <label class="label">{{localize 'sta.actor.extendedtask.magnitude'}}</label>
+        <input name="data.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{data.magnitude}}" min="0" data-dtype="Number" />
+      </div>
+      <div class="column-headerfields2-extendedtasks">
+        <label class="label">{{localize 'sta.actor.extendedtask.work'}}</label>
+        <input name="data.work" type="number" id="work" class="numeric-entry" value="{{data.work}}" min="0" data-dtype="Number" />
+      </div>
+      <div class="column-headerfields2-extendedtasks">
+        <label class="label">{{localize 'sta.actor.extendedtask.resistance'}}</label>
+        <input name="data.resistance" type="number" id="resistance" class="numeric-entry" value="{{data.resistance}}" min="0" data-dtype="Number" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="lcars-column-extendedtask">
+        <div class="lcars-header-extendedtask3"></div>
+      </div>
+      <div class="check-button btn extendedtask">{{localize 'sta.actor.extendedtask.render'}}</div>
+    </div>
+    <div class="row">
+      <div class="lcars-column-extendedtask">
+        <div class="lcars-header-extendedtask4"></div>
+        <div class="lcars-body-extendedtask1"></div>
+        <div class="lcars-body-extendedtask2"></div>
+      </div>
+      <div class="extendedtask-track">
+        <input type="hidden" id="work-progress" name="data.workprogress" value="{{data.workprogress}}" data-dtype="Number" />
+        <div id="extendedtask-renderer" style="width: 100%" class="extendedtask-track"></div>
+      </div>
+    </div>
+</form>
