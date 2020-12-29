@@ -21,7 +21,7 @@ export class STAExtendedTaskSheet extends ActorSheet {
       ui.notifications.warn("You do not have permission to view this sheet!");
         return;
     }
-    return `systems/FVTT-StarTrekAdventures/templates/actors/extended-task-sheet.html`;
+    return `systems/sta/templates/actors/extended-task-sheet.html`;
   }
 
   /* -------------------------------------------- */

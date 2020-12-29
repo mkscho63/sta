@@ -22,8 +22,8 @@ export class STACharacterSheet extends ActorSheet {
     // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
     /** @override */
     get template() {
-        if ( !game.user.isGM && this.actor.limited) return "systems/FVTT-StarTrekAdventures/templates/actors/limited-sheet.html";
-        return `systems/FVTT-StarTrekAdventures/templates/actors/character-sheet.html`;
+        if ( !game.user.isGM && this.actor.limited) return "systems/sta/templates/actors/limited-sheet.html";
+        return `systems/sta/templates/actors/character-sheet.html`;
       }
 
     /* -------------------------------------------- */
@@ -140,7 +140,7 @@ export class STACharacterSheet extends ActorSheet {
 
         // This creates a dynamic Reputation tracker. For this it uses a max value of 30. This can be configured here. 
         // It creates a new div for each and places it under a child called "bar-rep-renderer"
-        var repPointsMax = game.settings.get("FVTT-StarTrekAdventures", "maxNumberOfReputation");
+        var repPointsMax = game.settings.get("sta", "maxNumberOfReputation");
         var i;
         for (i = 1; i <= repPointsMax; i++) {
             var div = document.createElement("DIV");

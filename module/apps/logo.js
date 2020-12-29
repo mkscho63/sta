@@ -2,7 +2,7 @@ export class STALogo extends Application {
 
     static get defaultOptions() {
         const options = super.defaultOptions;
-        options.template = "systems/FVTT-StarTrekAdventures/templates/apps/logo.html";
+        options.template = "systems/sta/templates/apps/logo.html";
         options.popOut = false;
         options.resizable = false;
         return options;

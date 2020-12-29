@@ -19,7 +19,7 @@ export class STASmallcraftContainerSheet extends ItemSheet {
       ui.notifications.warn("You do not have permission to view this item!");
       return;
     }
-    return `systems/FVTT-StarTrekAdventures/templates/items/smallcraftcontainer-sheet.html`;
+    return `systems/sta/templates/items/smallcraftcontainer-sheet.html`;
   }
 
   /* -------------------------------------------- */

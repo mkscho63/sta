@@ -100,12 +100,12 @@ Hooks.once("init", function() {
 
     // Set up custom challenge dice
     // CONFIG.sta.CHALLENGE_RESULTS = {
-    //     1: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success1.svg'/>`, success: 1, effect: 0 },
-    //     2: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success2.svg'/>`, success: 2, effect: 0 },
-    //     3: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
-    //     4: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
-    //     5: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
-    //     6: { label: `<img src='systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
+    //     1: { label: `<img src='systems/sta/icons/ChallengeDie_Success1.svg'/>`, success: 1, effect: 0 },
+    //     2: { label: `<img src='systems/sta/icons/ChallengeDie_Success2.svg'/>`, success: 2, effect: 0 },
+    //     3: { label: `<img src='systems/sta/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
+    //     4: { label: `<img src='systems/sta/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
+    //     5: { label: `<img src='systems/sta/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
+    //     6: { label: `<img src='systems/sta/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
     //   };
 
     // Define custom Entity classes
@@ -159,7 +159,7 @@ Hooks.once("init", function() {
 
 
     // Register system settings
-    game.settings.register("FVTT-StarTrekAdventures", "multipleComplications", {
+    game.settings.register("sta", "multipleComplications", {
         name: 'Multiple Complications:',
         hint: 'The rulebook states "Any die which rolled 20 causes a complication". This is slightly unclear and as of Version 8 of the PDF, this is still not clear - likely due to the incredible rarity. Enabling this will allow roles to display "There were x Complications" if multiple 20s are rolled. Disabling will just state a single complication.',
         scope: "world",
@@ -168,7 +168,7 @@ Hooks.once("init", function() {
         config: true
     });
 
-    game.settings.register("FVTT-StarTrekAdventures", "threatPermissionLevel", {
+    game.settings.register("sta", "threatPermissionLevel", {
         name: 'Threat Tracker User Role:',
         hint: 'Who should be allowed to amend the threat tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
         scope: "world",
@@ -183,7 +183,7 @@ Hooks.once("init", function() {
         }
     });
 
-    game.settings.register("FVTT-StarTrekAdventures", "momentumPermissionLevel", {
+    game.settings.register("sta", "momentumPermissionLevel", {
         name: 'Momentum Tracker User Role:',
         hint: 'Who should be allowed to amend the momentum tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
         scope: "world",
@@ -198,7 +198,7 @@ Hooks.once("init", function() {
         }
     });
 
-    game.settings.register("FVTT-StarTrekAdventures", "maxNumberOfReputation", {
+    game.settings.register("sta", "maxNumberOfReputation", {
         name: 'Maximum amount of Reputation:',
         hint: 'Max number of reputation that can be given to a character. 10 is default.',
         scope: "world",
@@ -207,7 +207,7 @@ Hooks.once("init", function() {
         config: true
     });
 
-    game.settings.register("FVTT-StarTrekAdventures", "trackerRefreshRate", {
+    game.settings.register("sta", "trackerRefreshRate", {
         name: 'Refresh Rate of Threat & Momentum:',
         hint: 'In seconds, how often should the tracker refresh. It is inadvisable to set this too low. Up this if it appears to be causing optimisation issues.',
         scope: "world",
@@ -216,14 +216,14 @@ Hooks.once("init", function() {
         config: true
     });
     
-    game.settings.register("FVTT-StarTrekAdventures", "threat", {
+    game.settings.register("sta", "threat", {
         scope: "world",
         type: Number,
         default: 0,
         config: false
     });
 
-    game.settings.register("FVTT-StarTrekAdventures", "momentum", {
+    game.settings.register("sta", "momentum", {
         scope: "world",
         type: Number,
         default: 0,
@@ -235,7 +235,7 @@ Hooks.once("init", function() {
     )
 
     Hooks.on("ready", function() {
-        let i = USER_ROLES[game.settings.get("FVTT-StarTrekAdventures", "momentumPermissionLevel")];
+        let i = USER_ROLES[game.settings.get("sta", "momentumPermissionLevel")];
         for (i; i <= 4; i++) {
             if (!game.permissions.SETTINGS_MODIFY.includes(i)) var error = true;
         }
@@ -244,11 +244,11 @@ Hooks.once("init", function() {
             ui.notifications.error("The Momentum Tracker User Role does not have permissions to Modify Configuration Settings. Please change one of these in Permission Configuration or System Settings.");
         }
         let t = new STATracker()
-        renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/tracker.html").then(html => {
+        renderTemplate("systems/sta/templates/apps/tracker.html").then(html => {
             t.render(true);
         });
         let l = new STALogo()
-        renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/logo.html").then(html => {
+        renderTemplate("systems/sta/templates/apps/logo.html").then(html => {
             l.render(true);
         });
     });

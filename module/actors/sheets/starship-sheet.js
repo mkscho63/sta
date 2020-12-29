@@ -21,8 +21,8 @@ export class STAStarshipSheet extends ActorSheet {
     // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
     /** @override */
     get template() {
-        if ( !game.user.isGM && this.actor.limited) return "systems/FVTT-StarTrekAdventures/templates/actors/limited-sheet.html";
-        return `systems/FVTT-StarTrekAdventures/templates/actors/starship-sheet.html`;
+        if ( !game.user.isGM && this.actor.limited) return "systems/sta/templates/actors/limited-sheet.html";
+        return `systems/sta/templates/actors/starship-sheet.html`;
       }
 
     /* -------------------------------------------- */

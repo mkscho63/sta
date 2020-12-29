@@ -4,9 +4,9 @@ export class STARollDialog {
     var html = "";
     if(isAttribute) {
         // Grab the RollDialog HTML file/
-        html = await renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/dicepool-attribute.html");
+        html = await renderTemplate("systems/sta/templates/apps/dicepool-attribute.html");
     } else {
-        html = await renderTemplate("systems/FVTT-StarTrekAdventures/templates/apps/dicepool-challenge.html");
+        html = await renderTemplate("systems/sta/templates/apps/dicepool-challenge.html");
     }
     // Create a new promise for the HTML above.
     return new Promise((resolve) => {

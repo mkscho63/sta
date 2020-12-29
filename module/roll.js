@@ -56,7 +56,7 @@ export class STARoll {
         }
 
         // Check if we allow multiple complications, or if only one complication ever happens.
-        const multipleComplicationsAllowed = game.settings.get("FVTT-StarTrekAdventures", "multipleComplications");
+        const multipleComplicationsAllowed = game.settings.get("sta", "multipleComplications");
 
         // If there is any complications, we want to crate a string for this. If we allow multiple complications and they exist, we want to pluralise this also.
         // If no complications exist then we don't even show this box.
@@ -144,23 +144,23 @@ export class STARoll {
             
             switch(result) {
                 case 1:
-                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success1_small.png" /></li>'
+                    diceString += '<li class="roll die d6"><img src="systems/sta/icons/ChallengeDie_Success1_small.png" /></li>'
                     success += 1;
                     break;
                 case 2:
-                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success2_small.png" /></li>'
+                    diceString += '<li class="roll die d6"><img src="systems/sta/icons/ChallengeDie_Success2_small.png" /></li>'
                     success += 2
                     break;
                 case 5:
                 case 6:
-                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Effect_small.png" /></li>'
+                    diceString += '<li class="roll die d6"><img src="systems/sta/icons/ChallengeDie_Effect_small.png" /></li>'
                     success += 1;
                     effect += 1;
                     break;
                 case 3:
                 case 4:
                 default:
-                    diceString += '<li class="roll die d6"><img src="systems/FVTT-StarTrekAdventures/icons/ChallengeDie_Success0_small.png" /></li>'
+                    diceString += '<li class="roll die d6"><img src="systems/sta/icons/ChallengeDie_Success0_small.png" /></li>'
                     break;
             }
         }
