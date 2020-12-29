@@ -9,6 +9,9 @@ import {
     STAStarshipSheet
 } from "./actors/sheets/starship-sheet.js";
 import {
+    STASmallCraftSheet
+} from "./actors/sheets/smallcraft-sheet.js";
+import {
     STAExtendedTaskSheet
 } from "./actors/sheets/extended-task-sheet.js";
 import {
@@ -29,6 +32,9 @@ import {
 import {
     STAGenericSheet
 } from "./items/generic-sheet.js";
+import {
+    STASmallcraftContainerSheet
+} from "./items/smallcraftcontainer-sheet.js";
 import { 
     STATracker 
 } from "./apps/tracker.js";
@@ -36,6 +42,9 @@ import {
     STALogo
 } from "./apps/logo.js";
 import * as macros from "./macro.js";
+import { 
+    STAItem
+} from "./items/item.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -65,6 +74,7 @@ Hooks.once("init", function() {
         applications: {
             STACharacterSheet,
             STAStarshipSheet,
+            STASmallCraftSheet,
             STAExtendedTaskSheet,
             STAItemSheet,
             STACharacterWeaponSheet,
@@ -72,6 +82,8 @@ Hooks.once("init", function() {
             STAArmorSheet,
             STATalentSheet,
             STAGenericSheet,
+            STASmallcraftContainerSheet,
+            STAItem,
         },
         entities: {
             STAActor,
@@ -98,6 +110,7 @@ Hooks.once("init", function() {
 
     // Define custom Entity classes
     CONFIG.Actor.entityClass = STAActor;
+    CONFIG.Item.entityClass = STAItem;
 
     // Register sheet application classes
     Actors.unregisterSheet("core", ActorSheet);
@@ -107,6 +120,9 @@ Hooks.once("init", function() {
     });
     Actors.registerSheet("sta", STAStarshipSheet, {
         types: ["starship"]
+    });
+    Actors.registerSheet("sta", STASmallCraftSheet, {
+        types: ["smallcraft"],
     });
     Actors.registerSheet("sta", STAExtendedTaskSheet, {
         types: ["extendedtask"]
@@ -137,8 +153,8 @@ Hooks.once("init", function() {
     Items.registerSheet("sta", STAGenericSheet, {
         types: ["injury"],
     });
-    Items.registerSheet("sta", STAItemSheet, {
-        types: ["smallcraft"],
+    Items.registerSheet("sta", STASmallcraftContainerSheet, {
+        types: ["smallcraftcontainer"],
     });
 
 
@@ -214,6 +230,10 @@ Hooks.once("init", function() {
         config: false
     });
 
+    Hooks.on('renderChatLog', (app, html, data) =>
+        STAItem.chatListeners(html)
+    )
+
     Hooks.on("ready", function() {
         let i = USER_ROLES[game.settings.get("FVTT-StarTrekAdventures", "momentumPermissionLevel")];
         for (i; i <= 4; i++) {
@@ -247,7 +267,6 @@ Hooks.once("init", function() {
     //     );
     // });
 });
-
 
 export function getFoundryVersion() {
     let version = game.world.coreVersion;

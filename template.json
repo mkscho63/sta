@@ -1,6 +1,6 @@
 {
     "Actor": {
-        "types": ["character", "starship", "extendedtask"],
+        "types": ["character", "starship", "extendedtask", "smallcraft"],
         "templates": {
             "common": {
                 "notes":""
@@ -48,32 +48,32 @@
             "disciplines": {
                 "command": {
                     "label": "sta.actor.character.discipline.command",
-                    "value": 4,
+                    "value": 0,
                     "selected": true
                 },
                 "conn": {
                     "label": "sta.actor.character.discipline.conn",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "engineering": {
                     "label": "sta.actor.character.discipline.engineering",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "medicine": {
                     "label": "sta.actor.character.discipline.medicine",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "science": {
                     "label": "sta.actor.character.discipline.science",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "security": {
                     "label": "sta.actor.character.discipline.security",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 }
             },
@@ -95,32 +95,32 @@
             "departments": {
                 "command": {
                     "label": "sta.actor.starship.department.command",
-                    "value": 4,
+                    "value": 0,
                     "selected": true
                 },
                 "conn": {
                     "label": "sta.actor.starship.department.conn",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "engineering": {
                     "label": "sta.actor.starship.department.engineering",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "medicine": {
                     "label": "sta.actor.starship.department.medicine",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "science": {
                     "label": "sta.actor.starship.department.science",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 },
                 "security": {
                     "label": "sta.actor.starship.department.security",
-                    "value": 4,
+                    "value": 0,
                     "selected": false
                 }
             },
@@ -186,10 +186,94 @@
             "worktracks": 1,
             "tracklength": 1,
             "workprogress": 0
+        },
+        "smallcraft": {
+            "departments": {
+                "command": {
+                    "label": "sta.actor.starship.department.command",
+                    "value": 0,
+                    "selected": true
+                },
+                "conn": {
+                    "label": "sta.actor.starship.department.conn",
+                    "value": 0,
+                    "selected": false
+                },
+                "engineering": {
+                    "label": "sta.actor.starship.department.engineering",
+                    "value": 0,
+                    "selected": false
+                },
+                "medicine": {
+                    "label": "sta.actor.starship.department.medicine",
+                    "value": 0,
+                    "selected": false
+                },
+                "science": {
+                    "label": "sta.actor.starship.department.science",
+                    "value": 0,
+                    "selected": false
+                },
+                "security": {
+                    "label": "sta.actor.starship.department.security",
+                    "value": 0,
+                    "selected": false
+                }
+            },
+            "missionprofile": "",
+            "parent": "",
+            "power": {
+                "value": 0
+            },
+            "resistance": 1,
+            "scale": 1,
+            "shields": {
+                "value": 0
+            },
+            "spaceframe": "",
+            "systems": {
+                "communications": {
+                    "label": "sta.actor.starship.system.communications",
+                    "value": 7,
+                    "selected": true,
+                    "breaches": 0
+                },
+                "computers": {
+                    "label": "sta.actor.starship.system.computers",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "engines": {
+                    "label": "sta.actor.starship.system.engines",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "sensors": {
+                    "label": "sta.actor.starship.system.sensors",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "structure": {
+                    "label": "sta.actor.starship.system.structure",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                },
+                "weapons": {
+                    "label": "sta.actor.starship.system.weapons",
+                    "value": 7,
+                    "selected": false,
+                    "breaches": 0
+                }
+            },
+            "traits": ""
         }
     },
     "Item": {
-        "types": ["item", "focus", "value", "characterweapon", "starshipweapon", "armor", "talent", "milestone", "injury", "smallcraft"],
+        "types": ["item", "focus", "value", "characterweapon", "starshipweapon", "armor", "talent", "milestone", "injury", "smallcraftcontainer"],
         "templates": {
             "common": {
                 "description": ""
@@ -250,8 +334,6 @@
         "armor": {
             "templates": ["common"],
             "protection": 0,
-            "cost": 0,
-            "helmet": false,
             "equipped": true
         },
         "talent": {
@@ -261,8 +343,9 @@
         "injury": {
             "templates": ["common"]
         },
-        "smallcraft": {
-            "templates": ["common"]
+        "smallcraftcontainer": {
+            "templates": ["common"],
+            "quantity": 1
         }
     }
 }

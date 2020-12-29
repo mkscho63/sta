@@ -12,76 +12,42 @@ export class STARoll {
         let diceString = "";
         let success = 0;
         let complication = 0;
-        let checkTarget = selectedAttributeValue + selectedDisciplineValue;
+        let checkTarget = parseInt(selectedAttributeValue) + parseInt(selectedDisciplineValue);
         let complicationMinimumValue = 20 - (complicationRange - 1);
-        // Check if we are using a Foundry version below 0.7.0, if so use the old code.
-        if (foundryVersion[0] == 0 && foundryVersion[1] < 7) {
-            // Define r as our dice roll we want to perform (1d20, 2d20, 3d20, 4d20 or 5d20). We will then roll it.
-            var r = new Roll(dicePool+"d20")
-            r.roll();
-            // Now for each dice in the dice pool we want to check what the individual result was.
-            for (i = 0; i < dicePool; i++) {
-                result = r.dice[0].rolls[i].roll;
-                // If the result is less than or equal to the focus, that counts as 2 successes and we want to show the dice as green.
-                if (usingFocus && result <= selectedDisciplineValue) {
-                    diceString += '<li class="roll die d20 max">' + result + '</li>';
-                    success += 2;
-                } 
-                // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
-                else if (result <= checkTarget) {
-                    diceString += '<li class="roll die d20">' + result + '</li>';
-                    success += 1;
-                }
-                // If the result is greater than or equal to the complication range, then we want to count it as a complication. We also want to show it as red!
-                else if (result >= complicationMinimumValue) {
-                    diceString += '<li class="roll die d20 min">' + result + '</li>';
-                    complication += 1;
-                }
-                // If none of the above is true, the dice failed to do anything and is treated as normal.
-                else {
-                    diceString += '<li class="roll die d20">' + result + '</li>';
-                }
-            }
-            // If using a Value and Determination, automatically add in an extra critical roll
-            if (usingDetermination){
-                diceString += '<li class="roll die d20 max">' + 1 + '</li>';
+
+        // Define r as our dice roll we want to perform (1d20, 2d20, 3d20, 4d20 or 5d20). We will then roll it.
+        var r = new Roll(dicePool+"d20")
+        r.roll();
+        // Now for each dice in the dice pool we want to check what the individual result was.
+        for (i = 0; i < dicePool; i++) {
+            result = r.terms[0].results[i].result;
+            // If the result is less than or equal to the focus, that counts as 2 successes and we want to show the dice as green.
+            if ((usingFocus && result <= selectedDisciplineValue) || result == 1) {
+                diceString += '<li class="roll die d20 max">' + result + '</li>';
                 success += 2;
+            } 
+            // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
+            else if (result <= checkTarget) {
+                diceString += '<li class="roll die d20">' + result + '</li>';
+                success += 1;
+            }
+            // If the result is greater than or equal to the complication range, then we want to count it as a complication. We also want to show it as red!
+            else if (result >= complicationMinimumValue) {
+                diceString += '<li class="roll die d20 min">' + result + '</li>';
+                complication += 1;
+            }
+            // If none of the above is true, the dice failed to do anything and is treated as normal.
+            else {
+                diceString += '<li class="roll die d20">' + result + '</li>';
             }
         }
-        // If not use the shiny new code.
-        else {
-            // Define r as our dice roll we want to perform (1d20, 2d20, 3d20, 4d20 or 5d20). We will then roll it.
-            var r = new Roll(dicePool+"d20")
-            r.roll();
-            // Now for each dice in the dice pool we want to check what the individual result was.
-            for (i = 0; i < dicePool; i++) {
-                result = r.terms[0].results[i].result;
-                // If the result is less than or equal to the focus, that counts as 2 successes and we want to show the dice as green.
-                if (usingFocus && result <= selectedDisciplineValue) {
-                    diceString += '<li class="roll die d20 max">' + result + '</li>';
-                    success += 2;
-                } 
-                // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
-                else if (result <= checkTarget) {
-                    diceString += '<li class="roll die d20">' + result + '</li>';
-                    success += 1;
-                }
-                // If the result is greater than or equal to the complication range, then we want to count it as a complication. We also want to show it as red!
-                else if (result >= complicationMinimumValue) {
-                    diceString += '<li class="roll die d20 min">' + result + '</li>';
-                    complication += 1;
-                }
-                // If none of the above is true, the dice failed to do anything and is treated as normal.
-                else {
-                    diceString += '<li class="roll die d20">' + result + '</li>';
-                }
-            }
-            // If using a Value and Determination, automatically add in an extra critical roll
-            if (usingDetermination){
-                diceString += '<li class="roll die d20 max">' + 1 + '</li>';
-                success += 2;
-            }
+
+        // If using a Value and Determination, automatically add in an extra critical roll
+        if (usingDetermination){
+            diceString += '<li class="roll die d20 max">' + 1 + '</li>';
+            success += 2;
         }
+
         // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
         if (success == 1) {
             var successText = success + game.i18n.format("sta.roll.success");
@@ -139,6 +105,14 @@ export class STARoll {
                         complicationText +
                         `<h4 class="dice-total">` + successText + `</h4>
                     </div>
+                </div>
+                <div class="reroll-result attribute">
+                    <span>` + game.i18n.format("sta.roll.rerollresults") + `</span>
+                    <input id="selectedAttribute" type="hidden" value="` + selectedAttribute + `" >
+                    <input id="selectedAttributeValue" type="hidden" value="` + selectedAttributeValue + `" >
+                    <input id="selectedDiscipline" type="hidden" value="` + selectedDiscipline + `" >
+                    <input id="selectedDisciplineValue" type="hidden" value="` + selectedDisciplineValue + `" >
+                    <input id="speakerId" type="hidden" value="` + speaker._id + `" >
                 </div>
             </div>
         `
@@ -236,6 +210,10 @@ export class STARoll {
                         `<h4 class="dice-total">` + successText + `</h4>
                     </div>
                 </div>
+                <div class="reroll-result challenge">
+                <span>` + game.i18n.format("sta.roll.rerollresults") + `</span>
+                <input id="speakerId" type="hidden" value="` + speaker._id + `" >
+            </div>
             </div>
         `
         // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.

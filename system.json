@@ -1,6 +1,6 @@
 {
-    "name": "FVTT-StarTrekAdventures",
-    "title": "Star Trek Adventures Roleplaying Game Unofficial",
+    "name": "sta",
+    "title": "Star Trek Adventures Roleplaying Game",
     "description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
     "version": "0.0.1",
     "minimumCoreVersion": "0.7.7",
@@ -11,11 +11,11 @@
     "styles": ["styles/sta.css"],
     "packs": [
         {
-			"label": "Focuses",
+			"label": "Weapons",
 			"entity": "Item",
-			"name": "focuses",
-			"path": "./packs/focuses.db",
-			"system": "FVTT-StarTrekAdventures"
+			"name": "weapons",
+			"path": "./packs/weapons.db",
+			"system": "sta"
 		}
     ],
     "languages": [{
@@ -27,8 +27,7 @@
     "gridUnits": "ft",
     "primaryTokenAttribute": "stress",
     "secondaryTokenAttribute": "determination",
-    "url": "https://github.com/mkscho63/FVTT-StarTrekAdventures",
-    "manifest": "https://github.com/mkscho63/FVTT-StarTrekAdventures/master/system.json",
-    "download": "https://github.com/mkscho63/FVTT-StarTrekAdventures/archive/master.zip",
-    "license": "LICENSE.txt"
+    "url": "https://github.com/mkscho63/sta",
+    "manifest": "https://github.com/mkscho63/sta/master/system.json",
+    "download": "https://github.com/mkscho63/sta/archive/master.zip"
 }

@@ -68,7 +68,7 @@ export class STACharacterSheet extends ActorSheet {
         if (data.data.determination.value < 0) data.data.determination.value = 0;
         if (data.data.stress.value < 0) data.data.stress.value = 0;
         if (data.data.reputation < 0) data.data.reputation = 0;
-        
+
         return data;
     }
 
@@ -87,18 +87,15 @@ export class STACharacterSheet extends ActorSheet {
         // We use i alot in for loops. Best to assign it now for use later in multiple places.
         var i;
 
-        // Here we are checking how many helmets and armors are equipped. 
-        // The player can only have one of each armor type. As such, we will use this later.
+        // Here we are checking if there is armor equipped. 
+        // The player can only have one armor. As such, we will use this later.
         var armorNumber = 0;
-        var helmetNumber = 0;
         var stressTrackMax = 0;
         function armorCount(currentActor) {
             armorNumber = 0;
-            helmetNumber = 0;
             currentActor.actor.items.forEach((values) => {
                 if (values.type == "armor") {
-                    if (values.data.data.helmet == true && values.data.data.equipped == true) helmetNumber+= 1;
-                    if (values.data.data.helmet == false && values.data.data.equipped == true) armorNumber+= 1;
+                    if (values.data.data.equipped == true) armorNumber+= 1;
                 }
             });
         }
@@ -351,6 +348,27 @@ export class STACharacterSheet extends ActorSheet {
             }
         });
 
+        // This is used to clean up all the HTML that comes from displaying outputs from the text editor boxes. There's probably a better way to do this but the quick and dirty worked this time.
+        $.each($('[id^=talent-tooltip-text-]'), function(index, value) {
+            var beforeDescription = value.innerHTML;
+            var decoded = TextEditor.decodeHTML(beforeDescription);
+            var prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
+            $('#' + value.id).html(prettifiedDescription);
+        });
+
+
+        html.find('.talent-tooltip-clickable').click(ev => {
+            var talentId = $(ev.currentTarget)[0].id.substring('talent-tooltip-clickable-'.length);
+            var currentShowingTalentId = $('.talent-tooltip-container:not(.hide)')[0]?.id.substring('talent-tooltip-container-'.length);
+            
+            if (talentId == currentShowingTalentId) {
+                $('#talent-tooltip-container-' + talentId).addClass('hide').removeAttr('style');
+            } else {
+                $('.talent-tooltip-container').addClass('hide').removeAttr('style');
+                $('#talent-tooltip-container-' + talentId).removeClass('hide').height($('#talent-tooltip-text-' + talentId)[0].scrollHeight + 5);
+            }
+        });
+
         // Turns the Attribute checkboxes into essentially a radio button. It removes any other ticks, and then checks the new attribute.
         // Finally a submit is required as data has changed.
         html.find('.selector.attribute').click(ev => {
@@ -372,7 +390,7 @@ export class STACharacterSheet extends ActorSheet {
         });
 
         // If the check-button is clicked it grabs the selected attribute and the selected discipline and fires the method rollAttributeTest. See actor.js for further info.
-        html.find('.check-button').click(ev => {
+        html.find('.check-button.attribute').click(ev => {
             for (i = 0; i <= 5; i++) {
                 if (html.find('.selector.attribute')[i].checked === true) {
                     var selectedAttribute = html.find('.selector.attribute')[i].id;
@@ -394,6 +412,25 @@ export class STACharacterSheet extends ActorSheet {
         // If the check-button is clicked it fires the method challenge roll method. See actor.js for further info.
         html.find('.check-button.challenge').click(ev => {
             staActor.rollChallengeRoll(event, this.actor);
+        });
+
+        html.find('.reroll-result').click(ev => {
+            for (i = 0; i <= 5; i++) {
+                if (html.find('.selector.attribute')[i].checked === true) {
+                    var selectedAttribute = html.find('.selector.attribute')[i].id;
+                    var selectedAttribute = selectedAttribute.slice(0, -9)
+                    var selectedAttributeValue = html.find('#'+selectedAttribute)[0].value;
+                }
+            }
+            for (i = 0; i <= 5; i++) {
+                if (html.find('.selector.discipline')[i].checked === true) {
+                    var selectedDiscipline = html.find('.selector.discipline')[i].id;
+                    var selectedDiscipline = selectedDiscipline.slice(0, -9)
+                    var selectedDisciplineValue = html.find('#'+selectedDiscipline)[0].value;
+                }
+            }
+            
+            staActor.rollAttributeTest(event, selectedAttribute, parseInt(selectedAttributeValue), selectedDiscipline, parseInt(selectedDisciplineValue), this.actor);
         });
     }
 }

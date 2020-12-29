@@ -17,7 +17,10 @@ export class STAExtendedTaskSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    if ( !game.user.isGM && this.actor.limited) return "systems/FVTT-StarTrekAdventures/templates/actors/limited-sheet.html";
+    if ( !game.user.isGM && this.actor.limited) {
+      ui.notifications.warn("You do not have permission to view this sheet!");
+        return;
+    }
     return `systems/FVTT-StarTrekAdventures/templates/actors/extended-task-sheet.html`;
   }
 
@@ -92,7 +95,7 @@ export class STAExtendedTaskSheet extends ActorSheet {
 				if (k + 1 <= html.find('#work-progress')[0].value) {
 					html.find('[id^="extendedtask-box"]')[k].setAttribute("data-selected", "true");
 					html.find('[id^="extendedtask-box"]')[k].style.backgroundColor = "#FFCC33";
-					html.find('[id^="extendedtask-box"]')[k].style.color = "#0F0F0F";
+					html.find('[id^="extendedtask-box"]')[k].style.color = "#1F1F1F";
 				} else {
 					html.find('[id^="extendedtask-box"]')[k].removeAttribute("data-selected");
 					html.find('[id^="extendedtask-box"]')[k].style.backgroundColor = "#191813";

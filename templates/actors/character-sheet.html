@@ -157,11 +157,14 @@
                         {{#if (eq item.type "talent")}}
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="one-column-with-roll list-entry" data-talent-name="{{item.name}}">{{item.name}}</h4>
+                            <div class="one-column-no-roll list-entry talent-tooltip-clickable" id="talent-tooltip-clickable-{{item._id}}" data-talent-name="{{item.name}}">{{item.name}}</div>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
                             </div>
+                        </li>
+                        <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item._id}}">
+                            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item._id}}">{{item.data.description}}</div>
                         </li>
                         {{/if}}
                         {{/each}}
@@ -292,7 +295,7 @@
                         </div>
                         {{#each actor.items as |item type id|}}
                         {{#if (eq item.type "armor")}}
-                        <li id="armor-{{item._id}}" class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-helmet="{{item.data.helmet}}">
+                        <li id="armor-{{item._id}}" class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="rollable" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
                             <h4 id="protectval-armor-{{item._id}}" class="two-column-with-roll-secondary list-entry">{{item.data.protection}}</h4>

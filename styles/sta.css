@@ -31,7 +31,7 @@
 
 .sta .btn {
   background-color: #DD4444;
-  color: #0F0F0F;
+  color: #000000;
   border-radius: 20px;
 }
 
@@ -245,7 +245,7 @@
 }
 
 .sta.sheet.actor .secondary-title {
-  color: #0f0f0f;
+  color: #000000;
 }
 
 .sta.sheet.actor .numeric-entry,
@@ -256,12 +256,17 @@
   color: #CC88FF;
 }
 
+.app.dialog .window-content .form-fields select {
+  color: #000000;
+}
+
 .sta.sheet.actor .main .row .column .section .header.row {
   background-color: #444A77;
-  color: #0f0f0f;
+  color: #000000;
+  font-weight: bold;
   padding-left: 2px;
   padding-right: 2px;
-  border-bottom: 2px solid #0F0F0F;
+  border-bottom: 2px solid #000000;
 }
 
 .sta.sheet.actor .tox.tox-tinymce .tox-edit-area__iframe, 
@@ -453,6 +458,10 @@
   cursor: pointer;
 }
 
+.sta.sheet.actor .main .row .column .section .row .image .click-to-nav {
+  cursor: pointer;
+}
+
 .sta.sheet.actor .main .row .column .section .row .control {
   color: #FFCC33;
 }
@@ -535,6 +544,29 @@
 
 .sta.sheet.actor .main .row .column .section .row .equipable.column-x2-small {
   width: calc((100% - 80px)/4);
+}
+
+/*  Actor - Talent Tooltips */
+
+.sta.sheet.actor .main .row .column .section .entry.row.talent-tooltip-container.hide {
+  border: 0px dashed #33CCCC;
+  height: 0px;
+  -webkit-transition: height 0.5s linear, border-width 0.5s linear;
+    -moz-transition: height 0.5s linear, border-width 0.5s linear;
+      -ms-transition: height 0.5s linear, border-width 0.5s linear;
+        -o-transition: height 0.5s linear, border-width 0.5s linear;
+          transition: height 0.5s linear, border-width 0.5s linear;
+}
+
+.sta.sheet.actor .main .row .column .section .entry.row.talent-tooltip-container {
+  overflow-y: hidden;
+  border:.5px dashed #33CCCC;
+  height: 200px;
+  -webkit-transition: height 0.5s linear, border-width 0.5s linear;
+    -moz-transition: height 0.5s linear, border-width 0.5s linear;
+      -ms-transition: height 0.5s linear, border-width 0.5s linear;
+        -o-transition: height 0.5s linear, border-width 0.5s linear;
+          transition: height 0.5s linear, border-width 0.5s linear;
 }
 
 
@@ -761,9 +793,10 @@
 .window-content .dialog-button.roll.default, 
 .window-content .dialog-button.ok.default, 
 .window-content .dialog-button.yes.default, 
-.window-content .dialog-button.no { 
+.window-content .dialog-button.no, 
+.chat-message.message .reroll-result { 
   background-color: #DD4444;
-  color: #0F0F0F;
+  color: #000000;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -913,7 +946,7 @@
 }
 
 #sidebar > #sidebar-tabs {
-  color: #0F0F0F;
+  color: #000000;
   margin-bottom: 0;
   border-bottom: none;
   box-shadow: none;
@@ -927,7 +960,7 @@
   border-top: none;
   border-bottom: none;
   border-radius: 0;
-  color: #0F0F0F;
+  color: #000000;
 }
 
 #sidebar-tabs > .collapse {
@@ -935,7 +968,7 @@
   border-top: none;
   border-bottom: none;
   border-radius: 0;
-  color: #0F0F0F;
+  color: #000000;
 }
 
 #sidebar:not(.collapsed) > #sidebar-tabs > .item {
@@ -978,12 +1011,26 @@
 /* Chat Log */
 
 .app .chat-message.message{
-  background: #0F0F0F
+  background: #1F1F1F
 }
 
 .app .chat-message.message .message-header, 
 .app .chat-message.message .message-content {
   color: #FEFEFF;
+}
+
+.reroll-result {
+  flex: 0 0 100%;
+  position: relative;
+  margin: 0;
+  line-height: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #999;
+  border-radius: 3px;
+  box-shadow: 0 0 2px #FFF inset;
+  word-break: break-all;
+  margin-top: 5px;
 }
 
 

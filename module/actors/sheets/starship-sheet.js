@@ -170,6 +170,12 @@ export class STAStarshipSheet extends ActorSheet {
             item.sheet.render(true);
         });
 
+        html.find('.click-to-nav').click(ev => {
+            const childId = $(ev.currentTarget).parents(".entry").data("itemChildId");
+            const childShip = game.actors.find(target => target._id === childId);
+            childShip.sheet.render(true);
+        });
+
         // This if statement checks if the form is editable, if not it hides controls used by the owner, then aborts any more of the script.
         if (!this.options.editable) {
             // This hides the ability to Perform an System Test for the character
@@ -329,6 +335,27 @@ export class STAStarshipSheet extends ActorSheet {
             }
         });
 
+        // This is used to clean up all the HTML that comes from displaying outputs from the text editor boxes. There's probably a better way to do this but the quick and dirty worked this time.
+        $.each($('[id^=talent-tooltip-text-]'), function(index, value) {
+            var beforeDescription = value.innerHTML;
+            var decoded = TextEditor.decodeHTML(beforeDescription);
+            var prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
+            $('#' + value.id).html(prettifiedDescription);
+        });
+
+
+        html.find('.talent-tooltip-clickable').click(ev => {
+            var talentId = $(ev.currentTarget)[0].id.substring('talent-tooltip-clickable-'.length);
+            var currentShowingTalentId = $('.talent-tooltip-container:not(.hide)')[0]?.id.substring('talent-tooltip-container-'.length);
+
+            if (talentId == currentShowingTalentId) {
+                $('#talent-tooltip-container-' + talentId).addClass('hide').removeAttr('style');
+            } else {
+                $('.talent-tooltip-container').addClass('hide').removeAttr('style');
+                $('#talent-tooltip-container-' + talentId).removeClass('hide').height($('#talent-tooltip-text-' + talentId)[0].scrollHeight + 5);
+            }
+        });
+
         // Turns the System checkboxes into essentially a radio button. It removes any other ticks, and then checks the new system.
         // Finally a submit is required as data has changed.
         html.find('.selector.system').click(ev => {
@@ -372,6 +399,25 @@ export class STAStarshipSheet extends ActorSheet {
         // If the check-button is clicked it fires the method challenge roll method. See actor.js for further info.
         html.find('.check-button.challenge').click(ev => {
             staActor.rollChallengeRoll(event, this.actor);
+        });
+
+        html.find('.reroll-result').click(ev => {
+            for (i = 0; i <= 5; i++) {
+                if (html.find('.selector.system')[i].checked === true) {
+                    var selectedSystem = html.find('.selector.system')[i].id;
+                    var selectedSystem = selectedSystem.slice(0, -9)
+                    var selectedSystemValue = html.find('#'+selectedSystem)[0].value;
+                }
+            }
+            for (i = 0; i <= 5; i++) {
+                if (html.find('.selector.department')[i].checked === true) {
+                    var selectedDepartment = html.find('.selector.department')[i].id;
+                    var selectedDepartment = selectedDepartment.slice(0, -9)
+                    var selectedDepartmentValue = html.find('#'+selectedDepartment)[0].value;
+                }
+            }
+            
+            staActor.rollAttributeTest(event, selectedSystem, parseInt(selectedSystemValue), selectedDepartment, parseInt(selectedDepartmentValue), this.actor);
         });
     }
 }
