@@ -2,12 +2,7 @@
 
 > Star Trek Adventures Tabletop System in Foundry VTT
 </br></br>
-<!-- You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-trek-adventures/products/star-trek-adventures-core-rulebook-pdf">Star Trek Adventures Tabletop RPG</a> to play this! This system does not attempt to explain the game or include any ready made characters, features or items. The system is designed for those who understand the rules and want to play via Foundry VTT. Modiphius own's the property, as such I will not discuss rules and content with those who have not purchased the system from Modiphius. I am in no way affiliated with Modiphius, I only share this with their permission. -->
-
-<!-- ---
-
-## Features
-## Documentation -->
+You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-trek-adventures/products/star-trek-adventures-core-rulebook-pdf">Star Trek Adventures Tabletop RPG</a> to play this! This system does not attempt to explain the game or include any ready made characters, features or items. The system is designed for those who understand the rules and want to play via Foundry VTT. Modiphius own's the property, as such I will not discuss rules and content with those who have not purchased the system from Modiphius. I am in no way affiliated with Modiphius, I only share this with their permission.
 
 ---
 
@@ -18,35 +13,44 @@
 | [![Mike Schoen Creation](https://avatars1.githubusercontent.com/u/9925376?s=50)](https://www.mikeschoen.net)    |
 | <a href="https://github.com/mkscho63" target="_blank">`github.com/mkscho63`</a> |
 
-<!-- ---
+---
 
-## FAQ -->
+## FAQ
 
-<!-- - **There is a typo! Please fix?**
-    - Please raise an issue, label this as "visual". When doing so please use the following Minimum Data Set:
-<br />*Location of Typo*:
-<br />*Typo*:
-<br />*What should be used* (if possible):
-<br />*Screenshot* (if possible):
-    
-- **This issue occurs! This is a must fix!**
-    - Please raise an issue, label this as "support". All support requests should have the following Minimum Data Set:
-<br />*Browser*:
-<br />*Modules Installed*:
-<br />*Steps for Reproduction*:
-<br />*Expected Behaviour*:
-<br />*Actual Behaviour*:
-<br />*Screenshot* (if possible):
+- **I have found an issue! How do I report it?**
+- Do not hesitate to raise an issue, no matter how small the problem is. I may not address everything as urgently as people want, but I'll try to do my best. Please include an appropriate level of detail to recreate the issue or see the problem including but not limited to:
+*Where you found the issue/typo*
+*What exactly is wrong*
+*Browser version*
+*Modules installed*
+*Steps for reproduction*
+*Expected behavior*
+*Actual Behavior*
+*Screenshots if applicable*
 
-- **I have a question, but don't feel raising an issue is suitable.**
-    - Don't be afraid to raise an issue with a question or support tag! However, if you don't feel comfortable, you can get hold of me on discord! Either tag @FullMetalSeraph in the  Foundry VTT discord server. Support for this system is under the modiphius-2d20 channel or send me a DM. I check Discord daily. -->
+- **How do I submit an idea for a new feature?**
+- Excellent question, I'm pretty new to Github in general so I guess submit an issue also but give it the appropriate label for an enhancement.
+
+- **I want to make a code change, how do I go about submitting my change?**
+- The repo's main branch should be set to pull request only, if you have a submission you want to make, please create a PR and be as detailed as possible with what you want added in and why. I will try to review this as soon as I can. I cannot guarantee that everything will be accepted though, so if possible you may want to start a discussion of what you are doing, probably through an issue (enhancement) before getting started in earnest so there isn't wasted time. This policy may change a lot in the future and I will try to keep this up to date.
+
+- **Can you do an integration with {insert module name here}?**
+- I make no promises other than I'll try to read any requests made around this. I'm still fairly new to Foundry in general but if it makes sense to me and I have the time/capability, I'll see what I can do.
+
+- **Can you add support for {insert language name here} translations?**
+- Unfortunately I only fluenty (?) speak English and would not do justice to any other translations. I do have the system set up for translations to be done, I simply need the translation files to be created for them.
     
 ---
 
 ## Thanks
-- Atropos, of course, for creating an amazing Virtual Table-top solution. If you are on the fence, get it. No other application exists that makes this possible! <a href="https://foundryvtt.com/" target="_blank">https://foundryvtt.com/</a>.
-- Modiphius & Arkane for creating a very interesting, unique system for creating a player driven story! They have permitted that this is available for others to download. Ensure you only use this system after purchasing the Star Trek Adventure system! <a href="https://www.modiphius.net/collections/star-trek-adventures">https://www.modiphius.net/</a>.
+- Atropos, for creating Foundry Virtual Tabletop. It is an amazing VTT, especially if you want something highly customizable. <a href="https://foundryvtt.com/" target="_blank">https://foundryvtt.com/</a>.
+- Modiphius for creating the amazing Star Trek Adventures system, I definitely recommend trying it out if you are any level of a fan of Star Trek. Ensure you only use this system after purchasing the Star Trek Adventure system! <a href="https://www.modiphius.net/collections/star-trek-adventures">https://www.modiphius.net/</a>.
+- KaitoR for making the Dishonored VTT Unofficial system for Foundry. This gave me a starting point for the Star Trek Adventures system and also let me learn a lot about how Foundry System Building works in general.
 - Lorc for <a href="https://game-icons.net/1x1/lorc/magnifying-glass.html" target="_blank">Insight</a>, <a href="https://game-icons.net/1x1/lorc/icicles-aura.html" target="_blank">Presence</a>, and <a href="https://game-icons.net/1x1/lorc/open-book.html" target="_blank">Reason</a> Icons. They can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal blog: <a href="https://lorcblog.blogspot.com/" target="_blank">https://lorcblog.blogspot.com/</a>
-- Delapouite for <a href="https://game-icons.net/1x1/delapouite/weight-lifting-up.html" target="_blank">Fitness</a> Icon. It can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal website: <a href="https://delapouite.com/" target="_blank">https://delapouite.com/</a>
+- Delapouite for <a href="https://game-icons.net/1x1/delapouite/weight-lifting-up.html" target="_blank">Fitness</a> and <a href="https://game-icons.net/1x1/delapouite/chat-bubble.html" target="_blank">Chat Bubble</a> Icons. It can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal website: <a href="https://delapouite.com/" target="_blank">https://delapouite.com/</a>
 - Skoll for <a href="https://game-icons.net/1x1/skoll/fist.html" target="_blank">Control</a> and <a href="https://game-icons.net/1x1/skoll/achievement.html" target="_blank">Daring</a> Icon. Can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>.
 - <a href="https://github.com/angrytramp" target="_blank">angrytramp</a> for developing a shared Momentum pool.
+
+- A special thanks should also be given to my playtesters and friends that helped me with finding bugs in alpha as well as listening to me gripe through problems I ran into. I was always able to find feedback when I needed it and opinions on how I could improve functionality: Thorgibrewer (Karl), Kribby-D (Chris), Erk/Embabin (Erik), and Jediisaiah13 (Isaiah).
+
+- Finally, thanks to my wife, AlphaPanda13 (Kristin), for operating as my UX designer and "Person in charge of telling me when something looked bad" for the main design phase of development. When I got too close to a problem, she was able to give great insight on other ways to approach design problems.

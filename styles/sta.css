@@ -458,6 +458,12 @@
   cursor: pointer;
 }
 
+.sta.sheet.actor .main .row .column .section .row .image .chat:hover {
+  content: url("/systems/sta/icons/chat-bubble.svg");
+  box-shadow: 0 0 8px red;
+  cursor: pointer;
+}
+
 .sta.sheet.actor .main .row .column .section .row .image .click-to-nav {
   cursor: pointer;
 }
@@ -549,7 +555,7 @@
 /*  Actor - Talent Tooltips */
 
 .sta.sheet.actor .main .row .column .section .entry.row.talent-tooltip-container.hide {
-  border: 0px dashed #33CCCC;
+  border: 0px dashed #FF7700;
   height: 0px;
   -webkit-transition: height 0.5s linear, border-width 0.5s linear;
     -moz-transition: height 0.5s linear, border-width 0.5s linear;
@@ -560,7 +566,7 @@
 
 .sta.sheet.actor .main .row .column .section .entry.row.talent-tooltip-container {
   overflow-y: hidden;
-  border:.5px dashed #33CCCC;
+  border:.5px dashed #FF7700;
   height: 200px;
   -webkit-transition: height 0.5s linear, border-width 0.5s linear;
     -moz-transition: height 0.5s linear, border-width 0.5s linear;
