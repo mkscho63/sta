@@ -4,22 +4,22 @@
       <div class="lcars-column-extendedtask">
         <div class="lcars-header-extendedtask1"></div>
       </div>
-      <div class="column-headerfields1-extendedtasks">
+      <div class="column-headerfields1-name-extendedtasks">
         <label class="label">{{localize 'sta.actor.genericitem.name'}}</label>
         <input name="name" type="text" class="text-entry" value="{{actor.name}}" placeholder="{{localize 'sta.actor.genericitem.name'}}" />
       </div>
-      <div class="column-headerfields2-extendedtasks">
+      <div class="column-headerfields1-other-extendedtasks">
         <label class="label">{{localize 'sta.actor.extendedtask.breaches'}}</label>
         <input name="data.breaches" type="number" id="breaches" class="numeric-entry" value="{{data.breaches}}" min="0" data-dtype="Number" />
+      </div>
+      <div class="column-headerfields1-other-extendedtasks">
+        <label class="label">{{localize 'sta.actor.extendedtask.magnitude'}}</label>
+        <input name="data.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{data.magnitude}}" min="0" data-dtype="Number" />
       </div>
     </div>
     <div class="row">
       <div class="lcars-column-extendedtask">
         <div class="lcars-header-extendedtask2"></div>
-      </div>
-      <div class="column-headerfields2-extendedtasks">
-        <label class="label">{{localize 'sta.actor.extendedtask.magnitude'}}</label>
-        <input name="data.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{data.magnitude}}" min="0" data-dtype="Number" />
       </div>
       <div class="column-headerfields2-extendedtasks">
         <label class="label">{{localize 'sta.actor.extendedtask.work'}}</label>

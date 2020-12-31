@@ -456,18 +456,22 @@
   transition: height 0.5s linear, border-width 0.5s linear; }
 
 /* Actor - Extended Tasks */
-.sta.sheet.actor .row .column-headerfields1-extendedtasks {
+.sta.sheet.actor .row .column-headerfields1-name-extendedtasks {
   width: 60%;
   padding-left: 5%;
   padding-right: 5%; }
 
+.sta.sheet.actor .row .column-headerfields1-other-extendedtasks {
+  width: 15%; }
+
 .sta.sheet.actor .row .column-headerfields2-extendedtasks {
-  width: 22.5%;
+  width: 30%;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2px; }
 
-.sta.sheet.actor .column-headerfields1-extendedtasks .numeric-entry,
+.sta.sheet.actor .column-headerfields1-name-extendedtasks .numeric-entry,
+.sta.sheet.actor .column-headerfields1-other-extendedtasks .numeric-entry,
 .sta.sheet.actor .column-headerfields2-extendedtasks .numeric-entry {
   width: 50%;
   margin-right: 25%;
@@ -478,12 +482,16 @@
 
 .sta.sheet.actor .extendedtask-divider {
   background-color: #444A77;
+  height: 17px;
   width: 100%;
   color: #0F0F0F;
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
   font-weight: bold; }
+
+.extendedtask-box {
+  cursor: pointer; }
 
 /* Item/Form - Globals */
 .sta.sheet.item .header-fields {

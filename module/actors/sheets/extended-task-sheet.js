@@ -55,28 +55,29 @@ export class STAExtendedTaskSheet extends ActorSheet {
       var magnitude = parseInt(html.find('#magnitude')[0].value);
       var work = parseInt(html.find('#work')[0].value);
 
-      var trackLength = work/magnitude;
+      var trackNumber = Math.ceil(work/5);
       
       var fullDiv = document.createElement("DIV");
       fullDiv.style = "width: 100%;";
       fullDiv.className = "extendedtask-bar";
-      for (var i = 0; i < magnitude; i++ ) {
+      for (var i = 0; i < trackNumber; i++ ) {
         // put a divider at the top of each row
         var dividerDiv = document.createElement("DIV");
         dividerDiv.className = "extendedtask-divider";
-        dividerDiv.innerHTML = "---";
         fullDiv.appendChild(dividerDiv);
 
         // build a row of numbers for the extended task track
         var rowDiv = document.createElement("DIV");
         rowDiv.className = "row";
         rowDiv.style = "width: 100%;";
-        for (var j = 0; j < trackLength; j++) {
+        for (var j = 0; j < 5; j++) {
           var inputDiv = document.createElement("DIV");
-          inputDiv.id = "extendedtask-box-" + (i * magnitude + j + 1);
-          inputDiv.className = "extendedtask-box";
-          inputDiv.style = "width: calc(100% / " + magnitude + ");";
-          inputDiv.innerHTML = (i * magnitude + j + 1);
+          if (i * 5 + j + 1 <= work) {
+            inputDiv.id = "extendedtask-box-" + (i * 5 + j + 1);
+            inputDiv.className = "extendedtask-box";
+            inputDiv.innerHTML = (i * 5 + j + 1);
+          }
+          inputDiv.style = "width: calc(100% / " + 5 + ");";
           rowDiv.appendChild(inputDiv);
         }
         // append to the div that will be put in the renderer div on extended-task-sheet.html
