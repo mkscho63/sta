@@ -131,7 +131,7 @@
     "sta.actor.extendedtask.work": "Work",
     "sta.actor.extendedtask.difficulty": "Difficulty",
     "sta.actor.extendedtask.resistance": "Resistance",
-    "sta.actor.extendedtask.render": "Render Extended Task",
+    "sta.actor.extendedtask.breaches": "Breaches",
     "sta.actor.extendedtask.rerenderconfirm": "Are you sure you want to render the work track again? You will lose current information.",
     
     "sta.apps.dicepoolwindow": "Dice Pool",

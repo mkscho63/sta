@@ -183,8 +183,7 @@
             "difficulty": 0,
             "work": 1,
             "resistance": 0,
-            "worktracks": 1,
-            "tracklength": 1,
+            "breakthroughs": 0,
             "workprogress": 0
         },
         "smallcraft": {

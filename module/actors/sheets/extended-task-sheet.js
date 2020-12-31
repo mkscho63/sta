@@ -55,28 +55,23 @@ export class STAExtendedTaskSheet extends ActorSheet {
       var magnitude = parseInt(html.find('#magnitude')[0].value);
       var work = parseInt(html.find('#work')[0].value);
 
-      if (work % magnitude) {
-        ui.notifications.warn("Work must be divisible by magnitude without remainder (eg. 12 / 3 = 4).")
-        return false;
-      }
-
       var trackLength = work/magnitude;
       
       var fullDiv = document.createElement("DIV");
       fullDiv.style = "width: 100%;";
       fullDiv.className = "extendedtask-bar";
-      for (var i = 0; i < trackLength; i++ ) {
-        // put a divider at the top of each track
+      for (var i = 0; i < magnitude; i++ ) {
+        // put a divider at the top of each row
         var dividerDiv = document.createElement("DIV");
         dividerDiv.className = "extendedtask-divider";
-        dividerDiv.innerHTML = i + 1;
+        dividerDiv.innerHTML = "---";
         fullDiv.appendChild(dividerDiv);
 
         // build a row of numbers for the extended task track
         var rowDiv = document.createElement("DIV");
         rowDiv.className = "row";
         rowDiv.style = "width: 100%;";
-        for (var j = 0; j < magnitude; j++) {
+        for (var j = 0; j < trackLength; j++) {
           var inputDiv = document.createElement("DIV");
           inputDiv.id = "extendedtask-box-" + (i * magnitude + j + 1);
           inputDiv.className = "extendedtask-box";
@@ -127,18 +122,6 @@ export class STAExtendedTaskSheet extends ActorSheet {
           this.submit();
         }
       }
-    });
-
-    // If the check-button is clicked it fires the command to render the checkboxes for an extended track work tracker.
-    html.find('.check-button.extendedtask').click(ev => {
-      if($('#extendedtask-renderer')[0].innerHTML != ''){
-        var r = confirm(game.i18n.localize('sta.actor.extendedtask.rerenderconfirm'));
-        if (r == false) {
-          return false;
-        }
-      }
-
-      renderExtendedWorkTracks();
     });
   }
 }

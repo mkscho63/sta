@@ -9,8 +9,8 @@
         <input name="name" type="text" class="text-entry" value="{{actor.name}}" placeholder="{{localize 'sta.actor.genericitem.name'}}" />
       </div>
       <div class="column-headerfields2-extendedtasks">
-        <label class="label">{{localize 'sta.actor.extendedtask.difficulty'}}</label>
-        <input name="data.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{data.difficulty}}" min="0" data-dtype="Number" />
+        <label class="label">{{localize 'sta.actor.extendedtask.breaches'}}</label>
+        <input name="data.breaches" type="number" id="breaches" class="numeric-entry" value="{{data.breaches}}" min="0" data-dtype="Number" />
       </div>
     </div>
     <div class="row">
@@ -29,12 +29,19 @@
         <label class="label">{{localize 'sta.actor.extendedtask.resistance'}}</label>
         <input name="data.resistance" type="number" id="resistance" class="numeric-entry" value="{{data.resistance}}" min="0" data-dtype="Number" />
       </div>
+      <div class="column-headerfields2-extendedtasks">
+        <label class="label">{{localize 'sta.actor.extendedtask.difficulty'}}</label>
+        <input name="data.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{data.difficulty}}" min="0" data-dtype="Number" />
+      </div>
     </div>
     <div class="row">
       <div class="lcars-column-extendedtask">
         <div class="lcars-header-extendedtask3"></div>
       </div>
-      <div class="check-button btn extendedtask">{{localize 'sta.actor.extendedtask.render'}}</div>
+      <div class="column-headerfields2-extendedtasks"></div>
+      <div class="column-headerfields2-extendedtasks">
+      </div>
+      <div class="column-headerfields2-extendedtasks"></div>
     </div>
     <div class="row">
       <div class="lcars-column-extendedtask">

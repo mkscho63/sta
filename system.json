@@ -2,7 +2,7 @@
     "name": "sta",
     "title": "Star Trek Adventures Roleplaying Game",
     "description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "minimumCoreVersion": "0.7.7",
     "compatibleCoreVersion": "0.7.7",
     "templateVersion": 1,
