@@ -39,7 +39,10 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 
 - **Can you add support for {insert language name here} translations?**
 - Unfortunately I only fluenty (?) speak English and would not do justice to any other translations. I do have the system set up for translations to be done, I simply need the translation files to be created for them.
-    
+
+- **How much does this cost?**
+- It doesn't! I made this system because I've always really liked the Star Trek Adventures system and wanted to run this with my friends. Somewhere along the lines I thought "Hey, I wonder if other people would like to use it" and here we are. This is all available free of charge, though if you want to support further work in the Star Trek Adventures area, please purchase content from Modiphius. If you want to donate to me, I have a Ko-fi <a href="https://ko-fi.com/mkscho63" target="_blank">HERE</a> though I want to stress again that this was done because I thought it was fun to do, not for payment.
+
 ---
 
 ## Thanks

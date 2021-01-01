@@ -1,6 +1,28 @@
 {
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0"
-  }
+	"name": "sta",
+	"scripts": {
+		"package": "gulp package",
+		"build": "gulp build && gulp copy",
+		"build:watch": "gulp watch",
+		"clean": "gulp clean && gulp copy --clean",
+		"lint": "eslint"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"archiver": "^5.1.0",
+		"chalk": "^4.1.0",
+		"eslint": "^7.16.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-config-prettier": "^7.1.0",
+		"eslint-plugin-prettier": "^3.3.0",
+		"fs-extra": "^9.0.1",
+		"gulp": "^4.0.2",
+		"gulp-eslint": "^6.0.0",
+		"gulp-git": "^2.10.1",
+		"gulp-sass": "^4.1.0",
+		"json-stringify-pretty-compact": "^2.0.0",
+		"prettier": "^2.2.1",
+		"yargs": "^16.2.0"
+	},
+	"version": "0.0.3"
 }

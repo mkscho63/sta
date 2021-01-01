@@ -1,0 +1,35 @@
+{
+	"name": "sta",
+	"title": "Star Trek Adventures Roleplaying Game",
+	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
+	"version": "0.0.3",
+	"minimumCoreVersion": "0.7.7",
+	"compatibleCoreVersion": "0.7.7",
+	"templateVersion": 1,
+	"author": "mkscho63",
+	"esmodules": ["module/sta.js"],
+	"styles": ["sta.css"],
+	"packs": [
+		{
+			"label": "Weapons",
+			"entity": "Item",
+			"name": "weapons",
+			"path": "./assets/packs/weapons.db",
+			"system": "sta"
+		}
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"gridDistance": 5,
+	"gridUnits": "ft",
+	"primaryTokenAttribute": "stress",
+	"secondaryTokenAttribute": "determination",
+	"url": "https://github.com/mkscho63/sta",
+	"manifest": "https://raw.githubusercontent.com/mkscho63/sta//master/src/system.json",
+	"download": "https://raw.githubusercontent.com/mkscho63/sta//v0.0.3/package/sta-v0.0.3.zip"
+}

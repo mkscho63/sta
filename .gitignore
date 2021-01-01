@@ -2,3 +2,5 @@
 .idea/
 .vs/
 node_modules
+dist/
+src/styles/sta.css
