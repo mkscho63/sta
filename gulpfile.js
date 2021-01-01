@@ -32,7 +32,7 @@ gulp.task(
 
 /* Get Configuration File */
 function getConfig() {
-  const configPath = path.resolve(process.cwd(), 'localconfig.json');
+  const configPath = path.resolve(process.cwd(), 'foundryconfig.json');
   let config;
 
   if (fs.existsSync(configPath)) {
@@ -132,7 +132,7 @@ async function clean() {
 // Copy files to test location
 async function copyUserData() {
   const name = path.basename(path.resolve('.'));
-  const config = fs.readJSONSync('localconfig.json');
+  const config = fs.readJSONSync('foundryconfig.json');
 
   let destDir;
   console.log(path.resolve('.', 'dist', 'system.json'));
@@ -155,7 +155,7 @@ async function copyUserData() {
 
       linkDir = path.join(config.dataPath, 'Data', destDir, name);
     } else {
-      throw Error('No User Data path defined in localconfig.json');
+      throw Error('No User Data path defined in foundryconfig.json');
     }
 
     if (argv.clean || argv.c) {
@@ -231,13 +231,13 @@ function updateManifest(cb) {
   const repoURL = config.repository;
   const manifestRoot = manifest.root;
 
-  if (!config) cb(Error(chalk.red('localconfig.json not found')));
+  if (!config) cb(Error(chalk.red('foundryconfig.json not found')));
   if (!manifest) cb(Error(chalk.red('Manifest JSON not found')));
   if (!rawURL || !repoURL) {
     cb(
       Error(
         chalk.red(
-          'Repository URLs not configured in localconfig.json'
+          'Repository URLs not configured in foundryconfig.json'
         )
       )
     );
