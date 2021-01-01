@@ -4,3 +4,7 @@
 node_modules
 dist/
 src/styles/sta.css
+src/assets/packs/*
+
+# exception to maintain pack folder
+!src/assets/packs/.gitkeep
