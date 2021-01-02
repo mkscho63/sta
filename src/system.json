@@ -9,15 +9,7 @@
 	"author": "mkscho63",
 	"esmodules": ["module/sta.js"],
 	"styles": ["sta.css"],
-	"packs": [
-		{
-			"label": "Weapons",
-			"entity": "Item",
-			"name": "weapons",
-			"path": "./assets/packs/weapons.db",
-			"system": "sta"
-		}
-	],
+	"packs": {},
 	"languages": [
 		{
 			"lang": "en",

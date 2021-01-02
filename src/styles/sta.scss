@@ -252,12 +252,10 @@
 .sta.sheet.actor .text-entry,
 .sta-form .numeric-entry,
 .app.dialog .window-content .form-fields input, 
-.app.dialog .window-content .form-fields select { 
+.app.dialog .window-content .form-fields select,
+.app.dialog .window-content .form-group input, 
+.app.dialog .window-content .form-group select { 
   color: #CC88FF;
-}
-
-.app.dialog .window-content .form-fields select {
-  color: #000000;
 }
 
 .sta.sheet.actor .main .row .column .section .header.row {

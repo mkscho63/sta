@@ -110,6 +110,20 @@ async function clean() {
   const name = path.basename(path.resolve('.'));
   const files = [];
   console.log(path.join('src', 'styles', `${name}.scss`));
+
+  files.push(
+    'lang',
+    'templates',
+    'assets',
+    'packs',
+    'module',
+    `${name}.js`,
+    'module.json',
+    'system.json',
+    'template.json'
+  );
+
+
   // If the project uses SASS push SASS
   if (fs.existsSync(path.join('src', 'styles', `${name}.scss`))) {
     files.push(`${name}.css`);
@@ -135,8 +149,7 @@ async function copyUserData() {
   const config = fs.readJSONSync('foundryconfig.json');
 
   let destDir;
-  console.log(path.resolve('.', 'dist', 'system.json'));
-  console.log(path.resolve('.', 'src', 'system.json'));
+  
   try {
     if (fs.existsSync(path.resolve('.', 'dist', 'system.json')) ||
 			fs.existsSync(path.resolve('.', 'src', 'system.json'))) {
