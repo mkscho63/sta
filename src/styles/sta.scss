@@ -1,15 +1,34 @@
+$background: #0F0F0F;
+$buttonColor: #CC2233;
+$buttonHover: #DD4444;
+$buttontext: #000000;
+$inputColor: #CC88FF;
+$labelColor: #33CCCC;
+$lcarsColors: (
+  "lcarsheader": #444A77,
+  "purple": #9944FF,
+  "blue": #4455FF,
+  "bluepurple": #7788FF,
+  "brightpurple": #CC33FF,
+  "orange": #FF7700,
+  "brightred": #FF2200,
+  "gold": #FFAA00,
+  "red": #DD4444
+);
+
 /* Window Content Overrides */
 
-.sta .window-content {
-  background: #0F0F0F;
-  padding: 0;
-}
+.sta {
+  .window-content {
+    background: $background !important;
+    padding: 0;
+  }
 
-.sta .main-content {
-  background: #0F0F0F !important;
-  padding: 5px;
+  .main-content {
+    background: $background !important;
+    padding: 5px;
+  }
 }
-
 
 /* Globals */
 
@@ -18,26 +37,17 @@
   font-size: 14pt;
 }
 
-.sta .row {
-  display: flex;
-  flex-direction: row;
+.sta {
   text-align: center;
-}
 
-.sta .row .column {
-  flex-direction: column;
-  text-align: center;
-}
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
 
-.sta .btn {
-  background-color: #DD4444;
-  color: #000000;
-  border-radius: 20px;
-}
-
-.sta .btn:hover {
-  box-shadow: 0 0 8px red;
-  cursor: pointer;
+  .column {
+    flex-direction: column;
+  }
 }
 
 .sta .unset-clickables:hover {
@@ -47,18 +57,31 @@
   content:unset !important;
 }
 
+/* Button Definitions */
 
-/* Globals - Trackers */
+.sta .btn {
+  background-color: $buttonColor;
+  color: $buttontext;
+  border-radius: 20px;
+
+  &:hover {
+    box-shadow: none;
+    color: $buttonHover;
+    cursor: pointer;
+  }
+}
+
+/* Tracker */
 
 .sta .track {
   display: flex;
   flex-direction: row;
-}
-
-.sta .track .bar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+  
+  .bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .sta .track .bar .box, 
@@ -71,6 +94,11 @@
   display: block;
   font-size: 8pt;
   text-align: center;
+
+  &:hover {
+    box-shadow: 0 0 8px red;
+    cursor: pointer;
+  }
 }
 
 .sta .extendedtask-track .extendedtask-bar .extendedtask-box {
@@ -78,97 +106,94 @@
   font-size: 16pt;
 }
 
-.sta .track .bar .box:hover {
-  box-shadow: 0 0 8px red;
-  cursor: pointer;
-}
-
 
 /* Actor - LCARS Layout */
 
-.sta.sheet.actor .header {
-  display: flex;
-}
+.sta.sheet.actor {
+  .header {
+    display: flex;
+  }
 
-.sta.sheet.actor .lcars-column {
-  flex: 10%;
-  display:flex;
-  flex-flow: column;
-}
+  .lcars-column {
+    flex: 10%;
+    display:flex;
+    flex-flow: column;
 
-.sta.sheet.actor .lcars-header-block1 {
-  flex: 3;
-  background-color: #9944FF;
-  border-bottom: 4px solid #0F0F0F;
-}
+    .lcars-header-block1 {
+      flex: 3;
+      background-color: map-get($lcarsColors, "purple");
+      border-bottom: 4px solid #0F0F0F;
+    }
+  
+    .lcars-header-block2 {
+      flex: 7;
+      background-color: map-get($lcarsColors, "blue");
+      border-bottom: 4px solid #0F0F0F;
+    }
 
-.sta.sheet.actor .lcars-header-block2 {
-  flex: 7;
-  background-color: #4455FF;
-  border-bottom: 4px solid #0F0F0F;
-}
+    .lcars-attribute-title-block {
+      background-color: map-get($lcarsColors, "lcarsheader");
+      border-bottom-left-radius: 40px;
+      flex: 0 1 47px;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-attribute-title-block {
-  background-color: #444A77;
-  border-bottom-left-radius: 40px;
-  flex: 0 1 47px;
-}
+    .lcars-item1-connect-block,
+    .lcars-item2-connect-block {
+      flex: 0 1 40px;
+      background-color: map-get($lcarsColors, "lcarsheader");
+      border-top-left-radius: 40px;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-item1-connect-block, 
-.sta.sheet.actor .lcars-column .lcars-item2-connect-block {
-  flex: 0 1 40px;
-  background-color: #444A77;
-  border-top-left-radius: 40px;
-}
+    .lcars-item1-top-block {
+      flex: 0 1 30px;
+      background-color: transparent;
+      border-bottom: 5px solid $background;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-item1-top-block {
-  flex: 0 1 30px;
-  background-color: transparent;
-  border-bottom: 5px solid #0F0F0F;
-}
+    .lcars-item2-top-block {
+      flex: 0 1 30px;
+      background-color: map-get($lcarsColors, "bluepurple");
+      border-bottom: 5px solid $background;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-item2-top-block {
-  flex: 0 1 30px;
-  background-color: #7788FF;
-  border-bottom: 5px solid #0F0F0F;
-}
+    .lcars-attribute-general-block1 {
+      background-color: map-get($lcarsColors, "brightpurple");
+      flex: 1;
+      border-top-left-radius: 40px;
+      border-top: 5px solid $background;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-attribute-general-block1 {
-  background-color: #CC33FF;
-  flex: 1;
-  border-top-left-radius: 40px;
-  border-top: 5px solid #0F0F0F;
-}
+    .lcars-attribute-general-block2 {
+      background-color: map-get($lcarsColors, "orange");
+      flex: 2;
+      border-top: 5px solid $background;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-attribute-general-block2 {
-  background-color: #FF7700;
-  flex: 2;
-  border-top: 5px solid #0F0F0F;
-}
+    .lcars-attribute-general-block3 {
+      background-color: map-get($lcarsColors, "purple");
+      flex: 1;
+      border-top: 5px solid $background;
+      border-bottom-left-radius: 40px;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-attribute-general-block3 {
-  background-color: #9944FF;
-  flex: 1;
-  border-top: 5px solid #0F0F0F;
-  border-bottom-left-radius: 40px;
-}
+    .lcars-item1-general-block {
+      background-color: map-get($lcarsColors, "bluepurple");
+      flex: 1;
+      border-top: 5px solid $background;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-item1-general-block {
-  background-color: #7788FF;
-  flex: 1;
-  border-top: 5px solid #0F0F0F;
-}
+    .lcars-item2-general-block1 {
+      background-color: map-get($lcarsColors, "brightred");
+      flex: 1;
+      border-top: 5px solid $background;
+    }
 
-.sta.sheet.actor .lcars-column .lcars-item2-general-block1 {
-  background-color: #FF2200;
-  flex: 1;
-  border-top: 5px solid #0F0F0F;
-}
-
-.sta.sheet.actor .lcars-column .lcars-item2-general-block2 {
-  background-color: #FFAA00;
-  flex: 2;
-  border-top: 5px solid #0F0F0F;
+    .lcars-item2-general-block2 {
+      background-color: map-get($lcarsColors, "gold");
+      flex: 2;
+      border-top: 5px solid $background;
+    }
+  }
 }
 
 .sta.sheet.actor .lcars-column-extendedtask {
@@ -178,48 +203,48 @@
 }
 
 .sta.sheet.actor .lcars-header-extendedtask1 {
-  background-color: #CC33FF;
-  border-bottom: 5px solid #0F0F0F;
+  background-color: map-get($lcarsColors, "brightpurple");
+  border-bottom: 5px solid $background;
   flex: 1;
   width: 100%;
 }
 
 
 .sta.sheet.actor .lcars-header-extendedtask2 {
-  background-color: #FFAA00;
+  background-color: map-get($lcarsColors, "gold");
   border-bottom: 5px solid #0F0F0F;
   flex: 1;
   width: 100%;
 }
 
 .sta.sheet.actor .lcars-header-extendedtask3 {
-  background-color: #444A77;
+  background-color: map-get($lcarsColors, "lcarsheader");
   flex: 1;
   width: 100%;
 }
 
 .sta.sheet.actor .lcars-header-extendedtask4 {
-  background-color: #444A77;
+  background-color: map-get($lcarsColors, "lcarsheader");
   flex: 0 1 27px;
   width: 100%;
-  border-bottom: 5px solid #0F0F0F;
+  border-bottom: 5px solid $background;
   border-bottom-left-radius: 40px;
 }
 
 .sta.sheet.actor .lcars-body-extendedtask1 {
-  background-color: #0F0F0F;
+  background-color: $background;
   flex: 0 1 33px;
   width: 100%;
 }
 
 .sta.sheet.actor .lcars-body-extendedtask2 {
-  background-color: #444A77;
+  background-color: map-get($lcarsColors, "lcarsheader");
   flex: 1 1 auto;
   width: 100%;
   border-top-left-radius: 40px;
 }
 
-
+/*--------------------------------------------------------*/
 
 /* Actor - Text Fields - Colors */
 
@@ -259,7 +284,7 @@
 }
 
 .sta.sheet.actor .main .row .column .section .header.row {
-  background-color: #444A77;
+  background-color: map-get($lcarsColors, "lcarsheader");
   color: #000000;
   font-weight: bold;
   padding-left: 2px;
@@ -606,7 +631,7 @@
 }
 
 .sta.sheet.actor .extendedtask-divider {
-  background-color:#444A77;
+  background-color:map-get($lcarsColors, "lcarsheader");
   height: 17px;
   width:100%; 
   color:#0F0F0F; 

@@ -1,7 +1,8 @@
 {
 	"name": "sta",
 	"scripts": {
-		"package": "gulp package",
+    "package": "gulp package",
+    "transpile": "gulp build",
 		"build": "gulp build && gulp copy",
 		"build:watch": "gulp watch",
 		"clean": "gulp clean && gulp copy --clean",
