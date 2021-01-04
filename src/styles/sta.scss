@@ -1,9 +1,13 @@
 $background: #0F0F0F;
+$headerColor: #FAA41B;
 $buttonColor: #CC2233;
 $buttonHover: #DD4444;
-$buttontext: #000000;
+$inlaidText: #000000;
 $inputColor: #CC88FF;
 $labelColor: #33CCCC;
+$editorText: #000000;
+$editorBackground: #FFFFFF;
+$trackbarBorders: #666688;
 $lcarsColors: (
   "lcarsheader": #444A77,
   "purple": #9944FF,
@@ -17,7 +21,7 @@ $lcarsColors: (
 );
 
 /* Window Content Overrides */
-
+/*#region*/
 .sta {
   .window-content {
     background: $background !important;
@@ -29,9 +33,10 @@ $lcarsColors: (
     padding: 5px;
   }
 }
+/*#endregion*/
 
 /* Globals */
-
+/*#region*/
 .sta .title {
   text-align: center;
   font-size: 14pt;
@@ -56,23 +61,25 @@ $lcarsColors: (
   cursor:unset !important;
   content:unset !important;
 }
+/*#endregion*/
 
 /* Button Definitions */
-
+/*#region*/
 .sta .btn {
   background-color: $buttonColor;
-  color: $buttontext;
+  color: $inlaidText;
   border-radius: 20px;
 
   &:hover {
     box-shadow: none;
-    color: $buttonHover;
+    background-color: $buttonHover;
     cursor: pointer;
   }
 }
+/*#endregion*/
 
 /* Tracker */
-
+/*#region*/
 .sta .track {
   display: flex;
   flex-direction: row;
@@ -87,7 +94,7 @@ $lcarsColors: (
 .sta .track .bar .box, 
 .sta .extendedtask-track .extendedtask-bar .extendedtask-box {
   height: 14px;
-  border: 1px solid #666688;
+  border: 1px solid $trackbarBorders;
   border-radius: 14px;
   border-collapse: collapse;
   padding: 0px;
@@ -96,7 +103,7 @@ $lcarsColors: (
   text-align: center;
 
   &:hover {
-    box-shadow: 0 0 8px red;
+    box-shadow: 0 0 8px $buttonHover;
     cursor: pointer;
   }
 }
@@ -105,10 +112,10 @@ $lcarsColors: (
   height: 28px;
   font-size: 16pt;
 }
-
+/*#endregion*/
 
 /* Actor - LCARS Layout */
-
+/*#region*/
 .sta.sheet.actor {
   .header {
     display: flex;
@@ -122,13 +129,13 @@ $lcarsColors: (
     .lcars-header-block1 {
       flex: 3;
       background-color: map-get($lcarsColors, "purple");
-      border-bottom: 4px solid #0F0F0F;
+      border-bottom: 4px solid $background;
     }
   
     .lcars-header-block2 {
       flex: 7;
       background-color: map-get($lcarsColors, "blue");
-      border-bottom: 4px solid #0F0F0F;
+      border-bottom: 4px solid $background;
     }
 
     .lcars-attribute-title-block {
@@ -193,161 +200,188 @@ $lcarsColors: (
       flex: 2;
       border-top: 5px solid $background;
     }
+
+    .lcars-header-extendedtask1 {
+      background-color: map-get($lcarsColors, "brightpurple");
+      border-bottom: 5px solid $background;
+      flex: 1;
+      width: 100%;
+    }
+
+    .lcars-header-extendedtask2 {
+      background-color: map-get($lcarsColors, "gold");
+      border-bottom: 5px solid $background;
+      flex: 1;
+      width: 100%;
+    }
+
+    .lcars-header-extendedtask3 {
+      background-color: map-get($lcarsColors, "lcarsheader");
+      flex: 1;
+      width: 100%;
+    }
+
+    .lcars-header-extendedtask4 {
+      background-color: map-get($lcarsColors, "lcarsheader");
+      flex: 0 1 27px;
+      width: 100%;
+      border-bottom: 5px solid $background;
+      border-bottom-left-radius: 40px;
+    }
+    
+    .lcars-body-extendedtask1 {
+      background-color: $background;
+      flex: 0 1 33px;
+      width: 100%;
+    }
+
+    .lcars-body-extendedtask2 {
+      background-color: map-get($lcarsColors, "lcarsheader");
+      flex: 1 1 auto;
+      width: 100%;
+      border-top-left-radius: 40px;
+    }
+  }
+}
+/*#endregion*/
+
+/* Actor */
+/*#region*/
+.sta.sheet.actor {
+  /* Colors */
+  .title {
+    height: 30px;
+    color: $headerColor;
+  }
+
+  .list-entry,
+  .editor,
+  .label {
+    color: $labelColor;
+  }
+
+  .editor .editor-edit {
+    color: $editorText
+  }
+
+  .tox.tox-tinymce .tox-edit-area__iframe {
+    background-color: $editorBackground;
+  }
+
+  .secondary-title {
+    color: $inlaidText;
+  }
+
+  .numeric-entry,
+  .text-entry {
+    color: $inputColor;
+  }
+  /* Layout */
+  .main .row .column .section .header.row {
+    background-color: map-get($lcarsColors, "lcarsheader");
+    color: $inlaidText;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-bottom: 2px solid $background;
+  }
+
+  .header-fields {
+    flex: 90%;
+    top: 0;
+    padding: 5px;
+
+    .row .column {
+      display: flex;
+      width: 100%;
+    }
+
+    .section.reputation .title {
+      font-size: 14px;
+    }
+  }
+
+  .main {
+    flex: 1;
+
+    .row {
+      max-height: 300px;
+
+      .limited-only {
+        height: 20px;
+      }
+
+      .column {
+        flex: 30%;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+/*#endregion*/
+
+/* Item  */
+
+.sta.sheet.item {
+  .label {
+    color: $labelColor;
+  }
+
+  .tox.tox-tinymce .tox-edit-area__iframe {
+    background-color: $editorBackground;
+  }
+}
+/*#endregion*/
+
+/* Forms and Dialogs */
+
+.sta-form {
+  .label {
+    color: $headerColor;
+  }
+  
+  .numeric-entry {
+    color: $inputColor;
   }
 }
 
-.sta.sheet.actor .lcars-column-extendedtask {
-  display:flex;
-  flex-flow: column;
-  width: 10%;
-}
+.app.dialog .window-content {
+  .dialog-content {
+    color: $labelColor;
+  }
 
-.sta.sheet.actor .lcars-header-extendedtask1 {
-  background-color: map-get($lcarsColors, "brightpurple");
-  border-bottom: 5px solid $background;
-  flex: 1;
-  width: 100%;
-}
+  .form-fields {
+    input,
+    select {
+      color: $inputColor;
+    }
+  }
 
-
-.sta.sheet.actor .lcars-header-extendedtask2 {
-  background-color: map-get($lcarsColors, "gold");
-  border-bottom: 5px solid #0F0F0F;
-  flex: 1;
-  width: 100%;
+  .form-group {
+    input,
+    select {
+      color: $inputColor;
+    }
+  }
 }
-
-.sta.sheet.actor .lcars-header-extendedtask3 {
-  background-color: map-get($lcarsColors, "lcarsheader");
-  flex: 1;
-  width: 100%;
-}
-
-.sta.sheet.actor .lcars-header-extendedtask4 {
-  background-color: map-get($lcarsColors, "lcarsheader");
-  flex: 0 1 27px;
-  width: 100%;
-  border-bottom: 5px solid $background;
-  border-bottom-left-radius: 40px;
-}
-
-.sta.sheet.actor .lcars-body-extendedtask1 {
-  background-color: $background;
-  flex: 0 1 33px;
-  width: 100%;
-}
-
-.sta.sheet.actor .lcars-body-extendedtask2 {
-  background-color: map-get($lcarsColors, "lcarsheader");
-  flex: 1 1 auto;
-  width: 100%;
-  border-top-left-radius: 40px;
-}
+/*#endregion*/
 
 /*--------------------------------------------------------*/
-
-/* Actor - Text Fields - Colors */
-
-.sta.sheet.actor .title {
-  height: 30px;
-}
-
-.sta.sheet.actor .title,
-.sta-form .label {
-  color: #FAA41B;
-}
-
-.sta.sheet.actor .list-entry,
-.sta.sheet.actor .editor,
-.sta.sheet.actor .label,
-.sta.sheet.item .label,
-.app.dialog .window-content .dialog-content {
-  color: #33CCCC;
-}
-
-.sta.sheet.actor .editor .editor-edit {
-  color: #000000;
-}
-
-.sta.sheet.actor .secondary-title {
-  color: #000000;
-}
-
-.sta.sheet.actor .numeric-entry,
-.sta.sheet.actor .text-entry,
-.sta-form .numeric-entry,
-.app.dialog .window-content .form-fields input, 
-.app.dialog .window-content .form-fields select,
-.app.dialog .window-content .form-group input, 
-.app.dialog .window-content .form-group select { 
-  color: #CC88FF;
-}
-
-.sta.sheet.actor .main .row .column .section .header.row {
-  background-color: map-get($lcarsColors, "lcarsheader");
-  color: #000000;
-  font-weight: bold;
-  padding-left: 2px;
-  padding-right: 2px;
-  border-bottom: 2px solid #000000;
-}
-
-.sta.sheet.actor .tox.tox-tinymce .tox-edit-area__iframe, 
-.sta.sheet.item .tox.tox-tinymce .tox-edit-area__iframe {
-  background-color: #FFFFFF;
-}
-
-/* Actor - Header Section - Globals */
-
-.sta.sheet.actor .header-fields {
-  flex: 90%;
-  top: 0;
-  padding: 5px;
-}
-
-.sta.sheet.actor .header-fields .row .column {
-  display: flex;
-  width: 100%;
-}
-
-
-/* Actor - Header Section - Specific - Trackers */
-
-.sta.sheet.actor .header-fields .section.reputation .title {
-  font-size: 14px;
-}
 
 
 /* Actor - Main Section - Globals */
 
-.sta.sheet.actor .main {
-  flex: 1;
-}
-
-.sta.sheet.actor .main .row {
-  max-height: 300px;
-}
-
-.sta.sheet.actor .main .row .limited-only {
-  height: 20px;
-}
-
-.sta.sheet.actor .main .row .column {
-  flex: 30%;
-  overflow-y: auto;
-}
-
 .sta.sheet.actor .column.left-column {
-  border-right: 2px solid #0F0F0F;
+  border-right: 2px solid $background;
 }
 
 .sta.sheet.actor .column.center-column {
-  border-right: 2px solid #0F0F0F;
-  border-left: 2px solid #0F0F0F;
+  border-right: 2px solid $background;
+  border-left: 2px solid $background;
 }
 
 .sta.sheet.actor .column.right-column {
-  border-left: 2px solid #0F0F0F;
+  border-left: 2px solid $background;
 }
 
 .sta.sheet.actor .main .row .column .section .profile-img {
@@ -408,7 +442,7 @@ $lcarsColors: (
 }
 
 .sta.sheet.actor .main .row .column .section .stat.row .selector:hover {
-  box-shadow: 0 0 8px red;
+  box-shadow: 0 0 8px $buttonHover;
   cursor: pointer;
 }
 
@@ -427,13 +461,13 @@ $lcarsColors: (
 .sta.sheet.actor .main .row .column .section.scale, 
 .sta.sheet.actor .main .row .column .section.resistance {
   display: flex;
-  background-color: #9944FF;
+  background-color: map-get($lcarsColors, "brightpurple");
   height: 41px;
 }
 
 .sta.sheet.actor .main .row .column .section.scale .title, 
 .sta.sheet.actor .main .row .column .section.resistance .title {
-  background-color: #0F0F0F;
+  background-color: $background;
   width: 75%;
   margin-top: 5px;
 }
@@ -452,7 +486,7 @@ $lcarsColors: (
   border: none;
   border-radius: 0px;
   margin-top: 5px;
-  background-color: #0F0F0F;
+  background-color: $background;
 }
 
 .sta.sheet.actor .main .row .column .section.section.resistance .field.numeric-entry{
@@ -477,13 +511,13 @@ $lcarsColors: (
 
 .sta.sheet.actor .main .row .column .section .row .image .rollable:hover {
   content: url("/icons/svg/d20-grey.svg");
-  box-shadow: 0 0 8px red;
+  box-shadow: 0 0 8px $buttonHover;
   cursor: pointer;
 }
 
 .sta.sheet.actor .main .row .column .section .row .image .chat:hover {
   content: url("/systems/sta/assets/icons/chat-bubble.svg");
-  box-shadow: 0 0 8px red;
+  box-shadow: 0 0 8px $buttonHover;
   cursor: pointer;
 }
 
@@ -496,7 +530,7 @@ $lcarsColors: (
 }
 
 .sta.sheet.actor .main .row .column .section .row .control .delete {
-  color: #DD4444;
+  color: $buttonColor;
 }
 
 .sta.sheet.actor .main .row .column .section .row .control {
@@ -830,7 +864,7 @@ $lcarsColors: (
 .window-content .dialog-button.yes.default, 
 .window-content .dialog-button.no, 
 .chat-message.message .reroll-result { 
-  background-color: #DD4444;
+  background-color: $buttonColor;
   color: #000000;
   border: none;
   border-radius: 20px;
@@ -1029,7 +1063,7 @@ $lcarsColors: (
 
 #sidebar-tabs > .item.active {
   box-shadow: none;
-  background-color: #DD4444;
+  background-color: $buttonColor;
   border-bottom: none;
   border-top: none;
   color: #FEFEFF;

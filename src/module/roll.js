@@ -1,13 +1,9 @@
-import {
-  getFoundryVersion
-} from './sta.js';
-
 export class STARoll {
   async performAttributeTest(dicePool, usingFocus, usingDetermination,
     selectedAttribute, selectedAttributeValue, selectedDiscipline,
     selectedDisciplineValue, complicationRange, speaker) {
     // Define some variables that we will be using later.
-    const foundryVersion = getFoundryVersion();
+    
     let i;
     let result = 0;
     let diceString = '';

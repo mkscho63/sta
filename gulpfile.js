@@ -73,6 +73,12 @@ function buildSASS() {
     .pipe(gulp.dest('dist'));
 }
 
+/* Build packs for system.json */
+// async function replaceTokenSystemJson() {
+//   return gulp
+//     .src(src.)
+// }
+
 /* Copy Files */
 async function copyFiles() {
   const statics = [

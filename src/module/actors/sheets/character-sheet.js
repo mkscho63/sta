@@ -69,6 +69,12 @@ export class STACharacterSheet extends ActorSheet {
       data.data.reputation = 0;
     }
 
+    // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
+    // Stopgap until a better solution can be found.
+    $.each(data.items, (key, item) => {
+      if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+    })
+
     return data;
   }
 
