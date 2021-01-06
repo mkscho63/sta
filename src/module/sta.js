@@ -268,12 +268,3 @@ Hooks.once('init', function() {
   //     );
   // });
 });
-
-export function getFoundryVersion() {
-  const version = game.world.coreVersion;
-  const verArray = version.split('.');
-  for (let i=0; i<verArray.length; i++) { 
-    verArray[i] = +verArray[i]; 
-  }
-  return verArray;
-}

@@ -25,7 +25,7 @@ export class STATracker extends Application {
       html.find('#sta-track-momentum')[0].disabled = true;
     }
 
-    html.find('#sta-momentum-track-decrease').click((ev) => {
+    html.find('#sta-momentum-track-decrease > .fas').click((ev) => {
       threat = game.settings.get('sta', 'threat');
       momentum = parseInt(document.getElementById('sta-track-momentum').value);
       if (momentum === 0) {
@@ -37,7 +37,7 @@ export class STATracker extends Application {
       renderTracker();
     });
 
-    html.find('#sta-threat-track-decrease').click((ev) => {
+    html.find('#sta-threat-track-decrease > .fas').click((ev) => {
       momentum = game.settings.get('sta', 'momentum');
       threat = parseInt(document.getElementById('sta-track-threat').value);
       if (threat === 0) {
@@ -49,7 +49,7 @@ export class STATracker extends Application {
       renderTracker();
     });
 
-    html.find('#sta-threat-track-increase').click((ev) => {
+    html.find('#sta-threat-track-increase > .fas').click((ev) => {
       momentum = game.settings.get('sta', 'momentum');
       if (threat === 99999999) {
         ui.notifications.error('THERE IS TOO MUCH THREAT!');
@@ -61,7 +61,7 @@ export class STATracker extends Application {
       renderTracker();
     });
 
-    html.find('#sta-momentum-track-increase').click((ev) => {
+    html.find('#sta-momentum-track-increase > .fas').click((ev) => {
       threat = game.settings.get('sta', 'threat');
       if (momentum === 6) {
         ui.notifications.error('THERE IS TOO MUCH MOMENTUM!');

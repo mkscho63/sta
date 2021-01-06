@@ -7,8 +7,9 @@ import {
 
 export class STAActor extends Actor {
   prepareData() {
+    if (!this.data.img) this.data.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+
     super.prepareData();
-    // const actorData = this.data;
   }
 }
 
@@ -18,87 +19,81 @@ export class STASharedActorFunctions {
   staRenderTracks(html, stressTrackMax, determinationPointsMax,
     repPointsMax, shieldsTrackMax, powerTrackMax, crewTrackMax) {
     let i;
-    // Checks if details for the Stress Track was included, this should happen in all cases!
+    // Checks if details for the Stress Track was included, this should happen for all Characters!
     if (stressTrackMax) {
       for (i = 0; i < stressTrackMax; i++) {
+        html.find('[id^="stress"]')[i].classList.add('stress');
         if (i + 1 <= html.find('#total-stress')[0].value) {
           html.find('[id^="stress"]')[i].setAttribute('data-selected', 'true');
-          html.find('[id^="stress"]')[i].style.backgroundColor = '#FF2200';
-          html.find('[id^="stress"]')[i].style.color = '#1F1F1F';
+          html.find('[id^="stress"]')[i].classList.add('selected');
         } else {
           html.find('[id^="stress"]')[i].removeAttribute('data-selected');
-          html.find('[id^="stress"]')[i].style.backgroundColor = '#1111EE';
-          html.find('[id^="stress"]')[i].style.color = '#FEFEFF';
+          html.find('[id^="stress"]')[i].classList.remove('selected');
         }
       }
     }
     // Checks if details for the Determination Track was included, this should happen for all Characters!
     if (determinationPointsMax) {
       for (i = 0; i < determinationPointsMax; i++) {
+        html.find('[id^="determination"]')[i].classList.add('determination');
         if (i + 1 <= html.find('#total-determination')[0].value) {
           html.find('[id^="determination"]')[i].setAttribute('data-selected', 'true');
-          html.find('[id^="determination"]')[i].style.backgroundColor = '#FFCC33';
-          html.find('[id^="determination"]')[i].style.color = '#1F1F1F';
+          html.find('[id^="determination"]')[i].classList.add('selected');
         } else {
           html.find('[id^="determination"]')[i].removeAttribute('data-selected');
-          html.find('[id^="determination"]')[i].style.backgroundColor = '#191813';
-          html.find('[id^="determination"]')[i].style.color = '#FEFEFF';
+          html.find('[id^="determination"]')[i].classList.remove('selected');
         }
       }
     }
     // Checks if details for the Reputation Track was included, this should happen for all Characters!
     if (repPointsMax) {
       for (i = 0; i < repPointsMax; i++) {
+        html.find('[id^="rep"]')[i].classList.add('rep');
         if (i + 1 <= html.find('#total-rep')[0].value) {
           html.find('[id^="rep"]')[i].setAttribute('data-selected', 'true');
-          html.find('[id^="rep"]')[i].style.backgroundColor = '#CC2233';
-          html.find('[id^="rep"]')[i].style.color = '#1F1F1F';
+          html.find('[id^="rep"]')[i].classList.add('selected');
         } else {
           html.find('[id^="rep"]')[i].removeAttribute('data-selected');
-          html.find('[id^="rep"]')[i].style.backgroundColor = '#191813';
-          html.find('[id^="rep"]')[i].style.color = '#FEFEFF';
+          html.find('[id^="rep"]')[i].classList.remove('selected');
         }
       }
     }
     // if this is a starship, it will have shields instead of stress, but will be handled very similarly
     if (shieldsTrackMax) {
       for (i = 0; i < shieldsTrackMax; i++) {
-        if (i + 1 <= html.find('#total-shields')[0].value) {
+        html.find('[id^="shields"]')[i].classList.add('shields');
+        if (i + 1 <= html.find('#total-shields').val()) {
           html.find('[id^="shields"]')[i].setAttribute('data-selected', 'true');
-          html.find('[id^="shields"]')[i].style.backgroundColor = '#FF2200';
-          html.find('[id^="shields"]')[i].style.color = '#1F1F1F';
+          html.find('[id^="shields"]')[i].classList.add('selected');
         } else {
           html.find('[id^="shields"]')[i].removeAttribute('data-selected');
-          html.find('[id^="shields"]')[i].style.backgroundColor = '#1111EE';
-          html.find('[id^="shields"]')[i].style.color = '#FEFEFF';
+          html.find('[id^="shields"]')[i].classList.remove('selected');
         }
       }
     }
     // if this is a starship, it will have power instead of determination, but will be handled very similarly
     if (powerTrackMax) {
       for (i = 0; i < powerTrackMax; i++) {
-        if (i + 1 <= html.find('#total-power')[0].value) {
+        html.find('[id^="power"]')[i].classList.add('power');
+        if (i + 1 <= html.find('#total-power').val()) {
           html.find('[id^="power"]')[i].setAttribute('data-selected', 'true');
-          html.find('[id^="power"]')[i].style.backgroundColor = '#191813';
-          html.find('[id^="power"]')[i].style.color = '#FEFEFF';
+          html.find('[id^="power"]')[i].classList.add('selected');
         } else {
           html.find('[id^="power"]')[i].removeAttribute('data-selected');
-          html.find('[id^="power"]')[i].style.backgroundColor = '#FFCC33';
-          html.find('[id^="power"]')[i].style.color = '#1F1F1F';
+          html.find('[id^="power"]')[i].classList.remove('selected');
         }
       }
     }
     // if this is a starship, it will also have crew support level instead of determination, but will be handled very similarly
     if (crewTrackMax) {
       for (i = 0; i < crewTrackMax; i++) {
-        if (i + 1 <= html.find('#total-crew')[0].value) {
+        html.find('[id^="crew"]')[i].classList.add('crew');
+        if (i + 1 <= html.find('#total-crew').val()) {
           html.find('[id^="crew"]')[i].setAttribute('data-selected', 'true');
-          html.find('[id^="crew"]')[i].style.backgroundColor = '#191813';
-          html.find('[id^="crew"]')[i].style.color = '#FEFEFF';
+          html.find('[id^="crew"]')[i].classList.add('selected');
         } else {
           html.find('[id^="crew"]')[i].removeAttribute('data-selected');
-          html.find('[id^="crew"]')[i].style.backgroundColor = '#CC2233';
-          html.find('[id^="crew"]')[i].style.color = '#1F1F1F';
+          html.find('[id^="crew"]')[i].classList.remove('selected');
         }
       }
     }

@@ -5,11 +5,13 @@ import {
 export class STAItem extends Item {
   // Augment basic Item data model with additional dynamic data.
   prepareData() {
-    super.prepareData();
-
     const itemData = this.data;
     const actorData = this.actor ? this.actor.data : {};
     const data = itemData.data;
+    
+    if (!this.data.img) this.data.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+
+    super.prepareData();
   }
   
   /**
