@@ -39,9 +39,9 @@
     "sta.actor.character.discipline.science": "Science",
     "sta.actor.character.discipline.security": "Security",
     "sta.actor.genericitem.name": "Name",
+    "sta.actor.genericitem.description": "Description",
     "sta.actor.genericitem.cost": "Value",
     "sta.actor.talent.title": "Talents",
-    "sta.actor.talent.type": "Type",
     "sta.actor.focus.title": "Focuses",
     "sta.actor.value.title": "Values",
     "sta.actor.value.used": "Chal?",
@@ -136,7 +136,7 @@
     
     "sta.apps.dicepoolwindow": "Dice Pool",
     "sta.apps.focus": "Using focus?",
-    "sta.apps.determination": "Using determination?",
+    "sta.apps.determination": "Using determination/value?",
     "sta.apps.complicationrange": "Complication range (1 is default)?",
     "sta.apps.pool": "Number of Dice in Pool",
     "sta.apps.rolldice": "Roll Dice",
@@ -155,7 +155,6 @@
     "sta.roll.focus.rating": "Focus with Rating of <b>|#|</b>",
     "sta.roll.weapon.damage": "<b>|#|</b> Damage",
     "sta.roll.armor.protect": "<b>|#|</b> Protection",
-    "sta.roll.talent.type": "<b>|#|</b> Talent",
     "sta.roll.item.value": "|#| Coins",
     "sta.roll.item.quantity": "|#|x Items",
 

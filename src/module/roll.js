@@ -242,6 +242,13 @@ export class STARoll {
       .then((html)=>this.sendToChat(speaker, html));
   }
 
+  async performTalentRoll(item, speaker) {
+    // Send the divs to populate a HTML template and sends to chat.
+    this.genericItemTemplate(item.data.img, item.data.name,
+      item.data.data.description, null)
+      .then((html)=>this.sendToChat(speaker, html));
+  }
+
   async performFocusRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
     this.genericItemTemplate(item.data.img, item.data.name,
@@ -315,16 +322,6 @@ export class STARoll {
     // Send the divs to populate a HTML template and sends to chat.
     this.genericItemTemplate(item.data.img, item.data.name,
       item.data.data.description, variable, valueTag)
-      .then((html)=>this.sendToChat(speaker, html));
-  }
-
-  async performTalentRoll(item, speaker) {
-    // Create variable div and populate it with localisation to use in the HTML.
-    const variablePrompt = game.i18n.format('sta.roll.talent.type');
-    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.type)+`</div>`;
-    // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, variable)
       .then((html)=>this.sendToChat(speaker, html));
   }
 

@@ -1,27 +1,51 @@
 $background: #0F0F0F;
 $headerColor: #FAA41B;
-$buttonColor: #CC2233;
-$buttonHover: #DD4444;
+$buttonColor: #FFCC33;
+$buttonHover: #FFEEAA;
+$buttonColor2: #CC2233;
+$buttonHover2: #DD4444;
 $inlaidText: #000000;
 $inputColor: #CC88FF;
 $labelColor: #33CCCC;
 $editorText: #000000;
 $editorBackground: #FFFFFF;
 $trackbarBorders: #666688;
+$separatorBorders: #FF7700;
+$chatText: #FEFEFE;
 $lcarsColors: (
   "lcarsheader": #444A77,
   "purple": #9944FF,
+  "lightblue": #33CCCC,
   "blue": #4455FF,
   "bluepurple": #7788FF,
   "brightpurple": #CC33FF,
+  "lightpurple": #CC88FF,
   "orange": #FF7700,
   "brightred": #FF2200,
   "gold": #FFAA00,
-  "red": #DD4444
+  "red": #DD4444,
+  "lightred": #FF5555,
+  "tan": #FF9966,
+  "lighttan": #FFBBAA
+);
+$trackColors: (
+  "stressSelected": #1111EE,
+  "stress": #FF2200,
+  "determinationSelected": #FFCC33,
+  "determination": #191813,
+  "repSelected": #CC2233,
+  "rep": #191813,
+  "shieldsSelected": #1111EE,
+  "shields": #FF2200,
+  "powerSelected":  #FFCC33,
+  "power":#191813,
+  "crewSelected": #CC2233,
+  "crew": #191813,
+  "extendedtaskSelected": #FFCC33,
+  "extendedtask": #191813
 );
 
-/* Window Content Overrides */
-/*#region*/
+/* Window Content Overrides *//*#region*/
 .sta {
   .window-content {
     background: $background !important;
@@ -35,8 +59,7 @@ $lcarsColors: (
 }
 /*#endregion*/
 
-/* Globals */
-/*#region*/
+/* Globals *//*#region*/
 .sta .title {
   text-align: center;
   font-size: 14pt;
@@ -63,59 +86,37 @@ $lcarsColors: (
 }
 /*#endregion*/
 
-/* Button Definitions */
-/*#region*/
-.sta .btn {
-  background-color: $buttonColor;
-  color: $inlaidText;
-  border-radius: 20px;
-
-  &:hover {
-    box-shadow: none;
-    background-color: $buttonHover;
-    cursor: pointer;
-  }
-}
-/*#endregion*/
-
-/* Tracker */
-/*#region*/
-.sta .track {
-  display: flex;
-  flex-direction: row;
+/* Button Definitions *//*#region*/
+.sta {
+  .btn {
+    background-color: $buttonColor;
+    color: $inlaidText;
+    border-radius: 20px;
+    font-weight: bold;
   
-  .bar {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+    &:hover {
+      box-shadow: none;
+      background-color: $buttonHover;
+      cursor: pointer;
+    }
   }
-}
 
-.sta .track .bar .box, 
-.sta .extendedtask-track .extendedtask-bar .extendedtask-box {
-  height: 14px;
-  border: 1px solid $trackbarBorders;
-  border-radius: 14px;
-  border-collapse: collapse;
-  padding: 0px;
-  display: block;
-  font-size: 8pt;
-  text-align: center;
-
-  &:hover {
-    box-shadow: 0 0 8px $buttonHover;
-    cursor: pointer;
+  .btn2 {
+    background-color: $buttonColor2;
+    color: $inlaidText;
+    border-radius: 20px;
+    font-weight: bold;
+  
+    &:hover {
+      box-shadow: none;
+      background-color: $buttonHover2;
+      cursor: pointer;
+    }
   }
-}
-
-.sta .extendedtask-track .extendedtask-bar .extendedtask-box {
-  height: 28px;
-  font-size: 16pt;
 }
 /*#endregion*/
 
-/* Actor - LCARS Layout */
-/*#region*/
+/* LCARS Layout *//*#region*/
 .sta.sheet.actor {
   .header {
     display: flex;
@@ -245,8 +246,7 @@ $lcarsColors: (
 }
 /*#endregion*/
 
-/* Actor */
-/*#region*/
+/* Actor Sheet *//*#region*/
 .sta.sheet.actor {
   /* Colors */
   .title {
@@ -276,16 +276,109 @@ $lcarsColors: (
   .text-entry {
     color: $inputColor;
   }
-  /* Layout */
-  .main .row .column .section .header.row {
-    background-color: map-get($lcarsColors, "lcarsheader");
-    color: $inlaidText;
-    font-weight: bold;
-    padding-left: 2px;
-    padding-right: 2px;
-    border-bottom: 2px solid $background;
+
+  /* Trackbars */
+  .track {
+    display: flex;
+    flex-direction: row;
+    
+    .bar:not(.extendedtask) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
   }
 
+  .track .bar .box {
+    height: 14px;
+    border: 1px solid $trackbarBorders;
+    border-radius: 14px;
+    border-collapse: collapse;
+    padding: 0px;
+    display: block;
+    font-size: 8pt;
+    text-align: center;
+    font-weight: bold;
+
+    &:hover {
+      box-shadow: 0 0 8px $buttonHover;
+      cursor: pointer;
+    }
+
+    &.stress {
+      background-color: map-get($trackColors, "stress");
+      color: $inlaidText;
+
+      &.selected {
+        background-color: map-get($trackColors, "stressSelected");
+        color: $chatText;
+      }
+    }
+
+    &.determination {
+      background-color: map-get($trackColors, "determination");
+      color: $chatText;
+
+      &.selected {
+        background-color: map-get($trackColors, "determinationSelected");
+        color: $inlaidText;
+      }
+    }
+
+    &.rep {
+      background-color: map-get($trackColors, "rep");
+      color: $chatText;
+
+      &.selected {
+        background-color: map-get($trackColors, "repSelected");
+        color: $inlaidText;
+      }
+    }
+
+    &.shields {
+      background-color: map-get($trackColors, "shields");
+      color: $inlaidText;
+
+      &.selected {
+        background-color: map-get($trackColors, "shieldsSelected");
+        color: $chatText;
+      }
+    }
+
+    &.power {
+      background-color: map-get($trackColors, "power");
+      color: $chatText;
+
+      &.selected {
+        background-color: map-get($trackColors, "powerSelected");
+        color: $inlaidText;
+      }
+    }
+
+    &.crew {
+      background-color: map-get($trackColors, "crew");
+      color: $chatText;
+
+      &.selected {
+        background-color: map-get($trackColors, "crewSelected");
+        color: $inlaidText;
+      }
+    }
+
+    &.extendedtask {
+      height: 28px;
+      font-size: 16pt;
+      background-color: map-get($trackColors, "extendedtask");
+      color: $chatText;
+
+      &.selected {
+        background-color: map-get($trackColors, "extendedtaskSelected");
+        color: $inlaidText;
+      }
+    }
+  }
+  
+  /* Layout - Main/Attributes */
   .header-fields {
     flex: 90%;
     top: 0;
@@ -314,26 +407,424 @@ $lcarsColors: (
       .column {
         flex: 30%;
         overflow-y: auto;
+
+        .section {
+          .header.row {
+            background-color: map-get($lcarsColors, "lcarsheader");
+            color: $inlaidText;
+            font-weight: bold;
+            padding-left: 2px;
+            padding-right: 2px;
+            border-bottom: 2px solid $background;
+          }
+
+          .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: 50% 0;
+          }
+
+          .title {
+            font-size: 18pt;
+          }
+
+          .row {
+            display: flex;
+            flex-direction: row;
+          }
+
+          .entry.row {
+            display: flex;
+            flex-direction: row;
+          }
+
+          .note,
+          .milestone,
+          .injury {
+            height: 200px;
+            text-align: left;
+            
+            .editor {
+              height: 100%;
+              padding: 5px;
+            }
+          }
+
+          /* Attributes/Disciplines */
+
+          .stat.row{
+            .field {
+              width: 20%;
+            }
+
+            .text {
+              width: calc(80% - 30px);
+            }
+
+            .selector-space {
+              width: 30px;
+            }
+
+            .selector {
+              border: 1px solid;
+              border-collapse: collapse;
+              padding: 0px;
+              display: block;
+            }
+
+            .selector:hover {
+              box-shadow: none;
+              cursor: pointer;
+            }
+          }
+
+          .check-button {
+            width: 75%;
+            height: 30px;
+            line-height: 30px;
+            margin: 5px 12.5%;
+            font-size: 14pt;
+          }
+        }
+
+        .section.scale, 
+        .section.resistance {
+          display: flex;
+          background-color: map-get($lcarsColors, "purple");
+          height: 41px;
+
+          .title {
+            background-color: $background;
+            width: 75%;
+            margin-top: 5px;
+          }
+
+          .field.numeric-entry {
+            width: 15%;
+            height: 30px;
+            border: none;
+            border-radius: 0px;
+            margin-top: 5px;
+            background-color: $background;
+          }
+        }
+        
+        .section.scale .title {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          margin-left: 10%;
+        }
+
+        .section.resistance .field.numeric-entry{
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          margin-right: 10%;
+        }
       }
     }
+  }
+
+  .column.left-column {
+    border-right: 2px solid $background;
+  }
+
+  .column.center-column {
+    border-right: 2px solid $background;
+    border-left: 2px solid $background;
+  }
+
+  .column.right-column {
+    border-left: 2px solid $background;
+  }
+
+  /* Layout - Owned Items */
+  .main {
+    .row {
+      .column {
+        .section {
+          .row {
+            .image {
+              width: 26px;
+
+              img {
+                width: 24px;
+                height: 24px;
+                object-fit: cover;
+                object-position: 50% 0;
+              }
+
+              .rollable:hover {
+                content: url("/icons/svg/d20-grey.svg");
+                box-shadow: none;
+                cursor: pointer;
+              }
+
+              .chat:hover {
+                content: url("/systems/sta/assets/icons/chat-bubble.svg");
+                box-shadow: none;
+                cursor: pointer;
+              }
+
+              .click-to-nav {
+                cursor: pointer;
+              }
+            }
+
+            .control {
+              color: $buttonColor;
+              width: 40px;
+              padding-right: 2px;
+            }
+            
+            .delete {
+              color: $buttonColor2;
+              
+              &:hover {
+                color: $buttonHover;
+                text-shadow: none;
+              }
+            }
+
+            .add,
+            .edit {
+              &:hover {
+                color: $buttonHover2;
+                text-shadow: none;
+              }
+            }
+
+            .one-column-with-roll {
+              width: calc(100% - 58px);
+            }
+
+            .one-column-no-roll {
+              width: calc(100% - 32px);
+              padding-left: 26px;
+            }
+            
+            .two-column-with-roll-primary {
+              width: calc((100% - 58px)*0.75);
+            }
+
+            .two-column-with-roll-secondary {
+              width: calc((100% - 58px)*0.25);
+            }
+
+            .column-x2 {
+              width: 90%;
+              padding-left: 10%;
+            }
+            
+            .small input {
+              height: 17px;
+              color:$inputColor;
+            }
+
+            .small.disabled input {
+              box-shadow: none;
+              cursor: default;
+              color: grey;
+            }
+
+            .list-entry.strike-through {
+              text-decoration: line-through;
+            }
+          }
+        }
+
+        .value-used {
+          height: 17px;
+        }
+
+        .row.equipable {
+          .control {
+            width: 56px;
+          }
+        }
+
+        /*  Actor - Talent Tooltips */
+        .entry.row.talent-tooltip-container {
+          overflow-y: hidden;
+          border:.5px dashed $separatorBorders;
+          height: 200px;
+          -webkit-transition: height 0.5s linear, border-width 0.5s linear;
+            -moz-transition: height 0.5s linear, border-width 0.5s linear;
+              -ms-transition: height 0.5s linear, border-width 0.5s linear;
+                -o-transition: height 0.5s linear, border-width 0.5s linear;
+                  transition: height 0.5s linear, border-width 0.5s linear;
+          &.hide {
+            border: 0px dashed $separatorBorders;
+            height: 0px;
+            -webkit-transition: height 0.5s linear, border-width 0.5s linear;
+              -moz-transition: height 0.5s linear, border-width 0.5s linear;
+                -ms-transition: height 0.5s linear, border-width 0.5s linear;
+                  -o-transition: height 0.5s linear, border-width 0.5s linear;
+                    transition: height 0.5s linear, border-width 0.5s linear;
+          }
+        }
+      }
+    }
+  }
+
+  /* Extended Tasks */
+  .row {
+    .column-headerfields1-name-extendedtasks {
+      width: 60%;
+      padding-left: 5%;
+      padding-right: 5%;
+      
+      .numeric-entry {
+        width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+      }
+    }
+
+    .column-headerfields1-other-extendedtasks {
+      width: 15%;
+
+      .numeric-entry{
+        width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+      }
+    }
+
+    .column-headerfields2-extendedtasks {
+      width: 30%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 2px;
+
+      .numeric-entry {
+        width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+      }
+    }
+
+    .extendedtask.track {
+      width:90%;
+    }
+  }
+
+  .extendedtask-divider {
+    background-color:map-get($lcarsColors, "lcarsheader");
+    height: 17px;
+    width:100%; 
+    color: $background; 
+    text-align:center; 
+    margin-top:5px; 
+    margin-bottom:5px; 
+    font-weight:bold;
   }
 }
 /*#endregion*/
 
-/* Item  */
-
+/* Item Sheet  *//*#region*/
 .sta.sheet.item {
   .label {
     color: $labelColor;
   }
 
+  .header-fields {
+    font-size: 12pt;
+
+    .row {
+      .img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        object-position: 50% 0;
+      }
+
+      .column-x3-big {
+        width: calc(60% - 50px);
+      }
+
+      .column-x2 {
+        width: calc(50% - 25px);
+      }
+
+      .column-x2-big {
+        width: calc(80% - 50px);
+      }
+
+      .one-column-with-roll {
+        width: calc(100% - 50px);
+      }
+
+      .column-x2-x3-small {
+        width: 20%;
+      }
+    }
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  .text,
+  .entry,
+  .editor {
+    color: $inputColor;
+  }
+
+  option {
+    background-color: $background;
+  }
+
+  input[type="number"] {
+    text-align: center;
+    width: 50px;
+    margin-left: 10px;
+  }
+
+  .editor-edit {
+    display: block;
+    color: $editorText;
+  }
+
+  .editor-content {
+    padding-right: 25px;
+  }
+
   .tox.tox-tinymce .tox-edit-area__iframe {
     background-color: $editorBackground;
   }
+
+  .description {
+    height: calc(100% - 50px);
+
+    .editor {
+      height: 100%;
+    }
+  }
+
+  &.characterweapon,
+  &.starshipweapon {
+
+    .header-fields .row .column-x4 {
+      width: 25%;
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+      
+      .label {
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+
+    .description {
+      height: calc(100% - 128px);
+    }
+  }
+  /* Items - Weapon Specific */
 }
 /*#endregion*/
 
-/* Forms and Dialogs */
+/* Forms and Dialogs *//*#region*/
 
 .sta-form {
   .label {
@@ -364,515 +855,189 @@ $lcarsColors: (
     }
   }
 }
-/*#endregion*/
 
-/*--------------------------------------------------------*/
-
-
-/* Actor - Main Section - Globals */
-
-.sta.sheet.actor .column.left-column {
-  border-right: 2px solid $background;
-}
-
-.sta.sheet.actor .column.center-column {
-  border-right: 2px solid $background;
-  border-left: 2px solid $background;
-}
-
-.sta.sheet.actor .column.right-column {
-  border-left: 2px solid $background;
-}
-
-.sta.sheet.actor .main .row .column .section .profile-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: 50% 0;
-}
-
-.sta.sheet.actor .main .row .column .section .title {
-  font-size: 18pt;
-}
-
-.sta.sheet.actor .main .row .column .section .row {
-  display: flex;
-  flex-direction: row;
-}
-
-.sta.sheet.actor .main .row .column .section .entry.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.sta.sheet.actor .main .row .column .section .note,
-.sta.sheet.actor .main .row .column .section .milestone,
-.sta.sheet.actor .main .row .column .section .injury {
-  height: 200px;
-  text-align: left;
-}
-
-.sta.sheet.actor .main .row .column .section .note .editor,
-.sta.sheet.actor .main .row .column .section .milestone .editor,
-.sta.sheet.actor .main .row .column .section .injury .editor {
-  height: 100%;
-  padding: 5px;
-}
-
-
-/* Actor - Main Section - Specific - Attributes/Disciplines */
-
-.sta.sheet.actor .main .row .column .section .stat.row .field {
-  width: 20%;
-}
-
-.sta.sheet.actor .main .row .column .section .stat.row .text {
-  width: calc(80% - 30px);
-}
-
-.sta.sheet.actor .main .row .column .section .stat.row .selector-space {
-  width: 30px;
-}
-
-.sta.sheet.actor .main .row .column .section .stat.row .selector {
-  border: 1px solid;
-  border-collapse: collapse;
+.dialog > .window-content {
   padding: 0px;
-  display: block;
+
+  & > .dialog-content {
+    background-color: $background;
+    padding: 8px;
+  }
+
+  .dialog-buttons {
+    background-color: $background;
+  }
+
+  .dialog-button.roll.default, 
+  .dialog-button.ok.default, 
+  .dialog-button.yes.default, 
+  .dialog-button.no { 
+    background-color: $buttonColor;
+    color: $inlaidText;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    
+    &:hover {
+      box-shadow: none;
+      background-color: $buttonHover;
+    }
+  }
 }
 
-.sta.sheet.actor .main .row .column .section .stat.row .selector:hover {
-  box-shadow: 0 0 8px $buttonHover;
-  cursor: pointer;
+.folder-edit,
+.folder-create {
+  .window-content {
+    background: $background;
+    color: $labelColor;
+    
+    form {
+      background-color: $background;
+      
+      input {
+        color: $inputColor;
+      }
+
+      button { 
+        background-color: $buttonColor;
+        color: $inlaidText;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+          box-shadow: none;
+          background-color: $buttonHover;
+        }
+      }
+    }
+    
+  }
 }
 
-.sta.sheet.actor .check-button {
-  width: 75%;
-  height: 30px;
-  line-height: 30px;
-  margin: 5px 12.5%;
-  font-size: 14pt;
+/* Chat Log */
+
+.app .chat-message.message{
+  background: $background;
+
+  .message-header,
+  .message-content {
+    color: $chatText;
+  }
 }
 
-.sta.sheet.actor .row  .column .value-used {
-  height: 17px;
-}
-
-.sta.sheet.actor .main .row .column .section.scale, 
-.sta.sheet.actor .main .row .column .section.resistance {
-  display: flex;
-  background-color: map-get($lcarsColors, "brightpurple");
-  height: 41px;
-}
-
-.sta.sheet.actor .main .row .column .section.scale .title, 
-.sta.sheet.actor .main .row .column .section.resistance .title {
-  background-color: $background;
-  width: 75%;
-  margin-top: 5px;
-}
-
-
-.sta.sheet.actor .main .row .column .section.scale .title {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  margin-left: 10%;
-}
-
-.sta.sheet.actor .main .row .column .section.scale .field.numeric-entry, 
-.sta.sheet.actor .main .row .column .section.resistance .field.numeric-entry {
-  width: 15%;
-  height: 30px;
-  border: none;
-  border-radius: 0px;
-  margin-top: 5px;
-  background-color: $background;
-}
-
-.sta.sheet.actor .main .row .column .section.section.resistance .field.numeric-entry{
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-right: 10%;
-}
-
-
-/* Actor - Main Section - Specific - Items */
-
-.sta.sheet.actor .main .row .column .section .row .image {
-  width: 26px;
-}
-
-.sta.sheet.actor .main .row .column .section .row .image img {
-  width: 24px;
-  height: 24px;
-  object-fit: cover;
-  object-position: 50% 0;
-}
-
-.sta.sheet.actor .main .row .column .section .row .image .rollable:hover {
-  content: url("/icons/svg/d20-grey.svg");
-  box-shadow: 0 0 8px $buttonHover;
-  cursor: pointer;
-}
-
-.sta.sheet.actor .main .row .column .section .row .image .chat:hover {
-  content: url("/systems/sta/assets/icons/chat-bubble.svg");
-  box-shadow: 0 0 8px $buttonHover;
-  cursor: pointer;
-}
-
-.sta.sheet.actor .main .row .column .section .row .image .click-to-nav {
-  cursor: pointer;
-}
-
-.sta.sheet.actor .main .row .column .section .row .control {
-  color: #FFCC33;
-}
-
-.sta.sheet.actor .main .row .column .section .row .control .delete {
-  color: $buttonColor;
-}
-
-.sta.sheet.actor .main .row .column .section .row .control {
-  width: 40px;
-  padding-right: 2px;
-}
-
-.sta.sheet.actor .main .row .column .section .row .one-column-with-roll {
-  width: calc(100% - 58px);
-}
-
-.sta.sheet.actor .main .row .column .section .row .one-column-no-roll {
-  width: calc(100% - 32px);
-  padding-left: 26px;
-}
-
-.sta.sheet.actor .main .row .column .section .row .two-column-with-roll-primary {
-  width: calc((100% - 58px)*0.75);
-}
-
-.sta.sheet.actor .main .row .column .section .row .two-column-with-roll-secondary {
-  width: calc((100% - 58px)*0.25);
-}
-
-.sta.sheet.actor .main .row .column .section .row .column-x2 {
-  width: 90%;
-  padding-left: 10%;
-}
-
-.sta.sheet.actor .row .column-x2-big {
-  width: 90%;
-  padding-left: 10%;
-}
-
-.sta.sheet.actor .main .row .column .section .row .column-x2-small {
-  width: 90%;
-  padding-left: 10%;
-}
-
-.sta.sheet.actor .main .row .column .section .row .column-x4 {
-  width: 90%;
-  padding-left: 10%;
-}
-
-.sta.sheet.actor .main .row .column .section .row .small input {
-  height: 17px;
-  color:#CC88FF;
-}
-
-.sta.sheet.actor .main .row .column .section .row .small.disabled input {
-  box-shadow: none;
-  cursor: default;
-  color: grey;
-}
-
-.sta.sheet.actor .list-entry.strike-through {
-  text-decoration: line-through;
-}
-
-
-/* Actor - Main Section - Specific - Equipable Specific */
-
-.sta.sheet.actor .main .row .column .section .row.equipable .control {
-  width: 56px;
-}
-
-.sta.sheet.actor .main .row .column .section .row.equipable .column-x2 {
-  width: calc((100% - 80px)/2);
-}
-
-.sta.sheet.actor .main .row .column .section .row.equipable .column-x2-big {
-  width: calc(3*((100% - 80px)/4));
-}
-
-.sta.sheet.actor .main .row .column .section .row .equipable.column-x2-small {
-  width: calc((100% - 80px)/4);
-}
-
-/*  Actor - Talent Tooltips */
-
-.sta.sheet.actor .main .row .column .section .entry.row.talent-tooltip-container.hide {
-  border: 0px dashed #FF7700;
-  height: 0px;
-  -webkit-transition: height 0.5s linear, border-width 0.5s linear;
-    -moz-transition: height 0.5s linear, border-width 0.5s linear;
-      -ms-transition: height 0.5s linear, border-width 0.5s linear;
-        -o-transition: height 0.5s linear, border-width 0.5s linear;
-          transition: height 0.5s linear, border-width 0.5s linear;
-}
-
-.sta.sheet.actor .main .row .column .section .entry.row.talent-tooltip-container {
-  overflow-y: hidden;
-  border:.5px dashed #FF7700;
-  height: 200px;
-  -webkit-transition: height 0.5s linear, border-width 0.5s linear;
-    -moz-transition: height 0.5s linear, border-width 0.5s linear;
-      -ms-transition: height 0.5s linear, border-width 0.5s linear;
-        -o-transition: height 0.5s linear, border-width 0.5s linear;
-          transition: height 0.5s linear, border-width 0.5s linear;
-}
-
-
-/* Actor - Extended Tasks */
-
-.sta.sheet.actor .row .column-headerfields1-name-extendedtasks {
-  width: 60%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.sta.sheet.actor .row .column-headerfields1-other-extendedtasks {
-  width: 15%;
-}
-
-.sta.sheet.actor .row .column-headerfields2-extendedtasks {
-  width: 30%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2px;
-}
-
-.sta.sheet.actor .column-headerfields1-name-extendedtasks .numeric-entry, 
-.sta.sheet.actor .column-headerfields1-other-extendedtasks .numeric-entry, 
-.sta.sheet.actor .column-headerfields2-extendedtasks .numeric-entry {
-  width: 50%;
-  margin-right: 25%;
-  margin-left: 25%;
-}
-
-.sta.sheet.actor .row .extendedtask-track {
-  width:90%;
-}
-
-.sta.sheet.actor .extendedtask-divider {
-  background-color:map-get($lcarsColors, "lcarsheader");
-  height: 17px;
-  width:100%; 
-  color:#0F0F0F; 
-  text-align:center; 
-  margin-top:5px; 
-  margin-bottom:5px; 
-  font-weight:bold;
-}
-
-.extendedtask-box {
-  cursor: pointer;
-}
-
-
-/* Item/Form - Globals */
-
-.sta.sheet.item .header-fields {
-  font-size: 12pt;
-}
-
-.sta.sheet.item .header-fields .row .img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  object-position: 50% 0;
-}
-
-.sta.sheet.item input[type="text"],
-.sta.sheet.item input[type="number"],
-.sta.sheet.item select,
-.sta.sheet.item .text,
-.sta.sheet.item .entry,
-.sta.sheet.item .editor {
-  color: #CC88FF;
-}
-
-.sta.sheet.item option {
-  background-color: #0F0F0F;
-}
-
-.sta.sheet.item input[type="number"] {
+.reroll-result {
+  flex: 0 0 100%;
+  position: relative;
+  margin: 0;
+  line-height: 24px;
   text-align: center;
-  width: 50px;
-  margin-left: 10px;
+  background: $background;
+  border: 1px solid $trackbarBorders;
+  border-radius: 3px;
+  word-break: break-all;
+  margin-top: 5px;
+
+  &:hover {
+    background-color: $buttonHover;
+  }
 }
 
-.sta.sheet.item .editor .editor-edit {
-  color: #000000;
+.chat-message.message .reroll-result { 
+  background-color: $buttonColor;
+  color: $inlaidText;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: none;
+    background-color: $buttonHover;
+  }
 }
 
-.sta.sheet.item .header-fields .row .column-x3-big {
-  width: calc(40% - 50px);
-}
-
-.sta.sheet.item .header-fields .row .column-x3-big {
-  width: calc(60% - 50px);
-}
-
-.sta.sheet.item .header-fields .row .column-x2 {
-  width: calc(50% - 25px);
-}
-
-.sta.sheet.item .header-fields .row .column-x2-big {
-  width: calc(80% - 50px);
-}
-
-.sta.sheet.item .header-fields .row .one-column-with-roll {
-  width: calc(100% - 50px);
-}
-
-.sta.sheet.item .header-fields .row .column-x2-x3-small {
-  width: 20%;
-}
-
-.sta.sheet.item .description {
-  height: calc(100% - 50px);
-}
-
-.sta.sheet.item .description .editor {
-  height: 100%;
-}
-
-
-/* Item - Weapon Specific */
-
-.sta.sheet.item.characterweapon .header-fields .row .column-x4,
-.sta.sheet.item.starshipweapon .header-fields .row .column-x4 {
-  width: 25%;
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-}
-
-.sta.sheet.item.characterweapon .header-fields .row .column-x4 .label,
-.sta.sheet.item.starshipweapon .header-fields .row .column-x4 .label {
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.sta.sheet.item.characterweapon .description,
-.sta.sheet.item.starshipweapon .description {
-  height: calc(100% - 128px);
-}
-
-/* Dice Pool */
-
+/* Dice Pools Dialog and Chat Messages */
 .dice-pool .flexrow {
   padding: 4px 5px;
 }
 
+.sta.roll{
+  .dice-roll .dice-result .dice-tooltip {
+    display: block;
+  }
+
+  &.attribute {
+    .dice-roll {
+      .dice-result {
+        .dice-formula .aim {
+          margin: 0;
+          background: unset;
+          border: 0;
+        }
+  
+        .dice-tooltip .dice .dice-rolls {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+      }
+
+      .dice-total.effect {
+        color: $labelColor
+      }
+    }
+  }
+
+  &.generic {
+    .dice-roll {
+      .dice-result {
+        .dice-formula {
+          box-shadow: none;
+          line-height: normal;
+          cursor: pointer;
+          word-break: normal;
+  
+          &.title {
+            display: flex;
+            flex-direction: row;
+            background: none;
+            border: none;
+            text-align: left;
+          }
+  
+          .img {
+            height: 45px;
+          }
+        }
+        
+        .tags {
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+          flex-wrap: wrap;
+  
+          .tag {
+            width: calc(100%/3);
+            font-size: 12px;
+            flex-grow: 1;
+            border: 0.5px solid $background;
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+
+      .dice-total.effect {
+        color: $labelColor
+      }
+    } 
+  }
+} 
 
 
-/* Roll - Globals */
-
-.sta.roll .dice-roll .dice-result .dice-tooltip {
-  display: block;
-}
-
-
-
-/* Roll - Attribute Test */
-
-.sta.roll.attribute .dice-roll .dice-result .dice-formula .aim {
-  margin: 0;
-  background: unset;
-  border: 0;
-}
-
-.sta.roll.attribute .dice-roll .dice-result .dice-tooltip .dice .dice-rolls {
-  display: flex; 
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-
-
-/* Roll - Generic */
-
-.sta.roll.generic .dice-roll .dice-result .dice-formula {
-  box-shadow: none;
-  line-height: normal;
-  cursor: pointer;
-  word-break: normal;
-}
-
-.sta.roll.generic .dice-roll .dice-result .dice-formula.title {
-  display: flex;
-  flex-direction: row;
-  background: none;
-  border: none;
-  text-align: left;
-}
-
-.sta.roll.generic .dice-roll .dice-result .dice-formula .img {
-  height: 45px;
-}
-
-.sta.roll.generic .dice-roll .dice-result .tags {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  flex-wrap: wrap;
-}
-
-.sta.roll.generic .dice-roll .dice-result .tags .tag {
-  width: calc(100%/3);
-  font-size: 12px;
-  flex-grow: 1;
-  border: 0.5px solid black;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.dice-roll .dice-total.effect {
-  color: #33CCCC;
-}
-
-
-/* Generic Dialog */
-
-.dialog > .window-content {
-  padding: 0px;
-}
-
-.dialog > .window-content > .dialog-content {
-  background-color: #0F0F0F;
-  padding: 8px;
-}
-
-.window-content .dialog-buttons {
-  background-color: #0F0F0F;
-}
-
-.window-content .dialog-button.roll.default, 
-.window-content .dialog-button.ok.default, 
-.window-content .dialog-button.yes.default, 
-.window-content .dialog-button.no, 
-.chat-message.message .reroll-result { 
-  background-color: $buttonColor;
-  color: #000000;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-
-/* Tracker - Generic */
+/*  Momentum/Threat Tracker *//*#region*/
 
 .sta.tracker {
   position: absolute;
@@ -886,76 +1051,74 @@ $lcarsColors: (
   border-bottom-left-radius: 30px;
   padding: 0;
   clip-path: inset(-20px 0px -20px -20px);
-}
 
-.sta.tracker.threat {
-  bottom: 0;
-  right: 0px;
-  background-color: #FF2200;
-}
+  &.threat {
+    bottom: 0;
+    right: 0px;
+    background-color: map-get($lcarsColors, "brightred");
+  }
 
-.sta.tracker.momentum {
-  bottom: 105px;
-  right: 0px;
-  background-color: #5588FF;
+  &.momentum {
+    bottom: 105px;
+    right: 0px;
+    background-color: map-get($lcarsColors, "blue");
+  }
+
+  .header {
+    text-align: center;
+    font-size: 1.75em;
+    text-transform: uppercase;
+    background-color: $background;
+    border-bottom-left-radius: 30px;
+    width: 185px;
+    height: 35px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  .button-group {
+    display: flex;
+    font-size: 1.5em;
+    background-color: $background;
+    border-top-left-radius: 30px;
+    width: 185px;
+    height: 35px;
+    margin-left: 15px;
+    margin-top: 15px;
+
+    .button {
+      i:hover {
+        cursor: pointer;
+      }
+
+      &.decrease {
+        padding-left: 50px;
+        padding-right: 10px;
+      }
+
+      &.increase {
+        padding-left: 10px;
+        padding-right: 50px;
+      }
+    }
+    
+    input {
+      color: $inputColor;
+      text-align: center;
+      border: none;
+      width: 100%;
+    }
+  }
 }
 
 #sidebar:not(.collapsed) ~ .sta.tracker.momentum, 
 #sidebar:not(.collapsed) ~ .sta.tracker.threat {
   right: 354px;
 }
+/*#endregion*/
 
 
-.sta.tracker .header {
-  text-align: center;
-  font-size: 1.75em;
-  text-transform: uppercase;
-  background-color: #0F0F0F;
-  border-bottom-left-radius: 30px;
-  width: 185px;
-  height: 35px;
-  margin-left: 15px;
-  margin-bottom: 15px;
-}
-
-.sta.tracker .button-group {
-  display: flex;
-  font-size: 1.5em;
-  background-color: #0F0F0F;
-  border-top-left-radius: 30px;
-  width: 185px;
-  height: 35px;
-  margin-left: 15px;
-  margin-top: 15px;
-}
-
-.sta.tracker .button-group .button {
-  cursor: pointer;
-}
-
-.sta.tracker .button-group .button.decrease {
-  padding-left: 50px;
-  padding-right: 10px;
-}
-
-.sta.tracker .button-group .button.increase {
-  padding-left: 10px;
-  padding-right: 50px;
-}
-
-.sta.tracker .button-group .button:hover {
-  text-shadow: 0 0 8px red;
-}
-
-.sta.tracker .button-group .input {
-  color: #CC88FF;
-  text-align: center;
-  border: none;
-  width: 100%;
-}
-
-
-/* Logo - Generic */
+/* Logo - Generic *//*#region*/
 
 .sta.logo {
   position: absolute;
@@ -964,188 +1127,148 @@ $lcarsColors: (
   left: 110px;
   top: 55px;
   z-index: 1;
-  color: #000;
   text-decoration: none;
-}
 
-.sta.logo img {
-  width: 150px;
-  border: none;
-}
-
-.sta.logo div {
-  font-size: 30px;
-  line-height: 0.7;
-  text-align: center;
-}
-
-/* Sidebar */
-
-#sidebar:not(.collapsed) {
-  background: none;
-  border:none;
-  background-color: #FFAA00;
-  width: 350px;
-  border-top-left-radius: 35px;
-  border-bottom-left-radius: 0;
-}
-
-#sidebar::before {
-  content: "";
-  position: absolute;
-  bottom: 60%;
-  right: 300px;
-  height: 25%;
-  width: 50px;
-  background-color: #33CCCC; 
-  border-top: 5px solid #0F0F0F;
-  border-bottom: 5px solid #0F0F0F;
-}
-
-#sidebar::after {
-  content: "";
-  position: absolute;
-  bottom: 20%;
-  right: 300px;
-  height: 20%;
-  width: 50px;
-  background-color: #FF7700; 
-  border-top: 5px solid #0F0F0F;
-  border-bottom: 5px solid #0F0F0F;
-}
-
-#sidebar > #sidebar-tabs {
-  color: #000000;
-  margin-bottom: 0;
-  border-bottom: none;
-  box-shadow: none;
-}
-
-#sidebar:not(.collapsed) > #sidebar-tabs {
-  margin-left: 50px;
-}
-
-#sidebar-tabs > .item {
-  border-top: none;
-  border-bottom: none;
-  border-radius: 0;
-  color: #000000;
-}
-
-#sidebar-tabs > .collapse {
-  background-color: #CC88FF;
-  border-top: none;
-  border-bottom: none;
-  border-radius: 0;
-  color: #000000;
-}
-
-#sidebar:not(.collapsed) > #sidebar-tabs > .item {
-  border-left: 4px solid #0F0F0F;
-}
-
-#sidebar:not(.collapsed) > #sidebar-tabs > .item.active {
-  border-left: 4px solid #0F0F0F;
-}
-
-#sidebar:not(.collapsed) > #sidebar-tabs > .collapse {
-  border-left: 4px solid #0F0F0F;
-  border-right: 4px solid #0F0F0F;
-}
-
-#sidebar-tabs > .item:nth-child(odd) {
-  background-color: #CC88FF;
-}
-
-#sidebar-tabs > .item:nth-child(even) {
-  background-color: #4455FF;
-}
-
-#sidebar-tabs > .item.active {
-  box-shadow: none;
-  background-color: $buttonColor;
-  border-bottom: none;
-  border-top: none;
-  color: #FEFEFF;
-}
-
-#sidebar .sidebar-tab {
-  background: #0F0F0F;
-  border-top: 5px solid #0F0F0F;
-  width: 300px;
-  margin-left: 50px;
-}
-
-
-/* Chat Log */
-
-.app .chat-message.message{
-  background: #1F1F1F
-}
-
-.app .chat-message.message .message-header, 
-.app .chat-message.message .message-content {
-  color: #FEFEFF;
-}
-
-.reroll-result {
-  flex: 0 0 100%;
-  position: relative;
-  margin: 0;
-  line-height: 24px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid #999;
-  border-radius: 3px;
-  box-shadow: 0 0 2px #FFF inset;
-  word-break: break-all;
-  margin-top: 5px;
-}
-
-
-/* Animations */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  img {
+    width: 150px;
+    border: none;
   }
-  to {
-    opacity: 1;
+
+  div {
+    font-size: 30px;
+    line-height: 0.7;
+    text-align: center;
+    color: $editorText;
+    -webkit-text-stroke: 2px $editorBackground;
   }
 }
+/*#endregion*/
 
-@keyframes fromTop {
-  from {
-    transform: translateY(-100%);
+
+/* Sidebar */ /*#region*/
+
+#sidebar {
+  &:not(.collapsed) {
+    background: none;
+    border:none;
+    background-color: map-get($lcarsColors, "tan");
+    width: 350px;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 0;
+
+    & > #sidebar-tabs {
+      margin-left: 50px;
+
+      & > .collapse {
+        border-left: 4px solid $background;
+        border-right: 4px solid $background;
+      }
+
+      &  > .item {
+        border-left: 4px solid $background;
+        &.active {
+          border-left: 4px solid $background;
+        }
+      }
+    }
   }
-  to {
-    transform: translateY(0);
+
+  & > #sidebar-tabs {
+    color: $inlaidText;
+    margin-bottom: 0;
+    border-bottom: none;
+    box-shadow: none;
+
+    & > .collapse {
+      background-color: map-get($lcarsColors, "bluepurple");
+      border-top: none;
+      border-bottom: none;
+      border-radius: 0;
+      color: $inlaidText;
+    }
+
+    & > .item {
+      background-color: map-get($lcarsColors, "tan");
+      border-top: none;
+      border-bottom: none;
+      border-radius: 0;
+      color: $inlaidText;
+
+      &:hover {
+        text-shadow: none;
+        background-color: map-get($lcarsColors, "lighttan");
+      }
+
+      &:nth-child(odd) {
+        background-color: map-get($lcarsColors, "bluepurple");
+
+        &:hover {
+          background-color: map-get($lcarsColors, "lightpurple");
+        }
+      }
+      
+      &.active {
+        box-shadow: none;
+        background-color: $buttonColor2;
+        border-bottom: none;
+        border-top: none;
+        color: $inlaidText;
+
+        &:hover {
+          background-color: map-get($lcarsColors, "lightred");
+        }
+      }
+    }
+  }
+
+  
+  .sidebar-tab {
+    background: $background;
+    border-top: 5px solid $background;
+    width: 300px;
+    margin-left: 50px;
+
+    .directory-header {
+      .create-entity,
+      .create-folder {
+        font-weight: bold;
+        background-color: $buttonColor;
+        color: $inlaidText;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: none;
+          background-color: $buttonHover;
+        }
+
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 60%;
+    right: 300px;
+    height: 25%;
+    width: 50px;
+    background-color: map-get($lcarsColors, "lightblue"); 
+    border-top: 5px solid $background;
+    border-bottom: 5px solid $background;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    right: 300px;
+    height: 20%;
+    width: 50px;
+    background-color: map-get($lcarsColors, "orange"); 
+    border-top: 5px solid $background;
+    border-bottom: 5px solid $background;
   }
 }
-
-@keyframes fromRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes fromLeft {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes fromBottom {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
+/*#endregion*/

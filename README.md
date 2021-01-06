@@ -17,6 +17,9 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 
 ## FAQ
 
+- **How does this system work?**
+- I'd encourage you to take a look at the wiki. Right now it's very basic but hopefully it explains a lot of how to get started. If there are other questions, feel free to reach out on Discord in the Modiphius 2d20 chat on the Foundry server. I'm usually fairly good about checking it a few times a day.
+
 - **I have found an issue! How do I report it?**
 - Do not hesitate to raise an issue, no matter how small the problem is. I may not address everything as urgently as people want, but I'll try to do my best. Please include an appropriate level of detail to recreate the issue or see the problem including but not limited to:
 *Where you found the issue/typo*

@@ -57,7 +57,7 @@ export class STAExtendedTaskSheet extends ActorSheet {
       
       const fullDiv = document.createElement('DIV');
       fullDiv.style = 'width: 100%;';
-      fullDiv.className = 'extendedtask-bar';
+      fullDiv.className = 'bar extendedtask';
       for (let i = 0; i < trackNumber; i++ ) {
         // put a divider at the top of each row
         const dividerDiv = document.createElement('DIV');
@@ -71,8 +71,8 @@ export class STAExtendedTaskSheet extends ActorSheet {
         for (let j = 0; j < 5; j++) {
           const inputDiv = document.createElement('DIV');
           if (i * 5 + j + 1 <= work) {
-            inputDiv.id = 'extendedtask-box-' + (i * 5 + j + 1);
-            inputDiv.className = 'extendedtask-box';
+            inputDiv.id = 'box-' + (i * 5 + j + 1);
+            inputDiv.className = 'box extendedtask';
             inputDiv.innerHTML = (i * 5 + j + 1);
           }
           inputDiv.style = 'width: calc(100% / ' + 5 + ');';
@@ -82,29 +82,28 @@ export class STAExtendedTaskSheet extends ActorSheet {
         fullDiv.appendChild(rowDiv);
       }
 
-      html.find('#extendedtask-renderer').empty();
+      html.find('#extendedtask-renderer')[0].innerHTML = '';
       html.find('#extendedtask-renderer')[0].appendChild(fullDiv);
 
       for (let k = 0; k < work; k++) {
+        html.find('[id^="box"]')[k].classList.add('extendedtask');
         if (k + 1 <= html.find('#work-progress')[0].value) {
-          html.find('[id^="extendedtask-box"]')[k].setAttribute('data-selected', 'true');
-          html.find('[id^="extendedtask-box"]')[k].style.backgroundColor = '#FFCC33';
-          html.find('[id^="extendedtask-box"]')[k].style.color = '#1F1F1F';
+          html.find('[id^="box"]')[k].setAttribute('data-selected', 'true');
+          html.find('[id^="box"]')[k].classList.add('selected');
         } else {
-          html.find('[id^="extendedtask-box"]')[k].removeAttribute('data-selected');
-          html.find('[id^="extendedtask-box"]')[k].style.backgroundColor = '#191813';
-          html.find('[id^="extendedtask-box"]')[k].style.color = '#FEFEFF';
+          html.find('[id^="box"]')[k].removeAttribute('data-selected');
+          html.find('[id^="box"]')[k].classList.remove('selected');
         }
       }
     }
     renderExtendedWorkTracks();
 
-    html.find('[id^="extendedtask-box"]').click((ev) => {
+    html.find('[id^="box"]').click((ev) => {
       let total = '';
       const newTotalObject = $(ev.currentTarget)[0];
       const newTotal = newTotalObject.id.replace(/\D/g, '');
       if (newTotalObject.getAttribute('data-selected') === 'true') {
-        const nextCheck = 'extendedtask-box-' + (parseInt(newTotal) + 1);
+        const nextCheck = 'box-' + (parseInt(newTotal) + 1);
         if (!html.find('#'+nextCheck)[0] || html.find('#'+nextCheck)[0].getAttribute('data-selected') != 'true') {
           html.find('#work-progress')[0].value = html.find('#work-progress')[0].value - 1;
           this.submit();

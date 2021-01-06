@@ -7,7 +7,7 @@ export class STASmallCraftSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['sta', 'sheet', 'actor', 'smallcraft'],
-      width: 700,
+      width: 900,
       height: 735,
       dragDrop: [{
         dragSelector: '.item-list .item',

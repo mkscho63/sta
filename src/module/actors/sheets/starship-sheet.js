@@ -7,7 +7,7 @@ export class STAStarshipSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['sta', 'sheet', 'actor', 'starship'],
-      width: 700,
+      width: 800,
       height: 735,
       dragDrop: [{
         dragSelector: '.item-list .item',
