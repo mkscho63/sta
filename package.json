@@ -1,8 +1,8 @@
 {
 	"name": "sta",
 	"scripts": {
-    "package": "gulp package",
-    "transpile": "gulp build",
+		"package": "gulp package",
+		"transpile": "gulp build",
 		"build": "gulp build && gulp copy",
 		"build:watch": "gulp watch",
 		"clean": "gulp clean && gulp copy --clean",
@@ -25,5 +25,5 @@
 		"prettier": "^2.2.1",
 		"yargs": "^16.2.0"
 	},
-	"version": "0.0.4"
+	"version": "1.0.0"
 }
