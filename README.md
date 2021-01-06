@@ -5,12 +5,18 @@
 You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-trek-adventures/products/star-trek-adventures-core-rulebook-pdf">Star Trek Adventures Tabletop RPG</a> to play this! This system does not attempt to explain the game or include any ready made characters, features or items. The system is designed for those who understand the rules and want to play via Foundry VTT. Modiphius own's the property, as such I will not discuss rules and content with those who have not purchased the system from Modiphius. I am in no way affiliated with Modiphius, I only share this with their permission.
 
 ---
+## Sample images
+
+![Character Window Sample](https://i.imgur.com/KgCfcf8.png)
+![Starship Window Sample](https://i.imgur.com/O1b1xB8.png)
+
+---
 
 ## Contributors
 
 | <a href="https://www.mikeschoen.net" target="_blank">**Mike Schoen**</a> |
 | :---: |
-| [![Mike Schoen Creation](https://avatars1.githubusercontent.com/u/9925376?s=50)](https://www.mikeschoen.net)    |
+| [![Mike Schoen](https://avatars1.githubusercontent.com/u/9925376?s=50)](https://www.mikeschoen.net)    |
 | <a href="https://github.com/mkscho63" target="_blank">`github.com/mkscho63`</a> |
 
 ---
@@ -51,7 +57,7 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 ## Thanks
 - Atropos, for creating Foundry Virtual Tabletop. It is an amazing VTT, especially if you want something highly customizable. <a href="https://foundryvtt.com/" target="_blank">https://foundryvtt.com/</a>.
 - Modiphius for creating the amazing Star Trek Adventures system, I definitely recommend trying it out if you are any level of a fan of Star Trek. Ensure you only use this system after purchasing the Star Trek Adventure system! <a href="https://www.modiphius.net/collections/star-trek-adventures">https://www.modiphius.net/</a>.
-- KaitoR for making the Dishonored VTT Unofficial system for Foundry. This gave me a starting point for the Star Trek Adventures system and also let me learn a lot about how Foundry System Building works in general.
+- <a href="https://github.com/CurtR95" target="_blank">KaitoR/CurtR95</a> for making the <a href="https://github.com/CurtR95/FVTT-Dishonored" target="_blank">Dishonored VTT Unofficial</a> system for Foundry. This gave me a starting point for the Star Trek Adventures system and also let me learn a lot about how Foundry System Building works in general. Definitely check it out because Dishonored 2d20 is a very fun system, Dishonored has a very interesting world, and the system they have for Foundry supports it all extremely well.
 - Lorc for <a href="https://game-icons.net/1x1/lorc/magnifying-glass.html" target="_blank">Insight</a>, <a href="https://game-icons.net/1x1/lorc/icicles-aura.html" target="_blank">Presence</a>, and <a href="https://game-icons.net/1x1/lorc/open-book.html" target="_blank">Reason</a> Icons. They can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal blog: <a href="https://lorcblog.blogspot.com/" target="_blank">https://lorcblog.blogspot.com/</a>
 - Delapouite for <a href="https://game-icons.net/1x1/delapouite/weight-lifting-up.html" target="_blank">Fitness</a> and <a href="https://game-icons.net/1x1/delapouite/chat-bubble.html" target="_blank">Chat Bubble</a> Icons. It can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal website: <a href="https://delapouite.com/" target="_blank">https://delapouite.com/</a>
 - Skoll for <a href="https://game-icons.net/1x1/skoll/fist.html" target="_blank">Control</a> and <a href="https://game-icons.net/1x1/skoll/achievement.html" target="_blank">Daring</a> Icon. Can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>.
