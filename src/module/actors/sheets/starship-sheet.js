@@ -102,8 +102,8 @@ export class STAStarshipSheet extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value);
-      if (html.find('[data-talent-name="Resolute"]').length > 0) {
-        shieldsTrackMax += 3;
+      if (html.find('[data-talent-name="Advanced Shields"]').length > 0) {
+        shieldsTrackMax += 5;
       }
       // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
       if (html.find('#max-shields')[0].value != shieldsTrackMax) {
@@ -125,7 +125,7 @@ export class STAStarshipSheet extends ActorSheet {
     // With the value, creates a new div for each and places it under a child called "bar-power-renderer".
     function powerTrackUpdate() {
       powerTrackMax = parseInt(html.find('#engines')[0].value);
-      if (html.find('[data-talent-name="Resolute"]').length > 0) {
+      if (html.find('[data-talent-name="Secondary Reactors"]').length > 0) {
         powerTrackMax += 3;
       }
       // This checks that the max-power hidden field is equal to the calculated Max Power value, if not it makes it so.
