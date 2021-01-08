@@ -9,7 +9,7 @@
 	"author": "mkscho63",
 	"esmodules": ["module/sta.js"],
 	"styles": ["sta.css"],
-	"packs": {},
+	"packs": [],
 	"languages": [
 		{
 			"lang": "en",
