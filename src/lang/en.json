@@ -1,19 +1,14 @@
 {
-    "sta.__comment": "The STA System allows for dynamic location of variables. These are indicated via |#|.",
-
     "sta.counting.one": "1",
     "sta.counting.two": "2",
     "sta.counting.three": "3",
     "sta.counting.four": "4",
     "sta.counting.five": "5",
-    "sta.counting.six": "6",
 
-    "sta.actor.character.momentum": "Momentum Track",
     "sta.actor.character.reputation": "Reputation Track",
     "sta.actor.character.name": "Name",
     "sta.actor.character.rank": "Rank",
     "sta.actor.character.stress": "Stress Track",
-    "sta.actor.character.truth": "Truth",
     "sta.actor.character.environment": "Environment",
     "sta.actor.character.upbringing": "Upbringing",
     "sta.actor.character.species": "Species",
@@ -38,9 +33,6 @@
     "sta.actor.character.discipline.medicine": "Medicine",
     "sta.actor.character.discipline.science": "Science",
     "sta.actor.character.discipline.security": "Security",
-    "sta.actor.genericitem.name": "Name",
-    "sta.actor.genericitem.description": "Description",
-    "sta.actor.genericitem.cost": "Value",
     "sta.actor.talent.title": "Talents",
     "sta.actor.focus.title": "Focuses",
     "sta.actor.value.title": "Values",
@@ -118,7 +110,7 @@
     "sta.actor.starship.crew": "Crew Support",
     "sta.actor.starship.scale": "Scale",
     "sta.actor.starship.resistance": "Resistance",
-    "sta.actor.starship.values": "Mission Values",
+    "sta.actor.starship.values": "Mission Directives",
     "sta.actor.starship.damage": "Damage Report",
     "sta.actor.starship.equipment": "Equipment",
     "sta.actor.starship.belonging.other.title": "Other Cargo",
@@ -126,14 +118,16 @@
     "sta.actor.smallcraft.parent": "Parent Ship",
     "sta.actor.smallcraft.child": "Small Craft Type",
 
-    "sta.actor.extendedtask.title": "Extended Task",
     "sta.actor.extendedtask.magnitude": "Magnitude",
     "sta.actor.extendedtask.work": "Work",
     "sta.actor.extendedtask.difficulty": "Difficulty",
     "sta.actor.extendedtask.resistance": "Resistance",
-    "sta.actor.extendedtask.breaches": "Breaches",
-    "sta.actor.extendedtask.rerenderconfirm": "Are you sure you want to render the work track again? You will lose current information.",
-    
+    "sta.actor.extendedtask.breakthroughs": "Breakthroughs",
+    "sta.actor.extendedtask.completed": "Extended Task Completed!",
+
+    "sta.item.genericitem.name": "Name",
+    "sta.item.genericitem.description": "Description",
+
     "sta.apps.dicepoolwindow": "Dice Pool",
     "sta.apps.focus": "Using focus?",
     "sta.apps.determination": "Using determination/value?",
@@ -141,10 +135,9 @@
     "sta.apps.pool": "Number of Dice in Pool",
     "sta.apps.rolldice": "Roll Dice",
 
-    "sta.roll.success": " Success",
-    "sta.roll.successPlural": " Successes",
+    "sta.roll.success": "Success",
+    "sta.roll.successPlural": "Successes",
     "sta.roll.task.name": "Task",
-    "sta.roll.task.form.name": "Task Name",
     "sta.roll.complicationrange": "Complication range is ",
     "sta.roll.complication": "There was a complication!",
     "sta.roll.complicationPlural": "There were |#| complications!",
@@ -152,18 +145,11 @@
     "sta.roll.effectPlural": "There were |#| effects!",
     "sta.roll.rerollresults": "Reroll results?",
 
-    "sta.roll.focus.rating": "Focus with Rating of <b>|#|</b>",
     "sta.roll.weapon.damage": "<b>|#|</b> Damage",
     "sta.roll.armor.protect": "<b>|#|</b> Protection",
-    "sta.roll.item.value": "|#| Coins",
     "sta.roll.item.quantity": "|#|x Items",
 
 
     "sta.tracker.threat": "Threat",
-    "sta.tracker.momentum": "Momentum",
-
-
-
-    "sta.__eof": "This is an end of file because I'm lazy and keep forgetting commas. This shouldn't be in the final commit (sorry if it is - see previous statement)."
-
+    "sta.tracker.momentum": "Momentum"
 }
