@@ -46,9 +46,9 @@ export class STARoll {
     // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
     let successText = '';
     if (success == 1) {
-      successText = success + game.i18n.format('sta.roll.success');
+      successText = success + ' ' + game.i18n.format('sta.roll.success');
     } else {
-      successText = success + game.i18n.format('sta.roll.successPlural');
+      successText = success + ' ' + game.i18n.format('sta.roll.successPlural');
     }
 
     // Check if we allow multiple complications, or if only one complication ever happens.
@@ -229,16 +229,9 @@ export class STARoll {
     const variablePrompt = game.i18n.format('sta.roll.item.quantity');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.quantity)+`</div>`;
     
-    // Create dynamic tags div and populate it with localisation to use in the HTML.
-    let valueTag = '';
-    if (item.data.data.cost > 0) {
-      const costLocalisation = game.i18n.format('sta.roll.item.value');
-      valueTag = '<div class=\'tag\'> '+costLocalisation.replace('|#|', item.data.data.cost)+'</div>';
-    }
-    
     // Send the divs to populate a HTML template and sends to chat.
     this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, variable, valueTag)
+      item.data.data.description, variable, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
@@ -277,10 +270,6 @@ export class STARoll {
     
     // Create dynamic tags div and populate it with localisation to use in the HTML.
     let tags = '';
-    if (item.data.data.cost > 0) {
-      const costLocalisation = game.i18n.format('sta.roll.item.value');
-      tags = '<div class=\'tag\'> '+costLocalisation.replace('|#|', item.data.data.cost)+'</div>';
-    }
     
     if (item.data.data.qualities.melee) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.melee')+'</div>';
     if (item.data.data.qualities.ranged) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.ranged')+'</div>';
@@ -312,16 +301,9 @@ export class STARoll {
     const variablePrompt = game.i18n.format('sta.roll.armor.protect');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.protection)+`</div>`;
     
-    // Create dynamic tags div and populate it with localisation to use in the HTML.
-    let valueTag = '';
-    if (item.data.data.cost > 0) {
-      const costLocalisation = game.i18n.format('sta.roll.item.value');
-      valueTag = '<div class=\'tag\'> '+costLocalisation.replace('|#|', item.data.data.cost)+'</div>';
-    }
-
     // Send the divs to populate a HTML template and sends to chat.
     this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, variable, valueTag)
+      item.data.data.description, variable, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 

@@ -280,7 +280,6 @@
         },
         "item": {
             "templates": ["common"],
-            "cost": 0,
             "quantity": 1
         },
         "focus": {
@@ -293,7 +292,6 @@
         "characterweapon": {
             "templates": ["common"],
             "damage": 0,
-            "cost": 0,
             "range": "",
             "qualities": {
                 "area": false,
