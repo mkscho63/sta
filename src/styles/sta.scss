@@ -1,4 +1,5 @@
 $background: #0F0F0F;
+$backgroundGray: #4C4D47;
 $headerColor: #FAA41B;
 $buttonColor: #FFCC33;
 $buttonHover: #FFEEAA;
@@ -1035,6 +1036,20 @@ $trackColors: (
     } 
   }
 } 
+
+.message-content {
+  .table-draw {
+    img.result-image {
+      background: $backgroundGray;
+    }
+
+    .result-text {
+      a.entity-link {
+        background: $background;
+      }
+    }
+  }
+}
 
 
 /*  Momentum/Threat Tracker *//*#region*/
