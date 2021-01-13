@@ -38,7 +38,7 @@ export class STASmallCraftSheet extends ActorSheet {
     });
   
     $.each(data.data.departments, (department) => {
-      if (department.value > 12) department.value = 12; 
+      if (department.value > 5) department.value = 5; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 

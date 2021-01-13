@@ -1,92 +1,102 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <div class="header-fields">
-        <div class="row">
-            <img class="img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-            <div class="column-x2-big">
-                <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
-                <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
-            </div>
-            <div class="column-x2-x3-small">
-                <label class="label">{{localize 'sta.actor.belonging.weapon.range'}}</label>
-                <select name="data.range">
-                    {{#select data.range}}
-                    <option value="{{localize 'sta.actor.belonging.weapon.melee'}}">{{localize 'sta.actor.belonging.weapon.melee'}}</option>
-                    <option value="{{localize 'sta.actor.belonging.weapon.ranged'}}">{{localize 'sta.actor.belonging.weapon.ranged'}}</option>
-                    {{/select}}
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-x4">
-                <label class="label">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</label>
-                <input type="number" name="data.qualities.hiddenx" value="{{data.qualities.hiddenx}}" data-dtype="Number" />
-            </div>
-            <div class="column-x4">
-                <label class="label">{{localize 'sta.actor.belonging.weapon.piercingx'}}</label>
-                <input type="number" name="data.qualities.piercingx" value="{{data.qualities.piercingx}}" data-dtype="Number" />
-            </div>
-            <div class="column-x4">
-                <label class="label">{{localize 'sta.actor.belonging.weapon.viciousx'}}</label>
-                <input type="number" name="data.qualities.viciousx" value="{{data.qualities.viciousx}}" data-dtype="Number" />
-            </div>
-            <div class="column-x4">
-                <label class="label">{{localize 'sta.actor.belonging.weapon.damage'}}</label>
-                <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-x4">
-                <input class="" type="checkbox" name="data.qualities.charge" data-dtype="Boolean" {{checked data.qualities.charge}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.charge'}}</label>
-            </div>
-            <div class="column-x4">
-                <input class="" type="checkbox" name="data.qualities.grenade" data-dtype="Boolean" {{checked data.qualities.grenade}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.grenade'}}</label>
-            </div>
-            <div class="column-x4"> 
-                <input class="" type="checkbox" name="data.qualities.area" data-dtype="Boolean" {{checked data.qualities.area}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.area'}}</label>
-            </div>
-            <div class="column-x4"> 
-                <input class="" type="checkbox" name="data.qualities.intense" data-dtype="Boolean" {{checked data.qualities.intense}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.intense'}}</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-x4"> 
-                <input class="" type="checkbox" name="data.qualities.knockdown" data-dtype="Boolean" {{checked data.qualities.knockdown}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.knockdown'}}</label>
-            </div>
-            <div class="column-x4"> 
-                <input class="" type="checkbox" name="data.qualities.accurate" data-dtype="Boolean" {{checked data.qualities.accurate}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.accurate'}}</label>
-            </div>
-            <div class="column-x4"> 
-                <input class="" type="checkbox" name="data.qualities.debilitating" data-dtype="Boolean" {{checked data.qualities.debilitating}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.debilitating'}}</label>
-            </div>
-            <div class="column-x4">
-                <input class="" type="checkbox" name="data.qualities.cumbersome" data-dtype="Boolean" {{checked data.qualities.cumbersome}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.cumbersome'}}</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-x4">
-                <input class="" type="checkbox" name="data.qualities.inaccurate" data-dtype="Boolean" {{checked data.qualities.inaccurate}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.inaccurate'}}</label>
-            </div>
-            <div class="column-x4"> 
-                <input class="" type="checkbox" name="data.qualities.deadly" data-dtype="Boolean" {{checked data.qualities.deadly}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.deadly'}}</label>
-            </div>
-            <div class="column-x4"> 
-                <input class="" type="checkbox" name="data.qualities.nonlethal" data-dtype="Boolean" {{checked data.qualities.nonlethal}}>
-                <label class="label">{{localize 'sta.actor.belonging.weapon.nonlethal'}}</label>
-            </div>
-        </div>
+  <div class="header-fields">
+    <div class="row">
+      <img class="img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+      <div class="column-x3-img">
+        <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
+        <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+      </div>
+      <div class="column-x1">
+        <label class="label">{{localize 'sta.actor.belonging.weapon.range'}}</label>
+        <select name="data.range">
+          {{#select data.range}}
+          <option value="{{localize 'sta.actor.belonging.weapon.melee'}}">{{localize 'sta.actor.belonging.weapon.melee'}}</option>
+          <option value="{{localize 'sta.actor.belonging.weapon.ranged'}}">{{localize 'sta.actor.belonging.weapon.ranged'}}</option>
+          {{/select}}
+        </select>
+      </div>
     </div>
-    <div class="description">
-      <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
-        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    <div class="row">
+      <div class="column-x1">
+        <label class="label">{{localize 'sta.item.genericitem.opportunity'}}</label>
+        <input type="number" name="data.opportunity" value="{{data.opportunity}}" data-dtype="Number" />
+      </div>
+      <div class="column-x1">
+        <label class="label">{{localize 'sta.item.genericitem.escalation'}}</label>
+        <input type="number" name="data.escalation" value="{{data.escalation}}" data-dtype="Number" />
+      </div>
+      <div class="column-x1">
+        <label class="label">{{localize 'sta.actor.belonging.weapon.damage'}}</label>
+        <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" />
+      </div>
     </div>
+    <div class="row">
+      <div class="column-x4">
+        <label class="label">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</label>
+        <input type="number" name="data.qualities.hiddenx" value="{{data.qualities.hiddenx}}" data-dtype="Number" />
+      </div>
+      <div class="column-x4">
+        <label class="label">{{localize 'sta.actor.belonging.weapon.piercingx'}}</label>
+        <input type="number" name="data.qualities.piercingx" value="{{data.qualities.piercingx}}" data-dtype="Number" />
+      </div>
+      <div class="column-x4">
+        <label class="label">{{localize 'sta.actor.belonging.weapon.viciousx'}}</label>
+        <input type="number" name="data.qualities.viciousx" value="{{data.qualities.viciousx}}" data-dtype="Number" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-x4">
+        <input class="" type="checkbox" name="data.qualities.charge" data-dtype="Boolean" {{checked data.qualities.charge}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.charge'}}</label>
+      </div>
+      <div class="column-x4">
+        <input class="" type="checkbox" name="data.qualities.grenade" data-dtype="Boolean" {{checked data.qualities.grenade}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.grenade'}}</label>
+      </div>
+      <div class="column-x4"> 
+        <input class="" type="checkbox" name="data.qualities.area" data-dtype="Boolean" {{checked data.qualities.area}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.area'}}</label>
+      </div>
+      <div class="column-x4"> 
+        <input class="" type="checkbox" name="data.qualities.intense" data-dtype="Boolean" {{checked data.qualities.intense}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.intense'}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-x4"> 
+        <input class="" type="checkbox" name="data.qualities.knockdown" data-dtype="Boolean" {{checked data.qualities.knockdown}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.knockdown'}}</label>
+      </div>
+      <div class="column-x4"> 
+        <input class="" type="checkbox" name="data.qualities.accurate" data-dtype="Boolean" {{checked data.qualities.accurate}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.accurate'}}</label>
+      </div>
+      <div class="column-x4"> 
+        <input class="" type="checkbox" name="data.qualities.debilitating" data-dtype="Boolean" {{checked data.qualities.debilitating}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.debilitating'}}</label>
+      </div>
+      <div class="column-x4">
+        <input class="" type="checkbox" name="data.qualities.cumbersome" data-dtype="Boolean" {{checked data.qualities.cumbersome}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.cumbersome'}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-x4">
+        <input class="" type="checkbox" name="data.qualities.inaccurate" data-dtype="Boolean" {{checked data.qualities.inaccurate}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.inaccurate'}}</label>
+      </div>
+      <div class="column-x4"> 
+        <input class="" type="checkbox" name="data.qualities.deadly" data-dtype="Boolean" {{checked data.qualities.deadly}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.deadly'}}</label>
+      </div>
+      <div class="column-x4"> 
+        <input class="" type="checkbox" name="data.qualities.nonlethal" data-dtype="Boolean" {{checked data.qualities.nonlethal}}>
+        <label class="label">{{localize 'sta.actor.belonging.weapon.nonlethal'}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="description">
+    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+  </div>
 </form>

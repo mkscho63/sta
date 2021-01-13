@@ -33,7 +33,6 @@
   "sta.actor.character.discipline.medicine": "Medizin",
   "sta.actor.character.discipline.science": "Wissenschaft",
   "sta.actor.character.discipline.security": "Sicherheit",
-  "sta.actor.talent.title": "Talente",
   "sta.actor.focus.title": "Fokusse",
   "sta.actor.value.title": "Überzeugungen",
   "sta.actor.value.used": "Hinterfragt?",
@@ -128,6 +127,9 @@
 
   "sta.item.genericitem.name": "Name",
   "sta.item.genericitem.description": "Beschreibung",
+
+  "sta.item.talent.title": "Talente",
+  "sta.item.talent.type": "Type",
 
   "sta.apps.dicepoolwindow": "Würfel Pool",
   "sta.apps.focus": "Fokus benutzen?",

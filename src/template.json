@@ -331,11 +331,17 @@
         "armor": {
             "templates": ["common"],
             "protection": 0,
-            "equipped": true
+            "equipped": true,
+            "opportunity": 0,
+            "escalation": 0
         },
         "talent": {
             "templates": ["common"],
-            "type": ""
+            "talenttype": {
+              "typeenum": "",
+              "description":"",
+              "minimum":0
+            }
         },
         "injury": {
             "templates": ["common"]

@@ -35,7 +35,7 @@ export class STACharacterSheet extends ActorSheet {
     });
     
     $.each(data.data.disciplines, (discipline) => {
-      if (discipline.value > 12) discipline.value = 12; 
+      if (discipline.value > 5) discipline.value = 5; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
