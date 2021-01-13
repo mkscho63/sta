@@ -183,6 +183,12 @@ export class STASmallCraftSheet extends ActorSheet {
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
     });
 
+    html.find('.chat').click((ev) =>{
+      const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
+      const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
+      staActor.rollGenericItem(ev, itemType, itemId, this.actor);
+    });
+
     // Allows item-create images to create an item of a type defined individually by each button. This uses code found via the Foundry VTT System Tutorial.
     html.find('.control.create').click((ev) => {
       ev.preventDefault();
