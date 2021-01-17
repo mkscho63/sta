@@ -439,5 +439,12 @@ export class STAStarshipSheet extends ActorSheet {
         parseInt(selectedSystemValue), selectedDepartment,
         parseInt(selectedDepartmentValue), null, this.actor);
     });
+    
+    $.each($('[id^=starship-weapon-]'), function(index, value) {
+      const weaponDamage = parseInt(value.dataset.itemDamage);
+      const securityValue = parseInt(html.find('#security')[0].value);
+      const attackDamageValue = weaponDamage + securityValue;
+      value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
+    });
   }
 }

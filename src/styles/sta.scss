@@ -820,15 +820,28 @@ $trackColors: (
   &.characterweapon,
   &.starshipweapon {
 
-    .header-fields .row .column-x4 {
-      width: 25%;
-      display: flex;
-      flex-direction: row;
-      text-align: left;
+    .header-fields .row {
+      font-size: 14px;
+
+      .column-x4 {
+        width: 25%;
+        display: flex;
+        text-align: left;
       
-      .label {
-        font-size: 14px;
-        line-height: 26px;
+        .label {
+          line-height: 26px;
+        }
+      }
+
+      .label-top {
+        width: 25%;
+        flex-direction: column;
+        text-align: center;
+  
+        input {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
 

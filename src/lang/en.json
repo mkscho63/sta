@@ -72,6 +72,8 @@
     "sta.actor.belonging.weapon.viciousx": "Vicious",
     "sta.actor.belonging.weapon.versatilex": "Versatile",
     "sta.actor.belonging.weapon.persistentx": "Persistent",
+    "sta.actor.belonging.weapon.hands": "Hands",
+    "sta.actor.belonging.weapon.qualities": "Qualities",
     "sta.actor.belonging.armor.title": "Armor",
     "sta.actor.belonging.armor.protect": "Resist",
     "sta.actor.belonging.armor.protection": "Resistance",

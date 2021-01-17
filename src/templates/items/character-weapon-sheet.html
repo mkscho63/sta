@@ -16,36 +16,41 @@
         </select>
       </div>
     </div>
+    <label class="label">{{localize 'sta.actor.belonging.weapon.qualities'}}</label>
     <div class="row">
-      <div class="column-x4">
+      <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.item.genericitem.opportunity'}}</label>
         <input type="number" name="data.opportunity" value="{{data.opportunity}}" data-dtype="Number" />
       </div>
-      <div class="column-x4">
+      <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.item.genericitem.escalation'}}</label>
         <input type="number" name="data.escalation" value="{{data.escalation}}" data-dtype="Number" />
       </div>
-      <div class="column-x4">
+      <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.damage'}}</label>
         <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" />
       </div>
-      <div class="column-x4"></div>
+      <div class="column-x4 label-top">
+        <label class="label">{{localize 'sta.actor.belonging.weapon.hands'}}</label>
+        <input type="number" name="data.hands" value="{{data.hands}}" data-dtype="Number" />
+      </div>
     </div>
     <div class="row">
-      <div class="column-x4">
+      <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</label>
         <input type="number" name="data.qualities.hiddenx" value="{{data.qualities.hiddenx}}" data-dtype="Number" />
       </div>
-      <div class="column-x4">
+      <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.piercingx'}}</label>
         <input type="number" name="data.qualities.piercingx" value="{{data.qualities.piercingx}}" data-dtype="Number" />
       </div>
-      <div class="column-x4">
+      <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.viciousx'}}</label>
         <input type="number" name="data.qualities.viciousx" value="{{data.qualities.viciousx}}" data-dtype="Number" />
       </div>
-      <div class="column-x4"></div>
+      <div class="column-x4 label-top"></div>
     </div>
+    <br/>
     <div class="row">
       <div class="column-x4">
         <input class="" type="checkbox" name="data.qualities.charge" data-dtype="Boolean" {{checked data.qualities.charge}}>

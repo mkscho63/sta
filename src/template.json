@@ -293,6 +293,7 @@
             "templates": ["common"],
             "damage": 0,
             "range": "",
+            "hands": 1,
             "qualities": {
                 "area": false,
                 "intense": false,
