@@ -28,7 +28,10 @@
       </div>
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.damage'}}</label>
-        <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" />
+        <div>
+          <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" />
+          <label class="label">+ {{localize 'sta.actor.character.discipline.security'}} </label>
+        </div>
       </div>
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.hands'}}</label>
