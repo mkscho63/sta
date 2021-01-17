@@ -1,333 +1,333 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <div class="main-content">
-        <div class="header">
-            <div class="lcars-column">
-                <div class="lcars-header-block1"></div>
-                <div class="lcars-header-block2"></div>
-            </div>
-            <div class="header-fields">
-                <div class="section reputation">
-                    <div class="title">
-                        {{localize 'sta.actor.character.reputation'}}
-                    </div>
-                    <div class="track">
-                        <input type="hidden" id="total-rep" name="data.reputation" value="{{data.reputation}}" data-dtype="Number" />
-                        <div id="bar-rep-renderer" class=" bar"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column title" style="width:30%">
-                        {{localize 'sta.actor.character.name'}}
-                    </div>
-                    <div class="column title" style="width:20%">
-                        {{localize 'sta.actor.character.species'}}
-                    </div>
-                    <div class="column title" style="width:15%">
-                        {{localize 'sta.actor.character.rank'}}
-                    </div>
-                    <div class="column title" style="width:35%">
-                        {{localize 'sta.actor.character.assignment'}}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column" style="width:30%">
-                        <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.character.name'}}" />
-                    </div>
-                    <div class="column" style="width:20%">
-                        <input name="data.species" class="text-entry" type="text" value="{{data.species}}" placeholder="{{localize 'sta.actor.character.species'}}" />
-                    </div>
-                    <div class="column" style="width:15%">
-                        <input name="data.rank" class="text-entry" type="text" value="{{data.rank}}" placeholder="{{localize 'sta.actor.character.rank'}}" />
-                    </div>
-                    <div class="column" style="width:35%">
-                        <input name="data.assignment" class="text-entry" type="text" value="{{data.assignment}}" placeholder="{{localize 'sta.actor.character.assignment'}}" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column title">
-                        <div> {{localize 'sta.actor.character.environment'}} </div>
-                    </div>
-                    <div class="column title">
-                        <div> {{localize 'sta.actor.character.upbringing'}} </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <input name="data.environment" class="text-entry" type="text" value="{{data.environment}}" placeholder="{{localize 'sta.actor.character.environment'}}" />
-                    </div>
-                    <div class="column">
-                        <input name="data.upbringing" class="text-entry" type="text" value="{{data.upbringing}}" placeholder="{{localize 'sta.actor.character.upbringing'}}" />
-                    </div>
-                </div>
-            </div>
+  <div class="main-content">
+    <div class="header">
+      <div class="lcars-column">
+        <div class="lcars-header-block1"></div>
+        <div class="lcars-header-block2"></div>
+      </div>
+      <div class="header-fields">
+        <div class="section reputation">
+          <div class="title">
+            {{localize 'sta.actor.character.reputation'}}
+          </div>
+          <div class="track">
+            <input type="hidden" id="total-rep" name="data.reputation" value="{{data.reputation}}" data-dtype="Number" />
+            <div id="bar-rep-renderer" class=" bar"></div>
+          </div>
         </div>
-        <div class="main">
-            <div class="row">
-                <div class="lcars-column">
-                    <div class="lcars-attribute-title-block"></div>
-                    <div class="lcars-attribute-general-block1"></div>
-                    <div class="lcars-attribute-general-block2"></div>
-                    <div class="lcars-attribute-general-block3"></div>
-                </div>
-                <div class="column left-column">
-                    <div class="section attribute">
-                        <div class="title">
-                            {{localize 'sta.actor.character.attribute.title'}}
-                        </div>
-                        <div class="stat header row">
-                            <div class="selector-space"></div>
-                            <div class="text secondary-title">{{localize 'sta.actor.character.attribute.name'}}</div>
-                            <div class="field secondary-title">{{localize 'sta.actor.attdis.mod'}}</div>
-                        </div>
-                        {{#each data.attributes as |attribute key|}}
-                        <div class="stat row">
-                            <input class="selector attribute" id="{{key}}.selector" type="checkbox" name="data.attributes.{{key}}.selected" data-dtype="Boolean" {{checked attribute.selected}}>
-                            <div class="text list-entry"> {{localize attribute.label}} </div>
-                            <input class="field numeric-entry" id="{{key}}" name="data.attributes.{{key}}.value" type="text" value="{{attribute.value}}" />
-                        </div>
-                        {{/each}}
-                        <div class="check-button btn2 challenge">{{localize 'sta.actor.challenge.roll'}}</div>
-                    </div>
-                </div>
-                <div class="column center-column">
-                    <div class="section stress">
-                        <div class="title">
-                            {{localize 'sta.actor.character.stress'}}
-                        </div>
-                        <div class="track">
-                            <input type="hidden" id="total-stress" name="data.stress.value" value="{{data.stress.value}}" data-dtype="Number" />
-                            <input type="hidden" id="max-stress" name="data.stress.max" value="{{data.stress.max}}" data-dtype="Number" />
-                            <div id="bar-stress-renderer" class=" bar"></div>
-                        </div>
-                    </div>
-                    <div class="section img">
-                        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
-                    </div>
-                    <div class="section determination">
-                        <div class="title">
-                            {{localize 'sta.actor.character.determination'}}
-                        </div>
-                        <div class="track">
-                            <input type="hidden" id="total-determination" name="data.determination.value" value="{{data.determination.value}}" data-dtype="Number" />
-                            <div class="bar">
-                                <div id="bar-determination-renderer" class="bar"></div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="column right-column">
-                    <div class="section discipline">
-                        <div class="title">
-                            {{localize 'sta.actor.character.discipline.title'}}
-                        </div>
-                        <div class="stat header row">
-                            <div class="field secondary-title">{{localize 'sta.actor.attdis.mod'}}</div>
-                            <div class="text secondary-title">{{localize 'sta.actor.character.discipline.name'}}</div>
-                            <div class="selector-space"></div>
-                        </div>
-                        {{#each data.disciplines as |discipline key|}}
-                        <div class="stat row">
-                            <input class="field numeric-entry" id="{{key}}" name="data.disciplines.{{key}}.value" type="text" value="{{discipline.value}}" placeholder="Name" />
-                            <div class="text list-entry"> {{localize discipline.label}} </div>
-                            <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="data.disciplines.{{key}}.selected" data-dtype="Boolean" {{checked discipline.selected}}>
-                        </div>
-                        {{/each}}
-                        <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="lcars-column">
-                    <div class="lcars-item1-top-block"></div>
-                    <div class="lcars-item1-connect-block"></div>
-                    <div class="lcars-item1-general-block"></div>
-                </div>
-                <div class="column left-column">
-                    <div class="section talents">
-                        <div class="title">
-                            {{localize 'sta.actor.talent.title'}}
-                        </div>
-                        <div class="header row item">
-                            <div class="image"></div>
-                            <div class="one-column-with-roll secondary-title">{{localize 'sta.item.genericitem.name'}}</div>
-                            <a class="control create" title="Create item" data-type="talent"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item id|}}
-                        {{#if (eq item.type "talent")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <div class="one-column-no-roll list-entry talent-tooltip-clickable" id="talent-tooltip-clickable-{{item._id}}" data-talent-name="{{item.name}}">{{item.name}}</div>
-                            <div class="control">
-                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item._id}}">
-                            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item._id}}">{{item.data.description}}</div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </div>
-                </div>
-                <div class="column center-column">
-                    <div class="section values">
-                        <div class="title">
-                            {{localize 'sta.actor.value.title'}}
-                        </div>
-                        <div class="header row item">
-                            <div class="image"></div>
-                            <div class="value-used">{{localize 'sta.actor.value.used'}}</div>
-                            <div class="one-column-with-roll">{{localize 'sta.item.genericitem.name'}}</div>
-                            <a class="control create" title="Create item" data-type="value"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item id|}}
-                        {{#if (eq item.type "value")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <a class="value-used control toggle"><i class="fas fa-toggle-{{#if (eq item.data.used true)}}on{{else}}off{{/if}}"></i></a>
-                            <h4 class="one-column-with-roll list-entry {{#if (eq item.data.used true)}}strike-through{{/if}}">{{item.name}}</h4>
-                            <div class="control">
-                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </div>
-                </div>
-                <div class="column right-column">
-                    <div class="section focuses">
-                        <div class="title">
-                            {{localize 'sta.actor.focus.title'}}
-                        </div>
-                        <div class="header row item">
-                            <div class="image"></div>
-                            <div class="one-column-with-roll">{{localize 'sta.item.genericitem.name'}}</div>
-                            <a class="control create" title="Create item" data-type="focus"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item id|}}
-                        {{#if (eq item.type "focus")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="one-column-with-roll list-entry">{{item.name}}</h4>
-                            <div class="control">
-                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="lcars-column">
-                    <div class="lcars-item2-top-block"></div>
-                    <div class="lcars-item2-connect-block"></div>
-                    <div class="lcars-item2-general-block1"></div>
-                    <div class="lcars-item2-general-block2"></div>
-                </div>
-                <div class="column left-column">
-                    <div class="section note">
-                        <div class="title">
-                            {{localize 'sta.actor.note.title'}}
-                        </div>
-                        <div class="header row item">
-                            <div class="one-column-no-roll" style="height:17px;"></div>
-                        </div>
-                        <div class="note">
-                            {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
-                        </div>
-                    </div>
-                </div>
-                <div class="column center-column">
-                    <div class="section injuries">
-                        <div class="title">
-                            {{localize 'sta.actor.injury.title'}}
-                        </div>
-                        <div class="header row item">
-                            <div class="one-column-no-roll">{{localize 'sta.item.genericitem.name'}}</div>
-                            <a class="control create" title="Create item" data-type="injury"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item id|}}
-                        {{#if (eq item.type "injury")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <h4 class="one-column-no-roll list-entry">{{item.name}}</h4>
-                            <div class="control">
-                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </div>
-                </div>
-                <div class="column right-column">
-                    <div class="section belongings">
-                        <div class="title">
-                            {{localize 'sta.actor.belonging.title'}}
-                        </div>
-                        <div class="header row item">
-                            <div class="image"></div>
-                            <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.weapon.title'}}</div>
-                            <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
-                            <a class="control create" title="Create item" data-type="characterweapon"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "characterweapon")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}" data-item-damage={{item.data.damage}}/></div>
-                            <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.damage}}</h4>
-                            <div class="control">
-                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                        <div class="header row item">
-                            <div class="image"></div>
-                            <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.armor.title'}}</div>
-                            <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.armor.protect'}}</div>
-                            <a class="control create" title="Create item" data-type="armor"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "armor")}}
-                        <li id="armor-{{item._id}}" class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 id="protectval-armor-{{item._id}}" class="two-column-with-roll-secondary list-entry">{{item.data.protection}}</h4>
-                            <div class="control">
-                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                        <div class="header row item">
-                            <div class="image"></div>
-                            <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.other.title'}}</div>
-                            <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.other.qty'}}</div>
-                            <a class="control create" title="Create item" data-type="item"><i class="fas fa-plus"></i></a>
-                        </div>
-                        {{#each actor.items as |item type id|}}
-                        {{#if (eq item.type "item")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
-                            <div class="control">
-                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                            </div>
-                        </li>
-                        {{/if}}
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+          <div class="column title" style="width:30%">
+            {{localize 'sta.actor.character.name'}}
+          </div>
+          <div class="column title" style="width:20%">
+            {{localize 'sta.actor.character.species'}}
+          </div>
+          <div class="column title" style="width:15%">
+            {{localize 'sta.actor.character.rank'}}
+          </div>
+          <div class="column title" style="width:35%">
+            {{localize 'sta.actor.character.assignment'}}
+          </div>
         </div>
+        <div class="row">
+          <div class="column" style="width:30%">
+            <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.character.name'}}" />
+          </div>
+          <div class="column" style="width:20%">
+            <input name="data.species" class="text-entry" type="text" value="{{data.species}}" placeholder="{{localize 'sta.actor.character.species'}}" />
+          </div>
+          <div class="column" style="width:15%">
+            <input name="data.rank" class="text-entry" type="text" value="{{data.rank}}" placeholder="{{localize 'sta.actor.character.rank'}}" />
+          </div>
+          <div class="column" style="width:35%">
+            <input name="data.assignment" class="text-entry" type="text" value="{{data.assignment}}" placeholder="{{localize 'sta.actor.character.assignment'}}" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column title">
+            <div> {{localize 'sta.actor.character.environment'}} </div>
+          </div>
+          <div class="column title">
+            <div> {{localize 'sta.actor.character.upbringing'}} </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <input name="data.environment" class="text-entry" type="text" value="{{data.environment}}" placeholder="{{localize 'sta.actor.character.environment'}}" />
+          </div>
+          <div class="column">
+            <input name="data.upbringing" class="text-entry" type="text" value="{{data.upbringing}}" placeholder="{{localize 'sta.actor.character.upbringing'}}" />
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="main">
+      <div class="row">
+        <div class="lcars-column">
+          <div class="lcars-attribute-title-block"></div>
+          <div class="lcars-attribute-general-block1"></div>
+          <div class="lcars-attribute-general-block2"></div>
+          <div class="lcars-attribute-general-block3"></div>
+        </div>
+        <div class="column left-column">
+          <div class="section attribute">
+            <div class="title">
+              {{localize 'sta.actor.character.attribute.title'}}
+            </div>
+            <div class="stat header row">
+              <div class="selector-space"></div>
+              <div class="text secondary-title">{{localize 'sta.actor.character.attribute.name'}}</div>
+              <div class="field secondary-title">{{localize 'sta.actor.attdis.mod'}}</div>
+            </div>
+            {{#each data.attributes as |attribute key|}}
+            <div class="stat row">
+              <input class="selector attribute" id="{{key}}.selector" type="checkbox" name="data.attributes.{{key}}.selected" data-dtype="Boolean" {{checked attribute.selected}}>
+              <div class="text list-entry"> {{localize attribute.label}} </div>
+              <input class="field numeric-entry" id="{{key}}" name="data.attributes.{{key}}.value" type="text" value="{{attribute.value}}" />
+            </div>
+            {{/each}}
+            <div class="check-button btn2 challenge">{{localize 'sta.actor.challenge.roll'}}</div>
+          </div>
+        </div>
+        <div class="column center-column">
+          <div class="section stress">
+            <div class="title">
+              {{localize 'sta.actor.character.stress'}}
+            </div>
+            <div class="track">
+              <input type="hidden" id="total-stress" name="data.stress.value" value="{{data.stress.value}}" data-dtype="Number" />
+              <input type="hidden" id="max-stress" name="data.stress.max" value="{{data.stress.max}}" data-dtype="Number" />
+              <div id="bar-stress-renderer" class=" bar"></div>
+            </div>
+          </div>
+          <div class="section img">
+            <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+          </div>
+          <div class="section determination">
+            <div class="title">
+              {{localize 'sta.actor.character.determination'}}
+            </div>
+            <div class="track">
+              <input type="hidden" id="total-determination" name="data.determination.value" value="{{data.determination.value}}" data-dtype="Number" />
+              <div class="bar">
+                <div id="bar-determination-renderer" class="bar"></div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="column right-column">
+          <div class="section discipline">
+            <div class="title">
+              {{localize 'sta.actor.character.discipline.title'}}
+            </div>
+            <div class="stat header row">
+              <div class="field secondary-title">{{localize 'sta.actor.attdis.mod'}}</div>
+              <div class="text secondary-title">{{localize 'sta.actor.character.discipline.name'}}</div>
+              <div class="selector-space"></div>
+            </div>
+            {{#each data.disciplines as |discipline key|}}
+            <div class="stat row">
+              <input class="field numeric-entry" id="{{key}}" name="data.disciplines.{{key}}.value" type="text" value="{{discipline.value}}" placeholder="Name" />
+              <div class="text list-entry"> {{localize discipline.label}} </div>
+              <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="data.disciplines.{{key}}.selected" data-dtype="Boolean" {{checked discipline.selected}}>
+            </div>
+            {{/each}}
+            <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lcars-column">
+          <div class="lcars-item1-top-block"></div>
+          <div class="lcars-item1-connect-block"></div>
+          <div class="lcars-item1-general-block"></div>
+        </div>
+        <div class="column left-column">
+          <div class="section talents">
+            <div class="title">
+              {{localize 'sta.item.talent.title'}}
+            </div>
+            <div class="header row item">
+              <div class="image"></div>
+              <div class="one-column-with-roll secondary-title">{{localize 'sta.item.genericitem.name'}}</div>
+              <a class="control create" title="Create item" data-type="talent"><i class="fas fa-plus"></i></a>
+            </div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "talent")}}
+            <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+              <div class="one-column-no-roll list-entry talent-tooltip-clickable" id="talent-tooltip-clickable-{{item._id}}" data-talent-name="{{item.name}}">{{item.name}}</div>
+              <div class="control">
+                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+            <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item._id}}">
+              <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item._id}}">{{item.data.description}}</div>
+            </li>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        <div class="column center-column">
+          <div class="section values">
+            <div class="title">
+              {{localize 'sta.actor.value.title'}}
+            </div>
+            <div class="header row item">
+              <div class="image"></div>
+              <div class="value-used">{{localize 'sta.actor.value.used'}}</div>
+              <div class="one-column-with-roll">{{localize 'sta.item.genericitem.name'}}</div>
+              <a class="control create" title="Create item" data-type="value"><i class="fas fa-plus"></i></a>
+            </div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "value")}}
+            <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+              <a class="value-used control toggle"><i class="fas fa-toggle-{{#if (eq item.data.used true)}}on{{else}}off{{/if}}"></i></a>
+              <h4 class="one-column-with-roll list-entry {{#if (eq item.data.used true)}}strike-through{{/if}}">{{item.name}}</h4>
+              <div class="control">
+                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        <div class="column right-column">
+          <div class="section focuses">
+            <div class="title">
+              {{localize 'sta.actor.focus.title'}}
+            </div>
+            <div class="header row item">
+              <div class="image"></div>
+              <div class="one-column-with-roll">{{localize 'sta.item.genericitem.name'}}</div>
+              <a class="control create" title="Create item" data-type="focus"><i class="fas fa-plus"></i></a>
+            </div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "focus")}}
+            <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+              <h4 class="one-column-with-roll list-entry">{{item.name}}</h4>
+              <div class="control">
+                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lcars-column">
+          <div class="lcars-item2-top-block"></div>
+          <div class="lcars-item2-connect-block"></div>
+          <div class="lcars-item2-general-block1"></div>
+          <div class="lcars-item2-general-block2"></div>
+        </div>
+        <div class="column left-column">
+          <div class="section note">
+            <div class="title">
+              {{localize 'sta.actor.note.title'}}
+            </div>
+            <div class="header row item">
+              <div class="one-column-no-roll" style="height:17px;"></div>
+            </div>
+            <div class="note">
+              {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
+            </div>
+          </div>
+        </div>
+        <div class="column center-column">
+          <div class="section injuries">
+            <div class="title">
+              {{localize 'sta.actor.injury.title'}}
+            </div>
+            <div class="header row item">
+              <div class="one-column-no-roll">{{localize 'sta.item.genericitem.name'}}</div>
+              <a class="control create" title="Create item" data-type="injury"><i class="fas fa-plus"></i></a>
+            </div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "injury")}}
+            <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+              <h4 class="one-column-no-roll list-entry">{{item.name}}</h4>
+              <div class="control">
+                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        <div class="column right-column">
+          <div class="section belongings">
+            <div class="title">
+              {{localize 'sta.actor.belonging.title'}}
+            </div>
+            <div class="header row item">
+              <div class="image"></div>
+              <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.weapon.title'}}</div>
+              <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
+              <a class="control create" title="Create item" data-type="characterweapon"><i class="fas fa-plus"></i></a>
+            </div>
+            {{#each actor.items as |item type id|}}
+            {{#if (eq item.type "characterweapon")}}
+            <li class="row entry" id="character-weapon-{{@index}}" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.data.damage}}">
+              <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}" data-item-damage={{item.data.damage}}/></div>
+              <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
+              <h4 class="two-column-with-roll-secondary list-entry damage">{{item.data.damage}}</h4>
+              <div class="control">
+                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+            {{/if}}
+            {{/each}}
+            <div class="header row item">
+              <div class="image"></div>
+              <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.armor.title'}}</div>
+              <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.armor.protect'}}</div>
+              <a class="control create" title="Create item" data-type="armor"><i class="fas fa-plus"></i></a>
+            </div>
+            {{#each actor.items as |item type id|}}
+            {{#if (eq item.type "armor")}}
+            <li id="armor-{{item._id}}" class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+              <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
+              <h4 id="protectval-armor-{{item._id}}" class="two-column-with-roll-secondary list-entry">{{item.data.protection}}</h4>
+              <div class="control">
+                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+            {{/if}}
+            {{/each}}
+            <div class="header row item">
+              <div class="image"></div>
+              <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.other.title'}}</div>
+              <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.other.qty'}}</div>
+              <a class="control create" title="Create item" data-type="item"><i class="fas fa-plus"></i></a>
+            </div>
+            {{#each actor.items as |item type id|}}
+            {{#if (eq item.type "item")}}
+            <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+              <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
+              <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
+              <div class="control">
+                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </form>

@@ -58,6 +58,13 @@ $trackColors: (
     padding: 5px;
   }
 }
+
+// .window-app {
+//   .window-content {
+//     background: $background !important;
+//     padding: 0;
+//   }
+// }
 /*#endregion*/
 
 /* Globals *//*#region*/
@@ -601,7 +608,6 @@ $trackColors: (
 
             .one-column-no-roll {
               width: calc(100% - 32px);
-              padding-left: 26px;
             }
             
             .two-column-with-roll-primary {
@@ -733,31 +739,38 @@ $trackColors: (
     font-size: 12pt;
 
     .row {
+      display: flex;
+      flex-direction: row;
+      
       .img {
         width: 50px;
         height: 50px;
         object-fit: cover;
         object-position: 50% 0;
+        margin-right: 10px;
       }
 
-      .column-x3-big {
-        width: calc(60% - 50px);
+      .column-x1 {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .column-x3-img {
+        flex: 3 60px;
+        margin-right: 10px;
+      }
+
+      .column-x3 {
+        flex: 3;
       }
 
       .column-x2 {
-        width: calc(50% - 25px);
-      }
-
-      .column-x2-big {
-        width: calc(80% - 50px);
+        flex: 2;
+        margin-right: 10px;
       }
 
       .one-column-with-roll {
-        width: calc(100% - 50px);
-      }
-
-      .column-x2-x3-small {
-        width: 20%;
+        width: calc(100% - 60px);
       }
     }
   }
@@ -778,7 +791,8 @@ $trackColors: (
   input[type="number"] {
     text-align: center;
     width: 50px;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   .editor-edit {
@@ -795,25 +809,39 @@ $trackColors: (
   }
 
   .description {
-    height: calc(100% - 50px);
+    height: calc(100% - 100px);
+    padding-top: 10px;
 
     .editor {
-      height: 100%;
+      height: 90%;
     }
   }
 
   &.characterweapon,
   &.starshipweapon {
 
-    .header-fields .row .column-x4 {
-      width: 25%;
-      display: flex;
-      flex-direction: row;
-      text-align: left;
+    .header-fields .row {
+      font-size: 14px;
+
+      .column-x4 {
+        width: 25%;
+        display: flex;
+        text-align: left;
       
-      .label {
-        font-size: 14px;
-        line-height: 26px;
+        .label {
+          line-height: 26px;
+        }
+      }
+
+      .label-top {
+        width: 25%;
+        flex-direction: column;
+        text-align: center;
+  
+        input {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
 
@@ -871,7 +899,7 @@ $trackColors: (
 
   .dialog-button.roll.default, 
   .dialog-button.ok.default, 
-  .dialog-button.yes.default, 
+  .dialog-button.yes, 
   .dialog-button.no { 
     background-color: $buttonColor;
     color: $inlaidText;

@@ -35,7 +35,7 @@ export class STACharacterSheet extends ActorSheet {
     });
     
     $.each(data.data.disciplines, (discipline) => {
-      if (discipline.value > 12) discipline.value = 12; 
+      if (discipline.value > 5) discipline.value = 5; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
@@ -462,6 +462,13 @@ export class STACharacterSheet extends ActorSheet {
       staActor.rollAttributeTest(ev, selectedAttribute,
         parseInt(selectedAttributeValue), selectedDiscipline,
         parseInt(selectedDisciplineValue), null, this.actor);
+    });
+    
+    $.each($('[id^=character-weapon-]'), function(index, value) {
+      const weaponDamage = parseInt(value.dataset.itemDamage);
+      const securityValue = parseInt(html.find('#security')[0].value);
+      const attackDamageValue = weaponDamage + securityValue;
+      value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }
 }

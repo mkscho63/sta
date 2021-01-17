@@ -37,7 +37,7 @@ export class STAStarshipSheet extends ActorSheet {
     });
     
     $.each(data.data.departments, (department) => {
-      if (department.value > 12) department.value = 12; 
+      if (department.value > 5) department.value = 5; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
@@ -210,6 +210,12 @@ export class STAStarshipSheet extends ActorSheet {
 
     // This allows for all items to be rolled, it gets the current targets type and id and sends it to the rollGenericItem function.
     html.find('.rollable').click((ev) =>{
+      const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
+      const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
+      staActor.rollGenericItem(ev, itemType, itemId, this.actor);
+    });
+
+    html.find('.chat').click((ev) =>{
       const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
       const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
@@ -432,6 +438,13 @@ export class STAStarshipSheet extends ActorSheet {
       staActor.rollAttributeTest(ev, selectedSystem,
         parseInt(selectedSystemValue), selectedDepartment,
         parseInt(selectedDepartmentValue), null, this.actor);
+    });
+    
+    $.each($('[id^=starship-weapon-]'), function(index, value) {
+      const weaponDamage = parseInt(value.dataset.itemDamage);
+      const securityValue = parseInt(html.find('#security')[0].value);
+      const attackDamageValue = weaponDamage + securityValue;
+      value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }
 }

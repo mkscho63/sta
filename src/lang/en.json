@@ -33,7 +33,6 @@
     "sta.actor.character.discipline.medicine": "Medicine",
     "sta.actor.character.discipline.science": "Science",
     "sta.actor.character.discipline.security": "Security",
-    "sta.actor.talent.title": "Talents",
     "sta.actor.focus.title": "Focuses",
     "sta.actor.value.title": "Values",
     "sta.actor.value.used": "Chal?",
@@ -73,9 +72,11 @@
     "sta.actor.belonging.weapon.viciousx": "Vicious",
     "sta.actor.belonging.weapon.versatilex": "Versatile",
     "sta.actor.belonging.weapon.persistentx": "Persistent",
+    "sta.actor.belonging.weapon.hands": "Hands",
+    "sta.actor.belonging.weapon.qualities": "Qualities",
     "sta.actor.belonging.armor.title": "Armor",
-    "sta.actor.belonging.armor.protect": "Protect",
-    "sta.actor.belonging.armor.protection": "Protection",
+    "sta.actor.belonging.armor.protect": "Resist",
+    "sta.actor.belonging.armor.protection": "Resistance",
     "sta.actor.belonging.other.title": "Other Items",
     "sta.actor.belonging.other.qty": "Qty",
     "sta.actor.belonging.other.quantity": "Quantity",
@@ -127,6 +128,24 @@
 
     "sta.item.genericitem.name": "Name",
     "sta.item.genericitem.description": "Description",
+    "sta.item.genericitem.opportunity": "Opportunity",
+    "sta.item.genericitem.escalation": "Escalation",
+
+    "sta.item.talent.title": "Talents",
+    "sta.item.talent.type.title": "Type",
+    "sta.item.talent.type.general": "General",
+    "sta.item.talent.type.discipline": "Discipline",
+    "sta.item.talent.requires": "Requires",
+    "sta.item.talent.houselegacy": "House",
+    "sta.item.talent.houserequired": "House Legacy of",
+
+    "sta.item.house.legacy.title": "House Legacy",
+    "sta.item.house.legacy.leaders": "Leaders",
+    "sta.item.house.legacy.warriors": "Warriors",
+    "sta.item.house.legacy.spacefarers": "Spacefarers",
+    "sta.item.house.legacy.engineers": "Engineers",
+    "sta.item.house.legacy.scientists": "Scientists",
+    "sta.item.house.legacy.physicians": "Physicians",
 
     "sta.apps.dicepoolwindow": "Dice Pool",
     "sta.apps.focus": "Using focus?",
@@ -146,7 +165,7 @@
     "sta.roll.rerollresults": "Reroll results?",
 
     "sta.roll.weapon.damage": "<b>|#|</b> Damage",
-    "sta.roll.armor.protect": "<b>|#|</b> Protection",
+    "sta.roll.armor.protect": "<b>|#|</b> Resistance",
     "sta.roll.item.quantity": "|#|x Items",
 
 

@@ -1,4 +1,3 @@
-// Sass configuration
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const eslint = require('gulp-eslint');

@@ -33,7 +33,6 @@
   "sta.actor.character.discipline.medicine": "Medizin",
   "sta.actor.character.discipline.science": "Wissenschaft",
   "sta.actor.character.discipline.security": "Sicherheit",
-  "sta.actor.talent.title": "Talente",
   "sta.actor.focus.title": "Fokusse",
   "sta.actor.value.title": "Überzeugungen",
   "sta.actor.value.used": "Hinterfragt?",
@@ -73,6 +72,8 @@
   "sta.actor.belonging.weapon.viciousx": "Verheerend",
   "sta.actor.belonging.weapon.versatilex": "Vielseitig",
   "sta.actor.belonging.weapon.persistentx": "Anhaltend",
+  "sta.actor.belonging.weapon.qualities": "Qualitäten",
+  "sta.actor.belonging.weapon.hands": "Hände",
   "sta.actor.belonging.armor.title": "Rüstung",
   "sta.actor.belonging.armor.protect": "Widerstand",
   "sta.actor.belonging.armor.protection": "Widerstand",
@@ -128,6 +129,9 @@
 
   "sta.item.genericitem.name": "Name",
   "sta.item.genericitem.description": "Beschreibung",
+
+  "sta.item.talent.title": "Talente",
+  "sta.item.talent.type": "Type",
 
   "sta.apps.dicepoolwindow": "Würfel Pool",
   "sta.apps.focus": "Fokus benutzen?",
