@@ -1161,33 +1161,6 @@ $trackColors: (
 /*#endregion*/
 
 
-/* Logo - Generic *//*#region*/
-
-.sta.logo {
-  position: absolute;
-  display: block;
-  margin-right: 0;
-  left: 110px;
-  top: 55px;
-  z-index: 1;
-  text-decoration: none;
-
-  img {
-    width: 150px;
-    border: none;
-  }
-
-  div {
-    font-size: 30px;
-    line-height: 0.7;
-    text-align: center;
-    color: $editorText;
-    -webkit-text-stroke: 2px $editorBackground;
-  }
-}
-/*#endregion*/
-
-
 /* Sidebar */ /*#region*/
 
 #sidebar {

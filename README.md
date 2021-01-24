@@ -62,6 +62,7 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 - Delapouite for <a href="https://game-icons.net/1x1/delapouite/weight-lifting-up.html" target="_blank">Fitness</a> and <a href="https://game-icons.net/1x1/delapouite/chat-bubble.html" target="_blank">Chat Bubble</a> Icons. It can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal website: <a href="https://delapouite.com/" target="_blank">https://delapouite.com/</a>
 - Skoll for <a href="https://game-icons.net/1x1/skoll/fist.html" target="_blank">Control</a> and <a href="https://game-icons.net/1x1/skoll/achievement.html" target="_blank">Daring</a> Icon. Can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>.
 - <a href="https://github.com/angrytramp" target="_blank">angrytramp</a> for developing a shared Momentum pool.
+- Thanks to the people who have provided me with translations to the system. Luette for the German translation and LeRatierBretonnien for the French translation.
 
 - A special thanks should also be given to my playtesters and friends that helped me with finding bugs in alpha as well as listening to me gripe through problems I ran into. I was always able to find feedback when I needed it and opinions on how I could improve functionality: Thorgibrewer (Karl), Kribby-D (Chris), Erk/Embabin (Erik), and Jediisaiah13 (Isaiah).
 
