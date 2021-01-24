@@ -176,13 +176,6 @@ export class STASmallCraftSheet extends ActorSheet {
       return;
     };
 
-    // This allows for all items to be rolled, it gets the current targets type and id and sends it to the rollGenericItem function.
-    html.find('.rollable').click((ev) =>{
-      const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
-      const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
-      staActor.rollGenericItem(ev, itemType, itemId, this.actor);
-    });
-
     html.find('.chat').click((ev) =>{
       const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
       const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
@@ -349,6 +342,13 @@ export class STASmallCraftSheet extends ActorSheet {
     // If the check-button is clicked it fires the method challenge roll method. See actor.js for further info.
     html.find('.check-button.challenge').click((ev) => {
       staActor.rollChallengeRoll(ev, null, null, this.actor);
+    });
+
+    html.find('.rollable.challenge').click((ev) => {
+      const damage = parseInt(ev.target.dataset.itemDamage) ?
+        parseInt(ev.target.dataset.itemDamage) : 0;
+      staActor.rollChallengeRoll(ev, ev.target.dataset.itemName,
+        damage, this.actor);
     });
 
     html.find('.reroll-result').click((ev) => {
