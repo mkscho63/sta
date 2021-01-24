@@ -38,9 +38,6 @@ import {
 import { 
   STATracker 
 } from './apps/tracker.js';
-import { 
-  STALogo
-} from './apps/logo.js';
 import * as macros from './macro.js';
 import { 
   STAItem
@@ -247,10 +244,6 @@ Hooks.once('init', function() {
     const t = new STATracker();
     renderTemplate('systems/sta/templates/apps/tracker.html').then((html) => {
       t.render(true);
-    });
-    const l = new STALogo();
-    renderTemplate('systems/sta/templates/apps/logo.html').then((html) => {
-      l.render(true);
     });
   });
 
