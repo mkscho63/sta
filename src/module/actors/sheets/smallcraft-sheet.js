@@ -345,8 +345,8 @@ export class STASmallCraftSheet extends ActorSheet {
     });
 
     html.find('.rollable.challenge').click((ev) => {
-      const damage = parseInt(ev.target.dataset.itemDamage) ?
-        parseInt(ev.target.dataset.itemDamage) : 0;
+      const damage = parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) ?
+        parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) : 0;
       staActor.rollChallengeRoll(ev, ev.target.dataset.itemName,
         damage, this.actor);
     });
