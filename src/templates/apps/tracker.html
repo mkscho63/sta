@@ -1,32 +1,38 @@
-<div id="sta-threat-tracker" class="sta tracker app threat">
+<div class="sta tracker-container">
+  <div id="tracker-clickable" class="tracker-clickable">
+    <i id="tracker-clickable-plus" class="fas fa-plus hide"></i>
+    <i id="tracker-clickable-minus" class="fas fa-minus"></i>
+  </div>
+  <div id="sta-momentum-tracker" class="sta tracker momentum">
     <div class="button-group">
-        <div id="sta-threat-track-decrease" class="button decrease sta-impermitable">
-            <i class="fas fa-minus"></i>
-        </div>
-        <div>
-            <input type="text" class="input" id="sta-track-threat" data-dtype="Number" />
-        </div>
-        <div id="sta-threat-track-increase" class="button increase sta-impermitable">
-            <i class="fas fa-plus"></i>
-        </div>
+      <div id="sta-momentum-track-decrease" class="button decrease sta-impermitable">
+        <i class="fas fa-minus"></i>
+      </div>
+      <div>
+        <input type="text" class="input" id="sta-track-momentum" data-dtype="Number" />
+      </div>
+      <div id="sta-momentum-track-increase" class="button increase sta-impermitable">
+        <i class="fas fa-plus"></i>
+      </div>
     </div>
     <div class="header">
-        {{localize 'sta.tracker.threat'}}
+      {{localize 'sta.tracker.momentum'}}
     </div>
-</div>
-<div id="sta-momentum-tracker" class="sta tracker app momentum">
+  </div>
+  <div id="sta-threat-tracker" class="sta tracker threat">
     <div class="button-group">
-        <div id="sta-momentum-track-decrease" class="button decrease sta-impermitable">
-            <i class="fas fa-minus"></i>
-        </div>
-        <div>
-            <input type="text" class="input" id="sta-track-momentum" data-dtype="Number" />
-        </div>
-        <div id="sta-momentum-track-increase" class="button increase sta-impermitable">
-            <i class="fas fa-plus"></i>
-        </div>
+      <div id="sta-threat-track-decrease" class="button decrease sta-impermitable">
+        <i class="fas fa-minus"></i>
+      </div>
+      <div>
+        <input type="text" class="input" id="sta-track-threat" data-dtype="Number" />
+      </div>
+      <div id="sta-threat-track-increase" class="button increase sta-impermitable">
+        <i class="fas fa-plus"></i>
+      </div>
     </div>
     <div class="header">
-        {{localize 'sta.tracker.momentum'}}
+      {{localize 'sta.tracker.threat'}}
     </div>
+  </div>
 </div>
