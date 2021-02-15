@@ -171,5 +171,12 @@
 
 
     "sta.tracker.threat": "Menace",
-    "sta.tracker.momentum": "Momentum"
+    "sta.tracker.momentum": "Momentum",
+
+    "sta.notifications.momentuminvalidpermissions": "Vous n'êtes pas autorisé à changer Momentum!",
+    "sta.notifications.momentummin": "Vous ne pouvez pas définir Momentum sur une valeur inférieure à 0!",
+    "sta.notifications.momentummax": "Vous ne pouvez pas définir Momentum sur une valeur supérieure à 6!",
+    "sta.notifications.threatinvalidpermissions": "Vous n'êtes pas autorisé à changer Menace!",
+    "sta.notifications.threatmin": "Vous ne pouvez pas définir Menace sur une valeur inférieure à 0!",
+    "sta.notifications.threatmax": "Il y a trop de Menace!"
 }

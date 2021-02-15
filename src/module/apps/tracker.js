@@ -26,6 +26,10 @@ export class STATracker extends Application {
     }
 
     html.find('#sta-momentum-track-decrease > .fas').click((ev) => {
+      if (!game.user.hasRole(game.settings.get('sta', 'threatPermissionLevel'))) {
+        ui.notifications.error(game.i18n.localize('sta.notifications.momentuminvalidpermissions'));
+        return false;
+      }
       threat = game.settings.get('sta', 'threat');
       momentum = parseInt(document.getElementById('sta-track-momentum').value);
       if (momentum === 0) {
@@ -38,6 +42,10 @@ export class STATracker extends Application {
     });
 
     html.find('#sta-threat-track-decrease > .fas').click((ev) => {
+      if (!game.user.hasRole(game.settings.get('sta', 'threatPermissionLevel'))) {
+        ui.notifications.error(game.i18n.localize('sta.notifications.threatinvalidpermissions'));
+        return false;
+      }
       momentum = game.settings.get('sta', 'momentum');
       threat = parseInt(document.getElementById('sta-track-threat').value);
       if (threat === 0) {
@@ -48,20 +56,12 @@ export class STATracker extends Application {
       game.settings.set('sta', 'threat', threat);
       renderTracker();
     });
-
-    html.find('#sta-threat-track-increase > .fas').click((ev) => {
-      momentum = game.settings.get('sta', 'momentum');
-      if (threat === 99999999) {
-        ui.notifications.error('THERE IS TOO MUCH THREAT!');
+    
+    html.find('#sta-momentum-track-increase > .fas').click((ev) => {
+      if (!game.user.hasRole(game.settings.get('sta', 'threatPermissionLevel'))) {
+        ui.notifications.error(game.i18n.localize('sta.notifications.momentuminvalidpermissions'));
         return false;
       }
-      threat = parseInt(document.getElementById('sta-track-threat').value);
-      threat = threat + 1;
-      game.settings.set('sta', 'threat', threat);
-      renderTracker();
-    });
-
-    html.find('#sta-momentum-track-increase > .fas').click((ev) => {
       threat = game.settings.get('sta', 'threat');
       if (momentum === 6) {
         ui.notifications.error('THERE IS TOO MUCH MOMENTUM!');
@@ -70,6 +70,22 @@ export class STATracker extends Application {
       momentum = parseInt(document.getElementById('sta-track-momentum').value);
       momentum = momentum + 1;
       game.settings.set('sta', 'momentum', momentum);
+      renderTracker();
+    });
+
+    html.find('#sta-threat-track-increase > .fas').click((ev) => {
+      if (!game.user.hasRole(game.settings.get('sta', 'threatPermissionLevel'))) {
+        ui.notifications.error(game.i18n.localize('sta.notifications.threatinvalidpermissions'));
+        return false;
+      }
+      momentum = game.settings.get('sta', 'momentum');
+      if (threat === 99999999) {
+        ui.notifications.error('THERE IS TOO MUCH THREAT!');
+        return false;
+      }
+      threat = parseInt(document.getElementById('sta-track-threat').value);
+      threat = threat + 1;
+      game.settings.set('sta', 'threat', threat);
       renderTracker();
     });
 
@@ -119,6 +135,19 @@ export class STATracker extends Application {
       momentum = document.getElementById('sta-track-momentum').value;
       game.settings.set('sta', 'momentum', momentum);
       renderTracker();
+    });
+
+    html.find('#tracker-clickable').click((ev) => {
+      if ($('.tracker-container:not(.hide)')[0]) {
+        $('#tracker-clickable-minus').addClass('hide');
+        $('#tracker-clickable-plus').removeClass('hide');
+        $('.tracker-container').addClass('hide').removeAttr('style');
+      } else {
+        $('#tracker-clickable-plus').addClass('hide');
+        $('#tracker-clickable-minus').removeClass('hide');
+        $('.tracker-container').addClass('hide').removeAttr('style');
+        $('.tracker-container').removeClass('hide').width('200px')
+      }
     });
 
     function renderTracker() {

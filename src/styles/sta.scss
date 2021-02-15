@@ -1082,80 +1082,121 @@ $trackColors: (
 
 /*  Momentum/Threat Tracker *//*#region*/
 
-.sta.tracker {
+.sta.tracker-container{
   position: absolute;
-  display: block;
-  margin-right: 0;
-  height: 100px;
+  bottom: 0px;
+  right: 0px;
   width: 200px;
-  background: none;
-  border-radius: 0px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  padding: 0;
-  clip-path: inset(-20px 0px -20px -20px);
+  height: 205px;
 
-  &.threat {
-    bottom: 0;
-    right: 0px;
-    background-color: map-get($lcarsColors, "brightred");
-  }
+  -webkit-transition: width 0.5s linear;
+  -moz-transition: width 0.5s linear;
+    -ms-transition: width 0.5s linear;
+      -o-transition: width 0.5s linear;
+        transition: width 0.5s linear;
 
-  &.momentum {
-    bottom: 105px;
-    right: 0px;
-    background-color: map-get($lcarsColors, "blue");
-  }
+  .tracker-clickable {
+    position: absolute;
+    bottom: 195px;
+    cursor: pointer;
+    color: $buttonColor2;
+    width: 15px;
 
-  .header {
-    text-align: center;
-    font-size: 1.75em;
-    text-transform: uppercase;
-    background-color: $background;
-    border-bottom-left-radius: 30px;
-    width: 185px;
-    height: 35px;
-    margin-left: 15px;
-    margin-bottom: 15px;
-  }
-
-  .button-group {
-    display: flex;
-    font-size: 1.5em;
-    background-color: $background;
-    border-top-left-radius: 30px;
-    width: 185px;
-    height: 35px;
-    margin-left: 15px;
-    margin-top: 15px;
-
-    .button {
-      i:hover {
-        cursor: pointer;
-      }
-
-      &.decrease {
-        padding-left: 50px;
-        padding-right: 10px;
-      }
-
-      &.increase {
-        padding-left: 10px;
-        padding-right: 50px;
-      }
+    i:hover {
+      color: $buttonHover2;
     }
-    
-    input {
-      color: $inputColor;
+
+    i.hide {
+      width: 0px;
+      display: none;
+    }
+  }
+
+  &.hide {
+    width: 15px;
+    -webkit-transition: width 0.5s linear;
+      -moz-transition: width 0.5s linear;
+        -ms-transition: width 0.5s linear;
+          -o-transition: width 0.5s linear;
+            transition: width 0.5s linear;
+  }
+
+  .tracker {
+    position: absolute;
+    display: block;
+    margin-right: 0px;
+    height: 100px;
+    width: 200px;
+    background: none;
+    border-radius: 0px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 0px;
+    clip-path: inset(-20px 0px -20px -20px);
+  
+    &.threat {
+      bottom: 0px;
+      background-color: map-get($lcarsColors, "brightred");
+    }
+  
+    &.momentum {
+      bottom: 105px;
+      background-color: map-get($lcarsColors, "blue");
+    }
+  
+    .header {
       text-align: center;
-      border: none;
-      width: 100%;
+      font-size: 1.75em;
+      text-transform: uppercase;
+      color: $labelColor;
+      background-color: $background;
+      border-bottom-left-radius: 30px;
+      width: 185px;
+      height: 35px;
+      margin-left: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .button-group {
+      display: flex;
+      font-size: 1.5em;
+      background-color: $background;
+      border-top-left-radius: 30px;
+      width: 185px;
+      height: 35px;
+      margin-left: 15px;
+      margin-top: 15px;
+  
+      .button {
+        color: $buttonColor;
+        i:hover {
+          cursor: pointer;
+          color: $buttonHover;
+        }
+  
+        &.decrease {
+          padding-left: 50px;
+          padding-right: 10px;
+        }
+  
+        &.increase {
+          padding-left: 10px;
+          padding-right: 50px;
+        }
+      }
+      
+      input {
+        color: $inputColor;
+        text-align: center;
+        border: none;
+        width: 100%;
+      }
     }
   }
 }
 
-#sidebar:not(.collapsed) ~ .sta.tracker.momentum, 
-#sidebar:not(.collapsed) ~ .sta.tracker.threat {
+
+#sidebar:not(.collapsed) ~ .sta.tracker-container {
   right: 354px;
 }
 /*#endregion*/
