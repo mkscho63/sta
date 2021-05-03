@@ -130,9 +130,14 @@
 
   "sta.item.genericitem.name": "Name",
   "sta.item.genericitem.description": "Beschreibung",
+  "sta.item.genericitem.opportunity": "Verzichtskosten",
+  "sta.item.genericitem.escalation": "Eskalation",
 
   "sta.item.talent.title": "Talente",
-  "sta.item.talent.type": "Type",
+  "sta.item.talent.type.title": "Typ",
+  "sta.item.talent.type.general": "Allgemein",
+  "sta.item.talent.type.discipline": "Disziplin",
+  "sta.item.talent.requires": "Benötigt",
 
   "sta.apps.dicepoolwindow": "Würfel Pool",
   "sta.apps.focus": "Fokus benutzen?",
