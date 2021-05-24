@@ -191,6 +191,7 @@ async function copyUserData() {
     }
     return Promise.resolve();
   } catch (err) {
+    console.log(err);
     Promise.reject(err);
   }
 }

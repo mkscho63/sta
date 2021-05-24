@@ -25,7 +25,7 @@ export class STASmallcraftContainerSheet extends ItemSheet {
 
   /** @override */
   getData() {
-    const data = super.getData();
+    const data = this.object.data;
     data.dtypes = ['String', 'Number', 'Boolean'];
 
     const smallcrafts = game.actors.filter((target) => 

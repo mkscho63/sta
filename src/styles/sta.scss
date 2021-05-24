@@ -808,7 +808,8 @@ $trackColors: (
     background-color: $editorBackground;
   }
 
-  .description {
+  .description,
+  .note {
     height: calc(100% - 100px);
     padding-top: 10px;
 

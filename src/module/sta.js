@@ -48,6 +48,9 @@ import {
 /* -------------------------------------------- */
 
 Hooks.once('init', function() {
+  let versionInfo;
+  if (game.world.data) versionInfo = game.world.data.coreVersion;
+  else game.world.coreVersion;
   // Splash Screen
   console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
                  .
@@ -232,10 +235,17 @@ Hooks.once('init', function() {
   );
 
   Hooks.on('ready', function() {
+    let i;
     let error = false;
-    let i = USER_ROLES[game.settings.get('sta', 'momentumPermissionLevel')];
+    if (isNewerVersion(versionInfo,"0.8.-1")) {
+      i = foundry.CONST.USER_ROLES[game.settings.get("sta", "momentumPermissionLevel")];
+    } else {
+      i = USER_ROLES[game.settings.get("sta", "momentumPermissionLevel")];
+    }
     for (i; i <= 4; i++) {
-      if (!game.permissions.SETTINGS_MODIFY.includes(i)) error = true;
+      if (!game.permissions.SETTINGS_MODIFY.includes(i)) {
+        error = true;
+      }
     }
     if (error) {
       console.error('The Momentum Tracker User Role does not have permissions to Modify Configuration Settings. Please change one of these in Permission Configuration or System Settings.');
