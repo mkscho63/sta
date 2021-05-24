@@ -109,7 +109,7 @@ export class STARoll {
                     <input id="selectedAttributeValue" type="hidden" value="` + selectedAttributeValue + `" >
                     <input id="selectedDiscipline" type="hidden" value="` + selectedDiscipline + `" >
                     <input id="selectedDisciplineValue" type="hidden" value="` + selectedDisciplineValue + `" >
-                    <input id="speakerId" type="hidden" value="` + speaker._id + `" >
+                    <input id="speakerId" type="hidden" value="` + speaker.id + `" >
                 </div>
             </div>
         `;
@@ -210,7 +210,7 @@ export class STARoll {
               </div>
               <div class="reroll-result challenge">
                 <span>` + game.i18n.format('sta.roll.rerollresults') + `</span>
-                <input id="speakerId" type="hidden" value="` + speaker._id + `" >
+                <input id="speakerId" type="hidden" value="` + speaker.id + `" >
               </div>
             </div>`;
     
@@ -337,7 +337,7 @@ export class STARoll {
   async sendToChat(speaker, content, roll, flavor) {
     // Send's Chat Message to foundry, if items are missing they will appear as false or undefined and this not be rendered.
     ChatMessage.create({
-      user: game.user._id,
+      user: game.user.id,
       speaker: ChatMessage.getSpeaker({actor: speaker}),
       flavor: flavor,
       content: content,

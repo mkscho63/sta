@@ -182,7 +182,7 @@ export class STAStarshipSheet extends ActorSheet {
 
     html.find('.click-to-nav').click((ev) => {
       const childId = $(ev.currentTarget).parents('.entry').data('itemChildId');
-      const childShip = game.actors.find((target) => target._id === childId);
+      const childShip = game.actors.find((target) => target.id === childId);
       childShip.sheet.render(true);
     });
 

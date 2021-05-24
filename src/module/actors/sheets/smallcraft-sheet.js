@@ -42,10 +42,10 @@ export class STASmallCraftSheet extends ActorSheet {
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
-    if (sheetData.data.data.shields.value > data.data.shields.max) {
+    if (sheetData.data.data.shields.value > sheetData.data.data.shields.max) {
       sheetData.data.data.shields.value = sheetData.data.data.shields.max;
     }
-    if (data.data.power.value > data.data.power.max) {
+    if (sheetData.data.data.power.value > sheetData.data.data.power.max) {
       sheetData.data.data.power.value = sheetData.data.data.power.max;
     }
   

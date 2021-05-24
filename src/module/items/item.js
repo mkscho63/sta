@@ -32,7 +32,7 @@ export class STAItem extends Item {
 
     const children = event.currentTarget.children;
     const speaker = game.actors.find((target) => 
-      target._id === children.speakerId.value);
+      target.id === children.speakerId.value);
 
     staActor.rollAttributeTest(event, children.selectedAttribute.value,
       children.selectedAttributeValue.value, children.selectedDiscipline.value,
@@ -45,7 +45,7 @@ export class STAItem extends Item {
 
     const currentChildren = event.currentTarget.children;
     const speaker = game.actors.find((target) => 
-      target._id === currentChildren.speakerId.value);
+      target.id === currentChildren.speakerId.value);
 
     staActor.rollChallengeRoll(event, null, null, speaker);
   }

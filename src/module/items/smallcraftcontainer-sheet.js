@@ -29,7 +29,7 @@ export class STASmallcraftContainerSheet extends ItemSheet {
     data.dtypes = ['String', 'Number', 'Boolean'];
 
     const smallcrafts = game.actors.filter((target) => 
-      target.data.type === 'smallcraft' && target.owner == true);
+      target.data.type === 'smallcraft' && target.isOwner);
     data.availableSmallcrafts = smallcrafts;
 
     return data;
