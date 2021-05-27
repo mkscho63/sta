@@ -19,7 +19,11 @@ export class STACharacterSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
+    let versionInfo;
+    if (game.world.data) versionInfo = game.world.data.coreVersion;
+    else game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
+    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.html";
     return `systems/sta/templates/actors/character-sheet.html`;
   }
 
