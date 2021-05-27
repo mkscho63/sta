@@ -14,10 +14,14 @@ export class STASmallcraftContainerSheet extends ItemSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
+    let versionInfo;
+    if (game.world.data) versionInfo = game.world.data.coreVersion;
+    else game.world.coreVersion;
     if ( !game.user.isGM && this.item.limited) {
       ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
+    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/items/smallcraftcontainer-sheet-legacy.html";
     return `systems/sta/templates/items/smallcraftcontainer-sheet.html`;
   }
 
@@ -25,11 +29,21 @@ export class STASmallcraftContainerSheet extends ItemSheet {
 
   /** @override */
   getData() {
-    const data = super.getData();
+    let versionInfo;
+    if (game.world.data) versionInfo = game.world.data.coreVersion;
+    else game.world.coreVersion;
+    const data = this.object.data;
     data.dtypes = ['String', 'Number', 'Boolean'];
+    let smallcrafts;
 
-    const smallcrafts = game.actors.filter((target) => 
-      target.data.type === 'smallcraft' && target.owner == true);
+    if (!isNewerVersion(versionInfo,"0.8.-1"))
+    {
+      smallcrafts = game.actors.filter((target) => 
+        target.data.type === 'smallcraft' && target.owner);
+    } else {
+      smallcrafts = game.actors.filter((target) => 
+        target.data.type === 'smallcraft' && target.isOwner);
+    }
     data.availableSmallcrafts = smallcrafts;
 
     return data;

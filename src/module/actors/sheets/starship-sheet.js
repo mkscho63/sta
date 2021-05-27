@@ -20,7 +20,11 @@ export class STAStarshipSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
+    let versionInfo;
+    if (game.world.data) versionInfo = game.world.data.coreVersion;
+    else game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
+    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.html";
     return `systems/sta/templates/actors/starship-sheet.html`;
   }
 
@@ -28,56 +32,56 @@ export class STAStarshipSheet extends ActorSheet {
 
   /** @override */
   getData() {
-    const data = super.getData();
-    data.dtypes = ['String', 'Number', 'Boolean'];
+    const sheetData = this.object;
+    sheetData.dtypes = ['String', 'Number', 'Boolean'];
 
     // Ensure system and department values don't weigh over the max.
-    $.each(data.data.systems, (system) => {
+    $.each(sheetData.data.data.systems, (key, system) => {
       if (system.value > 12) system.value = 12; 
     });
     
-    $.each(data.data.departments, (department) => {
+    $.each(sheetData.data.data.departments, (key, department) => {
       if (department.value > 5) department.value = 5; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
-    if (data.data.shields.value > data.data.shields.max) {
-      data.data.shields.value = data.data.shields.max;
+    if (sheetData.data.data.shields.value > sheetData.data.data.shields.max) {
+      sheetData.data.data.shields.value = sheetData.data.data.shields.max;
     }
-    if (data.data.power.value > data.data.power.max) {
-      data.data.power.value = data.data.power.max;
+    if (sheetData.data.data.power.value > sheetData.data.data.power.max) {
+      sheetData.data.data.power.value = sheetData.data.data.power.max;
     }
-    if (data.data.crew.value > data.data.crew.max) {
-      data.data.crew.value = data.data.crew.max;
+    if (sheetData.data.data.crew.value > sheetData.data.data.crew.max) {
+      sheetData.data.data.crew.value = sheetData.data.data.crew.max;
     }
     
     // Ensure system and department values aren't lower than their minimums.
-    $.each(data.data.systems, (system) => {
+    $.each(sheetData.data.data.systems, (key, system) => {
       if (system.value < 7) system.value = 7; 
     });
     
-    $.each(data.data.departments, (department) => {
+    $.each(sheetData.data.data.departments, (key, department) => {
       if (department.value < 0) department.value = 0; 
     });
 
     // Checks if shields is below 0, if so - set it to 0.
-    if (data.data.shields.value < 0) {
-      data.data.shields.value = 0;
+    if (sheetData.data.data.shields.value < 0) {
+      sheetData.data.data.shields.value = 0;
     }
-    if (data.data.power.value < 0) {
-      data.data.power.value = 0;
+    if (sheetData.data.data.power.value < 0) {
+      sheetData.data.data.power.value = 0;
     }
-    if (data.data.crew.value < 0) {
-      data.data.crew.value = 0;
+    if (sheetData.data.data.crew.value < 0) {
+      sheetData.data.data.crew.value = 0;
     }
 
     // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
     // Stopgap until a better solution can be found.
-    $.each(data.items, (key, item) => {
+    $.each(sheetData.data.items, (key, item) => {
       if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
     })
 
-    return data;
+    return sheetData.data;
   }
 
   /* -------------------------------------------- */
@@ -85,7 +89,12 @@ export class STAStarshipSheet extends ActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
-        
+    
+    // Allows checking version easily 
+    let versionInfo; 
+    if (game.world.data) versionInfo = game.world.data.coreVersion; 
+    else game.world.coreVersion; 
+
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
 
@@ -171,13 +180,13 @@ export class STAStarshipSheet extends ActorSheet {
     // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
     html.find('.control .edit').click((ev) => {
       const li = $(ev.currentTarget).parents('.entry');
-      const item = this.actor.getOwnedItem(li.data('itemId'));
+      const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
     });
 
     html.find('.click-to-nav').click((ev) => {
       const childId = $(ev.currentTarget).parents('.entry').data('itemChildId');
-      const childShip = game.actors.find((target) => target._id === childId);
+      const childShip = game.actors.find((target) => target.id === childId);
       childShip.sheet.render(true);
     });
 
@@ -224,10 +233,12 @@ export class STAStarshipSheet extends ActorSheet {
       const itemData = {
         name: name,
         type: type,
-        data: data
+        data: data,
+        img: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
       };
       delete itemData.data['type'];
-      return this.actor.createOwnedItem(itemData);
+      if (isNewerVersion(versionInfo,"0.8.-1")) return this.actor.createEmbeddedDocuments("Item",[(itemData)]); 
+      else return this.actor.createOwnedItem(itemData);
     });
 
     // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
@@ -235,8 +246,8 @@ export class STAStarshipSheet extends ActorSheet {
       const li = $(ev.currentTarget).parents('.entry');
       const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
       if (r == true) {
-        this.actor.deleteOwnedItem(li.data('itemId'));
-        li.slideUp(200, () => this.render(false));
+        if (isNewerVersion(versionInfo,"0.8.-1")) this.actor.deleteEmbeddedDocuments("Item",[li.data("itemId")]); 
+        else this.actor.deleteOwnedItem(li.data("itemId")); 
       }
     });
 
@@ -441,9 +452,9 @@ export class STAStarshipSheet extends ActorSheet {
     });
     
     $.each($('[id^=starship-weapon-]'), function(index, value) {
-      const weaponDamage = parseInt(value.dataset.itemDamage);
-      const securityValue = parseInt(html.find('#security')[0].value);
-      const attackDamageValue = weaponDamage + securityValue;
+      let weaponDamage = parseInt(value.dataset.itemDamage);
+      let securityValue = parseInt(html.find('#security')[0].value);
+      let attackDamageValue = weaponDamage + securityValue;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }

@@ -280,7 +280,9 @@
         },
         "item": {
             "templates": ["common"],
-            "quantity": 1
+            "quantity": 1,
+            "opportunity": 0,
+            "escalation": 0
         },
         "focus": {
             "templates": ["common"]
@@ -308,7 +310,9 @@
                 "nonlethal": false,
                 "hiddenx": 0,
                 "piercingx": 0,
-                "viciousx": 0
+                "viciousx": 0,
+                "opportunity": 0,
+                "escalation": 0
             }
         },
         "starshipweapon": {

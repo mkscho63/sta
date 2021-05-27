@@ -2,9 +2,9 @@
 	"name": "sta",
 	"title": "Star Trek Adventures Roleplaying Game",
 	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
-	"version": "1.0.7",
+	"version": "1.1.0",
 	"minimumCoreVersion": "0.7.7",
-	"compatibleCoreVersion": "0.7.9",
+	"compatibleCoreVersion": "0.8.5",
 	"templateVersion": 1,
 	"author": "mkscho63",
 	"esmodules": ["module/sta.js"],
@@ -16,10 +16,20 @@
 			"name": "English",
 			"path": "lang/en.json"
 		},
+    {
+			"lang": "es",
+			"name": "Spanish",
+			"path": "lang/es.json"
+		},
 		{
 			"lang": "de",
 			"name": "German",
 			"path": "lang/de.json"
+		},
+    {
+			"lang": "fr",
+			"name": "French",
+			"path": "lang/fr.json"
 		}
 	],
 	"gridDistance": 5,

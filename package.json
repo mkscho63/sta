@@ -8,7 +8,6 @@
 		"clean": "gulp clean && gulp copy --clean",
 		"lint": "eslint"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"archiver": "^5.1.0",
 		"chalk": "^4.1.0",
@@ -22,6 +21,8 @@
 		"gulp-git": "^2.10.1",
 		"gulp-sass": "^4.1.0",
 		"json-stringify-pretty-compact": "^2.0.0",
+		"node-gyp": "^3.8.0",
+		"node-sass": "^4.14.1",
 		"prettier": "^2.2.1",
 		"yargs": "^16.2.0"
 	},

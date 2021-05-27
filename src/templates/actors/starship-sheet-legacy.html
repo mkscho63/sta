@@ -182,16 +182,16 @@
                         </div>
                         {{#each items as |item id|}}
                         {{#if (eq item.type "talent")}}
-                        <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
-                            <div class="one-column-no-roll list-entry talent-tooltip-clickable" id="talent-tooltip-clickable-{{item.id}}" data-talent-name="{{item.name}}">{{item.name}}</div>
+                            <div class="one-column-no-roll list-entry talent-tooltip-clickable" id="talent-tooltip-clickable-{{item._id}}" data-talent-name="{{item.name}}">{{item.name}}</div>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
                             </div>
                         </li>
-                        <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item.id}}">
-                            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item.id}}">{{item.data.data.description}}</div>
+                        <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item._id}}">
+                            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item._id}}">{{item.data.description}}</div>
                         </li>
                         {{/if}}
                         {{/each}}
@@ -209,7 +209,7 @@
                         </div>
                         {{#each items as |item id|}}
                         {{#if (eq item.type "value")}}
-                        <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="one-column-with-roll list-entry">{{item.name}}</h4>
                             <div class="control">
@@ -234,10 +234,10 @@
                         </div>
                         {{#each items as |item id|}}
                         {{#if (eq item.type "smallcraftcontainer")}}
-                        <li class="row entry" data-item-id="{{item.id}}" data-item-child-id="{{item.data.data.child}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-child-id="{{item.data.child}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="click-to-nav" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.data.quantity}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -279,7 +279,7 @@
                         </div>
                         {{#each items as |item id|}}
                         {{#if (eq item.type "injury")}}
-                        <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <h4 class="one-column-no-roll list-entry">{{item.name}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
@@ -303,10 +303,10 @@
                         </div>
                         {{#each items as |item type id|}}
                         {{#if (eq item.type "starshipweapon")}}
-                        <li class="row entry" id="starship-weapon-{{@index}}" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.data.data.damage}}">
+                        <li class="row entry" id="starship-weapon-{{@index}}" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.data.damage}}">
                           <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry damage">{{item.data.data.damage}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry damage">{{item.data.damage}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -322,10 +322,10 @@
                         </div>
                         {{#each items as |item type id|}}
                         {{#if (eq item.type "item")}}
-                        <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.data.quantity}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
