@@ -1,4 +1,4 @@
-export class STASmallcraftContainerSheet extends ItemSheet {
+export class STASmallCraftContainerSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {

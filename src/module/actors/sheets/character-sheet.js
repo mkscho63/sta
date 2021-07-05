@@ -43,7 +43,7 @@ export class STACharacterSheet extends ActorSheet {
       if (discipline.value > 5) discipline.value = 5; 
     });
 
-    // Checks if shields is larger than its max, if so, set to max. 
+    // Checks if stress is larger than its max, if so, set to max. 
     if (sheetData.data.data.stress.value > sheetData.data.data.stress.max) {
       sheetData.data.data.stress.value = sheetData.data.data.stress.max;
     }
