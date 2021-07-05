@@ -57,7 +57,7 @@ export class STAStarshipSheet extends ActorSheet {
     
     // Ensure system and department values aren't lower than their minimums.
     $.each(sheetData.data.data.systems, (key, system) => {
-      if (system.value < 7) system.value = 7; 
+      if (system.value < 0) system.value = 0; 
     });
     
     $.each(sheetData.data.data.departments, (key, department) => {

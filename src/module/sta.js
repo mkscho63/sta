@@ -33,7 +33,7 @@ import {
   STAGenericSheet
 } from './items/generic-sheet.js';
 import {
-  STASmallcraftContainerSheet
+  STASmallCraftContainerSheet
 } from './items/smallcraftcontainer-sheet.js';
 import { 
   STATracker 
@@ -82,7 +82,7 @@ Hooks.once('init', function() {
       STAArmorSheet,
       STATalentSheet,
       STAGenericSheet,
-      STASmallcraftContainerSheet,
+      STASmallCraftContainerSheet,
       STAItem,
     },
     entities: {
@@ -153,7 +153,7 @@ Hooks.once('init', function() {
   Items.registerSheet('sta', STAGenericSheet, {
     types: ['injury'],
   });
-  Items.registerSheet('sta', STASmallcraftContainerSheet, {
+  Items.registerSheet('sta', STASmallCraftContainerSheet, {
     types: ['smallcraftcontainer'],
   });
 
