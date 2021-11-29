@@ -102,9 +102,9 @@ export class STASmallCraftSheet extends ActorSheet {
     let powerTrackMax = 0;
 
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
-    // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
+    // With the total value divided by 2, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-      shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value);
+      shieldsTrackMax = Math.floor(parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value)/2);
       if (html.find('[data-talent-name="Advanced Shields"]').length > 0) {
         shieldsTrackMax += 5;
       }
@@ -127,7 +127,7 @@ export class STASmallCraftSheet extends ActorSheet {
     // This creates a dynamic Power tracker. It polls for the value of the engines system. 
     // With the value, creates a new div for each and places it under a child called "bar-power-renderer".
     function powerTrackUpdate() {
-      powerTrackMax = parseInt(html.find('#engines')[0].value);
+      powerTrackMax = Math.ceil(parseInt(html.find('#engines')[0].value)/2);
       if (html.find('[data-talent-name="Secondary Reactors"]').length > 0) {
         powerTrackMax += 5;
       }

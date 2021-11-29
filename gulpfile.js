@@ -123,7 +123,6 @@ async function clean() {
     'packs',
     'module',
     `${name}.js`,
-    'module.json',
     'system.json',
     'template.json'
   );
