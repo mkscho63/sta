@@ -150,6 +150,14 @@ export class STATracker extends Application {
       }
     });
 
+    // html.find('.sidebar-tabs .collapse').click((ev) => {
+    //   if ($('a.collapse .fas.fa-caret-right')[0]) {
+    //     $('.sta.tracker-container').removeClass('.collapsed');
+    //   } else {
+    //     $('.sta.tracker-container').addClass('.collapsed');
+    //   }
+    // });
+
     function renderTracker() {
       document.getElementById('sta-track-threat').value = threat;
       document.getElementById('sta-track-momentum').value = momentum;

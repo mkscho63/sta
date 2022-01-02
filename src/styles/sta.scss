@@ -1085,8 +1085,8 @@ $trackColors: (
 
 .sta.tracker-container{
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: 10px;
+  right: 354px;
   width: 200px;
   height: 205px;
 
@@ -1127,11 +1127,11 @@ $trackColors: (
     display: block;
     margin-right: 0px;
     height: 100px;
-    width: 200px;
+    width: 220px;
     background: none;
-    border-radius: 0px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-radius: 30px;
+    // border-top-left-radius: 30px;
+    // border-bottom-left-radius: 30px;
     padding: 0px;
     clip-path: inset(-20px 0px -20px -20px);
   
@@ -1196,9 +1196,8 @@ $trackColors: (
   }
 }
 
-
-#sidebar:not(.collapsed) ~ .sta.tracker-container {
-  right: 354px;
+#ui-right ~ .sta.tracker-container.collapsed {
+  right: 0px
 }
 /*#endregion*/
 
@@ -1309,7 +1308,7 @@ $trackColors: (
     content: "";
     position: absolute;
     bottom: 60%;
-    right: 300px;
+    right: 305px;
     height: 25%;
     width: 50px;
     background-color: map-get($lcarsColors, "lightblue"); 
@@ -1321,7 +1320,7 @@ $trackColors: (
     content: "";
     position: absolute;
     bottom: 20%;
-    right: 300px;
+    right: 305px;
     height: 20%;
     width: 50px;
     background-color: map-get($lcarsColors, "orange"); 
