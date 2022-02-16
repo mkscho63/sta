@@ -42,6 +42,9 @@ import * as macros from './macro.js';
 import { 
   STAItem
 } from './items/item.js';
+import {
+  register_dsn_ufp_themes
+} from './dice/dice-so-nice.js';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -257,17 +260,7 @@ Hooks.once('init', function() {
     });
   });
 
-  // Hooks.once("diceSoNiceReady", (dice3d) => {
-  //     dice3d.addSystem({ id: "sta", name: "Star Trek Adventures" }, true);
-
-  //     dice3d.addDicePreset(
-  //         {
-  //           type: "dc",
-  //           labels: ["", "", "s", "s  \n  a", "a  \n  a", "a"],
-  //           colorset: "blue",
-  //           system: "sta",
-  //         },
-  //         "d6"
-  //     );
-  // });
+  Hooks.once("diceSoNiceReady", (dice3d) => {
+    register_dsn_ufp_themes(dice3d);
+  });
 });
