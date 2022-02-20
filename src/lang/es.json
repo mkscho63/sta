@@ -172,10 +172,10 @@
   "sta.tracker.threat": "Amenaza",
   "sta.tracker.momentum": "Inercia",
 
-  "sta.notifications.momentuminvalidpermissions": "¡No tienes permiso para modificar la Inercia!",
-  "sta.notifications.momentummin": "¡No puedes poner la Inercia con un valor inferior a 0!",
-  "sta.notifications.momentummax": "No puedes poner la Inercia con un valor superior a 6",
-  "sta.notifications.threatinvalidpermissions": "¡No tienes permiso para modificar la Amenaza!",
-  "sta.notifications.threatmin": "¡No puedes poner la Amenaza por debajo de 0!",
-  "sta.notifications.threatmax": "¡Hay demasiada Amenaza!"
+  "sta.notifications.momentumInvalidPermissions": "¡No tienes permiso para modificar la Inercia!",
+  "sta.notifications.momentumNegative": "¡No puedes poner la Inercia con un valor inferior a 0!",
+  "sta.notifications.momentumTooGreat": "No puedes poner la Inercia con un valor superior a 6",
+  "sta.notifications.threatInvalidPermissions": "¡No tienes permiso para modificar la Amenaza!",
+  "sta.notifications.threatNegative": "¡No puedes poner la Amenaza por debajo de 0!",
+  "sta.notifications.threatTooGreat": "¡Hay demasiada Amenaza!"
 }

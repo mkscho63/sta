@@ -164,10 +164,10 @@
   "sta.tracker.threat": "Bedrohung",
   "sta.tracker.momentum": "Momentum",
 
-  "sta.notifications.momentuminvalidpermissions": "Sie haben keine Berechtigung, Momentum zu ändern!",
-  "sta.notifications.momentummin": "Sie können Momentum nicht auf einen Wert unter 0 einstellen!",
-  "sta.notifications.momentummax": "Sie können Momentum nicht auf einen Wert über 6 einstellen!",
-  "sta.notifications.threatinvalidpermissions": "Sie haben keine Berechtigung, Bedrohung zu ändern!",
-  "sta.notifications.threatmin": "VSie können Threat nicht auf einen Wert unter 0 einstellen!",
-  "sta.notifications.threatmax": "Es gibt zu viel Bedrohung!"
+  "sta.notifications.momentumInvalidPermissions": "Sie haben keine Berechtigung, Momentum zu ändern!",
+  "sta.notifications.momentumNegative": "Sie können Momentum nicht auf einen Wert unter 0 einstellen!",
+  "sta.notifications.momentumTooGreat": "Sie können Momentum nicht auf einen Wert über 6 einstellen!",
+  "sta.notifications.threatInvalidPermissions": "Sie haben keine Berechtigung, Bedrohung zu ändern!",
+  "sta.notifications.threatNegative": "Sie können Threat nicht auf einen Wert unter 0 einstellen!",
+  "sta.notifications.threatTooGreat": "Es gibt zu viel Bedrohung!"
 }
