@@ -170,7 +170,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'threatPermissionLevel', {
     name: 'Threat Tracker User Role:',
-    hint: 'Who should be allowed to amend the threat tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
+    hint: 'Who should be allowed to amend the threat tracker?',
     scope: 'world',
     type: String,
     default: 'ASSISTANT',
@@ -185,7 +185,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'momentumPermissionLevel', {
     name: 'Momentum Tracker User Role:',
-    hint: 'Who should be allowed to amend the momentum tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
+    hint: 'Who should be allowed to amend the momentum tracker?',
     scope: 'world',
     type: String,
     default: 'PLAYER',
@@ -204,15 +204,6 @@ Hooks.once('init', function() {
     scope: 'world',
     type: Number,
     default: 20,
-    config: true
-  });
-
-  game.settings.register('sta', 'trackerRefreshRate', {
-    name: 'Refresh Rate of Threat & Momentum:',
-    hint: 'In seconds, how often should the tracker refresh. It is inadvisable to set this too low. Up this if it appears to be causing optimisation issues.',
-    scope: 'world',
-    type: Number,
-    default: 5,
     config: true
   });
     
