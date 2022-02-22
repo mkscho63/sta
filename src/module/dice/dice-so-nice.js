@@ -52,7 +52,7 @@ export function register_dsn_ufp_themes(dice3d) {
     type: "d20",
     labels: [
       "systems/sta/assets/icons/dice-so-nice/d20_critical_black.png",
-      "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+      "2", "3", "4", "5", "6", "7", "8", "9", "10",
       "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
     ],
     system: "sta-black",
@@ -75,7 +75,7 @@ export function register_dsn_ufp_themes(dice3d) {
     type: "d20",
     labels: [
       "systems/sta/assets/icons/dice-so-nice/d20_critical_white.png",
-      "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+      "2", "3", "4", "5", "6", "7", "8", "9", "10",
       "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
     ],
     system: "sta-white",
