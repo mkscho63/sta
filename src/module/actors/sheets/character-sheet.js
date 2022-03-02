@@ -470,12 +470,13 @@ export class STACharacterSheet extends ActorSheet {
         parseInt(selectedAttributeValue), selectedDiscipline,
         parseInt(selectedDisciplineValue), null, this.actor);
     });
-    
-    $.each($('[id^=character-weapon-]'), function(index, value) {
+
+    $(html).find('[id^=character-weapon-]').each(function(_, value){
       let weaponDamage = parseInt(value.dataset.itemDamage);
       let securityValue = parseInt(html.find('#security')[0].value);
       let attackDamageValue = weaponDamage + securityValue;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
+
   }
 }

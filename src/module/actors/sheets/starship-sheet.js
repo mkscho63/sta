@@ -451,7 +451,7 @@ export class STAStarshipSheet extends ActorSheet {
         parseInt(selectedDepartmentValue), null, this.actor);
     });
     
-    $.each($('[id^=starship-weapon-]'), function(index, value) {
+    $(html).find('[id^=starship-weapon-]').each(function(_, value){
       let weaponDamage = parseInt(value.dataset.itemDamage);
       let securityValue = parseInt(html.find('#security')[0].value);
       let attackDamageValue = weaponDamage + securityValue;
