@@ -388,7 +388,7 @@ export class STASmallCraftSheet extends ActorSheet {
         parseInt(selectedDepartmentValue), null, this.actor);
     });
     
-    $.each($('[id^=smallcraft-weapon-]'), function(index, value) {
+    $(html).find('[id^=smallcraft-weapon-]').each(function(_, value){
       let weaponDamage = parseInt(value.dataset.itemDamage);
       let securityValue = parseInt(html.find('#security')[0].value);
       let attackDamageValue = weaponDamage + securityValue;
