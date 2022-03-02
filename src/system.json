@@ -8,6 +8,7 @@
 	"templateVersion": 1,
 	"author": "mkscho63",
 	"esmodules": ["module/sta.js"],
+	"socket": true,
 	"styles": ["sta.css"],
 	"packs": [],
 	"languages": [

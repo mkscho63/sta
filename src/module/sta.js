@@ -42,6 +42,9 @@ import * as macros from './macro.js';
 import { 
   STAItem
 } from './items/item.js';
+import {
+  register_dsn_ufp_themes
+} from './dice/dice-so-nice.js';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -170,7 +173,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'threatPermissionLevel', {
     name: 'Threat Tracker User Role:',
-    hint: 'Who should be allowed to amend the threat tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
+    hint: 'Who should be allowed to amend the threat tracker?',
     scope: 'world',
     type: String,
     default: 'ASSISTANT',
@@ -185,7 +188,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'momentumPermissionLevel', {
     name: 'Momentum Tracker User Role:',
-    hint: 'Who should be allowed to amend the momentum tracker? Please note, the permission level MUST have the Modify Configuration Settings permission.',
+    hint: 'Who should be allowed to amend the momentum tracker?',
     scope: 'world',
     type: String,
     default: 'PLAYER',
@@ -204,15 +207,6 @@ Hooks.once('init', function() {
     scope: 'world',
     type: Number,
     default: 20,
-    config: true
-  });
-
-  game.settings.register('sta', 'trackerRefreshRate', {
-    name: 'Refresh Rate of Threat & Momentum:',
-    hint: 'In seconds, how often should the tracker refresh. It is inadvisable to set this too low. Up this if it appears to be causing optimisation issues.',
-    scope: 'world',
-    type: Number,
-    default: 5,
     config: true
   });
     
@@ -235,39 +229,13 @@ Hooks.once('init', function() {
   );
 
   Hooks.on('ready', function() {
-    let i;
-    let error = false;
-    if (isNewerVersion(versionInfo,"0.8.-1")) {
-      i = foundry.CONST.USER_ROLES[game.settings.get("sta", "momentumPermissionLevel")];
-    } else {
-      i = USER_ROLES[game.settings.get("sta", "momentumPermissionLevel")];
-    }
-    for (i; i <= 4; i++) {
-      if (!game.permissions.SETTINGS_MODIFY.includes(i)) {
-        error = true;
-      }
-    }
-    if (error) {
-      console.error('The Momentum Tracker User Role does not have permissions to Modify Configuration Settings. Please change one of these in Permission Configuration or System Settings.');
-      ui.notifications.error('The Momentum Tracker User Role does not have permissions to Modify Configuration Settings. Please change one of these in Permission Configuration or System Settings.');
-    }
     const t = new STATracker();
     renderTemplate('systems/sta/templates/apps/tracker.html').then((html) => {
       t.render(true);
     });
   });
 
-  // Hooks.once("diceSoNiceReady", (dice3d) => {
-  //     dice3d.addSystem({ id: "sta", name: "Star Trek Adventures" }, true);
-
-  //     dice3d.addDicePreset(
-  //         {
-  //           type: "dc",
-  //           labels: ["", "", "s", "s  \n  a", "a  \n  a", "a"],
-  //           colorset: "blue",
-  //           system: "sta",
-  //         },
-  //         "d6"
-  //     );
-  // });
+  Hooks.once("diceSoNiceReady", (dice3d) => {
+    register_dsn_ufp_themes(dice3d);
+  });
 });
