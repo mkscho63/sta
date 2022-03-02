@@ -169,5 +169,11 @@
   "sta.notifications.momentummax": "Sie können Momentum nicht auf einen Wert über 6 einstellen!",
   "sta.notifications.threatinvalidpermissions": "Sie haben keine Berechtigung, Bedrohung zu ändern!",
   "sta.notifications.threatmin": "VSie können Threat nicht auf einen Wert unter 0 einstellen!",
-  "sta.notifications.threatmax": "Es gibt zu viel Bedrohung!"
+  "sta.notifications.threatmax": "Es gibt zu viel Bedrohung!",
+
+  "sta.dice.dsn.ufp.blue": "UFP Blau",
+  "sta.dice.dsn.ufp.gold": "UFP Gold",
+  "sta.dice.dsn.ufp.red": "UFP Rot",
+  "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Schwarz)",
+  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Weiß)"
 }
