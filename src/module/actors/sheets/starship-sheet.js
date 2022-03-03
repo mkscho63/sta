@@ -35,12 +35,8 @@ export class STAStarshipSheet extends ActorSheet {
     const sheetData = this.object;
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
 
-    // Ensure system and department values don't weigh over the max.
-    $.each(sheetData.data.data.systems, (key, system) => {
-      if (system.value > 12) system.value = 12; 
-    });
-    
-    $.each(sheetData.data.data.departments, (key, department) => {
+    // Ensure department values don't weigh over the max.
+        $.each(sheetData.data.data.departments, (key, department) => {
       if (department.value > 5) department.value = 5; 
     });
 
@@ -451,7 +447,7 @@ export class STAStarshipSheet extends ActorSheet {
         parseInt(selectedDepartmentValue), null, this.actor);
     });
     
-    $.each($('[id^=starship-weapon-]'), function(index, value) {
+    $(html).find('[id^=starship-weapon-]').each(function(_, value){
       let weaponDamage = parseInt(value.dataset.itemDamage);
       let securityValue = parseInt(html.find('#security')[0].value);
       let attackDamageValue = weaponDamage + securityValue;
