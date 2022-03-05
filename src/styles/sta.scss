@@ -1208,6 +1208,7 @@ $trackColors: (
   &:not(.collapsed) {
     background: none;
     border:none;
+    background: linear-gradient(to bottom, #FF9966 0%,#FF9966 20%, #0f0f0f 20%, #0f0f0f 20.5%, #33CCCC 20.5%,#33CCCC 50%,#0F0F0F 50%,#0F0F0F 50.5%, #FF9966 50.5%, #FF9966 75%, #0F0F0F 75%, #0F0F0F 75.5%, #FF7700 75.5%, #FF7700 100%)
     background-color: map-get($lcarsColors, "tan");
     width: 350px;
     border-top-left-radius: 35px;
