@@ -1,0 +1,341 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="main-content">
+        <div class="header">
+            <div class="lcars-column">
+                <div class="lcars-header-block1"></div>
+                <div class="lcars-header-block2"></div>
+            </div>
+            <div class="header-fields">
+                <div class="row">
+                    <div class="column title" style="width:50%">
+                        {{localize 'sta.actor.starship.name'}}
+                    </div>
+                    <div class="column title" style="width:25%">
+                        {{localize 'sta.actor.starship.designation'}}
+                    </div>
+                    <div class="column title" style="width:25%">
+                        {{localize 'sta.actor.starship.spaceframe'}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column" style="width:50%">
+                        <input name="name" class="text-entry" type="text" value="{{name}}" placeholder="{{localize 'sta.actor.starship.name'}}" />
+                    </div>
+                    <div class="column" style="width:25%">
+                        <input name="data.designation" class="text-entry" type="text" value="{{data.designation}}" placeholder="{{localize 'sta.actor.starship.designation'}}" />
+                    </div>
+                    <div class="column" style="width:25%">
+                        <input name="data.spaceframe" class="text-entry" type="text" value="{{data.spaceframe}}" placeholder="{{localize 'sta.actor.starship.spaceframe'}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title" style="width:20%">
+                        {{localize 'sta.actor.starship.servicedate'}}
+                    </div>
+                    <div class="column title" style="width:40%">
+                        <div> {{localize 'sta.actor.starship.missionprofile'}} </div>
+                    </div>
+                    <div class="column title" style="width:40%">
+                        <div> {{localize 'sta.actor.starship.refit'}} </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column" style="width:20%">
+                        <input name="data.servicedate" class="text-entry" type="text" value="{{data.servicedate}}" placeholder="{{localize 'sta.actor.starship.servicedate'}}" />
+                    </div>
+                    <div class="column" style="width:40%">
+                        <input name="data.missionprofile" class="text-entry" type="text" value="{{data.missionprofile}}" placeholder="{{localize 'sta.actor.starship.missionprofile'}}" />
+                    </div>
+                    <div class="column" style="width:40%">
+                        <input name="data.refit" class="text-entry" type="text" value="{{data.refit}}" placeholder="{{localize 'sta.actor.starship.refit'}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column title">
+                        <div> {{localize 'sta.actor.starship.traits'}} </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input name="data.traits" class="text-entry" type="text" value="{{data.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="row">
+                <div class="lcars-column">
+                    <div class="lcars-attribute-title-block"></div>
+                    <div class="lcars-attribute-general-block1"></div>
+                    <div class="lcars-attribute-general-block2"></div>
+                    <div class="lcars-attribute-general-block3"></div>
+                </div>
+                <div class="column left-column">
+                    <div class="section system">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.system.title'}}
+                        </div>
+                        <div class="stat header row">
+                            <div class="selector-space"></div>
+                            <div class="text secondary-title">{{localize 'sta.actor.starship.system.name'}}</div>
+                            <div class="field secondary-title">{{localize 'sta.actor.attdis.mod'}}</div>
+                            <div class="field secondary-title">{{localize 'sta.actor.starship.system.breaches'}}</div>
+                        </div>
+                        {{#each data.systems as |system key|}}
+                        <div class="stat row">
+                            <input class="selector system" id="{{key}}.selector" type="checkbox" name="data.systems.{{key}}.selected" data-dtype="Boolean" {{checked system.selected}}>
+                            <div class="text list-entry"> {{localize system.label}} </div>
+                            <input class="field numeric-entry" id="{{key}}" name="data.systems.{{key}}.value" type="number" value="{{system.value}}" />
+                            <input class="field numeric-entry" id="{{key}}.breaches" name="data.systems.{{key}}.breaches" type="number" value="{{system.breaches}}" />
+                        </div>
+                        {{/each}}
+                        <div class="check-button btn2 challenge">{{localize 'sta.actor.challenge.roll'}}</div>
+                    </div>
+                    <div class="section scale">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.scale'}}:
+                        </div>
+                        <input class="field numeric-entry" name="data.scale" id="scale" type="number" value="{{data.scale}}" />
+                    </div>
+                </div>
+                <div class="column center-column">
+                    <div class="section sheilds">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.shields'}}
+                        </div>
+                        <div class="track">
+                            <input type="hidden" id="total-shields" name="data.shields.value" value="{{data.shields.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-shields" name="data.shields.max" value="{{data.shields.max}}" data-dtype="Number" />
+                            <div id="bar-shields-renderer" class=" bar"></div>
+                        </div>
+                    </div>
+                    <div class="section img">
+                        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+                    </div>
+                    <div class="section power">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.power'}}
+                        </div>
+                        <div class="track">
+                            <input type="hidden" id="total-power" name="data.power.value" value="{{data.power.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-power" name="data.power.max" value="{{data.power.max}}" data-dtype="Number" />
+                            <div class="bar">
+                                <div id="bar-power-renderer" class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section crew">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.crew'}}
+                        </div>
+                        <div class="track">
+                            <input type="hidden" id="total-crew" name="data.crew.value" value="{{data.crew.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-crew" name="data.crew.max" value="{{data.crew.max}}" data-dtype="Number" />
+                            <div class="bar">
+                                <div id="bar-crew-renderer" class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right-column">
+                    <div class="section department">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.department.title'}}
+                        </div>
+                        <div class="stat header row">
+                            <div class="field secondary-title">{{localize 'sta.actor.attdis.mod'}}</div>
+                            <div class="text secondary-title">{{localize 'sta.actor.starship.department.name'}}</div>
+                            <div class="selector-space"></div>
+                        </div>
+                        {{#each data.departments as |department key|}}
+                        <div class="stat row">
+                            <input class="field numeric-entry" id="{{key}}" name="data.departments.{{key}}.value" type="text" value="{{department.value}}" placeholder="Name" />
+                            <div class="text list-entry"> {{localize department.label}} </div>
+                            <input class="selector department" id="{{key}}.selector" type="checkbox" name="data.departments.{{key}}.selected" data-dtype="Boolean" {{checked department.selected}}>
+                        </div>
+                        {{/each}}
+                        <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
+                    </div>
+                    <div class="section resistance">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.resistance'}}:
+                        </div>
+                        <input class="field numeric-entry" name="data.resistance" id="resistance" type="number" value="{{data.resistance}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="lcars-column">
+                    <div class="lcars-item1-top-block"></div>
+                    <div class="lcars-item1-connect-block"></div>
+                    <div class="lcars-item1-general-block"></div>
+                </div>
+                <div class="column left-column">
+                    <div class="section talents">
+                        <div class="title">
+                            {{localize 'sta.item.talent.title'}}
+                        </div>
+                        <div class="header row item">
+                            <div class="image"></div>
+                            <div class="one-column-with-roll secondary-title">{{localize 'sta.item.genericitem.name'}}</div>
+                            <a class="control create" title="Create item" data-type="talent"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each items as |item id|}}
+                        {{#if (eq item.type "talent")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <div class="one-column-no-roll list-entry talent-tooltip-clickable" id="talent-tooltip-clickable-{{item._id}}" data-talent-name="{{item.name}}">{{item.name}}</div>
+                            <div class="control">
+                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item._id}}">
+                            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item._id}}">{{item.data.description}}</div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="column center-column">
+                    <div class="section values">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.values'}}
+                        </div>
+                        <div class="header row item">
+                            <div class="image"></div>
+                            <div class="one-column-with-roll">{{localize 'sta.item.genericitem.name'}}</div>
+                            <a class="control create" title="Create item" data-type="value"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each items as |item id|}}
+                        {{#if (eq item.type "value")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="one-column-with-roll list-entry">{{item.name}}</h4>
+                            <div class="control">
+                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="column right-column">
+                    <div class="section launchbay">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.launchbay'}}
+                        </div>
+                        <div class="header row item">
+                            <div class="image"></div>
+                            <div class="two-column-with-roll-primary">{{localize 'sta.item.genericitem.name'}}</div>
+                            <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.other.qty'}}</div>
+                            <a class="control create" title="Create item" data-type="smallcraftcontainer"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each items as |item id|}}
+                        {{#if (eq item.type "smallcraftcontainer")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-child-id="{{item.data.child}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                            <div class="image"><img class="click-to-nav" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
+                            <div class="control">
+                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="lcars-column">
+                    <div class="lcars-item2-top-block"></div>
+                    <div class="lcars-item2-connect-block"></div>
+                    <div class="lcars-item2-general-block1"></div>
+                    <div class="lcars-item2-general-block2"></div>
+                </div>
+                <div class="column left-column">
+                    <div class="section note">
+                        <div class="title">
+                            {{localize 'sta.actor.note.title'}}
+                        </div>
+                        <div class="header row item">
+                            <div class="one-column-no-roll" style="height:17px;"></div>
+                        </div>
+                        <div class="note">
+                            {{editor content=data.notes target="data.notes" button=true owner=owner editable=true}}
+                        </div>
+                    </div>
+                </div>
+                <div class="column center-column">
+                    <div class="section injuries">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.damage'}}
+                        </div>
+                        <div class="header row item">
+                            <div class="one-column-no-roll">{{localize 'sta.item.genericitem.name'}}</div>
+                            <a class="control create" title="Create item" data-type="injury"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each items as |item id|}}
+                        {{#if (eq item.type "injury")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                            <h4 class="one-column-no-roll list-entry">{{item.name}}</h4>
+                            <div class="control">
+                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="column right-column">
+                    <div class="section belongings">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.equipment'}}
+                        </div>
+                        <div class="header row item">
+                            <div class="image"></div>
+                            <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.weapon.title'}}</div>
+                            <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
+                            <a class="control create" title="Create item" data-type="starshipweapon"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each items as |item type id|}}
+                        {{#if (eq item.type "starshipweapon")}}
+                        <li class="row entry" id="starship-weapon-{{@index}}" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.data.damage}}">
+                          <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
+                            <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry damage">{{item.data.damage}}</h4>
+                            <div class="control">
+                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                        <div class="header row item">
+                            <div class="image"></div>
+                            <div class="two-column-with-roll-primary">{{localize 'sta.actor.starship.belonging.other.title'}}</div>
+                            <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.other.qty'}}</div>
+                            <a class="control create" title="Create item" data-type="item"><i class="fas fa-plus"></i></a>
+                        </div>
+                        {{#each items as |item type id|}}
+                        {{#if (eq item.type "item")}}
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
+                            <div class="control">
+                                <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

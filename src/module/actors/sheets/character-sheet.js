@@ -19,7 +19,11 @@ export class STACharacterSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
+    let versionInfo;
+    if (game.world.data) versionInfo = game.world.data.coreVersion;
+    else game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
+    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.html";
     return `systems/sta/templates/actors/character-sheet.html`;
   }
 
@@ -27,55 +31,56 @@ export class STACharacterSheet extends ActorSheet {
 
   /** @override */
   getData() {
-    const data = super.getData();
+    const sheetData = this.object;
+    sheetData.dtypes = ['String', 'Number', 'Boolean'];
 
     // Ensure attribute and discipline values don't weigh over the max.
-    $.each(data.data.attributes, (attribute) => {
+    $.each(sheetData.data.data.attributes, (key, attribute) => {
       if (attribute.value > 12) attribute.value = 12; 
     });
     
-    $.each(data.data.disciplines, (discipline) => {
+    $.each(sheetData.data.data.disciplines, (key, discipline) => {
       if (discipline.value > 5) discipline.value = 5; 
     });
 
-    // Checks if shields is larger than its max, if so, set to max. 
-    if (data.data.stress.value > data.data.stress.max) {
-      data.data.stress.value = data.data.stress.max;
+    // Checks if stress is larger than its max, if so, set to max. 
+    if (sheetData.data.data.stress.value > sheetData.data.data.stress.max) {
+      sheetData.data.data.stress.value = sheetData.data.data.stress.max;
     }
-    if (data.data.determination.value > 3) {
-      data.data.determination.value = 3;
+    if (sheetData.data.data.determination.value > 3) {
+      sheetData.data.data.determination.value = 3;
     }
-    if (data.data.reputation.value > 20) {
-      data.data.reputation.value = 20;
+    if (sheetData.data.data.reputation.value > 20) {
+      sheetData.data.data.reputation.value = 20;
     }
     
     // Ensure attribute and discipline values aren't lower than 4.
-    $.each(data.data.attribute, (attribute) => {
+    $.each(sheetData.data.data.attribute, (key, attribute) => {
       if (attribute.value < 7) attribute.value = 7; 
     });
     
-    $.each(data.data.disciplines, (discipline) => {
+    $.each(sheetData.data.data.disciplines, (key, discipline) => {
       if (discipline.value < 0) discipline.value = 0; 
     });
 
     // Checks if any values are below their theoretical minimum, if so - set it to the very minimum.
-    if (data.data.stress.value < 0) {
-      data.data.stress.value = 0;
+    if (sheetData.data.data.stress.value < 0) {
+      sheetData.data.data.stress.value = 0;
     }
-    if (data.data.determination.value < 0) {
-      data.data.determination.value = 0;
+    if (sheetData.data.data.determination.value < 0) {
+      sheetData.data.data.determination.value = 0;
     }
-    if (data.data.reputation < 0) {
-      data.data.reputation = 0;
+    if (sheetData.data.data.reputation < 0) {
+      sheetData.data.data.reputation = 0;
     }
 
     // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
     // Stopgap until a better solution can be found.
-    $.each(data.items, (key, item) => {
+    $.each(sheetData.data.items, (key, item) => {
       if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
     })
 
-    return data;
+    return sheetData.data;
   }
 
   /* -------------------------------------------- */
@@ -83,7 +88,12 @@ export class STACharacterSheet extends ActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
-        
+    
+    // Allows checking version easily
+    let versionInfo;
+    if (game.world.data) versionInfo = game.world.data.coreVersion;
+    else game.world.coreVersion;
+
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
 
@@ -162,7 +172,7 @@ export class STACharacterSheet extends ActorSheet {
     // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
     html.find('.control .edit').click((ev) => {
       const li = $(ev.currentTarget).parents('.entry');
-      const item = this.actor.getOwnedItem(li.data('itemId'));
+      const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
     });
 
@@ -202,29 +212,23 @@ export class STACharacterSheet extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
-      const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
-      const state =this.actor.items.get(itemId).data.data.used;
+      let itemId = ev.currentTarget.closest(".entry").dataset.itemId;
+      let item = this.actor.items.get(itemId);
+      let state = item.data.data.used;
       if (state) {
-        this.actor.items.get(itemId).data.data.used = false;
+        item.data.data.used = false;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-on');
         $(ev.currentTarget).children()[0].classList.add('fa-toggle-off');
         $(ev.currentTarget).parents('.entry')[0].setAttribute('data-item-used', 'false');
         $(ev.currentTarget).parents('.entry')[0].style.textDecoration = 'none';
       } else {
-        this.actor.items.get(itemId).data.data.used = true;
+        item.data.data.used = true;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-off');
         $(ev.currentTarget).children()[0].classList.add('fa-toggle-on');
         $(ev.currentTarget).parents('.entry')[0].setAttribute('data-item-used', 'true');
         $(ev.currentTarget).parents('.entry')[0].style.textDecoration = 'line-through';
       }
-
-      const itemData = {
-        '_id': itemId,
-        'data.used': !state
-      };
-
-      this.actor.updateOwnedItem(itemData);
+      return this.actor.items.get(itemId).update({["data.used"]: getProperty(item.data, "data.used")});
     });
 
     // This allows for all items to be rolled, it gets the current targets type and id and sends it to the rollGenericItem function.
@@ -254,10 +258,12 @@ export class STACharacterSheet extends ActorSheet {
       const itemData = {
         name: name,
         type: type,
-        data: data
+        data: data,
+        img: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
       };
       delete itemData.data['type'];
-      return this.actor.createOwnedItem(itemData);
+      if (isNewerVersion(versionInfo,"0.8.-1")) return this.actor.createEmbeddedDocuments("Item",[(itemData)]);
+      else return this.actor.createOwnedItem(itemData);
     });
 
     // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
@@ -265,7 +271,8 @@ export class STACharacterSheet extends ActorSheet {
       const li = $(ev.currentTarget).parents('.entry');
       const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
       if (r == true) {
-        this.actor.deleteOwnedItem(li.data('itemId'));
+        if (isNewerVersion(versionInfo,"0.8.-1")) this.actor.deleteEmbeddedDocuments("Item",[li.data("itemId")]);
+        else this.actor.deleteOwnedItem(li.data("itemId"));
         li.slideUp(200, () => this.render(false));
       }
     });
@@ -463,12 +470,13 @@ export class STACharacterSheet extends ActorSheet {
         parseInt(selectedAttributeValue), selectedDiscipline,
         parseInt(selectedDisciplineValue), null, this.actor);
     });
-    
-    $.each($('[id^=character-weapon-]'), function(index, value) {
-      const weaponDamage = parseInt(value.dataset.itemDamage);
-      const securityValue = parseInt(html.find('#security')[0].value);
-      const attackDamageValue = weaponDamage + securityValue;
+
+    $(html).find('[id^=character-weapon-]').each(function(_, value){
+      let weaponDamage = parseInt(value.dataset.itemDamage);
+      let securityValue = parseInt(html.find('#security')[0].value);
+      let attackDamageValue = weaponDamage + securityValue;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
+
   }
 }

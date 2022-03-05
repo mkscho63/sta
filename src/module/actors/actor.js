@@ -13,7 +13,7 @@ export class STAActor extends Actor {
   }
 }
 
-/** Shared functions for actors */
+/** Shared functions for actors **/
 export class STASharedActorFunctions {
   // This function renders all the tracks. This will be used every time the character sheet is loaded. It is a vital element as such it runs before most other code!
   staRenderTracks(html, stressTrackMax, determinationPointsMax,

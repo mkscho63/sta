@@ -123,7 +123,6 @@ async function clean() {
     'packs',
     'module',
     `${name}.js`,
-    'module.json',
     'system.json',
     'template.json'
   );
@@ -191,6 +190,7 @@ async function copyUserData() {
     }
     return Promise.resolve();
   } catch (err) {
+    console.log(err);
     Promise.reject(err);
   }
 }

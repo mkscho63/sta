@@ -177,5 +177,11 @@
   "sta.notifications.momentummax": "You can't set Momentum to a value above 6!",
   "sta.notifications.threatinvalidpermissions": "You do not have permission to change Threat!",
   "sta.notifications.threatmin": "You can't set Threat to a value below 0!",
-  "sta.notifications.threatmax": "There is too much Threat!"
+  "sta.notifications.threatmax": "There is too much Threat!",
+
+  "sta.dice.dsn.ufp.blue": "UFP Blue",
+  "sta.dice.dsn.ufp.gold": "UFP Gold",
+  "sta.dice.dsn.ufp.red": "UFP Red",
+  "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Black)",
+  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (White)"
 }
