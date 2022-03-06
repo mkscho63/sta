@@ -1205,8 +1205,13 @@ $trackColors: (
 /* Sidebar */ /*#region*/
 
 #sidebar {
-  &:not(.nolcars) {
-    background: linear-gradient(to bottom,
+  &:not(.collapsed) {
+    background: linear-gradient(to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 50px,
+    $background 50px,
+    $background),
+    linear-gradient(to bottom,
       map-get($lcarsColors, "tan"),
       map-get($lcarsColors, "tan") 14%,
       $background 14%,
@@ -1223,13 +1228,9 @@ $trackColors: (
       map-get($lcarsColors, "orange") 80%,
       $background calc(80%),
       $background calc(80% + 5px),
-      map-get($lcarsColors, "tan") calc(80% + 5px),
+      map-get($lcarsColors, "tan") calc(80% + 5px)
     );
-  }
-
-  &:not(.collapsed) {
     border:none;
-    background-color: map-get($lcarsColors, "tan");
     width: 350px;
     border-top-left-radius: 35px;
     border-bottom-left-radius: 0;

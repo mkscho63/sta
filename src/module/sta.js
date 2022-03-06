@@ -233,22 +233,9 @@ Hooks.once('init', function() {
     renderTemplate('systems/sta/templates/apps/tracker.html').then((html) => {
       t.render(true);
     });
-
-    const sidebar = $("#sidebar");
-    sidebar.find("nav#sidebar-tabs .collapse").on("click", () => {
-      if (!sidebar.hasClass("collapse")) {
-        sidebar.addClass("nolcars");
-      }
-    });
   });
 
   Hooks.once("diceSoNiceReady", (dice3d) => {
     register_dsn_ufp_themes(dice3d);
-  });
-
-  Hooks.on("collapseSidebar", (_, collapsed) => {
-    if(!collapsed) {
-      $("#sidebar").removeClass("nolcars");
-    }
   });
 });
