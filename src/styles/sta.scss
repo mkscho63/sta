@@ -1207,8 +1207,7 @@ $trackColors: (
 #sidebar {
   &:not(.collapsed) {
     background: none;
-    border:none;
-    background-color: map-get($lcarsColors, "tan");
+    background: linear-gradient(to bottom, map-get($lcarsColors, "tan") 0%,map-get($lcarsColors, "tan") 24.5%, $background 24.5%, $background 25%, map-get($lcarsColors, "lightblue") 25%, map-get($lcarsColors, "lightblue") 49.5%,$background 49.5%,$background 50%, map-get($lcarsColors, "tan") 50%, map-get($lcarsColors, "tan") 74.5%, $background 74.5%, $background 75%, map-get($lcarsColors, "orange") 75%, map-get($lcarsColors, "orange") 100%);
     width: 350px;
     border-top-left-radius: 35px;
     border-bottom-left-radius: 0;
@@ -1302,30 +1301,6 @@ $trackColors: (
 
       }
     }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 60%;
-    right: 305px;
-    height: 25%;
-    width: 50px;
-    background-color: map-get($lcarsColors, "lightblue"); 
-    border-top: 5px solid $background;
-    border-bottom: 5px solid $background;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 20%;
-    right: 305px;
-    height: 20%;
-    width: 50px;
-    background-color: map-get($lcarsColors, "orange"); 
-    border-top: 5px solid $background;
-    border-bottom: 5px solid $background;
   }
 }
 /*#endregion*/
