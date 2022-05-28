@@ -149,6 +149,7 @@
   "sta.roll.success": "Erfolg",
   "sta.roll.successPlural": "Erfolge",
   "sta.roll.task.name": "Aufgabe",
+  "sta.roll.challenge.name": "Herausforderung",
   "sta.roll.complicationrange": "Komplikationsspanne ist ",
   "sta.roll.complication": "Das ist eine Komplikation!",
   "sta.roll.complicationPlural": "Das sind |#| Komplikationen!",
@@ -156,7 +157,8 @@
   "sta.roll.effectPlural": "Das sind |#| Effekte!",
   "sta.roll.rerollresults": "Neurollen?",
 
-  "sta.roll.weapon.damage": "<b>|#|</b> Schaden",
+  "sta.roll.weapon.damage": "<b>1</b> Schaden Würfel",
+  "sta.roll.weapon.damagePlural": "<b>|#|</b> Schaden Würfel",
   "sta.roll.armor.protect": "<b>|#|</b> Widerstand",
   "sta.roll.item.quantity": "|#|x Ausrüstungen",
 

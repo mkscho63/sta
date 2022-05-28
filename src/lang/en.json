@@ -158,14 +158,16 @@
   "sta.roll.success": "Success",
   "sta.roll.successPlural": "Successes",
   "sta.roll.task.name": "Task",
+  "sta.roll.challenge.name": "Challenge",
   "sta.roll.complicationrange": "Complication range is ",
   "sta.roll.complication": "There was a complication!",
   "sta.roll.complicationPlural": "There were |#| complications!",
-  "sta.roll.effect": "There was an effect!",
+  "sta.roll.effect": "There was one effect!",
   "sta.roll.effectPlural": "There were |#| effects!",
   "sta.roll.rerollresults": "Reroll results?",
 
-  "sta.roll.weapon.damage": "<b>|#|</b> Damage",
+  "sta.roll.weapon.damage": "<b>1</b> Damage die",
+  "sta.roll.weapon.damagePlural": "<b>|#|</b> Damage dice",
   "sta.roll.armor.protect": "<b>|#|</b> Resistance",
   "sta.roll.item.quantity": "|#|x Items",
 
