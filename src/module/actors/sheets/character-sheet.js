@@ -22,8 +22,12 @@ export class STACharacterSheet extends ActorSheet {
     let versionInfo;
     if (game.world.data) versionInfo = game.world.data.coreVersion;
     else game.world.coreVersion;
-    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
-    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.html";
+    if ( !game.user.isGM && this.actor.limited ) {
+      return 'systems/sta/templates/actors/limited-sheet.html';
+    }
+    if ( !isNewerVersion( versionInfo, '0.8.-1' )) {
+      return 'systems/sta/templates/actors/character-sheet-legacy.html';
+    }
     return `systems/sta/templates/actors/character-sheet.html`;
   }
 
@@ -78,7 +82,7 @@ export class STACharacterSheet extends ActorSheet {
     // Stopgap until a better solution can be found.
     $.each(sheetData.data.items, (key, item) => {
       if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
-    })
+    });
 
     return sheetData.data;
   }
@@ -212,9 +216,9 @@ export class STACharacterSheet extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      let itemId = ev.currentTarget.closest(".entry").dataset.itemId;
-      let item = this.actor.items.get(itemId);
-      let state = item.data.data.used;
+      const itemId = ev.currentTarget.closest('.entry').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      const state = item.data.data.used;
       if (state) {
         item.data.data.used = false;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-on');
@@ -228,17 +232,11 @@ export class STACharacterSheet extends ActorSheet {
         $(ev.currentTarget).parents('.entry')[0].setAttribute('data-item-used', 'true');
         $(ev.currentTarget).parents('.entry')[0].style.textDecoration = 'line-through';
       }
-      return this.actor.items.get(itemId).update({["data.used"]: getProperty(item.data, "data.used")});
+      return this.actor.items.get(itemId).update({['data.used']: getProperty(item.data, 'data.used')});
     });
 
     // This allows for all items to be rolled, it gets the current targets type and id and sends it to the rollGenericItem function.
-    html.find('.rollable').click((ev) =>{
-      const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
-      const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
-      staActor.rollGenericItem(ev, itemType, itemId, this.actor);
-    });
-
-    html.find('.chat').click((ev) =>{
+    html.find('.chat,.rollable').click((ev) =>{
       const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
       const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
@@ -262,8 +260,11 @@ export class STACharacterSheet extends ActorSheet {
         img: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
       };
       delete itemData.data['type'];
-      if (isNewerVersion(versionInfo,"0.8.-1")) return this.actor.createEmbeddedDocuments("Item",[(itemData)]);
-      else return this.actor.createOwnedItem(itemData);
+      if (isNewerVersion(versionInfo, '0.8.-1')) {
+        return this.actor.createEmbeddedDocuments('Item', [(itemData)]);
+      } else {
+        return this.actor.createOwnedItem(itemData);
+      }
     });
 
     // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
@@ -271,8 +272,11 @@ export class STACharacterSheet extends ActorSheet {
       const li = $(ev.currentTarget).parents('.entry');
       const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
       if (r == true) {
-        if (isNewerVersion(versionInfo,"0.8.-1")) this.actor.deleteEmbeddedDocuments("Item",[li.data("itemId")]);
-        else this.actor.deleteOwnedItem(li.data("itemId"));
+        if (isNewerVersion(versionInfo, '0.8.-1')) {
+          this.actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
+        } else {
+          this.actor.deleteOwnedItem(li.data('itemId'));
+        }
         li.slideUp(200, () => this.render(false));
       }
     });
@@ -439,13 +443,6 @@ export class STACharacterSheet extends ActorSheet {
       staActor.rollChallengeRoll(ev, 'Generic', 0, this.actor);
     });
 
-    html.find('.rollable.challenge').click((ev) => {
-      const damage = parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) ?
-        parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) : 0;
-      staActor.rollChallengeRoll(ev, ev.target.dataset.itemName,
-        damage, this.actor);
-    });
-
     html.find('.reroll-result').click((ev) => {
       let selectedAttribute = '';
       let selectedAttributeValue = '';
@@ -471,12 +468,11 @@ export class STACharacterSheet extends ActorSheet {
         parseInt(selectedDisciplineValue), null, this.actor);
     });
 
-    $(html).find('[id^=character-weapon-]').each(function(_, value){
-      let weaponDamage = parseInt(value.dataset.itemDamage);
-      let securityValue = parseInt(html.find('#security')[0].value);
-      let attackDamageValue = weaponDamage + securityValue;
+    $(html).find('[id^=character-weapon-]').each( function( _, value ) {
+      const weaponDamage = parseInt(value.dataset.itemDamage);
+      const securityValue = parseInt(html.find('#security')[0].value);
+      const attackDamageValue = weaponDamage + securityValue;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
-
   }
 }

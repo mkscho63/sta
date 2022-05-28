@@ -148,7 +148,7 @@ export class STASharedActorFunctions {
     case 'value':
       staRoll.performValueRoll(item, speaker);
       break;
-    case 'weapon':
+    case 'characterweapon':
     case 'starshipweapon':
       staRoll.performWeaponRoll(item, speaker);
       break;
