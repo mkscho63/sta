@@ -23,9 +23,13 @@ export class STAStarshipSheet extends ActorSheet {
     let versionInfo;
     if (game.world.data) versionInfo = game.world.data.coreVersion;
     else game.world.coreVersion;
-    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
-    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.html";
-    return `systems/sta/templates/actors/starship-sheet.html`;
+    if ( !game.user.isGM && this.actor.limited ) {
+      return 'systems/sta/templates/actors/limited-sheet.html';
+    }
+    if ( !isNewerVersion( versionInfo, '0.8.-1' )) {
+      return 'systems/sta/templates/actors/starship-sheet-legacy.html';
+    }
+    return 'systems/sta/templates/actors/starship-sheet.html';
   }
 
   /* -------------------------------------------- */
@@ -36,7 +40,7 @@ export class STAStarshipSheet extends ActorSheet {
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
 
     // Ensure department values don't weigh over the max.
-        $.each(sheetData.data.data.departments, (key, department) => {
+    $.each(sheetData.data.data.departments, (key, department) => {
       if (department.value > 5) department.value = 5; 
     });
 
@@ -75,7 +79,7 @@ export class STAStarshipSheet extends ActorSheet {
     // Stopgap until a better solution can be found.
     $.each(sheetData.data.items, (key, item) => {
       if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
-    })
+    });
 
     return sheetData.data;
   }
@@ -213,14 +217,15 @@ export class STAStarshipSheet extends ActorSheet {
       return;
     }
 
-    html.find('.chat').click((ev) =>{
+    // set up click handler for items to send to the actor rollGenericItem 
+    html.find('.chat,.rollable').click( (ev) => {
       const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
       const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
     });
 
     // Allows item-create images to create an item of a type defined individually by each button. This uses code found via the Foundry VTT System Tutorial.
-    html.find('.control.create').click((ev) => {
+    html.find('.control.create').click( (ev) => {
       ev.preventDefault();
       const header = ev.currentTarget;
       const type = header.dataset.type;
@@ -233,17 +238,23 @@ export class STAStarshipSheet extends ActorSheet {
         img: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
       };
       delete itemData.data['type'];
-      if (isNewerVersion(versionInfo,"0.8.-1")) return this.actor.createEmbeddedDocuments("Item",[(itemData)]); 
-      else return this.actor.createOwnedItem(itemData);
+      if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+        return this.actor.createEmbeddedDocuments( 'Item', [(itemData)] ); 
+      } else {
+        return this.actor.createOwnedItem(itemData);
+      }
     });
 
     // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
     html.find('.control .delete').click((ev) => {
       const li = $(ev.currentTarget).parents('.entry');
       const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
-      if (r == true) {
-        if (isNewerVersion(versionInfo,"0.8.-1")) this.actor.deleteEmbeddedDocuments("Item",[li.data("itemId")]); 
-        else this.actor.deleteOwnedItem(li.data("itemId")); 
+      if ( r == true ) {
+        if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+          this.actor.deleteEmbeddedDocuments( 'Item', [li.data('itemId')] ); 
+        } else {
+          this.actor.deleteOwnedItem( li.data( 'itemId' )); 
+        }
       }
     });
 
@@ -415,13 +426,6 @@ export class STAStarshipSheet extends ActorSheet {
       staActor.rollChallengeRoll(ev, null, null, this.actor);
     });
 
-    html.find('.rollable.challenge').click((ev) => {
-      const damage = parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) ?
-        parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) : 0;
-      staActor.rollChallengeRoll(ev, ev.target.dataset.itemName,
-        damage, this.actor);
-    });
-
     html.find('.reroll-result').click((ev) => {
       let selectedSystem = '';
       let selectedSystemValue = '';
@@ -447,10 +451,10 @@ export class STAStarshipSheet extends ActorSheet {
         parseInt(selectedDepartmentValue), null, this.actor);
     });
     
-    $(html).find('[id^=starship-weapon-]').each(function(_, value){
-      let weaponDamage = parseInt(value.dataset.itemDamage);
-      let securityValue = parseInt(html.find('#security')[0].value);
-      let attackDamageValue = weaponDamage + securityValue;
+    $(html).find('[id^=starship-weapon-]').each( function( _, value ) {
+      const weaponDamage = parseInt(value.dataset.itemDamage);
+      const securityValue = parseInt(html.find('#security')[0].value);
+      const attackDamageValue = weaponDamage + securityValue;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }

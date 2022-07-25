@@ -23,9 +23,13 @@ export class STASmallCraftSheet extends ActorSheet {
     let versionInfo;
     if (game.world.data) versionInfo = game.world.data.coreVersion;
     else game.world.coreVersion;
-    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
-    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.html";
-    return `systems/sta/templates/actors/smallcraft-sheet.html`;
+    if ( !game.user.isGM && this.actor.limited) {
+      return 'systems/sta/templates/actors/limited-sheet.html';
+    }
+    if ( !isNewerVersion( versionInfo, '0.8.-1' ) ) {
+      return 'systems/sta/templates/actors/smallcraft-sheet-legacy.html';
+    }
+    return 'systems/sta/templates/actors/smallcraft-sheet.html';
   }
     
 
@@ -70,7 +74,7 @@ export class STASmallCraftSheet extends ActorSheet {
     // Stopgap until a better solution can be found.
     $.each(sheetData.data.items, (key, item) => {
       if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
-    })
+    });
 
     return sheetData.data;
   }
@@ -90,7 +94,9 @@ export class STASmallCraftSheet extends ActorSheet {
     const staActor = new STASharedActorFunctions();
 
     // If the player has limited access to the actor, there is nothing to see here. Return.
-    if ( !game.user.isGM && this.actor.limited) return;
+    if ( !game.user.isGM && this.actor.limited) {
+      return;
+    }
 
     // We use i alot in for loops. Best to assign it now for use later in multiple places.
     let i;
@@ -148,9 +154,9 @@ export class STASmallCraftSheet extends ActorSheet {
       shieldsTrackMax, powerTrackMax, null);
 
     // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
-    html.find('.control .edit').click((ev) => {
-      const li = $(ev.currentTarget).parents('.entry');
-      const item = this.actor.items.get(li.data('itemId')); 
+    html.find('.control .edit').click( (ev) => {
+      const li = $(ev.currentTarget).parents( '.entry' );
+      const item = this.actor.items.get( li.data( 'itemId' ) ); 
       item.sheet.render(true);
     });
 
@@ -180,8 +186,9 @@ export class STASmallCraftSheet extends ActorSheet {
       }
       return;
     };
-
-    html.find('.chat').click((ev) =>{
+    
+    // set up click handler for items to send to the actor rollGenericItem 
+    html.find('.chat,.rollable').click( (ev) => {
       const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
       const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
@@ -201,17 +208,23 @@ export class STASmallCraftSheet extends ActorSheet {
         img: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
       };
       delete itemData.data['type'];
-      if (isNewerVersion(versionInfo,"0.8.-1")) return this.actor.createEmbeddedDocuments("Item",[(itemData)]); 
-      else return this.actor.createOwnedItem(itemData);
+      if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+        return this.actor.createEmbeddedDocuments( 'Item', [(itemData)] ); 
+      } else {
+        return this.actor.createOwnedItem( itemData );
+      }
     });
 
     // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
-    html.find('.control .delete').click((ev) => {
+    html.find('.control .delete').click( (ev) => {
       const li = $(ev.currentTarget).parents('.entry');
       const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
       if (r == true) {
-        if (isNewerVersion(versionInfo,"0.8.-1")) this.actor.deleteEmbeddedDocuments("Item",[li.data("itemId")]); 
-        else this.actor.deleteOwnedItem(li.data("itemId")); 
+        if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+          this.actor.deleteEmbeddedDocuments('Item', [li.data('itemId')] ); 
+        } else {
+          this.actor.deleteOwnedItem( li.data( 'itemId' )); 
+        }
         li.slideUp(200, () => this.render(false));
       }
     });
@@ -348,15 +361,8 @@ export class STASmallCraftSheet extends ActorSheet {
     });
     
     // If the check-button is clicked it fires the method challenge roll method. See actor.js for further info.
-    html.find('.check-button.challenge').click((ev) => {
+    html.find('.check-button.challenge').click( (ev) => {
       staActor.rollChallengeRoll(ev, null, null, this.actor);
-    });
-
-    html.find('.rollable.challenge').click((ev) => {
-      const damage = parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) ?
-        parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) : 0;
-      staActor.rollChallengeRoll(ev, ev.target.dataset.itemName,
-        damage, this.actor);
     });
 
     html.find('.reroll-result').click((ev) => {
@@ -384,10 +390,10 @@ export class STASmallCraftSheet extends ActorSheet {
         parseInt(selectedDepartmentValue), null, this.actor);
     });
     
-    $(html).find('[id^=smallcraft-weapon-]').each(function(_, value){
-      let weaponDamage = parseInt(value.dataset.itemDamage);
-      let securityValue = parseInt(html.find('#security')[0].value);
-      let attackDamageValue = weaponDamage + securityValue;
+    $(html).find('[id^=smallcraft-weapon-]').each(function(_, value) {
+      const weaponDamage = parseInt(value.dataset.itemDamage);
+      const securityValue = parseInt(html.find('#security')[0].value);
+      const attackDamageValue = weaponDamage + securityValue;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }
