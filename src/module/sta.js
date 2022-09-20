@@ -51,9 +51,7 @@ import {
 /* -------------------------------------------- */
 
 Hooks.once('init', function() {
-  let versionInfo;
-  if (game.world.data) versionInfo = game.world.data.coreVersion;
-  else game.world.coreVersion;
+  let versionInfo = game.world.coreVersion;
   // Splash Screen
   console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
                  .
@@ -92,7 +90,8 @@ Hooks.once('init', function() {
       STAActor,
     },
     macros: macros,
-    attributeTest: macros.attributeTest
+    attributeTest: macros.attributeTest,
+    defaultImage: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
   };
 
   // Define initiative for the system.

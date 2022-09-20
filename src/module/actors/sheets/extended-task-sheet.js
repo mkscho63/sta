@@ -30,12 +30,12 @@ export class STAExtendedTaskSheet extends ActorSheet {
     const sheetData = this.object;
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
     
-    if (sheetData.data.data.magnitude < 0) data.data.magnitude = 0;
-    if (sheetData.data.data.work < 0) data.data.work = 0;
-    if (sheetData.data.data.difficulty < 0) data.data.difficulty = 0;
-    if (sheetData.data.data.resistance < 0) data.data.resistance = 0;
+    if (sheetData.system.magnitude < 0) sheetData.system.magnitude = 0;
+    if (sheetData.system.work < 0) sheetData.system.work = 0;
+    if (sheetData.system.difficulty < 0) sheetData.system.difficulty = 0;
+    if (sheetData.system.resistance < 0) sheetData.system.resistance = 0;
     
-    return sheetData.data;
+    return sheetData.system;
   }
 
   /* -------------------------------------------- */

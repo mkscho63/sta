@@ -32,17 +32,17 @@ export class STASmallCraftContainerSheet extends ItemSheet {
     let versionInfo;
     if (game.world.data) versionInfo = game.world.data.coreVersion;
     else game.world.coreVersion;
-    const data = this.object.data;
+    const data = this.object;
     data.dtypes = ['String', 'Number', 'Boolean'];
     let smallcrafts;
 
     if (!isNewerVersion(versionInfo,"0.8.-1"))
     {
       smallcrafts = game.actors.filter((target) => 
-        target.data.type === 'smallcraft' && target.owner);
+        target.type === 'smallcraft' && target.owner);
     } else {
       smallcrafts = game.actors.filter((target) => 
-        target.data.type === 'smallcraft' && target.isOwner);
+        target.type === 'smallcraft' && target.isOwner);
     }
     data.availableSmallcrafts = smallcrafts;
 

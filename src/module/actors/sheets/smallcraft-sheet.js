@@ -20,9 +20,7 @@ export class STASmallCraftSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo;
-    if (game.world.data) versionInfo = game.world.data.coreVersion;
-    else game.world.coreVersion;
+    let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
     if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.html";
     return `systems/sta/templates/actors/smallcraft-sheet.html`;
@@ -37,42 +35,42 @@ export class STASmallCraftSheet extends ActorSheet {
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
 
     // Ensure department values don't weigh over the max.  
-    $.each(sheetData.data.data.departments, (key, department) => {
+    $.each(sheetData.system.departments, (key, department) => {
       if (department.value > 5) department.value = 5; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
-    if (sheetData.data.data.shields.value > sheetData.data.data.shields.max) {
-      sheetData.data.data.shields.value = sheetData.data.data.shields.max;
+    if (sheetData.system.shields.value > sheetData.system.shields.max) {
+      sheetData.system.shields.value = sheetData.system.shields.max;
     }
-    if (sheetData.data.data.power.value > sheetData.data.data.power.max) {
-      sheetData.data.data.power.value = sheetData.data.data.power.max;
+    if (sheetData.system.power.value > sheetData.system.power.max) {
+      sheetData.system.power.value = sheetData.system.power.max;
     }
   
     // Ensure system and department values aren't lower than their minimums.
-    $.each(sheetData.data.data.systems, (key, system) => {
+    $.each(sheetData.system.systems, (key, system) => {
       if (system.value < 0) system.value = 0; 
     });
   
-    $.each(sheetData.data.data.departments, (key, department) => {
+    $.each(sheetData.system.departments, (key, department) => {
       if (department.value < 0) department.value = 0; 
     });
 
     // Checks if shields is below 0, if so - set it to 0.
-    if (sheetData.data.data.shields.value < 0) {
-      sheetData.data.data.shields.value = 0;
+    if (sheetData.system.shields.value < 0) {
+      sheetData.system.shields.value = 0;
     }
-    if (sheetData.data.data.power.value < 0) {
-      sheetData.data.data.power.value = 0;
+    if (sheetData.system.power.value < 0) {
+      sheetData.system.power.value = 0;
     }
 
     // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
     // Stopgap until a better solution can be found.
-    $.each(sheetData.data.items, (key, item) => {
-      if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+    $.each(sheetData.items, (key, item) => {
+      if (!item.img) item.img = game.sta.defaultImage;
     })
 
-    return sheetData.data;
+    return sheetData;
   }
 
   /* -------------------------------------------- */
@@ -82,9 +80,7 @@ export class STASmallCraftSheet extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily 
-    let versionInfo; 
-    if (game.world.data) versionInfo = game.world.data.coreVersion; 
-    else game.world.coreVersion; 
+    let versionInfo = game.world.coreVersion; 
     
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -198,7 +194,7 @@ export class STASmallCraftSheet extends ActorSheet {
         name: name,
         type: type,
         data: data,
-        img: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
+        img: game.sta.defaultImage
       };
       delete itemData.data['type'];
       if (isNewerVersion(versionInfo,"0.8.-1")) return this.actor.createEmbeddedDocuments("Item",[(itemData)]); 
