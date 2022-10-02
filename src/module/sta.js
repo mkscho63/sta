@@ -91,7 +91,7 @@ Hooks.once('init', function() {
     },
     macros: macros,
     attributeTest: macros.attributeTest,
-    defaultImage: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
+    defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
   };
 
   // Define initiative for the system.
