@@ -8,8 +8,8 @@
       </div>
       <div class="column-x1">
         <label class="label">{{localize 'sta.actor.belonging.weapon.range'}}</label>
-        <select name="data.range">
-          {{#select data.range}}
+        <select name="system.range">
+          {{#select system.range}}
           <option value="{{localize 'sta.actor.belonging.weapon.melee'}}">{{localize 'sta.actor.belonging.weapon.melee'}}</option>
           <option value="{{localize 'sta.actor.belonging.weapon.ranged'}}">{{localize 'sta.actor.belonging.weapon.ranged'}}</option>
           {{/select}}
@@ -20,93 +20,93 @@
     <div class="row">
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.item.genericitem.opportunity'}}</label>
-        <input type="number" name="data.opportunity" value="{{data.opportunity}}" data-dtype="Number" />
+        <input type="number" name="system.opportunity" value="{{system.opportunity}}" data-dtype="Number" />
       </div>
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.item.genericitem.escalation'}}</label>
-        <input type="number" name="data.escalation" value="{{data.escalation}}" data-dtype="Number" />
+        <input type="number" name="system.escalation" value="{{system.escalation}}" data-dtype="Number" />
       </div>
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.damage'}}</label>
         <div>
-          <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" />
+          <input type="number" name="system.damage" value="{{system.damage}}" data-dtype="Number" />
           <label class="label">+ {{localize 'sta.actor.character.discipline.security'}} </label>
         </div>
       </div>
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.hands'}}</label>
-        <input type="number" name="data.hands" value="{{data.hands}}" data-dtype="Number" />
+        <input type="number" name="system.hands" value="{{system.hands}}" data-dtype="Number" />
       </div>
     </div>
     <div class="row">
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</label>
-        <input type="number" name="data.qualities.hiddenx" value="{{data.qualities.hiddenx}}" data-dtype="Number" />
+        <input type="number" name="system.qualities.hiddenx" value="{{system.qualities.hiddenx}}" data-dtype="Number" />
       </div>
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.piercingx'}}</label>
-        <input type="number" name="data.qualities.piercingx" value="{{data.qualities.piercingx}}" data-dtype="Number" />
+        <input type="number" name="system.qualities.piercingx" value="{{system.qualities.piercingx}}" data-dtype="Number" />
       </div>
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.viciousx'}}</label>
-        <input type="number" name="data.qualities.viciousx" value="{{data.qualities.viciousx}}" data-dtype="Number" />
+        <input type="number" name="system.qualities.viciousx" value="{{system.qualities.viciousx}}" data-dtype="Number" />
       </div>
       <div class="column-x4 label-top"></div>
     </div>
     <br/>
     <div class="row">
       <div class="column-x4">
-        <input class="" type="checkbox" name="data.qualities.charge" data-dtype="Boolean" {{checked data.qualities.charge}}>
+        <input class="" type="checkbox" name="system.qualities.charge" data-dtype="Boolean" {{checked system.qualities.charge}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.charge'}}</label>
       </div>
       <div class="column-x4">
-        <input class="" type="checkbox" name="data.qualities.grenade" data-dtype="Boolean" {{checked data.qualities.grenade}}>
+        <input class="" type="checkbox" name="system.qualities.grenade" data-dtype="Boolean" {{checked system.qualities.grenade}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.grenade'}}</label>
       </div>
       <div class="column-x4"> 
-        <input class="" type="checkbox" name="data.qualities.area" data-dtype="Boolean" {{checked data.qualities.area}}>
+        <input class="" type="checkbox" name="system.qualities.area" data-dtype="Boolean" {{checked system.qualities.area}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.area'}}</label>
       </div>
       <div class="column-x4"> 
-        <input class="" type="checkbox" name="data.qualities.intense" data-dtype="Boolean" {{checked data.qualities.intense}}>
+        <input class="" type="checkbox" name="system.qualities.intense" data-dtype="Boolean" {{checked system.qualities.intense}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.intense'}}</label>
       </div>
     </div>
     <div class="row">
       <div class="column-x4"> 
-        <input class="" type="checkbox" name="data.qualities.knockdown" data-dtype="Boolean" {{checked data.qualities.knockdown}}>
+        <input class="" type="checkbox" name="system.qualities.knockdown" data-dtype="Boolean" {{checked system.qualities.knockdown}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.knockdown'}}</label>
       </div>
       <div class="column-x4"> 
-        <input class="" type="checkbox" name="data.qualities.accurate" data-dtype="Boolean" {{checked data.qualities.accurate}}>
+        <input class="" type="checkbox" name="system.qualities.accurate" data-dtype="Boolean" {{checked system.qualities.accurate}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.accurate'}}</label>
       </div>
       <div class="column-x4"> 
-        <input class="" type="checkbox" name="data.qualities.debilitating" data-dtype="Boolean" {{checked data.qualities.debilitating}}>
+        <input class="" type="checkbox" name="system.qualities.debilitating" data-dtype="Boolean" {{checked system.qualities.debilitating}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.debilitating'}}</label>
       </div>
       <div class="column-x4">
-        <input class="" type="checkbox" name="data.qualities.cumbersome" data-dtype="Boolean" {{checked data.qualities.cumbersome}}>
+        <input class="" type="checkbox" name="system.qualities.cumbersome" data-dtype="Boolean" {{checked system.qualities.cumbersome}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.cumbersome'}}</label>
       </div>
     </div>
     <div class="row">
       <div class="column-x4">
-        <input class="" type="checkbox" name="data.qualities.inaccurate" data-dtype="Boolean" {{checked data.qualities.inaccurate}}>
+        <input class="" type="checkbox" name="system.qualities.inaccurate" data-dtype="Boolean" {{checked system.qualities.inaccurate}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.inaccurate'}}</label>
       </div>
       <div class="column-x4"> 
-        <input class="" type="checkbox" name="data.qualities.deadly" data-dtype="Boolean" {{checked data.qualities.deadly}}>
+        <input class="" type="checkbox" name="system.qualities.deadly" data-dtype="Boolean" {{checked system.qualities.deadly}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.deadly'}}</label>
       </div>
       <div class="column-x4"> 
-        <input class="" type="checkbox" name="data.qualities.nonlethal" data-dtype="Boolean" {{checked data.qualities.nonlethal}}>
+        <input class="" type="checkbox" name="system.qualities.nonlethal" data-dtype="Boolean" {{checked system.qualities.nonlethal}}>
         <label class="label">{{localize 'sta.actor.belonging.weapon.nonlethal'}}</label>
       </div>
     </div>
   </div>
   <div class="description">
     <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
-    {{editor content=data.description target="data.description" button=true owner=owner editable=true}}
+    {{editor system.description target="system.description" button=true owner=owner editable=true}}
   </div>
 </form>

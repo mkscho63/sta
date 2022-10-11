@@ -227,83 +227,84 @@ export class STARoll {
   async performItemRoll(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
     const variablePrompt = game.i18n.format('sta.roll.item.quantity');
-    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.quantity)+`</div>`;
+    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.quantity)+`</div>`;
     
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, variable, null)
+    this.genericItemTemplate(item.img, item.name,
+      item.system.description, variable, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
   async performTalentRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, null)
+    console.log("Performing talent roll [actual]");
+    this.genericItemTemplate(item.img, item.name,
+      item.system.description, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
   async performFocusRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, null)
+    this.genericItemTemplate(item.img, item.name,
+      item.system.description, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
   async performValueRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, null)
+    this.genericItemTemplate(item.img, item.name,
+      item.system.description, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
   async performInjuryRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, null)
+    this.genericItemTemplate(item.img, item.name,
+      item.system.description, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
   async performWeaponRoll(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
     const variablePrompt = game.i18n.format('sta.roll.weapon.damage');
-    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.damage)+`</div>`;
+    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.damage)+`</div>`;
     
     // Create dynamic tags div and populate it with localisation to use in the HTML.
     let tags = '';
     
-    if (item.data.data.qualities.melee) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.melee')+'</div>';
-    if (item.data.data.qualities.ranged) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.ranged')+'</div>';
-    if (item.data.data.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.area')+'</div>';
-    if (item.data.data.qualities.intense) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.intense')+'</div>';
-    if (item.data.data.qualities.knockdown) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.knockdown')+'</div>';
-    if (item.data.data.qualities.accurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.accurate')+'</div>';
-    if (item.data.data.qualities.charge) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.charge')+'</div>';
-    if (item.data.data.qualities.cumbersome) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.cumbersome')+'</div>';
-    if (item.data.data.qualities.deadly) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.deadly')+'</div>';
-    if (item.data.data.qualities.debilitating) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.debilitating')+'</div>';
-    if (item.data.data.qualities.grenade) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.grenade')+'</div>';
-    if (item.data.data.qualities.inaccurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.inaccurate')+'</div>';
-    if (item.data.data.qualities.nonlethal) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.nonlethal')+'</div>';
+    if (item.system.qualities.melee) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.melee')+'</div>';
+    if (item.system.qualities.ranged) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.ranged')+'</div>';
+    if (item.system.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.area')+'</div>';
+    if (item.system.qualities.intense) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.intense')+'</div>';
+    if (item.system.qualities.knockdown) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.knockdown')+'</div>';
+    if (item.system.qualities.accurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.accurate')+'</div>';
+    if (item.system.qualities.charge) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.charge')+'</div>';
+    if (item.system.qualities.cumbersome) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.cumbersome')+'</div>';
+    if (item.system.qualities.deadly) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.deadly')+'</div>';
+    if (item.system.qualities.debilitating) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.debilitating')+'</div>';
+    if (item.system.qualities.grenade) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.grenade')+'</div>';
+    if (item.system.qualities.inaccurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.inaccurate')+'</div>';
+    if (item.system.qualities.nonlethal) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.nonlethal')+'</div>';
 
-    if (item.data.data.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.data.data.qualities.hiddenx +'</div>';
-    if (item.data.data.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx') + ' ' + item.data.data.qualities.piercingx +'</div>';
-    if (item.data.data.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.viciousx') + ' ' + item.data.data.qualities.viciousx +'</div>';
+    if (item.system.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.system.qualities.hiddenx +'</div>';
+    if (item.system.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx') + ' ' + item.system.qualities.piercingx +'</div>';
+    if (item.system.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.viciousx') + ' ' + item.system.qualities.viciousx +'</div>';
 
         
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, variable, tags)
+    this.genericItemTemplate(item.img, item.name,
+      item.system.description, variable, tags)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
   async performArmorRoll(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
     const variablePrompt = game.i18n.format('sta.roll.armor.protect');
-    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.protection)+`</div>`;
+    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.protection)+`</div>`;
     
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.data.img, item.data.name,
-      item.data.data.description, variable, null)
+    this.genericItemTemplate(item.img, item.name,
+      item.system.description, variable, null)
       .then((html)=>this.sendToChat(speaker, html));
   }
 
@@ -335,15 +336,18 @@ export class STARoll {
   }
 
   async sendToChat(speaker, content, roll, flavor) {
+  let messageProps = {
+    user: game.user.id,
+    speaker: ChatMessage.getSpeaker({actor: speaker}),
+    content: content,
+    sound: 'sounds/dice.wav'
+  };
+  if (typeof roll != 'undefined')
+    messageProps.roll = roll;
+  if (typeof flavor != 'undefined')
+    messageProps.flavor = flavor;
     // Send's Chat Message to foundry, if items are missing they will appear as false or undefined and this not be rendered.
-    ChatMessage.create({
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({actor: speaker}),
-      flavor: flavor,
-      content: content,
-      roll: roll,
-      sound: 'sounds/dice.wav'
-    }).then((msg) => {
+    ChatMessage.create(messageProps).then((msg) => {
       return msg;
     });
   }

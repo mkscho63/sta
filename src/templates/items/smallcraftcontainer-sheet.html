@@ -8,14 +8,14 @@
           </div>
           <div class="column-x1" >
               <label class="label" style="margin-left:10px;">{{localize 'sta.actor.belonging.other.quantity'}}</label>
-              <input type="number" name="data.quantity" style="width: calc(100% - 10px);" value="{{data.quantity}}" data-dtype="Number" />
+              <input type="number" name="system.quantity" style="width: calc(100% - 10px);" value="{{system.quantity}}" data-dtype="Number" />
           </div>
           <div class="column-x1" >
               <label class="label">{{localize 'sta.actor.smallcraft.child'}}</label>
-              <select name="data.child">
-                {{#select data.child}}
+              <select name="system.child">
+                {{#select system.child}}
                 {{#each availableSmallcrafts as |availableSmallcraft|}}
-                <option value="{{availableSmallcraft.id}}">{{availableSmallcraft.data.name}}</option>
+                <option value="{{availableSmallcraft.id}}">{{availableSmallcraft.system.name}}</option>
                 {{/each}}
                 {{/select}}
               </select>
@@ -24,6 +24,6 @@
   </div>
   <div class="description">
     <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
-      {{editor content=data.description target="data.description" button=true owner=owner editable=true}}
+      {{editor system.description target="system.description" button=true owner=owner editable=true}}
   </div>
 </form>

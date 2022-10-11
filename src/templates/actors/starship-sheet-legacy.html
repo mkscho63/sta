@@ -22,10 +22,10 @@
                         <input name="name" class="text-entry" type="text" value="{{name}}" placeholder="{{localize 'sta.actor.starship.name'}}" />
                     </div>
                     <div class="column" style="width:25%">
-                        <input name="data.designation" class="text-entry" type="text" value="{{data.designation}}" placeholder="{{localize 'sta.actor.starship.designation'}}" />
+                        <input name="system.designation" class="text-entry" type="text" value="{{system.designation}}" placeholder="{{localize 'sta.actor.starship.designation'}}" />
                     </div>
                     <div class="column" style="width:25%">
-                        <input name="data.spaceframe" class="text-entry" type="text" value="{{data.spaceframe}}" placeholder="{{localize 'sta.actor.starship.spaceframe'}}" />
+                        <input name="system.spaceframe" class="text-entry" type="text" value="{{system.spaceframe}}" placeholder="{{localize 'sta.actor.starship.spaceframe'}}" />
                     </div>
                 </div>
                 <div class="row">
@@ -41,13 +41,13 @@
                 </div>
                 <div class="row">
                     <div class="column" style="width:20%">
-                        <input name="data.servicedate" class="text-entry" type="text" value="{{data.servicedate}}" placeholder="{{localize 'sta.actor.starship.servicedate'}}" />
+                        <input name="system.servicedate" class="text-entry" type="text" value="{{system.servicedate}}" placeholder="{{localize 'sta.actor.starship.servicedate'}}" />
                     </div>
                     <div class="column" style="width:40%">
-                        <input name="data.missionprofile" class="text-entry" type="text" value="{{data.missionprofile}}" placeholder="{{localize 'sta.actor.starship.missionprofile'}}" />
+                        <input name="system.missionprofile" class="text-entry" type="text" value="{{system.missionprofile}}" placeholder="{{localize 'sta.actor.starship.missionprofile'}}" />
                     </div>
                     <div class="column" style="width:40%">
-                        <input name="data.refit" class="text-entry" type="text" value="{{data.refit}}" placeholder="{{localize 'sta.actor.starship.refit'}}" />
+                        <input name="system.refit" class="text-entry" type="text" value="{{system.refit}}" placeholder="{{localize 'sta.actor.starship.refit'}}" />
                     </div>
                 </div>
                 <div class="row">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="row">
                     <div class="column">
-                        <input name="data.traits" class="text-entry" type="text" value="{{data.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
+                        <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
                     </div>
                 </div>
             </div>
@@ -81,12 +81,12 @@
                             <div class="field secondary-title">{{localize 'sta.actor.attdis.mod'}}</div>
                             <div class="field secondary-title">{{localize 'sta.actor.starship.system.breaches'}}</div>
                         </div>
-                        {{#each data.systems as |system key|}}
+                        {{#each system.systems as |system key|}}
                         <div class="stat row">
-                            <input class="selector system" id="{{key}}.selector" type="checkbox" name="data.systems.{{key}}.selected" data-dtype="Boolean" {{checked system.selected}}>
+                            <input class="selector system" id="{{key}}.selector" type="checkbox" name="system.systems.{{key}}.selected" data-dtype="Boolean" {{checked system.selected}}>
                             <div class="text list-entry"> {{localize system.label}} </div>
-                            <input class="field numeric-entry" id="{{key}}" name="data.systems.{{key}}.value" type="number" value="{{system.value}}" />
-                            <input class="field numeric-entry" id="{{key}}.breaches" name="data.systems.{{key}}.breaches" type="number" value="{{system.breaches}}" />
+                            <input class="field numeric-entry" id="{{key}}" name="system.systems.{{key}}.value" type="number" value="{{system.value}}" />
+                            <input class="field numeric-entry" id="{{key}}.breaches" name="system.systems.{{key}}.breaches" type="number" value="{{system.breaches}}" />
                         </div>
                         {{/each}}
                         <div class="check-button btn2 challenge">{{localize 'sta.actor.challenge.roll'}}</div>
@@ -95,7 +95,7 @@
                         <div class="title">
                             {{localize 'sta.actor.starship.scale'}}:
                         </div>
-                        <input class="field numeric-entry" name="data.scale" id="scale" type="number" value="{{data.scale}}" />
+                        <input class="field numeric-entry" name="system.scale" id="scale" type="number" value="{{system.scale}}" />
                     </div>
                 </div>
                 <div class="column center-column">
@@ -104,8 +104,8 @@
                             {{localize 'sta.actor.starship.shields'}}
                         </div>
                         <div class="track">
-                            <input type="hidden" id="total-shields" name="data.shields.value" value="{{data.shields.value}}" data-dtype="Number" />
-                            <input type="hidden" id="max-shields" name="data.shields.max" value="{{data.shields.max}}" data-dtype="Number" />
+                            <input type="hidden" id="total-shields" name="system.shields.value" value="{{system.shields.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-shields" name="system.shields.max" value="{{system.shields.max}}" data-dtype="Number" />
                             <div id="bar-shields-renderer" class=" bar"></div>
                         </div>
                     </div>
@@ -117,8 +117,8 @@
                             {{localize 'sta.actor.starship.power'}}
                         </div>
                         <div class="track">
-                            <input type="hidden" id="total-power" name="data.power.value" value="{{data.power.value}}" data-dtype="Number" />
-                            <input type="hidden" id="max-power" name="data.power.max" value="{{data.power.max}}" data-dtype="Number" />
+                            <input type="hidden" id="total-power" name="system.power.value" value="{{system.power.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-power" name="system.power.max" value="{{system.power.max}}" data-dtype="Number" />
                             <div class="bar">
                                 <div id="bar-power-renderer" class="bar"></div>
                             </div>
@@ -129,8 +129,8 @@
                             {{localize 'sta.actor.starship.crew'}}
                         </div>
                         <div class="track">
-                            <input type="hidden" id="total-crew" name="data.crew.value" value="{{data.crew.value}}" data-dtype="Number" />
-                            <input type="hidden" id="max-crew" name="data.crew.max" value="{{data.crew.max}}" data-dtype="Number" />
+                            <input type="hidden" id="total-crew" name="system.crew.value" value="{{system.crew.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-crew" name="system.crew.max" value="{{system.crew.max}}" data-dtype="Number" />
                             <div class="bar">
                                 <div id="bar-crew-renderer" class="bar"></div>
                             </div>
@@ -147,11 +147,11 @@
                             <div class="text secondary-title">{{localize 'sta.actor.starship.department.name'}}</div>
                             <div class="selector-space"></div>
                         </div>
-                        {{#each data.departments as |department key|}}
+                        {{#each system.departments as |department key|}}
                         <div class="stat row">
-                            <input class="field numeric-entry" id="{{key}}" name="data.departments.{{key}}.value" type="text" value="{{department.value}}" placeholder="Name" />
+                            <input class="field numeric-entry" id="{{key}}" name="system.departments.{{key}}.value" type="text" value="{{department.value}}" placeholder="Name" />
                             <div class="text list-entry"> {{localize department.label}} </div>
-                            <input class="selector department" id="{{key}}.selector" type="checkbox" name="data.departments.{{key}}.selected" data-dtype="Boolean" {{checked department.selected}}>
+                            <input class="selector department" id="{{key}}.selector" type="checkbox" name="system.departments.{{key}}.selected" data-dtype="Boolean" {{checked department.selected}}>
                         </div>
                         {{/each}}
                         <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
@@ -160,7 +160,7 @@
                         <div class="title">
                             {{localize 'sta.actor.starship.resistance'}}:
                         </div>
-                        <input class="field numeric-entry" name="data.resistance" id="resistance" type="number" value="{{data.resistance}}" />
+                        <input class="field numeric-entry" name="system.resistance" id="resistance" type="number" value="{{system.resistance}}" />
                     </div>
                 </div>
             </div>
@@ -191,7 +191,7 @@
                             </div>
                         </li>
                         <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item._id}}">
-                            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item._id}}">{{item.data.description}}</div>
+                            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item._id}}">{{item.system.description}}</div>
                         </li>
                         {{/if}}
                         {{/each}}
@@ -234,10 +234,10 @@
                         </div>
                         {{#each items as |item id|}}
                         {{#if (eq item.type "smallcraftcontainer")}}
-                        <li class="row entry" data-item-id="{{item._id}}" data-item-child-id="{{item.data.child}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                        <li class="row entry" data-item-id="{{item._id}}" data-item-child-id="{{item.system.child}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="click-to-nav" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry">{{item.system.quantity}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -264,7 +264,7 @@
                             <div class="one-column-no-roll" style="height:17px;"></div>
                         </div>
                         <div class="note">
-                            {{editor content=data.notes target="data.notes" button=true owner=owner editable=true}}
+                            {{editor content=system.notes target="system.notes" button=true owner=owner editable=true}}
                         </div>
                     </div>
                 </div>
@@ -303,10 +303,10 @@
                         </div>
                         {{#each items as |item type id|}}
                         {{#if (eq item.type "starshipweapon")}}
-                        <li class="row entry" id="starship-weapon-{{@index}}" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.data.damage}}">
+                        <li class="row entry" id="starship-weapon-{{@index}}" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.system.damage}}">
                           <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry damage">{{item.data.damage}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry damage">{{item.system.damage}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -325,7 +325,7 @@
                         <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                             <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
-                            <h4 class="two-column-with-roll-secondary list-entry">{{item.data.quantity}}</h4>
+                            <h4 class="two-column-with-roll-secondary list-entry">{{item.system.quantity}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
