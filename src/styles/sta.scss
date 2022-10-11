@@ -1087,14 +1087,14 @@ $trackColors: (
   position: absolute;
   bottom: 10px;
   right: 354px;
-  width: 200px;
+  width: 180px;
   height: 205px;
 
-  -webkit-transition: width 0.5s linear;
-  -moz-transition: width 0.5s linear;
-    -ms-transition: width 0.5s linear;
-      -o-transition: width 0.5s linear;
-        transition: width 0.5s linear;
+  -webkit-transition: bottom 0.5s linear;
+  -moz-transition: bottom 0.5s linear;
+    -ms-transition: bottom 0.5s linear;
+      -o-transition: bottom 0.5s linear;
+        transition: bottom 0.5s linear;
 
   .tracker-clickable {
     position: absolute;
@@ -1114,12 +1114,12 @@ $trackColors: (
   }
 
   &.hide {
-    width: 15px;
-    -webkit-transition: width 0.5s linear;
-      -moz-transition: width 0.5s linear;
-        -ms-transition: width 0.5s linear;
-          -o-transition: width 0.5s linear;
-            transition: width 0.5s linear;
+    bottom: -190px;
+    -webkit-transition: bottom 0.5s linear;
+      -moz-transition: bottom 0.5s linear;
+        -ms-transition: bottom 0.5s linear;
+          -o-transition: bottom 0.5s linear;
+            transition: bottom 0.5s linear;
   }
 
   .tracker {
@@ -1130,8 +1130,6 @@ $trackColors: (
     width: 220px;
     background: none;
     border-radius: 30px;
-    // border-top-left-radius: 30px;
-    // border-bottom-left-radius: 30px;
     padding: 0px;
     clip-path: inset(-20px 0px -20px -20px);
   
@@ -1152,6 +1150,7 @@ $trackColors: (
       color: $labelColor;
       background-color: $background;
       border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
       width: 185px;
       height: 35px;
       margin-left: 15px;
@@ -1163,6 +1162,7 @@ $trackColors: (
       font-size: 1.5em;
       background-color: $background;
       border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
       width: 185px;
       height: 35px;
       margin-left: 15px;
@@ -1194,10 +1194,6 @@ $trackColors: (
       }
     }
   }
-}
-
-#ui-right ~ .sta.tracker-container.collapsed {
-  right: 0px
 }
 /*#endregion*/
 
