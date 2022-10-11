@@ -45,5 +45,5 @@
   "primaryTokenAttribute": "stress",
   "secondaryTokenAttribute": "determination",
   "url": "https://github.com/mkscho63/sta",
-  "manifest": "https://raw.githubusercontent.com/mkscho63/sta/master/src/system.json",
+  "manifest": "https://raw.githubusercontent.com/mkscho63/sta/master/src/system.json"
 }
