@@ -10,11 +10,11 @@
       </div>
       <div class="column-headerfields1-other-extendedtasks">
         <label class="label">{{localize 'sta.actor.extendedtask.work'}}</label>
-        <input name="data.work" type="number" id="work" class="numeric-entry" value="{{data.work}}" min="0" data-dtype="Number" />
+        <input name="system.work" type="number" id="work" class="numeric-entry" value="{{system.work}}" min="0" data-dtype="Number" />
       </div>
       <div class="column-headerfields1-other-extendedtasks">
         <label class="label">{{localize 'sta.actor.extendedtask.difficulty'}}</label>
-        <input name="data.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{data.difficulty}}" min="0" data-dtype="Number" />
+        <input name="system.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{system.difficulty}}" min="0" data-dtype="Number" />
       </div>
     </div>
     <div class="row">
@@ -23,15 +23,15 @@
       </div>
       <div class="column-headerfields2-extendedtasks">
         <label class="label">{{localize 'sta.actor.extendedtask.breakthroughs'}}</label>
-        <input name="data.breaches" type="number" id="breaches" class="numeric-entry" value="{{data.breaches}}" min="0" data-dtype="Number" />
+        <input name="system.breaches" type="number" id="breaches" class="numeric-entry" value="{{system.breaches}}" min="0" data-dtype="Number" />
       </div>
       <div class="column-headerfields2-extendedtasks">
         <label class="label">{{localize 'sta.actor.extendedtask.magnitude'}}</label>
-        <input name="data.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{data.magnitude}}" min="0" data-dtype="Number" />
+        <input name="system.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{system.magnitude}}" min="0" data-dtype="Number" />
       </div>
       <div class="column-headerfields2-extendedtasks">
         <label class="label">{{localize 'sta.actor.extendedtask.resistance'}}</label>
-        <input name="data.resistance" type="number" id="resistance" class="numeric-entry" value="{{data.resistance}}" min="0" data-dtype="Number" />
+        <input name="system.resistance" type="number" id="resistance" class="numeric-entry" value="{{system.resistance}}" min="0" data-dtype="Number" />
       </div>
     </div>
     <div class="row">
@@ -50,7 +50,7 @@
         <div class="lcars-body-extendedtask2"></div>
       </div>
       <div class="extendedtask track">
-        <input type="hidden" id="work-progress" name="data.workprogress" value="{{data.workprogress}}" data-dtype="Number" />
+        <input type="hidden" id="work-progress" name="system.workprogress" value="{{system.workprogress}}" data-dtype="Number" />
         <div id="extendedtask-renderer" style="width: 100%" class="extendedtask track"></div>
       </div>
     </div>
