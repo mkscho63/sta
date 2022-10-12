@@ -70,7 +70,7 @@ export class STARoll {
 
     // Set the flavour to "[Attribute] [Discipline] Attribute Test". This shows the chat what type of test occured.
     let flavor = '';
-    switch (speaker.data.type) {
+    switch (speaker.type) {
     case 'character':
       flavor = game.i18n.format('sta.actor.character.attribute.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.character.discipline.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
       break;
@@ -224,12 +224,12 @@ export class STARoll {
 
   async performWeaponRoll(item, speaker) {
     let actorSecurity = 0;
-    if ( speaker.data.data.disciplines ) {
-      actorSecurity = parseInt( speaker.data.data.disciplines.security.value );
-    } else if ( speaker.data.data.departments ) {
-      actorSecurity = parseInt( speaker.data.data.departments.security.value );
+    if ( speaker.system.disciplines ) {
+      actorSecurity = parseInt( speaker.system.disciplines.security.value );
+    } else if ( speaker.system.departments ) {
+      actorSecurity = parseInt( speaker.system.departments.security.value );
     }
-    const calculatedDamage = item.data.data.damage + actorSecurity;
+    const calculatedDamage = item.system.damage + actorSecurity;
     // Create variable div and populate it with localisation to use in the HTML.
     const variablePrompt = game.i18n.format('sta.roll.weapon.damage');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.damage)+`</div>`;
@@ -292,9 +292,16 @@ export class STARoll {
         </div>`;
     
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item.img, item.name,
-      item.system.description, variable, tags)
-      .then((html)=>this.sendToChat(speaker, html));
+    // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
+    if (game.dice3d) {
+      game.dice3d.showForRoll(rolledChallenge).then((displayed) => {
+        this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
+          .then((html)=>this.sendToChat(speaker, rollHTML, damageRoll, item.name, 'sounds/dice.wav'));
+        });
+    } else {
+      this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
+        .then((html)=>this.sendToChat(speaker, rollHTML, damageRoll, item.name, 'sounds/dice.wav'));
+    }
   }
 
   async performArmorRoll(item, speaker) {
@@ -335,12 +342,12 @@ export class STARoll {
     return html;
   }
 
-  async sendToChat(speaker, content, roll, flavor) {
+  async sendToChat(speaker, content, roll, flavor, sound) {
   let messageProps = {
     user: game.user.id,
     speaker: ChatMessage.getSpeaker({actor: speaker}),
     content: content,
-    sound: 'sounds/dice.wav'
+    sound: sound
   };
   if (typeof roll != 'undefined')
     messageProps.roll = roll;

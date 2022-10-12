@@ -211,21 +211,21 @@ export class STACharacterSheet extends ActorSheet {
     html.find('.control.toggle').click((ev) => {
       let itemId = ev.currentTarget.closest(".entry").dataset.itemId;
       let item = this.actor.items.get(itemId);
-      let state = item.data.used;
+      let state = item.system.used;
       if (state) {
-        item.data.used = false;
+        item.system.used = false;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-on');
         $(ev.currentTarget).children()[0].classList.add('fa-toggle-off');
         $(ev.currentTarget).parents('.entry')[0].setAttribute('data-item-used', 'false');
         $(ev.currentTarget).parents('.entry')[0].style.textDecoration = 'none';
       } else {
-        item.data.used = true;
+        item.system.used = true;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-off');
         $(ev.currentTarget).children()[0].classList.add('fa-toggle-on');
         $(ev.currentTarget).parents('.entry')[0].setAttribute('data-item-used', 'true');
         $(ev.currentTarget).parents('.entry')[0].style.textDecoration = 'line-through';
       }
-      return this.actor.items.get(itemId).update({['data.used']: getProperty(item.data, 'data.used')});
+      return this.actor.items.get(itemId).update({['system.used']: getProperty(item.system, 'used')});
     });
 
     // This allows for all items to be rolled, it gets the current targets type and id and sends it to the rollGenericItem function.

@@ -37,9 +37,9 @@ export function attributeTest(actor, usingFocus, usingDetermination,
     usingDetermination = false;
   }
   const attrValue = 
-    parseInt(actor.data.data.attributes[selectedAttribute].value);
+    parseInt(actor.data.attributes[selectedAttribute].value);
   const discValue = 
-    parseInt(actor.data.data.disciplines[selectedDiscipline].value);
+    parseInt(actor.data.disciplines[selectedDiscipline].value);
   const staRoll = new STARoll();
   staRoll.performAttributeTest(numberOfDice, usingFocus, usingDetermination,
     selectedAttribute, attrValue, selectedDiscipline,
