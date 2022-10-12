@@ -319,7 +319,7 @@ function updateManifest(cb) {
 
     /* Update URLs */
 
-    const result = `${rawURL}/v${manifest.file.version}/package/${manifest.file.name}-v${manifest.file.version}.zip`;
+    const result = `${rawURL}/v${manifest.file.version}/package/${manifest.file.id}-v${manifest.file.version}.zip`;
 
     manifest.file.url = repoURL;
     manifest.file.manifest = `${rawURL}/master/${manifestRoot}/${manifest.name}`;
