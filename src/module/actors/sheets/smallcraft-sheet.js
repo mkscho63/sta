@@ -20,9 +20,7 @@ export class STASmallCraftSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo;
-    if (game.world.data) versionInfo = game.world.data.coreVersion;
-    else game.world.coreVersion;
+    let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
     if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.html";
     return `systems/sta/templates/actors/smallcraft-sheet.html`;
@@ -37,42 +35,42 @@ export class STASmallCraftSheet extends ActorSheet {
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
 
     // Ensure department values don't weigh over the max.  
-    $.each(sheetData.data.data.departments, (key, department) => {
+    $.each(sheetData.system.departments, (key, department) => {
       if (department.value > 5) department.value = 5; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
-    if (sheetData.data.data.shields.value > sheetData.data.data.shields.max) {
-      sheetData.data.data.shields.value = sheetData.data.data.shields.max;
+    if (sheetData.system.shields.value > sheetData.system.shields.max) {
+      sheetData.system.shields.value = sheetData.system.shields.max;
     }
-    if (sheetData.data.data.power.value > sheetData.data.data.power.max) {
-      sheetData.data.data.power.value = sheetData.data.data.power.max;
+    if (sheetData.system.power.value > sheetData.system.power.max) {
+      sheetData.system.power.value = sheetData.system.power.max;
     }
   
     // Ensure system and department values aren't lower than their minimums.
-    $.each(sheetData.data.data.systems, (key, system) => {
+    $.each(sheetData.system.systems, (key, system) => {
       if (system.value < 0) system.value = 0; 
     });
   
-    $.each(sheetData.data.data.departments, (key, department) => {
+    $.each(sheetData.system.departments, (key, department) => {
       if (department.value < 0) department.value = 0; 
     });
 
     // Checks if shields is below 0, if so - set it to 0.
-    if (sheetData.data.data.shields.value < 0) {
-      sheetData.data.data.shields.value = 0;
+    if (sheetData.system.shields.value < 0) {
+      sheetData.system.shields.value = 0;
     }
-    if (sheetData.data.data.power.value < 0) {
-      sheetData.data.data.power.value = 0;
+    if (sheetData.system.power.value < 0) {
+      sheetData.system.power.value = 0;
     }
 
     // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
     // Stopgap until a better solution can be found.
-    $.each(sheetData.data.items, (key, item) => {
-      if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+    $.each(sheetData.items, (key, item) => {
+      if (!item.img) item.img = game.sta.defaultImage;
     })
 
-    return sheetData.data;
+    return sheetData;
   }
 
   /* -------------------------------------------- */
@@ -82,15 +80,15 @@ export class STASmallCraftSheet extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily 
-    let versionInfo; 
-    if (game.world.data) versionInfo = game.world.data.coreVersion; 
-    else game.world.coreVersion; 
+    let versionInfo = game.world.coreVersion; 
     
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
 
     // If the player has limited access to the actor, there is nothing to see here. Return.
-    if ( !game.user.isGM && this.actor.limited) return;
+    if ( !game.user.isGM && this.actor.limited) {
+      return;
+    }
 
     // We use i alot in for loops. Best to assign it now for use later in multiple places.
     let i;
@@ -148,9 +146,9 @@ export class STASmallCraftSheet extends ActorSheet {
       shieldsTrackMax, powerTrackMax, null);
 
     // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
-    html.find('.control .edit').click((ev) => {
-      const li = $(ev.currentTarget).parents('.entry');
-      const item = this.actor.items.get(li.data('itemId')); 
+    html.find('.control .edit').click( (ev) => {
+      const li = $(ev.currentTarget).parents( '.entry' );
+      const item = this.actor.items.get( li.data( 'itemId' ) ); 
       item.sheet.render(true);
     });
 
@@ -180,8 +178,9 @@ export class STASmallCraftSheet extends ActorSheet {
       }
       return;
     };
-
-    html.find('.chat').click((ev) =>{
+    
+    // set up click handler for items to send to the actor rollGenericItem 
+    html.find('.chat,.rollable').click( (ev) => {
       const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
       const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
@@ -198,20 +197,26 @@ export class STASmallCraftSheet extends ActorSheet {
         name: name,
         type: type,
         data: data,
-        img: '/systems/sta/assets/icons/voyagercombadgeicon.svg'
+        img: game.sta.defaultImage
       };
       delete itemData.data['type'];
-      if (isNewerVersion(versionInfo,"0.8.-1")) return this.actor.createEmbeddedDocuments("Item",[(itemData)]); 
-      else return this.actor.createOwnedItem(itemData);
+      if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+        return this.actor.createEmbeddedDocuments( 'Item', [(itemData)] ); 
+      } else {
+        return this.actor.createOwnedItem( itemData );
+      }
     });
 
     // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
-    html.find('.control .delete').click((ev) => {
+    html.find('.control .delete').click( (ev) => {
       const li = $(ev.currentTarget).parents('.entry');
       const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
       if (r == true) {
-        if (isNewerVersion(versionInfo,"0.8.-1")) this.actor.deleteEmbeddedDocuments("Item",[li.data("itemId")]); 
-        else this.actor.deleteOwnedItem(li.data("itemId")); 
+        if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+          this.actor.deleteEmbeddedDocuments('Item', [li.data('itemId')] ); 
+        } else {
+          this.actor.deleteOwnedItem( li.data( 'itemId' )); 
+        }
         li.slideUp(200, () => this.render(false));
       }
     });
@@ -348,15 +353,8 @@ export class STASmallCraftSheet extends ActorSheet {
     });
     
     // If the check-button is clicked it fires the method challenge roll method. See actor.js for further info.
-    html.find('.check-button.challenge').click((ev) => {
+    html.find('.check-button.challenge').click( (ev) => {
       staActor.rollChallengeRoll(ev, null, null, this.actor);
-    });
-
-    html.find('.rollable.challenge').click((ev) => {
-      const damage = parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) ?
-        parseInt(ev.target.parentElement.nextElementSibling.nextElementSibling.innerText) : 0;
-      staActor.rollChallengeRoll(ev, ev.target.dataset.itemName,
-        damage, this.actor);
     });
 
     html.find('.reroll-result').click((ev) => {
@@ -384,10 +382,10 @@ export class STASmallCraftSheet extends ActorSheet {
         parseInt(selectedDepartmentValue), null, this.actor);
     });
     
-    $(html).find('[id^=smallcraft-weapon-]').each(function(_, value){
-      let weaponDamage = parseInt(value.dataset.itemDamage);
-      let securityValue = parseInt(html.find('#security')[0].value);
-      let attackDamageValue = weaponDamage + securityValue;
+    $(html).find('[id^=smallcraft-weapon-]').each(function(_, value) {
+      const weaponDamage = parseInt(value.dataset.itemDamage);
+      const securityValue = parseInt(html.find('#security')[0].value);
+      const attackDamageValue = weaponDamage + securityValue;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }

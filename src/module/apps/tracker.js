@@ -321,7 +321,7 @@ export class STATracker extends Application {
         $('#tracker-clickable-plus').addClass('hide');
         $('#tracker-clickable-minus').removeClass('hide');
         $('.tracker-container').addClass('hide').removeAttr('style');
-        $('.tracker-container').removeClass('hide').width('200px')
+        $('.tracker-container').removeClass('hide').width('180px')
       }
     });
   }

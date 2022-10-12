@@ -158,6 +158,7 @@
   "sta.roll.success": "Éxito",
   "sta.roll.successPlural": "Éxitos",
   "sta.roll.task.name": "Tarea",
+  "sta.roll.challenge.name": "Desafío",
   "sta.roll.complicationrange": "El Margen de Complicación es ",
   "sta.roll.complication": "¡Sufres una Complicación!",
   "sta.roll.complicationPlural": "¡Sufres |#| Complicaciones!",
@@ -165,7 +166,8 @@
   "sta.roll.effectPlural": "¡Consigues |#| Efectos!",
   "sta.roll.rerollresults": "¿Repetir la tirada?",
 
-  "sta.roll.weapon.damage": "<b>|#|</b> Daño",
+  "sta.roll.weapon.damage": "<b>|#|</b> Daño dado",
+  "sta.roll.weapon.damagePlural": "<b>|#|</b> Daño dadoes",
   "sta.roll.armor.protect": "<b>|#|</b> Resistencia",
   "sta.roll.item.quantity": "|#|x Objetos",
 

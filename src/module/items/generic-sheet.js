@@ -25,7 +25,7 @@ export class STAGenericSheet extends ItemSheet {
 
   /** @override */
   getData() {
-    const data = this.object.data;
+    const data = this.object;
     data.dtypes = ['String', 'Number', 'Boolean'];
 
     return data;

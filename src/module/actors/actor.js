@@ -7,7 +7,7 @@ import {
 
 export class STAActor extends Actor {
   prepareData() {
-    if (!this.data.img) this.data.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+    if (!this.img) this.img = game.sta.defaultImage;
 
     super.prepareData();
   }
@@ -148,7 +148,7 @@ export class STASharedActorFunctions {
     case 'value':
       staRoll.performValueRoll(item, speaker);
       break;
-    case 'weapon':
+    case 'characterweapon':
     case 'starshipweapon':
       staRoll.performWeaponRoll(item, speaker);
       break;
