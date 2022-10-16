@@ -1122,6 +1122,15 @@ $trackColors: (
             transition: bottom 0.5s linear;
   }
 
+  &.tracker-collapsed {
+    right:0px;
+    -webkit-transition: right 0.5s linear;
+      -moz-transition: right 0.5s linear;
+        -ms-transition: right 0.5s linear;
+          -o-transition: right 0.5s linear;
+            transition: right 0.5s linear;
+  }
+
   .tracker {
     position: absolute;
     display: block;
