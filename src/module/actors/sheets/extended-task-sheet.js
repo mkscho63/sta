@@ -35,7 +35,7 @@ export class STAExtendedTaskSheet extends ActorSheet {
     if (sheetData.system.difficulty < 0) sheetData.system.difficulty = 0;
     if (sheetData.system.resistance < 0) sheetData.system.resistance = 0;
     
-    return sheetData;
+    return sheetData.system;
   }
 
   /* -------------------------------------------- */
