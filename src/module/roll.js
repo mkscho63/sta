@@ -294,7 +294,7 @@ export class STARoll {
     // Send the divs to populate a HTML template and sends to chat.
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
-      game.dice3d.showForRoll(rolledChallenge).then((displayed) => {
+      game.dice3d.showForRoll(damageRoll).then((displayed) => {
         this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
           .then((html)=>this.sendToChat(speaker, rollHTML, damageRoll, item.name, 'sounds/dice.wav'));
         });
