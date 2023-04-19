@@ -1,5 +1,4 @@
-{
-    "sta.counting.one": "1",
+"sta.counting.one": "1",
     "sta.counting.two": "2",
     "sta.counting.three": "3",
     "sta.counting.four": "4",
@@ -81,7 +80,7 @@
     "sta.actor.belonging.other.title": "Autres",
     "sta.actor.belonging.other.qty": "Qté",
     "sta.actor.belonging.other.quantity": "Quantité",
-    
+
     "sta.actor.starship.name": "Nom",
     "sta.actor.starship.designation": "Désignation",
     "sta.actor.starship.servicedate": "Mise en Service",
