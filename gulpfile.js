@@ -212,7 +212,7 @@ async function packageBuild() {
       fs.ensureDirSync('package');
 
       // Initialize the zip file
-      const zipName = `${manifest.file.name}-v${manifest.file.version}.zip`;
+      const zipName = `${manifest.file.id}-v${manifest.file.version}.zip`;
       const zipFile = fs.createWriteStream(path.join('package', zipName));
       const zip = archiver('zip', {zlib: {level: 9}});
 
@@ -231,7 +231,7 @@ async function packageBuild() {
       zip.pipe(zipFile);
 
       // Add the directory with the final code
-      zip.directory('dist/', manifest.file.name);
+      zip.directory('dist/', manifest.file.id);
 
       zip.finalize();
     } catch (err) {
