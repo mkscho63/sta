@@ -115,8 +115,8 @@ export class STARoll {
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
-      game.dice3d.showForRoll(r).then((displayed) => {
-        this.sendToChat(speaker, html, r, flavor, 'sounds/dice.wav');
+      game.dice3d.showForRoll(r, game.user, true).then((displayed) => {
+        this.sendToChat(speaker, html, r, flavor, '');
       });
     } else {
       this.sendToChat(speaker, html, r, flavor, 'sounds/dice.wav');
@@ -174,8 +174,8 @@ export class STARoll {
       
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
-      game.dice3d.showForRoll(rolledChallenge).then((displayed) => {
-        this.sendToChat(speaker, html, rolledChallenge, flavor, 'sounds/dice.wav');
+      game.dice3d.showForRoll(rolledChallenge, game.user, true).then((displayed) => {
+        this.sendToChat(speaker, html, rolledChallenge, flavor, '');
       });
     } else {
       this.sendToChat(speaker, html, rolledChallenge, flavor, 'sounds/dice.wav');
@@ -305,8 +305,8 @@ export class STARoll {
       item.id ).then( ( genericItemHTML ) => {
       const finalHTML = genericItemHTML + '</div>\n\n' + rollHTML;
       if (game.dice3d) {
-        game.dice3d.showForRoll( damageRoll ).then( ()=> {
-          this.sendToChat( speaker, finalHTML, damageRoll, item.name, 'sounds/dice.wav');
+        game.dice3d.showForRoll(damageRoll, game.user, true).then( ()=> {
+          this.sendToChat( speaker, finalHTML, damageRoll, item.name, '');
         });
       } else {
         this.sendToChat( speaker, finalHTML, damageRoll, item.name, 'sounds/dice.wav');
