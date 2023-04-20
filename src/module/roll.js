@@ -115,8 +115,8 @@ export class STARoll {
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
-      game.dice3d.showForRoll(r).then((displayed) => {
-        this.sendToChat(speaker, html, r, flavor, 'sounds/dice.wav');
+      game.dice3d.showForRoll(r, game.user, true).then((displayed) => {
+        this.sendToChat(speaker, html, r, flavor, '');
       });
     } else {
       this.sendToChat(speaker, html, r, flavor, 'sounds/dice.wav');
@@ -174,8 +174,8 @@ export class STARoll {
       
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
-      game.dice3d.showForRoll(rolledChallenge).then((displayed) => {
-        this.sendToChat(speaker, html, rolledChallenge, flavor, 'sounds/dice.wav');
+      game.dice3d.showForRoll(rolledChallenge, game.user, true).then((displayed) => {
+        this.sendToChat(speaker, html, rolledChallenge, flavor, '');
       });
     } else {
       this.sendToChat(speaker, html, rolledChallenge, flavor, 'sounds/dice.wav');
@@ -231,8 +231,11 @@ export class STARoll {
     }
     const calculatedDamage = item.system.damage + actorSecurity;
     // Create variable div and populate it with localisation to use in the HTML.
-    const variablePrompt = game.i18n.format('sta.roll.weapon.damage');
-    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.damage)+`</div>`;
+    let variablePrompt = game.i18n.format('sta.roll.weapon.damagePlural');
+    if ( calculatedDamage == 1 ) {
+      variablePrompt = game.i18n.format('sta.roll.weapon.damage');
+    }
+    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', calculatedDamage)+`</div>`;
     
     // Create dynamic tags div and populate it with localisation to use in the HTML.
     let tags = '';
@@ -293,15 +296,31 @@ export class STARoll {
     
     // Send the divs to populate a HTML template and sends to chat.
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
-    if (game.dice3d) {
-      game.dice3d.showForRoll(damageRoll).then((displayed) => {
-        this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
-          .then((html)=>this.sendToChat(speaker, rollHTML, damageRoll, item.name, 'sounds/dice.wav'));
+    this.genericItemTemplate( 
+      item.img, 
+      item.name, 
+      item.system.description, 
+      variable, 
+      tags, 
+      item.id ).then( ( genericItemHTML ) => {
+      const finalHTML = genericItemHTML + '</div>\n\n' + rollHTML;
+      if (game.dice3d) {
+        game.dice3d.showForRoll(damageRoll, game.user, true).then( ()=> {
+          this.sendToChat( speaker, finalHTML, damageRoll, item.name, '');
         });
-    } else {
-      this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
-        .then((html)=>this.sendToChat(speaker, rollHTML, damageRoll, item.name, 'sounds/dice.wav'));
-    }
+      } else {
+        this.sendToChat( speaker, finalHTML, damageRoll, item.name, 'sounds/dice.wav');
+      };
+    });
+    // if (game.dice3d) {
+    //   game.dice3d.showForRoll(damageRoll).then((displayed) => {
+    //     this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
+    //       .then((html)=>this.sendToChat(speaker, html, damageRoll, item.name, 'sounds/dice.wav'));
+    //     });
+    // } else {
+    //   this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
+    //     .then((html)=>this.sendToChat(speaker, html, damageRoll, item.name, 'sounds/dice.wav'));
+    // }
   }
 
   async performArmorRoll(item, speaker) {

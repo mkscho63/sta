@@ -176,7 +176,7 @@
 
   "sta.notifications.momentuminvalidpermissions": "You do not have permission to change Momentum!",
   "sta.notifications.momentummin": "You can't set Momentum to a value below 0!",
-  "sta.notifications.momentummax": "You can't set Momentum to a value above 6!",
+  "sta.notifications.momentummax": "You can't set Momentum to a value above ",
   "sta.notifications.threatinvalidpermissions": "You do not have permission to change Threat!",
   "sta.notifications.threatmin": "You can't set Threat to a value below 0!",
   "sta.notifications.threatmax": "There is too much Threat!",

@@ -208,6 +208,15 @@ Hooks.once('init', function() {
     default: 20,
     config: true
   });
+
+  game.settings.register('sta', 'maxNumberOfMomentum', {
+    name: 'Maximum amount of Momentum:',
+    hint: 'Max amount of momentum the players can have at a time. 6 is default.',
+    scope: 'world',
+    type: Number,
+    default: 6,
+    config: true
+  });
     
   game.settings.register('sta', 'threat', {
     scope: 'world',

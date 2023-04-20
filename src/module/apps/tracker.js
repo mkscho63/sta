@@ -145,7 +145,7 @@ export class STATracker extends Application {
    * @returns {6|99999999}
    */
   static LimitOf(resource) {
-    return resource == STATracker.Resource.Momentum ? 6 : 99999999;
+    return resource == STATracker.Resource.Momentum ? game.settings.get('sta', 'maxNumberOfMomentum') : 99999999;
   }
 
   /**
@@ -202,14 +202,14 @@ export class STATracker extends Application {
    */
   static async DoUpdateResource(resource, value) {
     if (!STATracker.UserHasPermissionFor(resource)) {
-      ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}InvalidPermissions`));
+      ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}invalidpermissions`));
       return;
     } else if (value < 0) {
-      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}Negative`));
+      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}min`));
       STATracker.UpdateTracker()
       return;
     } else if (value > STATracker.LimitOf(resource)) {
-      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}TooGreat`));
+      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}max`) + STATracker.LimitOf(resource) + '!');
       STATracker.UpdateTracker()
       return;
     }
@@ -327,6 +327,25 @@ export class STATracker extends Application {
   }
 
   /**
+   * @private
+   */
+   static ConfigureTrackerSlideWithSidebar() {
+    $('.collapse').click((_) => {
+      console.log('collape clicked')
+      if ($('.tracker-container:not(.tracker-collapsed)')[0]) {
+        $('#tracker-clickable-minus').addClass('tracker-collapsed');
+        $('#tracker-clickable-plus').removeClass('tracker-collapsed');
+        $('.tracker-container').addClass('tracker-collapsed').removeAttr('style');
+      } else {
+        $('#tracker-clickable-plus').addClass('tracker-collapsed');
+        $('#tracker-clickable-minus').removeClass('tracker-collapsed');
+        $('.tracker-container').addClass('tracker-collapsed').removeAttr('style');
+        $('.tracker-container').removeClass('tracker-collapsed').width('180px')
+      }
+    });
+  }
+
+  /**
    * Process a message received on the tracker update socket.
    * 
    * @private
@@ -371,6 +390,7 @@ export class STATracker extends Application {
     STATracker.ConfigureTrackerButtonActions();
     STATracker.ConfigureTrackerInputActions();
     STATracker.ConfigureTrackerToggleAction();
+    STATracker.ConfigureTrackerSlideWithSidebar();
     STATracker.UpdateTracker();
   }
 }

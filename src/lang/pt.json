@@ -174,7 +174,7 @@
 
   "sta.notifications.momentuminvalidpermissions": "Você não tem permissão para alterar o Momentum!",
   "sta.notifications.momentummin": "Você não pode ajustar o Momentum para menos que 0!",
-  "sta.notifications.momentummax": "Você não pode ajustar o Momentum para mais que 6!",
+  "sta.notifications.momentummax": "Você não pode ajustar o Momentum para mais que ",
   "sta.notifications.threatinvalidpermissions": "Você não tem permissão para alterar a Ameaça!",
   "sta.notifications.threatmin": "Você não pode ajustar a Ameaça para menos que 0!",
   "sta.notifications.threatmax": "Há muita Ameaça na reserva!",

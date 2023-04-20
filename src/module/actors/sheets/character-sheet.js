@@ -31,11 +31,15 @@ export class STACharacterSheet extends ActorSheet {
   getData() {
     const sheetData = this.object;
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
+	
+	const overrideMinAttributeTags = ['[Minor]', '[Notable]', '[Major]', '[NPC]', '[Child]'];
+	const overrideMinAttribute = overrideMinAttributeTags.some((tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1);
+	const minAttribute = overrideMinAttribute ? 0 : 7;
 
     // Ensure attribute and discipline values aren't over the max/min.
     $.each(sheetData.system.attributes, (key, attribute) => {
       if (attribute.value > 12) attribute.value = 12; 
-      if (attribute.value < 7) attribute.value = 7; 
+      if (attribute.value < minAttribute) attribute.value = minAttribute;
     });
     $.each(sheetData.system.disciplines, (key, discipline) => {
       if (discipline.value > 5) discipline.value = 5;
