@@ -174,12 +174,12 @@
     "sta.tracker.threat": "Menace",
     "sta.tracker.momentum": "Impulsion",
 
-    "sta.notifications.momentumInvalidPermissions": "Vous n'êtes pas autorisé à changer les Impulsions !",
-    "sta.notifications.momentumNegative": "Vous ne pouvez pas définir d'Impulsion sur une valeur inférieure à 0 !",
-    "sta.notifications.momentumTooGreat": "Vous ne pouvez pas définir d'Impulsion sur une valeur supérieure à 6 !",
-    "sta.notifications.threatInvalidPermissions": "Vous n'êtes pas autorisé à changer Menace !",
-    "sta.notifications.threatNegative": "Vous ne pouvez pas définir Menace sur une valeur inférieure à 0 !",
-    "sta.notifications.threatTooGreat": "Il y a trop de Menace !",
+    "sta.notifications.momentuminvalidpermissions": "Vous n'êtes pas autorisé à changer les Impulsions !",
+    "sta.notifications.momentummin": "Vous ne pouvez pas définir d'Impulsion sur une valeur inférieure à 0 !",
+    "sta.notifications.momentummax": "Vous ne pouvez pas définir d'Impulsion sur une valeur supérieure à ",
+    "sta.notifications.threatinvalidpermissions": "Vous n'êtes pas autorisé à changer Menace !",
+    "sta.notifications.threatmin": "Vous ne pouvez pas définir Menace sur une valeur inférieure à 0 !",
+    "sta.notifications.threatmax": "Il y a trop de Menace !",
 
     "sta.dice.dsn.ufp.blue": "FPU Bleue",
     "sta.dice.dsn.ufp.gold": "FPU Or",

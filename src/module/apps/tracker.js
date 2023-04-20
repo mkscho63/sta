@@ -145,7 +145,7 @@ export class STATracker extends Application {
    * @returns {6|99999999}
    */
   static LimitOf(resource) {
-    return resource == STATracker.Resource.Momentum ? 6 : 99999999;
+    return resource == STATracker.Resource.Momentum ? game.settings.get('sta', 'maxNumberOfMomentum') : 99999999;
   }
 
   /**
@@ -202,14 +202,14 @@ export class STATracker extends Application {
    */
   static async DoUpdateResource(resource, value) {
     if (!STATracker.UserHasPermissionFor(resource)) {
-      ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}InvalidPermissions`));
+      ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}invalidpermissions`));
       return;
     } else if (value < 0) {
-      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}Negative`));
+      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}min`));
       STATracker.UpdateTracker()
       return;
     } else if (value > STATracker.LimitOf(resource)) {
-      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}TooGreat`));
+      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}max`) + STATracker.LimitOf(resource) + '!');
       STATracker.UpdateTracker()
       return;
     }
