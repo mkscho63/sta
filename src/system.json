@@ -2,7 +2,7 @@
 	"id": "sta",
 	"title": "Star Trek Adventures Roleplaying Game",
 	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
-	"version": "1.1.9",
+	"version": "1.1.10",
 	"compatibility": {
 		"verified": "10"
 	},
@@ -51,5 +51,5 @@
 	"secondaryTokenAttribute": "determination",
 	"url": "https://github.com/mkscho63/sta",
 	"manifest": "https://raw.githubusercontent.com/mkscho63/sta/master/src/system.json",
-	"download": "https://raw.githubusercontent.com/mkscho63/sta/v1.1.9/package/sta-v1.1.9.zip"
+	"download": "https://raw.githubusercontent.com/mkscho63/sta/v1.1.10/package/sta-v1.1.10.zip"
 }
