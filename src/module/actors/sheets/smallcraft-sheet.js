@@ -64,12 +64,6 @@ export class STASmallCraftSheet extends ActorSheet {
       sheetData.system.power.value = 0;
     }
 
-    // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
-    // Stopgap until a better solution can be found.
-    $.each(sheetData.items, (key, item) => {
-      if (!item.img) item.img = game.sta.defaultImage;
-    })
-
     return sheetData;
   }
 
