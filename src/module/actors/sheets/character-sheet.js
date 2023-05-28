@@ -264,7 +264,7 @@ export class STACharacterSheet extends ActorSheet {
       }
     });
 
-    // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
+    // Allows item-delete images to allow deletion of the selected item.
     html.find('.control .delete').click((ev) => {
       const li = $(ev.currentTarget).parents('.entry');
       this.activeDialog = staActor.deleteConfirmDialog(
