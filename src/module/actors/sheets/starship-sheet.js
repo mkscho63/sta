@@ -3,6 +3,13 @@ import {
 } from '../actor.js';
 
 export class STAStarshipSheet extends ActorSheet {
+
+  /**
+   * An actively open dialog that should be closed before a new one is opened.
+   * @type {Dialog}
+   */
+  activeDialog;
+
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
@@ -237,17 +244,24 @@ export class STAStarshipSheet extends ActorSheet {
       }
     });
 
-    // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
+    // Allows item-delete images to allow deletion of the selected item.
     html.find('.control .delete').click((ev) => {
+      // Cleaning up previous dialogs is nice, and also possibly avoids bugs from invalid popups.
+      if (this.activeDialog) this.activeDialog.close();
+
       const li = $(ev.currentTarget).parents('.entry');
-      const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
-      if ( r == true ) {
-        if ( isNewerVersion( versionInfo, '0.8.-1' )) {
-          this.actor.deleteEmbeddedDocuments( 'Item', [li.data('itemId')] ); 
-        } else {
-          this.actor.deleteOwnedItem( li.data( 'itemId' )); 
-        }
-      }
+      this.activeDialog = staActor.deleteConfirmDialog(
+        li[0].getAttribute('data-item-value'),
+        () => {
+          if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+            this.actor.deleteEmbeddedDocuments( 'Item', [li.data('itemId')] );
+          } else {
+            this.actor.deleteOwnedItem( li.data( 'itemId' ));
+          }
+        },
+        () => this.activeDialog = null
+      );
+      this.activeDialog.render(true);
     });
 
     // Reads if a shields track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one.

@@ -267,15 +267,18 @@ export class STACharacterSheet extends ActorSheet {
     // Allows item-delete images to allow deletion of the selected item. This uses Simple Worldbuilding System Code.
     html.find('.control .delete').click((ev) => {
       const li = $(ev.currentTarget).parents('.entry');
-      const r = confirm('Are you sure you want to delete ' + li[0].getAttribute('data-item-value') + '?');
-      if (r == true) {
-        if (isNewerVersion(versionInfo, '0.8.-1')) {
-          this.actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
-        } else {
-          this.actor.deleteOwnedItem(li.data('itemId'));
-        }
-        li.slideUp(200, () => this.render(false));
-      }
+      this.activeDialog = staActor.deleteConfirmDialog(
+        li[0].getAttribute('data-item-value'),
+        () => {
+          if ( isNewerVersion( versionInfo, '0.8.-1' )) {
+            this.actor.deleteEmbeddedDocuments( 'Item', [li.data('itemId')] );
+          } else {
+            this.actor.deleteOwnedItem( li.data( 'itemId' ));
+          }
+        },
+        () => this.activeDialog = null
+      );
+      this.activeDialog.render(true);
     });
 
     // Reads if a reputation track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one. 
