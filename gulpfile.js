@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('node-sass'));
 const eslint = require('gulp-eslint');
 const fs = require('fs-extra');
 const path = require('path');
