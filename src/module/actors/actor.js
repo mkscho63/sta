@@ -163,4 +163,35 @@ export class STASharedActorFunctions {
       break;
     }
   }
+
+  /**
+   * Create the "Are you sure?" delete dialog used for sheets' item delete behavior.
+   *
+   * @param {string} itemName - The item name to display.
+   * @param {function} yesCb - The callback to handle a "yes" click.
+   * @param {function} closeCb - The callback handling a "close" event.
+   *
+   * @return {Dialog}
+   */
+  deleteConfirmDialog(itemName, yesCb, closeCb) {
+
+    // Dialog uses Simple Worldbuilding System Code.
+    return new Dialog({
+      title: 'Confirm Item Deletion',
+      content: 'Are you sure you want to delete ' + itemName + '?',
+      buttons: {
+        yes: {
+          icon: '<i class="fas fa-check"></i>',
+          label: game.i18n.localize("Yes"),
+          callback: yesCb,
+        },
+        no: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize("No"),
+        }
+      },
+      default: 'no',
+      close: closeCb,
+    });
+  }
 }
