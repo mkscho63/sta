@@ -87,7 +87,7 @@ export class STARoll {
               <table class="aim">
                 <tr>
                   <td> ` + dicePool + `d20 </td>
-                  <td> Target:` + checkTarget + ` </td>
+                  <td>` + game.i18n.format('sta.roll.target') + `: ` + checkTarget + ` </td>
                   <td> ` + game.i18n.format('sta.roll.complicationrange') + complicationMinimumValue + `+ </td>
                 </tr>
               </table>

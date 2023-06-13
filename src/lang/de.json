@@ -150,6 +150,7 @@
   "sta.roll.successPlural": "Erfolge",
   "sta.roll.task.name": "Aufgabe",
   "sta.roll.challenge.name": "Herausforderung",
+  "sta.roll.target": "Target: ",
   "sta.roll.complicationrange": "Komplikationsspanne ist ",
   "sta.roll.complication": "Das ist eine Komplikation!",
   "sta.roll.complicationPlural": "Das sind |#| Komplikationen!",

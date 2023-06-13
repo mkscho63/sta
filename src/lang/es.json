@@ -159,6 +159,7 @@
   "sta.roll.successPlural": "Éxitos",
   "sta.roll.task.name": "Tarea",
   "sta.roll.challenge.name": "Desafío",
+  "sta.roll.target": "Target: ",
   "sta.roll.complicationrange": "El Margen de Complicación es ",
   "sta.roll.complication": "¡Sufres una Complicación!",
   "sta.roll.complicationPlural": "¡Sufres |#| Complicaciones!",

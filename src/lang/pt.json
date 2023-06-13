@@ -158,6 +158,7 @@
   "sta.roll.success": "Sucesso",
   "sta.roll.successPlural": "Sucessos",
   "sta.roll.task.name": "Tarefa",
+  "sta.roll.target": "Target: ",
   "sta.roll.complicationrange": "Margem de Complicação é ",
   "sta.roll.complication": "Houve uma Complicação!",
   "sta.roll.complicationPlural": "Tivemos |#| Complicações!",
