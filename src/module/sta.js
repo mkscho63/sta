@@ -217,7 +217,34 @@ Hooks.once('init', function() {
     default: 6,
     config: true
   });
+
+  game.settings.register('sta', 'characterAttributeLimitIgnore', {
+    name: 'Ignore normal Max/Min limits to Character/NPC Attributes:',
+    hint: 'At system creation characters and NPCs were limited to Attribute values between 7 and 12, this option removes that limit and sets the limit to between 0 and 99.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
     
+  game.settings.register('sta', 'characterDisciplineLimitIgnore', {
+    name: 'Ignore normal Max/Min limits to Character/NPC Disciplines:',
+    hint: 'At system creation characters and NPCs were limited to Discipline values between 0 and 5, this option removes that limit and sets the limit to between 0 and 99.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+  
+  game.settings.register('sta', 'shipDepartmentLimitIgnore', {
+    name: 'Ignore normal Max/Min limits to Starship/Small Craft Departments:',
+    hint: 'At system creation Starships and Small Craft were limited to Department values between 0 and 5, this option removes that limit and sets the limit to between 0 and 99.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
   game.settings.register('sta', 'threat', {
     scope: 'world',
     type: Number,

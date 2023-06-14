@@ -32,18 +32,32 @@ export class STACharacterSheet extends ActorSheet {
     const sheetData = this.object;
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
 	
-	const overrideMinAttributeTags = ['[Minor]', '[Notable]', '[Major]', '[NPC]', '[Child]'];
-	const overrideMinAttribute = overrideMinAttributeTags.some((tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1);
-	const minAttribute = overrideMinAttribute ? 0 : 7;
+    // Temporary fix I'm leaving in place until I deprecate in a future version
+    const overrideMinAttributeTags = ['[Minor]', '[Notable]', '[Major]', '[NPC]', '[Child]'];
+    const overrideMinAttribute = overrideMinAttributeTags.some((tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1);
+    
 
     // Ensure attribute and discipline values aren't over the max/min.
+    let minAttribute = overrideMinAttribute ? 0 : 7;
+    let maxAttribute = 12;
+    const overrideAttributeLimitSetting = game.settings.get('sta', 'characterAttributeLimitIgnore');
+    if (overrideAttributeLimitSetting) {
+      minAttribute = 0;
+      maxAttribute = 99;
+    }
     $.each(sheetData.system.attributes, (key, attribute) => {
-      if (attribute.value > 12) attribute.value = 12; 
+      if (attribute.value > maxAttribute) attribute.value = maxAttribute; 
       if (attribute.value < minAttribute) attribute.value = minAttribute;
     });
+    let minDiscipline = 0;
+    let maxDiscipline = 5;
+    const overrideDisciplineLimitSetting = game.settings.get('sta', 'characterDisciplineLimitIgnore');
+    if (overrideDisciplineLimitSetting) {
+      maxDiscipline = 99;
+    }
     $.each(sheetData.system.disciplines, (key, discipline) => {
-      if (discipline.value > 5) discipline.value = 5;
-      if (discipline.value < 0) discipline.value = 0;
+      if (discipline.value > maxDiscipline) discipline.value = maxDiscipline;
+      if (discipline.value < minDiscipline) discipline.value = minDiscipline;
     });
 
     // Check stress max/min
