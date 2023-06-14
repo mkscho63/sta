@@ -206,7 +206,7 @@
         </div>
         {{#each items as |item type id|}}
         {{#if (eq item.type "starshipweapon")}}
-        <li class="row entry" id="smallcraft-weapon-{{@index}}" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.system.damage}}">
+        <li class="row entry" id="smallcraft-weapon-{{@index}}" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.system.damage}}" data-item-includescale="{{item.system.includescale}}">
           <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
           <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
           <h4 class="two-column-with-roll-secondary list-entry damage">{{item.system.damage}}</h4>
