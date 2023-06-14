@@ -43,6 +43,7 @@
   "sta.actor.milestone.edit": "Edit Milestone",
   "sta.actor.injury.title": "Injuries",
   "sta.actor.belonging.title": "Belongings",
+  "sta.actor.belonging.weapon.includescale": "Include Scale?",
   "sta.actor.belonging.weapon.title": "Weapons",
   "sta.actor.belonging.weapon.dmg": "Dmg",
   "sta.actor.belonging.weapon.damage": "Damage",

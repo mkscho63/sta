@@ -385,7 +385,9 @@ export class STASmallCraftSheet extends ActorSheet {
     $(html).find('[id^=smallcraft-weapon-]').each(function(_, value) {
       const weaponDamage = parseInt(value.dataset.itemDamage);
       const securityValue = parseInt(html.find('#security')[0].value);
-      const attackDamageValue = weaponDamage + securityValue;
+      let scaleDamage = 0;
+      if (value.dataset.itemIncludescale == "true") scaleDamage = parseInt(html.find('#scale')[0].value);
+      const attackDamageValue = weaponDamage + securityValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }
