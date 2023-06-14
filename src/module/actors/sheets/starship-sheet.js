@@ -41,8 +41,11 @@ export class STAStarshipSheet extends ActorSheet {
     sheetData.dtypes = ['String', 'Number', 'Boolean'];
 
     // Ensure department values don't weigh over the max.
-        $.each(sheetData.system.departments, (key, department) => {
-      if (department.value > 5) department.value = 5; 
+    const overrideDepartmentLimitSetting = game.settings.get('sta', 'shipDepartmentLimitIgnore');
+    let maxDepartment = 5;
+    if (overrideDepartmentLimitSetting) maxDepartment = 99;
+    $.each(sheetData.system.departments, (key, department) => {
+      if (department.value > maxDepartment) department.value = maxDepartment; 
     });
 
     // Checks if shields is larger than its max, if so, set to max. 
