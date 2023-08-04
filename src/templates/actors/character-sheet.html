@@ -118,7 +118,6 @@
               <div class="bar">
                 <div id="bar-determination-renderer" class="bar"></div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -137,7 +136,7 @@
             <div class="stat row">
               <input class="field numeric-entry" id="{{key}}" name="system.disciplines.{{key}}.value" type="text" value="{{value}}" placeholder="Name" />
               <div class="text list-entry"> {{localize label}} </div>
-              <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="system.disciplines.{{key}}.selected" data-dtype="Boolean" {{checked discipline.selected}}>
+              <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="system.disciplines.{{key}}.selected" data-dtype="Boolean" {{checked selected}}>
             </div>
             {{/with}}
             {{/each}}
