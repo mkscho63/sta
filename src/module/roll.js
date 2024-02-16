@@ -229,7 +229,10 @@ export class STARoll {
     } else if ( speaker.system.departments ) {
       actorSecurity = parseInt( speaker.system.departments.security.value );
     }
-    const calculatedDamage = item.system.damage + actorSecurity;
+    let calculatedDamage = item.system.damage + actorSecurity;
+    if (item.system.includescale) { 
+      calculatedDamage += speaker.system.scale;
+    }
     // Create variable div and populate it with localisation to use in the HTML.
     let variablePrompt = game.i18n.format('sta.roll.weapon.damagePlural');
     if ( calculatedDamage == 1 ) {
