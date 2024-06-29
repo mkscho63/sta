@@ -2,7 +2,7 @@ import {
   STARoll
 } from './roll.js';
 
-export function attributeTest(actor, usingFocus, usingDetermination,
+export function attributeTest(actor, usingFocus, usingDedicatedFocus, usingDetermination,
   selectedAttribute, selectedDiscipline, complicationRange, numberOfDice) {
   let fail = false;  
   if (actor === undefined) {
@@ -33,6 +33,9 @@ export function attributeTest(actor, usingFocus, usingDetermination,
   if (usingFocus === undefined) {
     usingFocus = false;
   }
+  if (usingDedicatedFocus === undefined) {
+    usingDedicatedFocus = false;
+  }  
   if (usingDetermination === undefined) {
     usingDetermination = false;
   }
@@ -41,7 +44,7 @@ export function attributeTest(actor, usingFocus, usingDetermination,
   const discValue = 
     parseInt(actor.data.disciplines[selectedDiscipline].value);
   const staRoll = new STARoll();
-  staRoll.performAttributeTest(numberOfDice, usingFocus, usingDetermination,
+  staRoll.performAttributeTest(numberOfDice, usingFocus, usingDedicatedFocus, usingDetermination,
     selectedAttribute, attrValue, selectedDiscipline,
     discValue, complicationRange, actor);
 }

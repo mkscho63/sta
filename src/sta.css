@@ -293,26 +293,38 @@
             border-collapse: collapse;
             padding: 0px;
             display: block; }
+          .sta.sheet.actor .main .row .column .section.reservepower .checkbox,
+          .sta.sheet.actor .main .row .column .section.shaken .checkbox,
           .sta.sheet.actor .main .row .column .section .stat.row .selector:hover {
             box-shadow: none;
             cursor: pointer; }
+          .sta.sheet.actor .main .row .column .check-button,
           .sta.sheet.actor .main .row .column .section .check-button {
             width: 75%;
             height: 30px;
             line-height: 30px;
             margin: 5px 12.5%;
             font-size: 14pt; }
+        .sta.sheet.actor .main .row .column .section.reservepower,
+        .sta.sheet.actor .main .row .column .section.shaken,
         .sta.sheet.actor .main .row .column .section.scale,
+        .sta.sheet.actor .main .row .column .section.scale2e,
         .sta.sheet.actor .main .row .column .section.resistance {
           display: flex;
           background-color: #9944FF;
           height: 41px; }
+        .sta.sheet.actor .main .row .column .section.reservepower .title,
+        .sta.sheet.actor .main .row .column .section.shaken .title,
           .sta.sheet.actor .main .row .column .section.scale .title,
+          .sta.sheet.actor .main .row .column .section.scale2e .title,
           .sta.sheet.actor .main .row .column .section.resistance .title {
             background-color: #0F0F0F;
             width: 75%;
             margin-top: 5px; }
+        .sta.sheet.actor .main .row .column .section.reservepower .checkbox,
+        .sta.sheet.actor .main .row .column .section.shaken .checkbox, 
           .sta.sheet.actor .main .row .column .section.scale .field.numeric-entry,
+          .sta.sheet.actor .main .row .column .section.scale2e .field.numeric-entry,
           .sta.sheet.actor .main .row .column .section.resistance .field.numeric-entry {
             width: 15%;
             height: 30px;
@@ -320,10 +332,13 @@
             border-radius: 0px;
             margin-top: 5px;
             background-color: #0F0F0F; }
+        .sta.sheet.actor .main .row .column .section.reservepower .title,
+        .sta.sheet.actor .main .row .column .section.shaken .title,
         .sta.sheet.actor .main .row .column .section.scale .title {
           border-top-left-radius: 10px;
           border-bottom-left-radius: 10px;
           margin-left: 10%; }
+        .sta.sheet.actor .main .row .column .section.scale2e .field.numeric-entry,
         .sta.sheet.actor .main .row .column .section.resistance .field.numeric-entry {
           border-top-right-radius: 10px;
           border-bottom-right-radius: 10px;
@@ -333,6 +348,12 @@
   .sta.sheet.actor .column.center-column {
     border-right: 2px solid #0F0F0F;
     border-left: 2px solid #0F0F0F; }
+  .sta.sheet.actor .column.center-column .column-x2 {
+      width: 40%;
+	  display: flex;
+      text-align: left; }
+  .sta.sheet.actor .column.center-column .label {
+	  line-height: 26px; }
   .sta.sheet.actor .column.right-column {
     border-left: 2px solid #0F0F0F; }
   .sta.sheet.actor .main .row .column {
@@ -502,22 +523,40 @@
     .sta.sheet.item .description .editor,
     .sta.sheet.item .note .editor {
       height: 90%; }
-  .sta.sheet.item.characterweapon .header-fields .row, .sta.sheet.item.starshipweapon .header-fields .row {
+  .sta.sheet.item.characterweapon .header-fields .row,
+  .sta.sheet.item.starshipweapon .header-fields .row,
+  .sta.sheet.item.characterweapon2e .header-fields .row,
+  .sta.sheet.item.starshipweapon2e .header-fields .row {
     font-size: 14px; }
-    .sta.sheet.item.characterweapon .header-fields .row .column-x4, .sta.sheet.item.starshipweapon .header-fields .row .column-x4 {
+    .sta.sheet.item.characterweapon .header-fields .row .column-x4,
+	.sta.sheet.item.starshipweapon .header-fields .row .column-x4,
+	.sta.sheet.item.characterweapon2e .header-fields .row .column-x4,
+	.sta.sheet.item.starshipweapon2e .header-fields .row .column-x4 {
       width: 25%;
       display: flex;
       text-align: left; }
-      .sta.sheet.item.characterweapon .header-fields .row .column-x4 .label, .sta.sheet.item.starshipweapon .header-fields .row .column-x4 .label {
+      .sta.sheet.item.characterweapon .header-fields .row .column-x4 .label,
+	  .sta.sheet.item.starshipweapon .header-fields .row .column-x4 .label,
+	  .sta.sheet.item.characterweapon2e .header-fields .row .column-x4 .label,
+	  .sta.sheet.item.starshipweapon2e .header-fields .row .column-x4 .label {
         line-height: 26px; }
-    .sta.sheet.item.characterweapon .header-fields .row .label-top, .sta.sheet.item.starshipweapon .header-fields .row .label-top {
+    .sta.sheet.item.characterweapon .header-fields .row .label-top,
+	.sta.sheet.item.starshipweapon .header-fields .row .label-top,
+	.sta.sheet.item.characterweapon2e .header-fields .row .label-top,
+	.sta.sheet.item.starshipweapon2e .header-fields .row .label-top {
       width: 25%;
       flex-direction: column;
       text-align: center; }
-      .sta.sheet.item.characterweapon .header-fields .row .label-top input, .sta.sheet.item.starshipweapon .header-fields .row .label-top input {
+      .sta.sheet.item.characterweapon .header-fields .row .label-top input,
+	  .sta.sheet.item.starshipweapon .header-fields .row .label-top input,
+	  .sta.sheet.item.characterweapon2e .header-fields .row .label-top input,
+	  .sta.sheet.item.starshipweapon2e .header-fields .row .label-top input {
         margin-left: auto;
         margin-right: auto; }
-  .sta.sheet.item.characterweapon .description, .sta.sheet.item.starshipweapon .description {
+  .sta.sheet.item.characterweapon .description,
+  .sta.sheet.item.starshipweapon .description,
+  .sta.sheet.item.characterweapon2e .description,
+  .sta.sheet.item.starshipweapon2e .description {
     height: calc(100% - 128px); }
 
 /*#endregion*/
@@ -680,13 +719,13 @@
   position: absolute;
   bottom: 10px;
   right: 354px;
-  width: 200px;
+  width: 180px;
   height: 205px;
-  -webkit-transition: width 0.5s linear;
-  -moz-transition: width 0.5s linear;
-  -ms-transition: width 0.5s linear;
-  -o-transition: width 0.5s linear;
-  transition: width 0.5s linear; }
+  -webkit-transition: bottom 0.5s linear;
+  -moz-transition: bottom 0.5s linear;
+  -ms-transition: bottom 0.5s linear;
+  -o-transition: bottom 0.5s linear;
+  transition: bottom 0.5s linear; }
   .sta.tracker-container .tracker-clickable {
     position: absolute;
     bottom: 195px;
@@ -699,12 +738,19 @@
       width: 0px;
       display: none; }
   .sta.tracker-container.hide {
-    width: 15px;
-    -webkit-transition: width 0.5s linear;
-    -moz-transition: width 0.5s linear;
-    -ms-transition: width 0.5s linear;
-    -o-transition: width 0.5s linear;
-    transition: width 0.5s linear; }
+    bottom: -190px;
+    -webkit-transition: bottom 0.5s linear;
+    -moz-transition: bottom 0.5s linear;
+    -ms-transition: bottom 0.5s linear;
+    -o-transition: bottom 0.5s linear;
+    transition: bottom 0.5s linear; }
+  .sta.tracker-container.tracker-collapsed {
+    right: 0px;
+    -webkit-transition: right 0.5s linear;
+    -moz-transition: right 0.5s linear;
+    -ms-transition: right 0.5s linear;
+    -o-transition: right 0.5s linear;
+    transition: right 0.5s linear; }
   .sta.tracker-container .tracker {
     position: absolute;
     display: block;
@@ -728,6 +774,7 @@
       color: #33CCCC;
       background-color: #0F0F0F;
       border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
       width: 185px;
       height: 35px;
       margin-left: 15px;
@@ -737,6 +784,7 @@
       font-size: 1.5em;
       background-color: #0F0F0F;
       border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
       width: 185px;
       height: 35px;
       margin-left: 15px;
@@ -758,16 +806,12 @@
         border: none;
         width: 100%; }
 
-#ui-right ~ .sta.tracker-container.collapsed {
-  right: 0px; }
-
 /*#endregion*/
 /* Sidebar */
 /*#region*/
 #sidebar:not(.collapsed) {
-  background: none;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50px, #0F0F0F 50px, #0F0F0F), linear-gradient(to bottom, #FF9966, #FF9966 14%, #0F0F0F 14%, #0F0F0F calc(14% + 5px), #33CCCC calc(14% + 5px), #33CCCC 39%, #0F0F0F 39%, #0F0F0F calc(39% + 5px), #FF9966 calc(39% + 5px), #FF9966 59%, #0F0F0F calc(59%), #0F0F0F calc(59% + 5px), #FF7700 calc(59% + 5px), #FF7700 80%, #0F0F0F calc(80%), #0F0F0F calc(80% + 5px), #FF9966 calc(80% + 5px));
   border: none;
-  background-color: #FF9966;
   width: 350px;
   border-top-left-radius: 35px;
   border-bottom-left-radius: 0; }
@@ -819,7 +863,7 @@
   border-top: 5px solid #0F0F0F;
   width: 300px;
   margin-left: 50px; }
-  #sidebar .sidebar-tab .directory-header .create-entity,
+  #sidebar .sidebar-tab .directory-header .create-document,
   #sidebar .sidebar-tab .directory-header .create-folder {
     font-weight: bold;
     background-color: #FFCC33;
@@ -827,31 +871,9 @@
     border: none;
     border-radius: 20px;
     cursor: pointer; }
-    #sidebar .sidebar-tab .directory-header .create-entity:hover,
+    #sidebar .sidebar-tab .directory-header .create-document:hover,
     #sidebar .sidebar-tab .directory-header .create-folder:hover {
       box-shadow: none;
       background-color: #FFEEAA; }
-
-#sidebar::before {
-  content: "";
-  position: absolute;
-  bottom: 60%;
-  right: 305px;
-  height: 25%;
-  width: 50px;
-  background-color: #33CCCC;
-  border-top: 5px solid #0F0F0F;
-  border-bottom: 5px solid #0F0F0F; }
-
-#sidebar::after {
-  content: "";
-  position: absolute;
-  bottom: 20%;
-  right: 305px;
-  height: 20%;
-  width: 50px;
-  background-color: #FF7700;
-  border-top: 5px solid #0F0F0F;
-  border-bottom: 5px solid #0F0F0F; }
 
 /*#endregion*/

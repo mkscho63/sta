@@ -180,5 +180,16 @@
   "sta.notifications.momentummax": "No puedes poner la Inercia con un valor superior a ",
   "sta.notifications.threatinvalidpermissions": "¡No tienes permiso para modificar la Amenaza!",
   "sta.notifications.threatmin": "¡No puedes poner la Amenaza por debajo de 0!",
-  "sta.notifications.threatmax": "¡Hay demasiada Amenaza!"
+  "sta.notifications.threatmax": "¡Hay demasiada Amenaza!",
+  
+  "sta.actor.starship.shaken": "Shaken",
+  "sta.actor.starship.reservepower": "Reserve Power",
+  "sta.actor.starship.shaken": "Shaken",
+  "sta.actor.belonging.weapon.energy": "Energy",
+  "sta.actor.belonging.weapon.torpedo": "Torpedo",
+  "sta.item.genericitem.handed": "Handed",
+  "sta.apps.dedicatedfocus": "Using Dedicated Focus?",
+  "sta.actor.belonging.weapon.stun": "Stun",
+  "sta.item.genericitem.severity": "Severity",
+  "sta.roll.weapon.damage2e": "<b>|#|</b> Damage"
 }
