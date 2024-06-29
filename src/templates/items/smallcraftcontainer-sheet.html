@@ -13,11 +13,10 @@
           <div class="column-x1" >
               <label class="label">{{localize 'sta.actor.smallcraft.child'}}</label>
               <select name="system.child">
-                {{#select system.child}}
+                <option value="{{system.child}}">{{item.name}}</option>
                 {{#each availableSmallcrafts as |availableSmallcraft|}}
-                <option value="{{availableSmallcraft.id}}">{{availableSmallcraft.system.name}}</option>
+                <option value="{{availableSmallcraft.id}}">{{availableSmallcraft.name}}</option>
                 {{/each}}
-                {{/select}}
               </select>
           </div>
       </div>

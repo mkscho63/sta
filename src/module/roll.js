@@ -1,5 +1,5 @@
 export class STARoll {
-  async performAttributeTest(dicePool, usingFocus, usingDetermination,
+  async performAttributeTest(dicePool, usingFocus, usingDedicatedFocus, usingDetermination,
     selectedAttribute, selectedAttributeValue, selectedDiscipline,
     selectedDisciplineValue, complicationRange, speaker) {
     // Define some variables that we will be using later.
@@ -12,15 +12,19 @@ export class STARoll {
     const checkTarget = 
       parseInt(selectedAttributeValue) + parseInt(selectedDisciplineValue);
     const complicationMinimumValue = 20 - (complicationRange - 1);
-
+    const doubledetermination = parseInt(selectedDisciplineValue) + parseInt(selectedDisciplineValue)
+	
     // Foundry will soon make rolling async only, setting it up as such now avoids a warning. 
-    const r = await new Roll( dicePool + 'd20' ).evaluate( {async: true});
+    const r = await new Roll( dicePool + 'd20' ).evaluate( {});
     
     // Now for each dice in the dice pool we want to check what the individual result was.
     for (i = 0; i < dicePool; i++) {
       result = r.terms[0].results[i].result;
       // If the result is less than or equal to the focus, that counts as 2 successes and we want to show the dice as green.
       if ((usingFocus && result <= selectedDisciplineValue) || result == 1) {
+        diceString += '<li class="roll die d20 max">' + result + '</li>';
+        success += 2;
+      } else if ((usingDedicatedFocus && result <= doubledetermination) || result == 1) {
         diceString += '<li class="roll die d20 max">' + result + '</li>';
         success += 2;
         // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
@@ -125,7 +129,7 @@ export class STARoll {
   
   async performChallengeRoll(dicePool, challengeName, speaker) {
     // Foundry will soon make rolling async only, setting it up as such now avoids a warning. 
-    const rolledChallenge = await new Roll( dicePool + 'd6' ).evaluate( {async: true});
+    const rolledChallenge = await new Roll( dicePool + 'd6' ).evaluate( {});
 
     const flavor = challengeName + ' ' + game.i18n.format('sta.roll.challenge.name');
     const successes = getSuccessesChallengeRoll( rolledChallenge );
@@ -229,14 +233,16 @@ export class STARoll {
     } else if ( speaker.system.departments ) {
       actorSecurity = parseInt( speaker.system.departments.security.value );
     }
-    const calculatedDamage = item.system.damage + actorSecurity;
+    let scaleDamage = 0;
+    if ( item.system.includescale && speaker.system.scale ) scaleDamage = parseInt( speaker.system.scale );
+    const calculatedDamage = item.system.damage + actorSecurity + scaleDamage;
     // Create variable div and populate it with localisation to use in the HTML.
     let variablePrompt = game.i18n.format('sta.roll.weapon.damagePlural');
     if ( calculatedDamage == 1 ) {
       variablePrompt = game.i18n.format('sta.roll.weapon.damage');
     }
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', calculatedDamage)+`</div>`;
-    
+
     // Create dynamic tags div and populate it with localisation to use in the HTML.
     let tags = '';
     
@@ -258,7 +264,7 @@ export class STARoll {
     if (item.system.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx') + ' ' + item.system.qualities.piercingx +'</div>';
     if (item.system.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.viciousx') + ' ' + item.system.qualities.viciousx +'</div>';
 
-    const damageRoll = await new Roll( calculatedDamage + 'd6' ).evaluate( {async: true});
+    const damageRoll = await new Roll( calculatedDamage + 'd6' ).evaluate( {});
     const successes = getSuccessesChallengeRoll( damageRoll );
     const effects = getEffectsFromChallengeRoll( damageRoll );
     const diceString = getDiceImageListFromChallengeRoll( damageRoll );
@@ -321,6 +327,70 @@ export class STARoll {
     //   this.genericItemTemplate(item.img, item.name, item.system.description, variable, tags)
     //     .then((html)=>this.sendToChat(speaker, html, damageRoll, item.name, 'sounds/dice.wav'));
     // }
+  }
+
+  async performWeaponRoll2e(item, speaker) {
+    // Create variable div and populate it with localisation to use in the HTML.
+    const variablePrompt = game.i18n.format('sta.roll.weapon.damage2e');
+    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.damage)+`</div>`;
+	
+	let weaponrange = game.i18n.format('sta.actor.belonging.weapon.melee');
+	if (item.system.range == 'ranged') weaponrange = game.i18n.format('sta.actor.belonging.weapon.ranged');
+	
+	let tags = '';
+    if (item.system.range) tags += '<div class=\'tag\'> ' + weaponrange + '</div>';
+    if (item.system.hands > 0) tags += '<div class=\'tag\'> ' + item.system.hands + ' ' +game.i18n.format('sta.item.genericitem.handed') +'</div>';
+    if (item.system.severity > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.item.genericitem.severity') + ' ' + item.system.severity +'</div>';
+    if (item.system.qualities.stun) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.stun')+'</div>';    	
+	if (item.system.qualities.deadly) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.deadly')+'</div>';
+    if (item.system.qualities.accurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.accurate')+'</div>';
+    if (item.system.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.area')+'</div>';
+    if (item.system.qualities.charge) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.charge')+'</div>';
+    if (item.system.qualities.cumbersome) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.cumbersome')+'</div>';
+    if (item.system.qualities.debilitating) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.debilitating')+'</div>'
+    if (item.system.qualities.grenade) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.grenade')+'</div>';
+    if (item.system.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.system.qualities.hiddenx +'</div>';	
+    if (item.system.qualities.inaccurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.inaccurate')+'</div>';	
+    if (item.system.qualities.intense) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.intense')+'</div>';
+    if (item.system.qualities.piercingx) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx')+'</div>';
+
+    // Send the divs to populate a HTML template and sends to chat.
+    this.genericItemTemplate(
+	item.img, 
+	item.name, 
+	item.system.description, 
+	variable, 
+	tags, 
+	)
+      .then((html)=>this.sendToChat(speaker, html));
+  }
+
+  async performStarshipWeaponRoll2e(item, speaker) {
+    // Create variable div and populate it with localisation to use in the HTML.
+    const variablePrompt = game.i18n.format('sta.roll.weapon.damage2e');
+    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.damage)+`</div>`;
+	
+	let weaponrange = game.i18n.format('sta.actor.belonging.weapon.close');
+	if (item.system.range == 'medium') weaponrange = game.i18n.format('sta.actor.belonging.weapon.medium');
+	if (item.system.range == 'long') weaponrange = game.i18n.format('sta.actor.belonging.weapon.long');
+	
+	let tags = '';
+    if (item.system.range) tags += '<div class=\'tag\'> ' + weaponrange + '</div>';
+    if (item.system.hands > 0) tags += '<div class=\'tag\'> ' + item.system.hands + ' ' +game.i18n.format('sta.item.genericitem.handed') +'</div>';
+    if (item.system.qualities.energy) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.energy')+'</div>';    	
+	if (item.system.qualities.torpedo) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.torpedo')+'</div>';
+    if (item.system.qualities.highyield) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.highyield')+'</div>';
+    if (item.system.qualities.versatilex) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.versatilex')+'</div>';
+
+    // Send the divs to populate a HTML template and sends to chat.
+    this.genericItemTemplate(
+	item.img, 
+	item.name, 
+	item.system.description, 
+	variable, 
+	tags, 
+	)
+      .then((html)=>this.sendToChat(speaker, html));
   }
 
   async performArmorRoll(item, speaker) {

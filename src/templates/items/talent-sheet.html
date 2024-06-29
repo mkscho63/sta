@@ -9,12 +9,10 @@
       <div class="column-x1">
         <label class="label">{{localize 'sta.item.talent.type.title'}}</label>
         <select name="system.talenttype.typeenum">
-          {{#select system.talenttype.typeenum}}
-          <option value="general">{{localize 'sta.item.talent.type.general'}}</option>
-          <option value="discipline">{{localize 'sta.item.talent.type.discipline'}}</option>
-          <option value="species">{{localize 'sta.actor.character.species'}}</option>
-          <option value="house">{{localize 'sta.item.talent.houselegacy'}}</option>
-          {{/select}}
+          <option value="general" {{#if (eq system.talenttype.typeenum "general")}}selected{{/if}}>{{localize 'sta.item.talent.type.general'}}</option>
+          <option value="discipline" {{#if (eq system.talenttype.typeenum "discipline")}}selected{{/if}}>{{localize 'sta.item.talent.type.discipline'}}</option>
+          <option value="species" {{#if (eq system.talenttype.typeenum "species")}}selected{{/if}}>{{localize 'sta.actor.character.species'}}</option>
+          <option value="house" {{#if (eq system.talenttype.typeenum "house")}}selected{{/if}}>{{localize 'sta.item.talent.houselegacy'}}</option>
         </select>
       </div>
     </div>
@@ -24,14 +22,12 @@
       <div class="column-x3">
         <label class="label">{{localize 'sta.item.talent.requires'}}</label>
         <select name="system.talenttype.description">
-          {{#select system.talenttype.description}}
-          <option value="command">{{localize 'sta.actor.character.discipline.command'}}</option>
-          <option value="conn">{{localize 'sta.actor.character.discipline.conn'}}</option>
-          <option value="engineering">{{localize 'sta.actor.character.discipline.engineering'}}</option>
-          <option value="medicine">{{localize 'sta.actor.character.discipline.medicine'}}</option>
-          <option value="science">{{localize 'sta.actor.character.discipline.science'}}</option>
-          <option value="security">{{localize 'sta.actor.character.discipline.security'}}</option>
-          {{/select}}
+          <option value="command" {{#if (eq system.talenttype.description "command")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.command'}}</option>
+          <option value="conn" {{#if (eq system.talenttype.description "conn")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.conn'}}</option>
+          <option value="engineering" {{#if (eq system.talenttype.description "engineering")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.engineering'}}</option>
+          <option value="medicine" {{#if (eq system.talenttype.description "medicine")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.medicine'}}</option>
+          <option value="science" {{#if (eq system.talenttype.description "science")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.science'}}</option>
+          <option value="security" {{#if (eq system.talenttype.description "security")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.security'}}</option>
         </select>
       </div>
       <div class="column-x2">
@@ -55,14 +51,12 @@
       <div class="column-x3">
         <label class="label">{{localize 'sta.item.talent.requires'}} {{localize 'sta.item.talent.houserequired'}} </label>
         <select name="system.talenttype.description">
-          {{#select system.talenttype.description}}
-          <option value="leaders">{{localize 'sta.item.house.legacy.leaders'}}</option>
-          <option value="warriors">{{localize 'sta.item.house.legacy.warriors'}}</option>
-          <option value="spacefarers">{{localize 'sta.item.house.legacy.spacefarers'}}</option>
-          <option value="engineers">{{localize 'sta.item.house.legacy.engineers'}}</option>
-          <option value="scientists">{{localize 'sta.item.house.legacy.scientists'}}</option>
-          <option value="physicians">{{localize 'sta.item.house.legacy.physicians'}}</option>
-          {{/select}}
+          <option value="leaders" {{#if (eq system.talenttype.description "leaders")}}selected{{/if}}>{{localize 'sta.item.house.legacy.leaders'}}</option>
+          <option value="warriors" {{#if (eq system.talenttype.description "warriors")}}selected{{/if}}>{{localize 'sta.item.house.legacy.warriors'}}</option>
+          <option value="spacefarers" {{#if (eq system.talenttype.description "spacefarers")}}selected{{/if}}>{{localize 'sta.item.house.legacy.spacefarers'}}</option>
+          <option value="engineers" {{#if (eq system.talenttype.description "engineers")}}selected{{/if}}>{{localize 'sta.item.house.legacy.engineers'}}</option>
+          <option value="scientists" {{#if (eq system.talenttype.description "scientists")}}selected{{/if}}>{{localize 'sta.item.house.legacy.scientists'}}</option>
+          <option value="physicians" {{#if (eq system.talenttype.description "physicians")}}selected{{/if}}>{{localize 'sta.item.house.legacy.physicians'}}</option>
         </select>
       </div>
       <div class="column-x1"></div>

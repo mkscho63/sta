@@ -1,7 +1,7 @@
 export class STATalentSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['sta', 'sheet', 'item', 'talent'],
       width: 550,
       height: 300,
