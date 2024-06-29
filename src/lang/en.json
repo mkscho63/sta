@@ -187,5 +187,16 @@
   "sta.dice.dsn.ufp.gold": "UFP Gold",
   "sta.dice.dsn.ufp.red": "UFP Red",
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Black)",
-  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (White)"
+  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (White)",
+
+  "sta.actor.starship.shaken": "Shaken",
+  "sta.actor.starship.reservepower": "Reserve Power",
+  "sta.actor.starship.shaken": "Shaken",
+  "sta.actor.belonging.weapon.energy": "Energy",
+  "sta.actor.belonging.weapon.torpedo": "Torpedo",
+  "sta.item.genericitem.handed": "Handed",
+  "sta.apps.dedicatedfocus": "Using Dedicated Focus?",
+  "sta.actor.belonging.weapon.stun": "Stun",
+  "sta.item.genericitem.severity": "Severity",
+  "sta.roll.weapon.damage2e": "<b>|#|</b> Damage"
 }
