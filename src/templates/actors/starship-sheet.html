@@ -280,7 +280,8 @@
                         {{#each items as |item id|}}
                         {{#if (eq item.type "injury")}}
                         <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                            <h4 class="one-column-no-roll list-entry">{{item.name}}</h4>
+                            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                            <h4 class="one-column-with-roll list-entry">{{item.name}}</h4>
                             <div class="control">
                                 <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
