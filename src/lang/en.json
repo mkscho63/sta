@@ -189,6 +189,8 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Black)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (White)",
 
+  "sta.actor.character.stressmod": "Stress Modifier",
+  "sta.actor.starship.shieldmod": "Shield Modifier",
   "sta.actor.starship.shaken": "Shaken",
   "sta.actor.starship.reservepower": "Reserve Power",
   "sta.actor.starship.shaken": "Shaken",

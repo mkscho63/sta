@@ -182,6 +182,8 @@
   "sta.notifications.threatmin": "¡No puedes poner la Amenaza por debajo de 0!",
   "sta.notifications.threatmax": "¡Hay demasiada Amenaza!",
   
+  "sta.actor.character.stressmod": "Stress Modifier",
+  "sta.actor.starship.shieldmod": "Shield Modifier",
   "sta.actor.starship.shaken": "Shaken",
   "sta.actor.starship.reservepower": "Reserve Power",
   "sta.actor.starship.shaken": "Shaken",

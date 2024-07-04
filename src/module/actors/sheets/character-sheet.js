@@ -145,6 +145,7 @@ export class STACharacterSheet extends ActorSheet {
       if (html.find('[data-talent-name="Resolute"]').length > 0) {
         stressTrackMax += 3;
       }
+	  stressTrackMax += parseInt(html.find('#strmod')[0].value)
       // This checks that the max-stress hidden field is equal to the calculated Max Stress value, if not it makes it so.
       if (html.find('#max-stress')[0].value != stressTrackMax) {
         html.find('#max-stress')[0].value = stressTrackMax;

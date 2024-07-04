@@ -106,7 +106,7 @@ export class STAStarshipSheet extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-      shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value);
+      shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#shieldmod')[0].value);
       if (html.find('[data-talent-name="Advanced Shields"]').length > 0) {
         shieldsTrackMax += 5;
       }
