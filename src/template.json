@@ -85,6 +85,7 @@
             "stress": {
                 "value": 0
             },
+			"strmod": 0,
             "upbringing": ""
         },
         "starship": {
@@ -135,6 +136,7 @@
             "shields": {
                 "value": 0
             },
+			"shieldmod": 0,
 			"reservepower": true,
 			"shaken": false,
             "servicedate": "",
@@ -233,6 +235,7 @@
             "shields": {
                 "value": 0
             },
+			"shieldmod": 0,
             "spaceframe": "",
             "systems": {
                 "communications": {
