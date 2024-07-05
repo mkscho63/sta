@@ -5,7 +5,7 @@ import {
 export class STAExtendedTaskSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['sta', 'sheet', 'actor', 'extendedtask'],
       width: 500,
       height: 600

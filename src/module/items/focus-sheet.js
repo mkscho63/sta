@@ -1,7 +1,7 @@
 export class STAFocusSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['sta', 'sheet', 'item', 'focus'],
       width: 500,
       height: 200,

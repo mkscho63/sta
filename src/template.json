@@ -85,6 +85,7 @@
             "stress": {
                 "value": 0
             },
+			"strmod": 0,
             "upbringing": ""
         },
         "starship": {
@@ -135,6 +136,9 @@
             "shields": {
                 "value": 0
             },
+			"shieldmod": 0,
+			"reservepower": true,
+			"shaken": false,
             "servicedate": "",
             "spaceframe": "",
             "systems": {
@@ -226,9 +230,12 @@
             },
             "resistance": 1,
             "scale": 1,
+			"reservepower": true,
+			"shaken": false,
             "shields": {
                 "value": 0
             },
+			"shieldmod": 0,
             "spaceframe": "",
             "systems": {
                 "communications": {
@@ -272,7 +279,7 @@
         }
     },
     "Item": {
-        "types": ["item", "focus", "value", "characterweapon", "starshipweapon", "armor", "talent", "milestone", "injury", "smallcraftcontainer"],
+        "types": ["item", "focus", "value", "characterweapon", "characterweapon2e", "starshipweapon", "starshipweapon2e", "armor", "talent", "milestone", "injury", "smallcraftcontainer"],
         "templates": {
             "common": {
                 "description": ""
@@ -315,6 +322,27 @@
                 "escalation": 0
             }
         },
+        "characterweapon2e": {
+            "templates": ["common"],
+            "damage": 0,
+            "range": "",
+            "hands": 1,
+			"severity": 0,
+            "qualities": {
+                "deadly": false,
+                "stun": false,
+                "accurate": false,
+                "area": false,
+                "charge": false,
+                "cumbersome": false,
+                "debilitating": false,
+                "grenade": false,
+                "inaccurate": false,
+                "intense": false,
+                "piercingx": false,				
+                "hiddenx": 0
+            }
+        },
         "starshipweapon": {
             "templates": ["common"],
             "damage": 0,
@@ -333,6 +361,17 @@
                 "versatilex": 0
             }
         },
+        "starshipweapon2e": {
+            "templates": ["common"],
+            "damage": 0,
+            "range": "",
+            "qualities": {
+                "energy": false,
+                "torpedo": false,
+                "highyield": false,
+                "versatilex": false
+            }				
+        },		
         "armor": {
             "templates": ["common"],
             "protection": 0,

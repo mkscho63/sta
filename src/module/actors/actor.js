@@ -109,11 +109,12 @@ export class STASharedActorFunctions {
     if (rolldialog) {
       const dicePool = rolldialog.get('dicePoolSlider');
       const usingFocus = rolldialog.get('usingFocus') == null ? false : true;
+	  const usingDedicatedFocus = rolldialog.get('usingDedicatedFocus') == null ? false : true;
       const usingDetermination = rolldialog.get('usingDetermination') == null ? false : true;
       const complicationRange = parseInt(rolldialog.get('complicationRange'));
       // Once the response has been collected it then sends it to be rolled.
       const staRoll = new STARoll();
-      staRoll.performAttributeTest(dicePool, usingFocus, usingDetermination,
+      staRoll.performAttributeTest(dicePool, usingFocus, usingDedicatedFocus, usingDetermination,
         selectedAttribute, selectedAttributeValue, selectedDiscipline,
         selectedDisciplineValue, complicationRange, speaker);
     }
@@ -152,6 +153,12 @@ export class STASharedActorFunctions {
     case 'starshipweapon':
       staRoll.performWeaponRoll(item, speaker);
       break;
+    case 'characterweapon2e':
+      staRoll.performWeaponRoll2e(item, speaker);
+      break;
+    case 'starshipweapon2e':
+      staRoll.performStarshipWeaponRoll2e(item, speaker);
+      break;		  
     case 'armor':
       staRoll.performArmorRoll(item, speaker);
       break;

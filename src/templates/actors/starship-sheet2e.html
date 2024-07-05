@@ -66,6 +66,7 @@
                         <input class="text-entry" name="system.shieldmod" id="shieldmod" type="number" value="{{system.shieldmod}}" placeholder="0" />
                     </div>
                 </div>
+                </div>
             </div>
         </div>
         <div class="main">
@@ -95,13 +96,25 @@
                             <input class="field numeric-entry" id="{{key}}.breaches" name="system.systems.{{key}}.breaches" type="number" value="{{system.breaches}}" />
                         </div>
                         {{/each}}
-                        <div class="check-button btn2 challenge">{{localize 'sta.actor.challenge.roll'}}</div>
                     </div>
-                    <div class="section scale">
+                    <div class="section reservepower">
                         <div class="title">
-                            {{localize 'sta.actor.starship.scale'}}:
+                            {{localize 'sta.actor.starship.reservepower'}}:
                         </div>
-                        <input class="field numeric-entry" name="system.scale" id="scale" type="number" value="{{system.scale}}" />
+							<input class="checkbox" type="checkbox" name="system.reservepower" data-dtype="Boolean" {{checked system.reservepower}}>
+                        <div class="track">
+                            <input type="hidden" id="total-power" name="system.power.value" value="{{system.power.value}}" data-dtype="Number" />
+                            <input type="hidden" id="max-power" name="system.power.max" value="{{system.power.max}}" data-dtype="Number" />
+                            <div class="bar">
+                                <div id="bar-power-renderer" class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section shaken">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.shaken'}}:
+                        </div>
+                        <input class="checkbox" type="checkbox" name="system.shaken" data-dtype="Boolean" {{checked system.shaken}}>
                     </div>
                 </div>
                 <div class="column center-column">
@@ -118,18 +131,7 @@
                     <div class="section img">
                         <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
                     </div>
-                    <div class="section power">
-                        <div class="title">
-                            {{localize 'sta.actor.starship.power'}}
-                        </div>
-                        <div class="track">
-                            <input type="hidden" id="total-power" name="system.power.value" value="{{system.power.value}}" data-dtype="Number" />
-                            <input type="hidden" id="max-power" name="system.power.max" value="{{system.power.max}}" data-dtype="Number" />
-                            <div class="bar">
-                                <div id="bar-power-renderer" class="bar"></div>
-                            </div>
-                        </div>
-                    </div>
+                  <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
                     <div class="section crew">
                         <div class="title">
                             {{localize 'sta.actor.starship.crew'}}
@@ -141,7 +143,7 @@
                                 <div id="bar-crew-renderer" class="bar"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
                 <div class="column right-column">
                     <div class="section department">
@@ -160,7 +162,12 @@
                             <input class="selector department" id="{{key}}.selector" type="checkbox" name="system.departments.{{key}}.selected" data-dtype="Boolean" {{checked department.selected}}>
                         </div>
                         {{/each}}
-                        <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
+                    </div>
+                    <div class="section scale2e">
+                        <div class="title">
+                            {{localize 'sta.actor.starship.scale'}}:
+                        </div>
+                        <input class="field numeric-entry" name="system.scale" id="scale" type="number" value="{{system.scale}}" />
                     </div>
                     <div class="section resistance">
                         <div class="title">
@@ -306,12 +313,12 @@
                             <div class="image"></div>
                             <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.weapon.title'}}</div>
                             <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
-                            <a class="control create" title="Create item" data-type="starshipweapon"><i class="fas fa-plus"></i></a>
+                            <a class="control create" title="Create item" data-type="starshipweapon2e"><i class="fas fa-plus"></i></a>
                         </div>
                         {{#each items as |item type id|}}
-                        {{#if (eq item.type "starshipweapon")}}
+                        {{#if (eq item.type "starshipweapon2e")}}
                         <li class="row entry" id="starship-weapon-{{@index}}" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.system.damage}}" data-item-includescale="{{item.system.includescale}}">
-                          <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
+                          <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
                             <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
                             <h4 class="two-column-with-roll-secondary list-entry damage">{{item.system.damage}}</h4>
                             <div class="control">

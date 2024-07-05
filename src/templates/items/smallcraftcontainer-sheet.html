@@ -12,13 +12,9 @@
           </div>
           <div class="column-x1" >
               <label class="label">{{localize 'sta.actor.smallcraft.child'}}</label>
-              <select name="system.child">
-                {{#select system.child}}
-                {{#each availableSmallcrafts as |availableSmallcraft|}}
-                <option value="{{availableSmallcraft.id}}">{{availableSmallcraft.system.name}}</option>
-                {{/each}}
-                {{/select}}
-              </select>
+               <select name="system.child">
+               {{selectOptions availableSmallcrafts selected=system.child valueAttr="id" labelAttr="name"}}
+               </select>
           </div>
       </div>
   </div>

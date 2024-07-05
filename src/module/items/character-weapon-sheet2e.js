@@ -1,10 +1,10 @@
-export class STAItemSheet extends ItemSheet {
+export class STACharacterWeaponSheet2e extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'item'],
-      width: 500,
-      height: 480,
+      classes: ['sta', 'sheet', 'item', 'characterweapon2e'],
+      width: 565,
+      height: 400,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
     });
   }
@@ -18,7 +18,7 @@ export class STAItemSheet extends ItemSheet {
 	        ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    return `systems/sta/templates/items/item-sheet.html`;
+    return `systems/sta/templates/items/character-weapon-sheet2e.html`;
   }
 
   /* -------------------------------------------- */

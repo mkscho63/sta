@@ -6,11 +6,20 @@ import {
   STACharacterSheet
 } from './actors/sheets/character-sheet.js';
 import {
+  STACharacterSheet2e
+} from './actors/sheets/character-sheet2e.js';
+import {
   STAStarshipSheet
 } from './actors/sheets/starship-sheet.js';
 import {
+  STAStarshipSheet2e
+} from './actors/sheets/starship-sheet2e.js';
+import {
   STASmallCraftSheet
 } from './actors/sheets/smallcraft-sheet.js';
+import {
+  STASmallCraftSheet2e
+} from './actors/sheets/smallcraft-sheet2e.js';
 import {
   STAExtendedTaskSheet
 } from './actors/sheets/extended-task-sheet.js';
@@ -21,8 +30,14 @@ import {
   STACharacterWeaponSheet
 } from './items/character-weapon-sheet.js';
 import {
+  STACharacterWeaponSheet2e
+} from './items/character-weapon-sheet2e.js';
+import {
   STAStarshipWeaponSheet
 } from './items/starship-weapon-sheet.js';
+import {
+  STAStarshipWeaponSheet2e
+} from './items/starship-weapon-sheet2e.js';
 import {
   STAArmorSheet
 } from './items/armor-sheet.js';
@@ -74,12 +89,17 @@ Hooks.once('init', function() {
   game.sta = {
     applications: {
       STACharacterSheet,
+	  STACharacterSheet2e,
       STAStarshipSheet,
+      STAStarshipSheet2e,	  
       STASmallCraftSheet,
+      STASmallCraftSheet2e,
       STAExtendedTaskSheet,
       STAItemSheet,
       STACharacterWeaponSheet,
+	  STACharacterWeaponSheet2e,
       STAStarshipWeaponSheet,
+      STAStarshipWeaponSheet2e,
       STAArmorSheet,
       STATalentSheet,
       STAGenericSheet,
@@ -120,10 +140,19 @@ Hooks.once('init', function() {
     types: ['character'],
     makeDefault: true
   });
+  Actors.registerSheet('sta', STACharacterSheet2e, {
+    types: ['character']
+  });
   Actors.registerSheet('sta', STAStarshipSheet, {
     types: ['starship']
   });
+  Actors.registerSheet('sta', STAStarshipSheet2e, {
+    types: ['starship']
+  });
   Actors.registerSheet('sta', STASmallCraftSheet, {
+    types: ['smallcraft'],
+  });
+  Actors.registerSheet('sta', STASmallCraftSheet2e, {
     types: ['smallcraft'],
   });
   Actors.registerSheet('sta', STAExtendedTaskSheet, {
@@ -137,8 +166,14 @@ Hooks.once('init', function() {
   Items.registerSheet('sta', STACharacterWeaponSheet, {
     types: ['characterweapon'],
   });
+  Items.registerSheet('sta', STACharacterWeaponSheet2e, {
+    types: ['characterweapon2e'],
+  });
   Items.registerSheet('sta', STAStarshipWeaponSheet, {
     types: ['starshipweapon'],
+  });
+  Items.registerSheet('sta', STAStarshipWeaponSheet2e, {
+    types: ['starshipweapon2e'],
   });
   Items.registerSheet('sta', STAArmorSheet, {
     types: ['armor'],

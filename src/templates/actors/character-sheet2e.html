@@ -98,7 +98,6 @@
               <input class="field numeric-entry" id="{{key}}" name="system.attributes.{{key}}.value" type="text" value="{{attribute.value}}" />
             </div>
             {{/each}}
-            <div class="check-button btn2 challenge">{{localize 'sta.actor.challenge.roll'}}</div>
           </div>
         </div>
         <div class="column center-column">
@@ -285,12 +284,12 @@
               <div class="image"></div>
               <div class="two-column-with-roll-primary">{{localize 'sta.actor.belonging.weapon.title'}}</div>
               <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.weapon.dmg'}}</div>
-              <a class="control create" title="Create item" data-type="characterweapon"><i class="fas fa-plus"></i></a>
+              <a class="control create" title="Create item" data-type="characterweapon2e"><i class="fas fa-plus"></i></a>
             </div>
             {{#each items as |item type id|}}
-            {{#if (eq item.type "characterweapon")}}
+            {{#if (eq item.type "characterweapon2e")}}
             <li class="row entry" id="character-weapon-{{@index}}" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.system.damage}}">
-              <div class="image"><img class="rollable challenge" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
+              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
               <h4 class="two-column-with-roll-primary list-entry">{{item.name}}</h4>
               <h4 class="two-column-with-roll-secondary list-entry damage">{{item.system.damage}}</h4>
               <div class="control">
