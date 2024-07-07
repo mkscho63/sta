@@ -1,7 +1,7 @@
 export class STASmallCraftContainerSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['sta', 'sheet', 'item'],
       width: 680,
       height: 320,
@@ -21,7 +21,7 @@ export class STASmallCraftContainerSheet extends ItemSheet {
       ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    if (!isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/items/smallcraftcontainer-sheet-legacy.html";
+    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/items/smallcraftcontainer-sheet-legacy.html";
     return `systems/sta/templates/items/smallcraftcontainer-sheet.html`;
   }
 
@@ -36,7 +36,7 @@ export class STASmallCraftContainerSheet extends ItemSheet {
     data.dtypes = ['String', 'Number', 'Boolean'];
     let smallcrafts;
 
-    if (!isNewerVersion(versionInfo,"0.8.-1"))
+    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1"))
     {
       smallcrafts = game.actors.filter((target) => 
         target.type === 'smallcraft' && target.owner);
