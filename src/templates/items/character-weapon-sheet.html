@@ -8,12 +8,10 @@
       </div>
       <div class="column-x1">
         <label class="label">{{localize 'sta.actor.belonging.weapon.range'}}</label>
-        <select name="system.range">
-          {{#select system.range}}
-          <option value="{{localize 'sta.actor.belonging.weapon.melee'}}">{{localize 'sta.actor.belonging.weapon.melee'}}</option>
-          <option value="{{localize 'sta.actor.belonging.weapon.ranged'}}">{{localize 'sta.actor.belonging.weapon.ranged'}}</option>
-          {{/select}}
-        </select>
+          <select name="system.range">
+            <option value="melee" {{#if (eq system.range "melee")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.melee'}}</option>
+            <option value="ranged" {{#if (eq system.range "ranged")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.ranged'}}</option>
+          </select>
       </div>
     </div>
     <label class="label">{{localize 'sta.actor.belonging.weapon.qualities'}}</label>
