@@ -1,66 +1,61 @@
 {
-  "id": "sta",
-  "title": "Star Trek Adventures Roleplaying Game",
-  "description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
-  "version": "1.2.1",
-  "compatibility": {
-    "verified": "12",
-    "minimum": "9"
-  },
-  "authors": [
-    {
+	"id": "sta",
+	"title": "Star Trek Adventures Roleplaying Game",
+	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
+	"version": "1.2.2",
+	"compatibility": {
+		"verified": "12",
+		"minimum": "9"
+	},
+	"authors": [
+		{
 			"name": "mkscho63",
 			"discord": "FullMetalSeraph#7284",
 			"flags": {}
-    }
-  ],
-  "esmodules": [
-    "module/sta.js"
-  ],
-  "socket": true,
-  "styles": [
-    "sta.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json",
-      "flags": {}
-    },
-    {
-      "lang": "es",
-      "name": "Spanish",
-      "path": "lang/es.json",
-      "flags": {}
-    },
-    {
-      "lang": "de",
-      "name": "German",
-      "path": "lang/de.json",
-      "flags": {}
-    },
-    {
-      "lang": "fr",
-      "name": "French",
-      "path": "lang/fr.json",
-      "flags": {}
-    },
-    {
-      "lang": "pt",
-      "name": "Portugese",
-      "path": "lang/pt.json",
-      "flags": {}
-    }
-  ],
-  "grid": 
-  {
-    "distance": 5,
-    "units": "m"
-  },
-  "primaryTokenAttribute": "stress",
-  "secondaryTokenAttribute": "determination",
-  "url": "https://github.com/mkscho63/sta",
+		}
+	],
+	"esmodules": ["module/sta.js"],
+	"socket": true,
+	"styles": ["sta.css"],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json",
+			"flags": {}
+		},
+		{
+			"lang": "es",
+			"name": "Spanish",
+			"path": "lang/es.json",
+			"flags": {}
+		},
+		{
+			"lang": "de",
+			"name": "German",
+			"path": "lang/de.json",
+			"flags": {}
+		},
+		{
+			"lang": "fr",
+			"name": "French",
+			"path": "lang/fr.json",
+			"flags": {}
+		},
+		{
+			"lang": "pt",
+			"name": "Portugese",
+			"path": "lang/pt.json",
+			"flags": {}
+		}
+	],
+	"grid": {
+		"distance": 5,
+		"units": "m"
+	},
+	"primaryTokenAttribute": "stress",
+	"secondaryTokenAttribute": "determination",
+	"url": "https://github.com/mkscho63/sta",
 	"manifest": "https://raw.githubusercontent.com/mkscho63/sta/master/src/system.json",
-	"download": "https://raw.githubusercontent.com/mkscho63/sta/v1.2.1/package/sta-v1.2.1.zip"
+	"download": "https://raw.githubusercontent.com/mkscho63/sta/v1.2.2/package/sta-v1.2.2.zip"
 }
