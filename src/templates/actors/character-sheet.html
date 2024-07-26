@@ -124,7 +124,6 @@
               <div class="bar">
                 <div id="bar-determination-renderer" class="bar"></div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -138,12 +137,14 @@
               <div class="text secondary-title">{{localize 'sta.actor.character.discipline.name'}}</div>
               <div class="selector-space"></div>
             </div>
-            {{#each system.disciplines as |discipline key|}}
+            {{#each system.disciplineorder as |key|}}
+            {{#with (lookup ../system.disciplines [key])}}
             <div class="stat row">
-              <input class="field numeric-entry" id="{{key}}" name="system.disciplines.{{key}}.value" type="text" value="{{discipline.value}}" placeholder="Name" />
-              <div class="text list-entry"> {{localize discipline.label}} </div>
-              <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="system.disciplines.{{key}}.selected" data-dtype="Boolean" {{checked discipline.selected}}>
+              <input class="field numeric-entry" id="{{key}}" name="system.disciplines.{{key}}.value" type="text" value="{{value}}" placeholder="Name" />
+              <div class="text list-entry"> {{localize label}} </div>
+              <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="system.disciplines.{{key}}.selected" data-dtype="Boolean" {{checked selected}}>
             </div>
+            {{/with}}
             {{/each}}
             <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
           </div>
