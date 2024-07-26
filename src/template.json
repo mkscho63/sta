@@ -45,6 +45,7 @@
                 "value": 3,
                 "max": 3
             },
+			      "disciplineorder": ["command", "conn", "security", "engineering", "science", "medicine"],
             "disciplines": {
                 "command": {
                     "label": "sta.actor.character.discipline.command",
@@ -93,6 +94,7 @@
             "crew": {
                 "value": 0
             },
+            "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
             "departments": {
                 "command": {
                     "label": "sta.actor.starship.department.command",
@@ -191,6 +193,7 @@
             "workprogress": 0
         },
         "smallcraft": {
+            "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
             "departments": {
                 "command": {
                     "label": "sta.actor.starship.department.command",
@@ -325,7 +328,7 @@
         "characterweapon2e": {
             "templates": ["common"],
             "damage": 0,
-            "range": "",
+            "range": "melee",
             "hands": 1,
 			"severity": 0,
             "qualities": {
@@ -340,7 +343,9 @@
                 "inaccurate": false,
                 "intense": false,
                 "piercingx": false,				
-                "hiddenx": 0
+                "hiddenx": 0,
+                "opportunity": 0,
+                "escalation": 0
             }
         },
         "starshipweapon": {
@@ -364,12 +369,26 @@
         "starshipweapon2e": {
             "templates": ["common"],
             "damage": 0,
-            "range": "",
+            "range": "close",
+			"type": "energy",
             "qualities": {
                 "energy": false,
                 "torpedo": false,
+				"area": false,
+				"calibration": false,
+				"cumbersome": false,
+				"dampening": false,
+				"depleting": false,
+				"devastating": false,
                 "highyield": false,
-                "versatilex": false
+				"intense": false,
+				"jamming": false,
+				"persistent": false,
+				"piercing": false,
+				"slowing": false,
+				"spread": false,
+				"hiddenx": 0,
+                "versatilex": 0
             }				
         },		
         "armor": {

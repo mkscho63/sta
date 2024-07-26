@@ -415,6 +415,22 @@ $trackColors: (
       .column {
         flex: 30%;
         overflow-y: auto;
+		
+		.section.reservepower,
+		.section.shaken {
+		  .checkbox {
+            box-shadow: none;
+            cursor: pointer;
+			}
+		}
+		
+		.check-button {
+		    width: 75%;
+            height: 30px;
+            line-height: 30px;
+            margin: 5px 12.5%;
+            font-size: 14pt;
+		}
 
         .section {
           .header.row {
@@ -496,7 +512,10 @@ $trackColors: (
           }
         }
 
-        .section.scale, 
+        .section.reservepower,
+		.section.shaken,
+		.section.scale2e,
+		.section.scale, 
         .section.resistance {
           display: flex;
           background-color: map-get($lcarsColors, "purple");
@@ -508,7 +527,8 @@ $trackColors: (
             margin-top: 5px;
           }
 
-          .field.numeric-entry {
+          .checkbox,
+		  .field.numeric-entry {
             width: 15%;
             height: 30px;
             border: none;
@@ -518,13 +538,16 @@ $trackColors: (
           }
         }
         
+		.section.reservepower .title,
+		.section.shaken .title,
         .section.scale .title {
           border-top-left-radius: 10px;
           border-bottom-left-radius: 10px;
           margin-left: 10%;
         }
 
-        .section.resistance .field.numeric-entry{
+        .section.scale2e .field.numeric-entry,
+		.section.resistance .field.numeric-entry{
           border-top-right-radius: 10px;
           border-bottom-right-radius: 10px;
           margin-right: 10%;
@@ -540,6 +563,16 @@ $trackColors: (
   .column.center-column {
     border-right: 2px solid $background;
     border-left: 2px solid $background;
+    
+	.column-x2 {
+      width: 40%;
+	  display: flex;
+      text-align: left;
+	  }
+	
+	.label {
+	  line-height: 26px;
+	  }
   }
 
   .column.right-column {
@@ -818,6 +851,8 @@ $trackColors: (
     }
   }
 
+  &.starshipweapon2e,
+  &.characterweapon2e,
   &.characterweapon,
   &.starshipweapon {
 

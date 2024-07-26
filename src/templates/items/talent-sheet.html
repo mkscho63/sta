@@ -11,6 +11,7 @@
         <select name="system.talenttype.typeenum">
           <option value="general" {{#if (eq system.talenttype.typeenum "general")}}selected{{/if}}>{{localize 'sta.item.talent.type.general'}}</option>
           <option value="discipline" {{#if (eq system.talenttype.typeenum "discipline")}}selected{{/if}}>{{localize 'sta.item.talent.type.discipline'}}</option>
+          <option value="attribute" {{#if (eq system.talenttype.typeenum "attribute")}}selected{{/if}}>{{localize 'sta.item.talent.type.attribute'}}</option>
           <option value="species" {{#if (eq system.talenttype.typeenum "species")}}selected{{/if}}>{{localize 'sta.actor.character.species'}}</option>
           <option value="house" {{#if (eq system.talenttype.typeenum "house")}}selected{{/if}}>{{localize 'sta.item.talent.houselegacy'}}</option>
         </select>
@@ -28,6 +29,26 @@
           <option value="medicine" {{#if (eq system.talenttype.description "medicine")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.medicine'}}</option>
           <option value="science" {{#if (eq system.talenttype.description "science")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.science'}}</option>
           <option value="security" {{#if (eq system.talenttype.description "security")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.security'}}</option>
+        </select>
+      </div>
+      <div class="column-x2">
+        <input type="number" name="system.talenttype.minimum" value="{{system.talenttype.minimum}}" />
+        <label class="label">+</label>
+      </div>
+      <div class="column-x1"></div>
+    </div>
+    {{else if (eq system.talenttype.typeenum "attribute")}}
+    <div class="row">
+      <div class="column-x1"></div>
+      <div class="column-x3">
+        <label class="label">{{localize 'sta.item.talent.requires'}}</label>
+        <select name="system.talenttype.description">
+          <option value="command" {{#if (eq system.talenttype.description "command")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.control'}}</option>
+          <option value="conn" {{#if (eq system.talenttype.description "conn")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.daring'}}</option>
+          <option value="engineering" {{#if (eq system.talenttype.description "engineering")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.fitness'}}</option>
+          <option value="medicine" {{#if (eq system.talenttype.description "medicine")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.insight'}}</option>
+          <option value="science" {{#if (eq system.talenttype.description "science")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.presence'}}</option>
+          <option value="security" {{#if (eq system.talenttype.description "security")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.reason'}}</option>
         </select>
       </div>
       <div class="column-x2">

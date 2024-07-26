@@ -348,10 +348,12 @@ export class STARoll {
     if (item.system.qualities.charge) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.charge')+'</div>';
     if (item.system.qualities.cumbersome) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.cumbersome')+'</div>';
     if (item.system.qualities.debilitating) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.debilitating')+'</div>'
+    if (item.system.qualities.escalation > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.item.genericitem.escalation') + ' ' + item.system.qualities.escalation +'</div>';
     if (item.system.qualities.grenade) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.grenade')+'</div>';
     if (item.system.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.system.qualities.hiddenx +'</div>';	
     if (item.system.qualities.inaccurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.inaccurate')+'</div>';	
     if (item.system.qualities.intense) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.intense')+'</div>';
+    if (item.system.qualities.opportunity > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.item.genericitem.opportunity') + ' ' + item.system.qualities.opportunity +'</div>';
     if (item.system.qualities.piercingx) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx')+'</div>';
 
     // Send the divs to populate a HTML template and sends to chat.
@@ -367,8 +369,20 @@ export class STARoll {
 
   async performStarshipWeaponRoll2e(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
+
+    let actorWeapons = 0;
+    if (speaker.system.systems.weapons.value > 6) actorWeapons = 1;
+    if (speaker.system.systems.weapons.value > 8) actorWeapons = 2;
+    if (speaker.system.systems.weapons.value > 10) actorWeapons = 3;
+    if (speaker.system.systems.weapons.value > 12) actorWeapons = 4;
+
+    let scaleDamage = 0;
+	if (item.system.type == 'energy') scaleDamage = parseInt( speaker.system.scale );
+
+    const calculatedDamage = item.system.damage + actorWeapons + scaleDamage;
+
     const variablePrompt = game.i18n.format('sta.roll.weapon.damage2e');
-    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.damage)+`</div>`;
+    const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', calculatedDamage)+`</div>`;
 	
 	let weaponrange = game.i18n.format('sta.actor.belonging.weapon.close');
 	if (item.system.range == 'medium') weaponrange = game.i18n.format('sta.actor.belonging.weapon.medium');
@@ -376,11 +390,25 @@ export class STARoll {
 	
 	let tags = '';
     if (item.system.range) tags += '<div class=\'tag\'> ' + weaponrange + '</div>';
-    if (item.system.hands > 0) tags += '<div class=\'tag\'> ' + item.system.hands + ' ' +game.i18n.format('sta.item.genericitem.handed') +'</div>';
-    if (item.system.qualities.energy) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.energy')+'</div>';    	
-	if (item.system.qualities.torpedo) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.torpedo')+'</div>';
-    if (item.system.qualities.highyield) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.highyield')+'</div>';
-    if (item.system.qualities.versatilex) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.versatilex')+'</div>';
+    if (item.system.type == 'energy') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.energy')+'</div>';    	
+	if (item.system.type == 'torpedo') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.torpedo')+'</div>';
+	
+	
+	if (item.system.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.area')+'</div>';
+	if (item.system.qualities.calibration) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.calibration')+'</div>';
+	if (item.system.qualities.cumbersome) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.cumbersome')+'</div>';
+	if (item.system.qualities.dampening) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.dampening')+'</div>';
+	if (item.system.qualities.depleting) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.depleting')+'</div>';
+	if (item.system.qualities.devastating) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.devastating')+'</div>';
+    if (item.system.qualities.hiddenx) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx')+ ' ' + item.system.qualities.hiddenx + '</div>';
+	if (item.system.qualities.highyield) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.highyield')+'</div>';
+	if (item.system.qualities.intense) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.intense')+'</div>';
+	if (item.system.qualities.jamming) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.jamming')+'</div>';
+	if (item.system.qualities.persistent) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.persistentx')+'</div>';
+	if (item.system.qualities.piercing) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx')+'</div>';
+    if (item.system.qualities.slowing) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.slowing')+'</div>';
+	if (item.system.qualities.spread) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.spread')+'</div>';
+    if (item.system.qualities.versatilex) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.versatilex')+ ' ' + item.system.qualities.versatilex + '</div>';
 
     // Send the divs to populate a HTML template and sends to chat.
     this.genericItemTemplate(
