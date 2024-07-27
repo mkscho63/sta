@@ -83,8 +83,8 @@ export class STACharacterSheet2e extends ActorSheet {
     // Check reputation max/min
     if (!(sheetData.system.reputation))
       sheetData.system.reputation = {};
-    if (sheetData.system.reputation.value > 20) {
-      sheetData.system.reputation.value = 20;
+    if (sheetData.system.reputation.value > 5) {
+      sheetData.system.reputation.value = 5;
     }
     if (sheetData.system.reputation < 0) {
       sheetData.system.reputation = 0;
@@ -170,7 +170,7 @@ export class STACharacterSheet2e extends ActorSheet {
 
     // This creates a dynamic Reputation tracker. For this it uses a max value of 30. This can be configured here. 
     // It creates a new div for each and places it under a child called "bar-rep-renderer"
-    const repPointsMax = game.settings.get('sta', 'maxNumberOfReputation');
+    const repPointsMax = game.settings.get('sta', 'maxNumberOfReputation2e');
     for (let i = 1; i <= repPointsMax; i++) {
       const repDiv = document.createElement('DIV');
       repDiv.className = 'box';
