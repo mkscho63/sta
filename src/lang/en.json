@@ -128,6 +128,7 @@
   "sta.actor.starship.shieldmod": "Shield Modifier",
   "sta.actor.starship.shaken": "Shaken",
   "sta.actor.starship.reservepower": "Reserve Power",
+  "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod",
 
   "sta.actor.smallcraft.parent": "Parent Ship",
   "sta.actor.smallcraft.child": "Small Craft Type",

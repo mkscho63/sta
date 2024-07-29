@@ -191,6 +191,7 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Schwarz)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Weiß)",
   
+  "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod",
   "sta.actor.belonging.weapon.dbfwr": "Weapons Rating",
   "sta.item.talent.type.attribute": "Attribute",
   "sta.actor.belonging.weapon.depleting": "Depleting",

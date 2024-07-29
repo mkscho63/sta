@@ -139,6 +139,7 @@
                 "value": 0
             },
 			"shieldmod": 0,
+			"crwmod": 0,
 			"reservepower": true,
 			"shaken": false,
             "servicedate": "",

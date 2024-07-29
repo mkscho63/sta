@@ -153,7 +153,7 @@ export class STAStarshipSheet2e extends ActorSheet {
     // This creates a dynamic Crew Support tracker. It polls for the value of the ships's scale. 
     // With the value, creates a new div for each and places it under a child called "bar-crew-renderer".
     function crewTrackUpdate() {
-      crewTrackMax = parseInt(html.find('#scale')[0].value);
+      crewTrackMax = parseInt(html.find('#scale')[0].value) + parseInt(html.find('#crwmod')[0].value);
       // This checks that the max-crew hidden field is equal to the calculated Max Crew Support value, if not it makes it so.
       if (html.find('#max-crew')[0].value != crewTrackMax) {
         html.find('#max-crew')[0].value = crewTrackMax;

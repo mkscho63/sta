@@ -201,6 +201,8 @@
   "sta.dice.dsn.ufp.gold": "UFP Dourado",
   "sta.dice.dsn.ufp.red": "UFP Vermelho",
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Preto)",
-  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Branco)"
+  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Branco)",
+
+  "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod"
 
 }
