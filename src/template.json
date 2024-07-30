@@ -87,6 +87,7 @@
                 "value": 0
             },
 			"strmod": 0,
+			"rollrepnotdis": false,
             "upbringing": ""
         },
         "starship": {

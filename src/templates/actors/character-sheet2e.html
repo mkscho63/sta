@@ -13,6 +13,8 @@
           <div class="track">
             <input type="hidden" id="total-rep" name="system.reputation" value="{{system.reputation}}" data-dtype="Number" />
             <div id="bar-rep-renderer" class=" bar"></div>
+            {{localize 'sta.actor.character.rollrepnotdis'}}:
+            <input class="checkbox" type="checkbox" name="system.rollrepnotdis" data-dtype="Boolean" {{checked system.rollrepnotdis}}>
           </div>
         </div>
         <div class="row">

@@ -188,6 +188,8 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures FPU (Noir)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures FPU (Blanc)",
 	
+  "sta.actor.character.rollrepnotdis": "Roll Reputation as Discipline",
+  "sta.actor.character.discipline.reputation": "Reputation",
   "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod",
   "sta.actor.belonging.weapon.dbfwr": "Weapons Rating",
   "sta.item.talent.type.attribute": "Attribute",

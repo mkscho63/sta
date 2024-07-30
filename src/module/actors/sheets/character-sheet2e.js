@@ -446,6 +446,10 @@ export class STACharacterSheet2e extends ActorSheet {
           selectedDiscipline = selectedDiscipline.slice(0, -9);
           selectedDisciplineValue = html.find('#'+selectedDiscipline)[0].value;
         }
+       if (html.find('input[name="system.rollrepnotdis"]')[0].checked) {
+         selectedDiscipline = 'reputation';
+         selectedDisciplineValue = html.find('#total-rep')[0].value;
+       }
       }
             
       staActor.rollAttributeTest(ev, selectedAttribute,

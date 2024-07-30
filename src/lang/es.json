@@ -182,6 +182,8 @@
   "sta.notifications.threatmin": "¡No puedes poner la Amenaza por debajo de 0!",
   "sta.notifications.threatmax": "¡Hay demasiada Amenaza!",
   
+  "sta.actor.character.rollrepnotdis": "Roll Reputation as Discipline",
+  "sta.actor.character.discipline.reputation": "Reputation",
   "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod",
   "sta.actor.belonging.weapon.dbfwr": "Weapons Rating",
   "sta.item.talent.type.attribute": "Attribute",

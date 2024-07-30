@@ -203,6 +203,8 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Preto)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Branco)",
 
+  "sta.actor.character.rollrepnotdis": "Roll Reputation as Discipline",
+  "sta.actor.character.discipline.reputation": "Reputation",
   "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod"
 
 }

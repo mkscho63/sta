@@ -397,9 +397,14 @@ $trackColors: (
       width: 100%;
     }
 
-    .section.reputation .title {
+    .section.reputation {
+	  color: $labelColor;
+	  white-space: nowrap;
+	
+	.title {
       font-size: 14px;
     }
+   }
   }
 
   .main {
