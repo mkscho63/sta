@@ -107,8 +107,11 @@ export class STAStarshipSheet2e extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
-      if (html.find('[data-talent-name="Advanced Shields"]').length > 0) {
+      if (html.find(`[data-talent-name="${localizedValues.advancedshields}"]`).length > 0) {
         shieldsTrackMax += 5;
+      }
+      if (html.find(`[data-talent-name="${localizedValues.polarizedhullplating}"]`).length > 0) {
+        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value)
       }
       // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
       if (html.find('#max-shields')[0].value != shieldsTrackMax) {
@@ -154,6 +157,15 @@ export class STAStarshipSheet2e extends ActorSheet {
     // With the value, creates a new div for each and places it under a child called "bar-crew-renderer".
     function crewTrackUpdate() {
       crewTrackMax = parseInt(html.find('#scale')[0].value) + parseInt(html.find('#crwmod')[0].value);
+        if (html.find(`[data-talent-name="${localizedValues.agingrelic}"]`).length > 0) {
+        crewTrackMax += 1;
+        }
+        if (html.find(`[data-talent-name="${localizedValues.extensiveautomation}"]`).length > 0) {
+        crewTrackMax = Math.ceil(crewTrackMax/2);
+        }
+        if (html.find(`[data-talent-name="${localizedValues.abundantpersonnel}"]`).length > 0) {
+        crewTrackMax += crewTrackMax;
+       }  
       // This checks that the max-crew hidden field is equal to the calculated Max Crew Support value, if not it makes it so.
       if (html.find('#max-crew')[0].value != crewTrackMax) {
         html.find('#max-crew')[0].value = crewTrackMax;
