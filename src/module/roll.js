@@ -159,7 +159,6 @@ export class STARoll {
 
   async performTalentRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    console.log("Performing talent roll [actual]");
     this.genericItemTemplate(item)
       .then((html)=>this.sendToChat(speaker, html));
   }
@@ -248,6 +247,14 @@ export class STARoll {
     // }
   }
 
+  /**
+   * Parse out tag strings appropriate for a characterweapon Chat Card.
+   *
+   * @param {Item} item
+   *
+   * @return {string[]}
+   * @private
+   */
   _assembleCharacterWeaponTags(item) {
     const LABELS = Object.freeze({
       melee: 'sta.actor.belonging.weapon.melee',
@@ -339,6 +346,14 @@ export class STARoll {
       .then((html)=>this.sendToChat(speaker, html));
   }
 
+  /**
+   * Parse out tag strings appropriate for a shipweapon Chat Card.
+   *
+   * @param {Item} item
+   *
+   * @return {string[]}
+   * @private
+   */
   _assembleShipWeaponsTags(item) {
     const LABELS = Object.freeze({
       area: 'sta.actor.belonging.weapon.area',
@@ -381,17 +396,24 @@ export class STARoll {
     return tags;
   }
 
+  /**
+   * Render a generic item card.
+   *
+   * @param {Item} item
+   * @param {string=} variable
+   * @param {Array<string>=} tags
+   *
+   * @return {Promise<string>}
+   */
   async genericItemTemplate(item, variable, tags) {
     // Checks if the following are empty/undefined. If so sets to blank.
     const descField = item.system.description ? item.system.description : '';
-    const tagField = tags ? tags : '';
     const varField = variable ? variable : '';
 
 
     // TODO: Remove this temporary protection
     const prevTags = Array.isArray(tags) ? tags : [tags];
     const finalTags = prevTags.concat(this._assembleGenericTags(item));
-    console.log('tags', finalTags);
 
     const cardData = {
       itemId: item.id,
@@ -402,11 +424,18 @@ export class STARoll {
       varFieldHtml: varField,
     };
 
-    const html = await renderTemplate('systems/sta/templates/chat/generic-item.hbs', cardData);
     // Returns it for the sendToChat to utilise.
-    return html;
+    return await renderTemplate('systems/sta/templates/chat/generic-item.hbs', cardData);
   }
 
+  /**
+   * Parse out tag strings appropriate for a general Item Chat Card.
+   *
+   * @param {Item} item
+   *
+   * @return {string[]}
+   * @private
+   */
   _assembleGenericTags(item) {
     const LABELS = Object.freeze({
       escalation: 'sta.item.genericitem.escalation',
