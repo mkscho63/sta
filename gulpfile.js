@@ -69,7 +69,7 @@ function buildSASS() {
   return gulp
     .src('src/styles/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist')).pipe(gulp.dest('src'));
+    .pipe(gulp.dest('dist'));
 }
 
 /* Build packs for system.json */
