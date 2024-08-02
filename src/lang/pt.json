@@ -169,6 +169,7 @@
   "sta.apps.pool": "Número de Dados na Parada",
   "sta.apps.rolldice": "Rolar Dados",
   "sta.apps.dedicatedfocus": "Usando Foco Dedicado?",
+  "sta.apps.staroller": "STARoller",
 
   "sta.roll.success": "Sucesso",
   "sta.roll.successPlural": "Sucessos",

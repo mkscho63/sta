@@ -181,6 +181,7 @@
   "sta.apps.pool": "Number of Dice in Pool",
   "sta.apps.rolldice": "Roll Dice",
   "sta.apps.dedicatedfocus": "Using Dedicated Focus?",
+  "sta.apps.staroller": "STARoller",
 
   "sta.roll.success": "Success",
   "sta.roll.successPlural": "Successes",

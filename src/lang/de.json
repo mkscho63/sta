@@ -156,6 +156,7 @@
   "sta.apps.complicationrange": "Komplikationsspanne (1 ist normal)?",
   "sta.apps.pool": "Nummer der Würfel im Pool",
   "sta.apps.rolldice": "Würfeln",
+  "sta.apps.staroller": "STARoller",
 
   "sta.roll.success": "Erfolg",
   "sta.roll.successPlural": "Erfolge",

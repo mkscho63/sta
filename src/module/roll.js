@@ -80,6 +80,9 @@ export class STARoll {
       break;
     case 'starship':
       flavor = game.i18n.format('sta.actor.starship.system.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'sidebar':
+      flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
     }
 
     // Build a dynamic html using the variables from above.

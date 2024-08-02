@@ -154,6 +154,7 @@
   "sta.apps.complicationrange": "Margen de Complicación (1 por defecto)?",
   "sta.apps.pool": "Número de dados en la reserva",
   "sta.apps.rolldice": "Tirar los dados",
+  "sta.apps.staroller": "STARoller",
 
   "sta.roll.success": "Éxito",
   "sta.roll.successPlural": "Éxitos",

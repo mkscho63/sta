@@ -154,6 +154,7 @@
   "sta.apps.complicationrange": "Plage de Complication (1 par défaut) ?",
   "sta.apps.pool": "Nombre de Dés en réserve",
   "sta.apps.rolldice": "Lancer les Dés",
+  "sta.apps.staroller": "STARoller",
 
   "sta.roll.success": "Succès",
   "sta.roll.successPlural": "Succès",

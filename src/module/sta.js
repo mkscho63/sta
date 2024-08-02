@@ -60,6 +60,9 @@ import {
 import {
   register_dsn_ufp_themes
 } from './dice/dice-so-nice.js';
+import {
+  STARoller
+} from './dice/STARoller.js';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
