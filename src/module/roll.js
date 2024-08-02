@@ -198,8 +198,9 @@ export class STARoll {
     }
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', calculatedDamage)+`</div>`;
 
-    // Create dynamic tags div and populate it with localisation to use in the HTML.
-    const tags = this._assembleCharacterWeaponTags(item);
+    const tags = item.type === 'characterweapon' ?
+      this._assembleCharacterWeaponTags(item) :
+      this._assembleShipWeaponsTags(item);
 
     const damageRoll = await new Roll( calculatedDamage + 'd6' ).evaluate( {});
     const successes = getSuccessesChallengeRoll( damageRoll );
@@ -314,8 +315,6 @@ export class STARoll {
   }
 
   async performStarshipWeaponRoll2e(item, speaker) {
-    // Create variable div and populate it with localisation to use in the HTML.
-
     let actorWeapons = 0;
     if (speaker.system.systems.weapons.value > 6) actorWeapons = 1;
     if (speaker.system.systems.weapons.value > 8) actorWeapons = 2;
@@ -369,17 +368,19 @@ export class STARoll {
       persistent: 'sta.actor.belonging.weapon.persistentx',
       persistentx: 'sta.actor.belonging.weapon.persistentx',
       piercing: 'sta.actor.belonging.weapon.piercingx',
+      piercingx: 'sta.actor.belonging.weapon.piercingx',
       slowing: 'sta.actor.belonging.weapon.slowing',
       spread: 'sta.actor.belonging.weapon.spread',
       versatilex: 'sta.actor.belonging.weapon.versatilex',
+      viciousx: 'sta.actor.belonging.weapon.viciousx',
     });
     const tags = [];
 
     if (item.system.range) {
-      tags.push(`sta.actor.belonging.weapon.${item.system.range}`);
+      tags.push(game.i18n.localize(`sta.actor.belonging.weapon.${item.system.range}`));
     }
     if (item.system.type) {
-      tags.push(`sta.actor.belonging.weapon.${item.system.type}`);
+      tags.push(game.i18n.localize(`sta.actor.belonging.weapon.${item.system.type}`));
     }
 
     const qualities = item.system.qualities;
