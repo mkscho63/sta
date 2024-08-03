@@ -212,8 +212,8 @@
   "sta.actor.starship.talents.agingrelic": "Aging Relic",
   "sta.actor.starship.talents.advancedshields": "Advanced Shields",
   "sta.actor.starship.talents.polarizedhullplating": "Polarized Hull Plating",
-  "sta.actor.character.rollrepnotdis": "Roll Reputation as Discipline",
-  "sta.actor.character.discipline.reputation": "Reputation",
-  "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod"
+  "sta.actor.character.rollrepnotdis": "Rolar Reputação como Disciplina",
+  "sta.actor.character.discipline.reputation": "Reputação",
+  "sta.actor.starship.shieldcrewmod":"Mod de Escudo/Tripulação"
 
 }
