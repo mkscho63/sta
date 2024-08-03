@@ -3,7 +3,7 @@ import {
 } from '../roll.js';
 import {
   STARollDialog
-} from '../apps/STARoller-dialog.js';
+} from '../apps/roll-dialog.js';
 
 
 export class STARoller {
@@ -43,7 +43,7 @@ export class STARoller {
             nestedButtons.toggle();
         });
 
-        // Add event listeners to nested buttons if needed
+
         challengerollbtn[0].addEventListener('click', ev => this.rollChallengeRoll(ev));
         taskrollbtn[0].addEventListener('click', ev => this.rollTaskRoll(ev));
     }
@@ -56,12 +56,13 @@ export class STARoller {
     let selectedDiscipline = "STARoller";
     let defaultValue = 2;
     const speaker = {
-        type: 'sidebar'
+        type: 'sidebar',
+		id: 'sidebar'
         }
 
     event.preventDefault();
     // This creates a dialog to gather details regarding the roll and waits for a response
-    const rolldialog = await STARollDialog.create(true, defaultValue);
+    const rolldialog = await STARollDialog.create(true, defaultValue, selectedAttribute);
     if (rolldialog) {
       const dicePool = rolldialog.get('dicePoolSlider');
       const usingFocus = rolldialog.get('usingFocus') == null ? false : true;

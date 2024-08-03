@@ -1,9 +1,14 @@
 export class STARollDialog {
-  static async create(isAttribute, defaultValue) {
+  static async create(isAttribute, defaultValue, selectedAttribute) {
     let html = '';
     if (isAttribute) {
       // Grab the RollDialog HTML file/
-      html = await renderTemplate('systems/sta/templates/apps/dicepool-attribute.html', {'defaultValue': defaultValue});
+      if (selectedAttribute === "STARoller") {
+		  html = await renderTemplate('systems/sta/templates/apps/STARoller-attribute.html', {'defaultValue': defaultValue});
+	  }
+      else {
+          html = await renderTemplate('systems/sta/templates/apps/dicepool-attribute.html', {'defaultValue': defaultValue});
+	  }
     } else {
       html = await renderTemplate('systems/sta/templates/apps/dicepool-challenge.html', {'defaultValue': defaultValue});
     }
