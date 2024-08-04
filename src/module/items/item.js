@@ -31,8 +31,8 @@ export class STAItem extends Item {
     const staActor = new STASharedActorFunctions();
 
     const children = event.currentTarget.children;
-    const speaker = game.actors.find((target) => 
-      target.id === children.speakerId.value);
+    const speaker = game.actors.find((target) => target.id === children.speakerId.value) || "Reroll";
+
 
     staActor.rollAttributeTest(event, children.selectedAttribute.value,
       children.selectedAttributeValue.value, children.selectedDiscipline.value,
@@ -44,8 +44,8 @@ export class STAItem extends Item {
     const staActor = new STASharedActorFunctions();
 
     const currentChildren = event.currentTarget.children;
-    const speaker = game.actors.find((target) => 
-      target.id === currentChildren.speakerId.value);
+    const speaker = game.actors.find((target) => target.id === currentChildren.speakerId.value) || "Reroll";
+
 
     staActor.rollChallengeRoll(event, null, null, speaker);
   }
