@@ -265,6 +265,7 @@ export class STARoll {
 
     if (item.system.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.system.qualities.hiddenx +'</div>';
     if (item.system.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx') + ' ' + item.system.qualities.piercingx +'</div>';
+    if (item.system.qualities.persistentx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.persistentx') + ' ' + item.system.qualities.persistentx +'</div>';
     if (item.system.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.viciousx') + ' ' + item.system.qualities.viciousx +'</div>';
 
     const damageRoll = await new Roll( calculatedDamage + 'd6' ).evaluate( {});
