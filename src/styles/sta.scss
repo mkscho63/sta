@@ -1081,6 +1081,19 @@ $trackColors: (
       order: -1;
     }
 
+    .vars {
+      flex: 0 0 100%;
+      position: relative;
+      margin-bottom: 5px;
+      line-height: normal;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--color-border-light-2);
+      border-radius: 3px;
+      box-shadow: none;
+      word-break: break-all;
+    }
+
 
     .tags {
       display: flex;
@@ -1103,22 +1116,16 @@ $trackColors: (
     }
   }
 
-  &.attribute {
-    .dice-roll {
-      .dice-result {
-        .dice-formula .aim {
-          margin: 0;
-          background: unset;
-          border: 0;
-        }
-  
-        .dice-tooltip .dice .dice-rolls {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-      }
-    }
+  .dice-rolls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .dice-formula .aim {
+    margin: 0;
+    background: unset;
+    border: 0;
   }
 }
 
@@ -1128,6 +1135,7 @@ $trackColors: (
   &.collapsed {
     .collapsible-content {
       grid-template-rows: 0fr;
+      visibility: hidden;
     }
   }
 

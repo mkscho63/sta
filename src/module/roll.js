@@ -135,7 +135,7 @@ export class STARoll {
       successText,
       effectHtml: effectText,
     };
-    const html = await renderTemplate('systems/sta/templates/chat/challenge-roll.hbs', chatData);
+    const html = `<div class="sta roll">${await renderTemplate('systems/sta/templates/chat/parts/challenge-roll.hbs', chatData)}</div>`;
       
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
@@ -217,18 +217,20 @@ export class STARoll {
       effectText = '<h4 class="dice-total effect"> ' + i18nPluralize( effects, 'sta.roll.effect' ) + '</h4>';
     }
 
-    const chatData = {
-      speakerId: speaker.id,
-      effectHtml: effectText,
-      successText,
-      diceHtml: diceString,
+    const rolls = {
+      challenge: {
+        diceHtml: diceString,
+        effectHtml: effectText,
+        successText,
+      }
     };
-    const rollHTML = await renderTemplate('systems/sta/templates/chat/weapon-roll.hbs', chatData);
+
+    console.warn(rolls);
     
     // Send the divs to populate a HTML template and sends to chat.
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
-    this.genericItemTemplate(item, variable, tags).then( ( genericItemHTML ) => {
-      const finalHTML = genericItemHTML + '</div>\n\n' + rollHTML;
+    this.genericItemTemplate(item, variable, tags, rolls).then( ( genericItemHTML ) => {
+      const finalHTML = genericItemHTML;
       if (game.dice3d) {
         game.dice3d.showForRoll(damageRoll, game.user, true).then( ()=> {
           this.sendToChat( speaker, finalHTML, damageRoll, item.name, '');
@@ -406,7 +408,7 @@ export class STARoll {
    *
    * @return {Promise<string>}
    */
-  async genericItemTemplate(item, variable, tags) {
+  async genericItemTemplate(item, variable, tags, rolls) {
     // Checks if the following are empty/undefined. If so sets to blank.
     const descField = item.system.description ? item.system.description : '';
     const varField = variable ? variable : '';
@@ -424,6 +426,7 @@ export class STARoll {
       descFieldHtml: descField,
       tags: finalTags,
       varFieldHtml: varField,
+      rolls: rolls,
     };
 
     // Returns it for the sendToChat to utilise.

@@ -1,5 +1,5 @@
 <div class="sta roll generic chat card" data-item-id="{{itemId}}">
-  <section class="card-header collapsible">
+  <section class="card-header {{#if descFieldHtml}}collapsible{{/if}}">
     <header>
       <img class="img" src="{{img}}"/>
       <div class="title">
@@ -7,16 +7,19 @@
         <div class="type">{{type}}</div>
       </div>
     </header>
-    <div class="description collapsible-content">{{{descFieldHtml}}}</div>
+    {{#if descFieldHtml}}<div class="description collapsible-content">{{{descFieldHtml}}}</div>{{/if}}
   </section>
   <div class="content">
-    {{{varFieldHtml}}}
+    {{#if varFieldHtml}}<div class="vars">{{{varFieldHtml}}}</div>{{/if}}
     {{#if tags}}
-      <div class='tags'>
-        {{#each tags}}
-          <div class="tag">{{this}}</div>
-        {{/each}}
-      </div>
+    <div class='tags'>
+      {{#each tags}}
+      <div class="tag">{{this}}</div>
+      {{/each}}
+    </div>
+    {{/if}}
+    {{#if rolls}}
+      {{#if rolls.challenge}}{{#with rolls.challenge}}{{> 'sta.chat.parts.weapon-roll'}}{{/with}}{{/if}}
     {{/if}}
   </div>
 </div>

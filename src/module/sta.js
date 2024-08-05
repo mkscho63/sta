@@ -307,6 +307,8 @@ Hooks.once('init', function() {
     config: false
   });
 
+  preloadHandlebarsTemplates();
+
   Hooks.on('renderChatLog', (app, html, data) =>
     STAItem.chatListeners(html)
   );
@@ -326,3 +328,13 @@ Hooks.once('init', function() {
     register_dsn_ufp_themes(dice3d);
   });
 });
+
+async function preloadHandlebarsTemplates() {
+  const paths = {
+    ['sta.chat.attribute-test']: 'systems/sta/templates/chat/attribute-test.hbs',
+    ['sta.chat.item-card']: 'systems/sta/templates/chat/generic-item.hbs',
+    ['sta.chat.parts.weapon-roll']: 'systems/sta/templates/chat/parts/challenge-roll.hbs',
+  };
+
+  return loadTemplates(paths);
+}
