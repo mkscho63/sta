@@ -419,6 +419,7 @@ export class STARoll {
     const cardData = {
       itemId: item.id,
       img: item.img,
+      type: game.i18n.localize(`sta-enhanced.item.type.${item.type}`),
       name: item.name,
       descFieldHtml: descField,
       tags: finalTags,

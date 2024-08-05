@@ -60,6 +60,7 @@ import {
 import {
   register_dsn_ufp_themes
 } from './dice/dice-so-nice.js';
+import {Collapsible} from './chat/Collapsible.js';
 import {
   STARoller
 } from './dice/STARoller.js';
@@ -309,6 +310,10 @@ Hooks.once('init', function() {
   Hooks.on('renderChatLog', (app, html, data) =>
     STAItem.chatListeners(html)
   );
+
+  Hooks.on('renderChatMessage', (msg, html, data) => {
+    Collapsible.attachHeaderListener(html);
+  });
 
   Hooks.on('ready', function() {
     const t = new STATracker();

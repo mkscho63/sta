@@ -1033,9 +1033,74 @@ $trackColors: (
   padding: 4px 5px;
 }
 
-.sta.roll{
-  .dice-roll .dice-result .dice-tooltip {
+.sta.roll {
+  .dice-tooltip {
     display: block;
+  }
+
+  header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+
+    img {
+      height: 45px;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: start;
+      white-space: nowrap;
+    }
+
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .type {
+      font-size: 0.6em;
+    }
+  }
+
+  .content {
+    /** Override Foundry formula styles. */
+    &.dice-roll {
+      cursor: pointer;
+      .dice-formula {
+        box-shadow: none;
+        line-height: normal;
+        cursor: pointer;
+        word-break: normal;
+      }
+    }
+
+    .dice-tooltip {
+      order: -1;
+    }
+
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      flex-wrap: wrap;
+
+      .tag {
+        width: calc(100%/3);
+        font-size: 12px;
+        flex-grow: 1;
+        border: 0.5px solid $background;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    .dice-total.effect {
+      color: $labelColor
+    }
   }
 
   &.attribute {
@@ -1053,58 +1118,32 @@ $trackColors: (
           flex-wrap: wrap;
         }
       }
+    }
+  }
+}
 
-      .dice-total.effect {
-        color: $labelColor
-      }
+.collapsible {
+  cursor: pointer;
+  transition: all 250ms ease;
+  &.collapsed {
+    .collapsible-content {
+      grid-template-rows: 0fr;
     }
   }
 
-  &.generic {
-    .dice-roll {
-      .dice-result {
-        .dice-formula {
-          box-shadow: none;
-          line-height: normal;
-          cursor: pointer;
-          word-break: normal;
-  
-          &.title {
-            display: flex;
-            flex-direction: row;
-            background: none;
-            border: none;
-            text-align: left;
-          }
-  
-          .img {
-            height: 45px;
-          }
-        }
-        
-        .tags {
-          display: flex;
-          flex-direction: row;
-          text-align: center;
-          flex-wrap: wrap;
-  
-          .tag {
-            width: calc(100%/3);
-            font-size: 12px;
-            flex-grow: 1;
-            border: 0.5px solid $background;
-            border-radius: 3px;
-            background-color: rgba(255, 255, 255, 0.3);
-          }
-        }
-      }
+  .collapsible-content {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: all 250ms ease;
 
-      .dice-total.effect {
-        color: $labelColor
-      }
-    } 
+    > * {
+      overflow: hidden;
+      margin: 0;
+    }
   }
-} 
+
+}
 
 .message-content {
   .table-draw {

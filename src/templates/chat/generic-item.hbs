@@ -1,21 +1,22 @@
-<div class="sta roll generic" data-item-id="{{itemId}}">
-  <div class="dice-roll">
-    <div class="dice-result">
-      <div class="dice-formula title">
-        <img class="img" src="{{mg}}">
-        <div>{{name}}</div>
+<div class="sta roll generic chat card" data-item-id="{{itemId}}">
+  <section class="card-header collapsible">
+    <header>
+      <img class="img" src="{{img}}"/>
+      <div class="title">
+        <div class="name">{{name}}</div>
+        <div class="type">{{type}}</div>
       </div>
-      {{{varFieldHtml}}}
-      <div class="dice-tooltip">{{{descFieldHtml}}}</div>
-      {{#if tags}}
+    </header>
+    <div class="description collapsible-content">{{{descFieldHtml}}}</div>
+  </section>
+  <div class="content">
+    {{{varFieldHtml}}}
+    {{#if tags}}
       <div class='tags'>
         {{#each tags}}
           <div class="tag">{{this}}</div>
         {{/each}}
       </div>
-      {{/if}}
-      <div>
-      </div>
-    </div>
+    {{/if}}
   </div>
 </div>
