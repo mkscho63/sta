@@ -225,8 +225,6 @@ export class STARoll {
       }
     };
 
-    console.warn(rolls);
-    
     // Send the divs to populate a HTML template and sends to chat.
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     this.genericItemTemplate(item, variable, tags, rolls).then( ( genericItemHTML ) => {
@@ -408,15 +406,9 @@ export class STARoll {
    *
    * @return {Promise<string>}
    */
-  async genericItemTemplate(item, variable, tags, rolls) {
+  async genericItemTemplate(item, variable = '', tags = [], rolls) {
     // Checks if the following are empty/undefined. If so sets to blank.
     const descField = item.system.description ? item.system.description : '';
-    const varField = variable ? variable : '';
-
-
-    // TODO: Remove this temporary protection
-    const prevTags = Array.isArray(tags) ? tags : [tags];
-    const finalTags = prevTags.concat(this._assembleGenericTags(item));
 
     const cardData = {
       itemId: item.id,
@@ -424,8 +416,8 @@ export class STARoll {
       type: game.i18n.localize(`sta-enhanced.item.type.${item.type}`),
       name: item.name,
       descFieldHtml: descField,
-      tags: finalTags,
-      varFieldHtml: varField,
+      tags: tags.concat(this._assembleGenericTags(item)),
+      varFieldHtml: variable,
       rolls: rolls,
     };
 
