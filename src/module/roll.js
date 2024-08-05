@@ -103,10 +103,10 @@ export class STARoll {
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d.showForRoll(r, game.user, true).then((displayed) => {
-        this.sendToChat(speaker, html, r, flavor, '');
+        this.sendToChat(speaker, html, undefined, r, flavor, '');
       });
     } else {
-      this.sendToChat(speaker, html, r, flavor, 'sounds/dice.wav');
+      this.sendToChat(speaker, html, undefined, r, flavor, 'sounds/dice.wav');
     };
   }
   
@@ -130,20 +130,27 @@ export class STARoll {
     }
 
     const chatData = {
+      speakerId: speaker.id,
+      tokenId: speaker.token ? speaker.token.uuid : null,
       dicePool,
       diceHtml: diceString,
       successText,
       effectHtml: effectText,
     };
-    const html = `<div class="sta roll">${await renderTemplate('systems/sta/templates/chat/parts/challenge-roll.hbs', chatData)}</div>`;
+    const html =
+      `<div class="sta roll chat card" 
+            data-token-id="${chatData.tokenId}" 
+            data-speaker-id="${chatData.speakerId}">
+              ${await renderTemplate('systems/sta/templates/chat/parts/challenge-roll.hbs', chatData)}
+      </div>`;
       
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d.showForRoll(rolledChallenge, game.user, true).then((displayed) => {
-        this.sendToChat(speaker, html, rolledChallenge, flavor, '');
+        this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, '');
       });
     } else {
-      this.sendToChat(speaker, html, rolledChallenge, flavor, 'sounds/dice.wav');
+      this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, 'sounds/dice.wav');
     };
   }
 
@@ -153,32 +160,32 @@ export class STARoll {
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.quantity)+`</div>`;
     
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item, variable)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker, variable)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   async performTalentRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   async performFocusRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   async performValueRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   async performInjuryRoll(item, speaker) {
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   async performWeaponRoll(item, speaker) {
@@ -225,17 +232,23 @@ export class STARoll {
       }
     };
 
+    const flags = {
+      sta: {
+        itemData: item.toObject(),
+      }
+    };
+
     // Send the divs to populate a HTML template and sends to chat.
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
-    this.genericItemTemplate(item, variable, tags, rolls).then( ( genericItemHTML ) => {
+    this.genericItemTemplate(item, speaker, variable, tags, rolls).then( ( genericItemHTML ) => {
       const finalHTML = genericItemHTML;
       if (game.dice3d) {
         game.dice3d.showForRoll(damageRoll, game.user, true).then( ()=> {
-          this.sendToChat( speaker, finalHTML, damageRoll, item.name, '');
+          this.sendToChat( speaker, finalHTML, item, damageRoll, item.name, '');
         });
       } else {
-        this.sendToChat( speaker, finalHTML, damageRoll, item.name, 'sounds/dice.wav');
-      };
+        this.sendToChat( speaker, finalHTML, item, damageRoll, item.name, 'sounds/dice.wav');
+      }
     });
     // if (game.dice3d) {
     //   game.dice3d.showForRoll(damageRoll).then((displayed) => {
@@ -310,8 +323,8 @@ export class STARoll {
 	  const tags = this._assembleCharacterWeaponTags(item);
 
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item, variable, tags)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker, variable, tags)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   async performStarshipWeaponRoll2e(item, speaker) {
@@ -330,9 +343,16 @@ export class STARoll {
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', calculatedDamage)+`</div>`;
 
 	  const tags = this._assembleShipWeaponsTags(item);
+
+    const flags = {
+      sta: {
+        itemData: item.toObject(),
+      }
+    };
+
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item, variable, tags)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker, variable, tags)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   async performArmorRoll(item, speaker) {
@@ -341,8 +361,8 @@ export class STARoll {
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.protection)+`</div>`;
     
     // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item, variable)
-      .then((html)=>this.sendToChat(speaker, html));
+    this.genericItemTemplate(item, speaker, variable)
+      .then((html)=>this.sendToChat(speaker, html, item));
   }
 
   /**
@@ -401,16 +421,20 @@ export class STARoll {
    * Render a generic item card.
    *
    * @param {Item} item
+   * @param {Actor} speaker
    * @param {string=} variable
    * @param {Array<string>=} tags
+   * @param {object=} rolls
    *
    * @return {Promise<string>}
    */
-  async genericItemTemplate(item, variable = '', tags = [], rolls) {
+  async genericItemTemplate(item, speaker, variable = '', tags = [], rolls) {
     // Checks if the following are empty/undefined. If so sets to blank.
     const descField = item.system.description ? item.system.description : '';
 
     const cardData = {
+      speakerId: speaker.id,
+      tokenId: speaker.token ? speaker.token.uuid : null,
       itemId: item.id,
       img: item.img,
       type: game.i18n.localize(`sta-enhanced.item.type.${item.type}`),
@@ -450,13 +474,21 @@ export class STARoll {
     return tags;
   }
 
-  async sendToChat(speaker, content, roll, flavor, sound) {
+  async sendToChat(speaker, content, item, roll, flavor, sound) {
   let messageProps = {
     user: game.user.id,
     speaker: ChatMessage.getSpeaker({actor: speaker}),
     content: content,
-    sound: sound
+    sound: sound,
+    flags: {},
   };
+
+  if (typeof item != 'undefined') {
+    messageProps.flags.sta = {
+      itemData: item.toObject(),
+    };
+  }
+
   if (typeof roll != 'undefined')
     messageProps.roll = roll;
   if (typeof flavor != 'undefined')

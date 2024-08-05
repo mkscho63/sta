@@ -43,10 +43,46 @@ export class STAItem extends Item {
     event.preventDefault();
     const staActor = new STASharedActorFunctions();
 
-    const currentChildren = event.currentTarget.children;
-    const speaker = game.actors.find((target) => target.id === currentChildren.speakerId.value) || "Reroll";
+    const card = event.currentTarget.closest('.chat.card');
+    const messageId = card.closest('.message').dataset.messageId;
+    const message = game.messages.get(messageId);
+    const storedData = message.getFlag('sta', 'itemData');
 
+    const speaker = await this._getChatCardSpeaker(card);
 
-    staActor.rollChallengeRoll(event, null, null, speaker);
+    // Restrict rerolls to users with permission.
+    if (!(game.user.isGM || speaker.isOwner)) return;
+
+    const item = storedData ? new Item(storedData, {parent: speaker}) : speaker.items.get(card.dataset.itemId);
+    if (!item) {
+      // If we coudlnt' figure out the item, this is probably a reroll, in practice.
+      await staActor.rollChallengeRoll(event, 'Reroll', null, speaker);
+      return;
+    }
+
+    const flavorText = game.i18n.format(`sta.roll.challenge.weaponreroll`, {name: item.name});
+    await staActor.rollChallengeRoll(event, flavorText, null, speaker);
+  }
+
+  /**
+   * Get the author of a chat card.
+   *
+   * Cribbed from the DND5E system.
+   *
+   * @param {HTMLElement} card
+   * @return {Actor|null}
+   * @private
+   */
+  static async _getChatCardSpeaker(card) {
+    // Could be a token, a "synthetic" actor
+    if (card.dataset.tokenId) {
+      const token = await fromUuid(card.dataset.tokenId);
+      if (!token) return null;
+      return token.actor;
+    }
+
+    // Could be an actual World actor.
+    const speakerId = card.dataset.speakerId;
+    return game.actors.get(speakerId) || null;
   }
 }
