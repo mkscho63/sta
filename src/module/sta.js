@@ -319,7 +319,7 @@ Hooks.once('init', function() {
 
   Hooks.on('ready', function() {
     const t = new STATracker();
-    renderTemplate('systems/sta/templates/apps/tracker.html').then((html) => {
+    renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
       t.render(true);
     });
   });
