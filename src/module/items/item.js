@@ -30,10 +30,10 @@ export class STAItem extends Item {
     event.preventDefault();
     const staActor = new STASharedActorFunctions();
 
+    const card = event.currentTarget.closest('.chat.card');
+    const speaker = await this._getChatCardSpeaker(card);
+
     const children = event.currentTarget.children;
-    const speaker = game.actors.find((target) => target.id === children.speakerId.value) || "Reroll";
-
-
     staActor.rollAttributeTest(event, children.selectedAttribute.value,
       children.selectedAttributeValue.value, children.selectedDiscipline.value,
       children.selectedDisciplineValue.value, null, speaker);

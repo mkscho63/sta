@@ -86,6 +86,8 @@ export class STARoll {
     }
 
     const chatData = {
+      speakerId: speaker.id,
+      tokenId: speaker.token ? speaker.token.uuid : null,
       dicePool,
       checkTarget,
       complicationMinimumValue,
@@ -96,7 +98,6 @@ export class STARoll {
       selectedAttributeValue,
       selectedDiscipline,
       selectedDisciplineValue,
-      speakerId: speaker.id,
     };
     const html = await renderTemplate('systems/sta/templates/chat/attribute-test.hbs', chatData);
 
