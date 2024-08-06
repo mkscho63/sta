@@ -18,9 +18,9 @@
       </div>	
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.item.talent.type.title'}}</label>
-          <select name="system.type">
-            <option value="energy" {{#if (eq system.type "energy")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.energy'}}</option>
-            <option value="torpedo" {{#if (eq system.type "torpedo")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.torpedo'}}</option>
+          <select name="system.includescale">
+            <option value="energy" {{#if (eq system.includescale "energy")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.energy'}}</option>
+            <option value="torpedo" {{#if (eq system.includescale "torpedo")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.torpedo'}}</option>
           </select>
       </div>
       <div class="column-x4 label-top">
@@ -30,7 +30,7 @@
     {{#if (eq system.type "energy")}}
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.energy'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</label>
-        {{localize 'sta.actor.starship.scale'}} + {{system.damage}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
+        {{system.damage}} + {{localize 'sta.actor.starship.scale'}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
       </div>
     {{else if (eq system.type "torpedo")}}
       <div class="column-x4 label-top">

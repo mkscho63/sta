@@ -87,6 +87,7 @@
                 "value": 0
             },
 			"strmod": 0,
+			"rollrepnotdis": false,
             "upbringing": ""
         },
         "starship": {
@@ -139,6 +140,7 @@
                 "value": 0
             },
 			"shieldmod": 0,
+			"crwmod": 0,
 			"reservepower": true,
 			"shaken": false,
             "servicedate": "",

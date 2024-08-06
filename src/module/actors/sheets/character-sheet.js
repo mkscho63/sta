@@ -142,7 +142,7 @@ export class STACharacterSheet extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
       stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
-      if (html.find('[data-talent-name="Resolute"]').length > 0) {
+      if (html.find(`[data-talent-name="${localizedValues.resolute}"]`).length > 0) {
         stressTrackMax += 3;
       }
 	  stressTrackMax += parseInt(html.find('#strmod')[0].value)

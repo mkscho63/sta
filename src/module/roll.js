@@ -80,6 +80,9 @@ export class STARoll {
       break;
     case 'starship':
       flavor = game.i18n.format('sta.actor.starship.system.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'sidebar':
+      flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
     }
 
     // Build a dynamic html using the variables from above.
@@ -262,6 +265,7 @@ export class STARoll {
 
     if (item.system.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.system.qualities.hiddenx +'</div>';
     if (item.system.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx') + ' ' + item.system.qualities.piercingx +'</div>';
+    if (item.system.qualities.persistentx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.persistentx') + ' ' + item.system.qualities.persistentx +'</div>';
     if (item.system.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.viciousx') + ' ' + item.system.qualities.viciousx +'</div>';
 
     const damageRoll = await new Roll( calculatedDamage + 'd6' ).evaluate( {});
@@ -386,8 +390,8 @@ export class STARoll {
     if (item.system.range == 'close') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.close')+'</div>';
     if (item.system.range == 'medium') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.medium')+'</div>';    	
 	if (item.system.range == 'long') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.long')+'</div>';
-    if (item.system.type == 'energy') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.energy')+'</div>';    	
-	if (item.system.type == 'torpedo') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.torpedo')+'</div>';
+    if (item.system.includescale == 'energy') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.energy')+'</div>';    	
+	if (item.system.includescale == 'torpedo') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.torpedo')+'</div>';
 	
 	
 	if (item.system.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.area')+'</div>';

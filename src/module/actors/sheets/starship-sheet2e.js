@@ -107,8 +107,11 @@ export class STAStarshipSheet2e extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
-      if (html.find('[data-talent-name="Advanced Shields"]').length > 0) {
+      if (html.find(`[data-talent-name="${localizedValues.advancedshields}"]`).length > 0) {
         shieldsTrackMax += 5;
+      }
+      if (html.find(`[data-talent-name="${localizedValues.polarizedhullplating}"]`).length > 0) {
+        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value)
       }
       // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
       if (html.find('#max-shields')[0].value != shieldsTrackMax) {
@@ -153,7 +156,16 @@ export class STAStarshipSheet2e extends ActorSheet {
     // This creates a dynamic Crew Support tracker. It polls for the value of the ships's scale. 
     // With the value, creates a new div for each and places it under a child called "bar-crew-renderer".
     function crewTrackUpdate() {
-      crewTrackMax = parseInt(html.find('#scale')[0].value);
+      crewTrackMax = parseInt(html.find('#scale')[0].value) + parseInt(html.find('#crwmod')[0].value);
+        if (html.find(`[data-talent-name="${localizedValues.agingrelic}"]`).length > 0) {
+        crewTrackMax += 1;
+        }
+        if (html.find(`[data-talent-name="${localizedValues.extensiveautomation}"]`).length > 0) {
+        crewTrackMax = Math.ceil(crewTrackMax/2);
+        }
+        if (html.find(`[data-talent-name="${localizedValues.abundantpersonnel}"]`).length > 0) {
+        crewTrackMax += crewTrackMax;
+       }  
       // This checks that the max-crew hidden field is equal to the calculated Max Crew Support value, if not it makes it so.
       if (html.find('#max-crew')[0].value != crewTrackMax) {
         html.find('#max-crew')[0].value = crewTrackMax;
@@ -457,10 +469,17 @@ export class STAStarshipSheet2e extends ActorSheet {
     
     $(html).find('[id^=starship-weapon-]').each( function( _, value ) {
       const weaponDamage = parseInt(value.dataset.itemDamage);
-      const securityValue = parseInt(html.find('#security')[0].value);
+
+      let weaponValue = 0;
+      if (parseInt(html.find('#weapons')[0].value) > 6) weaponValue = 1;
+      if (parseInt(html.find('#weapons')[0].value) > 8) weaponValue = 2;
+      if (parseInt(html.find('#weapons')[0].value) > 10) weaponValue = 3;
+      if (parseInt(html.find('#weapons')[0].value) > 12) weaponValue = 4;
+
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "true") scaleDamage = parseInt(html.find('#scale')[0].value);
-      const attackDamageValue = weaponDamage;
+      if (value.dataset.itemIncludescale == "energy") scaleDamage = parseInt(html.find('#scale')[0].value);
+
+      const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
   }
