@@ -1065,6 +1065,10 @@ $trackColors: (
     }
   }
 
+  .dice-result {
+    cursor: pointer;
+  }
+
   .content {
     /** Override Foundry formula styles. */
     &.dice-roll {
@@ -1100,6 +1104,7 @@ $trackColors: (
       flex-direction: row;
       text-align: center;
       flex-wrap: wrap;
+      margin-bottom: 5px;
 
       .tag {
         width: calc(100%/3);
