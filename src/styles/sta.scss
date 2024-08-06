@@ -1065,14 +1065,9 @@ $trackColors: (
     }
   }
 
-  .dice-result {
-    cursor: pointer;
-  }
-
   .content {
     /** Override Foundry formula styles. */
     &.dice-roll {
-      cursor: pointer;
       .dice-formula {
         box-shadow: none;
         line-height: normal;
@@ -1081,7 +1076,7 @@ $trackColors: (
       }
     }
 
-    .dice-tooltip {
+    .tooltip, .dice-tooltip {
       order: -1;
     }
 
@@ -1123,8 +1118,31 @@ $trackColors: (
 
   .dice-rolls {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 0;
+    overflow: hidden;
+
+    .roll {
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      background-image: url(../../../icons/svg/d6-grey.svg);
+      position: relative;
+      min-width: 24px;
+      line-height: 24px;
+      float: left;
+      margin-right: 1px;
+      font-size: var(--font-size-16);
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+
+      &.d20 {
+        background-image: url(../../../icons/svg/d20-grey.svg);
+      }
+    }
   }
 
   .dice-formula .aim {

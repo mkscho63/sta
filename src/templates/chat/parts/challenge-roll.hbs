@@ -1,4 +1,4 @@
-<div class="dice-roll">
+<div class="dice-roll collapsible">
   <div class="dice-result">
     {{#if dicePool}}
       <div class="dice-formula">
@@ -9,9 +9,8 @@
         </table>
       </div>
     {{/if}}
-    {{!-- The "dice-tooltip" class gives us Foundry's built-in hide/show theme behavior --}}
-    <div class="dice-tooltip">
-      <section class="tooltip-part">
+    <div class="tooltip">
+      <section class="tooltip-part collapsible-content">
         <div class="dice">
           <ol class="dice-rolls">{{{diceHtml}}}</ol>
         </div>
