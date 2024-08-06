@@ -60,6 +60,9 @@ import {
 import {
   register_dsn_ufp_themes
 } from './dice/dice-so-nice.js';
+import {
+  STARoller
+} from './dice/STARoller.js';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -236,11 +239,20 @@ Hooks.once('init', function() {
   });
 
   game.settings.register('sta', 'maxNumberOfReputation', {
-    name: 'Maximum amount of Reputation:',
+    name: 'Maximum Reputation (1st ed):',
     hint: 'Max number of reputation that can be given to a character. 10 is default.',
     scope: 'world',
     type: Number,
     default: 20,
+    config: true
+  });
+
+  game.settings.register('sta', 'maxNumberOfReputation2e', {
+    name: 'Maximum Reputation (2nd ed):',
+    hint: 'Max number of reputation that can be given to a character. 3 is default.',
+    scope: 'world',
+    type: Number,
+    default: 5,
     config: true
   });
 

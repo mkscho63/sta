@@ -55,15 +55,18 @@
                         <div> {{localize 'sta.actor.starship.traits'}} </div>
                     </div>
                     <div class="column title" style="width:20%">
-                        <div> {{localize 'sta.actor.starship.shieldmod'}} </div>
+                        <div> {{localize 'sta.actor.starship.shieldcrewmod'}} </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="column" style="width:80%">
                         <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
                     </div>
-                    <div class="column" style="width:20%">
+                    <div class="column" style="width:10%">
                         <input class="text-entry" name="system.shieldmod" id="shieldmod" type="number" value="{{system.shieldmod}}" placeholder="0" />
+                    </div>
+                    <div class="column" style="width:10%">
+                        <input class="text-entry" name="system.crwmod" id="crwmod" type="number" value="{{system.crwmod}}" placeholder="0" />
                     </div>
                 </div>
                 </div>
@@ -130,8 +133,8 @@
                     </div>
                     <div class="section img">
                         <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+                        <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
                     </div>
-                  <div class="check-button btn attribute">{{localize 'sta.actor.attdis.task'}}</div>
                     <div class="section crew">
                         <div class="title">
                             {{localize 'sta.actor.starship.crew'}}
@@ -185,6 +188,15 @@
                 </div>
                 <div class="column left-column">
                     <div class="section talents">
+                    <script>
+                        var localizedValues = {
+                           "extensiveautomation": "{{localize 'sta.actor.starship.talents.extensiveautomation'}}",
+                           "abundantpersonnel": "{{localize 'sta.actor.starship.talents.abundantpersonnel'}}",
+                           "agingrelic": "{{localize 'sta.actor.starship.talents.agingrelic'}}",
+                           "advancedshields": "{{localize 'sta.actor.starship.talents.advancedshields'}}",
+                           "polarizedhullplating": "{{localize 'sta.actor.starship.talents.polarizedhullplating'}}"
+                        };
+                    </script>
                         <div class="title">
                             {{localize 'sta.item.talent.title'}}
                         </div>

@@ -59,10 +59,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="column" style="width:80%">
+                    <div class="column" style="width:90%">
                         <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
                     </div>
-                    <div class="column" style="width:20%">
+                    <div class="column" style="width:10%">
                         <input class="text-entry" name="system.shieldmod" id="shieldmod" type="number" value="{{system.shieldmod}}" placeholder="0" />
                     </div>
                 </div>
@@ -180,6 +180,11 @@
                 </div>
                 <div class="column left-column">
                     <div class="section talents">
+                    <script>
+                        var localizedValues = {
+                           "advancedshields": "{{localize 'sta.actor.starship.talents.advancedshields'}}"
+                        };
+                    </script>
                         <div class="title">
                             {{localize 'sta.item.talent.title'}}
                         </div>

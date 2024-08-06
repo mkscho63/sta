@@ -4,6 +4,7 @@
       <div class="lcars-column">
         <div class="lcars-header-extendedtask1"></div>
       </div>
+      <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" width="50" height="50"/>
       <div class="column-headerfields1-name-extendedtasks">
         <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
         <input name="name" type="text" class="text-entry" value="{{name}}" placeholder="{{localize 'sta.item.genericitem.name'}}" />
@@ -54,4 +55,17 @@
         <div id="extendedtask-renderer" style="width: 100%" class="extendedtask track"></div>
       </div>
     </div>
+    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
+    <div class="main">
+     <div class="row">
+      <div class="column left-column">
+       <div class="section note">
+         <div class="note">
+          {{editor system.description target="system.description" button=true owner=owner editable=true}}
+         </div>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </div>
 </form>

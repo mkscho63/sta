@@ -83,8 +83,8 @@ export class STACharacterSheet2e extends ActorSheet {
     // Check reputation max/min
     if (!(sheetData.system.reputation))
       sheetData.system.reputation = {};
-    if (sheetData.system.reputation.value > 20) {
-      sheetData.system.reputation.value = 20;
+    if (sheetData.system.reputation.value > 5) {
+      sheetData.system.reputation.value = 5;
     }
     if (sheetData.system.reputation < 0) {
       sheetData.system.reputation = 0;
@@ -142,13 +142,13 @@ export class STACharacterSheet2e extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
       stressTrackMax = parseInt(html.find('#fitness')[0].value)
-      if (html.find('[data-talent-name="Mental Discipline"]').length > 0) {
+      if (html.find(`[data-talent-name="${localizedValues.mentaldiscipline}"]`).length > 0) {
         stressTrackMax = parseInt(html.find('#control')[0].value);
 	  }
-      if (html.find('[data-talent-name="Tough"]').length > 0) {
+      if (html.find(`[data-talent-name="${localizedValues.tough}"]`).length > 0) {
         stressTrackMax += 2;
       }
-      if (html.find('[data-talent-name="Resolute"]').length > 0) {
+      if (html.find(`[data-talent-name="${localizedValues.resolute}"]`).length > 0) {
         stressTrackMax += parseInt(html.find('#command')[0].value);
       }
 	  stressTrackMax += parseInt(html.find('#strmod')[0].value)
@@ -170,7 +170,7 @@ export class STACharacterSheet2e extends ActorSheet {
 
     // This creates a dynamic Reputation tracker. For this it uses a max value of 30. This can be configured here. 
     // It creates a new div for each and places it under a child called "bar-rep-renderer"
-    const repPointsMax = game.settings.get('sta', 'maxNumberOfReputation');
+    const repPointsMax = game.settings.get('sta', 'maxNumberOfReputation2e');
     for (let i = 1; i <= repPointsMax; i++) {
       const repDiv = document.createElement('DIV');
       repDiv.className = 'box';
@@ -446,6 +446,10 @@ export class STACharacterSheet2e extends ActorSheet {
           selectedDiscipline = selectedDiscipline.slice(0, -9);
           selectedDisciplineValue = html.find('#'+selectedDiscipline)[0].value;
         }
+       if (html.find('input[name="system.rollrepnotdis"]')[0].checked) {
+         selectedDiscipline = 'reputation';
+         selectedDisciplineValue = html.find('#total-rep')[0].value;
+       }
       }
             
       staActor.rollAttributeTest(ev, selectedAttribute,

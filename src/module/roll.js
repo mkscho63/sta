@@ -80,6 +80,9 @@ export class STARoll {
       break;
     case 'starship':
       flavor = game.i18n.format('sta.actor.starship.system.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'sidebar':
+      flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
     }
 
     // Build a dynamic html using the variables from above.
@@ -262,6 +265,7 @@ export class STARoll {
 
     if (item.system.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.system.qualities.hiddenx +'</div>';
     if (item.system.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx') + ' ' + item.system.qualities.piercingx +'</div>';
+    if (item.system.qualities.persistentx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.persistentx') + ' ' + item.system.qualities.persistentx +'</div>';
     if (item.system.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.viciousx') + ' ' + item.system.qualities.viciousx +'</div>';
 
     const damageRoll = await new Roll( calculatedDamage + 'd6' ).evaluate( {});
@@ -334,11 +338,9 @@ export class STARoll {
     const variablePrompt = game.i18n.format('sta.roll.weapon.damage2e');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.system.damage)+`</div>`;
 	
-	let weaponrange = game.i18n.format('sta.actor.belonging.weapon.melee');
-	if (item.system.range == 'ranged') weaponrange = game.i18n.format('sta.actor.belonging.weapon.ranged');
-	
 	let tags = '';
-    if (item.system.range) tags += '<div class=\'tag\'> ' + weaponrange + '</div>';
+    if (item.system.range == 'melee') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.melee')+'</div>';
+    if (item.system.range == 'ranged') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.ranged')+'</div>';
     if (item.system.hands > 0) tags += '<div class=\'tag\'> ' + item.system.hands + ' ' +game.i18n.format('sta.item.genericitem.handed') +'</div>';
     if (item.system.severity > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.item.genericitem.severity') + ' ' + item.system.severity +'</div>';
     if (item.system.qualities.stun) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.stun')+'</div>';    	
@@ -383,15 +385,13 @@ export class STARoll {
 
     const variablePrompt = game.i18n.format('sta.roll.weapon.damage2e');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', calculatedDamage)+`</div>`;
-	
-	let weaponrange = game.i18n.format('sta.actor.belonging.weapon.close');
-	if (item.system.range == 'medium') weaponrange = game.i18n.format('sta.actor.belonging.weapon.medium');
-	if (item.system.range == 'long') weaponrange = game.i18n.format('sta.actor.belonging.weapon.long');
-	
+
 	let tags = '';
-    if (item.system.range) tags += '<div class=\'tag\'> ' + weaponrange + '</div>';
-    if (item.system.type == 'energy') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.energy')+'</div>';    	
-	if (item.system.type == 'torpedo') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.torpedo')+'</div>';
+    if (item.system.range == 'close') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.close')+'</div>';
+    if (item.system.range == 'medium') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.medium')+'</div>';    	
+	if (item.system.range == 'long') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.long')+'</div>';
+    if (item.system.includescale == 'energy') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.energy')+'</div>';    	
+	if (item.system.includescale == 'torpedo') tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.torpedo')+'</div>';
 	
 	
 	if (item.system.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.area')+'</div>';

@@ -59,6 +59,9 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 
 ---
 
+## Development Environment
+In order to build successfully, you will need to update `foundryconfig.json` and direct it to the appropriate [Foundry VTT Data directory](https://foundryvtt.com/article/configuration). 
+
 ## Thanks
 - Atropos, for creating Foundry Virtual Tabletop. It is an amazing VTT, especially if you want something highly customizable. <a href="https://foundryvtt.com/" target="_blank">https://foundryvtt.com/</a>.
 - Modiphius for creating the amazing Star Trek Adventures system, I definitely recommend trying it out if you are any level of a fan of Star Trek. Ensure you only use this system after purchasing the Star Trek Adventure system! <a href="https://www.modiphius.net/collections/star-trek-adventures">https://www.modiphius.net/</a>.

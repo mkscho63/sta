@@ -13,6 +13,8 @@
           <div class="track">
             <input type="hidden" id="total-rep" name="system.reputation" value="{{system.reputation}}" data-dtype="Number" />
             <div id="bar-rep-renderer" class=" bar"></div>
+            {{localize 'sta.actor.character.rollrepnotdis'}}:
+            <input class="checkbox" type="checkbox" name="system.rollrepnotdis" data-dtype="Boolean" {{checked system.rollrepnotdis}}>
           </div>
         </div>
         <div class="row">
@@ -64,10 +66,10 @@
           <div class="column" style="width:25%">
             <input name="system.upbringing" class="text-entry" type="text" value="{{system.upbringing}}" placeholder="{{localize 'sta.actor.character.upbringing'}}" />
           </div>
-          <div class="column" style="width:30%">
+          <div class="column" style="width:40%">
               <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
           </div>
-          <div class="column" style="width:20%">
+          <div class="column" style="width:10%">
               <input class="text-entry" name="system.strmod" id="strmod" type="number" value="{{system.strmod}}" placeholder="0" />
           </div>
         </div>
@@ -156,6 +158,13 @@
         </div>
         <div class="column left-column">
           <div class="section talents">
+          <script>
+              var localizedValues = {
+                  "tough": "{{localize 'sta.actor.character.talents.tough'}}",
+          		  "resolute": "{{localize 'sta.actor.character.talents.resolute'}}",
+          		  "mentaldiscipline": "{{localize 'sta.actor.character.talents.mentaldiscipline'}}"
+              };
+          </script>
             <div class="title">
               {{localize 'sta.item.talent.title'}}
             </div>
