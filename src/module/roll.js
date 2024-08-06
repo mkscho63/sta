@@ -438,7 +438,7 @@ export class STARoll {
       tokenId: speaker.token ? speaker.token.uuid : null,
       itemId: item.id,
       img: item.img,
-      type: game.i18n.localize(`sta-enhanced.item.type.${item.type}`),
+      type: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
       descFieldHtml: descField,
       tags: tags.concat(this._assembleGenericTags(item)),
