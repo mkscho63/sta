@@ -7,9 +7,9 @@ import {
 
 
 export class STARoller {
-    static async Init(controls, html) {
-        // Create the main dice roll button
-        const diceRollbtn = $(`
+  static async Init(controls, html) {
+    // Create the main dice roll button
+    const diceRollbtn = $(`
             <li class="scene-control sdr-scene-control" data-control="STARoller" title="STA Dice Roller">
                 <i class="fa-solid fa-starship"></i>
                 <ul class="nested-buttons" style="display: none; list-style: none; padding-left: 20px; margin: 0;">
@@ -17,48 +17,47 @@ export class STARoller {
             </li>
         `);
 
-        // Create the challenge roll button
-        const challengerollbtn = $(`
+    // Create the challenge roll button
+    const challengerollbtn = $(`
             <li class="scene-control sdr-scene-control nested-button" data-control="STARoller" title="STA Roll Challenge" style="margin-left: 20px;">
                 <i class="fa-solid fa-dice"></i>
             </li>
         `);
 
-        // Create the task roll button
-        const taskrollbtn = $(`
+    // Create the task roll button
+    const taskrollbtn = $(`
             <li class="scene-control sdr-scene-control nested-button" data-control="STARoller" title="STA Roll Task" style="margin-left: 20px;">
                 <i class="fa-solid fa-dice-d20"></i>
             </li>
         `);
 
-        // Append the nested buttons to the main button's container
-        diceRollbtn.find('.nested-buttons').append(challengerollbtn).append(taskrollbtn);
+    // Append the nested buttons to the main button's container
+    diceRollbtn.find('.nested-buttons').append(challengerollbtn).append(taskrollbtn);
 
-        // Append the main button to the main controls
-        html.find(".main-controls").append(diceRollbtn);
+    // Append the main button to the main controls
+    html.find('.main-controls').append(diceRollbtn);
 
-        // Add event listener to the main button to toggle the visibility of nested buttons
-        diceRollbtn[0].addEventListener('click', ev => {
-            const nestedButtons = diceRollbtn.find('.nested-buttons');
-            nestedButtons.toggle();
-        });
+    // Add event listener to the main button to toggle the visibility of nested buttons
+    diceRollbtn[0].addEventListener('click', (ev) => {
+      const nestedButtons = diceRollbtn.find('.nested-buttons');
+      nestedButtons.toggle();
+    });
 
 
-        challengerollbtn[0].addEventListener('click', ev => this.rollChallengeRoll(ev));
-        taskrollbtn[0].addEventListener('click', ev => this.rollTaskRoll(ev));
-    }
-
+    challengerollbtn[0].addEventListener('click', (ev) => this.rollChallengeRoll(ev));
+    taskrollbtn[0].addEventListener('click', (ev) => this.rollTaskRoll(ev));
+  }
 
  
-    static async rollTaskRoll(event) {
+  static async rollTaskRoll(event) {
 
-    let selectedAttribute = "STARoller";
-    let selectedDiscipline = "STARoller";
+    let selectedAttribute = 'STARoller';
+    let selectedDiscipline = 'STARoller';
     let defaultValue = 2;
     const speaker = {
-        type: 'sidebar',
-		id: 'sidebar'
-        }
+      type: 'sidebar',
+      id: 'sidebar'
+    };
 
     event.preventDefault();
     // This creates a dialog to gather details regarding the roll and waits for a response
@@ -77,12 +76,12 @@ export class STARoller {
         selectedAttribute, selectedAttributeValue, selectedDiscipline,
         selectedDisciplineValue, complicationRange, speaker);
     }
-   }
+  }
 
 
-    static async rollChallengeRoll (event) {
+  static async rollChallengeRoll (event) {
 
-    let weaponName = "STARoller";
+    let weaponName = 'STARoller';
     let defaultValue = 2;
 
     event.preventDefault();
@@ -95,13 +94,8 @@ export class STARoller {
       staRoll.performChallengeRoll(dicePool, weaponName);
     }
   }
-
-
-
-
-
 }
 Hooks.on('renderSceneControls', (controls, html) => {
-    console.log("STARoller here", html);
-    STARoller.Init(controls, html);
+  console.log('STARoller here', html);
+  STARoller.Init(controls, html);
 });
