@@ -35,7 +35,7 @@ export class STARoller {
     diceRollbtn.find('.nested-buttons').append(challengerollbtn).append(taskrollbtn);
 
     // Append the main button to the main controls
-    html.find(".main-controls").append(diceRollbtn);
+    html.find('.main-controls').append(diceRollbtn);
 
     // Add event listener to the main button to toggle the visibility of nested buttons
     diceRollbtn.on('click', (ev) => {
@@ -43,11 +43,11 @@ export class STARoller {
       nestedButtons.toggle();
     });
 
-    challengerollbtn.on('click', ev => {
+    challengerollbtn.on('click', (ev) => {
       this.rollChallengeRoll(ev);
     });
 
-    taskrollbtn.on('click', ev => {
+    taskrollbtn.on('click', (ev) => {
       this.rollTaskRoll(ev);
     });
   }
