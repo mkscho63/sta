@@ -84,9 +84,6 @@ export class STARoller {
 
     let weaponName = "STARoller";
     let defaultValue = 2;
-    const speaker = {
-        type: 'sidebar'
-        }
 
     event.preventDefault();
     // This creates a dialog to gather details regarding the roll and waits for a response
@@ -95,7 +92,7 @@ export class STARoller {
       const dicePool = rolldialog.get('dicePoolValue');
       // Once the response has been collected it then sends it to be rolled.
       const staRoll = new STARoll();
-      staRoll.performChallengeRoll(dicePool, weaponName, speaker);
+      staRoll.performChallengeRoll(dicePool, weaponName);
     }
   }
 

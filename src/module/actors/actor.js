@@ -121,7 +121,7 @@ export class STASharedActorFunctions {
   }
 	
   // This handles performing an challenge roll using the "Perform Challenge Roll" button.
-  async rollChallengeRoll(event, weaponName, defaultValue, speaker) {
+  async rollChallengeRoll(event, weaponName, defaultValue, speaker = null) {
     event.preventDefault();
     // This creates a dialog to gather details regarding the roll and waits for a response
     const rolldialog = await STARollDialog.create(false, defaultValue);

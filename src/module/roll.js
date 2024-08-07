@@ -111,7 +111,7 @@ export class STARoll {
     };
   }
   
-  async performChallengeRoll(dicePool, challengeName, speaker) {
+  async performChallengeRoll(dicePool, challengeName, speaker = null) {
     // Foundry will soon make rolling async only, setting it up as such now avoids a warning. 
     const rolledChallenge = await new Roll( dicePool + 'd6' ).evaluate( {});
 
@@ -131,8 +131,8 @@ export class STARoll {
     }
 
     const chatData = {
-      speakerId: speaker.id,
-      tokenId: speaker.token ? speaker.token.uuid : null,
+      speakerId: speaker && speaker.id,
+      tokenId: speaker && speaker.token ? speaker.token.uuid : null,
       dicePool,
       diceHtml: diceString,
       successText,
