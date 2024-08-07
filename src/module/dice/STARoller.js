@@ -10,23 +10,23 @@ export class STARoller {
   static async Init(controls, html) {
     // Create the main dice roll button
     const diceRollbtn = $(`
-            <li class="scene-control sdr-scene-control" data-control="STARoller" title="STA Dice Roller" style="position: relative;">
+            <li class="scene-control sdr-scene-control sta-roller" data-control="STARoller" title="STA Dice Roller">
                 <i class="fa-solid fa-starship"></i>
-                <ul class="nested-buttons" style="display: none; list-style: none; padding-left: 20px; margin: 0; position: absolute; top: 100%; left: 0;">
-                </ul>
+                <ol class="nested-buttons control-tools">
+                </ol>
             </li>
         `);
 
     // Create the challenge roll button
     const challengerollbtn = $(`
-            <li class="scene-control sdr-scene-control nested-button" data-control="STARoller" title="STA Roll Challenge" style="margin-left: 20px;">
+            <li class="scene-control sdr-scene-control nested-button challenge" data-control="STARoller" title="STA Roll Challenge">
                 <i class="fa-solid fa-dice"></i>
             </li>
         `);
 
     // Create the task roll button
     const taskrollbtn = $(`
-            <li class="scene-control sdr-scene-control nested-button" data-control="STARoller" title="STA Roll Task" style="margin-left: 20px;">
+            <li class="scene-control sdr-scene-control nested-button task" data-control="STARoller" title="STA Roll Task">
                 <i class="fa-solid fa-dice-d20"></i>
             </li>
         `);
