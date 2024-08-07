@@ -12,7 +12,7 @@ export class STARoll {
     const checkTarget = 
       parseInt(selectedAttributeValue) + parseInt(selectedDisciplineValue);
     const complicationMinimumValue = 20 - (complicationRange - 1);
-    const doubledetermination = parseInt(selectedDisciplineValue) + parseInt(selectedDisciplineValue)
+    const doubledetermination = parseInt(selectedDisciplineValue) + parseInt(selectedDisciplineValue);
 	
     // Foundry will soon make rolling async only, setting it up as such now avoids a warning. 
     const r = await new Roll( dicePool + 'd20' ).evaluate( {});
@@ -336,7 +336,7 @@ export class STARoll {
     if (speaker.system.systems.weapons.value > 12) actorWeapons = 4;
 
     let scaleDamage = 0;
-	if (item.system.type == 'energy') scaleDamage = parseInt( speaker.system.scale );
+    if (item.system.type == 'energy') scaleDamage = parseInt( speaker.system.scale );
 
     const calculatedDamage = item.system.damage + actorWeapons + scaleDamage;
 
@@ -476,24 +476,26 @@ export class STARoll {
   }
 
   async sendToChat(speaker, content, item, roll, flavor, sound) {
-  let messageProps = {
-    user: game.user.id,
-    speaker: ChatMessage.getSpeaker({actor: speaker}),
-    content: content,
-    sound: sound,
-    flags: {},
-  };
-
-  if (typeof item != 'undefined') {
-    messageProps.flags.sta = {
-      itemData: item.toObject(),
+    const messageProps = {
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({actor: speaker}),
+      content: content,
+      sound: sound,
+      flags: {},
     };
-  }
 
-  if (typeof roll != 'undefined')
-    messageProps.roll = roll;
-  if (typeof flavor != 'undefined')
-    messageProps.flavor = flavor;
+    if (typeof item != 'undefined') {
+      messageProps.flags.sta = {
+        itemData: item.toObject(),
+      };
+    }
+
+    if (typeof roll != 'undefined') {
+      messageProps.roll = roll;
+    }
+    if (typeof flavor != 'undefined') {
+      messageProps.flavor = flavor;
+    }
     // Send's Chat Message to foundry, if items are missing they will appear as false or undefined and this not be rendered.
     return await ChatMessage.create(messageProps).then((msg) => {
       return msg;
