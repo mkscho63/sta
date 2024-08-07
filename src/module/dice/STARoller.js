@@ -10,9 +10,9 @@ export class STARoller {
   static async Init(controls, html) {
     // Create the main dice roll button
     const diceRollbtn = $(`
-            <li class="scene-control sdr-scene-control" data-control="STARoller" title="STA Dice Roller">
+            <li class="scene-control sdr-scene-control" data-control="STARoller" title="STA Dice Roller" style="position: relative;">
                 <i class="fa-solid fa-starship"></i>
-                <ul class="nested-buttons" style="display: none; list-style: none; padding-left: 20px; margin: 0;">
+                <ul class="nested-buttons" style="display: none; list-style: none; padding-left: 20px; margin: 0; position: absolute; top: 100%; left: 0;">
                 </ul>
             </li>
         `);
@@ -35,19 +35,22 @@ export class STARoller {
     diceRollbtn.find('.nested-buttons').append(challengerollbtn).append(taskrollbtn);
 
     // Append the main button to the main controls
-    html.find('.main-controls').append(diceRollbtn);
+    html.find(".main-controls").append(diceRollbtn);
 
     // Add event listener to the main button to toggle the visibility of nested buttons
-    diceRollbtn[0].addEventListener('click', (ev) => {
+    diceRollbtn.on('click', (ev) => {
       const nestedButtons = diceRollbtn.find('.nested-buttons');
       nestedButtons.toggle();
     });
 
+    challengerollbtn.on('click', ev => {
+      this.rollChallengeRoll(ev);
+    });
 
-    challengerollbtn[0].addEventListener('click', (ev) => this.rollChallengeRoll(ev));
-    taskrollbtn[0].addEventListener('click', (ev) => this.rollTaskRoll(ev));
+    taskrollbtn.on('click', ev => {
+      this.rollTaskRoll(ev);
+    });
   }
-
  
   static async rollTaskRoll(event) {
 
