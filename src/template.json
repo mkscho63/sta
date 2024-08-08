@@ -82,7 +82,12 @@
             "milestones": "",
             "rank": "",
             "reputation": 0,
+            "acclaim": 0,
+            "reprimand": 0,
             "species": "",
+			"careerpath": "",
+			"pastimes": "",
+			"careerevents": "",
             "stress": {
                 "value": 0
             },
