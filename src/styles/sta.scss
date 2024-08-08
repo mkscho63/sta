@@ -1451,18 +1451,10 @@ $trackColors: (
       .nested-buttons {
         display: none;
         list-style: none;
-        margin: 0 0 0 30px;
+        margin: 0;
         position: absolute;
-        top: -1;
-        left: 0;
-
-        .challenge {
-          margin-left: 20px;
-        }
-
-        .task {
-          margin-left: 20px;
-        }
+        top: 0;
+        left: 47px;
       }
     }
   }
