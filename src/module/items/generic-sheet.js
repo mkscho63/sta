@@ -18,7 +18,7 @@ export class STAGenericSheet extends ItemSheet {
       ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    return `systems/sta/templates/items/generic-sheet.html`;
+    return `systems/sta/templates/items/generic-sheet.hbs`;
   }
 
   /* -------------------------------------------- */

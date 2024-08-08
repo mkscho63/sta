@@ -21,9 +21,9 @@ export class STASmallCraftSheet2e extends ActorSheet {
   /** @override */
   get template() {
     let versionInfo = game.world.coreVersion;
-    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.html";
-    return `systems/sta/templates/actors/smallcraft-sheet2e.html`;
+    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
+    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.hbs";
+    return `systems/sta/templates/actors/smallcraft-sheet2e.hbs`;
   }
     
 

@@ -18,7 +18,7 @@ export class STAStarshipWeaponSheet2e extends ItemSheet {
 	        ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    return `systems/sta/templates/items/starship-weapon-sheet2e.html`;
+    return `systems/sta/templates/items/starship-weapon-sheet2e.hbs`;
   }
 
   /* -------------------------------------------- */

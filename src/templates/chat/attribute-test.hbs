@@ -1,0 +1,30 @@
+<div class="sta roll chat card" data-token-id="{{tokenId}}" data-speaker-id="{{speakerId}}">
+  <div class="dice-roll collapsible">
+    <div class="dice-result">
+      <div class="dice-formula">
+        <table class="aim">
+          <tr>
+            <td>{{dicePool}}d20</td>
+            <td>{{localize "sta.roll.target"}}: {{checkTarget}}</td>
+            <td>{{localize "sta.roll.complicationrange"}}{{complicationMinimumValue}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="tooltip">
+        <section class="tooltip-part collapsible-content">
+          <div class="dice">
+            <ol class="dice-rolls">{{{diceHtml}}}</ol>
+          </div>
+        </section>
+      </div>{{{complicationHtml}}}
+      <h4 class="dice-total">{{successText}}</h4>
+    </div>
+  </div>
+  <div class="reroll-result attribute">
+    <span>{{localize "sta.roll.rerollresults"}}</span>
+    <input id="selectedAttribute" type="hidden" value="{{selectedAttribute}}" >
+    <input id="selectedAttributeValue" type="hidden" value="{{selectedAttributeValue}}" >
+    <input id="selectedDiscipline" type="hidden" value="{{selectedDiscipline}}" >
+    <input id="selectedDisciplineValue" type="hidden" value="{{selectedDisciplineValue}}" >
+  </div>
+</div>

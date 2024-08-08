@@ -60,6 +60,7 @@ import {
 import {
   register_dsn_ufp_themes
 } from './dice/dice-so-nice.js';
+import {Collapsible} from './chat/Collapsible.js';
 import {
   STARoller
 } from './dice/STARoller.js';
@@ -306,13 +307,19 @@ Hooks.once('init', function() {
     config: false
   });
 
+  preloadHandlebarsTemplates();
+
   Hooks.on('renderChatLog', (app, html, data) =>
     STAItem.chatListeners(html)
   );
 
+  Hooks.on('renderChatMessage', (msg, html, data) => {
+    Collapsible.attachHeaderListener(html);
+  });
+
   Hooks.on('ready', function() {
     const t = new STATracker();
-    renderTemplate('systems/sta/templates/apps/tracker.html').then((html) => {
+    renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
       t.render(true);
     });
   });
@@ -321,3 +328,13 @@ Hooks.once('init', function() {
     register_dsn_ufp_themes(dice3d);
   });
 });
+
+async function preloadHandlebarsTemplates() {
+  const paths = {
+    ['sta.chat.attribute-test']: 'systems/sta/templates/chat/attribute-test.hbs',
+    ['sta.chat.item-card']: 'systems/sta/templates/chat/generic-item.hbs',
+    ['sta.chat.parts.weapon-roll']: 'systems/sta/templates/chat/parts/challenge-roll.hbs',
+  };
+
+  return loadTemplates(paths);
+}
