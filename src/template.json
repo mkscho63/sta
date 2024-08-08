@@ -85,14 +85,14 @@
             "acclaim": 0,
             "reprimand": 0,
             "species": "",
-			"careerpath": "",
-			"pastimes": "",
-			"careerevents": "",
+            "careerpath": "",
+            "pastimes": "",
+            "careerevents": "",
             "stress": {
                 "value": 0
             },
-			"strmod": 0,
-			"rollrepnotdis": false,
+            "strmod": 0,
+            "rollrepnotdis": false,
             "upbringing": ""
         },
         "starship": {
