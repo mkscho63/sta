@@ -10,23 +10,23 @@ export class STARoller {
   static async Init(controls, html) {
     // Create the main dice roll button
     const diceRollbtn = $(`
-            <li class="scene-control sdr-scene-control sta-roller" data-control="STARoller" title="STA Dice Roller">
+            <li class="scene-control sta-roller" data-control="STARoller" title="STA Dice Roller">
                 <i class="fa-solid fa-starship"></i>
-                <ol class="nested-buttons control-tools">
+                <ol class="nested-buttons sub-controls control-tools">
                 </ol>
             </li>
         `);
 
     // Create the challenge roll button
     const challengerollbtn = $(`
-            <li class="scene-control sdr-scene-control nested-button challenge" data-control="STARoller" title="STA Roll Challenge">
+            <li class="control-tool nested-button challenge" data-control="STARoller" title="STA Roll Challenge">
                 <i class="fa-solid fa-dice"></i>
             </li>
         `);
 
     // Create the task roll button
     const taskrollbtn = $(`
-            <li class="scene-control sdr-scene-control nested-button task" data-control="STARoller" title="STA Roll Task">
+            <li class="control-tool nested-button task" data-control="STARoller" title="STA Roll Task">
                 <i class="fa-solid fa-dice-d20"></i>
             </li>
         `);
@@ -40,6 +40,8 @@ export class STARoller {
     // Add event listener to the main button to toggle the visibility of nested buttons
     diceRollbtn.on('click', (ev) => {
       const nestedButtons = diceRollbtn.find('.nested-buttons');
+      diceRollbtn.toggleClass('active');
+      diceRollbtn.find('.sub-controls').toggleClass('active');
       nestedButtons.toggle();
     });
 
