@@ -204,6 +204,10 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Preto)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Branco)",
 
+  "sta.actor.character.acclaimreprimand": "Acc/Rep",
+  "sta.actor.character.careerevents": "Career Events",
+  "sta.actor.character.careerpath": "Career Path",
+  "sta.actor.character.pastimes": "Pastimes",
   "sta.actor.character.talents.tough": "Tough",
   "sta.actor.character.talents.resolute": "Resolute",
   "sta.actor.character.talents.mentaldiscipline": "Mental Discipline",

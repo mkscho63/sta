@@ -20,9 +20,9 @@ export class STACharacterSheet2e extends ActorSheet {
   /** @override */
   get template() {
     let versionInfo = game.world.coreVersion;
-    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.html";
-    return `systems/sta/templates/actors/character-sheet2e.html`;
+    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
+    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.hbs";
+    return `systems/sta/templates/actors/character-sheet2e.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -142,13 +142,13 @@ export class STACharacterSheet2e extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
       stressTrackMax = parseInt(html.find('#fitness')[0].value)
-      if (html.find(`[data-talent-name="${localizedValues.mentaldiscipline}"]`).length > 0) {
+      if (html.find(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`).length > 0) {
         stressTrackMax = parseInt(html.find('#control')[0].value);
 	  }
-      if (html.find(`[data-talent-name="${localizedValues.tough}"]`).length > 0) {
+      if (html.find(`[data-talent-name*="${localizedValues.tough}"]`).length > 0) {
         stressTrackMax += 2;
       }
-      if (html.find(`[data-talent-name="${localizedValues.resolute}"]`).length > 0) {
+      if (html.find(`[data-talent-name*="${localizedValues.resolute}"]`).length > 0) {
         stressTrackMax += parseInt(html.find('#command')[0].value);
       }
 	  stressTrackMax += parseInt(html.find('#strmod')[0].value)

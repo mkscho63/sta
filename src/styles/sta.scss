@@ -1033,78 +1033,148 @@ $trackColors: (
   padding: 4px 5px;
 }
 
-.sta.roll{
-  .dice-roll .dice-result .dice-tooltip {
+.sta.roll {
+  .dice-tooltip {
     display: block;
   }
 
-  &.attribute {
-    .dice-roll {
-      .dice-result {
-        .dice-formula .aim {
-          margin: 0;
-          background: unset;
-          border: 0;
-        }
-  
-        .dice-tooltip .dice .dice-rolls {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-      }
+  header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
 
-      .dice-total.effect {
-        color: $labelColor
+    img {
+      height: 45px;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: start;
+      white-space: nowrap;
+    }
+
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .type {
+      font-size: 0.6em;
+    }
+  }
+
+  .content {
+    /** Override Foundry formula styles. */
+    &.dice-roll {
+      .dice-formula {
+        box-shadow: none;
+        line-height: normal;
+        cursor: pointer;
+        word-break: normal;
+      }
+    }
+
+    .tooltip, .dice-tooltip {
+      order: -1;
+    }
+
+    .vars {
+      flex: 0 0 100%;
+      position: relative;
+      margin-bottom: 5px;
+      line-height: normal;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--color-border-light-2);
+      border-radius: 3px;
+      box-shadow: none;
+      word-break: break-all;
+    }
+
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+
+      .tag {
+        width: calc(100%/3);
+        font-size: 12px;
+        flex-grow: 1;
+        border: 0.5px solid $background;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    .dice-total.effect {
+      color: $labelColor
+    }
+  }
+
+  .dice-rolls {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 0;
+    overflow: hidden;
+
+    .roll {
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      background-image: url(../../../icons/svg/d6-grey.svg);
+      position: relative;
+      min-width: 24px;
+      line-height: 24px;
+      float: left;
+      margin-right: 1px;
+      font-size: var(--font-size-16);
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+
+      &.d20 {
+        background-image: url(../../../icons/svg/d20-grey.svg);
       }
     }
   }
 
-  &.generic {
-    .dice-roll {
-      .dice-result {
-        .dice-formula {
-          box-shadow: none;
-          line-height: normal;
-          cursor: pointer;
-          word-break: normal;
-  
-          &.title {
-            display: flex;
-            flex-direction: row;
-            background: none;
-            border: none;
-            text-align: left;
-          }
-  
-          .img {
-            height: 45px;
-          }
-        }
-        
-        .tags {
-          display: flex;
-          flex-direction: row;
-          text-align: center;
-          flex-wrap: wrap;
-  
-          .tag {
-            width: calc(100%/3);
-            font-size: 12px;
-            flex-grow: 1;
-            border: 0.5px solid $background;
-            border-radius: 3px;
-            background-color: rgba(255, 255, 255, 0.3);
-          }
-        }
-      }
-
-      .dice-total.effect {
-        color: $labelColor
-      }
-    } 
+  .dice-formula .aim {
+    margin: 0;
+    background: unset;
+    border: 0;
   }
-} 
+}
+
+.collapsible {
+  cursor: pointer;
+  transition: all 250ms ease;
+  &.collapsed {
+    .collapsible-content {
+      grid-template-rows: 0fr;
+      visibility: hidden;
+    }
+  }
+
+  .collapsible-content {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: all 250ms ease;
+
+    > * {
+      overflow: hidden;
+      margin: 0;
+    }
+  }
+
+}
 
 .message-content {
   .table-draw {
@@ -1372,3 +1442,22 @@ $trackColors: (
   }
 }
 /*#endregion*/
+
+#interface {
+  #ui-left {
+    .sta-roller {
+      position: relative;
+
+      .nested-buttons {
+        display: none;
+        list-style: none;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 47px;
+      }
+    }
+  }
+}
+
+

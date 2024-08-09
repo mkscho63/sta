@@ -20,9 +20,9 @@ export class STACharacterSheet extends ActorSheet {
   /** @override */
   get template() {
     let versionInfo = game.world.coreVersion;
-    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.html";
-    return `systems/sta/templates/actors/character-sheet.html`;
+    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
+    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.hbs";
+    return `systems/sta/templates/actors/character-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -142,7 +142,7 @@ export class STACharacterSheet extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
       stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
-      if (html.find(`[data-talent-name="${localizedValues.resolute}"]`).length > 0) {
+      if (html.find(`[data-talent-name*="${localizedValues.resolute}"]`).length > 0) {
         stressTrackMax += 3;
       }
 	  stressTrackMax += parseInt(html.find('#strmod')[0].value)

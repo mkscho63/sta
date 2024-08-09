@@ -95,7 +95,7 @@ export class STATracker extends Application {
    */
   static get defaultOptions() {
     const options = super.defaultOptions;
-    options.template = 'systems/sta/templates/apps/tracker.html';
+    options.template = 'systems/sta/templates/apps/tracker.hbs';
     options.popOut = false;
     options.resizable = false;
     return options;

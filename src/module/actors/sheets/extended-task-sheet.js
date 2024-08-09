@@ -20,7 +20,7 @@ export class STAExtendedTaskSheet extends ActorSheet {
       ui.notifications.warn('You do not have permission to view this sheet!');
       return false;
     }
-    return `systems/sta/templates/actors/extended-task-sheet.html`;
+    return `systems/sta/templates/actors/extended-task-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -78,7 +78,7 @@ export class STAExtendedTaskSheet extends ActorSheet {
           inputDiv.style = 'width: calc(100% / ' + 5 + ');';
           rowDiv.appendChild(inputDiv);
         }
-        // append to the div that will be put in the renderer div on extended-task-sheet.html
+        // append to the div that will be put in the renderer div on extended-task-sheet.hbs
         fullDiv.appendChild(rowDiv);
       }
 

@@ -45,7 +45,7 @@
                 "value": 3,
                 "max": 3
             },
-			      "disciplineorder": ["command", "conn", "security", "engineering", "science", "medicine"],
+            "disciplineorder": ["command", "conn", "security", "engineering", "science", "medicine"],
             "disciplines": {
                 "command": {
                     "label": "sta.actor.character.discipline.command",
@@ -82,12 +82,17 @@
             "milestones": "",
             "rank": "",
             "reputation": 0,
+            "acclaim": 0,
+            "reprimand": 0,
             "species": "",
+            "careerpath": "",
+            "pastimes": "",
+            "careerevents": "",
             "stress": {
                 "value": 0
             },
-			"strmod": 0,
-			"rollrepnotdis": false,
+            "strmod": 0,
+            "rollrepnotdis": false,
             "upbringing": ""
         },
         "starship": {
@@ -139,10 +144,10 @@
             "shields": {
                 "value": 0
             },
-			"shieldmod": 0,
-			"crwmod": 0,
-			"reservepower": true,
-			"shaken": false,
+            "shieldmod": 0,
+            "crwmod": 0,
+            "reservepower": true,
+            "shaken": false,
             "servicedate": "",
             "spaceframe": "",
             "systems": {
@@ -235,12 +240,12 @@
             },
             "resistance": 1,
             "scale": 1,
-			"reservepower": true,
-			"shaken": false,
+            "reservepower": true,
+            "shaken": false,
             "shields": {
                 "value": 0
             },
-			"shieldmod": 0,
+            "shieldmod": 0,
             "spaceframe": "",
             "systems": {
                 "communications": {
@@ -332,7 +337,7 @@
             "damage": 0,
             "range": "melee",
             "hands": 1,
-			"severity": 0,
+            "severity": 0,
             "qualities": {
                 "deadly": false,
                 "stun": false,
@@ -372,25 +377,25 @@
             "templates": ["common"],
             "damage": 0,
             "range": "close",
-			"type": "energy",
+            "type": "energy",
             "qualities": {
-                "energy": false,
-                "torpedo": false,
-				"area": false,
-				"calibration": false,
-				"cumbersome": false,
-				"dampening": false,
-				"depleting": false,
-				"devastating": false,
-                "highyield": false,
-				"intense": false,
-				"jamming": false,
-				"persistent": false,
-				"piercing": false,
-				"slowing": false,
-				"spread": false,
-				"hiddenx": 0,
-                "versatilex": 0
+            "energy": false,
+            "torpedo": false,
+            "area": false,
+            "calibration": false,
+            "cumbersome": false,
+            "dampening": false,
+            "depleting": false,
+            "devastating": false,
+            "highyield": false,
+            "intense": false,
+            "jamming": false,
+            "persistent": false,
+            "piercing": false,
+            "slowing": false,
+            "spread": false,
+            "hiddenx": 0,
+            "versatilex": 0
             }				
         },		
         "armor": {
