@@ -199,6 +199,10 @@
   "sta.notifications.threatmin": "¡No puedes poner la Amenaza por debajo de 0!",
   "sta.notifications.threatmax": "¡Hay demasiada Amenaza!",
   
+  "sta.actor.character.acclaimreprimand": "Acc/Rep",
+  "sta.actor.character.careerevents": "Career Events",
+  "sta.actor.character.careerpath": "Career Path",
+  "sta.actor.character.pastimes": "Pastimes",
   "sta.actor.character.talents.tough": "Tough",
   "sta.actor.character.talents.resolute": "Resolute",
   "sta.actor.character.talents.mentaldiscipline": "Mental Discipline",

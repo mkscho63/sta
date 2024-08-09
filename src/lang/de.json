@@ -217,6 +217,11 @@
   "sta.dice.dsn.ufp.gold": "UFP Gold",
   "sta.dice.dsn.ufp.red": "UFP Rot",
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Schwarz)",
-  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Weiß)"
-  
+  "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Weiß)",
+
+  "sta.actor.character.acclaimreprimand": "Acc/Rep",
+  "sta.actor.character.careerevents": "Career Events",
+  "sta.actor.character.careerpath": "Career Path",
+  "sta.actor.character.pastimes": "Pastimes"
+
 }
