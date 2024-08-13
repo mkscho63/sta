@@ -96,6 +96,15 @@ $trackColors: (
 
 /* Button Definitions *//*#region*/
 .sta {
+
+  button {
+    padding: 0;
+
+    &:focus {
+      box-shadow: 0 0 5px map-get($lcarsColors, "lightblue")
+    }
+  }
+
   .btn {
     background-color: $buttonColor;
     color: $inlaidText;
