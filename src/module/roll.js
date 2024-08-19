@@ -336,7 +336,7 @@ export class STARoll {
     if (speaker.system.systems.weapons.value > 12) actorWeapons = 4;
 
     let scaleDamage = 0;
-    if (item.system.type == 'energy') scaleDamage = parseInt( speaker.system.scale );
+    if (item.system.includescale == 'energy') scaleDamage = parseInt( speaker.system.scale );
 
     const calculatedDamage = item.system.damage + actorWeapons + scaleDamage;
 
