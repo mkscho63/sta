@@ -24,22 +24,9 @@
             <label class="label" style="flex: 80%;">{{localize 'sta.apps.complicationrange'}}</label>
             <input style="text-align: center;" class="numeric-entry" type="number" name="complicationRange" value="1" id="complicationRange">
         </div>
-        <div class="flexrow">
-            <div style="flex: 1;"><label class="label">{{localize 'sta.apps.pool'}}</label></div>
-            <div style="flex: 1;display: flex;flex-direction: column;">
-                <div class="flexrow">
-                    <span class="label" style="flex: 1; text-align: left;">{{localize 'sta.counting.one'}}</span>
-                    <span style="flex: 1; text-align: center;"></span>
-                    <span class="label" style="flex: 1; text-align: center;">{{localize 'sta.counting.two'}}</span>
-                    <span style="flex: 1; text-align: center;"></span>
-                    <span class="label" style="flex: 1; text-align: center;">{{localize 'sta.counting.three'}}</span>
-                    <span style="flex: 1; text-align: center;"></span>
-                    <span class="label" style="flex: 1; text-align: center;">{{localize 'sta.counting.four'}}</span>
-                    <span style="flex: 1; text-align: center;"></span>
-                    <span class="label" style="flex: 1; text-align: center;">{{localize 'sta.counting.five'}}</span>
-                </div>
-                <input type="range" name="dicePoolSlider" min="1" max="5" value="{{defaultValue}}" class="slider" id="dicePoolSlider">
-            </div>
+		<div class="flexrow">
+            <label class="label" style="flex: 80%;">{{localize 'sta.apps.pool'}}</label>
+            <input style="text-align: center;" class="numeric-entry" type="number" name="dicePoolSlider" value="{{defaultValue}}" id="dicePoolSlider">
         </div>
     </div>    
 </form>
