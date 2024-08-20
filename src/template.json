@@ -377,7 +377,7 @@
             "templates": ["common"],
             "damage": 0,
             "range": "close",
-            "type": "energy",
+            "includescale": "energy",
             "qualities": {
             "energy": false,
             "torpedo": false,

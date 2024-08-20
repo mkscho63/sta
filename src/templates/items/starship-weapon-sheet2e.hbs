@@ -27,12 +27,12 @@
         <label class="label">{{localize 'sta.actor.belonging.weapon.damage'}}</label>
         <input type="number" name="system.damage" value="{{system.damage}}" data-dtype="Number" />	  
       </div>
-    {{#if (eq system.type "energy")}}
+    {{#if (eq system.includescale "energy")}}
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.energy'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</label>
         {{system.damage}} + {{localize 'sta.actor.starship.scale'}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
       </div>
-    {{else if (eq system.type "torpedo")}}
+    {{else if (eq system.includescale "torpedo")}}
       <div class="column-x4 label-top">
         <label class="label">{{localize 'sta.actor.belonging.weapon.torpedo'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</label>
         {{system.damage}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}

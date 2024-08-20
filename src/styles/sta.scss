@@ -698,7 +698,9 @@ $trackColors: (
         }
 
         /*  Actor - Talent Tooltips */
-        .entry.row.talent-tooltip-container {
+        .entry.row.talent-tooltip-container,
+        .entry.row.focus-tooltip-container,
+        .entry.row.injury-tooltip-container{
           overflow-y: hidden;
           border:.5px dashed $separatorBorders;
           height: 200px;
