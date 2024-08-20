@@ -273,30 +273,30 @@
           </div>
         </div>
         <div class="column center-column">
-            <div class="section injuries">
-              <div class="title">
-                {{localize 'sta.actor.starship.damage'}}
-              </div>
-              <div class="header row item">
-                <div class="one-column-no-roll">{{localize 'sta.item.genericitem.name'}}</div>
-                <a class="control create" title="Create item" data-type="injury"><i class="fas fa-plus"></i></a>
-              </div>
-              {{#each items as |item id|}}
-              {{#if (eq item.type "injury")}}
-          <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-            <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
-            <div class="one-column-no-roll list-entry talent-tooltip-clickable" id="talent-tooltip-clickable-{{item.id}}" data-talent-name="{{item.name}}">{{item.name}}</div>
-            <div class="control">
-              <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-              <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-            </div>
-          </li>
-          <li class="row entry talent-tooltip-container hide" id="talent-tooltip-container-{{item.id}}">
-            <div class="list-entry talent-tooltip-text" id="talent-tooltip-text-{{item.id}}">{{item.system.description}}</div>
-          </li>
-              {{/if}}
-              {{/each}}
-            </div>
+           <div class="section injuries">
+               <div class="title">
+                   {{localize 'sta.actor.starship.damage'}}
+               </div>
+               <div class="header row item">
+                   <div class="one-column-no-roll secondary-title">{{localize 'sta.item.genericitem.name'}}</div>
+                   <a class="control create" title="Create item" data-type="injury"><i class="fas fa-plus"></i></a>
+               </div>
+               {{#each items as |item id|}}
+               {{#if (eq item.type "injury")}}
+               <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                   <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                   <div class="one-column-no-roll list-entry injury-tooltip-clickable" id="injury-tooltip-clickable-{{item.id}}" data-injury-name="{{item.name}}">{{item.name}}</div>
+                   <div class="control">
+                       <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                       <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                   </div>
+               </li>
+               <li class="row entry injury-tooltip-container hide" id="injury-tooltip-container-{{item.id}}">
+                   <div class="list-entry injury-tooltip-text" id="injury-tooltip-text-{{item.id}}">{{item.system.description}}</div>
+               </li>
+               {{/if}}
+               {{/each}}
+           </div>
           </div>
           <div class="column right-column">
         </div>

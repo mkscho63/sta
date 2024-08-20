@@ -306,6 +306,26 @@ export class STASmallCraftSheet extends ActorSheet {
       }
     });
 
+    $.each($('[id^=injury-tooltip-text-]'), function(index, value) {
+      const beforeDescription = value.innerHTML;
+      const decoded = TextEditor.decodeHTML(beforeDescription);
+      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
+      $('#' + value.id).html(prettifiedDescription);
+    });
+
+
+    html.find('.injury-tooltip-clickable').click((ev) => {
+      const injuryId = $(ev.currentTarget)[0].id.substring('injury-tooltip-clickable-'.length);
+      const currentShowinginjuryId = $('.injury-tooltip-container:not(.hide)')[0] ? $('.injury-tooltip-container:not(.hide)')[0].id.substring('injury-tooltip-container-'.length) : null;
+            
+      if (injuryId == currentShowinginjuryId) {
+        $('#injury-tooltip-container-' + injuryId).addClass('hide').removeAttr('style');
+      } else {
+        $('.injury-tooltip-container').addClass('hide').removeAttr('style');
+        $('#injury-tooltip-container-' + injuryId).removeClass('hide').height($('#injury-tooltip-text-' + injuryId)[0].scrollHeight + 5);
+      }
+    });
+
     // Turns the System checkboxes into essentially a radio button. It removes any other ticks, and then checks the new system.
     // Finally a submit is required as data has changed.
     html.find('.selector.system').click((ev) => {
