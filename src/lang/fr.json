@@ -189,6 +189,11 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures FPU (Noir)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures FPU (Blanc)",
 	
+  "sta.roll.npccrew": "NPC Crew",
+  "sta.roll.npccrewbasic": "Basic",
+  "sta.roll.npccrewproficient": "Proficient",
+  "sta.roll.npccrewtalented": "Talented",
+  "sta.roll.npccrewexceptional": "Exceptional",
   "sta.actor.character.acclaimreprimand": "Acc/Rep",
   "sta.actor.character.careerevents": "Career Events",
   "sta.actor.character.careerpath": "Career Path",

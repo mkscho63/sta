@@ -73,7 +73,6 @@ export class STARoller {
     let defaultValue = 2;
     const speaker = {
       type: 'sidebar',
-      id: 'sidebar'
     };
 
     event.preventDefault();
@@ -119,38 +118,23 @@ let dialogContent = `
 <form>
   <h3>NPC Crew</h3>
   <div class="form-group">
-    <label>Number of Dice: <span id="diceValue">2</span></label>
-    <input type="range" id="numDice" name="numDice" min="1" max="5" value="2" oninput="document.getElementById('diceValue').textContent = this.value">
-  </div>
-  <h4>NPC Crew Skill Level</h4>
-  <div class="form-group">
-    <label><input type="radio" name="skillLevel" value="basic" checked> Basic</label><br>
+	<label><input type="radio" name="skillLevel" value="basic" checked> Basic</label><br>
     <label><input type="radio" name="skillLevel" value="proficient"> Proficient</label><br>
     <label><input type="radio" name="skillLevel" value="talented"> Talented</label><br>
     <label><input type="radio" name="skillLevel" value="exceptional"> Exceptional</label>
   </div>
   <div class="form-group">
-    <label>Complication Range: <span id="complicationValue">1</span></label>
-    <input type="range" id="complication" name="complication" min="1" max="5" value="1" oninput="document.getElementById('complicationValue').textContent = this.value">
+    <label>Number of Dice: <span id="diceValue">2</span></label>
+    <input type="range" id="numDice" name="numDice" min="1" max="5" value="2" oninput="document.getElementById('diceValue').textContent = this.value">
   </div>
-  <div class="form-group">
-    <label>Difficulty: <input type="number" id="difficulty" name="difficulty" value="2"></label>
-  </div>
-
+  <h3>NPC Ship</h3>
   <div class="form-group">
     <label>Is the Ship Assisting?<input type="checkbox" id="shipAssist" name="shipAssist" checked></label>
-  </div>
-  
-  <div class="form-group">
-    <label>Private GM Roll? <input type="checkbox" id="privateRoll" name="privateRoll"></label>
-  </div>
-
-  <h3>NPC Ship</h3>
+  </div>  
   <div class="form-group">
     <label>Number of Dice: <span id="shipDiceValue">1</span></label>
     <input type="range" id="shipNumDice" name="shipNumDice" min="1" max="3" value="1" oninput="document.getElementById('shipDiceValue').textContent = this.value">
   </div>
-  
   <div class="form-group">
     <table>
       <tr>
@@ -164,6 +148,10 @@ let dialogContent = `
         </td>
       </tr>
     </table>
+  </div>
+  <div class="form-group">
+    <label>Complication Range: <span id="complicationValue">1</span></label>
+    <input type="range" id="complication" name="complication" min="1" max="5" value="1" oninput="document.getElementById('complicationValue').textContent = this.value">
   </div>
 </form>
 `;
@@ -187,11 +175,11 @@ new Dialog({
 
         // Get selected system and department
         let selectedSystem = html.find('.selector.system:checked').val();
-        let selectedSystemLabel = html.find(`#${selectedSystem}-selector`).siblings('label').text().trim();
+        let selectedSystemLabel = html.find(`#${selectedSystem}-selector`).siblings('label').text().trim().replace(/:$/, '').toLowerCase();
         let selectedSystemValue = html.find(`#${selectedSystem}`).text();
         
         let selectedDepartment = html.find('.selector.department:checked').val();
-        let selectedDepartmentLabel = html.find(`#${selectedDepartment}-selector`).siblings('label').text().trim();
+        let selectedDepartmentLabel = html.find(`#${selectedDepartment}-selector`).siblings('label').text().trim().replace(/:$/, '').toLowerCase();
         let selectedDepartmentValue = html.find(`#${selectedDepartment}`).text();
 
         const numDice = parseInt(html.find('#numDice').val());
@@ -215,121 +203,30 @@ new Dialog({
             departments = 4;
             break;
         }
-        const difficulty = parseInt(html.find('#difficulty').val());
         const complicationRange = parseInt(html.find('#complication').val());
-        
         const shipNumDice = parseInt(html.find('#shipNumDice').val());
-        
-        const shipSystems = parseInt(selectedSystemValue);
-        const shipDepartments = parseInt(selectedDepartmentValue);
-        const shipAttributes = shipSystems + shipDepartments;
-        
-        let rolls = [];
-        let successes = 0;
-        let complications = 0;
-        
-        function processRoll(roll) {
-          let rollText = `<span>${roll.toString()}</span>`;
-          let success = 0;
-          if (roll > 20 - complicationRange) {
-            complications++;
-            rollText = `<span style="color: red;">${rollText}</span>`;
-          } else if (roll <= departments) {
-            success = 2;
-            rollText = `<strong style="color: yellow;">${rollText}</strong>`;
-          } else if (roll <= attributes + departments) {
-            success = 1;
-            rollText = `<strong style="color: green;">${rollText}</strong>`;
-          }
-          return { rollText, success };
-        }
 
-        function processShipRoll(roll) {
-          let rollShipText = `<span>${roll.toString()}</span>`;
-          let success = 0;
-          if (roll > 20 - complicationRange) {
-            complications++;
-            rollShipText = `<span style="color: red;">${rollShipText}</span>`;
-          } else if (roll <= shipDepartments) {
-            success = 2;
-            rollShipText = `<strong style="color: yellow;">${rollShipText}</strong>`;
-          } else if (roll <= shipAttributes) {
-            success = 1;
-            rollShipText = `<strong style="color: green;">${rollShipText}</strong>`;
-          }
-          return { rollText: rollShipText, success };
-        }
+        const speakerNPC = {
+            type: 'npccharacter',
+        };
+        const speakerstarship = {
+            type: 'starship',
+        };
 
-        // NPC Crew rolls
-        for (let i = 0; i < numDice; i++) {
-          let { rollText, success } = processRoll(Math.floor(Math.random() * 20) + 1);
-          rolls.push(rollText);
-          successes += success;
-        }
-        
-        
-        let resultMessage = `<p style="text-align: center; font-size:18px; "><b>${tokenName}</b></p>`;
-        resultMessage += `<h3>NPC Crew</h3>`;
-        resultMessage += `Rolling ${numDice}d20<br>`;
-        resultMessage += `Skill Level: ${skillLevel.charAt(0).toUpperCase() + skillLevel.slice(1)}<br>`;
-        resultMessage += `Rolls: ${rolls.join(', ')}<br>`;
-        resultMessage += `Successes: ${successes}<br>`;
-        resultMessage += `(Attributes: ${attributes}, Departments: ${departments})<br>`;
-        resultMessage += `<br>`;
+      const staRoll = new STARoll();
+      staRoll.performAttributeTest(numDice, true, false, false,
+        skillLevel, attributes, skillLevel,
+        departments, complicationRange, speakerNPC);
 
-        let shipRolls = [];
-        let crewSuccesses = successes; // Store crew successes separately
-        if (html.find('#shipAssist').is(':checked')) {
-          if (crewSuccesses > 0) {
-            for (let i = 0; i < shipNumDice; i++) {
-              let { rollText, success } = processShipRoll(Math.floor(Math.random() * 20) + 1);
-              shipRolls.push(rollText);
-              successes += success;
-            }
-            let shipSuccesses = successes - crewSuccesses; // Calculate ship successes
-
-            resultMessage += `<h3>NPC Ship</h3>`;
-            resultMessage += `Rolling ${shipNumDice}d20<br>`;
-            resultMessage += `Rolls: ${shipRolls.join(', ')}<br>`;
-            resultMessage += `Ship Successes: ${shipSuccesses}<br>`;
-            resultMessage += `Total Successes: ${successes}<br>`;
-            resultMessage += `Selected Ship System: ${selectedSystemLabel} (${selectedSystemValue})<br>`;
-            resultMessage += `Selected Ship Department: ${selectedDepartmentLabel} (${selectedDepartmentValue})<br>`;
-          } else {
-            resultMessage += `<h3>NPC Ship</h3>`;
-            resultMessage += `<strong style="color: red;">NPC Crew did not get a success, so NPC Ship does not roll.</strong><br>`;
-          }
-        } else {
-          resultMessage += `<h3>NPC Ship</h3>`;
-          resultMessage += `<strong style="color: red;">Ship Assist is not checked. NPC Ship does not roll.</strong><br>`;
+      if (html.find('#shipAssist').is(':checked')) {
+      staRoll.performAttributeTest(shipNumDice, true, false, false,
+        selectedSystemLabel, selectedSystemValue, selectedDepartmentLabel,
+        selectedDepartmentValue, complicationRange, speakerstarship);
         }
-        
-        resultMessage += `<br>`;
-        resultMessage += `<h3>Results</h3>`;
-        resultMessage += `Difficulty: ${difficulty}<br>`;
-        resultMessage += `Complication Range: ${21 - complicationRange}-20<br>`;
-        
-        if (complications > 0) {
-          resultMessage += `<strong style="color: red;">Complication!</strong><br>`;
-        }
-        
-        if (successes >= difficulty) {
-          resultMessage += `<strong style="color: green;">Success!</strong> (${successes} ≥ ${difficulty})`;
-          if (successes > difficulty) {
-            let threat = successes - difficulty;
-            resultMessage += `<br><strong style="color: orange;">Threat generated: ${threat}</strong>`;
-          }
-        } else {
-          resultMessage += `<strong style="color: red;">Failure.</strong> (${successes} < ${difficulty})`;
-        }
-        
-        ChatMessage.create({
-          content: resultMessage,
-          whisper: isPrivateRoll ? [game.user.id] : null
-        });
       }
     }
   },
+
   render: (html) => {
     html.find('.dialog-button').css({
       'background-color': 'gold',
@@ -347,11 +244,7 @@ new Dialog({
       $(this).css('background-color', 'gold');
     });
     html.find('.form-group').css({'width': '375px',});
-    html.find('#difficulty').css({
-      'width': '35px',
-      'min-width': '35px',
-      'max-width': '50px'
-    });
+
     const token = canvas.tokens.controlled[0];
     if (!token) {
       ui.notifications.error("Please select a token for the NPC Ship.");

@@ -83,6 +83,9 @@ export class STARoll {
       break;
     case 'sidebar':
       flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'npccharacter':
+      flavor = game.i18n.format('sta.roll.npccrew' + selectedAttribute) + ' ' + game.i18n.format('sta.roll.npccrew') + ' ' + game.i18n.format('sta.roll.task.name');
     }
 
     const chatData = {
