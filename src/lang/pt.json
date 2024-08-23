@@ -34,7 +34,9 @@
   "sta.actor.character.discipline.medicine": "Medicina",
   "sta.actor.character.discipline.science": "Ciência",
   "sta.actor.character.discipline.security": "Segurança",
+  "sta.actor.character.discipline.reputation": "Reputação",
   "sta.actor.character.stressmod": "Modificador de Estresse",
+  "sta.actor.character.rollrepnotdis": "Rolar Reputação como Disciplina",
   "sta.actor.focus.title": "Focos",
   "sta.actor.value.title": "Valores",
   "sta.actor.value.used": "Utilizado?",
@@ -127,6 +129,7 @@
   "sta.actor.starship.shieldmod": "Modificador de Escudos",
   "sta.actor.starship.shaken": "Abalada",
   "sta.actor.starship.reservepower": "Reserva de Energia",
+  "sta.actor.starship.shieldcrewmod":"Mod de Escudo/Tripulação",
 
   "sta.actor.smallcraft.parent": "Nave Pai",
   "sta.actor.smallcraft.child": "Tipo Veículo Pequeno",
@@ -204,7 +207,16 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Preto)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Branco)",
 
-  "sta.actor.character.acclaimreprimand": "Acc/Rep",
+  "sta.roll.npccrew": "NPC Crew",
+  "sta.roll.npccrewbasic": "Basic",
+  "sta.roll.npccrewproficient": "Proficient",
+  "sta.roll.npccrewtalented": "Talented",
+  "sta.roll.npccrewexceptional": "Exceptional",
+  "sta.actor.character.acclaim": "Acclaim",
+  "sta.actor.character.reprimand": "Reprimand",
+  "sta.actor.character.pronouns": "Pronouns",
+  "sta.actor.character.experience": "Experience",
+  "sta.actor.character.characterrole": "Role",
   "sta.actor.character.careerevents": "Career Events",
   "sta.actor.character.careerpath": "Career Path",
   "sta.actor.character.pastimes": "Pastimes",
@@ -215,9 +227,6 @@
   "sta.actor.starship.talents.abundantpersonnel": "Abundant Personnel",
   "sta.actor.starship.talents.agingrelic": "Aging Relic",
   "sta.actor.starship.talents.advancedshields": "Advanced Shields",
-  "sta.actor.starship.talents.polarizedhullplating": "Polarized Hull Plating",
-  "sta.actor.character.rollrepnotdis": "Rolar Reputação como Disciplina",
-  "sta.actor.character.discipline.reputation": "Reputação",
-  "sta.actor.starship.shieldcrewmod":"Mod de Escudo/Tripulação"
+  "sta.actor.starship.talents.polarizedhullplating": "Polarized Hull Plating"
 
 }

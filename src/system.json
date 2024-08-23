@@ -43,7 +43,7 @@
 			"flags": {}
 		},
 		{
-			"lang": "pt",
+			"lang": "pt-BR",
 			"name": "Português (Brasil)",
 			"path": "lang/pt.json",
 			"flags": {}
@@ -53,6 +53,324 @@
 		"distance": 5,
 		"units": "m"
 	},
+  "packs": [
+    {
+      "label": "Personal Weapons (Core Starfleet)",
+      "name": "personal-weapons-core",
+      "path": "assets/packs/1e/personal-weapons-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Values (Core Starfleet)",
+      "name": "values-core",
+      "path": "assets/packs/1e/values-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Species Talents (Core Starfleet)",
+      "name": "species-talents-core",
+      "path": "assets/packs/1e/species-talents-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "General Talents (Core Starfleet)",
+      "name": "general-talents-core",
+      "path": "assets/packs/1e/general-talents-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Discipline Talents (Core Starfleet)",
+      "name": "discipline-talents-core",
+      "path": "assets/packs/1e/discipline-talents-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Starship Talents (Core Starfleet)",
+      "name": "starship-talents-core",
+      "path": "assets/packs/1e/starship-talents-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Focuses (Core Starfleet)",
+      "name": "focuses-core",
+      "path": "assets/packs/1e/focuses-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Roles (Core Starfleet)",
+      "name": "roles-core",
+      "path": "assets/packs/1e/roles-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Damage (Core Starfleet)",
+      "name": "damage-core",
+      "path": "assets/packs/1e/damage-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Personal Equipment (Core Starfleet)",
+      "name": "personal-equipment-core",
+      "path": "assets/packs/1e/personal-equipment-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Roll Tables (Core Starfleet)",
+      "name": "roll-tables-core",
+      "path": "assets/packs/1e/roll-tables-core.db",
+      "system": "sta",
+      "type": "RollTable",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Playable Species (Core Starfleet)",
+      "name": "playable-species-core",
+      "path": "assets/packs/1e/playable-species-core.db",
+      "system": "sta",
+      "type": "JournalEntry",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Starship Weapons (Core Starfleet)",
+      "name": "starship-weapons-core",
+      "path": "assets/packs/1e/starship-weapons-core.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Starfleet Starships (Core Starfleet)",
+      "name": "starfleet-starships-core",
+      "path": "assets/packs/1e/starfleet-starships-core.db",
+      "system": "sta",
+      "type": "Actor",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Alien Starships (Core Starfleet)",
+      "name": "alien-starships-core",
+      "path": "assets/packs/1e/alien-starships-core.db",
+      "system": "sta",
+      "type": "Actor",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "NPC Starship Crew (Core Starfleet)",
+      "name": "npc-starship-crew-core",
+      "path": "assets/packs/1e/npc-starship-crew-core.db",
+      "system": "sta",
+      "type": "Actor",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Default Maps (Core Starfleet)",
+      "name": "default-maps",
+      "path": "assets/packs/1e/default-maps-core.db",
+      "system": "sta",
+      "type": "Scene",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "System Damage",
+      "name": "system-damage",
+      "path": "assets/packs/2e/damage-and-injuries.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Equipment (Crew)",
+      "name": "equipment-crew",
+      "path": "assets/packs/2e/equipment-crew.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Equipment (Starship)",
+      "name": "equipment-starship",
+      "path": "assets/packs/2e/equipment-starships.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Focuses",
+      "name": "focuses",
+      "path": "assets/packs/2e/focuses.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Starships",
+      "name": "starships",
+      "path": "assets/packs/2e/starships.db",
+      "system": "sta",
+      "type": "Actor",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Talents (Crew)",
+      "name": "talents-crew",
+      "path": "assets/packs/2e/talents-crew.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Talents (Starship)",
+      "name": "talents-starship",
+      "path": "assets/packs/2e/talents-starship.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Values",
+      "name": "values",
+      "path": "assets/packs/2e/values.db",
+      "system": "sta",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Lifepath - Species",
+      "name": "lifepath-species",
+      "path": "assets/packs/2e/species.db",
+      "system": "sta",
+      "type": "JournalEntry",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Lifepath - Career Path",
+      "name": "lifepath-career-path",
+      "path": "assets/packs/2e/lifepath-career-path.db",
+      "system": "sta",
+      "type": "JournalEntry",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Lifepath - Environment",
+      "name": "lifepath-environment",
+      "path": "assets/packs/2e/lifepath-environment.db",
+      "system": "sta",
+      "type": "JournalEntry",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Lifepath - Upbringing",
+      "name": "lifepath-upbringing",
+      "path": "assets/packs/2e/lifepath-upbringing.db",
+      "system": "sta",
+      "type": "JournalEntry",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "label": "Lifepath - Career Events",
+      "name": "lifepath-career-events",
+      "path": "assets/packs/2e/lifepath-career-events.db",
+      "system": "sta",
+      "type": "JournalEntry",
+      "private": false,
+      "flags": {}
+    }
+  ],
+ "packFolders": [
+    {
+      "name": "STA 1st Edition",
+      "sorting": "a",
+      "packs":
+      [
+		"personal-weapons-core",
+		"values-core",
+		"species-talents-core",
+		"general-talents-core",
+		"discipline-talents-core",
+		"starship-talents-core",
+		"focuses-core",
+		"roles-core",
+		"damage-core",
+		"personal-equipment-core",
+		"roll-tables-core",
+		"playable-species-core",
+		"starship-weapons-core",
+		"starfleet-starships-core",
+		"alien-starships-core",
+		"npc-starship-crew-core",
+        "default-maps"
+      ]      
+    },
+    {
+      "name": "STA 2nd Edition",
+      "sorting": "a",
+      "packs":
+      [
+		"system-damage",
+		"equipment-crew",
+		"equipment-starship",
+		"focuses",
+		"starships",
+		"talents-crew",
+		"talents-starship",
+		"values",
+		"lifepath-species",
+		"lifepath-career-path",
+		"lifepath-environment",
+		"lifepath-upbringing",
+		"lifepath-career-events"
+      ]      
+    }
+  ],
 	"primaryTokenAttribute": "stress",
 	"secondaryTokenAttribute": "determination",
 	"url": "https://github.com/mkscho63/sta",

@@ -80,6 +80,8 @@
             },
             "environment": "",
             "milestones": "",
+            "pronouns": "",
+            "characterrole": "",
             "rank": "",
             "reputation": 0,
             "acclaim": 0,
@@ -87,6 +89,7 @@
             "species": "",
             "careerpath": "",
             "pastimes": "",
+            "experience": "",
             "careerevents": "",
             "stress": {
                 "value": 0
@@ -377,7 +380,7 @@
             "templates": ["common"],
             "damage": 0,
             "range": "close",
-            "type": "energy",
+            "includescale": "energy",
             "qualities": {
             "energy": false,
             "torpedo": false,

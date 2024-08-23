@@ -96,6 +96,15 @@ $trackColors: (
 
 /* Button Definitions *//*#region*/
 .sta {
+
+  button {
+    padding: 0;
+
+    &:focus {
+      box-shadow: 0 0 5px map-get($lcarsColors, "lightblue")
+    }
+  }
+
   .btn {
     background-color: $buttonColor;
     color: $inlaidText;
@@ -689,7 +698,9 @@ $trackColors: (
         }
 
         /*  Actor - Talent Tooltips */
-        .entry.row.talent-tooltip-container {
+        .entry.row.talent-tooltip-container,
+        .entry.row.focus-tooltip-container,
+        .entry.row.injury-tooltip-container{
           overflow-y: hidden;
           border:.5px dashed $separatorBorders;
           height: 200px;

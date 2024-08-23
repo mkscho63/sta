@@ -83,6 +83,9 @@ export class STARoll {
       break;
     case 'sidebar':
       flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'npccharacter':
+      flavor = game.i18n.format('sta.roll.npccrew' + selectedAttribute) + ' ' + game.i18n.format('sta.roll.npccrew') + ' ' + game.i18n.format('sta.roll.task.name');
     }
 
     const chatData = {
@@ -336,7 +339,7 @@ export class STARoll {
     if (speaker.system.systems.weapons.value > 12) actorWeapons = 4;
 
     let scaleDamage = 0;
-    if (item.system.type == 'energy') scaleDamage = parseInt( speaker.system.scale );
+    if (item.system.includescale == 'energy') scaleDamage = parseInt( speaker.system.scale );
 
     const calculatedDamage = item.system.damage + actorWeapons + scaleDamage;
 

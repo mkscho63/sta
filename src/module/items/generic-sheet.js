@@ -4,7 +4,7 @@ export class STAGenericSheet extends ItemSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['sta', 'sheet', 'item', 'focus', 'value', 'injury'],
       width: 500,
-      height: 100,
+      height: 250,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
     });
   }

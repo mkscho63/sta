@@ -401,6 +401,53 @@ export class STACharacterSheet extends ActorSheet {
       }
     });
 
+    $.each($('[id^=injury-tooltip-text-]'), function(index, value) {
+      const beforeDescription = value.innerHTML;
+      const decoded = TextEditor.decodeHTML(beforeDescription);
+      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
+      $('#' + value.id).html(prettifiedDescription);
+    });
+
+
+    html.find('.injury-tooltip-clickable').click((ev) => {
+      const injuryId = $(ev.currentTarget)[0].id.substring('injury-tooltip-clickable-'.length);
+      const currentShowinginjuryId = $('.injury-tooltip-container:not(.hide)')[0] ? $('.injury-tooltip-container:not(.hide)')[0].id.substring('injury-tooltip-container-'.length) : null;
+            
+      if (injuryId == currentShowinginjuryId) {
+        $('#injury-tooltip-container-' + injuryId).addClass('hide').removeAttr('style');
+      } else {
+        $('.injury-tooltip-container').addClass('hide').removeAttr('style');
+        $('#injury-tooltip-container-' + injuryId).removeClass('hide').height($('#injury-tooltip-text-' + injuryId)[0].scrollHeight + 5);
+      }
+    });
+
+    $.each($('[id^=focus-tooltip-text-]'), function(index, value) {
+      const beforeDescription = value.innerHTML;
+      const decoded = TextEditor.decodeHTML(beforeDescription);
+      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
+      $('#' + value.id).html(prettifiedDescription);
+    });
+
+
+    html.find('.focus-tooltip-clickable').click((ev) => {
+      const focusId = $(ev.currentTarget)[0].id.substring('focus-tooltip-clickable-'.length);
+      const currentShowingfocusId = $('.focus-tooltip-container:not(.hide)')[0] ? $('.focus-tooltip-container:not(.hide)')[0].id.substring('focus-tooltip-container-'.length) : null;
+            
+      if (focusId == currentShowingfocusId) {
+        $('#focus-tooltip-container-' + focusId).addClass('hide').removeAttr('style');
+      } else {
+        $('.focus-tooltip-container').addClass('hide').removeAttr('style');
+        $('#focus-tooltip-container-' + focusId).removeClass('hide').height($('#focus-tooltip-text-' + focusId)[0].scrollHeight + 5);
+      }
+    });
+
+    $.each($('[id^=value-tooltip-text-]'), function(index, value) {
+      const beforeDescription = value.innerHTML;
+      const decoded = TextEditor.decodeHTML(beforeDescription);
+      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
+      $('#' + value.id).html(prettifiedDescription);
+    });
+
     // Turns the Attribute checkboxes into essentially a radio button. It removes any other ticks, and then checks the new attribute.
     // Finally a submit is required as data has changed.
     html.find('.selector.attribute').click((ev) => {
