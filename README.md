@@ -29,7 +29,7 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 ## Linked Repository and Related Development
 
 [STA Macros Repo](https://github.com/mikira7/sta-macros)
-| <a href="https://github.com/mikira7" target="_blank">**CalinStar**</a> |
+| <a href="https://github.com/mikira7" target="_blank">**Mikira7**</a> |
 | :---: |
 | [![Mikira7](https://avatars.githubusercontent.com/u/174082401?s=50)](https://github.com/mikira7)    |
 | <a href="https://github.com/mikira7 " target="_blank">`github.com/mikira7`</a> |
