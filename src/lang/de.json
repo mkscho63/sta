@@ -219,7 +219,16 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Schwarz)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Weiß)",
 
-  "sta.actor.character.acclaimreprimand": "Acc/Rep",
+  "sta.roll.npccrew": "NPC Crew",
+  "sta.roll.npccrewbasic": "Basic",
+  "sta.roll.npccrewproficient": "Proficient",
+  "sta.roll.npccrewtalented": "Talented",
+  "sta.roll.npccrewexceptional": "Exceptional",
+  "sta.actor.character.acclaim": "Acclaim",
+  "sta.actor.character.reprimand": "Reprimand",
+  "sta.actor.character.pronouns": "Pronouns",
+  "sta.actor.character.experience": "Experience",
+  "sta.actor.character.characterrole": "Role",
   "sta.actor.character.careerevents": "Career Events",
   "sta.actor.character.careerpath": "Career Path",
   "sta.actor.character.pastimes": "Pastimes"
