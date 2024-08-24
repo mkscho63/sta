@@ -403,8 +403,8 @@ export class STARoll {
     if (item.system.range) {
       tags.push(game.i18n.localize(`sta.actor.belonging.weapon.${item.system.range}`));
     }
-    if (item.system.type) {
-      tags.push(game.i18n.localize(`sta.actor.belonging.weapon.${item.system.type}`));
+    if (item.system.includescale) {
+      tags.push(game.i18n.localize(`sta.actor.belonging.weapon.${item.system.includescale}`));
     }
 
     const qualities = item.system.qualities;
