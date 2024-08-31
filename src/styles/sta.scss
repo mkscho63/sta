@@ -13,6 +13,8 @@ $editorBackground: #FFFFFF;
 $trackbarBorders: #666688;
 $separatorBorders: #FF7700;
 $chatText: #FEFEFE;
+$crit: #18520B;
+$complication: #AA0200;
 $lcarsColors: (
   "lcarsheader": #444A77,
   "purple": #9944FF,
@@ -1149,6 +1151,16 @@ $trackColors: (
       color: #000;
       font-weight: bold;
       text-align: center;
+
+      &.max {
+        color: $crit;
+        filter: sepia(0.5) hue-rotate(60deg);
+      }
+
+      &.min {
+        color: $complication;
+        filter: sepia(0.5) hue-rotate(-60deg);
+      }
 
       &.d20 {
         background-image: url(../../../icons/svg/d20-grey.svg);
