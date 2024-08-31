@@ -26,6 +26,16 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 
 ---
 
+## Linked Repository and Related Development
+
+[STA Macros Repo](https://github.com/mikira7/sta-macros)
+| <a href="https://github.com/mikira7" target="_blank">**Mikira7**</a> |
+| :---: |
+| [![Mikira7](https://avatars.githubusercontent.com/u/174082401?s=50)](https://github.com/mikira7)    |
+| <a href="https://github.com/mikira7 " target="_blank">`github.com/mikira7`</a> |
+
+---
+
 ## FAQ
 
 - **How does this system work?**
@@ -67,6 +77,7 @@ In order to build successfully, you will need to update `foundryconfig.json` and
 - Modiphius for creating the amazing Star Trek Adventures system, I definitely recommend trying it out if you are any level of a fan of Star Trek. Ensure you only use this system after purchasing the Star Trek Adventure system! <a href="https://www.modiphius.net/collections/star-trek-adventures">https://www.modiphius.net/</a>.
 - <a href="https://github.com/CurtR95" target="_blank">KaitoR/CurtR95</a> for making the <a href="https://github.com/CurtR95/FVTT-Dishonored" target="_blank">Dishonored VTT Unofficial</a> system for Foundry. This gave me a starting point for the Star Trek Adventures system and also let me learn a lot about how Foundry System Building works in general. Definitely check it out because Dishonored 2d20 is a very fun system, Dishonored has a very interesting world, and the system they have for Foundry supports it all extremely well.
 - <a href="https://github.com/tokeidlom" target="_blank">CalinStar/Tokeidlom</a> for adding in all the additional support for the second edition ruleset and plenty of bug fixes the system has needed. The system hasn't had the best of support from me in the long term and all of the work put in by CalinStar has enabled this to keep functioning for fans of the system and I cannot overstate how much the effort has been appreciated!
+- <a href="https://github.com/mikira7" target="_blank">Mikira7</a> for creating a maintaining the STA Macros repository. Please go check it out for additional resources. The NPC Crew Roller uses code that comes from this repository.
 - Lorc for <a href="https://game-icons.net/1x1/lorc/magnifying-glass.html" target="_blank">Insight</a>, <a href="https://game-icons.net/1x1/lorc/icicles-aura.html" target="_blank">Presence</a>, and <a href="https://game-icons.net/1x1/lorc/open-book.html" target="_blank">Reason</a> Icons. They can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal blog: <a href="https://lorcblog.blogspot.com/" target="_blank">https://lorcblog.blogspot.com/</a>
 - Delapouite for <a href="https://game-icons.net/1x1/delapouite/weight-lifting-up.html" target="_blank">Fitness</a> and <a href="https://game-icons.net/1x1/delapouite/chat-bubble.html" target="_blank">Chat Bubble</a> Icons. It can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal website: <a href="https://delapouite.com/" target="_blank">https://delapouite.com/</a>
 - Skoll for <a href="https://game-icons.net/1x1/skoll/fist.html" target="_blank">Control</a> and <a href="https://game-icons.net/1x1/skoll/achievement.html" target="_blank">Daring</a> Icon. Can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>.
