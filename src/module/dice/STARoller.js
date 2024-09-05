@@ -129,7 +129,7 @@ let dialogContent = `
   </div>
   <h3>NPC Ship</h3>
   <div class="form-group">
-    <label>Is the Ship Assisting?<input type="checkbox" id="shipAssist" name="shipAssist" checked></label>
+    <label>Is the Ship Assisting?<input type="checkbox" id="shipAssist" name="shipAssist"></label>
   </div>  
   <div class="form-group">
     <label>Number of Dice: <span id="shipDiceValue">1</span></label>
@@ -164,14 +164,6 @@ new Dialog({
     roll: {
       label: "Perform Task",
       callback: (html) => {
-        const token = canvas.tokens.controlled[0];
-        const isPrivateRoll = html.find('#privateRoll').is(':checked');
-        if (!token) {
-          ui.notifications.error("Please select a token for the NPC Ship.");
-          return;
-        }
-        const actor = token.actor;
-        const tokenName = token.name || actor.name || "Unknown Ship";
 
         // Get selected system and department
         let selectedSystem = html.find('.selector.system:checked').val();
@@ -209,9 +201,22 @@ new Dialog({
         const speakerNPC = {
             type: 'npccharacter',
         };
-        const speakerstarship = {
+        let speakerstarship = {
             type: 'starship',
         };
+
+        const token = canvas.tokens.controlled[0];
+        if (!token) {
+        selectedSystemLabel = "STARoller";
+        selectedSystemValue = parseInt(html.find('#systemValue').val());
+
+        selectedDepartmentLabel = "STARoller";
+        selectedDepartmentValue = parseInt(html.find('#departmentValue').val());
+
+        speakerstarship = {
+            type: 'sidebar',
+        };
+        }
 
       const staRoll = new STARoll();
       staRoll.performAttributeTest(numDice, true, false, false,
@@ -246,10 +251,26 @@ new Dialog({
     html.find('.form-group').css({'width': '375px',});
 
     const token = canvas.tokens.controlled[0];
-    if (!token) {
-      ui.notifications.error("Please select a token for the NPC Ship.");
-      return;
-    }
+
+if (!token) {
+    let systemsHtml = `
+    <div>
+      <input type="number" id="systemValue" name="systemValue" min="0" max="20" value="7">
+    </div>
+    `;
+    html.find('#shipSystems').html(systemsHtml);
+
+    let departmentsHtml = `
+    <div>
+      <input type="number" id="departmentValue" name="departmentValue" min="0" max="10" value="2">
+    </div>
+    `;
+    html.find('#shipDepartments').html(departmentsHtml);
+
+    return;
+}
+
+	
     const actor = token.actor;
 
     // Populate ship systems
