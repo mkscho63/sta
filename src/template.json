@@ -46,6 +46,7 @@
                 "max": 3
             },
             "disciplineorder": ["command", "conn", "security", "engineering", "science", "medicine"],
+            "disciplineorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
             "disciplines": {
                 "command": {
                     "label": "sta.actor.character.discipline.command",
@@ -104,6 +105,7 @@
                 "value": 0
             },
             "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
+            "departmentorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
             "departments": {
                 "command": {
                     "label": "sta.actor.starship.department.command",
@@ -204,6 +206,7 @@
         },
         "smallcraft": {
             "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
+            "departmentorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
             "departments": {
                 "command": {
                     "label": "sta.actor.starship.department.command",

@@ -154,7 +154,7 @@
                             <div class="selector-space"></div>
                         </div>
                         {{#each system.departmentorder as |key|}}
-                        {{#with (lookup ../system.departments [key])}}
+                        {{#with (lookup ../system.departments key)}}
                         <div class="stat row">
                             <input class="field numeric-entry" id="{{key}}" name="system.departments.{{key}}.value" type="text" value="{{value}}" placeholder="Name" />
                             <div class="text list-entry"> {{localize label}} </div>
