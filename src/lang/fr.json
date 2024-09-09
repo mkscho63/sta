@@ -225,7 +225,7 @@
   "sta.actor.belonging.weapon.energy": "Energy",
   "sta.actor.belonging.weapon.torpedo": "Torpedo",
   "sta.item.genericitem.handed": "Handed",
-  "sta.apps.dedicatedfocus": "Using Dedicated Focus?",
+  "sta.apps.dedicatedfocus": "Dedicated Focus (2e Talent)?",
   "sta.actor.belonging.weapon.stun": "Stun",
   "sta.item.genericitem.severity": "Severity",
   "sta.roll.weapon.damage2e": "<b>|#|</b> Damage"

@@ -197,7 +197,7 @@
   "sta.apps.complicationrange": "Complication range (1 is default)?",
   "sta.apps.pool": "Number of Dice in Pool",
   "sta.apps.rolldice": "Roll Dice",
-  "sta.apps.dedicatedfocus": "Using Dedicated Focus?",
+  "sta.apps.dedicatedfocus": "Dedicated Focus (2e Talent)?",
   "sta.apps.staroller": "STARoller",
 
   "sta.roll.success": "Success",
