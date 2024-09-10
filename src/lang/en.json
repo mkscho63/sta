@@ -106,7 +106,7 @@
   "sta.actor.belonging.weapon.energy": "Energy",
   "sta.actor.belonging.weapon.torpedo": "Torpedo",
   "sta.actor.belonging.weapon.stun": "Stun",
-  "sta.actor.belonging.armor.title": "Armor",
+  "sta.actor.belonging.armor.title": "Armor / Resistance",
   "sta.actor.belonging.armor.protect": "Resist",
   "sta.actor.belonging.armor.protection": "Resistance",
   "sta.actor.belonging.other.title": "Other Items",
