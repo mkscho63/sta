@@ -206,7 +206,7 @@ new Dialog({
         };
 
         const token = canvas.tokens.controlled[0];
-        if (!token) {
+        if (!token || token.actor.type !== 'starship') {
         selectedSystemLabel = "STARoller";
         selectedSystemValue = parseInt(html.find('#systemValue').val());
 
@@ -252,7 +252,7 @@ new Dialog({
 
     const token = canvas.tokens.controlled[0];
 
-if (!token) {
+if (!token || token.actor.type !== 'starship') {
     let systemsHtml = `
     <div>
       <input type="number" id="systemValue" name="systemValue" min="0" max="20" value="7">
