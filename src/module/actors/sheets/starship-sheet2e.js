@@ -106,6 +106,12 @@ export class STAStarshipSheet2e extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
+
+      var localizedValues = {
+        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+        "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
+      };
+
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
       if (html.find(`[data-talent-name*="${localizedValues.advancedshields}"]`).length > 0) {
         shieldsTrackMax += 5;
@@ -156,6 +162,13 @@ export class STAStarshipSheet2e extends ActorSheet {
     // This creates a dynamic Crew Support tracker. It polls for the value of the ships's scale. 
     // With the value, creates a new div for each and places it under a child called "bar-crew-renderer".
     function crewTrackUpdate() {
+
+      var localizedValues = {
+        "extensiveautomation": game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
+        "abundantpersonnel": game.i18n.localize('sta.actor.starship.talents.abundantpersonnel'),
+        "agingrelic": game.i18n.localize('sta.actor.starship.talents.agingrelic')
+      };
+
       crewTrackMax = parseInt(html.find('#scale')[0].value) + parseInt(html.find('#crwmod')[0].value);
         if (html.find(`[data-talent-name*="${localizedValues.agingrelic}"]`).length > 0) {
         crewTrackMax += 1;

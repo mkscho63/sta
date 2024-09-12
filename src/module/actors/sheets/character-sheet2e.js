@@ -141,6 +141,13 @@ export class STACharacterSheet2e extends ActorSheet {
     // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute and checks for Resolute and tough talent. 
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
+
+      var localizedValues = {
+        "tough": game.i18n.localize('sta.actor.character.talents.tough'),
+        "resolute": game.i18n.localize('sta.actor.character.talents.resolute'),
+        "mentaldiscipline": game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
+      };
+
       stressTrackMax = parseInt(html.find('#fitness')[0].value)
       if (html.find(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`).length > 0) {
         stressTrackMax = parseInt(html.find('#control')[0].value);
