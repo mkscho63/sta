@@ -202,3 +202,78 @@ export class STASharedActorFunctions {
     });
   }
 }
+// Add unarmed strike to new characters
+Hooks.on('createActor', async (actor, options, userId) => {
+  if (actor.type === 'character') {
+    
+    // Add the 1e unarmed strike
+    const item1 = {
+      "name": "Unarmed Strike",
+      "type": "characterweapon",
+      "img": "systems/sta/assets/compendia/icons/weapons-core/unarmed-strike.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "system": {
+        "description": "",
+        "damage": 1,
+        "range": "Melee",
+        "hands": 1,
+        "qualities": {
+          "area": false,
+          "intense": false,
+          "knockdown": true,
+          "accurate": false,
+          "charge": false,
+          "cumbersome": false,
+          "deadly": false,
+          "debilitating": false,
+          "grenade": false,
+          "inaccurate": false,
+          "nonlethal": true,
+          "hiddenx": 0,
+          "piercingx": 0,
+          "viciousx": 0,
+          "opportunity": 0,
+          "escalation": 0
+        },
+        "opportunity": null,
+        "escalation": null
+      }
+    };
+
+    // Add the 2e unarmed strike
+    const item2 = {
+      "folder": null,
+      "name": "Unarmed Strike",
+      "type": "characterweapon2e",
+      "img": "systems/sta/assets/compendia/icons/weapons-core/unarmed-strike.webp",
+      "system": {
+        "description": "",
+        "damage": 2,
+        "range": "melee",
+        "hands": "1",
+        "severity": 0,
+        "qualities": {
+          "deadly": false,
+          "stun": true,
+          "accurate": false,
+          "area": false,
+          "charge": false,
+          "cumbersome": false,
+          "debilitating": false,
+          "grenade": false,
+          "inaccurate": false,
+          "intense": false,
+          "piercingx": false,
+          "hiddenx": 0,
+          "opportunity": 0,
+          "escalation": 0
+        }
+      },
+    };
+
+    // Add both items to the actor's inventory
+    await actor.createEmbeddedDocuments('Item', [item1, item2]);
+  }
+});
