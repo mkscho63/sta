@@ -189,6 +189,14 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures FPU (Noir)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures FPU (Blanc)",
 	
+  "sta.apps.addmomentum": "added {0} momentum to the pool",
+  "sta.apps.removemomentum": "removed {0} momentum from the pool",
+  "sta.apps.addthreat": "added {0} threat to the pool",
+  "sta.apps.removethreat": "removed {0} threat from the pool",
+  "sta.roll.npcshipandcrewroll": "NPC Crew and Ship Roll",
+  "sta.roll.complicationrange": "Plage de Complication",
+  "sta.roll.npcship": "NPC Ship",
+  "sta.roll.shipassisting": "Is the Ship assisting?",
   "sta.roll.npccrew": "NPC Crew",
   "sta.roll.npccrewbasic": "Basic",
   "sta.roll.npccrewproficient": "Proficient",
@@ -225,7 +233,7 @@
   "sta.actor.belonging.weapon.energy": "Energy",
   "sta.actor.belonging.weapon.torpedo": "Torpedo",
   "sta.item.genericitem.handed": "Handed",
-  "sta.apps.dedicatedfocus": "Using Dedicated Focus?",
+  "sta.apps.dedicatedfocus": "Dedicated Focus (2e Talent)?",
   "sta.actor.belonging.weapon.stun": "Stun",
   "sta.item.genericitem.severity": "Severity",
   "sta.roll.weapon.damage2e": "<b>|#|</b> Damage"

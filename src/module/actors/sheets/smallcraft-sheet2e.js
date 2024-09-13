@@ -92,6 +92,12 @@ export class STASmallCraftSheet2e extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value divided by 2, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
+
+      const localizedValues = {
+        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+        "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
+      };
+
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
       if (html.find(`[data-talent-name*="${localizedValues.advancedshields}"]`).length > 0) {
         shieldsTrackMax += 5;

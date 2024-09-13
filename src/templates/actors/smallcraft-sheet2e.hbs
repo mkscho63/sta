@@ -127,12 +127,14 @@
             <div class="text secondary-title">{{localize 'sta.actor.starship.department.name'}}</div>
             <div class="selector-space"></div>
           </div>
-          {{#each system.departments as |department key|}}
+          {{#each system.departmentorder2e as |key|}}
+          {{#with (lookup ../system.departments key)}}
           <div class="stat row">
-            <input class="field numeric-entry" id="{{key}}" name="system.departments.{{key}}.value" type="text" value="{{department.value}}" placeholder="Name" />
-            <div class="text list-entry"> {{localize department.label}} </div>
-            <input class="selector department" id="{{key}}.selector" type="checkbox" name="system.departments.{{key}}.selected" data-dtype="Boolean" {{checked department.selected}}>
+            <input class="field numeric-entry" id="{{key}}" name="system.departments.{{key}}.value" type="text" value="{{value}}" placeholder="Name" />
+            <div class="text list-entry"> {{localize label}} </div>
+            <input class="selector department" id="{{key}}.selector" type="checkbox" name="system.departments.{{key}}.selected" data-dtype="Boolean" {{checked selected}}>
           </div>
+          {{/with}}
           {{/each}}
         </div>
           <div class="section scale2e">
@@ -157,12 +159,6 @@
       </div>
       <div class="column left-column">
         <div class="section talents">
-         <script>
-           var localizedValues = {
-             "advancedshields": "{{localize 'sta.actor.starship.talents.advancedshields'}}",
-             "polarizedhullplating": "{{localize 'sta.actor.starship.talents.polarizedhullplating'}}"
-           };
-         </script>
           <div class="title">
             {{localize 'sta.item.talent.title'}}
           </div>

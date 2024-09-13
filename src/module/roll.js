@@ -479,6 +479,7 @@ export class STARoll {
   }
 
   async sendToChat(speaker, content, item, roll, flavor, sound) {
+    const rollMode = game.settings.get("core", "rollMode");
     const messageProps = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({actor: speaker}),
@@ -499,10 +500,11 @@ export class STARoll {
     if (typeof flavor != 'undefined') {
       messageProps.flavor = flavor;
     }
-    // Send's Chat Message to foundry, if items are missing they will appear as false or undefined and this not be rendered.
-    return await ChatMessage.create(messageProps).then((msg) => {
-      return msg;
-    });
+    // Apply the roll mode to automatically adjust visibility settings
+    ChatMessage.applyRollMode(messageProps, rollMode);
+
+    // Send the chat message
+    return await ChatMessage.create(messageProps);
   }
 }
 

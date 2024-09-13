@@ -200,28 +200,83 @@ export class STATracker extends Application {
    * @param {STATracker.Resource} resource The resource to modify.
    * @param {number} value The value to set for the given resource.
    */
-  static async DoUpdateResource(resource, value) {
+
+// Store the accumulated changes and a timer
+  static accumulatedChanges = {
+    momentum: 0,
+    threat: 0
+  };
+
+  static chatMessageTimeout = null; // Holds the timeout for debouncing
+
+  static async DoUpdateResource(resource, newValue) {
     if (!STATracker.UserHasPermissionFor(resource)) {
-      ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}invalidpermissions`));
-      return;
-    } else if (value < 0) {
-      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}min`));
-      STATracker.UpdateTracker()
-      return;
-    } else if (value > STATracker.LimitOf(resource)) {
-      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}max`) + STATracker.LimitOf(resource) + '!');
-      STATracker.UpdateTracker()
-      return;
+        ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}invalidpermissions`));
+        return;
+    } else if (newValue < 0) {
+        ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}min`));
+        STATracker.UpdateTracker();
+        return;
+    } else if (newValue > STATracker.LimitOf(resource)) {
+        ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}max`) + STATracker.LimitOf(resource) + '!');
+        STATracker.UpdateTracker();
+        return;
     }
 
-    if(STATracker.UserCanWriteSettings()) {
-      await game.settings.set('sta', resource, value);
-      STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
-      STATracker.UpdateTracker();
-    }
-    else
-    {
-      STATracker.SendUpdateMessage(STATracker.MessageType.SetResource, resource, value);
+    let currentValue = STATracker.ValueOf(resource);
+    
+    if (newValue !== currentValue) {
+        if (STATracker.UserCanWriteSettings()) {
+            await game.settings.set('sta', resource, newValue);
+            STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
+            STATracker.UpdateTracker();
+        } else {
+            STATracker.SendUpdateMessage(STATracker.MessageType.SetResource, resource, newValue);
+        }
+
+        // Accumulate changes for momentum or threat
+        let resourceName = resource === STATracker.Resource.Momentum ? "momentum" : "threat";
+        let diff = newValue - currentValue;
+        STATracker.accumulatedChanges[resourceName] += diff;
+
+        // Clear any previous timeout and reset it
+        if (STATracker.chatMessageTimeout) {
+            clearTimeout(STATracker.chatMessageTimeout);
+        }
+
+        // Set a new timeout to send the chat message after 1 second of inactivity
+        STATracker.chatMessageTimeout = setTimeout(() => {
+            let momentumDiff = STATracker.accumulatedChanges.momentum;
+            let threatDiff = STATracker.accumulatedChanges.threat;
+            let chatMessage = '';
+
+            // Construct the chat message based on the accumulated changes
+        if (momentumDiff !== 0) {
+            let momentumAction = momentumDiff > 0 ? 
+                game.i18n.format("sta.apps.addmomentum", {0: momentumDiff}) : 
+                game.i18n.format("sta.apps.removemomentum", {0: Math.abs(momentumDiff)});
+            chatMessage += `${game.user.name} ${momentumAction}. `;
+        }
+        if (threatDiff !== 0) {
+            let threatAction = threatDiff > 0 ? 
+                game.i18n.format("sta.apps.addthreat", {0: threatDiff}) : 
+                game.i18n.format("sta.apps.removethreat", {0: Math.abs(threatDiff)});
+            chatMessage += `${game.user.name} ${threatAction}.`;
+        }
+
+            // Send the chat message
+            if (chatMessage) {
+                ChatMessage.create({
+                    speaker: { alias: "STA" },
+                    content: chatMessage
+                });
+            }
+
+            // Reset the accumulated changes
+            STATracker.accumulatedChanges.momentum = 0;
+            STATracker.accumulatedChanges.threat = 0;
+
+        }, 1000);  // 1-second delay
     }
   }
 

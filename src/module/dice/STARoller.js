@@ -10,7 +10,7 @@ export class STARoller {
   static async Init(controls, html) {
     // Create the main dice roll button
     const diceRollbtn = $(`
-            <li class="scene-control sta-roller" data-control="STARoller" title="STA Dice Roller">
+            <li class="scene-control sta-roller" data-control="STARoller" title="${game.i18n.localize('sta.apps.staroller')}">
                 <i class="fa-solid fa-hand-spock"></i>
                 <ol class="nested-buttons sub-controls control-tools">
                 </ol>
@@ -19,21 +19,21 @@ export class STARoller {
 
     // Create the task roll button
     const taskrollbtn = $(`
-            <li class="control-tool nested-button task" data-control="STARoller" title="STA Roll Task">
+            <li class="control-tool nested-button task" data-control="STARoller" title="${game.i18n.localize('sta.actor.attdis.task')}">
                 <i class="fa-solid fa-dice-d20"></i>
             </li>
         `);
 
     // Create the challenge roll button
     const challengerollbtn = $(`
-            <li class="control-tool nested-button challenge" data-control="STARoller" title="STA Roll Challenge">
+            <li class="control-tool nested-button challenge" data-control="STARoller" title="${game.i18n.localize('sta.actor.challenge.roll')}">
                 <i class="fa-solid fa-dice"></i>
             </li>
         `);
 
     // Create the NPC Starship & Crew roll button
     const npcssrollbtn = $(`
-            <li class="control-tool nested-button npccrew" data-control="STARoller" title="STA Roll NPC Starship & Crew">
+            <li class="control-tool nested-button npccrew" data-control="STARoller" title="${game.i18n.localize('sta.roll.npccrew')}">
                 <i class="fa-solid fa-starship"></i>
             </li>
         `);
@@ -116,71 +116,69 @@ static async rollnpcssroll(event) {
 
 let dialogContent = `
 <form>
-  <h3>NPC Crew</h3>
+  <h3>${game.i18n.localize('sta.roll.npccrew')}</h3>
   <div class="form-group">
-	<label><input type="radio" name="skillLevel" value="basic" checked> Basic</label><br>
-    <label><input type="radio" name="skillLevel" value="proficient"> Proficient</label><br>
-    <label><input type="radio" name="skillLevel" value="talented"> Talented</label><br>
-    <label><input type="radio" name="skillLevel" value="exceptional"> Exceptional</label>
+	<label><input type="radio" name="skillLevel" value="basic" checked> ${game.i18n.localize('sta.roll.npccrewbasic')}</label><br>
+    <label><input type="radio" name="skillLevel" value="proficient"> ${game.i18n.localize('sta.roll.npccrewproficient')}</label><br>
+    <label><input type="radio" name="skillLevel" value="talented"> ${game.i18n.localize('sta.roll.npccrewtalented')}</label><br>
+    <label><input type="radio" name="skillLevel" value="exceptional"> ${game.i18n.localize('sta.roll.npccrewexceptional')}</label>
   </div>
   <div class="form-group">
-    <label>Number of Dice: <span id="diceValue">2</span></label>
+    <label>${game.i18n.localize('sta.apps.dicepoolwindow')}: <span id="diceValue">2</span></label>
     <input type="range" id="numDice" name="numDice" min="1" max="5" value="2" oninput="document.getElementById('diceValue').textContent = this.value">
   </div>
-  <h3>NPC Ship</h3>
+  <h3>${game.i18n.localize('sta.roll.npcship')}</h3>
   <div class="form-group">
-    <label>Is the Ship Assisting?<input type="checkbox" id="shipAssist" name="shipAssist" checked></label>
+    <label>${game.i18n.localize('sta.roll.shipassisting')}<input type="checkbox" id="shipAssist" name="shipAssist"></label>
   </div>  
   <div class="form-group">
-    <label>Number of Dice: <span id="shipDiceValue">1</span></label>
+    <label>${game.i18n.localize('sta.apps.dicepoolwindow')}: <span id="shipDiceValue">1</span></label>
     <input type="range" id="shipNumDice" name="shipNumDice" min="1" max="3" value="1" oninput="document.getElementById('shipDiceValue').textContent = this.value">
   </div>
   <div class="form-group">
     <table>
       <tr>
         <td>
-          <h3>Ship Systems</h3>
+          <h3>${game.i18n.localize('sta.actor.starship.system.name')}</h3>
           <div id="shipSystems"></div>
         </td>
         <td>
-          <h3>Ship Departments</h3>
+          <h3>${game.i18n.localize('sta.actor.starship.department.name')}</h3>
           <div id="shipDepartments"></div>
         </td>
       </tr>
     </table>
   </div>
   <div class="form-group">
-    <label>Complication Range: <span id="complicationValue">1</span></label>
+    <label>${game.i18n.localize('sta.roll.complicationrange')}: <span id="complicationValue">1</span></label>
     <input type="range" id="complication" name="complication" min="1" max="5" value="1" oninput="document.getElementById('complicationValue').textContent = this.value">
   </div>
 </form>
 `;
 
 new Dialog({
-  title: "NPC Crew and Ship Roll",
+  title: `${game.i18n.localize('sta.roll.npcshipandcrewroll')}`,
   content: dialogContent,
   width: 600,
   buttons: {
     roll: {
-      label: "Perform Task",
+      label: `${game.i18n.localize('sta.apps.rolldice')}`,
       callback: (html) => {
-        const token = canvas.tokens.controlled[0];
-        const isPrivateRoll = html.find('#privateRoll').is(':checked');
-        if (!token) {
-          ui.notifications.error("Please select a token for the NPC Ship.");
-          return;
-        }
-        const actor = token.actor;
-        const tokenName = token.name || actor.name || "Unknown Ship";
 
         // Get selected system and department
         let selectedSystem = html.find('.selector.system:checked').val();
-        let selectedSystemLabel = html.find(`#${selectedSystem}-selector`).siblings('label').text().trim().replace(/:$/, '').toLowerCase();
-        let selectedSystemValue = html.find(`#${selectedSystem}`).text();
+        let selectedSystemLabel = html.find(`#${selectedSystem}-selector`).siblings('.original-system-label').val();
+		if (selectedSystemLabel) {
+		  selectedSystemLabel = selectedSystemLabel.substring(26);
+		}
+		let selectedSystemValue = html.find(`#${selectedSystem}`).text();
         
         let selectedDepartment = html.find('.selector.department:checked').val();
-        let selectedDepartmentLabel = html.find(`#${selectedDepartment}-selector`).siblings('label').text().trim().replace(/:$/, '').toLowerCase();
-        let selectedDepartmentValue = html.find(`#${selectedDepartment}`).text();
+        let selectedDepartmentLabel = html.find(`#${selectedDepartment}-selector`).siblings('.original-department-label').val();
+		if (selectedDepartmentLabel) {
+		  selectedDepartmentLabel = selectedDepartmentLabel.substring(30);
+		}
+		let selectedDepartmentValue = html.find(`#${selectedDepartment}`).text();
 
         const numDice = parseInt(html.find('#numDice').val());
         const skillLevel = html.find('input[name="skillLevel"]:checked').val();
@@ -209,9 +207,22 @@ new Dialog({
         const speakerNPC = {
             type: 'npccharacter',
         };
-        const speakerstarship = {
+        let speakerstarship = {
             type: 'starship',
         };
+
+        const token = canvas.tokens.controlled[0];
+        if (!token || (token.actor.type !== 'starship' && token.actor.type !== 'smallcraft')) {
+        selectedSystemLabel = "STARoller";
+        selectedSystemValue = parseInt(html.find('#systemValue').val());
+
+        selectedDepartmentLabel = "STARoller";
+        selectedDepartmentValue = parseInt(html.find('#departmentValue').val());
+
+        speakerstarship = {
+            type: 'sidebar',
+        };
+        }
 
       const staRoll = new STARoll();
       staRoll.performAttributeTest(numDice, true, false, false,
@@ -246,40 +257,39 @@ new Dialog({
     html.find('.form-group').css({'width': '375px',});
 
     const token = canvas.tokens.controlled[0];
-    if (!token) {
-      ui.notifications.error("Please select a token for the NPC Ship.");
-      return;
+
+    // Fallback to input box in case no token is selected
+    if (!token || (token.actor.type !== 'starship' && token.actor.type !== 'smallcraft')) {
+        let systemsHtml = `
+        <div>
+          <input type="number" id="systemValue" name="systemValue" min="0" max="20" value="7">
+        </div>
+        `;
+        html.find('#shipSystems').html(systemsHtml);
+
+        let departmentsHtml = `
+        <div>
+          <input type="number" id="departmentValue" name="departmentValue" min="0" max="10" value="2">
+        </div>
+        `;
+        html.find('#shipDepartments').html(departmentsHtml);
+
+    return;
     }
+
     const actor = token.actor;
 
     // Populate ship systems
     let systemsHtml = '';
     for (let [key, system] of Object.entries(actor.system.systems)) {
-      let systemLabel = system.label;
-      // Check for specific system label name and change it
-      if (systemLabel === "sta.actor.starship.system.communications") {
-        systemLabel = "Communications";
-      }
-      if (systemLabel === "sta.actor.starship.system.computers") {
-        systemLabel = "Computers";
-      }
-      if (systemLabel === "sta.actor.starship.system.engines") {
-        systemLabel = "Engines";
-      }
-      if (systemLabel === "sta.actor.starship.system.sensors") {
-        systemLabel = "Sensors";
-      }
-      if (systemLabel === "sta.actor.starship.system.structure") {
-        systemLabel = "Structure";
-      }
-      if (systemLabel === "sta.actor.starship.system.weapons") {
-        systemLabel = "Weapons";
-      }
+      let systemLabel = game.i18n.localize(system.label);
+
       systemsHtml += `
       <div>
         <input type="radio" id="${key}-selector" name="system" class="selector system" value="${key}">
         <label for="${key}-selector">${systemLabel}: </label>
         <span id="${key}">${system.value}</span>
+        <input type="hidden" for="${key}-selector" class="original-system-label" value="${system.label}">
       </div>
       `;
     }
@@ -288,31 +298,14 @@ new Dialog({
     // Populate ship departments
     let departmentsHtml = '';
     for (let [key, department] of Object.entries(actor.system.departments)) {
-      let departmentLabel = department.label;
-      // Check for specific department label name and change it
-      if (departmentLabel === "sta.actor.starship.department.command") {
-        departmentLabel = "Command";
-      }
-      if (departmentLabel === "sta.actor.starship.department.conn") {
-        departmentLabel = "Conn";
-      }
-      if (departmentLabel === "sta.actor.starship.department.engineering") {
-        departmentLabel = "Engineering";
-      }
-      if (departmentLabel === "sta.actor.starship.department.medicine") {
-        departmentLabel = "Medicine";
-      }
-      if (departmentLabel === "sta.actor.starship.department.science") {
-        departmentLabel = "Science";
-      }
-      if (departmentLabel === "sta.actor.starship.department.security") {
-        departmentLabel = "Security";
-      }
+      let departmentLabel = game.i18n.localize(department.label);
+
       departmentsHtml += `
       <div>
         <input type="radio" id="${key}-selector" name="department" class="selector department" value="${key}">
         <label for="${key}-selector">${departmentLabel}: </label>
         <span id="${key}">${department.value}</span>
+        <input type="hidden" for="${key}-selector" class="original-department-label" value="${department.label}">
       </div>
       `;
     }

@@ -202,3 +202,23 @@ export class STASharedActorFunctions {
     });
   }
 }
+// Add unarmed strike to new characters
+Hooks.on('createActor', async (actor, options, userId) => {
+  if (actor.type === 'character') {
+
+    const compendium2e = await game.packs.get('sta.equipment-crew');
+	const item1 = await compendium2e.getDocument('cxIi0Ltb1sUCFnzp');
+
+    const compendium1e = await game.packs.get('sta.personal-weapons-core');
+	const item2 = await compendium1e.getDocument('3PTFLawY0tCva3gG');
+
+    if (item1 && item2) {
+      await actor.createEmbeddedDocuments('Item', [
+        item1.toObject(),
+        item2.toObject()
+      ]);
+    } else {
+      console.error("One or both items were not found in the compendiums.");
+    }
+  }
+});
