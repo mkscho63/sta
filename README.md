@@ -70,7 +70,20 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 ---
 
 ## Development Environment
-In order to build successfully, you will need to update `foundryconfig.json` and direct it to the appropriate [Foundry VTT Data directory](https://foundryvtt.com/article/configuration). 
+If you are using a non-standard [Foundry VTT Data directory](https://foundryvtt.com/article/configuration), you will need to update `foundryconfig.json` with your data directory. Otherwise, the build will assume the default location for your platform.
+
+### Common Build Commands
+
+```
+# Build STA and copy it to Foundry
+$ npm run build
+
+# Deletes the local build *AND* the copy in the Foundry data directory
+$ npm run clean
+
+# Run linters
+$ npm run lint
+```
 
 ## Thanks
 - Atropos, for creating Foundry Virtual Tabletop. It is an amazing VTT, especially if you want something highly customizable. <a href="https://foundryvtt.com/" target="_blank">https://foundryvtt.com/</a>.
