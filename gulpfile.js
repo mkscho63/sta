@@ -147,13 +147,26 @@ async function clean() {
   }
 }
 
+function defaultDataPath() {
+  switch (process.platform) {
+    case 'win32':
+      return path.resolve(process.env.localappdata, 'FoundryVTT')
+    case 'linux':
+      return path.resolve(process.env.HOME, '.local', 'share', 'FoundryVTT')
+    case 'darwin':
+      return path.resolve(process.env.HOME, 'Library', 'Application Support', 'FoundryVTT')
+    default:
+      throw Error("No known default for platform ${process.platform}")
+  }
+}
+
 // Copy files to test location
 async function copyUserData() {
   const name = path.basename(path.resolve('.'));
   const config = fs.readJSONSync('foundryconfig.json');
 
   let destDir;
-  
+
   try {
     if (fs.existsSync(path.resolve('.', 'dist', 'system.json')) ||
 			fs.existsSync(path.resolve('.', 'src', 'system.json'))) {
@@ -165,14 +178,17 @@ async function copyUserData() {
     }
 
     let linkDir;
+
+    if (!config.dataPath) {
+        config.dataPath = defaultDataPath()
+    }
+
     if (config.dataPath) {
       if (!fs.existsSync(path.join(config.dataPath, 'Data'))) {
         throw Error('User Data path invalid, no Data directory found');
       }
 
       linkDir = path.join(config.dataPath, 'Data', destDir, name);
-    } else {
-      throw Error('No User Data path defined in foundryconfig.json');
     }
 
     if (argv.clean || argv.c) {

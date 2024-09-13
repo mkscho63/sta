@@ -1,6 +1,7 @@
 # Foundry VTT Star Trek Adventures (Unofficial)
 
 > Star Trek Adventures Tabletop System in Foundry VTT
+> This system contains support for BOTH the 1st and 2nd edition of the Star Trek Adventures Rules (for details see the wiki)
 </br></br>
 You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-trek-adventures/products/star-trek-adventures-core-rulebook-pdf">Star Trek Adventures Tabletop RPG</a> to play this! This system does not attempt to explain the game or include any ready made characters, features or items. The system is designed for those who understand the rules and want to play via Foundry VTT. Modiphius own's the property, as such I will not discuss rules and content with those who have not purchased the system from Modiphius. I am in no way affiliated with Modiphius, I only share this with their permission.
 
@@ -70,7 +71,20 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 ---
 
 ## Development Environment
-In order to build successfully, you will need to update `foundryconfig.json` and direct it to the appropriate [Foundry VTT Data directory](https://foundryvtt.com/article/configuration). 
+If you are using a non-standard [Foundry VTT Data directory](https://foundryvtt.com/article/configuration), you will need to update `foundryconfig.json` with your data directory. Otherwise, the build will assume the default location for your platform.
+
+### Common Build Commands
+
+```
+# Build STA and copy it to Foundry
+$ npm run build
+
+# Deletes the local build *AND* the copy in the Foundry data directory
+$ npm run clean
+
+# Run linters
+$ npm run lint
+```
 
 ## Thanks
 - Atropos, for creating Foundry Virtual Tabletop. It is an amazing VTT, especially if you want something highly customizable. <a href="https://foundryvtt.com/" target="_blank">https://foundryvtt.com/</a>.
