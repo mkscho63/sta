@@ -192,7 +192,7 @@
   "sta.apps.addmomentum": "adicionou {0} momentum ao pool",
   "sta.apps.removemomentum": "removeu {0} momentum do pool",
   "sta.apps.addthreat": "adicionou {0} ameaça ao pool",
-  "sta.apps.removethreat": "removeu {0} ameaça do pool"
+  "sta.apps.removethreat": "removeu {0} ameaça do pool",
 
   "sta.roll.success": "Sucesso",
   "sta.roll.successPlural": "Sucessos",
@@ -235,5 +235,4 @@
   "sta.dice.dsn.ufp.red": "UFP Vermelho",
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Preto)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Branco)"
-
 }
