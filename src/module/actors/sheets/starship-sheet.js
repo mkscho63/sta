@@ -107,7 +107,7 @@ export class STAStarshipSheet extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
 
-      var localizedValues = {
+      const localizedValues = {
         "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields')
       };
 

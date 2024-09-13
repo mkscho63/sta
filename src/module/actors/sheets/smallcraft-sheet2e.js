@@ -93,7 +93,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
     // With the total value divided by 2, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
 
-      var localizedValues = {
+      const localizedValues = {
         "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
         "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
       };

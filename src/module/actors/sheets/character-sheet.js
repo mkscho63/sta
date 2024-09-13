@@ -142,7 +142,7 @@ export class STACharacterSheet extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
 
-      var localizedValues = {
+      const localizedValues = {
         "resolute": game.i18n.localize('sta.actor.character.talents.resolute')
       };
 
