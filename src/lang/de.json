@@ -219,6 +219,10 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Schwarz)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (Weiß)",
 
+  "sta.roll.npcshipandcrewroll": "NPC Crew and Ship Roll",
+  "sta.roll.complicationrange": "Komplikationsspanne",
+  "sta.roll.npcship": "NPC Ship",
+  "sta.roll.shipassisting": "Is the Ship assisting?",
   "sta.roll.npccrew": "NPC Crew",
   "sta.roll.npccrewbasic": "Basic",
   "sta.roll.npccrewproficient": "Proficient",

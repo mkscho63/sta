@@ -217,6 +217,10 @@
   "sta.roll.npccrewproficient": "Proficient",
   "sta.roll.npccrewtalented": "Talented",
   "sta.roll.npccrewexceptional": "Exceptional",
+  "sta.roll.npcship": "NPC Ship",
+  "sta.roll.shipassisting": "Is the Ship assisting?",
+  "sta.roll.complicationrange": "Complication range",
+  "sta.roll.npcshipandcrewroll": "NPC Crew and Ship Roll",
 
   "sta.roll.weapon.damage": "<b>1</b> Damage die",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Damage dice",
