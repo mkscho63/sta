@@ -29,7 +29,7 @@ google.rules['jsdoc/require-jsdoc'] = ['error', {
   },
 }];
 
-// The 'valid-jsdoc got' rule broken down into separate rules within the plugin.
+// The 'valid-jsdoc' rule got broken down into separate rules within the plugin.
 // See: https://github.com/gajus/eslint-plugin-jsdoc/wiki/Comparison-with-deprecated-JSdoc-related-ESLint-rules
 delete google.rules['valid-jsdoc'];
 google.rules['jsdoc/require-param-description'] = 'off';
@@ -47,11 +47,11 @@ export default [
   google,
   {
     languageOptions: {
-      ecmaVersion: 2018,
+      ecmaVersion: 2020,
       sourceType: 'module',
       globals: {
         ...globals.browser,
-        ...globals.es6,
+        ...globals.jquery,
         ...globals.node,
         'Atomics': 'readonly',
         'SharedArrayBuffer': 'readonly',
@@ -60,7 +60,6 @@ export default [
         'mergeObject': 'readonly',
         'CONFIG': 'writable',
         'duplicate': 'readonly',
-        '$': 'readonly',
         'Tabs': 'readonly',
         'Hooks': 'readonly',
         'Items': 'readonly',
