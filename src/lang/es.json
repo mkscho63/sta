@@ -199,6 +199,10 @@
   "sta.notifications.threatmin": "¡No puedes poner la Amenaza por debajo de 0!",
   "sta.notifications.threatmax": "¡Hay demasiada Amenaza!",
   
+  "sta.apps.addmomentum": "added {0} momentum to the pool",
+  "sta.apps.removemomentum": "removed {0} momentum from the pool",
+  "sta.apps.addthreat": "added {0} threat to the pool",
+  "sta.apps.removethreat": "removed {0} threat from the pool",
   "sta.roll.npcshipandcrewroll": "NPC Crew and Ship Roll",
   "sta.roll.complicationrange": "Margen de Complicación",
   "sta.roll.npcship": "NPC Ship",

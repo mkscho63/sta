@@ -251,14 +251,18 @@ export class STATracker extends Application {
             let chatMessage = '';
 
             // Construct the chat message based on the accumulated changes
-            if (momentumDiff !== 0) {
-                let momentumAction = momentumDiff > 0 ? `added ${momentumDiff} momentum to the pool` : `removed ${Math.abs(momentumDiff)} momentum from the pool`;
-                chatMessage += `${game.user.name} ${momentumAction}. `;
-            }
-            if (threatDiff !== 0) {
-                let threatAction = threatDiff > 0 ? `added ${threatDiff} threat to the pool` : `removed ${Math.abs(threatDiff)} threat from the pool`;
-                chatMessage += `${game.user.name} ${threatAction}.`;
-            }
+        if (momentumDiff !== 0) {
+            let momentumAction = momentumDiff > 0 ? 
+                game.i18n.format("sta.apps.addmomentum", {0: momentumDiff}) : 
+                game.i18n.format("sta.apps.removemomentum", {0: Math.abs(momentumDiff)});
+            chatMessage += `${game.user.name} ${momentumAction}. `;
+        }
+        if (threatDiff !== 0) {
+            let threatAction = threatDiff > 0 ? 
+                game.i18n.format("sta.apps.addthreat", {0: threatDiff}) : 
+                game.i18n.format("sta.apps.removethreat", {0: Math.abs(threatDiff)});
+            chatMessage += `${game.user.name} ${threatAction}.`;
+        }
 
             // Send the chat message
             if (chatMessage) {

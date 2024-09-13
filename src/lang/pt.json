@@ -189,6 +189,10 @@
   "sta.apps.rolldice": "Rolar Dados",
   "sta.apps.dedicatedfocus": "Usando Foco Dedicado?",
   "sta.apps.staroller": "STARoller",
+  "sta.apps.addmomentum": "adicionou {0} momentum ao pool",
+  "sta.apps.removemomentum": "removeu {0} momentum do pool",
+  "sta.apps.addthreat": "adicionou {0} ameaça ao pool",
+  "sta.apps.removethreat": "removeu {0} ameaça do pool"
 
   "sta.roll.success": "Sucesso",
   "sta.roll.successPlural": "Sucessos",

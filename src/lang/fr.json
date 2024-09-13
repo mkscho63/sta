@@ -189,6 +189,10 @@
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures FPU (Noir)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures FPU (Blanc)",
 	
+  "sta.apps.addmomentum": "added {0} momentum to the pool",
+  "sta.apps.removemomentum": "removed {0} momentum from the pool",
+  "sta.apps.addthreat": "added {0} threat to the pool",
+  "sta.apps.removethreat": "removed {0} threat from the pool",
   "sta.roll.npcshipandcrewroll": "NPC Crew and Ship Roll",
   "sta.roll.complicationrange": "Plage de Complication",
   "sta.roll.npcship": "NPC Ship",

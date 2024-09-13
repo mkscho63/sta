@@ -199,6 +199,10 @@
   "sta.apps.rolldice": "Roll Dice",
   "sta.apps.dedicatedfocus": "Dedicated Focus (2e Talent)?",
   "sta.apps.staroller": "STARoller",
+  "sta.apps.addmomentum": "added {0} momentum to the pool",
+  "sta.apps.removemomentum": "removed {0} momentum from the pool",
+  "sta.apps.addthreat": "added {0} threat to the pool",
+  "sta.apps.removethreat": "removed {0} threat from the pool",
 
   "sta.roll.success": "Success",
   "sta.roll.successPlural": "Successes",
