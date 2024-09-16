@@ -106,13 +106,13 @@
   "sta.actor.belonging.weapon.energy": "Energy",
   "sta.actor.belonging.weapon.torpedo": "Torpedo",
   "sta.actor.belonging.weapon.stun": "Stun",
-  "sta.actor.belonging.armor.title": "Armor",
+  "sta.actor.belonging.armor.title": "Armor / Resistance",
   "sta.actor.belonging.armor.protect": "Resist",
   "sta.actor.belonging.armor.protection": "Resistance",
   "sta.actor.belonging.other.title": "Other Items",
   "sta.actor.belonging.other.qty": "Qty",
   "sta.actor.belonging.other.quantity": "Quantity",
-  
+
   "sta.actor.starship.name": "Name",
   "sta.actor.starship.designation": "Designation",
   "sta.actor.starship.servicedate": "Service Date",
@@ -155,11 +155,12 @@
   "sta.actor.starship.shieldmod": "Shield Modifier",
   "sta.actor.starship.shaken": "Shaken",
   "sta.actor.starship.reservepower": "Reserve Power",
-  "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod",
+  "sta.actor.starship.shieldcrewmod": "Shield/Crew Mod",
 
   "sta.actor.smallcraft.parent": "Parent Ship",
   "sta.actor.smallcraft.child": "Small Craft Type",
 
+  "sta.actor.extendedtask.title": "Extended Task",
   "sta.actor.extendedtask.magnitude": "Magnitude",
   "sta.actor.extendedtask.work": "Work",
   "sta.actor.extendedtask.difficulty": "Difficulty",
@@ -197,8 +198,12 @@
   "sta.apps.complicationrange": "Complication range (1 is default)?",
   "sta.apps.pool": "Number of Dice in Pool",
   "sta.apps.rolldice": "Roll Dice",
-  "sta.apps.dedicatedfocus": "Using Dedicated Focus?",
+  "sta.apps.dedicatedfocus": "Dedicated Focus (2e Talent)?",
   "sta.apps.staroller": "STARoller",
+  "sta.apps.addmomentum": "added {0} momentum to the pool",
+  "sta.apps.removemomentum": "removed {0} momentum from the pool",
+  "sta.apps.addthreat": "added {0} threat to the pool",
+  "sta.apps.removethreat": "removed {0} threat from the pool",
 
   "sta.roll.success": "Success",
   "sta.roll.successPlural": "Successes",
@@ -217,6 +222,10 @@
   "sta.roll.npccrewproficient": "Proficient",
   "sta.roll.npccrewtalented": "Talented",
   "sta.roll.npccrewexceptional": "Exceptional",
+  "sta.roll.npcship": "NPC Ship",
+  "sta.roll.shipassisting": "Is the Ship assisting?",
+  "sta.roll.complicationrange": "Complication range",
+  "sta.roll.npcshipandcrewroll": "NPC Crew and Ship Roll",
 
   "sta.roll.weapon.damage": "<b>1</b> Damage die",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Damage dice",
@@ -239,5 +248,4 @@
   "sta.dice.dsn.ufp.red": "UFP Red",
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Black)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (White)"
-
 }
