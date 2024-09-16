@@ -112,7 +112,7 @@
   "sta.actor.belonging.other.title": "Other Items",
   "sta.actor.belonging.other.qty": "Qty",
   "sta.actor.belonging.other.quantity": "Quantity",
-  
+
   "sta.actor.starship.name": "Name",
   "sta.actor.starship.designation": "Designation",
   "sta.actor.starship.servicedate": "Service Date",
@@ -155,11 +155,12 @@
   "sta.actor.starship.shieldmod": "Shield Modifier",
   "sta.actor.starship.shaken": "Shaken",
   "sta.actor.starship.reservepower": "Reserve Power",
-  "sta.actor.starship.shieldcrewmod":"Shield/Crew Mod",
+  "sta.actor.starship.shieldcrewmod": "Shield/Crew Mod",
 
   "sta.actor.smallcraft.parent": "Parent Ship",
   "sta.actor.smallcraft.child": "Small Craft Type",
 
+  "sta.actor.extendedtask.title": "Extended Task",
   "sta.actor.extendedtask.magnitude": "Magnitude",
   "sta.actor.extendedtask.work": "Work",
   "sta.actor.extendedtask.difficulty": "Difficulty",
@@ -247,5 +248,4 @@
   "sta.dice.dsn.ufp.red": "UFP Red",
   "sta.dice.dsn.ufp.theme.black": "Star Trek Adventures UFP (Black)",
   "sta.dice.dsn.ufp.theme.white": "Star Trek Adventures UFP (White)"
-
 }
