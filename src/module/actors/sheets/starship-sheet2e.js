@@ -515,5 +515,28 @@ export class STAStarshipSheet2e extends ActorSheet {
       const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
+
+    //Highlight the breaches box depending on damaged / destroyed state
+    html.find('.selector.system').each(function(index, value) {
+
+      const $systemCheckbox = $(value);
+      const $systemBreach = $systemCheckbox.siblings('.breaches');
+      const $systemDestroyed = $systemCheckbox.siblings('.system-destroyed');
+
+      const shipScaleValue = Number.parseInt($('#scale').attr('value'));
+      const breachValue = Number.parseInt($systemBreach.attr('value'));
+
+      const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
+
+      if (breachValue > 0 && !isSystemDestroyed) {
+        $systemBreach.addClass('highlight-damaged');
+        $systemBreach.removeClass('highlight-destroyed');
+      } else if (isSystemDestroyed) {
+        $systemBreach.addClass('highlight-destroyed');
+        $systemBreach.removeClass('highlight-damaged');
+      } else {
+        $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
+      }
+    });
   }
 }
