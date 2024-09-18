@@ -544,8 +544,10 @@ export class STAStarshipSheet2e extends ActorSheet {
     });
       if (totalBreaches === (shipScaleValue + 1)) {
         $('.actor').addClass('highlight-damaged');
+        $('.actor').removeClass('highlight-destroyed');
       } else if (totalBreaches > (shipScaleValue + 1)) {
         $('.actor').addClass('highlight-destroyed');
+        $('.actor').removeClass('highlight-damaged');
       } else {
         $('.actor').removeClass('highlight-damaged');
         $('.actor').removeClass('highlight-destroyed');
