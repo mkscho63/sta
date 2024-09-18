@@ -516,21 +516,25 @@ export class STAStarshipSheet2e extends ActorSheet {
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
 
-    //Highlight the breaches box depending on damaged / destroyed state
-    html.find('.selector.system').each(function(index, value) {
+      // Highlight the breaches box & starship sheet depending on damaged / destroyed state
+      let totalBreaches = 0;
+      const shipScaleValue = Number.parseInt($('#scale').attr('value'));
+
+      html.find('.selector.system').each(function(index, value) {
 
       const $systemCheckbox = $(value);
       const $systemBreach = $systemCheckbox.siblings('.breaches');
       const $systemDestroyed = $systemCheckbox.siblings('.system-destroyed');
 
-      const shipScaleValue = Number.parseInt($('#scale').attr('value'));
       const breachValue = Number.parseInt($systemBreach.attr('value'));
+
+      totalBreaches += breachValue;
 
       const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
 
       if (breachValue > 0 && !isSystemDestroyed) {
         $systemBreach.addClass('highlight-damaged');
-        $systemBreach.removeClass('highlight-destroyed');
+       $systemBreach.removeClass('highlight-destroyed');
       } else if (isSystemDestroyed) {
         $systemBreach.addClass('highlight-destroyed');
         $systemBreach.removeClass('highlight-damaged');
@@ -538,5 +542,13 @@ export class STAStarshipSheet2e extends ActorSheet {
         $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
       }
     });
+      if (totalBreaches === (shipScaleValue + 1)) {
+        $('.actor').addClass('highlight-damaged');
+      } else if (totalBreaches > (shipScaleValue + 1)) {
+        $('.actor').addClass('highlight-destroyed');
+      } else {
+        $('.actor').removeClass('highlight-damaged');
+        $('.actor').removeClass('highlight-destroyed');
+      }
   }
 }
