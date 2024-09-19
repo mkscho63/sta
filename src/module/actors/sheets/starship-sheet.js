@@ -487,14 +487,12 @@ export class STAStarshipSheet extends ActorSheet {
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
 
-    //Highlight the breaches box depending on damaged / disabled /destroyed state
     html.find('.selector.system').each(function(index, value) {
-
       const $systemCheckbox = $(value);
       const $systemBreach = $systemCheckbox.siblings('.breaches');
       const $systemDestroyed = $systemCheckbox.siblings('.system-destroyed');
 
-      const shipScaleValue = Number.parseInt($('#scale').attr('value'));
+      const shipScaleValue = Number.parseInt(html.find('#scale').attr('value'));
       const breachValue = Number.parseInt($systemBreach.attr('value'));
 
       const isSystemDamaged = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
@@ -504,7 +502,7 @@ export class STAStarshipSheet extends ActorSheet {
       if (isSystemDamaged && !isSystemDisabled && !isSystemDestroyed) {
         $systemBreach.addClass('highlight-damaged');
         $systemBreach.removeClass('highlight-disabled');
-    	$systemBreach.removeClass('highlight-destroyed');
+        $systemBreach.removeClass('highlight-destroyed');
       } else if (isSystemDisabled && !isSystemDestroyed) {
         $systemBreach.addClass('highlight-disabled');
         $systemBreach.removeClass('highlight-destroyed');
@@ -513,7 +511,7 @@ export class STAStarshipSheet extends ActorSheet {
         $systemBreach.addClass('highlight-destroyed');
         $systemBreach.removeClass('highlight-disabled');
         $systemBreach.removeClass('highlight-damaged');
-      }  else {
+      } else {
         $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
       }
     });

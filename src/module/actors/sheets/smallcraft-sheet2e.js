@@ -428,16 +428,16 @@ export class STASmallCraftSheet2e extends ActorSheet {
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
 
-      // Highlight the breaches box & starship sheet depending on damaged / destroyed state
+    Hooks.on('renderSTASmallCraftSheet2e', (app, html, data) => {
+      let sheetId = app.id;
+      let sheetElement = $(`#${sheetId} .main`);
+
+      const shipScaleValue = Number.parseInt(html.find('#scale').attr('value'));
       let totalBreaches = 0;
-      const shipScaleValue = Number.parseInt($('#scale').attr('value'));
 
-      html.find('.selector.system').each(function(index, value) {
-
+    html.find('.selector.system').each(function(index, value) {
       const $systemCheckbox = $(value);
       const $systemBreach = $systemCheckbox.siblings('.breaches');
-      const $systemDestroyed = $systemCheckbox.siblings('.system-destroyed');
-
       const breachValue = Number.parseInt($systemBreach.attr('value'));
 
       totalBreaches += breachValue;
@@ -446,7 +446,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
 
       if (breachValue > 0 && !isSystemDestroyed) {
         $systemBreach.addClass('highlight-damaged');
-       $systemBreach.removeClass('highlight-destroyed');
+        $systemBreach.removeClass('highlight-destroyed');
       } else if (isSystemDestroyed) {
         $systemBreach.addClass('highlight-destroyed');
         $systemBreach.removeClass('highlight-damaged');
@@ -454,15 +454,17 @@ export class STASmallCraftSheet2e extends ActorSheet {
         $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
       }
     });
+
       if (totalBreaches === (shipScaleValue + 1)) {
-        $('.main').addClass('highlight-damaged');
-        $('.main').removeClass('highlight-destroyed');
+        sheetElement.addClass('highlight-damaged');
+        sheetElement.removeClass('highlight-destroyed');
       } else if (totalBreaches > (shipScaleValue + 1)) {
-        $('.main').addClass('highlight-destroyed');
-        $('.main').removeClass('highlight-damaged');
+        sheetElement.addClass('highlight-destroyed');
+        sheetElement.removeClass('highlight-damaged');
       } else {
-        $('.main').removeClass('highlight-damaged');
-        $('.main').removeClass('highlight-destroyed');
+        sheetElement.removeClass('highlight-damaged');
+        sheetElement.removeClass('highlight-destroyed');
       }
+    });
   }
 }
