@@ -239,21 +239,7 @@ new Dialog({
   },
 
   render: (html) => {
-    html.find('.dialog-button').css({
-        'background-color': '#FFCC33',
-        'color': '#000000',
-        'border-radius': '20px',
-        'border': 'none',
-        'font-weight': 'bold',
-        'cursor': 'pointer',
-    });
-    html.find('.dialog-button').hover(function () {
-      $(this).css('background-color', 'yellow');
-    }, function () {
-      $(this).css('background-color', 'gold');
-    });
-    html.find('.form-group').css({'width': '375px',});
-
+    html.find('button').addClass('dialog-button roll default');
     const token = canvas.tokens.controlled[0];
 
     // Fallback to input box in case no token is selected
