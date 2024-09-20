@@ -526,17 +526,25 @@ html.find('.check-button.acclaim').click(async (ev) => {
           let diceResults = [];
 
           roll.terms[0].results.forEach(die => {
-            diceResults.push(die.result);
+            let coloredDieResult;
+
             if (die.result >= complicationThreshold) {
+              coloredDieResult = `<span style="color: red;">${die.result}</span>`; // Red for complications
               complications += 1;
             } else if (die.result <= selectedDisciplineValue) {
+              coloredDieResult = `<span style="color: #6cf542;">${die.result}</span>`; // Green for double successes
               totalSuccesses += 2;
             } else if (die.result <= targetNumber && die.result > selectedDisciplineValue) {
+              coloredDieResult = `<span style="color: #42a4f5;">${die.result}</span>`; // Blue for single successes
               totalSuccesses += 1;
+            } else {
+              coloredDieResult = `<span>${die.result}</span>`; // Default for other results
             }
+            diceResults.push(coloredDieResult);
           });
 
           let chatContent = `${game.i18n.format("sta.roll.dicerolls")} ${diceResults.join(", ")}<br>`;
+
           if (totalSuccesses > NegativeInfluences) {
             acclaim = totalSuccesses - NegativeInfluences;
             chatContent += `<strong>${game.i18n.format("sta.roll.gainacclaim", {0: acclaim})}</strong>`;
@@ -559,9 +567,6 @@ html.find('.check-button.acclaim').click(async (ev) => {
     }
   }).render(true);
 });
-
-
-
 
     // If the check-button is clicked it grabs the selected attribute and the selected discipline and fires the method rollAttributeTest. See actor.js for further info.
     html.find('.check-button.attribute').click((ev) => {
