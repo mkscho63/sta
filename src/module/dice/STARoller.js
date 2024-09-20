@@ -240,14 +240,12 @@ new Dialog({
 
   render: (html) => {
     html.find('.dialog-button').css({
-      'background-color': 'gold',
-      'color': 'black',
-      'border-radius': '22px',
-      'border': 'none',
-      'padding': '7px 14px',
-      'font-size': '14px',
-      'cursor': 'pointer',
-      'transition': 'background-color 0.3s ease'
+        'background-color': '#FFCC33',
+        'color': '#000000',
+        'border-radius': '20px',
+        'border': 'none',
+        'font-weight': 'bold',
+        'cursor': 'pointer',
     });
     html.find('.dialog-button').hover(function () {
       $(this).css('background-color', 'yellow');
