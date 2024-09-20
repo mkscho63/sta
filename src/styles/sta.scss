@@ -132,6 +132,18 @@ $trackColors: (
       cursor: pointer;
     }
   }
+  .btn3 {
+    background-color: $buttonColor;
+    color: $inlaidText;
+    border-radius: 20px;
+    font-weight: bold;
+  
+    &:hover {
+      box-shadow: none;
+      background-color: $buttonHover;
+      cursor: pointer;
+    }
+  }
 }
 /*#endregion*/
 
