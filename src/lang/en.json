@@ -226,7 +226,14 @@
   "sta.roll.shipassisting": "Is the Ship assisting?",
   "sta.roll.complicationrange": "Complication range",
   "sta.roll.npcshipandcrewroll": "NPC Crew and Ship Roll",
-
+  "sta.roll.acclaim": "Roll Acclaim",
+  "sta.roll.positiveinfluences": "Number of Positive Influences",
+  "sta.roll.negativeinfluences": "Number of Negative Influences",
+  "sta.roll.gainacclaim": "Gains {0} acclaim",
+  "sta.roll.gainreprimand": "Gains {0} reprimand",
+  "sta.roll.dicerolls": "Dice Rolls:",
+  "sta.roll.nochange": "Gains no acclaim or reprimand",
+  
   "sta.roll.weapon.damage": "<b>1</b> Damage die",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Damage dice",
   "sta.roll.armor.protect": "<b>|#|</b> Resistance",

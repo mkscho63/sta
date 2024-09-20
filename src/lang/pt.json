@@ -226,6 +226,13 @@
   "sta.roll.shipassisting": "A Nave está assistindo?",
   "sta.roll.complicationrange": "Margem de Complicações",
   "sta.roll.npcshipandcrewroll": "Rolo de Tripulante e Nave PdM",
+  "sta.roll.acclaim": "Rolar Prestígio",
+  "sta.roll.positiveinfluences": "Número de Influências Positivas",
+  "sta.roll.negativeinfluences": "Número de Influências Negativas",
+  "sta.roll.gainacclaim": "Ganha {0} prestígio",
+  "sta.roll.gainreprimand": "Ganha {0} advertência",
+  "sta.roll.dicerolls": "Rolagens de Dados:",
+  "sta.roll.nochange": "Não ganha prestígio ou advertência",
 
   "sta.roll.weapon.damage": "<b>1</b> Dado de Dano",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Dados de Dano",

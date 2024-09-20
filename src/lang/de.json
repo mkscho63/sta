@@ -226,6 +226,13 @@
   "sta.roll.shipassisting": "Unterstützt das Schiff?",
   "sta.roll.complicationrange": "Komplikationsspanne",
   "sta.roll.npcshipandcrewroll": "NPC-Crew und Schiffsrolle",
+  "sta.roll.acclaim": "Ansehen würfeln",
+  "sta.roll.positiveinfluences": "Anzahl positiver Einflüsse",
+  "sta.roll.negativeinfluences": "Anzahl negativer Einflüsse",
+  "sta.roll.gainacclaim": "Erhält {0} Ansehen",
+  "sta.roll.gainreprimand": "Erhält {0} Rüge",
+  "sta.roll.dicerolls": "Würfelergebnisse:",
+  "sta.roll.nochange": "Erhält kein Ansehen oder Rüge",
 
   "sta.roll.weapon.damage": "<b>1</b> Schadenswürfel",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Schadenswürfel",

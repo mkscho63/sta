@@ -226,6 +226,13 @@
   "sta.roll.shipassisting": "Le vaisseau aide-t-il?",
   "sta.roll.complicationrange": "Plage de Complication",
   "sta.roll.npcshipandcrewroll": "Jet d'équipage et de vaisseau NPC",
+  "sta.roll.acclaim": "Lancer Renom",
+  "sta.roll.positiveinfluences": "Nombre d'Influences Positives",
+  "sta.roll.negativeinfluences": "Nombre d'Influences Négatives",
+  "sta.roll.gainacclaim": "Gagne {0} renom",
+  "sta.roll.gainreprimand": "Gagne {0} réprimande",
+  "sta.roll.dicerolls": "Lancers de Dés:",
+  "sta.roll.nochange": "Ne gagne ni renom ni réprimande",
 
   "sta.roll.weapon.damage": "<b>1</b> Dégât",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Dégâts",

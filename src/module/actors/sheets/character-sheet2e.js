@@ -481,6 +481,95 @@ export class STACharacterSheet2e extends ActorSheet {
       this.submit();
     });
 
+
+  // If the check-button is clicked it performs the acclaim or reprimand calculation.
+html.find('.check-button.acclaim').click(async (ev) => {
+
+  let dialogContent = `
+  <form class="sta-form">
+      <div class="dice-pool flexcol">
+          <div class="flexrow">
+              <div style="flex:80%;"><label class="label">${game.i18n.localize('sta.roll.positiveinfluences')}</label></div>
+              <input type="number" name="positiveInfluences" value="1" class="numeric-entry" id="positiveInfluences">
+          </div>
+          <div class="flexrow">
+              <div style="flex:80%;"><label class="label">${game.i18n.localize('sta.roll.negativeinfluences')}</label></div>
+              <input type="number" name="negativeInfluences" value="0" class="numeric-entry" id="negativeInfluences">
+          </div>
+      </div>    
+  </form>
+  `;
+
+  new Dialog({
+    title: `${game.i18n.localize('sta.roll.acclaim')}`,
+    content: dialogContent,
+    buttons: {
+      roll: {
+        label: `${game.i18n.localize('sta.roll.acclaim')}`,
+        callback: async (html) => {
+          let PositiveInfluences = parseInt(html.find('#positiveInfluences').val()) || 1;
+          let NegativeInfluences = parseInt(html.find('#negativeInfluences').val()) || 0;
+          
+          let selectedDisciplineValue = parseInt(document.querySelector('#total-rep')?.value) || 0;
+          let existingReprimand = parseInt(document.querySelector('#reprimand')?.value) || 0;
+          let targetNumber = selectedDisciplineValue + 7;
+          let complicationThreshold = 20 - Math.min(existingReprimand, 5);
+          let diceRollFormula = `${PositiveInfluences}d20`;
+          let roll = new Roll(diceRollFormula);
+
+          await roll.evaluate();
+
+          let totalSuccesses = 0;
+          let complications = 0;
+          let acclaim = 0;
+          let reprimand = 0;
+          let diceResults = [];
+
+          roll.terms[0].results.forEach(die => {
+            diceResults.push(die.result);
+            if (die.result >= complicationThreshold) {
+              complications += 1;
+            } else if (die.result <= selectedDisciplineValue) {
+              totalSuccesses += 2;
+            } else if (die.result <= targetNumber && die.result > selectedDisciplineValue) {
+              totalSuccesses += 1;
+            }
+          });
+
+          let chatContent = `${game.i18n.format("sta.roll.dicerolls")} ${diceResults.join(", ")}<br>`;
+          if (totalSuccesses > NegativeInfluences) {
+            acclaim = totalSuccesses - NegativeInfluences;
+            chatContent += `<strong>${game.i18n.format("sta.roll.gainacclaim", {0: acclaim})}</strong>`;
+          } else if (totalSuccesses < NegativeInfluences) {
+            reprimand = (NegativeInfluences - totalSuccesses) + complications;
+            chatContent += `<strong>${game.i18n.format("sta.roll.gainreprimand", {0: reprimand})}</strong>`;
+          } else if (totalSuccesses === NegativeInfluences) {
+            chatContent += `<strong>${game.i18n.localize("sta.roll.nochange")}</strong>`;
+          }
+
+          ChatMessage.create({
+            speaker: ChatMessage.getSpeaker(),
+            content: chatContent
+          });
+        }
+      }
+    },
+    render: (html) => {
+      html.find('button').css({
+        'background-color': '#FFCC33',
+        'color': '#000000',
+        'border-radius': '20px',
+        'border': 'none',
+        'font-weight': 'bold',
+        'cursor': 'pointer',
+      });
+    }
+  }).render(true);
+});
+
+
+
+
     // If the check-button is clicked it grabs the selected attribute and the selected discipline and fires the method rollAttributeTest. See actor.js for further info.
     html.find('.check-button.attribute').click((ev) => {
       let selectedAttribute = '';

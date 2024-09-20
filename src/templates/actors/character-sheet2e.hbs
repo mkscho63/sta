@@ -112,6 +112,9 @@
           </div>
         </div>
         <div class="row">
+          <div class="column" style="width:15%">
+		  <div class="check-button btn acclaim">{{localize 'sta.roll.acclaim'}}</div>
+		  </div>
           <div class="column title" style="width:15%">
               <div> {{localize 'sta.actor.character.acclaim'}} </div>
           </div>
@@ -122,9 +125,9 @@
               <div> {{localize 'sta.actor.character.reprimand'}} </div>
           </div>
           <div class="column" style="width:5%">
-              <input class="text-entry" name="system.reprimand" type="number" value="{{system.reprimand}}" placeholder="0" />
+              <input class="text-entry" name="system.reprimand" id="currentreprimand" type="number" value="{{system.reprimand}}" placeholder="0" />
           </div>
-          <div class="column" style="width:35%"></div>
+          <div class="column" style="width:20%"></div>
           <div class="column title" style="width:20%">
               <div> {{localize 'sta.actor.character.stressmod'}} </div>
           </div>

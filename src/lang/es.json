@@ -226,6 +226,13 @@
   "sta.roll.shipassisting": "¿La nave está asistiendo?",
   "sta.roll.complicationrange": "Margen de Complicación",
   "sta.roll.npcshipandcrewroll": "Tirada de Tripulación y Nave NPC",
+  "sta.roll.acclaim": "Tirar Prestigio",
+  "sta.roll.positiveinfluences": "Número de Influencias Positivas",
+  "sta.roll.negativeinfluences": "Número de Influencias Negativas",
+  "sta.roll.gainacclaim": "Gana {0} prestigio",
+  "sta.roll.gainreprimand": "Gana {0} reprimenda",
+  "sta.roll.dicerolls": "Tiradas de Dados:",
+  "sta.roll.nochange": "No gana prestigio ni reprimenda",
 
   "sta.roll.weapon.damage": "<b>|#|</b> Dado de Daño",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Dados de Daño",
