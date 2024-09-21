@@ -150,7 +150,7 @@ let dialogContent = `
     </table>
   </div>
   <div class="form-group">
-    <label>${game.i18n.localize('sta.roll.complicationrange')}: <span id="complicationValue">1</span></label>
+    <label>${game.i18n.localize('sta.roll.complicationroller')}: <span id="complicationValue">1</span></label>
     <input type="range" id="complication" name="complication" min="1" max="5" value="1" oninput="document.getElementById('complicationValue').textContent = this.value">
   </div>
 </form>
