@@ -93,7 +93,7 @@ export class STARoll {
       tokenId: speaker.token ? speaker.token.uuid : null,
       dicePool,
       checkTarget,
-      complicationMinimumValue,
+      complicationMinimumValue: complicationMinimumValue + "+",
       diceHtml: diceString,
       complicationHtml: complicationText,
       successText,

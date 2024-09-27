@@ -150,7 +150,7 @@ let dialogContent = `
     </table>
   </div>
   <div class="form-group">
-    <label>${game.i18n.localize('sta.roll.complicationrange')}: <span id="complicationValue">1</span></label>
+    <label>${game.i18n.localize('sta.roll.complicationroller')}: <span id="complicationValue">1</span></label>
     <input type="range" id="complication" name="complication" min="1" max="5" value="1" oninput="document.getElementById('complicationValue').textContent = this.value">
   </div>
 </form>
@@ -239,23 +239,7 @@ new Dialog({
   },
 
   render: (html) => {
-    html.find('.dialog-button').css({
-      'background-color': 'gold',
-      'color': 'black',
-      'border-radius': '22px',
-      'border': 'none',
-      'padding': '7px 14px',
-      'font-size': '14px',
-      'cursor': 'pointer',
-      'transition': 'background-color 0.3s ease'
-    });
-    html.find('.dialog-button').hover(function () {
-      $(this).css('background-color', 'yellow');
-    }, function () {
-      $(this).css('background-color', 'gold');
-    });
-    html.find('.form-group').css({'width': '375px',});
-
+    html.find('button').addClass('dialog-button roll default');
     const token = canvas.tokens.controlled[0];
 
     // Fallback to input box in case no token is selected
