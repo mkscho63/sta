@@ -427,5 +427,44 @@ export class STASmallCraftSheet2e extends ActorSheet {
       const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
+
+    Hooks.on('renderSTASmallCraftSheet2e', (app, html, data) => {
+      let sheetId = app.id;
+      let sheetElement = $(`#${sheetId} .main`);
+
+      const shipScaleValue = Number.parseInt(html.find('#scale').attr('value'));
+      let totalBreaches = 0;
+
+    html.find('.selector.system').each(function(index, value) {
+      const $systemCheckbox = $(value);
+      const $systemBreach = $systemCheckbox.siblings('.breaches');
+      const breachValue = Number.parseInt($systemBreach.attr('value'));
+
+      totalBreaches += breachValue;
+
+      const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
+
+      if (breachValue > 0 && !isSystemDestroyed) {
+        $systemBreach.addClass('highlight-damaged');
+        $systemBreach.removeClass('highlight-destroyed');
+      } else if (isSystemDestroyed) {
+        $systemBreach.addClass('highlight-destroyed');
+        $systemBreach.removeClass('highlight-damaged');
+      } else {
+        $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
+      }
+    });
+
+      if (totalBreaches === (shipScaleValue + 1)) {
+        sheetElement.addClass('highlight-damaged');
+        sheetElement.removeClass('highlight-destroyed');
+      } else if (totalBreaches > (shipScaleValue + 1)) {
+        sheetElement.addClass('highlight-destroyed');
+        sheetElement.removeClass('highlight-damaged');
+      } else {
+        sheetElement.removeClass('highlight-damaged');
+        sheetElement.removeClass('highlight-destroyed');
+      }
+    });
   }
 }

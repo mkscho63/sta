@@ -132,6 +132,18 @@ $trackColors: (
       cursor: pointer;
     }
   }
+  .btn3 {
+    background-color: $buttonColor;
+    color: $inlaidText;
+    border-radius: 20px;
+    font-weight: bold;
+  
+    &:hover {
+      box-shadow: none;
+      background-color: $buttonHover;
+      cursor: pointer;
+    }
+  }
 }
 /*#endregion*/
 
@@ -1481,6 +1493,22 @@ $trackColors: (
       }
     }
   }
+}
+
+/* Yellow highlight for damaged systems */
+.highlight-damaged {
+    border: 2px solid #ffcc00 !important;
+    color: #ffcc00 !important;
+}
+/* Orange highlight for disabled systems */
+.highlight-disabled {
+    border: 2px solid #808080 !important;
+    color: #808080 !important;
+}
+/* Red highlight for destroyed systems  */
+.highlight-destroyed {
+    border: 2px solid #ff0000 !important;
+    color: #ff0000 !important;
 }
 
 

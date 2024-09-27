@@ -76,7 +76,7 @@
               <input class="selector system" id="{{key}}.selector" type="checkbox" name="system.systems.{{key}}.selected" data-dtype="Boolean" {{checked system.selected}}>
               <div class="text list-entry"> {{localize system.label}} </div>
               <input class="field numeric-entry" id="{{key}}" name="system.systems.{{key}}.value" type="number" value="{{system.value}}" />
-              <input class="field numeric-entry" id="{{key}}.breaches" name="system.systems.{{key}}.breaches" type="number" value="{{system.breaches}}" />
+              <input class="field numeric-entry breaches" id="{{key}}.breaches" name="system.systems.{{key}}.breaches" type="number" value="{{system.breaches}}" />
             </div>
             {{/each}}
             <div class="check-button btn2 challenge">{{localize 'sta.actor.challenge.roll'}}</div>
