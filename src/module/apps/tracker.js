@@ -1,4 +1,70 @@
 export class STATracker extends Application {
+  constructor(options = {}) {
+    super(options);
+  }
+
+  get onSettingsChanged() {
+    return this._onSettingsChanged;
+  }
+
+  _onSettingsChanged(changed) {
+    const keys = Object.keys(foundry.utils.flattenObject(changed));
+    this._updateRenderedPosition();
+    if (keys.includes("client.dockPosition") || keys.includes("client.hideDock")) {
+      this._updateRenderedPosition();
+    }
+  }
+
+  async _render(force = false, options = {}) {
+    await super._render(force, options);
+    // This is happening in _render() as opposed to render() because this has to happen after elements have been generated.
+    this._updateRenderedPosition();
+  }
+
+  _updateRenderedPosition() {
+    /** @type HTMLElement */
+    const tracker = this.element[0];
+    if (!tracker) return;
+
+    const cameraViews = ui.webrtc.element[0];
+
+    const CLASSES = {
+      DOCK_RIGHT: 'av-right',
+      DOCK_BOTTOM: 'av-bottom',
+      DOCK_COLLAPSE: 'av-collapse',
+    };
+
+    if (!cameraViews) {
+      tracker.classList.remove(CLASSES.DOCK_RIGHT);
+      tracker.classList.remove(CLASSES.DOCK_BOTTOM);
+      tracker.classList.remove(CLASSES.DOCK_COLLAPSE);
+    }
+    const dockPosition = game.webrtc.settings.client.dockPosition;
+
+    // Whether the A/V is collapsed or not.  Not exactly "hidden" as the name implies.
+    const dockHidden =  game.webrtc.settings.client.hideDock;
+
+    if (AVSettings.DOCK_POSITIONS.RIGHT === dockPosition) {
+      tracker.classList.add(CLASSES.DOCK_RIGHT);
+      tracker.classList.remove(CLASSES.DOCK_BOTTOM);
+    }
+    else if (AVSettings.DOCK_POSITIONS.BOTTOM === dockPosition) {
+      tracker.classList.remove(CLASSES.DOCK_RIGHT);
+      tracker.classList.add(CLASSES.DOCK_BOTTOM);
+    }
+    else {
+      tracker.classList.remove(CLASSES.DOCK_RIGHT);
+      tracker.classList.remove(CLASSES.DOCK_BOTTOM);
+      tracker.classList.remove(CLASSES.DOCK_COLLAPSE);
+    }
+
+    if (dockHidden) {
+      tracker.classList.add(CLASSES.DOCK_COLLAPSE);
+    } else {
+      tracker.classList.remove(CLASSES.DOCK_COLLAPSE);
+    }
+  }
+
   /**
    * The name of the communication socket used to update the tracker information.
    * 

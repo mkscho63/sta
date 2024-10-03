@@ -1229,9 +1229,19 @@ $trackColors: (
 /*  Momentum/Threat Tracker *//*#region*/
 
 .sta.tracker-container{
+  $default-right: 354px;
+  $default-bottom: 0;
+  $default-right-nosidebar: 0px;
+  $av-right-width: 246px;
+  $av-bottom-height: 193px;
+  $av-right-collapsed: 96px;
+  $av-bottom-collapsed: 96px;
+  $hide-down-distance: 196px;
+  $hide-right-distance: 155px;
+
   position: absolute;
   bottom: 10px;
-  right: 354px;
+  right: $default-right;
   width: 180px;
   height: 205px;
 
@@ -1259,21 +1269,52 @@ $trackColors: (
   }
 
   &.hide {
-    bottom: -190px;
+    bottom: $default-bottom - $hide-down-distance;
     -webkit-transition: bottom 0.5s linear;
       -moz-transition: bottom 0.5s linear;
         -ms-transition: bottom 0.5s linear;
           -o-transition: bottom 0.5s linear;
             transition: bottom 0.5s linear;
+
+    /* If A/V is on the bottom, slide behind the sidebar instead */
+    &.av-bottom {
+      bottom: $default-bottom + $av-bottom-height;
+      right: $default-right - $hide-right-distance;
+      &.av-collapse {
+        bottom: $default-bottom + $av-bottom-collapsed;
+      }
+    }
   }
 
   &.tracker-collapsed {
-    right:0px;
+    right: $default-right-nosidebar;
     -webkit-transition: right 0.5s linear;
       -moz-transition: right 0.5s linear;
         -ms-transition: right 0.5s linear;
           -o-transition: right 0.5s linear;
             transition: right 0.5s linear;
+  }
+
+  /* Re-adjust to account for the A/V dock if users have cameras */
+  &.av-right {
+    right: $default-right + $av-right-width;
+    &.av-collapse {
+      right: $default-right + $av-right-collapsed;
+    }
+
+    &.tracker-collapsed {
+      right: $default-right-nosidebar + $av-right-width;
+      &.av-collapse {
+        right: $default-right-nosidebar + $av-right-collapsed;
+      }
+    }
+  }
+
+  &.av-bottom {
+    bottom: $default-bottom + $av-bottom-height;
+    &.av-collapse {
+      bottom: $default-bottom + $av-bottom-collapsed;
+    }
   }
 
   .tracker {

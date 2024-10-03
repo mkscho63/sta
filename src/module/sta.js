@@ -115,7 +115,8 @@ Hooks.once('init', function() {
     },
     macros: macros,
     attributeTest: macros.attributeTest,
-    defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
+    defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg',
+    tracker: new STATracker(),
   };
 
   // Define initiative for the system.
@@ -318,14 +319,15 @@ Hooks.once('init', function() {
   });
 
   Hooks.on('ready', function() {
-    const t = new STATracker();
-    renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
-      t.render(true);
-    });
+    game.sta.tracker.render(true);
   });
 
-  Hooks.once("diceSoNiceReady", (dice3d) => {
+  Hooks.once('diceSoNiceReady', (dice3d) => {
     register_dsn_ufp_themes(dice3d);
+  });
+
+  Hooks.on('rtcSettingsChanged', (settings, changed) => {
+    game.sta.tracker.onSettingsChanged(changed);
   });
 });
 
