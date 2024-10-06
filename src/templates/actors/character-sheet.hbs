@@ -50,11 +50,8 @@
           <div class="column title" style="width:25%">
             <div> {{localize 'sta.actor.character.upbringing'}} </div>
           </div>
-          <div class="column title" style="width:30%">
+          <div class="column title" style="width:50%">
               <div> {{localize 'sta.actor.character.traits'}} </div>
-          </div>
-          <div class="column title" style="width:20%">
-              <div> {{localize 'sta.actor.character.stressmod'}} </div>
           </div>
         </div>
         <div class="row">
@@ -64,13 +61,154 @@
           <div class="column" style="width:25%">
             <input name="system.upbringing" class="text-entry" type="text" value="{{system.upbringing}}" placeholder="{{localize 'sta.actor.character.upbringing'}}" />
           </div>
-          <div class="column" style="width:40%">
+          <div class="column" style="width:50%">
               <input name="system.traits" class="text-entry" type="text" value="{{system.traits}}" placeholder="{{localize 'sta.actor.starship.traits'}}" />
           </div>
+        </div>
+      {{#if (eq editionVersion 'KLINGON')}}
+        <div class="row">
+          <div class="column title" style="width:25%">
+            <div> {{localize 'sta.actor.character.characterrole'}} </div>
+          </div>
+          <div class="column title" style="width:25%">
+            <div> {{localize 'sta.actor.character.careerpath'}} </div>
+          </div>
+          <div class="column title" style="width:50%">
+              <div> {{localize 'sta.actor.character.careerevents'}} </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column" style="width:25%">
+            <input name="system.characterrole" class="text-entry" type="text" value="{{system.characterrole}}" placeholder="{{localize 'sta.actor.character.characterrole'}}" />
+          </div>
+          <div class="column" style="width:25%">
+            <input name="system.careerpath" class="text-entry" type="text" value="{{system.careerpath}}" placeholder="{{localize 'sta.actor.character.careerpath'}}" />
+          </div>
+          <div class="column" style="width:50%">
+              <input name="system.careerevents" class="text-entry" type="text" value="{{system.careerevents}}" placeholder="{{localize 'sta.actor.character.careerevents'}}" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column title" style="width:25%">
+            <div> {{localize 'sta.actor.character.klingon.house'}} </div>
+          </div>
+          <div class="column title" style="width:25%">
+            <div> {{localize 'sta.actor.character.klingon.caste'}} </div>
+          </div>
+          <div class="column title" style="width:25%">
+              <div> {{localize 'sta.actor.character.klingon.status'}} </div>
+          </div>
+          <div class="column title" style="width:25%">
+            <div> {{localize 'sta.actor.character.klingon.legacy'}} </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column" style="width:25%">
+            <input name="system.house" class="text-entry" type="text" value="{{system.house}}" placeholder="{{localize 'sta.actor.character.klingon.house'}}" />
+          </div>
+          <div class="column" style="width:25%">
+            <input name="system.caste" class="text-entry" type="text" value="{{system.caste}}" placeholder="{{localize 'sta.actor.character.klingon.caste'}}" />
+          </div>
+          <div class="column" style="width:25%">
+              <input name="system.status" class="text-entry" type="text" value="{{system.status}}" placeholder="{{localize 'sta.actor.character.klingon.status'}}" />
+          </div>
+          <div class="column" style="width:25%">
+              <input name="system.legacy" class="text-entry" type="text" value="{{system.legacy}}" placeholder="{{localize 'sta.actor.character.klingon.legacy'}}" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column title" style="width:25%">
+            <div> {{localize 'sta.actor.character.klingon.temperament'}} </div>
+          </div>
+          <div class="column title" style="width:45%">
+              <div> {{localize 'sta.actor.character.klingon.househistory'}} </div>
+          </div>
+          <div class="column title" style="width:10%">
+              <div> {{localize 'sta.actor.character.klingon.influence'}} </div>
+          </div>
+          <div class="column title" style="width:10%">
+              <div> {{localize 'sta.actor.character.klingon.might'}} </div>
+          </div>
+          <div class="column title" style="width:10%">
+              <div> {{localize 'sta.actor.character.klingon.wealth'}} </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column" style="width:25%">
+            <input name="system.temperament" class="text-entry" type="text" value="{{system.temperament}}" placeholder="{{localize 'sta.actor.character.klingon.temperament'}}" />
+          </div>
+          <div class="column" style="width:45%">
+            <input name="system.househistory" class="text-entry" type="text" value="{{system.househistory}}" placeholder="{{localize 'sta.actor.character.klingon.househistory'}}" />
+          </div>
           <div class="column" style="width:10%">
+              <input class="text-entry" name="system.influence" type="number" value="{{system.influence}}" placeholder="0" />
+          </div>
+          <div class="column" style="width:10%">
+              <input class="text-entry" name="system.might" type="number" value="{{system.might}}" placeholder="0" />
+          </div>
+          <div class="column" style="width:10%">
+              <input class="text-entry" name="system.wealth" type="number" value="{{system.wealth}}" placeholder="0" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column title" style="width:15%">
+              <div> {{localize 'sta.actor.character.klingon.glory'}} </div>
+          </div>
+          <div class="column" style="width:5%">
+              <input class="text-entry" name="system.acclaim" type="number" value="{{system.acclaim}}" placeholder="0" />
+          </div>
+          <div class="column title" style="width:15%">
+              <div> {{localize 'sta.actor.character.klingon.shame'}} </div>
+          </div>
+          <div class="column" style="width:5%">
+              <input class="text-entry" name="system.reprimand" id="currentreprimand" type="number" value="{{system.reprimand}}" placeholder="0" />
+          </div>
+		  <div class="check-button btn acclaim" style="width:15%">{{localize 'sta.roll.glory'}}</div>
+		  <div class="column" style="width:15%"></div>
+          <div class="column title" style="width:25%">
+              <div> {{localize 'sta.actor.character.stressmod'}} </div>
+          </div>
+          <div class="column" style="width:5%">
               <input class="text-entry" name="system.strmod" id="strmod" type="number" value="{{system.strmod}}" placeholder="0" />
           </div>
         </div>
+      {{/if}}
+      {{#if (eq editionVersion 'FED2NDVER')}}
+        <div class="row">
+          <div class="column title" style="width:15%">
+              <div> {{localize 'sta.actor.character.acclaim'}} </div>
+          </div>
+          <div class="column" style="width:5%">
+              <input class="text-entry" name="system.acclaim" type="number" value="{{system.acclaim}}" placeholder="0" />
+          </div>
+          <div class="column title" style="width:15%">
+              <div> {{localize 'sta.actor.character.reprimand'}} </div>
+          </div>
+          <div class="column" style="width:5%">
+              <input class="text-entry" name="system.reprimand" id="currentreprimand" type="number" value="{{system.reprimand}}" placeholder="0" />
+          </div>
+          <div class="column" style="width:5%"></div>
+		  <div class="check-button btn acclaim" style="width:15%">{{localize 'sta.roll.acclaim'}}</div>
+		  <div class="column" style="width:15%"></div>
+          <div class="column title" style="width:25%">
+              <div> {{localize 'sta.actor.character.stressmod'}} </div>
+          </div>
+          <div class="column" style="width:5%">
+              <input class="text-entry" name="system.strmod" id="strmod" type="number" value="{{system.strmod}}" placeholder="0" />
+          </div>
+        </div>
+      {{/if}}
+      {{#if (eq editionVersion 'CORE1E')}}
+        <div class="row">
+          <div class="column" style="width:80%"></div>
+          <div class="column title" style="width:20%">
+              <div> {{localize 'sta.actor.character.stressmod'}} </div>
+          </div>
+          <div class="column" style="width:5%">
+              <input class="text-entry" name="system.strmod" id="strmod" type="number" value="{{system.strmod}}" placeholder="0" />
+          </div>
+        </div>
+      {{/if}}
       </div>
     </div>
     <div class="main">
