@@ -92,6 +92,16 @@
             "pastimes": "",
             "experience": "",
             "careerevents": "",
+            "house": "",
+            "caste": "",
+            "status": "",
+            "temperament": "",
+            "househistory": "",
+            "influence": 0,
+            "might": 0,
+            "wealth": 0,
+            "legacy": "",
+            "traits": "",
             "stress": {
                 "value": 0
             },

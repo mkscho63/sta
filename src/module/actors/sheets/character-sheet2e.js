@@ -483,7 +483,7 @@ export class STACharacterSheet2e extends ActorSheet {
 
 
   // If the check-button is clicked it performs the acclaim or reprimand calculation.
-html.find('.check-button.acclaim').click(async (ev) => {
+  html.find('.check-button.acclaim').click(async (ev) => {
 
   let dialogContent = `
   <form class="sta-form">

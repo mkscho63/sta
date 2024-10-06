@@ -238,10 +238,24 @@ Hooks.once('init', function() {
       'GAMEMASTER': 'Gamemasters',
     }
   });
-
+  
+  game.settings.register('sta', '1steditionversion', {
+    name: 'Which Version of 1e character sheet:',
+    hint: 'Are you using the core book, core rules with acclaim, or the klingon book?',
+    scope: 'world',
+    type: String,
+    default: 'CORE1E',
+    config: true,
+    choices: {
+      'CORE1E': 'Core book',
+      'FED2NDVER': 'Acclaim rules',
+      'KLINGON': 'Klingon Book',
+    }
+  });
+  
   game.settings.register('sta', 'maxNumberOfReputation', {
     name: 'Maximum Reputation (1st ed):',
-    hint: 'Max number of reputation that can be given to a character. 10 is default.',
+    hint: 'Max number of reputation that can be given to a character.',
     scope: 'world',
     type: Number,
     default: 20,
@@ -250,7 +264,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'maxNumberOfReputation2e', {
     name: 'Maximum Reputation (2nd ed):',
-    hint: 'Max number of reputation that can be given to a character. 3 is default.',
+    hint: 'Max number of reputation that can be given to a character.',
     scope: 'world',
     type: Number,
     default: 5,
