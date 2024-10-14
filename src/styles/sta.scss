@@ -60,7 +60,14 @@ $trackColors: (
     padding: 5px;
   }
 }
-
+.check-button {
+  width: 75%;
+  height: 20px;
+  line-height: 20px;
+  margin: 5px 3%;
+  font-size: 10pt;
+  text-align: center;
+}
 // .window-app {
 //   .window-content {
 //     background: $background !important;
@@ -415,6 +422,18 @@ $trackColors: (
     top: 0;
     padding: 5px;
 
+  .sheet-tabs {
+    margin: 0;
+    padding: 0;
+    border: none;
+    gap: 10px;
+  }
+
+  .sheet-tabs .item {
+    margin: 0;
+    padding: 0;
+	color: $labelColor;
+  }
     .row .column {
       display: flex;
       width: 100%;
@@ -1510,5 +1529,3 @@ $trackColors: (
     border: 2px solid #ff0000 !important;
     color: #ff0000 !important;
 }
-
-
