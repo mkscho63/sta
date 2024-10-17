@@ -1230,7 +1230,7 @@ $trackColors: (
 
 .sta.tracker-container{
   $default-right: 354px;
-  $default-bottom: 0;
+  $default-bottom: 10px;
   $default-right-nosidebar: 0px;
   $av-right-width: 246px;
   $av-bottom-height: 193px;
@@ -1240,7 +1240,7 @@ $trackColors: (
   $hide-right-distance: 155px;
 
   position: absolute;
-  bottom: 10px;
+  bottom: $default-bottom;
   right: $default-right;
   width: 180px;
   height: 205px;
