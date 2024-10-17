@@ -22,7 +22,7 @@ google.plugins = {
  */
 delete google.rules['require-jsdoc'];
 google.rules['jsdoc/require-jsdoc'] = ['error', {
-  'require':{
+  'require': {
     FunctionDeclaration: true,
     MethodDefinition: true,
     ClassDeclaration: true,

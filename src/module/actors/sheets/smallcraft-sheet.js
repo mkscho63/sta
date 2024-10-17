@@ -22,7 +22,7 @@ export class STASmallCraftSheet extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.hbs";
     return `systems/sta/templates/actors/smallcraft-sheet.hbs`;
   }
     

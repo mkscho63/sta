@@ -65,7 +65,7 @@ export class STATracker extends Application {
     }
 
     // Whether the A/V is collapsed or not.  Not exactly "hidden" as the name implies.
-    const dockHidden =  game.webrtc.settings.client.hideDock;
+    const dockHidden = game.webrtc.settings.client.hideDock;
     if (dockHidden) {
       tracker.classList.add(CSS_CLASSES.DOCK_COLLAPSE);
     } else {
@@ -285,72 +285,72 @@ export class STATracker extends Application {
 
   static async DoUpdateResource(resource, newValue) {
     if (!STATracker.UserHasPermissionFor(resource)) {
-        ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}invalidpermissions`));
-        return;
+      ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}invalidpermissions`));
+      return;
     } else if (newValue < 0) {
-        ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}min`));
-        STATracker.UpdateTracker();
-        return;
+      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}min`));
+      STATracker.UpdateTracker();
+      return;
     } else if (newValue > STATracker.LimitOf(resource)) {
-        ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}max`) + STATracker.LimitOf(resource) + '!');
-        STATracker.UpdateTracker();
-        return;
+      ui.notifications.warn(game.i18n.localize(`sta.notifications.${resource}max`) + STATracker.LimitOf(resource) + '!');
+      STATracker.UpdateTracker();
+      return;
     }
 
     let currentValue = STATracker.ValueOf(resource);
     
     if (newValue !== currentValue) {
-        if (STATracker.UserCanWriteSettings()) {
-            await game.settings.set('sta', resource, newValue);
-            STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
-            STATracker.UpdateTracker();
-        } else {
-            STATracker.SendUpdateMessage(STATracker.MessageType.SetResource, resource, newValue);
-        }
+      if (STATracker.UserCanWriteSettings()) {
+        await game.settings.set('sta', resource, newValue);
+        STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
+        STATracker.UpdateTracker();
+      } else {
+        STATracker.SendUpdateMessage(STATracker.MessageType.SetResource, resource, newValue);
+      }
 
-        // Accumulate changes for momentum or threat
-        let resourceName = resource === STATracker.Resource.Momentum ? "momentum" : "threat";
-        let diff = newValue - currentValue;
-        STATracker.accumulatedChanges[resourceName] += diff;
+      // Accumulate changes for momentum or threat
+      let resourceName = resource === STATracker.Resource.Momentum ? "momentum" : "threat";
+      let diff = newValue - currentValue;
+      STATracker.accumulatedChanges[resourceName] += diff;
 
-        // Clear any previous timeout and reset it
-        if (STATracker.chatMessageTimeout) {
-            clearTimeout(STATracker.chatMessageTimeout);
-        }
+      // Clear any previous timeout and reset it
+      if (STATracker.chatMessageTimeout) {
+        clearTimeout(STATracker.chatMessageTimeout);
+      }
 
-        // Set a new timeout to send the chat message after 1 second of inactivity
-        STATracker.chatMessageTimeout = setTimeout(() => {
-            let momentumDiff = STATracker.accumulatedChanges.momentum;
-            let threatDiff = STATracker.accumulatedChanges.threat;
-            let chatMessage = '';
+      // Set a new timeout to send the chat message after 1 second of inactivity
+      STATracker.chatMessageTimeout = setTimeout(() => {
+        let momentumDiff = STATracker.accumulatedChanges.momentum;
+        let threatDiff = STATracker.accumulatedChanges.threat;
+        let chatMessage = '';
 
-            // Construct the chat message based on the accumulated changes
+        // Construct the chat message based on the accumulated changes
         if (momentumDiff !== 0) {
-            let momentumAction = momentumDiff > 0 ? 
-                game.i18n.format("sta.apps.addmomentum", {0: momentumDiff}) : 
-                game.i18n.format("sta.apps.removemomentum", {0: Math.abs(momentumDiff)});
-            chatMessage += `${game.user.name} ${momentumAction}. `;
+          let momentumAction = momentumDiff > 0 ?
+            game.i18n.format("sta.apps.addmomentum", {0: momentumDiff}) :
+            game.i18n.format("sta.apps.removemomentum", {0: Math.abs(momentumDiff)});
+          chatMessage += `${game.user.name} ${momentumAction}. `;
         }
         if (threatDiff !== 0) {
-            let threatAction = threatDiff > 0 ? 
-                game.i18n.format("sta.apps.addthreat", {0: threatDiff}) : 
-                game.i18n.format("sta.apps.removethreat", {0: Math.abs(threatDiff)});
-            chatMessage += `${game.user.name} ${threatAction}.`;
+          let threatAction = threatDiff > 0 ?
+            game.i18n.format("sta.apps.addthreat", {0: threatDiff}) :
+            game.i18n.format("sta.apps.removethreat", {0: Math.abs(threatDiff)});
+          chatMessage += `${game.user.name} ${threatAction}.`;
         }
 
-            // Send the chat message
-            if (chatMessage && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
-                ChatMessage.create({
-                    speaker: { alias: "STA" },
-                    content: chatMessage
-                });
-            }
+        // Send the chat message
+        if (chatMessage && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
+          ChatMessage.create({
+            speaker: { alias: "STA" },
+            content: chatMessage
+          });
+        }
 
-            // Reset the accumulated changes
-            STATracker.accumulatedChanges.momentum = 0;
-            STATracker.accumulatedChanges.threat = 0;
+        // Reset the accumulated changes
+        STATracker.accumulatedChanges.momentum = 0;
+        STATracker.accumulatedChanges.threat = 0;
 
-        }, 1000);  // 1-second delay
+      }, 1000); // 1-second delay
     }
   }
 
@@ -390,7 +390,7 @@ export class STATracker extends Application {
    * 
    * @private
    */
-   static ConfigureTrackerInterface() {
+  static ConfigureTrackerInterface() {
     if (!this.UserHasPermissionFor(STATracker.Resource.Momentum)) {
       STATracker.MomentumButtons.forEach(b => b.style.display = "none");
       STATracker.MomentumInput.disabled = true;
@@ -407,7 +407,7 @@ export class STATracker extends Application {
    * 
    * @private
    */
-   static ConfigureTrackerButtonActions() {
+  static ConfigureTrackerButtonActions() {
     $('#sta-momentum-track-decrease > .fas').click((_) => STATracker.OnAdjustTracker(STATracker.Resource.Momentum, -1));
     $('#sta-momentum-track-increase > .fas').click((_) => STATracker.OnAdjustTracker(STATracker.Resource.Momentum, +1));
     $('#sta-threat-track-decrease > .fas').click((_) => STATracker.OnAdjustTracker(STATracker.Resource.Threat, -1));
@@ -419,7 +419,7 @@ export class STATracker extends Application {
    * 
    * @private
    */
-   static ConfigureTrackerInputActions() {
+  static ConfigureTrackerInputActions() {
     $('#sta-track-momentum').keydown((ev) => {
       if (ev.keyCode == 13) {
         $('#sta-track-momentum').blur();
@@ -458,7 +458,7 @@ export class STATracker extends Application {
   /**
    * @private
    */
-   static ConfigureTrackerSlideWithSidebar() {
+  static ConfigureTrackerSlideWithSidebar() {
     $('.collapse').click((_) => {
       console.log('collape clicked')
       if ($('.tracker-container:not(.tracker-collapsed)')[0]) {
@@ -482,16 +482,16 @@ export class STATracker extends Application {
    */
   static async OnSocketData(message) {
     switch (message.type) {
-      case STATracker.MessageType.SetResource:
-        if (STATracker.UserCanWriteSettings()) {
-          await game.settings.set('sta', message.resource, message.value);
-          STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
-          STATracker.UpdateTracker();
-        }
-        break;
-      case STATracker.MessageType.UpdateResource:
+    case STATracker.MessageType.SetResource:
+      if (STATracker.UserCanWriteSettings()) {
+        await game.settings.set('sta', message.resource, message.value);
+        STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
         STATracker.UpdateTracker();
-        break;
+      }
+      break;
+    case STATracker.MessageType.UpdateResource:
+      STATracker.UpdateTracker();
+      break;
     }
   }
 

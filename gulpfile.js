@@ -149,14 +149,14 @@ async function clean() {
 
 function defaultDataPath() {
   switch (process.platform) {
-    case 'win32':
-      return path.resolve(process.env.localappdata, 'FoundryVTT')
-    case 'linux':
-      return path.resolve(process.env.HOME, '.local', 'share', 'FoundryVTT')
-    case 'darwin':
-      return path.resolve(process.env.HOME, 'Library', 'Application Support', 'FoundryVTT')
-    default:
-      throw Error("No known default for platform ${process.platform}")
+  case 'win32':
+    return path.resolve(process.env.localappdata, 'FoundryVTT')
+  case 'linux':
+    return path.resolve(process.env.HOME, '.local', 'share', 'FoundryVTT')
+  case 'darwin':
+    return path.resolve(process.env.HOME, 'Library', 'Application Support', 'FoundryVTT')
+  default:
+    throw Error("No known default for platform ${process.platform}")
   }
 }
 
@@ -180,7 +180,7 @@ async function copyUserData() {
     let linkDir;
 
     if (!config.dataPath) {
-        config.dataPath = defaultDataPath()
+      config.dataPath = defaultDataPath();
     }
 
     if (config.dataPath) {

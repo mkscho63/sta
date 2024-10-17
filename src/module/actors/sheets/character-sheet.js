@@ -28,7 +28,7 @@ export class STACharacterSheet extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/character-sheet-legacy.hbs';
     return `systems/sta/templates/actors/character-sheet.hbs`;
   }
 
@@ -148,9 +148,8 @@ export class STACharacterSheet extends ActorSheet {
     // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute, security discipline, and checks for Resolute talent. 
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
-
       const localizedValues = {
-        "resolute": game.i18n.localize('sta.actor.character.talents.resolute')
+        'resolute': game.i18n.localize('sta.actor.character.talents.resolute')
       };
 
       stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
@@ -234,7 +233,7 @@ export class STACharacterSheet extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      let itemId = ev.currentTarget.closest(".entry").dataset.itemId;
+      let itemId = ev.currentTarget.closest('.entry').dataset.itemId;
       let item = this.actor.items.get(itemId);
       let state = item.system.used;
       if (state) {

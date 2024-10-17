@@ -29,7 +29,7 @@ export class STAStarshipSheet2e extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.hbs";
     return `systems/sta/templates/actors/starship-sheet2e.hbs`;
   }
 
@@ -106,7 +106,6 @@ export class STAStarshipSheet2e extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-
       const localizedValues = {
         "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
         "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
@@ -138,11 +137,11 @@ export class STAStarshipSheet2e extends ActorSheet {
     // This creates a dynamic Power tracker. It polls for the value of the engines system. 
     // With the value, creates a new div for each and places it under a child called "bar-power-renderer".
     function powerTrackUpdate() {
-//      powerTrackMax = parseInt(html.find('#engines')[0].value);
+      // powerTrackMax = parseInt(html.find('#engines')[0].value);
       powerTrackMax = 0;
-//      if (html.find('[data-talent-name*="Secondary Reactors"]').length > 0) {
-//        powerTrackMax += 5;
-//      }
+      // if (html.find('[data-talent-name*="Secondary Reactors"]').length > 0) {
+      //  powerTrackMax += 5;
+      // }
       // This checks that the max-power hidden field is equal to the calculated Max Power value, if not it makes it so.
       if (html.find('#max-power')[0].value != powerTrackMax) {
         html.find('#max-power')[0].value = powerTrackMax;
@@ -162,7 +161,6 @@ export class STAStarshipSheet2e extends ActorSheet {
     // This creates a dynamic Crew Support tracker. It polls for the value of the ships's scale. 
     // With the value, creates a new div for each and places it under a child called "bar-crew-renderer".
     function crewTrackUpdate() {
-
       const localizedValues = {
         "extensiveautomation": game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
         "abundantpersonnel": game.i18n.localize('sta.actor.starship.talents.abundantpersonnel'),
@@ -170,15 +168,15 @@ export class STAStarshipSheet2e extends ActorSheet {
       };
 
       crewTrackMax = parseInt(html.find('#scale')[0].value) + parseInt(html.find('#crwmod')[0].value);
-        if (html.find(`[data-talent-name*="${localizedValues.agingrelic}"]`).length > 0) {
+      if (html.find(`[data-talent-name*="${localizedValues.agingrelic}"]`).length > 0) {
         crewTrackMax += 1;
-        }
-        if (html.find(`[data-talent-name*="${localizedValues.extensiveautomation}"]`).length > 0) {
+      }
+      if (html.find(`[data-talent-name*="${localizedValues.extensiveautomation}"]`).length > 0) {
         crewTrackMax = Math.ceil(crewTrackMax/2);
-        }
-        if (html.find(`[data-talent-name*="${localizedValues.abundantpersonnel}"]`).length > 0) {
+      }
+      if (html.find(`[data-talent-name*="${localizedValues.abundantpersonnel}"]`).length > 0) {
         crewTrackMax += crewTrackMax;
-       }  
+      }
       // This checks that the max-crew hidden field is equal to the calculated Max Crew Support value, if not it makes it so.
       if (html.find('#max-crew')[0].value != crewTrackMax) {
         html.find('#max-crew')[0].value = crewTrackMax;
@@ -523,25 +521,25 @@ export class STAStarshipSheet2e extends ActorSheet {
       const shipScaleValue = Number.parseInt(html.find('#scale').attr('value'));
       let totalBreaches = 0;
 
-    html.find('.selector.system').each(function(index, value) {
-      const $systemCheckbox = $(value);
-      const $systemBreach = $systemCheckbox.siblings('.breaches');
-      const breachValue = Number.parseInt($systemBreach.attr('value'));
+      html.find('.selector.system').each(function(index, value) {
+        const $systemCheckbox = $(value);
+        const $systemBreach = $systemCheckbox.siblings('.breaches');
+        const breachValue = Number.parseInt($systemBreach.attr('value'));
 
-      totalBreaches += breachValue;
+        totalBreaches += breachValue;
 
-      const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
+        const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
 
-      if (breachValue > 0 && !isSystemDestroyed) {
-        $systemBreach.addClass('highlight-damaged');
-        $systemBreach.removeClass('highlight-destroyed');
-      } else if (isSystemDestroyed) {
-        $systemBreach.addClass('highlight-destroyed');
-        $systemBreach.removeClass('highlight-damaged');
-      } else {
-        $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
-      }
-    });
+        if (breachValue > 0 && !isSystemDestroyed) {
+          $systemBreach.addClass('highlight-damaged');
+          $systemBreach.removeClass('highlight-destroyed');
+        } else if (isSystemDestroyed) {
+          $systemBreach.addClass('highlight-destroyed');
+          $systemBreach.removeClass('highlight-damaged');
+        } else {
+          $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
+        }
+      });
 
       if (totalBreaches === (shipScaleValue + 1)) {
         sheetElement.addClass('highlight-damaged');

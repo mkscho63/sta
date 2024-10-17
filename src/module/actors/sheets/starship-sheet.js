@@ -29,7 +29,7 @@ export class STAStarshipSheet extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.hbs";
     return `systems/sta/templates/actors/starship-sheet.hbs`;
   }
 
@@ -106,7 +106,6 @@ export class STAStarshipSheet extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-
       const localizedValues = {
         "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields')
       };

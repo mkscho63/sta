@@ -5,9 +5,8 @@ export class STARollDialog {
       // Grab the RollDialog HTML file/
       if (selectedAttribute === "STARoller") {
 		  html = await renderTemplate('systems/sta/templates/apps/STARoller-attribute.hbs', {'defaultValue': defaultValue});
-	  }
-      else {
-          html = await renderTemplate('systems/sta/templates/apps/dicepool-attribute.hbs', {'defaultValue': defaultValue});
+	  } else {
+        html = await renderTemplate('systems/sta/templates/apps/dicepool-attribute.hbs', {'defaultValue': defaultValue});
 	  }
     } else {
       html = await renderTemplate('systems/sta/templates/apps/dicepool-challenge.hbs', {'defaultValue': defaultValue});

@@ -35,7 +35,7 @@ export function register_dsn_ufp_themes(dice3d) {
     }
   ].forEach(colorset => dice3d.addColorset(colorset))
 
-  dice3d.addSystem({ id: "sta-black", name: "Star Trek Adventures UFP (Black)" }, "preferred");
+  dice3d.addSystem({id: "sta-black", name: "Star Trek Adventures UFP (Black)"}, "preferred");
   dice3d.addDicePreset({
     type: "d6",
     labels: [
@@ -58,7 +58,7 @@ export function register_dsn_ufp_themes(dice3d) {
     system: "sta-black",
   });
 
-  dice3d.addSystem({ id: "sta-white", name: "Star Trek Adventures UFP (White)" }, "default");
+  dice3d.addSystem({id: "sta-white", name: "Star Trek Adventures UFP (White)"}, "default");
   dice3d.addDicePreset({
     type: "d6",
     labels: [
@@ -80,5 +80,4 @@ export function register_dsn_ufp_themes(dice3d) {
     ],
     system: "sta-white",
   });
-
 }
