@@ -1,4 +1,78 @@
 export class STATracker extends Application {
+  constructor(options = {}) {
+    super(options);
+  }
+
+  get onSettingsChanged() {
+    return this._onSettingsChanged;
+  }
+
+  _onSettingsChanged(changed) {
+    const keys = Object.keys(foundry.utils.flattenObject(changed));
+    this._updateRenderedPosition();
+    if (keys.includes('world.mode') || keys.includes('client.dockPosition') || keys.includes('client.hideDock')) {
+      this._updateRenderedPosition();
+    }
+  }
+
+  async _render(force = false, options = {}) {
+    await super._render(force, options);
+    // This is happening in _render() as opposed to render() because this has to happen after elements have been generated.
+    this._updateRenderedPosition();
+  }
+
+  _updateRenderedPosition() {
+    /** @type HTMLElement */
+    const tracker = this.element[0];
+    if (!tracker) return;
+
+    /** @type CameraViews */
+    const cameraViews = ui.webrtc;
+
+    const CSS_CLASSES = {
+      DOCK_RIGHT: 'av-right',
+      DOCK_BOTTOM: 'av-bottom',
+      DOCK_COLLAPSE: 'av-collapse',
+    };
+
+    /** @type HTMLElement */
+    const element = cameraViews.element[0];
+
+    // If A/V is disabled, it is currently using an unrendered <template> tag.
+    // In the AV classes in Foundry itself, there's also a check for the presence
+    // of an element at all before it attempts some behaviors.  For safety, also
+    // including that check here.
+    if (!element || element.nodeName === 'TEMPLATE' || cameraViews.hidden) {
+      tracker.classList.remove(CSS_CLASSES.DOCK_RIGHT);
+      tracker.classList.remove(CSS_CLASSES.DOCK_BOTTOM);
+      tracker.classList.remove(CSS_CLASSES.DOCK_COLLAPSE);
+      return;
+    }
+
+    const dockPosition = game.webrtc.settings.client.dockPosition;
+    if (AVSettings.DOCK_POSITIONS.RIGHT === dockPosition) {
+      tracker.classList.add(CSS_CLASSES.DOCK_RIGHT);
+      tracker.classList.remove(CSS_CLASSES.DOCK_BOTTOM);
+    }
+    else if (AVSettings.DOCK_POSITIONS.BOTTOM === dockPosition) {
+      tracker.classList.remove(CSS_CLASSES.DOCK_RIGHT);
+      tracker.classList.add(CSS_CLASSES.DOCK_BOTTOM);
+    }
+    else {
+      tracker.classList.remove(CSS_CLASSES.DOCK_RIGHT);
+      tracker.classList.remove(CSS_CLASSES.DOCK_BOTTOM);
+      tracker.classList.remove(CSS_CLASSES.DOCK_COLLAPSE);
+    }
+
+    // Whether the A/V is collapsed or not.  Not exactly "hidden" as the name implies.
+    const dockHidden =  game.webrtc.settings.client.hideDock;
+    if (dockHidden) {
+      tracker.classList.add(CSS_CLASSES.DOCK_COLLAPSE);
+    } else {
+      tracker.classList.remove(CSS_CLASSES.DOCK_COLLAPSE);
+    }
+  }
+
   /**
    * The name of the communication socket used to update the tracker information.
    * 
