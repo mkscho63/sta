@@ -424,15 +424,26 @@ $trackColors: (
 
   .sheet-tabs {
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
+    background-color: map-get($lcarsColors, 'lcarsheader');
     border: none;
-    gap: 10px;
+    border-radius: 0 0 20px 20px;
+    gap: 5px;
   }
 
   .sheet-tabs .item {
+    background-color: $background;
+    border-radius: 10px;
+    color: map-get($lcarsColors, 'purple');
     margin: 0;
-    padding: 0;
-	color: $labelColor;
+    padding: 0 10px;
+
+    &.active {
+      background-color: #FF7700;
+      color: $inlaidText;
+      font-weight: bold;
+      text-shadow: none;
+    }
   }
     .row .column {
       display: flex;
