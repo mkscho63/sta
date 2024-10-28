@@ -4,7 +4,6 @@
     If code changes are being here made, temporarily switching to ES2022 within
     the eslint.config.mjs on your local machine is advised to catch mistakes.
  */
-/* eslint-disable */
 
 export class STATracker extends Application {
   constructor(options = {}) {

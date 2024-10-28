@@ -44,6 +44,10 @@ google.settings = {
 };
 
 export default [
+  // Temporarily ignoring tracker.js.  See tracker.js for details.
+  {
+    ignores: ['src/module/apps/tracker.js'],
+  },
   google,
   {
     languageOptions: {
