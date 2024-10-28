@@ -33,7 +33,7 @@ export function register_dsn_ufp_themes(dice3d) {
       'name': 'sta-ufp-red',
       'outline': 'none'
     }
-  ].forEach(colorset => dice3d.addColorset(colorset))
+  ].forEach((colorset) => dice3d.addColorset(colorset));
 
   dice3d.addSystem({id: 'sta-black', name: 'Star Trek Adventures UFP (Black)'}, 'preferred');
   dice3d.addDicePreset({

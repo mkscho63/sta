@@ -68,8 +68,9 @@ export class STACharacterSheet2e extends ActorSheet {
     });
 
     // Check stress max/min
-    if (!(sheetData.system.stress))
+    if (!(sheetData.system.stress)) {
       sheetData.system.stress = {};
+    }
     if (sheetData.system.stress.value > sheetData.system.stress.max) {
       sheetData.system.stress.value = sheetData.system.stress.max;
     }
@@ -78,8 +79,9 @@ export class STACharacterSheet2e extends ActorSheet {
     }
 
     // Check determination max/min
-    if (!(sheetData.system.determination))
+    if (!(sheetData.system.determination)) {
       sheetData.system.determination = {};
+    }
     if (sheetData.system.determination.value > 3) {
       sheetData.system.determination.value = 3;
     }
@@ -88,8 +90,9 @@ export class STACharacterSheet2e extends ActorSheet {
     }
     
     // Check reputation max/min
-    if (!(sheetData.system.reputation))
+    if (!(sheetData.system.reputation)) {
       sheetData.system.reputation = {};
+    }
     if (sheetData.system.reputation.value > 5) {
       sheetData.system.reputation.value = 5;
     }
@@ -154,7 +157,7 @@ export class STACharacterSheet2e extends ActorSheet {
         'mentaldiscipline': game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
       };
 
-      stressTrackMax = parseInt(html.find('#fitness')[0].value)
+      stressTrackMax = parseInt(html.find('#fitness')[0].value);
       if (html.find(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`).length > 0) {
         stressTrackMax = parseInt(html.find('#control')[0].value);
 	  }
@@ -164,7 +167,7 @@ export class STACharacterSheet2e extends ActorSheet {
       if (html.find(`[data-talent-name*="${localizedValues.resolute}"]`).length > 0) {
         stressTrackMax += parseInt(html.find('#command')[0].value);
       }
-	  stressTrackMax += parseInt(html.find('#strmod')[0].value)
+	  stressTrackMax += parseInt(html.find('#strmod')[0].value);
       // This checks that the max-stress hidden field is equal to the calculated Max Stress value, if not it makes it so.
       if (html.find('#max-stress')[0].value != stressTrackMax) {
         html.find('#max-stress')[0].value = stressTrackMax;
@@ -529,7 +532,7 @@ export class STACharacterSheet2e extends ActorSheet {
               let reprimand = 0;
               const diceResults = [];
 
-              roll.terms[0].results.forEach(die => {
+              roll.terms[0].results.forEach((die) => {
                 let coloredDieResult;
 
                 if (die.result >= complicationThreshold) {

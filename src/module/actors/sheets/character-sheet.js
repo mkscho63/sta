@@ -68,8 +68,9 @@ export class STACharacterSheet extends ActorSheet {
     });
 
     // Check stress max/min
-    if (!(sheetData.system.stress))
+    if (!(sheetData.system.stress)) {
       sheetData.system.stress = {};
+    }
     if (sheetData.system.stress.value > sheetData.system.stress.max) {
       sheetData.system.stress.value = sheetData.system.stress.max;
     }
@@ -78,8 +79,9 @@ export class STACharacterSheet extends ActorSheet {
     }
 
     // Check determination max/min
-    if (!(sheetData.system.determination))
+    if (!(sheetData.system.determination)) {
       sheetData.system.determination = {};
+    }
     if (sheetData.system.determination.value > 3) {
       sheetData.system.determination.value = 3;
     }
@@ -88,8 +90,9 @@ export class STACharacterSheet extends ActorSheet {
     }
     
     // Check reputation max/min
-    if (!(sheetData.system.reputation))
+    if (!(sheetData.system.reputation)) {
       sheetData.system.reputation = {};
+    }
     if (sheetData.system.reputation.value > 20) {
       sheetData.system.reputation.value = 20;
     }
@@ -156,7 +159,7 @@ export class STACharacterSheet extends ActorSheet {
       if (html.find(`[data-talent-name*="${localizedValues.resolute}"]`).length > 0) {
         stressTrackMax += 3;
       }
-	  stressTrackMax += parseInt(html.find('#strmod')[0].value)
+	  stressTrackMax += parseInt(html.find('#strmod')[0].value);
       // This checks that the max-stress hidden field is equal to the calculated Max Stress value, if not it makes it so.
       if (html.find('#max-stress')[0].value != stressTrackMax) {
         html.find('#max-stress')[0].value = stressTrackMax;

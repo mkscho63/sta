@@ -53,12 +53,10 @@ export class STATracker extends Application {
     if (AVSettings.DOCK_POSITIONS.RIGHT === dockPosition) {
       tracker.classList.add(CSS_CLASSES.DOCK_RIGHT);
       tracker.classList.remove(CSS_CLASSES.DOCK_BOTTOM);
-    }
-    else if (AVSettings.DOCK_POSITIONS.BOTTOM === dockPosition) {
+    } else if (AVSettings.DOCK_POSITIONS.BOTTOM === dockPosition) {
       tracker.classList.remove(CSS_CLASSES.DOCK_RIGHT);
       tracker.classList.add(CSS_CLASSES.DOCK_BOTTOM);
-    }
-    else {
+    } else {
       tracker.classList.remove(CSS_CLASSES.DOCK_RIGHT);
       tracker.classList.remove(CSS_CLASSES.DOCK_BOTTOM);
       tracker.classList.remove(CSS_CLASSES.DOCK_COLLAPSE);
@@ -392,12 +390,12 @@ export class STATracker extends Application {
    */
   static ConfigureTrackerInterface() {
     if (!this.UserHasPermissionFor(STATracker.Resource.Momentum)) {
-      STATracker.MomentumButtons.forEach(b => b.style.display = 'none');
+      STATracker.MomentumButtons.forEach((b) => b.style.display = 'none');
       STATracker.MomentumInput.disabled = true;
     }
 
     if (!this.UserHasPermissionFor(STATracker.Resource.Threat)) {
-      STATracker.ThreatButtons.forEach(b => b.style.display = 'none');
+      STATracker.ThreatButtons.forEach((b) => b.style.display = 'none');
       STATracker.ThreatInput.disabled = true;
     }
   }
@@ -450,7 +448,7 @@ export class STATracker extends Application {
         $('#tracker-clickable-plus').addClass('hide');
         $('#tracker-clickable-minus').removeClass('hide');
         $('.tracker-container').addClass('hide').removeAttr('style');
-        $('.tracker-container').removeClass('hide').width('180px')
+        $('.tracker-container').removeClass('hide').width('180px');
       }
     });
   }
@@ -469,7 +467,7 @@ export class STATracker extends Application {
         $('#tracker-clickable-plus').addClass('tracker-collapsed');
         $('#tracker-clickable-minus').removeClass('tracker-collapsed');
         $('.tracker-container').addClass('tracker-collapsed').removeAttr('style');
-        $('.tracker-container').removeClass('tracker-collapsed').width('180px')
+        $('.tracker-container').removeClass('tracker-collapsed').width('180px');
       }
     });
   }
@@ -504,13 +502,13 @@ export class STATracker extends Application {
     STATracker.MomentumButtons.push(
       html.find('#sta-momentum-track-decrease')[0],
       html.find('#sta-momentum-track-increase')[0]
-    )
+    );
     STATracker.MomentumInput = html.find('#sta-track-momentum')[0];
 
     STATracker.ThreatButtons.push(
       html.find('#sta-threat-track-decrease')[0],
       html.find('#sta-threat-track-increase')[0]
-    )
+    );
     STATracker.ThreatInput = html.find('#sta-track-threat')[0];
 
     game.socket.on(STATracker.UPDATE_SOCKET_NAME, STATracker.OnSocketData);

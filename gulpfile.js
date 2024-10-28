@@ -150,13 +150,13 @@ async function clean() {
 function defaultDataPath() {
   switch (process.platform) {
   case 'win32':
-    return path.resolve(process.env.localappdata, 'FoundryVTT')
+    return path.resolve(process.env.localappdata, 'FoundryVTT');
   case 'linux':
-    return path.resolve(process.env.HOME, '.local', 'share', 'FoundryVTT')
+    return path.resolve(process.env.HOME, '.local', 'share', 'FoundryVTT');
   case 'darwin':
-    return path.resolve(process.env.HOME, 'Library', 'Application Support', 'FoundryVTT')
+    return path.resolve(process.env.HOME, 'Library', 'Application Support', 'FoundryVTT');
   default:
-    throw Error('No known default for platform ${process.platform}')
+    throw Error('No known default for platform ${process.platform}');
   }
 }
 

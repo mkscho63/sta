@@ -116,7 +116,7 @@ export class STAStarshipSheet2e extends ActorSheet {
         shieldsTrackMax += 5;
       }
       if (html.find(`[data-talent-name*="${localizedValues.polarizedhullplating}"]`).length > 0) {
-        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value)
+        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value);
       }
       // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
       if (html.find('#max-shields')[0].value != shieldsTrackMax) {
