@@ -28,7 +28,7 @@ export class STACharacterSheet2e extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/character-sheet-legacy.hbs';
     return `systems/sta/templates/actors/character-sheet2e.hbs`;
   }
 
@@ -149,9 +149,9 @@ export class STACharacterSheet2e extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
       const localizedValues = {
-        "tough": game.i18n.localize('sta.actor.character.talents.tough'),
-        "resolute": game.i18n.localize('sta.actor.character.talents.resolute'),
-        "mentaldiscipline": game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
+        'tough': game.i18n.localize('sta.actor.character.talents.tough'),
+        'resolute': game.i18n.localize('sta.actor.character.talents.resolute'),
+        'mentaldiscipline': game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
       };
 
       stressTrackMax = parseInt(html.find('#fitness')[0].value)
@@ -241,7 +241,7 @@ export class STACharacterSheet2e extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      let itemId = ev.currentTarget.closest(".entry").dataset.itemId;
+      let itemId = ev.currentTarget.closest('.entry').dataset.itemId;
       let item = this.actor.items.get(itemId);
       let state = item.system.used;
       if (state) {
@@ -547,16 +547,16 @@ export class STACharacterSheet2e extends ActorSheet {
                 diceResults.push(coloredDieResult);
               });
 
-              let chatContent = `${game.i18n.format("sta.roll.dicerolls")} ${diceResults.join(", ")}<br>`;
+              let chatContent = `${game.i18n.format('sta.roll.dicerolls')} ${diceResults.join(', ')}<br>`;
 
               if (totalSuccesses > NegativeInfluences) {
                 acclaim = totalSuccesses - NegativeInfluences;
-                chatContent += `<strong>${game.i18n.format("sta.roll.gainacclaim", {0: acclaim})}</strong>`;
+                chatContent += `<strong>${game.i18n.format('sta.roll.gainacclaim', {0: acclaim})}</strong>`;
               } else if (totalSuccesses < NegativeInfluences) {
                 reprimand = (NegativeInfluences - totalSuccesses) + complications;
-                chatContent += `<strong>${game.i18n.format("sta.roll.gainreprimand", {0: reprimand})}</strong>`;
+                chatContent += `<strong>${game.i18n.format('sta.roll.gainreprimand', {0: reprimand})}</strong>`;
               } else if (totalSuccesses === NegativeInfluences) {
-                chatContent += `<strong>${game.i18n.localize("sta.roll.nochange")}</strong>`;
+                chatContent += `<strong>${game.i18n.localize('sta.roll.nochange')}</strong>`;
               }
 
               ChatMessage.create({

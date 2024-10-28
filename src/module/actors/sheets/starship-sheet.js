@@ -29,7 +29,7 @@ export class STAStarshipSheet extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/starship-sheet-legacy.hbs';
     return `systems/sta/templates/actors/starship-sheet.hbs`;
   }
 
@@ -107,7 +107,7 @@ export class STAStarshipSheet extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
       const localizedValues = {
-        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields')
+        'advancedshields': game.i18n.localize('sta.actor.starship.talents.advancedshields')
       };
 
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#shieldmod')[0].value);
@@ -481,7 +481,7 @@ export class STAStarshipSheet extends ActorSheet {
       const weaponDamage = parseInt(value.dataset.itemDamage);
       const securityValue = parseInt(html.find('#security')[0].value);
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "true") scaleDamage = parseInt(html.find('#scale')[0].value);
+      if (value.dataset.itemIncludescale == 'true') scaleDamage = parseInt(html.find('#scale')[0].value);
       const attackDamageValue = weaponDamage + securityValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });

@@ -3,7 +3,7 @@ export class STARollDialog {
     let html = '';
     if (isAttribute) {
       // Grab the RollDialog HTML file/
-      if (selectedAttribute === "STARoller") {
+      if (selectedAttribute === 'STARoller') {
 		  html = await renderTemplate('systems/sta/templates/apps/STARoller-attribute.hbs', {'defaultValue': defaultValue});
 	  } else {
         html = await renderTemplate('systems/sta/templates/apps/dicepool-attribute.hbs', {'defaultValue': defaultValue});

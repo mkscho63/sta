@@ -206,10 +206,10 @@ export class STARoller {
     
             const token = canvas.tokens.controlled[0];
             if (!token || (token.actor.type !== 'starship' && token.actor.type !== 'smallcraft')) {
-              selectedSystemLabel = "STARoller";
+              selectedSystemLabel = 'STARoller';
               selectedSystemValue = parseInt(html.find('#systemValue').val());
 
-              selectedDepartmentLabel = "STARoller";
+              selectedDepartmentLabel = 'STARoller';
               selectedDepartmentValue = parseInt(html.find('#departmentValue').val());
 
               speakerstarship = {

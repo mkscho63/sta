@@ -29,7 +29,7 @@ export class STAStarshipSheet2e extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/starship-sheet-legacy.hbs';
     return `systems/sta/templates/actors/starship-sheet2e.hbs`;
   }
 
@@ -107,8 +107,8 @@ export class STAStarshipSheet2e extends ActorSheet {
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
       const localizedValues = {
-        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
-        "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
+        'advancedshields': game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+        'polarizedhullplating': game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
       };
 
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
@@ -162,9 +162,9 @@ export class STAStarshipSheet2e extends ActorSheet {
     // With the value, creates a new div for each and places it under a child called "bar-crew-renderer".
     function crewTrackUpdate() {
       const localizedValues = {
-        "extensiveautomation": game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
-        "abundantpersonnel": game.i18n.localize('sta.actor.starship.talents.abundantpersonnel'),
-        "agingrelic": game.i18n.localize('sta.actor.starship.talents.agingrelic')
+        'extensiveautomation': game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
+        'abundantpersonnel': game.i18n.localize('sta.actor.starship.talents.abundantpersonnel'),
+        'agingrelic': game.i18n.localize('sta.actor.starship.talents.agingrelic')
       };
 
       crewTrackMax = parseInt(html.find('#scale')[0].value) + parseInt(html.find('#crwmod')[0].value);
@@ -508,7 +508,7 @@ export class STAStarshipSheet2e extends ActorSheet {
       if (parseInt(html.find('#weapons')[0].value) > 12) weaponValue = 4;
 
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "energy") scaleDamage = parseInt(html.find('#scale')[0].value);
+      if (value.dataset.itemIncludescale == 'energy') scaleDamage = parseInt(html.find('#scale')[0].value);
 
       const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;

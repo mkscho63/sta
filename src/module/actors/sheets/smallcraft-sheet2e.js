@@ -22,7 +22,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/smallcraft-sheet-legacy.hbs';
     return `systems/sta/templates/actors/smallcraft-sheet2e.hbs`;
   }
     
@@ -94,8 +94,8 @@ export class STASmallCraftSheet2e extends ActorSheet {
     function shieldsTrackUpdate() {
 
       const localizedValues = {
-        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
-        "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
+        'advancedshields': game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+        'polarizedhullplating': game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
       };
 
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
@@ -103,7 +103,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
         shieldsTrackMax += 5;
       }
       if (html.find(`[data-talent-name*="${localizedValues.polarizedhullplating}"]`).length > 0) {
-        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value)
+        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value);
       }
       // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
       if (html.find('#max-shields')[0].value != shieldsTrackMax) {
@@ -422,7 +422,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
       if (parseInt(html.find('#weapons')[0].value) > 12) weaponValue = 4;
 
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "energy") scaleDamage = parseInt(html.find('#scale')[0].value);
+      if (value.dataset.itemIncludescale == 'energy') scaleDamage = parseInt(html.find('#scale')[0].value);
 
       const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;

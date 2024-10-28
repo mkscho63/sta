@@ -22,7 +22,7 @@ export class STASmallCraftSheet extends ActorSheet {
   get template() {
     let versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo, "0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/smallcraft-sheet-legacy.hbs';
     return `systems/sta/templates/actors/smallcraft-sheet.hbs`;
   }
     
@@ -94,7 +94,7 @@ export class STASmallCraftSheet extends ActorSheet {
     function shieldsTrackUpdate() {
 
       const localizedValues = {
-        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields')
+        'advancedshields': game.i18n.localize('sta.actor.starship.talents.advancedshields')
       };
 
       shieldsTrackMax = Math.floor((parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value))/2) + parseInt(html.find('#shieldmod')[0].value);
@@ -411,7 +411,7 @@ export class STASmallCraftSheet extends ActorSheet {
       const weaponDamage = parseInt(value.dataset.itemDamage);
       const securityValue = parseInt(html.find('#security')[0].value);
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "true") scaleDamage = parseInt(html.find('#scale')[0].value);
+      if (value.dataset.itemIncludescale == 'true') scaleDamage = parseInt(html.find('#scale')[0].value);
       const attackDamageValue = weaponDamage + securityValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });

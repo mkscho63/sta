@@ -80,7 +80,7 @@ export class STATracker extends Application {
    * @readonly
    * @constant {string}
    */
-  static UPDATE_SOCKET_NAME = "system.sta";
+  static UPDATE_SOCKET_NAME = 'system.sta';
 
   /**
    * An enumeration to identify different messages transmitted on the tracker update socket.
@@ -91,9 +91,9 @@ export class STATracker extends Application {
    */
   static MessageType = {
     /** Signal that a resource shall be set to the specified value */
-    SetResource: "set-resource",
+    SetResource: 'set-resource',
     /** Signal that the resource tracker shall be re-rendered to reflect to current resource values */
-    UpdateResource: "update-resource",
+    UpdateResource: 'update-resource',
   };
 
   /**
@@ -108,9 +108,9 @@ export class STATracker extends Application {
    */
   static Resource = {
     /** The momentum resource */
-    Momentum: "momentum",
+    Momentum: 'momentum',
     /** The threat resource */
-    Threat: "threat",
+    Threat: 'threat',
   };
 
   /**
@@ -230,7 +230,7 @@ export class STATracker extends Application {
    * @returns {number} The current value of the given resource
    */
   static ValueOf(resource) {
-    return game.settings.get("sta", resource);
+    return game.settings.get('sta', resource);
   }
 
   /**
@@ -254,7 +254,7 @@ export class STATracker extends Application {
    * @returns {true|false} true iff. the current user is allowed to modify the given resource, false otherwise.
    */
   static UserHasPermissionFor(resource) {
-    let requiredLevel = game.settings.get("sta", `${resource}PermissionLevel`);
+    let requiredLevel = game.settings.get('sta', `${resource}PermissionLevel`);
     return game.user.hasRole(requiredLevel);
   }
 
@@ -309,7 +309,7 @@ export class STATracker extends Application {
       }
 
       // Accumulate changes for momentum or threat
-      let resourceName = resource === STATracker.Resource.Momentum ? "momentum" : "threat";
+      let resourceName = resource === STATracker.Resource.Momentum ? 'momentum' : 'threat';
       let diff = newValue - currentValue;
       STATracker.accumulatedChanges[resourceName] += diff;
 
@@ -327,21 +327,21 @@ export class STATracker extends Application {
         // Construct the chat message based on the accumulated changes
         if (momentumDiff !== 0) {
           let momentumAction = momentumDiff > 0 ?
-            game.i18n.format("sta.apps.addmomentum", {0: momentumDiff}) :
-            game.i18n.format("sta.apps.removemomentum", {0: Math.abs(momentumDiff)});
+            game.i18n.format('sta.apps.addmomentum', {0: momentumDiff}) :
+            game.i18n.format('sta.apps.removemomentum', {0: Math.abs(momentumDiff)});
           chatMessage += `${game.user.name} ${momentumAction}. `;
         }
         if (threatDiff !== 0) {
           let threatAction = threatDiff > 0 ?
-            game.i18n.format("sta.apps.addthreat", {0: threatDiff}) :
-            game.i18n.format("sta.apps.removethreat", {0: Math.abs(threatDiff)});
+            game.i18n.format('sta.apps.addthreat', {0: threatDiff}) :
+            game.i18n.format('sta.apps.removethreat', {0: Math.abs(threatDiff)});
           chatMessage += `${game.user.name} ${threatAction}.`;
         }
 
         // Send the chat message
         if (chatMessage && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
           ChatMessage.create({
-            speaker: { alias: "STA" },
+            speaker: { alias: 'STA' },
             content: chatMessage
           });
         }
@@ -392,12 +392,12 @@ export class STATracker extends Application {
    */
   static ConfigureTrackerInterface() {
     if (!this.UserHasPermissionFor(STATracker.Resource.Momentum)) {
-      STATracker.MomentumButtons.forEach(b => b.style.display = "none");
+      STATracker.MomentumButtons.forEach(b => b.style.display = 'none');
       STATracker.MomentumInput.disabled = true;
     }
 
     if (!this.UserHasPermissionFor(STATracker.Resource.Threat)) {
-      STATracker.ThreatButtons.forEach(b => b.style.display = "none");
+      STATracker.ThreatButtons.forEach(b => b.style.display = 'none');
       STATracker.ThreatInput.disabled = true;
     }
   }

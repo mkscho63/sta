@@ -156,7 +156,7 @@ function defaultDataPath() {
   case 'darwin':
     return path.resolve(process.env.HOME, 'Library', 'Application Support', 'FoundryVTT')
   default:
-    throw Error("No known default for platform ${process.platform}")
+    throw Error('No known default for platform ${process.platform}')
   }
 }
 
