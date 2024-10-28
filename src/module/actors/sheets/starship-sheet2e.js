@@ -3,12 +3,15 @@ import {
 } from '../actor.js';
 
 export class STAStarshipSheet2e extends ActorSheet {
+  constructor(object, options={}) {
+    super(object, options);
 
-  /**
-   * An actively open dialog that should be closed before a new one is opened.
-   * @type {Dialog}
-   */
-  activeDialog;
+    /**
+     * An actively open dialog that should be closed before a new one is opened.
+     * @type {Dialog}
+     */
+    this.activeDialog = null;
+  }
 
   /** @override */
   static get defaultOptions() {

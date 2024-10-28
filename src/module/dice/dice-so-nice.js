@@ -1,4 +1,4 @@
-export function register_dsn_ufp_themes(dice3d) {
+export function registerDsnUfpThemes(dice3d) {
   [
     {
       'background': '#00a3d1',

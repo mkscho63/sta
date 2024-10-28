@@ -58,7 +58,7 @@ import {
   STAItem
 } from './items/item.js';
 import {
-  register_dsn_ufp_themes
+  registerDsnUfpThemes
 } from './dice/dice-so-nice.js';
 import {Collapsible} from './chat/Collapsible.js';
 import {
@@ -332,7 +332,7 @@ Hooks.once('init', function() {
   });
 
   Hooks.once('diceSoNiceReady', (dice3d) => {
-    register_dsn_ufp_themes(dice3d);
+    registerDsnUfpThemes(dice3d);
   });
 
   Hooks.on('rtcSettingsChanged', (settings, changed) => {

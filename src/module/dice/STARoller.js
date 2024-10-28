@@ -293,6 +293,6 @@ export class STARoller {
   }
 }
 Hooks.on('renderSceneControls', (controls, html) => {
-  console.log('STARoller here', html);
+  /* eslint-disable-next-line new-cap */
   STARoller.Init(controls, html);
 });

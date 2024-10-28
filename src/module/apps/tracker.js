@@ -1,3 +1,11 @@
+/** TODO: Reformat this file so that it aligns with ES2020 constraints or update
+    the ESLint config to allow for ES2022.  Currently cannot be parsed by ES2020.
+
+    If code changes are being here made, temporarily switching to ES2022 within
+    the eslint.config.mjs on your local machine is advised to catch mistakes.
+ */
+/* eslint-disable */
+
 export class STATracker extends Application {
   constructor(options = {}) {
     super(options);
@@ -156,7 +164,7 @@ export class STATracker extends Application {
       this.resource = resource;
       this.value = value;
     }
-  }
+  };
 
   /**
    * The default settings of this application.
@@ -164,6 +172,8 @@ export class STATracker extends Application {
    * @public
    * @readonly
    * @property {object}
+   *
+   * @return {ApplicationOptions}
    */
   static get defaultOptions() {
     const options = super.defaultOptions;
@@ -214,7 +224,7 @@ export class STATracker extends Application {
    * 
    * @private
    * @param {STATracker.Resource} resource The resource to query the limit of.
-   * @returns {6|99999999}
+   * @return {6|99999999}
    */
   static LimitOf(resource) {
     return resource == STATracker.Resource.Momentum ? game.settings.get('sta', 'maxNumberOfMomentum') : 99999999;
@@ -225,7 +235,7 @@ export class STATracker extends Application {
    * 
    * @private
    * @param {STATracker.Resource} resource The resource to query the value of.
-   * @returns {number} The current value of the given resource
+   * @return {number} The current value of the given resource
    */
   static ValueOf(resource) {
     return game.settings.get('sta', resource);
@@ -249,7 +259,7 @@ export class STATracker extends Application {
    * Check if the user has the permission to modify the given resource.
    * 
    * @param {STATracker.Resource} resource The resource to check the current user's permissions for.
-   * @returns {true|false} true iff. the current user is allowed to modify the given resource, false otherwise.
+   * @return {true|false} true iff. the current user is allowed to modify the given resource, false otherwise.
    */
   static UserHasPermissionFor(resource) {
     const requiredLevel = game.settings.get('sta', `${resource}PermissionLevel`);
@@ -259,7 +269,7 @@ export class STATracker extends Application {
   /**
    * Check if the user has permission to write settings.
    * 
-   * @returns {true|false} true iff. the current user is allowed to write settings.
+   * @return {true|false} true iff. the current user is allowed to write settings.
    */
   static UserCanWriteSettings() {
     return game.permissions.SETTINGS_MODIFY.includes(game.user.role);
@@ -273,7 +283,7 @@ export class STATracker extends Application {
    * @param {number} value The value to set for the given resource.
    */
 
-// Store the accumulated changes and a timer
+  // Store the accumulated changes and a timer
   static accumulatedChanges = {
     momentum: 0,
     threat: 0
@@ -339,7 +349,7 @@ export class STATracker extends Application {
         // Send the chat message
         if (chatMessage && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
           ChatMessage.create({
-            speaker: { alias: 'STA' },
+            speaker: {alias: 'STA'},
             content: chatMessage
           });
         }
@@ -347,7 +357,6 @@ export class STATracker extends Application {
         // Reset the accumulated changes
         STATracker.accumulatedChanges.momentum = 0;
         STATracker.accumulatedChanges.threat = 0;
-
       }, 1000); // 1-second delay
     }
   }
@@ -458,7 +467,6 @@ export class STATracker extends Application {
    */
   static ConfigureTrackerSlideWithSidebar() {
     $('.collapse').click((_) => {
-      console.log('collape clicked')
       if ($('.tracker-container:not(.tracker-collapsed)')[0]) {
         $('#tracker-clickable-minus').addClass('tracker-collapsed');
         $('#tracker-clickable-plus').removeClass('tracker-collapsed');
