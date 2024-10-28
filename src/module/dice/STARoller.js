@@ -65,9 +65,9 @@ export class STARoller {
     });
   }
   static async rollTaskRoll(event) {
-    let selectedAttribute = 'STARoller';
-    let selectedDiscipline = 'STARoller';
-    let defaultValue = 2;
+    const selectedAttribute = 'STARoller';
+    const selectedDiscipline = 'STARoller';
+    const defaultValue = 2;
     const speaker = {
       type: 'sidebar',
     };
@@ -93,8 +93,8 @@ export class STARoller {
 
 
   static async rollChallengeRoll(event) {
-    let weaponName = 'STARoller';
-    let defaultValue = 2;
+    const weaponName = 'STARoller';
+    const defaultValue = 2;
 
     event.preventDefault();
     // This creates a dialog to gather details regarding the roll and waits for a response
@@ -109,7 +109,7 @@ export class STARoller {
 
 
   static async rollnpcssroll(event) {
-    let dialogContent = `
+    const dialogContent = `
     <form>
       <h3>${game.i18n.localize('sta.roll.npccrew')}</h3>
       <div class="form-group">
@@ -159,14 +159,14 @@ export class STARoller {
           label: `${game.i18n.localize('sta.apps.rolldice')}`,
           callback: (html) => {
             // Get selected system and department
-            let selectedSystem = html.find('.selector.system:checked').val();
+            const selectedSystem = html.find('.selector.system:checked').val();
             let selectedSystemLabel = html.find(`#${selectedSystem}-selector`).siblings('.original-system-label').val();
             if (selectedSystemLabel) {
               selectedSystemLabel = selectedSystemLabel.substring(26);
             }
             let selectedSystemValue = html.find(`#${selectedSystem}`).text();
-            
-            let selectedDepartment = html.find('.selector.department:checked').val();
+
+            const selectedDepartment = html.find('.selector.department:checked').val();
             let selectedDepartmentLabel = html.find(`#${selectedDepartment}-selector`).siblings('.original-department-label').val();
             if (selectedDepartmentLabel) {
               selectedDepartmentLabel = selectedDepartmentLabel.substring(30);
@@ -175,7 +175,8 @@ export class STARoller {
     
             const numDice = parseInt(html.find('#numDice').val());
             const skillLevel = html.find('input[name="skillLevel"]:checked').val();
-            let attributes, departments;
+            let attributes;
+            let departments;
             switch (skillLevel) {
             case 'basic':
               attributes = 8;
@@ -237,14 +238,14 @@ export class STARoller {
     
         // Fallback to input box in case no token is selected
         if (!token || (token.actor.type !== 'starship' && token.actor.type !== 'smallcraft')) {
-          let systemsHtml = `
+          const systemsHtml = `
             <div>
               <input type="number" id="systemValue" name="systemValue" min="0" max="20" value="7">
             </div>
             `;
           html.find('#shipSystems').html(systemsHtml);
-    
-          let departmentsHtml = `
+
+          const departmentsHtml = `
             <div>
               <input type="number" id="departmentValue" name="departmentValue" min="0" max="10" value="2">
             </div>
@@ -258,8 +259,8 @@ export class STARoller {
     
         // Populate ship systems
         let systemsHtml = '';
-        for (let [key, system] of Object.entries(actor.system.systems)) {
-          let systemLabel = game.i18n.localize(system.label);
+        for (const [key, system] of Object.entries(actor.system.systems)) {
+          const systemLabel = game.i18n.localize(system.label);
     
           systemsHtml += `
           <div>
@@ -274,8 +275,8 @@ export class STARoller {
     
         // Populate ship departments
         let departmentsHtml = '';
-        for (let [key, department] of Object.entries(actor.system.departments)) {
-          let departmentLabel = game.i18n.localize(department.label);
+        for (const [key, department] of Object.entries(actor.system.departments)) {
+          const departmentLabel = game.i18n.localize(department.label);
     
           departmentsHtml += `
           <div>

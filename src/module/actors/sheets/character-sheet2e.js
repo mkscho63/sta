@@ -26,7 +26,7 @@ export class STACharacterSheet2e extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
     if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/character-sheet-legacy.hbs';
     return `systems/sta/templates/actors/character-sheet2e.hbs`;
@@ -56,7 +56,7 @@ export class STACharacterSheet2e extends ActorSheet {
       if (attribute.value > maxAttribute) attribute.value = maxAttribute; 
       if (attribute.value < minAttribute) attribute.value = minAttribute;
     });
-    let minDiscipline = 0;
+    const minDiscipline = 0;
     let maxDiscipline = 5;
     const overrideDisciplineLimitSetting = game.settings.get('sta', 'characterDisciplineLimitIgnore');
     if (overrideDisciplineLimitSetting) {
@@ -107,7 +107,7 @@ export class STACharacterSheet2e extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
 
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -241,9 +241,9 @@ export class STACharacterSheet2e extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      let itemId = ev.currentTarget.closest('.entry').dataset.itemId;
-      let item = this.actor.items.get(itemId);
-      let state = item.system.used;
+      const itemId = ev.currentTarget.closest('.entry').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      const state = item.system.used;
       if (state) {
         item.system.used = false;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-on');
@@ -490,7 +490,7 @@ export class STACharacterSheet2e extends ActorSheet {
 
     // If the check-button is clicked it performs the acclaim or reprimand calculation.
     html.find('.check-button.acclaim').click(async (ev) => {
-      let dialogContent = `
+      const dialogContent = `
         <form class="sta-form">
             <div class="dice-pool flexcol">
                 <div class="flexrow">
@@ -511,15 +511,15 @@ export class STACharacterSheet2e extends ActorSheet {
           roll: {
             label: `${game.i18n.localize('sta.roll.acclaim')}`,
             callback: async (html) => {
-              let PositiveInfluences = parseInt(html.find('#positiveInfluences').val()) || 1;
-              let NegativeInfluences = parseInt(html.find('#negativeInfluences').val()) || 0;
+              const PositiveInfluences = parseInt(html.find('#positiveInfluences').val()) || 1;
+              const NegativeInfluences = parseInt(html.find('#negativeInfluences').val()) || 0;
 
-              let selectedDisciplineValue = parseInt(document.querySelector('#total-rep')?.value) || 0;
-              let existingReprimand = parseInt(document.querySelector('#reprimand')?.value) || 0;
-              let targetNumber = selectedDisciplineValue + 7;
-              let complicationThreshold = 20 - Math.min(existingReprimand, 5);
-              let diceRollFormula = `${PositiveInfluences}d20`;
-              let roll = new Roll(diceRollFormula);
+              const selectedDisciplineValue = parseInt(document.querySelector('#total-rep')?.value) || 0;
+              const existingReprimand = parseInt(document.querySelector('#reprimand')?.value) || 0;
+              const targetNumber = selectedDisciplineValue + 7;
+              const complicationThreshold = 20 - Math.min(existingReprimand, 5);
+              const diceRollFormula = `${PositiveInfluences}d20`;
+              const roll = new Roll(diceRollFormula);
 
               await roll.evaluate();
 
@@ -527,7 +527,7 @@ export class STACharacterSheet2e extends ActorSheet {
               let complications = 0;
               let acclaim = 0;
               let reprimand = 0;
-              let diceResults = [];
+              const diceResults = [];
 
               roll.terms[0].results.forEach(die => {
                 let coloredDieResult;

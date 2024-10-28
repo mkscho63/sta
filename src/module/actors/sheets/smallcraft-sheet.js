@@ -20,7 +20,7 @@ export class STASmallCraftSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
     if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/smallcraft-sheet-legacy.hbs';
     return `systems/sta/templates/actors/smallcraft-sheet.hbs`;
@@ -74,7 +74,7 @@ export class STASmallCraftSheet extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily 
-    let versionInfo = game.world.coreVersion; 
+    const versionInfo = game.world.coreVersion;
     
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();

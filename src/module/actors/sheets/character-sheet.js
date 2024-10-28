@@ -26,7 +26,7 @@ export class STACharacterSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
     if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/character-sheet-legacy.hbs';
     return `systems/sta/templates/actors/character-sheet.hbs`;
@@ -56,7 +56,7 @@ export class STACharacterSheet extends ActorSheet {
       if (attribute.value > maxAttribute) attribute.value = maxAttribute; 
       if (attribute.value < minAttribute) attribute.value = minAttribute;
     });
-    let minDiscipline = 0;
+    const minDiscipline = 0;
     let maxDiscipline = 5;
     const overrideDisciplineLimitSetting = game.settings.get('sta', 'characterDisciplineLimitIgnore');
     if (overrideDisciplineLimitSetting) {
@@ -107,7 +107,7 @@ export class STACharacterSheet extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
 
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -233,9 +233,9 @@ export class STACharacterSheet extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      let itemId = ev.currentTarget.closest('.entry').dataset.itemId;
-      let item = this.actor.items.get(itemId);
-      let state = item.system.used;
+      const itemId = ev.currentTarget.closest('.entry').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      const state = item.system.used;
       if (state) {
         item.system.used = false;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-on');

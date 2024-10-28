@@ -70,7 +70,7 @@ import {
 /* -------------------------------------------- */
 
 Hooks.once('init', function() {
-  let versionInfo = game.world.coreVersion;
+  const versionInfo = game.world.coreVersion;
   // Splash Screen
   console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
                  .

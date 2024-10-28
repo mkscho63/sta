@@ -27,7 +27,7 @@ export class STAStarshipSheet2e extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
     if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/starship-sheet-legacy.hbs';
     return `systems/sta/templates/actors/starship-sheet2e.hbs`;
@@ -89,7 +89,7 @@ export class STAStarshipSheet2e extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily 
-    let versionInfo = game.world.coreVersion; 
+    const versionInfo = game.world.coreVersion;
 
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -515,8 +515,8 @@ export class STAStarshipSheet2e extends ActorSheet {
     });
 
     Hooks.on('renderSTAStarshipSheet2e', (app, html, data) => {
-      let sheetId = app.id;
-      let sheetElement = $(`#${sheetId} .main`);
+      const sheetId = app.id;
+      const sheetElement = $(`#${sheetId} .main`);
 
       const shipScaleValue = Number.parseInt(html.find('#scale').attr('value'));
       let totalBreaches = 0;

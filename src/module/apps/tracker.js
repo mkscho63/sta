@@ -254,7 +254,7 @@ export class STATracker extends Application {
    * @returns {true|false} true iff. the current user is allowed to modify the given resource, false otherwise.
    */
   static UserHasPermissionFor(resource) {
-    let requiredLevel = game.settings.get('sta', `${resource}PermissionLevel`);
+    const requiredLevel = game.settings.get('sta', `${resource}PermissionLevel`);
     return game.user.hasRole(requiredLevel);
   }
 
@@ -297,7 +297,7 @@ export class STATracker extends Application {
       return;
     }
 
-    let currentValue = STATracker.ValueOf(resource);
+    const currentValue = STATracker.ValueOf(resource);
     
     if (newValue !== currentValue) {
       if (STATracker.UserCanWriteSettings()) {
@@ -309,8 +309,8 @@ export class STATracker extends Application {
       }
 
       // Accumulate changes for momentum or threat
-      let resourceName = resource === STATracker.Resource.Momentum ? 'momentum' : 'threat';
-      let diff = newValue - currentValue;
+      const resourceName = resource === STATracker.Resource.Momentum ? 'momentum' : 'threat';
+      const diff = newValue - currentValue;
       STATracker.accumulatedChanges[resourceName] += diff;
 
       // Clear any previous timeout and reset it
@@ -320,19 +320,19 @@ export class STATracker extends Application {
 
       // Set a new timeout to send the chat message after 1 second of inactivity
       STATracker.chatMessageTimeout = setTimeout(() => {
-        let momentumDiff = STATracker.accumulatedChanges.momentum;
-        let threatDiff = STATracker.accumulatedChanges.threat;
+        const momentumDiff = STATracker.accumulatedChanges.momentum;
+        const threatDiff = STATracker.accumulatedChanges.threat;
         let chatMessage = '';
 
         // Construct the chat message based on the accumulated changes
         if (momentumDiff !== 0) {
-          let momentumAction = momentumDiff > 0 ?
+          const momentumAction = momentumDiff > 0 ?
             game.i18n.format('sta.apps.addmomentum', {0: momentumDiff}) :
             game.i18n.format('sta.apps.removemomentum', {0: Math.abs(momentumDiff)});
           chatMessage += `${game.user.name} ${momentumAction}. `;
         }
         if (threatDiff !== 0) {
-          let threatAction = threatDiff > 0 ?
+          const threatAction = threatDiff > 0 ?
             game.i18n.format('sta.apps.addthreat', {0: threatDiff}) :
             game.i18n.format('sta.apps.removethreat', {0: Math.abs(threatDiff)});
           chatMessage += `${game.user.name} ${threatAction}.`;
@@ -371,7 +371,7 @@ export class STATracker extends Application {
    * @param {STATracker.Resource} resource The resource to handle the event for.
    */
   static OnInputTracker(resource) {
-    let inputValue = Number.parseInt(document.getElementById(`sta-track-${resource}`).value);
+    const inputValue = Number.parseInt(document.getElementById(`sta-track-${resource}`).value);
     STATracker.DoUpdateResource(resource, inputValue);
   }
 
