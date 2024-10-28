@@ -41,7 +41,9 @@ export class STACharacterSheet2e extends ActorSheet {
 	
     // Temporary fix I'm leaving in place until I deprecate in a future version
     const overrideMinAttributeTags = ['[Minor]', '[Notable]', '[Major]', '[NPC]', '[Child]'];
-    const overrideMinAttribute = overrideMinAttributeTags.some((tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1);
+    const overrideMinAttribute = overrideMinAttributeTags.some(
+      (tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1
+    );
     
 
     // Ensure attribute and discipline values aren't over the max/min.

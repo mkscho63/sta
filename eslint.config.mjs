@@ -83,7 +83,7 @@ export default [
       'linebreak-style': ['error', 'windows'],
       'indent': ['error', 2],
       'import/extensions': 'off',
-      'max-len': ['error', {'ignoreComments': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true}],
+      'max-len': ['error', {'code': 110, 'ignoreComments': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true}],
       'no-async-promise-executor': 'off',
       'no-await-in-loop': 'off',
       'no-console': 'off',
