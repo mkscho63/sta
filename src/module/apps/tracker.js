@@ -339,7 +339,7 @@ export class STATracker extends Application {
         }
 
             // Send the chat message
-            if (chatMessage) {
+            if (chatMessage && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
                 ChatMessage.create({
                     speaker: { alias: "STA" },
                     content: chatMessage
