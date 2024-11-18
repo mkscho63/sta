@@ -422,7 +422,7 @@ $trackColors: (
     top: 0;
     padding: 5px;
 
-  .sheet-tabs {
+  .character-tabs {
     margin: 0;
     padding: 0 10px;
     background-color: map-get($lcarsColors, 'lcarsheader');
@@ -431,7 +431,7 @@ $trackColors: (
     gap: 5px;
   }
 
-  .sheet-tabs .item {
+  .character-tabs .item {
     background-color: $background;
     border-radius: 10px;
     color: map-get($lcarsColors, 'purple');
@@ -439,7 +439,7 @@ $trackColors: (
     padding: 0 10px;
 
     &.active {
-      background-color: #FF7700;
+      background-color: $separatorBorders;
       color: $inlaidText;
       font-weight: bold;
       text-shadow: none;

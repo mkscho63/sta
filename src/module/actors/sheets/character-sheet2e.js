@@ -13,9 +13,9 @@ export class STACharacterSheet2e extends ActorSheet {
       }],
       tabs: [
         {
-          navSelector: '.sheet-tabs',
-          contentSelector: '.sheet-body',
-          initial: 'tab1',
+          navSelector: '.character-tabs',
+          contentSelector: '.character-header',
+          initial: 'biography',
         }
       ]
     });
