@@ -204,6 +204,8 @@ export class STASharedActorFunctions {
 }
 // Add unarmed strike to new characters
 Hooks.on('createActor', async (actor, options, userId) => {
+  if (game.user.id !== userId) return;
+
   if (actor.type === 'character') {
 
     const compendium2e = await game.packs.get('sta.equipment-crew');
