@@ -10,7 +10,14 @@ export class STACharacterSheet2e extends ActorSheet {
       dragDrop: [{
         dragSelector: '.item-list .item',
         dropSelector: null
-      }]
+      }],
+      tabs: [
+        {
+          navSelector: '.character-tabs',
+          contentSelector: '.character-header',
+          initial: 'biography',
+        }
+      ]
     });
   }
 

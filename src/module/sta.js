@@ -308,6 +308,15 @@ Hooks.once('init', function() {
     config: false
   });
 
+  game.settings.register('sta', 'sendMomemtumThreatToChat', {
+    name: 'Send Momentum and Threat Updates to Chat:',
+    hint: 'Uncheck this if you do not want to see momentum and threat updates in the chat.',
+    scope: 'world',
+    type: Boolean,
+    default: true,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
 
   Hooks.on('renderChatLog', (app, html, data) =>
