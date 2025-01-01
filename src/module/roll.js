@@ -93,7 +93,7 @@ export class STARoll {
       tokenId: speaker.token ? speaker.token.uuid : null,
       dicePool,
       checkTarget,
-      complicationMinimumValue: complicationMinimumValue + "+",
+      complicationMinimumValue: complicationMinimumValue + '+',
       diceHtml: diceString,
       complicationHtml: complicationText,
       successText,
@@ -479,7 +479,7 @@ export class STARoll {
   }
 
   async sendToChat(speaker, content, item, roll, flavor, sound) {
-    const rollMode = game.settings.get("core", "rollMode");
+    const rollMode = game.settings.get('core', 'rollMode');
     const messageProps = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({actor: speaker}),

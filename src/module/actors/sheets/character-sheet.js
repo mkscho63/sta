@@ -26,9 +26,9 @@ export class STACharacterSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/character-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/character-sheet-legacy.hbs';
     return `systems/sta/templates/actors/character-sheet.hbs`;
   }
 
@@ -41,7 +41,9 @@ export class STACharacterSheet extends ActorSheet {
 	
     // Temporary fix I'm leaving in place until I deprecate in a future version
     const overrideMinAttributeTags = ['[Minor]', '[Notable]', '[Major]', '[NPC]', '[Child]'];
-    const overrideMinAttribute = overrideMinAttributeTags.some((tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1);
+    const overrideMinAttribute = overrideMinAttributeTags.some(
+      (tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1
+    );
     
 
     // Ensure attribute and discipline values aren't over the max/min.
@@ -56,7 +58,7 @@ export class STACharacterSheet extends ActorSheet {
       if (attribute.value > maxAttribute) attribute.value = maxAttribute; 
       if (attribute.value < minAttribute) attribute.value = minAttribute;
     });
-    let minDiscipline = 0;
+    const minDiscipline = 0;
     let maxDiscipline = 5;
     const overrideDisciplineLimitSetting = game.settings.get('sta', 'characterDisciplineLimitIgnore');
     if (overrideDisciplineLimitSetting) {
@@ -68,8 +70,9 @@ export class STACharacterSheet extends ActorSheet {
     });
 
     // Check stress max/min
-    if (!(sheetData.system.stress))
+    if (!(sheetData.system.stress)) {
       sheetData.system.stress = {};
+    }
     if (sheetData.system.stress.value > sheetData.system.stress.max) {
       sheetData.system.stress.value = sheetData.system.stress.max;
     }
@@ -78,8 +81,9 @@ export class STACharacterSheet extends ActorSheet {
     }
 
     // Check determination max/min
-    if (!(sheetData.system.determination))
+    if (!(sheetData.system.determination)) {
       sheetData.system.determination = {};
+    }
     if (sheetData.system.determination.value > 3) {
       sheetData.system.determination.value = 3;
     }
@@ -88,8 +92,9 @@ export class STACharacterSheet extends ActorSheet {
     }
     
     // Check reputation max/min
-    if (!(sheetData.system.reputation))
+    if (!(sheetData.system.reputation)) {
       sheetData.system.reputation = {};
+    }
     if (sheetData.system.reputation.value > 20) {
       sheetData.system.reputation.value = 20;
     }
@@ -107,7 +112,7 @@ export class STACharacterSheet extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
 
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -148,16 +153,15 @@ export class STACharacterSheet extends ActorSheet {
     // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute, security discipline, and checks for Resolute talent. 
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
-
       const localizedValues = {
-        "resolute": game.i18n.localize('sta.actor.character.talents.resolute')
+        'resolute': game.i18n.localize('sta.actor.character.talents.resolute')
       };
 
       stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
       if (html.find(`[data-talent-name*="${localizedValues.resolute}"]`).length > 0) {
         stressTrackMax += 3;
       }
-	  stressTrackMax += parseInt(html.find('#strmod')[0].value)
+	  stressTrackMax += parseInt(html.find('#strmod')[0].value);
       // This checks that the max-stress hidden field is equal to the calculated Max Stress value, if not it makes it so.
       if (html.find('#max-stress')[0].value != stressTrackMax) {
         html.find('#max-stress')[0].value = stressTrackMax;
@@ -234,9 +238,9 @@ export class STACharacterSheet extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      let itemId = ev.currentTarget.closest(".entry").dataset.itemId;
-      let item = this.actor.items.get(itemId);
-      let state = item.system.used;
+      const itemId = ev.currentTarget.closest('.entry').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      const state = item.system.used;
       if (state) {
         item.system.used = false;
         $(ev.currentTarget).children()[0].classList.remove('fa-toggle-on');
@@ -480,10 +484,9 @@ export class STACharacterSheet extends ActorSheet {
       this.submit();
     });
 
-  // If the check-button is clicked it performs the acclaim or reprimand calculation.
-  html.find('.check-button.acclaim').click(async (ev) => {
-
-  let dialogContent = `
+    // If the check-button is clicked it performs the acclaim or reprimand calculation.
+    html.find('.check-button.acclaim').click(async (ev) => {
+      const dialogContent = `
   <form class="sta-form">
       <div class="dice-pool flexcol">
           <div class="flexrow">
@@ -498,73 +501,73 @@ export class STACharacterSheet extends ActorSheet {
   </form>
   `;
 
-  new Dialog({
-    title: `${game.i18n.localize('sta.roll.acclaim')}`,
-    content: dialogContent,
-    buttons: {
-      roll: {
-        label: `${game.i18n.localize('sta.roll.acclaim')}`,
-        callback: async (html) => {
-          let PositiveInfluences = parseInt(html.find('#positiveInfluences').val()) || 1;
-          let NegativeInfluences = parseInt(html.find('#negativeInfluences').val()) || 0;
+      new Dialog({
+        title: `${game.i18n.localize('sta.roll.acclaim')}`,
+        content: dialogContent,
+        buttons: {
+          roll: {
+            label: `${game.i18n.localize('sta.roll.acclaim')}`,
+            callback: async (html) => {
+              const PositiveInfluences = parseInt(html.find('#positiveInfluences').val()) || 1;
+              const NegativeInfluences = parseInt(html.find('#negativeInfluences').val()) || 0;
           
-          let selectedDisciplineValue = parseInt(document.querySelector('#total-rep')?.value) || 0;
-          let existingReprimand = parseInt(document.querySelector('#reprimand')?.value) || 0;
-          let targetNumber = selectedDisciplineValue + 7;
-          let complicationThreshold = 20 - Math.min(existingReprimand, 5);
-          let diceRollFormula = `${PositiveInfluences}d20`;
-          let roll = new Roll(diceRollFormula);
+              const selectedDisciplineValue = parseInt(document.querySelector('#total-rep')?.value) || 0;
+              const existingReprimand = parseInt(document.querySelector('#reprimand')?.value) || 0;
+              const targetNumber = selectedDisciplineValue + 7;
+              const complicationThreshold = 20 - Math.min(existingReprimand, 5);
+              const diceRollFormula = `${PositiveInfluences}d20`;
+              const roll = new Roll(diceRollFormula);
 
-          await roll.evaluate();
+              await roll.evaluate();
 
-          let totalSuccesses = 0;
-          let complications = 0;
-          let acclaim = 0;
-          let reprimand = 0;
-          let diceResults = [];
+              let totalSuccesses = 0;
+              let complications = 0;
+              let acclaim = 0;
+              let reprimand = 0;
+              const diceResults = [];
 
-          roll.terms[0].results.forEach(die => {
-            let coloredDieResult;
+              roll.terms[0].results.forEach((die) => {
+                let coloredDieResult;
 
-            if (die.result >= complicationThreshold) {
-              coloredDieResult = `<span style="color: red;">${die.result}</span>`; // Red for complications
-              complications += 1;
-            } else if (die.result <= selectedDisciplineValue) {
-              coloredDieResult = `<span style="color: #6cf542;">${die.result}</span>`; // Green for double successes
-              totalSuccesses += 2;
-            } else if (die.result <= targetNumber && die.result > selectedDisciplineValue) {
-              coloredDieResult = `<span style="color: #42a4f5;">${die.result}</span>`; // Blue for single successes
-              totalSuccesses += 1;
-            } else {
-              coloredDieResult = `<span>${die.result}</span>`; // Default for other results
+                if (die.result >= complicationThreshold) {
+                  coloredDieResult = `<span style="color: red;">${die.result}</span>`; // Red for complications
+                  complications += 1;
+                } else if (die.result <= selectedDisciplineValue) {
+                  coloredDieResult = `<span style="color: #6cf542;">${die.result}</span>`; // Green for double successes
+                  totalSuccesses += 2;
+                } else if (die.result <= targetNumber && die.result > selectedDisciplineValue) {
+                  coloredDieResult = `<span style="color: #42a4f5;">${die.result}</span>`; // Blue for single successes
+                  totalSuccesses += 1;
+                } else {
+                  coloredDieResult = `<span>${die.result}</span>`; // Default for other results
+                }
+                diceResults.push(coloredDieResult);
+              });
+
+              let chatContent = `${game.i18n.format('sta.roll.dicerolls')} ${diceResults.join(', ')}<br>`;
+
+              if (totalSuccesses > NegativeInfluences) {
+                acclaim = totalSuccesses - NegativeInfluences;
+                chatContent += `<strong>${game.i18n.format('sta.roll.gainacclaim', {0: acclaim})}</strong>`;
+              } else if (totalSuccesses < NegativeInfluences) {
+                reprimand = (NegativeInfluences - totalSuccesses) + complications;
+                chatContent += `<strong>${game.i18n.format('sta.roll.gainreprimand', {0: reprimand})}</strong>`;
+              } else if (totalSuccesses === NegativeInfluences) {
+                chatContent += `<strong>${game.i18n.localize('sta.roll.nochange')}</strong>`;
+              }
+
+              ChatMessage.create({
+                speaker: ChatMessage.getSpeaker(),
+                content: chatContent
+              });
             }
-            diceResults.push(coloredDieResult);
-          });
-
-          let chatContent = `${game.i18n.format("sta.roll.dicerolls")} ${diceResults.join(", ")}<br>`;
-
-          if (totalSuccesses > NegativeInfluences) {
-            acclaim = totalSuccesses - NegativeInfluences;
-            chatContent += `<strong>${game.i18n.format("sta.roll.gainacclaim", {0: acclaim})}</strong>`;
-          } else if (totalSuccesses < NegativeInfluences) {
-            reprimand = (NegativeInfluences - totalSuccesses) + complications;
-            chatContent += `<strong>${game.i18n.format("sta.roll.gainreprimand", {0: reprimand})}</strong>`;
-          } else if (totalSuccesses === NegativeInfluences) {
-            chatContent += `<strong>${game.i18n.localize("sta.roll.nochange")}</strong>`;
           }
-
-          ChatMessage.create({
-            speaker: ChatMessage.getSpeaker(),
-            content: chatContent
-          });
+        },
+        render: (html) => {
+          html.find('button').addClass('dialog-button roll default');
         }
-      }
-    },
-    render: (html) => {
-      html.find('button').addClass('dialog-button roll default');
-    }
-  }).render(true);
-});
+      }).render(true);
+    });
 
     // If the check-button is clicked it grabs the selected attribute and the selected discipline and fires the method rollAttributeTest. See actor.js for further info.
     html.find('.check-button.attribute').click((ev) => {

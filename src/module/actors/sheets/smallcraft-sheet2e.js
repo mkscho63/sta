@@ -20,9 +20,9 @@ export class STASmallCraftSheet2e extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/smallcraft-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/smallcraft-sheet-legacy.hbs';
     return `systems/sta/templates/actors/smallcraft-sheet2e.hbs`;
   }
     
@@ -74,7 +74,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily 
-    let versionInfo = game.world.coreVersion; 
+    const versionInfo = game.world.coreVersion; 
     
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -92,10 +92,9 @@ export class STASmallCraftSheet2e extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value divided by 2, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-
       const localizedValues = {
-        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
-        "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
+        'advancedshields': game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+        'polarizedhullplating': game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
       };
 
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
@@ -103,7 +102,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
         shieldsTrackMax += 5;
       }
       if (html.find(`[data-talent-name*="${localizedValues.polarizedhullplating}"]`).length > 0) {
-        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value)
+        shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#shieldmod')[0].value);
       }
       // This checks that the max-shields hidden field is equal to the calculated Max Shields value, if not it makes it so.
       if (html.find('#max-shields')[0].value != shieldsTrackMax) {
@@ -125,10 +124,10 @@ export class STASmallCraftSheet2e extends ActorSheet {
     // With the value, creates a new div for each and places it under a child called "bar-power-renderer".
     function powerTrackUpdate() {
       powerTrackMax = 0;
-//      powerTrackMax = Math.ceil(parseInt(html.find('#engines')[0].value)/2);
-//      if (html.find('[data-talent-name*="Secondary Reactors"]').length > 0) {
-//        powerTrackMax += 5;
-//      }
+      // powerTrackMax = Math.ceil(parseInt(html.find('#engines')[0].value)/2);
+      // if (html.find('[data-talent-name*="Secondary Reactors"]').length > 0) {
+      // powerTrackMax += 5;
+      // }
       // This checks that the max-power hidden field is equal to the calculated Max Power value, if not it makes it so.
       if (html.find('#max-power')[0].value != powerTrackMax) {
         html.find('#max-power')[0].value = powerTrackMax;
@@ -422,38 +421,38 @@ export class STASmallCraftSheet2e extends ActorSheet {
       if (parseInt(html.find('#weapons')[0].value) > 12) weaponValue = 4;
 
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "energy") scaleDamage = parseInt(html.find('#scale')[0].value);
+      if (value.dataset.itemIncludescale == 'energy') scaleDamage = parseInt(html.find('#scale')[0].value);
 
       const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
 
     Hooks.on('renderSTASmallCraftSheet2e', (app, html, data) => {
-      let sheetId = app.id;
-      let sheetElement = $(`#${sheetId} .main`);
+      const sheetId = app.id;
+      const sheetElement = $(`#${sheetId} .main`);
 
       const shipScaleValue = Number.parseInt(html.find('#scale').attr('value'));
       let totalBreaches = 0;
 
-    html.find('.selector.system').each(function(index, value) {
-      const $systemCheckbox = $(value);
-      const $systemBreach = $systemCheckbox.siblings('.breaches');
-      const breachValue = Number.parseInt($systemBreach.attr('value'));
+      html.find('.selector.system').each(function(index, value) {
+        const $systemCheckbox = $(value);
+        const $systemBreach = $systemCheckbox.siblings('.breaches');
+        const breachValue = Number.parseInt($systemBreach.attr('value'));
 
-      totalBreaches += breachValue;
+        totalBreaches += breachValue;
 
-      const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
+        const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
 
-      if (breachValue > 0 && !isSystemDestroyed) {
-        $systemBreach.addClass('highlight-damaged');
-        $systemBreach.removeClass('highlight-destroyed');
-      } else if (isSystemDestroyed) {
-        $systemBreach.addClass('highlight-destroyed');
-        $systemBreach.removeClass('highlight-damaged');
-      } else {
-        $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
-      }
-    });
+        if (breachValue > 0 && !isSystemDestroyed) {
+          $systemBreach.addClass('highlight-damaged');
+          $systemBreach.removeClass('highlight-destroyed');
+        } else if (isSystemDestroyed) {
+          $systemBreach.addClass('highlight-destroyed');
+          $systemBreach.removeClass('highlight-damaged');
+        } else {
+          $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
+        }
+      });
 
       if (totalBreaches === (shipScaleValue + 1)) {
         sheetElement.addClass('highlight-damaged');

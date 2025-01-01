@@ -58,7 +58,7 @@ import {
   STAItem
 } from './items/item.js';
 import {
-  register_dsn_ufp_themes
+  registerDsnUfpThemes
 } from './dice/dice-so-nice.js';
 import {Collapsible} from './chat/Collapsible.js';
 import {
@@ -70,7 +70,7 @@ import {
 /* -------------------------------------------- */
 
 Hooks.once('init', function() {
-  let versionInfo = game.world.coreVersion;
+  const versionInfo = game.world.coreVersion;
   // Splash Screen
   console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
                  .
@@ -332,7 +332,7 @@ Hooks.once('init', function() {
   });
 
   Hooks.once('diceSoNiceReady', (dice3d) => {
-    register_dsn_ufp_themes(dice3d);
+    registerDsnUfpThemes(dice3d);
   });
 
   Hooks.on('rtcSettingsChanged', (settings, changed) => {

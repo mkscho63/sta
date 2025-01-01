@@ -3,12 +3,15 @@ import {
 } from '../actor.js';
 
 export class STAStarshipSheet extends ActorSheet {
+  constructor(object, options={}) {
+    super(object, options);
 
-  /**
-   * An actively open dialog that should be closed before a new one is opened.
-   * @type {Dialog}
-   */
-  activeDialog;
+    /**
+     * An actively open dialog that should be closed before a new one is opened.
+     * @type {Dialog}
+     */
+    this.activeDialog = null;
+  }
 
   /** @override */
   static get defaultOptions() {
@@ -27,9 +30,9 @@ export class STAStarshipSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    let versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) return "systems/sta/templates/actors/starship-sheet-legacy.hbs";
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/starship-sheet-legacy.hbs';
     return `systems/sta/templates/actors/starship-sheet.hbs`;
   }
 
@@ -89,7 +92,7 @@ export class STAStarshipSheet extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily 
-    let versionInfo = game.world.coreVersion; 
+    const versionInfo = game.world.coreVersion;
 
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -106,9 +109,8 @@ export class STAStarshipSheet extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-
       const localizedValues = {
-        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields')
+        'advancedshields': game.i18n.localize('sta.actor.starship.talents.advancedshields')
       };
 
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#shieldmod')[0].value);
@@ -482,7 +484,7 @@ export class STAStarshipSheet extends ActorSheet {
       const weaponDamage = parseInt(value.dataset.itemDamage);
       const securityValue = parseInt(html.find('#security')[0].value);
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "true") scaleDamage = parseInt(html.find('#scale')[0].value);
+      if (value.dataset.itemIncludescale == 'true') scaleDamage = parseInt(html.find('#scale')[0].value);
       const attackDamageValue = weaponDamage + securityValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
     });
