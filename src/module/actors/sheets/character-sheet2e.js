@@ -538,7 +538,7 @@ export class STACharacterSheet2e extends ActorSheet {
                   coloredDieResult = `<span style="color: red;">${die.result}</span>`; // Red for complications
                   complications += 1;
                 } else if (die.result <= selectedDisciplineValue) {
-                  coloredDieResult = `<span style="color: #06402b;">${die.result}</span>`; // Green for double successes
+                  coloredDieResult = `<span style="color: green;">${die.result}</span>`; // Green for double successes
                   totalSuccesses += 2;
                 } else if (die.result <= targetNumber && die.result > selectedDisciplineValue) {
                   coloredDieResult = `<span style="color: blue;">${die.result}</span>`; // Blue for single successes
