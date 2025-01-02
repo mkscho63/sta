@@ -84,7 +84,7 @@ export default [
     rules: {
       'arrow-body-style': 'off',
       'comma-dangle': 'off',
-      'linebreak-style': ['error', 'windows'],
+      'linebreak-style': ['error', 'unix'],
       'indent': ['error', 2],
       'import/extensions': 'off',
       'max-len': ['error', {'code': 110, 'ignoreComments': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true}],
