@@ -2,9 +2,8 @@ export class STASmallCraftContainerSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item'],
       width: 680,
-      height: 320,
+      height: 390,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
     });
   }
@@ -21,7 +20,6 @@ export class STASmallCraftContainerSheet extends ItemSheet {
       ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/items/smallcraftcontainer-sheet-legacy.hbs';
     return `systems/sta/templates/items/smallcraftcontainer-sheet.hbs`;
   }
 
@@ -36,7 +34,7 @@ export class STASmallCraftContainerSheet extends ItemSheet {
     data.dtypes = ['String', 'Number', 'Boolean'];
     let smallcrafts;
 
-    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) {
+    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) {
       smallcrafts = game.actors.filter((target) => 
         target.type === 'smallcraft' && target.owner);
     } else {

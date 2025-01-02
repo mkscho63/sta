@@ -1,97 +1,72 @@
-<form class="{{cssClass}}" autocomplete="off">
-  <div class="header-fields">
-    <div class="row">
+<form class="item-sheet" autocomplete="off">
+  <div class="row">
+    <div class="image-field">
       <img class="img" src="{{img}}" data-edit="img" title="{{name}}" />
-      <div class="column-x3-img">
-        <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
-        <input name="name" type="text" value="{{name}}" placeholder="Name" />
-      </div>
-      <div class="column-x1">
-        <label class="label">{{localize 'sta.item.talent.type.title'}}</label>
-        <select name="system.talenttype.typeenum">
-          <option value="general" {{#if (eq system.talenttype.typeenum "general")}}selected{{/if}}>{{localize 'sta.item.talent.type.general'}}</option>
-          <option value="discipline" {{#if (eq system.talenttype.typeenum "discipline")}}selected{{/if}}>{{localize 'sta.item.talent.type.discipline'}}</option>
-          <option value="attribute" {{#if (eq system.talenttype.typeenum "attribute")}}selected{{/if}}>{{localize 'sta.item.talent.type.attribute'}}</option>
-          <option value="systems" {{#if (eq system.talenttype.typeenum "systems")}}selected{{/if}}>{{localize 'sta.actor.starship.system.title'}}</option>
-          <option value="species" {{#if (eq system.talenttype.typeenum "species")}}selected{{/if}}>{{localize 'sta.actor.character.species'}}</option>
-          <option value="house" {{#if (eq system.talenttype.typeenum "house")}}selected{{/if}}>{{localize 'sta.item.talent.houselegacy'}}</option>
-        </select>
-      </div>
     </div>
-    {{#if (eq system.talenttype.typeenum "discipline")}}
-    <div class="row">
-      <div class="column-x1"></div>
-      <div class="column-x3">
-        <label class="label">{{localize 'sta.item.talent.requires'}}</label>
-        <select name="system.talenttype.description">
-          <option value="command" {{#if (eq system.talenttype.description "command")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.command'}}</option>
-          <option value="conn" {{#if (eq system.talenttype.description "conn")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.conn'}}</option>
-          <option value="engineering" {{#if (eq system.talenttype.description "engineering")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.engineering'}}</option>
-          <option value="medicine" {{#if (eq system.talenttype.description "medicine")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.medicine'}}</option>
-          <option value="science" {{#if (eq system.talenttype.description "science")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.science'}}</option>
-          <option value="security" {{#if (eq system.talenttype.description "security")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.security'}}</option>
-        </select>
-      </div>
-      <div class="column-x2">
-        <input type="number" name="system.talenttype.minimum" value="{{system.talenttype.minimum}}" />
-        <label class="label">+</label>
-      </div>
-      <div class="column-x1"></div>
+    <div class="column">
+      <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
+      <input name="name" type="text" class="text-entry" value="{{name}}" placeholder="Name" />
     </div>
-    {{else if (eq system.talenttype.typeenum "attribute")}}
-    <div class="row">
-      <div class="column-x1"></div>
-      <div class="column-x3">
-        <label class="label">{{localize 'sta.item.talent.requires'}}</label>
-        <select name="system.talenttype.description">
-          <option value="control" {{#if (eq system.talenttype.description "control")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.control'}}</option>
-          <option value="daring" {{#if (eq system.talenttype.description "daring")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.daring'}}</option>
-          <option value="fitness" {{#if (eq system.talenttype.description "fitness")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.fitness'}}</option>
-          <option value="insight" {{#if (eq system.talenttype.description "insight")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.insight'}}</option>
-          <option value="presence" {{#if (eq system.talenttype.description "presence")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.presence'}}</option>
-          <option value="reason" {{#if (eq system.talenttype.description "reason")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.reason'}}</option>
-        </select>
-      </div>
-      <div class="column-x2">
-        <input type="number" name="system.talenttype.minimum" value="{{system.talenttype.minimum}}" />
-        <label class="label">+</label>
-      </div>
-      <div class="column-x1"></div>
+  </div>
+
+  <div class="row">
+    <div class="column traits">
+      <div class="title">{{localize 'sta.item.talent.type.title'}}</div>
+      <select name="system.talenttype.typeenum">
+        <option value="general" {{#if (eq system.talenttype.typeenum "general")}}selected{{/if}}>{{localize 'sta.item.talent.type.general'}}</option>
+        <option value="discipline" {{#if (eq system.talenttype.typeenum "discipline")}}selected{{/if}}>{{localize 'sta.item.talent.type.discipline'}}</option>
+        <option value="attribute" {{#if (eq system.talenttype.typeenum "attribute")}}selected{{/if}}>{{localize 'sta.item.talent.type.attribute'}}</option>
+        <option value="systems" {{#if (eq system.talenttype.typeenum "systems")}}selected{{/if}}>{{localize 'sta.actor.starship.system.title'}}</option>
+        <option value="species" {{#if (eq system.talenttype.typeenum "species")}}selected{{/if}}>{{localize 'sta.actor.character.species'}}</option>
+        <option value="house" {{#if (eq system.talenttype.typeenum "house")}}selected{{/if}}>{{localize 'sta.item.talent.houselegacy'}}</option>
+      </select>
     </div>
-	    {{else if (eq system.talenttype.typeenum "systems")}}
-    <div class="row">
-      <div class="column-x1"></div>
-      <div class="column-x3">
-        <label class="label">{{localize 'sta.item.talent.requires'}}</label>
-        <select name="system.talenttype.description">
-          <option value="communications" {{#if (eq system.talenttype.description "communications")}}selected{{/if}}>{{localize 'sta.actor.starship.system.communications'}}</option>
-          <option value="computers" {{#if (eq system.talenttype.description "computers")}}selected{{/if}}>{{localize 'sta.actor.starship.system.computers'}}</option>
-          <option value="engines" {{#if (eq system.talenttype.description "engines")}}selected{{/if}}>{{localize 'sta.actor.starship.system.engines'}}</option>
-          <option value="sensors" {{#if (eq system.talenttype.description "sensors")}}selected{{/if}}>{{localize 'sta.actor.starship.system.sensors'}}</option>
-          <option value="structure" {{#if (eq system.talenttype.description "structure")}}selected{{/if}}>{{localize 'sta.actor.starship.system.structure'}}</option>
-          <option value="weapons" {{#if (eq system.talenttype.description "weapons")}}selected{{/if}}>{{localize 'sta.actor.starship.system.weapons'}}</option>
-        </select>
-      </div>
-      <div class="column-x2">
-        <input type="number" name="system.talenttype.minimum" value="{{system.talenttype.minimum}}" />
-        <label class="label">+</label>
-      </div>
-      <div class="column-x1"></div>
-    </div>
-    {{else if (eq system.talenttype.typeenum "species")}}
-    <div class="row">
-      <div class="column-x1"></div>
-      <div class="column-x2">
-        <label class="label">{{localize 'sta.item.talent.requires'}} {{localize 'sta.actor.character.species'}} </label>
-        <input style="width:100px;" type="text" name="system.talenttype.description" value="{{system.talenttype.description}}" />
-      </div>
-      <div class="column-x1"></div>
-    </div>
-    {{else if (eq system.talenttype.typeenum "house")}}
-    <div class="row">
-      <div class="column-x1"></div>
-      <div class="column-x3">
-        <label class="label">{{localize 'sta.item.talent.requires'}} {{localize 'sta.item.talent.houserequired'}} </label>
+
+    <div class="column">
+      {{#if (eq system.talenttype.typeenum "discipline")}}
+        <div class="title">{{localize 'sta.item.talent.requires'}}</div>
+        <div class="inline-container">
+          <select name="system.talenttype.description">
+            <option value="command" {{#if (eq system.talenttype.description "command")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.command'}}</option>
+            <option value="conn" {{#if (eq system.talenttype.description "conn")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.conn'}}</option>
+            <option value="engineering" {{#if (eq system.talenttype.description "engineering")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.engineering'}}</option>
+            <option value="medicine" {{#if (eq system.talenttype.description "medicine")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.medicine'}}</option>
+            <option value="science" {{#if (eq system.talenttype.description "science")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.science'}}</option>
+            <option value="security" {{#if (eq system.talenttype.description "security")}}selected{{/if}}>{{localize 'sta.actor.character.discipline.security'}}</option>
+          </select>
+          <input type="number" name="system.talenttype.minimum" value="{{system.talenttype.minimum}}" /> +
+        </div>
+      {{else if (eq system.talenttype.typeenum "attribute")}}
+        <div class="title">{{localize 'sta.item.talent.requires'}}</div>
+        <div class="inline-container">
+          <select name="system.talenttype.description">
+            <option value="control" {{#if (eq system.talenttype.description "control")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.control'}}</option>
+            <option value="daring" {{#if (eq system.talenttype.description "daring")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.daring'}}</option>
+            <option value="fitness" {{#if (eq system.talenttype.description "fitness")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.fitness'}}</option>
+            <option value="insight" {{#if (eq system.talenttype.description "insight")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.insight'}}</option>
+            <option value="presence" {{#if (eq system.talenttype.description "presence")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.presence'}}</option>
+            <option value="reason" {{#if (eq system.talenttype.description "reason")}}selected{{/if}}>{{localize 'sta.actor.character.attribute.reason'}}</option>
+          </select>
+          <input type="number" name="system.talenttype.minimum" value="{{system.talenttype.minimum}}" /> +
+        </div>
+      {{else if (eq system.talenttype.typeenum "systems")}}
+        <div class="title">{{localize 'sta.item.talent.requires'}}</div>
+        <div class="inline-container">
+          <select name="system.talenttype.description">
+            <option value="communications" {{#if (eq system.talenttype.description "communications")}}selected{{/if}}>{{localize 'sta.actor.starship.system.communications'}}</option>
+            <option value="computers" {{#if (eq system.talenttype.description "computers")}}selected{{/if}}>{{localize 'sta.actor.starship.system.computers'}}</option>
+            <option value="engines" {{#if (eq system.talenttype.description "engines")}}selected{{/if}}>{{localize 'sta.actor.starship.system.engines'}}</option>
+            <option value="sensors" {{#if (eq system.talenttype.description "sensors")}}selected{{/if}}>{{localize 'sta.actor.starship.system.sensors'}}</option>
+            <option value="structure" {{#if (eq system.talenttype.description "structure")}}selected{{/if}}>{{localize 'sta.actor.starship.system.structure'}}</option>
+            <option value="weapons" {{#if (eq system.talenttype.description "weapons")}}selected{{/if}}>{{localize 'sta.actor.starship.system.weapons'}}</option>
+          </select>
+          <input type="number" name="system.talenttype.minimum" value="{{system.talenttype.minimum}}" /> +
+        </div>
+      {{else if (eq system.talenttype.typeenum "species")}}
+        <div class="title">{{localize 'sta.item.talent.requires'}} {{localize 'sta.actor.character.species'}} </div>
+        <input type="text" name="system.talenttype.description" value="{{system.talenttype.description}}" />
+      {{else if (eq system.talenttype.typeenum "house")}}
+        <div class="title">{{localize 'sta.item.talent.requires'}} {{localize 'sta.item.talent.houserequired'}} </div>
         <select name="system.talenttype.description">
           <option value="leaders" {{#if (eq system.talenttype.description "leaders")}}selected{{/if}}>{{localize 'sta.item.house.legacy.leaders'}}</option>
           <option value="warriors" {{#if (eq system.talenttype.description "warriors")}}selected{{/if}}>{{localize 'sta.item.house.legacy.warriors'}}</option>
@@ -100,14 +75,12 @@
           <option value="scientists" {{#if (eq system.talenttype.description "scientists")}}selected{{/if}}>{{localize 'sta.item.house.legacy.scientists'}}</option>
           <option value="physicians" {{#if (eq system.talenttype.description "physicians")}}selected{{/if}}>{{localize 'sta.item.house.legacy.physicians'}}</option>
         </select>
-      </div>
-      <div class="column-x1"></div>
+      {{/if}}
     </div>
-    {{/if}}
   </div>
 
-  <div class="description">
-    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
+  <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
+  <div class="note">
     {{editor system.description target="system.description" button=true owner=owner editable=true}}
   </div>
 </form>

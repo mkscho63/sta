@@ -66,6 +66,7 @@
   "sta.actor.belonging.starshipweapon2e.title": "Arma estelar",
   "sta.actor.belonging.talent.title": "Talento",
   "sta.actor.belonging.value.title": "Valor",
+  "sta.actor.belonging.trait.title": "Trait",
   "sta.actor.belonging.weapon.includescale": "¿Incluir Escala?",
   "sta.actor.belonging.weapon.title": "Armamento",
   "sta.actor.belonging.weapon.dmg": "Daño",
@@ -169,7 +170,8 @@
   "sta.actor.starship.shieldmod": "Modificador de Escudos",
   "sta.actor.starship.shaken": "Sacudida",
   "sta.actor.starship.reservepower": "Energía de Reserva",
-  "sta.actor.starship.shieldcrewmod": "Mod. Escudos/Tripulación",
+  "sta.actor.starship.shieldmod": "Modificador de Escudo",
+  "sta.actor.starship.crewmod": "Modificador de Tripulación",
 
   "sta.actor.smallcraft.parent": "Nave nodriza",
   "sta.actor.smallcraft.child": "Tipo vehículo pequeño",
@@ -218,6 +220,10 @@
   "sta.apps.removemomentum": "Retiró {0} puntos de Inercia al fondo común",
   "sta.apps.addthreat": "Añadió {0} puntos de Amenaza a la reserva",
   "sta.apps.removethreat": "Retiró {0} puntos de Amenaza a la reserva",
+  "sta.apps.deleteitem": "Eliminar Elemento",
+  "sta.apps.deleteconfirm": "¿Está seguro de que desea eliminar este elemento?",
+  "sta.apps.yes": "Sí",
+  "sta.apps.no": "No",
 
   "sta.roll.success": "Éxito",
   "sta.roll.successPlural": "Éxitos",

@@ -2,9 +2,8 @@ export class STAArmorSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'armor'],
       width: 500,
-      height: 250,
+      height: 370,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
     });
   }

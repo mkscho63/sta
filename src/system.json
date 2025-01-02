@@ -2,15 +2,20 @@
 	"id": "sta",
 	"title": "Star Trek Adventures Roleplaying Game",
 	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
-	"version": "1.3.1",
+	"version": "2.0.0",
 	"compatibility": {
-		"verified": "12",
-		"minimum": "9"
+		"verified": "13",
+		"minimum": "10"
 	},
 	"authors": [
 		{
 			"name": "mkscho63",
 			"discord": "FullMetalSeraph#7284",
+			"flags": {}
+		},
+		{
+			"name": "CalinStar",
+			"discord": "CalinStar",
 			"flags": {}
 		}
 	],
@@ -373,5 +378,5 @@
 	"secondaryTokenAttribute": "determination",
 	"url": "https://github.com/mkscho63/sta",
 	"manifest": "https://raw.githubusercontent.com/mkscho63/sta/master/src/system.json",
-	"download": "https://raw.githubusercontent.com/mkscho63/sta/v1.3.1/package/sta-v1.3.1.zip"
+	"download": "https://raw.githubusercontent.com/mkscho63/sta/v2.0.0/package/sta-v2.0.0.zip"
 }

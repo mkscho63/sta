@@ -3,7 +3,7 @@ import {
 } from '../apps/roll-dialog.js';
 import {
   STARoll
-} from '../roll.js';
+} from '../apps/roll.js';
 
 export class STAActor extends Actor {
   prepareData() {
@@ -168,6 +168,12 @@ export class STASharedActorFunctions {
     case 'injury':
       staRoll.performInjuryRoll(item, speaker);
       break;
+    case 'trait':
+      staRoll.performTraitRoll(item, speaker);
+      break;
+    case 'milestone':
+      staRoll.performMilestoneRoll(item, speaker);
+      break;
     }
   }
 
@@ -181,6 +187,7 @@ export class STASharedActorFunctions {
    * @return {Dialog}
    */
   deleteConfirmDialog(itemName, yesCb, closeCb) {
+
     // Dialog uses Simple Worldbuilding System Code.
     return new Dialog({
       title: 'Confirm Item Deletion',
@@ -188,12 +195,12 @@ export class STASharedActorFunctions {
       buttons: {
         yes: {
           icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize('Yes'),
+          label: game.i18n.localize("Yes"),
           callback: yesCb,
         },
         no: {
           icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize('No'),
+          label: game.i18n.localize("No"),
         }
       },
       default: 'no',
@@ -206,11 +213,12 @@ Hooks.on('createActor', async (actor, options, userId) => {
   if (game.user.id !== userId) return;
 
   if (actor.type === 'character') {
+
     const compendium2e = await game.packs.get('sta.equipment-crew');
-    const item1 = await compendium2e.getDocument('cxIi0Ltb1sUCFnzp');
+	const item1 = await compendium2e.getDocument('cxIi0Ltb1sUCFnzp');
 
     const compendium1e = await game.packs.get('sta.personal-weapons-core');
-    const item2 = await compendium1e.getDocument('3PTFLawY0tCva3gG');
+	const item2 = await compendium1e.getDocument('3PTFLawY0tCva3gG');
 
     if (item1 && item2) {
       await actor.createEmbeddedDocuments('Item', [
@@ -218,7 +226,31 @@ Hooks.on('createActor', async (actor, options, userId) => {
         item2.toObject()
       ]);
     } else {
-      console.error('One or both items were not found in the compendiums.');
+      console.error("One or both items were not found in the compendiums.");
+    }
+  }
+});
+
+Hooks.on("renderActorSheet", async (actorSheet, html, data) => {
+  const actor = actorSheet.object;
+
+  if (actor.system.traits && actor.system.traits.trim()) {
+    const traitName = actor.system.traits.trim();
+
+    const existingTrait = actor.items.find(item => item.name === traitName && item.type === "trait");
+    
+    if (!existingTrait) {
+      const traitItemData = {
+        name: traitName,
+        type: "trait",
+      };
+
+      try {
+        await actor.createEmbeddedDocuments("Item", [traitItemData]);
+        await actor.update({ "system.traits": "" });
+      } catch (err) {
+        console.error(`Error creating trait item for actor ${actor.name}:`, err);
+      }
     }
   }
 });

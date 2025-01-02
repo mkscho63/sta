@@ -66,6 +66,7 @@
   "sta.actor.belonging.starshipweapon2e.title": "Raumschiff-Waffe",
   "sta.actor.belonging.talent.title": "Talente",
   "sta.actor.belonging.value.title": "Überzeugungen",
+  "sta.actor.belonging.trait.title": "Trait",
   "sta.actor.belonging.weapon.includescale": "Inkl. Schiffsgröße?",
   "sta.actor.belonging.weapon.title": "Waffen",
   "sta.actor.belonging.weapon.dmg": "Schaden",
@@ -169,7 +170,8 @@
   "sta.actor.starship.shieldmod": "Schild Modifikator",
   "sta.actor.starship.shaken": "Erschüttert",
   "sta.actor.starship.reservepower": "Reserve Energie",
-  "sta.actor.starship.shieldcrewmod": "Schild/Crew Mod",
+  "sta.actor.starship.shieldmod": "Schildmodifikator",
+  "sta.actor.starship.crewmod": "Besatzungsmodifikator",
 
   "sta.actor.smallcraft.parent": "Mutterschiff",
   "sta.actor.smallcraft.child": "Shuttletyp",
@@ -218,6 +220,10 @@
   "sta.apps.removemomentum": "removed {0} momentum from the pool",
   "sta.apps.addthreat": "adde{0} Bedrohung zum Pool hinzugefügtd {0} threat to the pool",
   "sta.apps.removethreat": "{0} Bedrohung aus dem Pool entfernt",
+  "sta.apps.deleteitem": "Element löschen",
+  "sta.apps.deleteconfirm": "Sind Sie sicher, dass Sie dieses Element löschen möchten?",
+  "sta.apps.yes": "Ja",
+  "sta.apps.no": "Nein",
 
   "sta.roll.success": "Erfolg",
   "sta.roll.successPlural": "Erfolge",

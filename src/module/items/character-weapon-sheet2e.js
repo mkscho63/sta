@@ -2,9 +2,8 @@ export class STACharacterWeaponSheet2e extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'characterweapon2e'],
       width: 565,
-      height: 400,
+      height: 550,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
     });
   }

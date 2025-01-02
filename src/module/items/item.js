@@ -63,9 +63,7 @@ export class STAItem extends Item {
     // Restrict character rerolls to users that have appropriate access to that character.
     if (!(game.user.isGM || speaker.isOwner)) return;
 
-    const item = storedData ?
-      new Item(storedData, {parent: speaker}) :
-      speaker.items.get(card.dataset.itemId);
+    const item = storedData ? new Item(storedData, {parent: speaker}) : speaker.items.get(card.dataset.itemId);
     if (!item) {
       // If we coudlnt' figure out the item, this is probably a reroll, in practice.
       await staActor.rollChallengeRoll(event, 'Reroll', null, speaker);

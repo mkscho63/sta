@@ -1,0 +1,76 @@
+/* Extended Tasks Style Starts Here */
+
+.window-content:has(.extended-tasks) {
+  background: $background;
+}
+
+.extended-tasks {
+
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: $borderblue;
+  margin-right: 2px;
+}
+
+.tracktitle {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-entry {
+  border-color: $borderblue;
+}
+
+.numeric-entry {
+  border-color: $borderblue;
+  margin-right: 10px;
+  width: 40px
+}
+
+/* Image Styling */
+.image-field {
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.name-field .text-entry {
+  font-size: 2rem;
+  height: 3rem;
+}
+
+/* Note Field Styling */
+.note {
+  height: 200px;
+  text-align: left;
+
+  .editor {
+    height: 100%;
+  }
+}
+
+}
+
+/* Extended Tasks Style Ends Here */

@@ -1,0 +1,38 @@
+<form class="scenetraits-sheet" autocomplete="off">
+  <div class="row">
+    <div class="image-field">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" />
+    </div>
+
+    <div class="name-field">
+      <div class="title">{{localize 'sta.actor.character.name'}}</div>
+      <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.character.name'}}" />
+    </div>
+  </div>
+
+  <div class="section scenetraits">
+    <div class="title">{{localize 'sta.actor.character.traits'}}</div>
+    <div class="header row item">
+      <div class="image"></div>
+      <div class="two-column-with-roll-primary">{{localize 'sta.item.genericitem.name'}}</div>
+      <div class="two-column-with-roll-secondary">{{localize 'sta.actor.belonging.other.qty'}}</div>
+      <a class="control create" title="Create item" data-type="trait"><i class="fas fa-plus"></i></a>
+    </div>
+
+    {{#each items as |item type id|}}
+      {{#if (eq item.type "trait")}}
+        <li class="row entry" data-item-id="{{item._id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+          <div class="image">
+            <img class="chat" src="{{item.img}}" title="{{item.name}}" />
+          </div>
+          <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
+          <h4 class="two-column-with-roll-secondary list-entry">{{item.system.quantity}}</h4>
+          <div class="control">
+            <a class="edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+            <a class="delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+      {{/if}}
+    {{/each}}
+  </div>
+</form>

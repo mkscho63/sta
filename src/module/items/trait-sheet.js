@@ -1,10 +1,9 @@
-export class STAFocusSheet extends ItemSheet {
+export class STATraitSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'focus'],
       width: 500,
-      height: 200,
+      height: 370,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
     });
   }
@@ -18,7 +17,7 @@ export class STAFocusSheet extends ItemSheet {
 	        ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    return `systems/sta/templates/items/focus-sheet.hbs`;
+    return `systems/sta/templates/items/trait-sheet.hbs`;
   }
 
   /* -------------------------------------------- */

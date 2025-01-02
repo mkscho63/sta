@@ -1,0 +1,136 @@
+two-column-with-roll-secondary/* Actor-Item List Starts Here */
+.window-content:has(.item-sheet) {
+  background: $background;
+}
+.section {
+  .header {
+    background-color: $palestblue;
+  }
+  .row {
+    .image {
+      width: 26px;
+      margin-right: 5px;
+
+      img {
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+        object-position: 50% 0;
+      }
+
+      .chat:hover {
+        content: url("/systems/sta/assets/icons/chat-bubble.svg");
+        box-shadow: none;
+        cursor: pointer;
+      }
+
+      .click-to-nav {
+        cursor: pointer;
+      }
+    }
+
+    .control {
+      color: $textgrey;
+      width: 40px;
+      padding-right: 2px;
+	  display: flex;
+	  align-items: center;
+	  gap: 8px;
+    }
+
+    .delete {
+      color: $textgrey;
+
+      &:hover {
+        color: $deletebuttonHover;
+        text-shadow: none;
+      }
+    }
+
+    .add,
+    .edit {
+      &:hover {
+        color: $editbuttonHover;
+        text-shadow: none;
+      }
+    }
+
+    .one-column-with-roll {
+      width: calc(100% - 58px);
+    }
+
+    .one-column-no-roll {
+      width: calc(100% - 32px);
+    }
+
+    .two-column-with-roll-primary {
+      width: calc((100% - 58px) * 0.85);
+    }
+
+    .two-column-with-roll-secondary {
+      width: calc((100% - 58px) * 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+    }
+
+    .column-x2 {
+      width: 90%;
+      padding-left: 10%;
+    }
+
+    .small input {
+      height: 17px;
+      color: $textgrey;
+    }
+
+    .small.disabled input {
+      box-shadow: none;
+      cursor: default;
+      color: grey;
+    }
+  }
+}
+
+.value-used {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+.row.equipable {
+  .control {
+    width: 506px;
+  }
+}
+
+.item-tooltip {
+  position: absolute;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1000;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 550px;
+  font-size: 0.9rem;
+}
+
+.item-name {
+  border: none !important;
+  outline: none;
+  background-color: transparent;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+
+/* Actor-Item List Ends Here */

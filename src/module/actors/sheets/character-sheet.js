@@ -4,7 +4,6 @@ export class STACharacterSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'actor', 'character'],
       width: 850,
       height: 910,
       dragDrop: [{
@@ -13,9 +12,9 @@ export class STACharacterSheet extends ActorSheet {
       }],
       tabs: [
         {
-          navSelector: '.character-tabs',
-          contentSelector: '.character-header',
-          initial: 'biography',
+          navSelector: '.sheet-tabs',
+          contentSelector: '.sheet-body',
+          initial: 'tab1',
         }
       ]
     });
@@ -28,8 +27,13 @@ export class STACharacterSheet extends ActorSheet {
   get template() {
     const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/character-sheet-legacy.hbs';
     return `systems/sta/templates/actors/character-sheet.hbs`;
+  }
+  render(force = false, options = {}) {
+    if (!game.user.isGM && this.actor.limited) {
+      options = foundry.utils.mergeObject(options, { height: 250 });
+    }
+    return super.render(force, options);
   }
 
   /* -------------------------------------------- */
@@ -41,9 +45,7 @@ export class STACharacterSheet extends ActorSheet {
 	
     // Temporary fix I'm leaving in place until I deprecate in a future version
     const overrideMinAttributeTags = ['[Minor]', '[Notable]', '[Major]', '[NPC]', '[Child]'];
-    const overrideMinAttribute = overrideMinAttributeTags.some(
-      (tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1
-    );
+    const overrideMinAttribute = overrideMinAttributeTags.some((tag) => sheetData.name.toLowerCase().indexOf(tag.toLowerCase()) !== -1);
     
 
     // Ensure attribute and discipline values aren't over the max/min.
@@ -153,8 +155,9 @@ export class STACharacterSheet extends ActorSheet {
     // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute, security discipline, and checks for Resolute talent. 
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
+
       const localizedValues = {
-        'resolute': game.i18n.localize('sta.actor.character.talents.resolute')
+        "resolute": game.i18n.localize('sta.actor.character.talents.resolute')
       };
 
       stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
@@ -195,13 +198,6 @@ export class STACharacterSheet extends ActorSheet {
     staActor.staRenderTracks(html, stressTrackMax,
       determinationPointsMax, repPointsMax);
 
-    // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
-    html.find('.control .edit').click((ev) => {
-      const li = $(ev.currentTarget).parents('.entry');
-      const item = this.actor.items.get(li.data('itemId'));
-      item.sheet.render(true);
-    });
-
     // This if statement checks if the form is editable, if not it hides control used by the owner, then aborts any more of the script.
     if (!this.options.editable) {
       // This hides the ability to Perform an Attribute Test for the character.
@@ -238,7 +234,7 @@ export class STACharacterSheet extends ActorSheet {
 
     // This toggles whether the value is used or not.
     html.find('.control.toggle').click((ev) => {
-      const itemId = ev.currentTarget.closest('.entry').dataset.itemId;
+      const itemId = ev.currentTarget.closest(".entry").dataset.itemId;
       const item = this.actor.items.get(itemId);
       const state = item.system.used;
       if (state) {
@@ -264,46 +260,115 @@ export class STACharacterSheet extends ActorSheet {
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
     });
 
-    // Allows item-create images to create an item of a type defined individually by each button. This uses code found via the Foundry VTT System Tutorial.
-    html.find('.control.create').click((ev) => {
+    // Listen for changes in the item name input field
+    html.find('.item-name').on('change', event => {
+      const input = event.currentTarget;
+      const itemId = input.dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      const newName = input.value.trim();
+
+      if (item && newName) {
+        item.update({ name: newName });
+      }
+    });
+
+    // Create new items
+    html.find('.control.create').click(async (ev) => {
       ev.preventDefault();
       const header = ev.currentTarget;
       const type = header.dataset.type;
-      const data = foundry.utils.duplicate(header.dataset);
+      const data = Object.assign({}, header.dataset);
       const name = `New ${type.capitalize()}`;
-      if (type == 'armor' && armorNumber >= 1) {
-        ui.notifications.info('The current actor has an equipped armor already. Adding unequipped.');
-        data.equipped = false;
-      }
+
       const itemData = {
         name: name,
         type: type,
         data: data,
-        img: game.sta.defaultImage
       };
       delete itemData.data['type'];
-      if (foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) {
-        return this.actor.createEmbeddedDocuments('Item', [(itemData)]);
-      } else {
-        return this.actor.createOwnedItem(itemData);
+
+      const newItem = await this.actor.createEmbeddedDocuments('Item', [itemData]);
+    });
+
+    // Edit items
+    html.find('.control .edit').click((ev) => {
+      const li = $(ev.currentTarget).parents('.entry');
+      const item = this.actor.items.get(li.data('itemId'));
+      item.sheet.render(true);
+    });
+
+    // Delete items with confirmation dialog
+    html.find('.control .delete').click((ev) => {
+      const li = $(ev.currentTarget).parents('.entry');
+      const itemId = li.data('itemId');
+
+      new Dialog({
+        title: `${game.i18n.localize('sta.apps.deleteitem')}`,
+        content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
+        buttons: {
+          yes: {
+            icon: '<i class="fas fa-check"></i>',
+            label: `${game.i18n.localize('sta.apps.yes')}`,
+            callback: () => this.actor.deleteEmbeddedDocuments('Item', [itemId])
+          },
+          no: {
+            icon: '<i class="fas fa-times"></i>',
+            label: `${game.i18n.localize('sta.apps.no')}`
+          }
+        },
+        default: "no"
+      }).render(true);
+    });
+
+    // Item popout tooltip of description
+    html.find('.item-name').on('mouseover', event => {
+      const input = event.currentTarget;
+      const itemId = input.dataset.itemId;
+      const item = this.actor.items.get(itemId);
+
+      if (item) {
+        const description = item.system.description?.trim().replace(/\n/g, '<br>');
+
+        if (description) {
+          input._tooltipTimeout = setTimeout(() => {
+            let tooltip = document.querySelector('.item-tooltip');
+            if (!tooltip) {
+              tooltip = document.createElement('div');
+              tooltip.classList.add('item-tooltip');
+              document.body.appendChild(tooltip);
+            }
+
+            tooltip.innerHTML = `${description}`;
+
+            const { clientX: mouseX, clientY: mouseY } = event;
+            tooltip.style.left = `${mouseX + 10}px`;
+            tooltip.style.top = `${mouseY + 10}px`;
+
+            document.body.appendChild(tooltip);
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            if (tooltipRect.bottom > window.innerHeight) {
+              tooltip.style.top = `${window.innerHeight - tooltipRect.height - 20}px`;
+            }
+
+            input._tooltip = tooltip;
+          }, 1000);
+        }
       }
     });
 
-    // Allows item-delete images to allow deletion of the selected item.
-    html.find('.control .delete').click((ev) => {
-      const li = $(ev.currentTarget).parents('.entry');
-      this.activeDialog = staActor.deleteConfirmDialog(
-        li[0].getAttribute('data-item-value'),
-        () => {
-          if ( foundry.utils.isNewerVersion( versionInfo, '0.8.-1' )) {
-            this.actor.deleteEmbeddedDocuments( 'Item', [li.data('itemId')] );
-          } else {
-            this.actor.deleteOwnedItem( li.data( 'itemId' ));
-          }
-        },
-        () => this.activeDialog = null
-      );
-      this.activeDialog.render(true);
+    html.find('.item-name').on('mouseout', event => {
+      const input = event.currentTarget;
+
+      if (input._tooltipTimeout) {
+        clearTimeout(input._tooltipTimeout);
+        delete input._tooltipTimeout;
+      }
+
+      if (input._tooltip) {
+        document.body.removeChild(input._tooltip);
+        delete input._tooltip;
+      }
     });
 
     // Reads if a reputation track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one. 
@@ -396,74 +461,6 @@ export class STACharacterSheet extends ActorSheet {
       }
     });
 
-    // This is used to clean up all the HTML that comes from displaying outputs from the text editor boxes. There's probably a better way to do this but the quick and dirty worked this time.
-    $.each($('[id^=talent-tooltip-text-]'), function(index, value) {
-      const beforeDescription = value.innerHTML;
-      const decoded = TextEditor.decodeHTML(beforeDescription);
-      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
-      $('#' + value.id).html(prettifiedDescription);
-    });
-
-
-    html.find('.talent-tooltip-clickable').click((ev) => {
-      const talentId = $(ev.currentTarget)[0].id.substring('talent-tooltip-clickable-'.length);
-      const currentShowingTalentId = $('.talent-tooltip-container:not(.hide)')[0] ? $('.talent-tooltip-container:not(.hide)')[0].id.substring('talent-tooltip-container-'.length) : null;
-            
-      if (talentId == currentShowingTalentId) {
-        $('#talent-tooltip-container-' + talentId).addClass('hide').removeAttr('style');
-      } else {
-        $('.talent-tooltip-container').addClass('hide').removeAttr('style');
-        $('#talent-tooltip-container-' + talentId).removeClass('hide').height($('#talent-tooltip-text-' + talentId)[0].scrollHeight + 5);
-      }
-    });
-
-    $.each($('[id^=injury-tooltip-text-]'), function(index, value) {
-      const beforeDescription = value.innerHTML;
-      const decoded = TextEditor.decodeHTML(beforeDescription);
-      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
-      $('#' + value.id).html(prettifiedDescription);
-    });
-
-
-    html.find('.injury-tooltip-clickable').click((ev) => {
-      const injuryId = $(ev.currentTarget)[0].id.substring('injury-tooltip-clickable-'.length);
-      const currentShowinginjuryId = $('.injury-tooltip-container:not(.hide)')[0] ? $('.injury-tooltip-container:not(.hide)')[0].id.substring('injury-tooltip-container-'.length) : null;
-            
-      if (injuryId == currentShowinginjuryId) {
-        $('#injury-tooltip-container-' + injuryId).addClass('hide').removeAttr('style');
-      } else {
-        $('.injury-tooltip-container').addClass('hide').removeAttr('style');
-        $('#injury-tooltip-container-' + injuryId).removeClass('hide').height($('#injury-tooltip-text-' + injuryId)[0].scrollHeight + 5);
-      }
-    });
-
-    $.each($('[id^=focus-tooltip-text-]'), function(index, value) {
-      const beforeDescription = value.innerHTML;
-      const decoded = TextEditor.decodeHTML(beforeDescription);
-      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
-      $('#' + value.id).html(prettifiedDescription);
-    });
-
-
-    html.find('.focus-tooltip-clickable').click((ev) => {
-      const focusId = $(ev.currentTarget)[0].id.substring('focus-tooltip-clickable-'.length);
-      const currentShowingfocusId = $('.focus-tooltip-container:not(.hide)')[0] ? $('.focus-tooltip-container:not(.hide)')[0].id.substring('focus-tooltip-container-'.length) : null;
-            
-      if (focusId == currentShowingfocusId) {
-        $('#focus-tooltip-container-' + focusId).addClass('hide').removeAttr('style');
-      } else {
-        $('.focus-tooltip-container').addClass('hide').removeAttr('style');
-        $('#focus-tooltip-container-' + focusId).removeClass('hide').height($('#focus-tooltip-text-' + focusId)[0].scrollHeight + 5);
-      }
-    });
-
-    $.each($('[id^=value-tooltip-text-]'), function(index, value) {
-      const beforeDescription = value.innerHTML;
-      const decoded = TextEditor.decodeHTML(beforeDescription);
-      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
-      $('#' + value.id).html(prettifiedDescription);
-    });
-
     // Turns the Attribute checkboxes into essentially a radio button. It removes any other ticks, and then checks the new attribute.
     // Finally a submit is required as data has changed.
     html.find('.selector.attribute').click((ev) => {
@@ -484,90 +481,89 @@ export class STACharacterSheet extends ActorSheet {
       this.submit();
     });
 
-    // If the check-button is clicked it performs the acclaim or reprimand calculation.
-    html.find('.check-button.acclaim').click(async (ev) => {
-      const dialogContent = `
-  <form class="sta-form">
-      <div class="dice-pool flexcol">
-          <div class="flexrow">
-              <div style="flex:80%;"><label class="label">${game.i18n.localize('sta.roll.positiveinfluences')}</label></div>
-              <input type="number" name="positiveInfluences" value="1" class="numeric-entry" id="positiveInfluences">
-          </div>
-          <div class="flexrow">
-              <div style="flex:80%;"><label class="label">${game.i18n.localize('sta.roll.negativeinfluences')}</label></div>
-              <input type="number" name="negativeInfluences" value="0" class="numeric-entry" id="negativeInfluences">
-          </div>
-      </div>    
+  // If the check-button is clicked it performs the acclaim or reprimand calculation.
+  html.find('.check-button.acclaim').click(async (ev) => {
+
+  let dialogContent = `
+  <form class="dialogue">
+    <div class="row">
+      <div class="tracktitle">${game.i18n.localize('sta.roll.positiveinfluences')}</div>
+        <input type="number" name="positiveInfluences" value="1" class="numeric-entry" id="positiveInfluences">
+        </div>
+      <div class="row">
+        <div class="tracktitle">${game.i18n.localize('sta.roll.negativeinfluences')}</div>
+        <input type="number" name="negativeInfluences" value="0" class="numeric-entry" id="negativeInfluences">
+    </div>
   </form>
   `;
 
-      new Dialog({
-        title: `${game.i18n.localize('sta.roll.acclaim')}`,
-        content: dialogContent,
-        buttons: {
-          roll: {
-            label: `${game.i18n.localize('sta.roll.acclaim')}`,
-            callback: async (html) => {
-              const PositiveInfluences = parseInt(html.find('#positiveInfluences').val()) || 1;
-              const NegativeInfluences = parseInt(html.find('#negativeInfluences').val()) || 0;
+  new Dialog({
+    title: `${game.i18n.localize('sta.roll.acclaim')}`,
+    content: dialogContent,
+    buttons: {
+      roll: {
+        label: `${game.i18n.localize('sta.roll.acclaim')}`,
+        callback: async (html) => {
+          const PositiveInfluences = parseInt(html.find('#positiveInfluences').val()) || 1;
+          const NegativeInfluences = parseInt(html.find('#negativeInfluences').val()) || 0;
           
-              const selectedDisciplineValue = parseInt(document.querySelector('#total-rep')?.value) || 0;
-              const existingReprimand = parseInt(document.querySelector('#reprimand')?.value) || 0;
-              const targetNumber = selectedDisciplineValue + 7;
-              const complicationThreshold = 20 - Math.min(existingReprimand, 5);
-              const diceRollFormula = `${PositiveInfluences}d20`;
-              const roll = new Roll(diceRollFormula);
+          const selectedDisciplineValue = parseInt(document.querySelector('#total-rep')?.value) || 0;
+          const existingReprimand = parseInt(document.querySelector('#reprimand')?.value) || 0;
+          const targetNumber = selectedDisciplineValue + 7;
+          const complicationThreshold = 20 - Math.min(existingReprimand, 5);
+          const diceRollFormula = `${PositiveInfluences}d20`;
+          const roll = new Roll(diceRollFormula);
 
-              await roll.evaluate();
+          await roll.evaluate();
 
-              let totalSuccesses = 0;
-              let complications = 0;
-              let acclaim = 0;
-              let reprimand = 0;
-              const diceResults = [];
+          let totalSuccesses = 0;
+          let complications = 0;
+          let acclaim = 0;
+          let reprimand = 0;
+          const diceResults = [];
 
-              roll.terms[0].results.forEach((die) => {
-                let coloredDieResult;
+          roll.terms[0].results.forEach(die => {
+            let coloredDieResult;
 
-                if (die.result >= complicationThreshold) {
-                  coloredDieResult = `<span style="color: red;">${die.result}</span>`; // Red for complications
-                  complications += 1;
-                } else if (die.result <= selectedDisciplineValue) {
-                  coloredDieResult = `<span style="color: #6cf542;">${die.result}</span>`; // Green for double successes
-                  totalSuccesses += 2;
-                } else if (die.result <= targetNumber && die.result > selectedDisciplineValue) {
-                  coloredDieResult = `<span style="color: #42a4f5;">${die.result}</span>`; // Blue for single successes
-                  totalSuccesses += 1;
-                } else {
-                  coloredDieResult = `<span>${die.result}</span>`; // Default for other results
-                }
-                diceResults.push(coloredDieResult);
-              });
-
-              let chatContent = `${game.i18n.format('sta.roll.dicerolls')} ${diceResults.join(', ')}<br>`;
-
-              if (totalSuccesses > NegativeInfluences) {
-                acclaim = totalSuccesses - NegativeInfluences;
-                chatContent += `<strong>${game.i18n.format('sta.roll.gainacclaim', {0: acclaim})}</strong>`;
-              } else if (totalSuccesses < NegativeInfluences) {
-                reprimand = (NegativeInfluences - totalSuccesses) + complications;
-                chatContent += `<strong>${game.i18n.format('sta.roll.gainreprimand', {0: reprimand})}</strong>`;
-              } else if (totalSuccesses === NegativeInfluences) {
-                chatContent += `<strong>${game.i18n.localize('sta.roll.nochange')}</strong>`;
-              }
-
-              ChatMessage.create({
-                speaker: ChatMessage.getSpeaker(),
-                content: chatContent
-              });
+            if (die.result >= complicationThreshold) {
+              coloredDieResult = `<span style="color: red;">${die.result}</span>`; // Red for complications
+              complications += 1;
+            } else if (die.result <= selectedDisciplineValue) {
+              coloredDieResult = `<span style="color: green;">${die.result}</span>`; // Green for double successes
+              totalSuccesses += 2;
+            } else if (die.result <= targetNumber && die.result > selectedDisciplineValue) {
+              coloredDieResult = `<span style="color: blue;">${die.result}</span>`; // Blue for single successes
+              totalSuccesses += 1;
+            } else {
+              coloredDieResult = `<span>${die.result}</span>`; // Default for other results
             }
+            diceResults.push(coloredDieResult);
+          });
+
+          let chatContent = `${game.i18n.format("sta.roll.dicerolls")} ${diceResults.join(", ")}<br>`;
+
+          if (totalSuccesses > NegativeInfluences) {
+            acclaim = totalSuccesses - NegativeInfluences;
+            chatContent += `<strong>${game.i18n.format("sta.roll.gainacclaim", {0: acclaim})}</strong>`;
+          } else if (totalSuccesses < NegativeInfluences) {
+            reprimand = (NegativeInfluences - totalSuccesses) + complications;
+            chatContent += `<strong>${game.i18n.format("sta.roll.gainreprimand", {0: reprimand})}</strong>`;
+          } else if (totalSuccesses === NegativeInfluences) {
+            chatContent += `<strong>${game.i18n.localize("sta.roll.nochange")}</strong>`;
           }
-        },
-        render: (html) => {
-          html.find('button').addClass('dialog-button roll default');
+
+          ChatMessage.create({
+            speaker: ChatMessage.getSpeaker(),
+            content: chatContent
+          });
         }
-      }).render(true);
-    });
+      }
+    },
+    render: (html) => {
+      html.find('button').addClass('dialog-button roll default');
+    }
+  }).render(true);
+});
 
     // If the check-button is clicked it grabs the selected attribute and the selected discipline and fires the method rollAttributeTest. See actor.js for further info.
     html.find('.check-button.attribute').click((ev) => {

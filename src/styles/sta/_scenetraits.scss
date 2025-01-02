@@ -1,0 +1,41 @@
+/* SceneTraits Style Starts Here */
+
+.window-content:has(.scenetraits-sheet) {
+  background: $background;
+}
+
+.scenetraits-sheet {
+  width: 100%;
+
+.row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.title {
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: $borderblue;
+  margin-right: 2px;
+}
+
+/* Image Styling */
+.image-field {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+}
+
+/* SceneTraits Style Ends Here */
