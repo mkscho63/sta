@@ -34,7 +34,7 @@ export class STASmallCraftContainerSheet extends ItemSheet {
     data.dtypes = ['String', 'Number', 'Boolean'];
     let smallcrafts;
 
-    if (!foundry.utils.isNewerVersion(versionInfo,"0.8.-1")) {
+    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) {
       smallcrafts = game.actors.filter((target) => 
         target.type === 'smallcraft' && target.owner);
     } else {

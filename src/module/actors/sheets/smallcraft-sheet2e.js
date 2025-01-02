@@ -25,7 +25,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
   }
   render(force = false, options = {}) {
     if (!game.user.isGM && this.actor.limited) {
-      options = foundry.utils.mergeObject(options, { height: 250 });
+      options = foundry.utils.mergeObject(options, {height: 250});
     }
     return super.render(force, options);
   }
@@ -95,10 +95,9 @@ export class STASmallCraftSheet2e extends ActorSheet {
     // This creates a dynamic Shields tracker. It polls for the value of the structure system and security department. 
     // With the total value divided by 2, creates a new div for each and places it under a child called "bar-shields-renderer".
     function shieldsTrackUpdate() {
-
       const localizedValues = {
-        "advancedshields": game.i18n.localize('sta.actor.starship.talents.advancedshields'),
-        "polarizedhullplating": game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
+        'advancedshields': game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+        'polarizedhullplating': game.i18n.localize('sta.actor.starship.talents.polarizedhullplating')
       };
 
       shieldsTrackMax = parseInt(html.find('#structure')[0].value) + parseInt(html.find('#security')[0].value) + parseInt(html.find('#scale')[0].value) + parseInt(html.find('#shieldmod')[0].value);
@@ -184,14 +183,14 @@ export class STASmallCraftSheet2e extends ActorSheet {
     });
 
     // Listen for changes in the item name input field
-    html.find('.item-name').on('change', event => {
+    html.find('.item-name').on('change', (event) => {
       const input = event.currentTarget;
       const itemId = input.dataset.itemId;
       const item = this.actor.items.get(itemId);
       const newName = input.value.trim();
 
       if (item && newName) {
-        item.update({ name: newName });
+        item.update({name: newName});
       }
     });
 
@@ -239,12 +238,12 @@ export class STASmallCraftSheet2e extends ActorSheet {
             label: `${game.i18n.localize('sta.apps.no')}`
           }
         },
-        default: "no"
+        default: 'no'
       }).render(true);
     });
 
     // Item popout tooltip of description
-    html.find('.item-name').on('mouseover', event => {
+    html.find('.item-name').on('mouseover', (event) => {
       const input = event.currentTarget;
       const itemId = input.dataset.itemId;
       const item = this.actor.items.get(itemId);
@@ -263,7 +262,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
 
             tooltip.innerHTML = `${description}`;
 
-            const { clientX: mouseX, clientY: mouseY } = event;
+            const {clientX: mouseX, clientY: mouseY} = event;
             tooltip.style.left = `${mouseX + 10}px`;
             tooltip.style.top = `${mouseY + 10}px`;
 
@@ -280,7 +279,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
       }
     });
 
-    html.find('.item-name').on('mouseout', event => {
+    html.find('.item-name').on('mouseout', (event) => {
       const input = event.currentTarget;
 
       if (input._tooltipTimeout) {
@@ -444,7 +443,7 @@ export class STASmallCraftSheet2e extends ActorSheet {
       if (parseInt(html.find('#weapons')[0].value) > 12) weaponValue = 4;
 
       let scaleDamage = 0;
-      if (value.dataset.itemIncludescale == "energy") scaleDamage = parseInt(html.find('#scale')[0].value);
+      if (value.dataset.itemIncludescale == 'energy') scaleDamage = parseInt(html.find('#scale')[0].value);
 
       const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
       value.getElementsByClassName('damage')[0].innerText = attackDamageValue;
@@ -457,25 +456,25 @@ export class STASmallCraftSheet2e extends ActorSheet {
       const shipScaleValue = Number.parseInt(html.find('#scale').attr('value'));
       let totalBreaches = 0;
 
-    html.find('.selector.system').each(function(index, value) {
-      const $systemCheckbox = $(value);
-      const $systemBreach = $systemCheckbox.siblings('.breaches');
-      const breachValue = Number.parseInt($systemBreach.attr('value'));
+      html.find('.selector.system').each(function(index, value) {
+        const $systemCheckbox = $(value);
+        const $systemBreach = $systemCheckbox.siblings('.breaches');
+        const breachValue = Number.parseInt($systemBreach.attr('value'));
 
-      totalBreaches += breachValue;
+        totalBreaches += breachValue;
 
-      const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
+        const isSystemDestroyed = breachValue >= (Math.ceil(shipScaleValue / 2)) ? true : false;
 
-      if (breachValue > 0 && !isSystemDestroyed) {
-        $systemBreach.addClass('highlight-damaged');
-        $systemBreach.removeClass('highlight-destroyed');
-      } else if (isSystemDestroyed) {
-        $systemBreach.addClass('highlight-destroyed');
-        $systemBreach.removeClass('highlight-damaged');
-      } else {
-        $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
-      }
-    });
+        if (breachValue > 0 && !isSystemDestroyed) {
+          $systemBreach.addClass('highlight-damaged');
+          $systemBreach.removeClass('highlight-destroyed');
+        } else if (isSystemDestroyed) {
+          $systemBreach.addClass('highlight-destroyed');
+          $systemBreach.removeClass('highlight-damaged');
+        } else {
+          $systemBreach.removeClass('highlight-damaged highlight-disabled highlight-destroyed');
+        }
+      });
 
       if (totalBreaches === (shipScaleValue + 1)) {
         sheetElement.addClass('highlight-damaged');

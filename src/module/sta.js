@@ -287,7 +287,7 @@ Hooks.once('init', function() {
     });
   });
 
-  Hooks.once("diceSoNiceReady", (dice3d) => {
+  Hooks.once('diceSoNiceReady', (dice3d) => {
     registerDsnUfpThemes(dice3d);
   });
 });
@@ -302,8 +302,8 @@ async function preloadHandlebarsTemplates() {
   return loadTemplates(paths);
 }
 
-Hooks.on("preCreateItem", (item, options, userId) => {
-  if (!item.img || item.img === "icons/svg/item-bag.svg") {
-    item.updateSource({ img: "systems/sta/assets/icons/VoyagerCombadgeIcon.png" });
+Hooks.on('preCreateItem', (item, options, userId) => {
+  if (!item.img || item.img === 'icons/svg/item-bag.svg') {
+    item.updateSource({img: 'systems/sta/assets/icons/VoyagerCombadgeIcon.png'});
   }
 });

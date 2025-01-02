@@ -18,14 +18,14 @@ export class STASceneTraits extends ActorSheet {
     super.activateListeners(html);
 
     // Listen for changes in the item name input field
-    html.find('.item-name').on('change', event => {
+    html.find('.item-name').on('change', (event) => {
       const input = event.currentTarget;
       const itemId = input.dataset.itemId;
       const item = this.actor.items.get(itemId);
       const newName = input.value.trim();
 
       if (item && newName) {
-        item.update({ name: newName });
+        item.update({name: newName});
       }
     });
     
@@ -73,12 +73,12 @@ export class STASceneTraits extends ActorSheet {
             label: `${game.i18n.localize('sta.apps.no')}`
           }
         },
-        default: "no"
+        default: 'no'
       }).render(true);
     });
 
     // Item popout tooltip of description
-    html.find('.item-name').on('mouseover', event => {
+    html.find('.item-name').on('mouseover', (event) => {
       const input = event.currentTarget;
       const itemId = input.dataset.itemId;
       const item = this.actor.items.get(itemId);
@@ -97,7 +97,7 @@ export class STASceneTraits extends ActorSheet {
 
             tooltip.innerHTML = `${description}`;
 
-            const { clientX: mouseX, clientY: mouseY } = event;
+            const {clientX: mouseX, clientY: mouseY} = event;
             tooltip.style.left = `${mouseX + 10}px`;
             tooltip.style.top = `${mouseY + 10}px`;
 
@@ -114,7 +114,7 @@ export class STASceneTraits extends ActorSheet {
       }
     });
 
-    html.find('.item-name').on('mouseout', event => {
+    html.find('.item-name').on('mouseout', (event) => {
       const input = event.currentTarget;
 
       if (input._tooltipTimeout) {

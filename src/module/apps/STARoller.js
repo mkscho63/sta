@@ -1,13 +1,13 @@
 $(document).on('click', '#sta-roll-task-button', (event) => {
-  console.log("Roll Task button clicked");
+  console.log('Roll Task button clicked');
   STARoller.rollTaskRoll(event);
 });
 $(document).on('click', '#sta-roll-challenge-button', (event) => {
-  console.log("Roll Challenge button clicked");
+  console.log('Roll Challenge button clicked');
   STARoller.rollChallengeRoll(event);
 });
 $(document).on('click', '#sta-roll-npc-button', (event) => {
-  console.log("Roll NPC button clicked");
+  console.log('Roll NPC button clicked');
   STARoller.rollnpcssroll(event);
 });
 
@@ -19,9 +19,7 @@ import {
 } from '../apps/roll.js';
 
 export class STARoller {
-
   static async rollTaskRoll(event) {
-
     const selectedAttribute = 'STARoller';
     const selectedDiscipline = 'STARoller';
     const defaultValue = 2;
@@ -49,7 +47,7 @@ export class STARoller {
   }
 
 
-  static async rollChallengeRoll (event) {
+  static async rollChallengeRoll(event) {
     const weaponName = 'STARoller';
     const defaultValue = 2;
 
@@ -65,9 +63,8 @@ export class STARoller {
   }
 
 
-static async rollnpcssroll(event) {
-
-let dialogContent = `
+  static async rollnpcssroll(event) {
+    const dialogContent = `
 <form class="dialogue">
   <h3>${game.i18n.localize('sta.roll.npccrew')}</h3>
   <div class="row">
@@ -109,119 +106,118 @@ let dialogContent = `
 </form>
 `;
 
-new Dialog({
-  title: `${game.i18n.localize('sta.roll.npcshipandcrewroll')}`,
-  content: dialogContent,
-  width: 600,
-  buttons: {
-    roll: {
-      label: `${game.i18n.localize('sta.apps.rolldice')}`,
-      callback: (html) => {
-
-        // Get selected system and department
-        let selectedSystem = html.find('.selector.system:checked').val();
-        let selectedSystemLabel = html.find(`#${selectedSystem}-selector`).siblings('.original-system-label').val();
-		if (selectedSystemLabel) {
+    new Dialog({
+      title: `${game.i18n.localize('sta.roll.npcshipandcrewroll')}`,
+      content: dialogContent,
+      width: 600,
+      buttons: {
+        roll: {
+          label: `${game.i18n.localize('sta.apps.rolldice')}`,
+          callback: (html) => {
+            // Get selected system and department
+            const selectedSystem = html.find('.selector.system:checked').val();
+            let selectedSystemLabel = html.find(`#${selectedSystem}-selector`).siblings('.original-system-label').val();
+            if (selectedSystemLabel) {
 		  selectedSystemLabel = selectedSystemLabel.substring(26);
-		}
-		let selectedSystemValue = html.find(`#${selectedSystem}`).text();
+            }
+            let selectedSystemValue = html.find(`#${selectedSystem}`).text();
         
-        let selectedDepartment = html.find('.selector.department:checked').val();
-        let selectedDepartmentLabel = html.find(`#${selectedDepartment}-selector`).siblings('.original-department-label').val();
-		if (selectedDepartmentLabel) {
+            const selectedDepartment = html.find('.selector.department:checked').val();
+            let selectedDepartmentLabel = html.find(`#${selectedDepartment}-selector`).siblings('.original-department-label').val();
+            if (selectedDepartmentLabel) {
 		  selectedDepartmentLabel = selectedDepartmentLabel.substring(30);
-		}
-		let selectedDepartmentValue = html.find(`#${selectedDepartment}`).text();
+            }
+            let selectedDepartmentValue = html.find(`#${selectedDepartment}`).text();
 
-        const numDice = parseInt(html.find('#numDice').val());
-        const skillLevel = html.find('input[name="skillLevel"]:checked').val();
-        let attributes, departments;
-        switch(skillLevel) {
-          case 'basic':
-            attributes = 8;
-            departments = 1;
-            break;
-          case 'proficient':
-            attributes = 9;
-            departments = 2;
-            break;
-          case 'talented':
-            attributes = 10;
-            departments = 3;
-            break;
-          case 'exceptional':
-            attributes = 11;
-            departments = 4;
-            break;
+            const numDice = parseInt(html.find('#numDice').val());
+            const skillLevel = html.find('input[name="skillLevel"]:checked').val();
+            let attributes; let departments;
+            switch (skillLevel) {
+            case 'basic':
+              attributes = 8;
+              departments = 1;
+              break;
+            case 'proficient':
+              attributes = 9;
+              departments = 2;
+              break;
+            case 'talented':
+              attributes = 10;
+              departments = 3;
+              break;
+            case 'exceptional':
+              attributes = 11;
+              departments = 4;
+              break;
+            }
+            const complicationRange = parseInt(html.find('#complication').val());
+            const shipNumDice = parseInt(html.find('#shipNumDice').val());
+
+            const speakerNPC = {
+              type: 'npccharacter',
+            };
+            let speakerstarship = {
+              type: 'starship',
+            };
+
+            const token = canvas.tokens.controlled[0];
+            if (!token || (token.actor.type !== 'starship' && token.actor.type !== 'smallcraft')) {
+              selectedSystemLabel = 'STARoller';
+              selectedSystemValue = parseInt(html.find('#systemValue').val());
+
+              selectedDepartmentLabel = 'STARoller';
+              selectedDepartmentValue = parseInt(html.find('#departmentValue').val());
+
+              speakerstarship = {
+                type: 'sidebar',
+              };
+            }
+
+            const staRoll = new STARoll();
+            staRoll.performAttributeTest(numDice, true, false, false,
+              skillLevel, attributes, skillLevel,
+              departments, complicationRange, speakerNPC);
+
+            if (html.find('#shipAssist').is(':checked')) {
+              staRoll.performAttributeTest(shipNumDice, true, false, false,
+                selectedSystemLabel, selectedSystemValue, selectedDepartmentLabel,
+                selectedDepartmentValue, complicationRange, speakerstarship);
+            }
+          }
         }
-        const complicationRange = parseInt(html.find('#complication').val());
-        const shipNumDice = parseInt(html.find('#shipNumDice').val());
+      },
 
-        const speakerNPC = {
-            type: 'npccharacter',
-        };
-        let speakerstarship = {
-            type: 'starship',
-        };
-
+      render: (html) => {
+        html.find('button').addClass('dialog-button roll default');
         const token = canvas.tokens.controlled[0];
+
+        // Fallback to input box in case no token is selected
         if (!token || (token.actor.type !== 'starship' && token.actor.type !== 'smallcraft')) {
-        selectedSystemLabel = "STARoller";
-        selectedSystemValue = parseInt(html.find('#systemValue').val());
-
-        selectedDepartmentLabel = "STARoller";
-        selectedDepartmentValue = parseInt(html.find('#departmentValue').val());
-
-        speakerstarship = {
-            type: 'sidebar',
-        };
-        }
-
-      const staRoll = new STARoll();
-      staRoll.performAttributeTest(numDice, true, false, false,
-        skillLevel, attributes, skillLevel,
-        departments, complicationRange, speakerNPC);
-
-      if (html.find('#shipAssist').is(':checked')) {
-      staRoll.performAttributeTest(shipNumDice, true, false, false,
-        selectedSystemLabel, selectedSystemValue, selectedDepartmentLabel,
-        selectedDepartmentValue, complicationRange, speakerstarship);
-        }
-      }
-    }
-  },
-
-  render: (html) => {
-    html.find('button').addClass('dialog-button roll default');
-    const token = canvas.tokens.controlled[0];
-
-    // Fallback to input box in case no token is selected
-    if (!token || (token.actor.type !== 'starship' && token.actor.type !== 'smallcraft')) {
-        let systemsHtml = `
+          const systemsHtml = `
         <div>
           <input type="number"  class="numeric-entry" id="systemValue" name="systemValue" min="0" max="20" value="7">
         </div>
         `;
-        html.find('#shipSystems').html(systemsHtml);
+          html.find('#shipSystems').html(systemsHtml);
 
-        let departmentsHtml = `
+          const departmentsHtml = `
         <div>
           <input type="number"  class="numeric-entry" id="departmentValue" name="departmentValue" min="0" max="10" value="2">
         </div>
         `;
-        html.find('#shipDepartments').html(departmentsHtml);
+          html.find('#shipDepartments').html(departmentsHtml);
 
-    return;
-    }
+          return;
+        }
 
-    const actor = token.actor;
+        const actor = token.actor;
 
-    // Populate ship systems
-    let systemsHtml = '';
-    for (let [key, system] of Object.entries(actor.system.systems)) {
-      let systemLabel = game.i18n.localize(system.label);
+        // Populate ship systems
+        let systemsHtml = '';
+        for (const [key, system] of Object.entries(actor.system.systems)) {
+          const systemLabel = game.i18n.localize(system.label);
 
-      systemsHtml += `
+          systemsHtml += `
       <div>
         <input type="radio" id="${key}-selector" name="system" class="selector system" value="${key}">
         <label for="${key}-selector">${systemLabel}: </label>
@@ -229,15 +225,15 @@ new Dialog({
         <input type="hidden" for="${key}-selector" class="original-system-label" value="${system.label}">
       </div>
       `;
-    }
-    html.find('#shipSystems').html(systemsHtml);
+        }
+        html.find('#shipSystems').html(systemsHtml);
 
-    // Populate ship departments
-    let departmentsHtml = '';
-    for (let [key, department] of Object.entries(actor.system.departments)) {
-      let departmentLabel = game.i18n.localize(department.label);
+        // Populate ship departments
+        let departmentsHtml = '';
+        for (const [key, department] of Object.entries(actor.system.departments)) {
+          const departmentLabel = game.i18n.localize(department.label);
 
-      departmentsHtml += `
+          departmentsHtml += `
       <div>
         <input type="radio" id="${key}-selector" name="department" class="selector department" value="${key}">
         <label for="${key}-selector">${departmentLabel}: </label>
@@ -245,9 +241,9 @@ new Dialog({
         <input type="hidden" for="${key}-selector" class="original-department-label" value="${department.label}">
       </div>
       `;
-    }
-    html.find('#shipDepartments').html(departmentsHtml);
-  }
-}).render(true);
+        }
+        html.find('#shipDepartments').html(departmentsHtml);
+      }
+    }).render(true);
   }
 }
