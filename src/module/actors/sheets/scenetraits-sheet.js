@@ -1,3 +1,7 @@
+import {
+  STASharedActorFunctions
+} from '../actor.js';
+
 export class STASceneTraits extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -16,6 +20,15 @@ export class STASceneTraits extends ActorSheet {
 
   activateListeners(html) {
     super.activateListeners(html);
+
+    const staActor = new STASharedActorFunctions();
+
+    // set up click handler for items to send to the actor rollGenericItem 
+    html.find('.chat,.rollable').click( (ev) => {
+      const itemType = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-type');
+      const itemId = $(ev.currentTarget).parents('.entry')[0].getAttribute('data-item-id');
+      staActor.rollGenericItem(ev, itemType, itemId, this.actor);
+    });
 
     // Listen for changes in the item name input field
     html.find('.item-name').on('change', (event) => {
