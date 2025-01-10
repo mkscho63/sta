@@ -1,0 +1,79 @@
+/* Dialogue Style Starts Here */
+
+.window-content:has(.dialogue) {
+  background: $background;
+}
+
+.dialogue {
+  width: 100%;
+
+.row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between; /* Pushes items to the far left and right */
+}
+
+
+.title {
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: $borderblue;
+  margin-right: 2px;
+}
+
+.tracktitle {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.text-entry {
+  border-color: $borderblue;
+}
+
+.numeric-entry {
+  border-color: $borderblue;
+  margin-right: 5px;
+  width: 40px;
+  text-align: right;
+}
+
+label {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+/* Flexbox classes */
+.flex-1 {
+    flex: 1;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.centered {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+}
+
+/* Dialogue Style Ends Here */

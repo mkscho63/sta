@@ -66,6 +66,7 @@
   "sta.actor.belonging.starshipweapon2e.title": "Armement du Vaisseau",
   "sta.actor.belonging.talent.title": "Talent",
   "sta.actor.belonging.value.title": "Idéaux",
+  "sta.actor.belonging.trait.title": "Trait",
   "sta.actor.belonging.weapon.includescale": "Inclure l'échelle?",
   "sta.actor.belonging.weapon.title": "Armes",
   "sta.actor.belonging.weapon.dmg": "Dmg",
@@ -169,7 +170,8 @@
   "sta.actor.starship.shieldmod": "Modificateur de Bouclier",
   "sta.actor.starship.shaken": "Secoué",
   "sta.actor.starship.reservepower": "Puissance de Réserve",
-  "sta.actor.starship.shieldcrewmod": "Mod Bouclier/Équipage",
+  "sta.actor.starship.shieldmod": "Modificateur de Bouclier",
+  "sta.actor.starship.crewmod": "Modificateur d'Équipage",
 
   "sta.actor.smallcraft.parent": "Vaisseau mère",
   "sta.actor.smallcraft.child": "Type de vaisseau Enfant",
@@ -218,6 +220,10 @@
   "sta.apps.removemomentum": "retiré {0} momentum du groupe",
   "sta.apps.addthreat": "ajouté {0} menace au groupe",
   "sta.apps.removethreat": "retiré {0} menace du groupe",
+  "sta.apps.deleteitem": "Supprimer l'Élément",
+  "sta.apps.deleteconfirm": "Êtes-vous sûr de vouloir supprimer cet élément?",
+  "sta.apps.yes": "Oui",
+  "sta.apps.no": "Non",
 
   "sta.roll.success": "Succès",
   "sta.roll.successPlural": "Succès",

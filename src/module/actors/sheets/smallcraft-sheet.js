@@ -6,9 +6,8 @@ export class STASmallCraftSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'actor', 'smallcraft'],
-      width: 900,
-      height: 735,
+      width: 850,
+      height: 850,
       dragDrop: [{
         dragSelector: '.item-list .item',
         dropSelector: null
@@ -22,10 +21,14 @@ export class STASmallCraftSheet extends ActorSheet {
   get template() {
     const versionInfo = game.world.coreVersion;
     if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.hbs';
-    if (!foundry.utils.isNewerVersion(versionInfo, '0.8.-1')) return 'systems/sta/templates/actors/smallcraft-sheet-legacy.hbs';
     return `systems/sta/templates/actors/smallcraft-sheet.hbs`;
   }
-    
+  render(force = false, options = {}) {
+    if (!game.user.isGM && this.actor.limited) {
+      options = foundry.utils.mergeObject(options, {height: 250});
+    }
+    return super.render(force, options);
+  }
 
   /* -------------------------------------------- */
 
@@ -74,7 +77,7 @@ export class STASmallCraftSheet extends ActorSheet {
     super.activateListeners(html);
     
     // Allows checking version easily 
-    const versionInfo = game.world.coreVersion;
+    const versionInfo = game.world.coreVersion; 
     
     // Opens the class STASharedActorFunctions for access at various stages.
     const staActor = new STASharedActorFunctions();
@@ -143,13 +146,6 @@ export class STASmallCraftSheet extends ActorSheet {
     staActor.staRenderTracks(html, null, null, null,
       shieldsTrackMax, powerTrackMax, null);
 
-    // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.
-    html.find('.control .edit').click( (ev) => {
-      const li = $(ev.currentTarget).parents( '.entry' );
-      const item = this.actor.items.get( li.data( 'itemId' ) ); 
-      item.sheet.render(true);
-    });
-
     // This if statement checks if the form is editable, if not it hides controls used by the owner, then aborts any more of the script.
     if (!this.options.editable) {
       // This hides the ability to Perform an System Test for the character
@@ -184,45 +180,115 @@ export class STASmallCraftSheet extends ActorSheet {
       staActor.rollGenericItem(ev, itemType, itemId, this.actor);
     });
 
-    // Allows item-create images to create an item of a type defined individually by each button. This uses code found via the Foundry VTT System Tutorial.
-    html.find('.control.create').click((ev) => {
+    // Listen for changes in the item name input field
+    html.find('.item-name').on('change', (event) => {
+      const input = event.currentTarget;
+      const itemId = input.dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      const newName = input.value.trim();
+
+      if (item && newName) {
+        item.update({name: newName});
+      }
+    });
+
+    // Create new items
+    html.find('.control.create').click(async (ev) => {
       ev.preventDefault();
       const header = ev.currentTarget;
       const type = header.dataset.type;
-      const data = foundry.utils.duplicate(header.dataset);
+      const data = Object.assign({}, header.dataset);
       const name = `New ${type.capitalize()}`;
+
       const itemData = {
         name: name,
         type: type,
         data: data,
-        img: game.sta.defaultImage
       };
       delete itemData.data['type'];
-      if ( foundry.utils.isNewerVersion( versionInfo, '0.8.-1' )) {
-        return this.actor.createEmbeddedDocuments( 'Item', [(itemData)] ); 
-      } else {
-        return this.actor.createOwnedItem( itemData );
+
+      const newItem = await this.actor.createEmbeddedDocuments('Item', [itemData]);
+    });
+
+    // Edit items
+    html.find('.control .edit').click((ev) => {
+      const li = $(ev.currentTarget).parents('.entry');
+      const item = this.actor.items.get(li.data('itemId'));
+      item.sheet.render(true);
+    });
+
+    // Delete items with confirmation dialog
+    html.find('.control .delete').click((ev) => {
+      const li = $(ev.currentTarget).parents('.entry');
+      const itemId = li.data('itemId');
+
+      new Dialog({
+        title: `${game.i18n.localize('sta.apps.deleteitem')}`,
+        content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
+        buttons: {
+          yes: {
+            icon: '<i class="fas fa-check"></i>',
+            label: `${game.i18n.localize('sta.apps.yes')}`,
+            callback: () => this.actor.deleteEmbeddedDocuments('Item', [itemId])
+          },
+          no: {
+            icon: '<i class="fas fa-times"></i>',
+            label: `${game.i18n.localize('sta.apps.no')}`
+          }
+        },
+        default: 'no'
+      }).render(true);
+    });
+
+    // Item popout tooltip of description
+    html.find('.item-name').on('mouseover', (event) => {
+      const input = event.currentTarget;
+      const itemId = input.dataset.itemId;
+      const item = this.actor.items.get(itemId);
+
+      if (item) {
+        const description = item.system.description?.trim().replace(/\n/g, '<br>');
+
+        if (description) {
+          input._tooltipTimeout = setTimeout(() => {
+            let tooltip = document.querySelector('.item-tooltip');
+            if (!tooltip) {
+              tooltip = document.createElement('div');
+              tooltip.classList.add('item-tooltip');
+              document.body.appendChild(tooltip);
+            }
+
+            tooltip.innerHTML = `${description}`;
+
+            const {clientX: mouseX, clientY: mouseY} = event;
+            tooltip.style.left = `${mouseX + 10}px`;
+            tooltip.style.top = `${mouseY + 10}px`;
+
+            document.body.appendChild(tooltip);
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            if (tooltipRect.bottom > window.innerHeight) {
+              tooltip.style.top = `${window.innerHeight - tooltipRect.height - 20}px`;
+            }
+
+            input._tooltip = tooltip;
+          }, 1000);
+        }
       }
     });
 
-    // Allows item-delete images to allow deletion of the selected item.
-    html.find('.control .delete').click( (ev) => {
-      // Cleaning up previous dialogs is nice, and also possibly avoids bugs from invalid popups.
-      if (this.activeDialog) this.activeDialog.close();
+    html.find('.item-name').on('mouseout', (event) => {
+      const input = event.currentTarget;
 
-      const li = $(ev.currentTarget).parents('.entry');
-      this.activeDialog = staActor.deleteConfirmDialog(
-        li[0].getAttribute('data-item-value'),
-        () => {
-          if ( foundry.utils.isNewerVersion( versionInfo, '0.8.-1' )) {
-            this.actor.deleteEmbeddedDocuments( 'Item', [li.data('itemId')] );
-          } else {
-            this.actor.deleteOwnedItem( li.data( 'itemId' ));
-          }
-        },
-        () => this.activeDialog = null
-      );
-      this.activeDialog.render(true);
+      if (input._tooltipTimeout) {
+        clearTimeout(input._tooltipTimeout);
+        delete input._tooltipTimeout;
+      }
+
+      if (input._tooltip) {
+        document.body.removeChild(input._tooltip);
+        delete input._tooltip;
+      }
     });
 
     // Reads if a shields track box has been clicked, and if it has will either: set the value to the clicked box, or reduce the value by one.
@@ -286,47 +352,6 @@ export class STASmallCraftSheet extends ActorSheet {
           html.find('#total-power')[0].value = newTotal;
           this.submit();
         }
-      }
-    });
-
-    // This is used to clean up all the HTML that comes from displaying outputs from the text editor boxes. There's probably a better way to do this but the quick and dirty worked this time.
-    $.each($('[id^=talent-tooltip-text-]'), function(index, value) {
-      const beforeDescription = value.innerHTML;
-      const decoded = TextEditor.decodeHTML(beforeDescription);
-      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
-      $('#' + value.id).html(prettifiedDescription);
-    });
-
-
-    html.find('.talent-tooltip-clickable').click((ev) => {
-      const talentId = $(ev.currentTarget)[0].id.substring('talent-tooltip-clickable-'.length);
-      const currentShowingTalentId = $('.talent-tooltip-container:not(.hide)')[0] ? $('.talent-tooltip-container:not(.hide)')[0].id.substring('talent-tooltip-container-'.length) : null;
-      
-      if (talentId == currentShowingTalentId) {
-        $('#talent-tooltip-container-' + talentId).addClass('hide').removeAttr('style');
-      } else {
-        $('.talent-tooltip-container').addClass('hide').removeAttr('style');
-        $('#talent-tooltip-container-' + talentId).removeClass('hide').height($('#talent-tooltip-text-' + talentId)[0].scrollHeight + 5);
-      }
-    });
-
-    $.each($('[id^=injury-tooltip-text-]'), function(index, value) {
-      const beforeDescription = value.innerHTML;
-      const decoded = TextEditor.decodeHTML(beforeDescription);
-      const prettifiedDescription = TextEditor.previewHTML(decoded, 1000);
-      $('#' + value.id).html(prettifiedDescription);
-    });
-
-
-    html.find('.injury-tooltip-clickable').click((ev) => {
-      const injuryId = $(ev.currentTarget)[0].id.substring('injury-tooltip-clickable-'.length);
-      const currentShowinginjuryId = $('.injury-tooltip-container:not(.hide)')[0] ? $('.injury-tooltip-container:not(.hide)')[0].id.substring('injury-tooltip-container-'.length) : null;
-            
-      if (injuryId == currentShowinginjuryId) {
-        $('#injury-tooltip-container-' + injuryId).addClass('hide').removeAttr('style');
-      } else {
-        $('.injury-tooltip-container').addClass('hide').removeAttr('style');
-        $('#injury-tooltip-container-' + injuryId).removeClass('hide').height($('#injury-tooltip-text-' + injuryId)[0].scrollHeight + 5);
       }
     });
 

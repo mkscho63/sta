@@ -1,0 +1,129 @@
+/* Momentum/Threat Tracker Starts Here */
+
+.sta.tracker-container {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  -webkit-transition: bottom 0.5s linear;
+  -moz-transition: bottom 0.5s linear;
+  -ms-transition: bottom 0.5s linear;
+  -o-transition: bottom 0.5s linear;
+  transition: bottom 0.5s linear;
+
+  .roll-task i {
+    margin-left: 5px;
+  }
+
+  .roll-challenge i, .roll-npc i, .roll-task i {
+    font-size: 2em;
+    margin-right: 5px;
+	color: $background;
+
+    &:hover {
+      color: $borderblue;
+    }
+  }
+
+  .tracker-clickable {
+    position: absolute;
+    bottom: 50px;
+    cursor: pointer;
+    color: $borderblue;
+    width: 15px;
+
+    i:hover {
+      color: $borderblue;
+    }
+
+    i.hide {
+      width: 0px;
+      display: none;
+    }
+  }
+
+  &.av-bottom {
+    bottom: +260px;
+  }
+
+  &.hide {
+    bottom: -50px;
+    -webkit-transition: bottom 0.5s linear;
+    -moz-transition: bottom 0.5s linear;
+    -ms-transition: bottom 0.5s linear;
+    -o-transition: bottom 0.5s linear;
+    transition: bottom 0.5s linear;
+
+    &.av-bottom {
+    bottom: 140px;
+    }
+
+  }
+
+  .tracker {
+    position: relative;
+    display: block;
+    width: 120px;
+    padding: 0px;
+
+    .header {
+      text-align: center;
+      font-size: 1.25em;
+      text-transform: uppercase;
+      color: $textgrey;
+      background-color: $background;
+      width: 120px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      font-size: 1.5em;
+      background-color: $background;
+      width: 120px;
+      justify-content: center;
+      align-items: center;
+      color: $textgrey;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+
+      .button {
+        i:hover {
+          cursor: pointer;
+          color: $borderblue;
+        }
+
+        &.decrease {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        &.increase {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+
+      .input {
+        text-align: center;
+        border: none;
+        width: 30px;
+      }
+
+      .threat-input {
+        color: $challengebuttonColor;
+      }
+
+      .momentum-input {
+        color: $borderblue;
+      }
+    }
+  }
+}
+
+/* Momentum/Threat Tracker Ends Here */

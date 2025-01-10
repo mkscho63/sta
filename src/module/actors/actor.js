@@ -3,7 +3,7 @@ import {
 } from '../apps/roll-dialog.js';
 import {
   STARoll
-} from '../roll.js';
+} from '../apps/roll.js';
 
 export class STAActor extends Actor {
   prepareData() {
@@ -168,6 +168,12 @@ export class STASharedActorFunctions {
     case 'injury':
       staRoll.performInjuryRoll(item, speaker);
       break;
+    case 'trait':
+      staRoll.performTraitRoll(item, speaker);
+      break;
+    case 'milestone':
+      staRoll.performMilestoneRoll(item, speaker);
+      break;
     }
   }
 
@@ -219,6 +225,30 @@ Hooks.on('createActor', async (actor, options, userId) => {
       ]);
     } else {
       console.error('One or both items were not found in the compendiums.');
+    }
+  }
+});
+
+Hooks.on('renderActorSheet', async (actorSheet, html, data) => {
+  const actor = actorSheet.object;
+
+  if (actor.system.traits && actor.system.traits.trim()) {
+    const traitName = actor.system.traits.trim();
+
+    const existingTrait = actor.items.find((item) => item.name === traitName && item.type === 'trait');
+    
+    if (!existingTrait) {
+      const traitItemData = {
+        name: traitName,
+        type: 'trait',
+      };
+
+      try {
+        await actor.createEmbeddedDocuments('Item', [traitItemData]);
+        await actor.update({'system.traits': ''});
+      } catch (err) {
+        console.error(`Error creating trait item for actor ${actor.name}:`, err);
+      }
     }
   }
 });

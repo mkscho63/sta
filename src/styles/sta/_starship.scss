@@ -1,0 +1,263 @@
+/* Starship Style Starts Here */
+
+
+/* Page Styling */
+.window-content:has(.starship-sheet) {
+  background: $background;
+}
+
+.starship-sheet {
+
+.text-entry {
+  border-color: $borderblue;
+}
+
+.title {
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: $borderblue;
+  margin-right: 2px;
+}
+
+.tracktitle {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.split-section {
+  display: flex;
+  width: 100%;
+}
+
+.left-column {
+  flex: 0 0 205px;
+  padding-right: 5px;
+  align-self: flex-start;
+}
+
+.right-column {
+  flex: 0 0 625px;
+  padding-left: 5px;
+  align-self: flex-start;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.designation {
+  width: 30%;
+}
+
+.spaceframe {
+  width: 40%;
+}
+
+.servicedate {
+  width: 30%;
+}
+
+.missionprofile {
+  width: 65%;
+}
+
+.refit {
+  width: 35%;
+}
+
+.traits {
+  width: 100%;
+}
+
+.values {
+  margin-top: 20px;
+}
+
+.items-column-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-right: 5px;
+}
+
+.shieldmod {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 60px;
+}
+
+.shieldmod .text-entry {
+  width: 30px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.crwmod {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.crwmod .text-entry {
+  width: 30px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.items-column-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 5px;
+}
+
+/* Image Styling */
+.image-field {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Name Field Styling */
+.name-field .text-entry {
+  font-size: 2rem;
+  height: 3rem;
+}
+
+/* Main Row Field Styling */
+.big-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+
+.big-row-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 10px;
+  min-width: 100px;
+}
+
+.checkbox,
+.field.numeric-entry {
+  width: 30px;
+  text-align: right;
+  border-color: $borderblue;
+}
+}
+
+/* Note Field Styling */
+.note {
+  height: 250px;
+  text-align: left;
+
+  .editor {
+    height: 100%;
+  }
+}
+
+/* Yellow highlight for damaged systems */
+.highlight-damaged {
+    border: 2px solid #eda515 !important;
+    color: #eda515 !important;
+}
+/* Orange highlight for disabled systems */
+.highlight-disabled {
+    border: 2px solid #ed6c15 !important;
+    color: #ed6c15 !important;
+}
+/* Red highlight for destroyed systems  */
+.highlight-destroyed {
+    border: 2px solid #ff0000 !important;
+    color: #ff0000 !important;
+}
+
+/* System stats styling here */
+.systems-block .stat.row {
+  display: flex;
+  align-items: center;
+}
+
+.systems-block .text.list-entry {
+  flex: 1;
+  text-align: right;
+}
+
+.systems-block .field.numeric-entry {
+  width: 30px;
+  text-align: right;
+  border-color: $borderblue;
+}
+
+.systems-block .field.breaches {
+  width: 30px;
+  margin-left: auto;
+  text-align: right;
+  border-color: $borderblue;
+}
+
+.systems-block .stat.header.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $palestblue;
+}
+
+.systems-block .stat.header.row .text.secondary-title {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.systems-block .stat.header.row .field.secondary-title {
+  width: 50px;
+  text-align: center;
+}
+
+.systems-block {
+  margin-bottom: 10px;
+}
+
+/* Departments stats styling here */
+.departments-block .stat.row {
+  display: flex;
+  align-items: center;
+}
+
+.departments-block .text.list-entry {
+  flex: 1;
+  text-align: right;
+}
+
+.departments-block .field.numeric-entry {
+  width: 30px;
+  text-align: right;
+  margin-right: 30px;
+  border-color: $borderblue;
+}
+
+.departments-block {
+  margin-bottom: 20px;
+}
+
+}
+
+/* Starship Style Ends Here */

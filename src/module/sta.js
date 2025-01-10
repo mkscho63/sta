@@ -1,69 +1,28 @@
 // Import Modules
-import {
-  STAActor
-} from './actors/actor.js';
-import {
-  STACharacterSheet
-} from './actors/sheets/character-sheet.js';
-import {
-  STACharacterSheet2e
-} from './actors/sheets/character-sheet2e.js';
-import {
-  STAStarshipSheet
-} from './actors/sheets/starship-sheet.js';
-import {
-  STAStarshipSheet2e
-} from './actors/sheets/starship-sheet2e.js';
-import {
-  STASmallCraftSheet
-} from './actors/sheets/smallcraft-sheet.js';
-import {
-  STASmallCraftSheet2e
-} from './actors/sheets/smallcraft-sheet2e.js';
-import {
-  STAExtendedTaskSheet
-} from './actors/sheets/extended-task-sheet.js';
-import {
-  STAItemSheet
-} from './items/item-sheet.js';
-import {
-  STACharacterWeaponSheet
-} from './items/character-weapon-sheet.js';
-import {
-  STACharacterWeaponSheet2e
-} from './items/character-weapon-sheet2e.js';
-import {
-  STAStarshipWeaponSheet
-} from './items/starship-weapon-sheet.js';
-import {
-  STAStarshipWeaponSheet2e
-} from './items/starship-weapon-sheet2e.js';
-import {
-  STAArmorSheet
-} from './items/armor-sheet.js';
-import {
-  STATalentSheet
-} from './items/talent-sheet.js';
-import {
-  STAGenericSheet
-} from './items/generic-sheet.js';
-import {
-  STASmallCraftContainerSheet
-} from './items/smallcraftcontainer-sheet.js';
-import { 
-  STATracker 
-} from './apps/tracker.js';
-import * as macros from './macro.js';
-import { 
-  STAItem
-} from './items/item.js';
-import {
-  registerDsnUfpThemes
-} from './dice/dice-so-nice.js';
-import {Collapsible} from './chat/Collapsible.js';
-import {
-  STARoller
-} from './dice/STARoller.js';
+import {STAActor} from './actors/actor.js';
+import {STACharacterSheet} from './actors/sheets/character-sheet.js';
+import {STACharacterSheet2e} from './actors/sheets/character-sheet2e.js';
+import {STAStarshipSheet} from './actors/sheets/starship-sheet.js';
+import {STAStarshipSheet2e} from './actors/sheets/starship-sheet2e.js';
+import {STASmallCraftSheet} from './actors/sheets/smallcraft-sheet.js';
+import {STASmallCraftSheet2e} from './actors/sheets/smallcraft-sheet2e.js';
+import {STAExtendedTaskSheet} from './actors/sheets/extended-task-sheet.js';
+import {STASceneTraits} from './actors/sheets/scenetraits-sheet.js';
+import {STAItemSheet} from './items/item-sheet.js';
+import {STACharacterWeaponSheet} from './items/character-weapon-sheet.js';
+import {STACharacterWeaponSheet2e} from './items/character-weapon-sheet2e.js';
+import {STAStarshipWeaponSheet} from './items/starship-weapon-sheet.js';
+import {STAStarshipWeaponSheet2e} from './items/starship-weapon-sheet2e.js';
+import {STAArmorSheet} from './items/armor-sheet.js';
+import {STATalentSheet} from './items/talent-sheet.js';
+import {STATraitSheet} from './items/trait-sheet.js';
+import {STAGenericSheet} from './items/generic-sheet.js';
+import {STASmallCraftContainerSheet} from './items/smallcraftcontainer-sheet.js';
+import {STATracker} from './apps/tracker.js';
+import {STARoller} from './apps/STARoller.js';
+import {STAItem} from './items/item.js';
+import {registerDsnUfpThemes} from './apps/dice-so-nice.js';
+import {Collapsible} from './apps/Collapsible.js';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -82,12 +41,11 @@ Hooks.once('init', function() {
    ********.:::::::::::.********     
   ********.:::::::::::::.********    
   *******.::::::'***\::::.*******    
-  ******.::::'*********\`::.******    
-   ****.:::'*************\`:.****
-     *.::'*****************\`.*
+  ******.::::'*********\'::.******    
+   ****.:::'*************\':.****
+     *.::'*****************\'.*
      .:'  ***************    .
     .`);
-
 
   // Create a namespace within the game global
   game.sta = {
@@ -99,6 +57,7 @@ Hooks.once('init', function() {
       STASmallCraftSheet,
       STASmallCraftSheet2e,
       STAExtendedTaskSheet,
+	  STASceneTraits,
       STAItemSheet,
       STACharacterWeaponSheet,
 	  STACharacterWeaponSheet2e,
@@ -113,10 +72,7 @@ Hooks.once('init', function() {
     entities: {
       STAActor,
     },
-    macros: macros,
-    attributeTest: macros.attributeTest,
-    defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg',
-    tracker: new STATracker(),
+    defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
   };
 
   // Define initiative for the system.
@@ -124,16 +80,6 @@ Hooks.once('init', function() {
     formula: '@disciplines.security.value',
     decimals: 0
   };
-
-  // Set up custom challenge dice
-  // CONFIG.sta.CHALLENGE_RESULTS = {
-  //     1: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success1.svg'/>`, success: 1, effect: 0 },
-  //     2: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success2.svg'/>`, success: 2, effect: 0 },
-  //     3: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
-  //     4: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
-  //     5: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
-  //     6: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
-  //   };
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = STAActor;
@@ -163,6 +109,9 @@ Hooks.once('init', function() {
   Actors.registerSheet('sta', STAExtendedTaskSheet, {
     types: ['extendedtask']
   });
+  Actors.registerSheet('sta', STASceneTraits, {
+    types: ['scenetraits']
+  });
   Items.unregisterSheet('core', ItemSheet);
   Items.registerSheet('sta', STAItemSheet, {
     types: ['item'],
@@ -185,6 +134,9 @@ Hooks.once('init', function() {
   });
   Items.registerSheet('sta', STATalentSheet, {
     types: ['talent'],
+  });
+  Items.registerSheet('sta', STATraitSheet, {
+    types: ['trait'],
   });
   Items.registerSheet('sta', STAGenericSheet, {
     types: ['value'],
@@ -319,24 +271,24 @@ Hooks.once('init', function() {
 
   preloadHandlebarsTemplates();
 
-  Hooks.on('renderChatLog', (app, html, data) =>
-    STAItem.chatListeners(html)
-  );
+  Hooks.on('renderChatLog', (app, html, data) => {
+    STAItem.chatListeners($(html));
+  });
+
 
   Hooks.on('renderChatMessage', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
   });
 
   Hooks.on('ready', function() {
-    game.sta.tracker.render(true);
+    const t = new STATracker();
+    renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
+      t.render(true);
+    });
   });
 
   Hooks.once('diceSoNiceReady', (dice3d) => {
     registerDsnUfpThemes(dice3d);
-  });
-
-  Hooks.on('rtcSettingsChanged', (settings, changed) => {
-    game.sta.tracker.onSettingsChanged(changed);
   });
 });
 
@@ -344,8 +296,14 @@ async function preloadHandlebarsTemplates() {
   const paths = {
     ['sta.chat.attribute-test']: 'systems/sta/templates/chat/attribute-test.hbs',
     ['sta.chat.item-card']: 'systems/sta/templates/chat/generic-item.hbs',
-    ['sta.chat.parts.weapon-roll']: 'systems/sta/templates/chat/parts/challenge-roll.hbs',
+    ['sta.chat.weapon-roll']: 'systems/sta/templates/chat/challenge-roll.hbs',
   };
 
   return loadTemplates(paths);
 }
+
+Hooks.on('preCreateItem', (item, options, userId) => {
+  if (!item.img || item.img === 'icons/svg/item-bag.svg') {
+    item.updateSource({img: 'systems/sta/assets/icons/VoyagerCombadgeIcon.png'});
+  }
+});

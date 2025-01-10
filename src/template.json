@@ -1,6 +1,6 @@
 {
     "Actor": {
-        "types": ["character", "starship", "extendedtask", "smallcraft"],
+        "types": ["character", "starship", "extendedtask", "smallcraft", "scenetraits"],
         "templates": {
             "common": {
                 "notes":""
@@ -302,10 +302,13 @@
                 }
             },
             "traits": ""
+        },
+        "scenetraits": {
+            "templates": ["common"]
         }
     },
     "Item": {
-        "types": ["item", "focus", "value", "characterweapon", "characterweapon2e", "starshipweapon", "starshipweapon2e", "armor", "talent", "milestone", "injury", "smallcraftcontainer"],
+        "types": ["item", "focus", "value", "characterweapon", "characterweapon2e", "starshipweapon", "starshipweapon2e", "armor", "talent", "milestone", "injury", "smallcraftcontainer", "trait"],
         "templates": {
             "common": {
                 "description": ""
@@ -411,7 +414,9 @@
             "slowing": false,
             "spread": false,
             "hiddenx": 0,
-            "versatilex": 0
+            "versatilex": 0,
+            "opportunity": 0,
+            "escalation": 0
             }				
         },		
         "armor": {
@@ -433,6 +438,10 @@
             "templates": ["common"]
         },
         "smallcraftcontainer": {
+            "templates": ["common"],
+            "quantity": 1
+        },
+        "trait": {
             "templates": ["common"],
             "quantity": 1
         }

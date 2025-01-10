@@ -1,0 +1,101 @@
+/* Trackbar Starts Here */
+  .track {
+    display: flex;
+    flex-direction: row;
+    
+    .bar:not(.extendedtask) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .track .bar .box {
+    height: 14px;
+    border: 1px solid $textgrey;
+    border-radius: 14px;
+    border-collapse: collapse;
+    padding: 0px;
+    display: block;
+    font-size: 8pt;
+    text-align: center;
+    font-weight: bold;
+
+    &:hover {
+      box-shadow: 0 0 8px $taskbuttonColor;
+      cursor: pointer;
+    }
+
+    &.stress {
+      background-color: $trackColors;
+      color: $textgrey;
+
+      &.selected {
+        background-color: $trackColorsselected;
+        color: $textgrey;
+      }
+    }
+
+    &.determination {
+      background-color: $trackColors;
+      color: $textgrey;
+
+      &.selected {
+        background-color: $trackColorsselected;
+        color: $textgrey;
+      }
+    }
+
+    &.rep {
+      background-color: $trackColors;
+      color: $textgrey;
+
+      &.selected {
+        background-color: $trackColorsselected;
+        color: $textgrey;
+      }
+    }
+
+    &.shields {
+      background-color: $trackColors;
+      color: $textgrey;
+
+      &.selected {
+        background-color: $trackColorsselected;
+        color: $textgrey;
+      }
+    }
+
+    &.power {
+      background-color: $trackColors;
+      color: $textgrey;
+
+      &.selected {
+        background-color: $trackColorsselected;
+        color: $textgrey;
+      }
+    }
+
+    &.crew {
+      background-color: $trackColors;
+      color: $textgrey;
+
+      &.selected {
+        background-color: $trackColorsselected;
+        color: $textgrey;
+      }
+    }
+
+    &.extendedtask {
+      height: 28px;
+      font-size: 16pt;
+      background-color: $trackColors;
+      color: $textgrey;
+
+      &.selected {
+        background-color: $trackColorsselected;
+        color: $textgrey;
+      }
+    }
+  }
+/* Trackbar Ends Here */

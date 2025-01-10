@@ -1,25 +1,28 @@
-<form class="{{cssClass}}" autocomplete="off">
-  <div class="header-fields">
-      <div class="row">
-          <img class="img" src="{{img}}" data-edit="img" title="{{name}}" />
-          <div class="column-x3-img" >
-              <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
-              <input name="name" type="text" value="{{name}}" placeholder="Name" data-dtype="String" />
-          </div>
-          <div class="column-x1" >
-              <label class="label" style="margin-left:10px;">{{localize 'sta.actor.belonging.other.quantity'}}</label>
-              <input type="number" name="system.quantity" style="width: calc(100% - 10px);" value="{{system.quantity}}" data-dtype="Number" />
-          </div>
-          <div class="column-x1" >
-              <label class="label">{{localize 'sta.actor.smallcraft.child'}}</label>
-               <select name="system.child">
-               {{selectOptions availableSmallcrafts selected=system.child nameAttr="id" labelAttr="name"}}
-               </select>
-          </div>
-      </div>
+<form class="item-sheet" autocomplete="off">
+  <div class="row">
+    <div class="image-field">
+      <img class="img" src="{{img}}" data-edit="img" title="{{name}}" />
+    </div>
+    <div class="column">
+      <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
+      <input name="name" type="text" class="text-entry" value="{{name}}" placeholder="Name" />
+    </div>
   </div>
-  <div class="description">
-    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
-      {{editor system.description target="system.description" button=true owner=owner editable=true}}
+
+  <div class="row">
+    <div class="column traits">
+      <div class="title">{{localize 'sta.actor.smallcraft.child'}}</div>
+      <select name="system.child">
+        {{selectOptions availableSmallcrafts selected=system.child valueAttr="id" labelAttr="name"}}
+      </select>
+    </div>
+
+    <div class="tracktitle">{{localize 'sta.actor.belonging.other.quantity'}}</div>
+    <input type="number" class="numeric-entry" name="system.quantity" value="{{system.quantity}}" data-dtype="Number" />
+  </div>
+
+  <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
+  <div class="note">
+    {{editor system.description target="system.description" button=true owner=owner editable=true}}
   </div>
 </form>

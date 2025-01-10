@@ -2,9 +2,8 @@ export class STAItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'item'],
       width: 500,
-      height: 480,
+      height: 370,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
     });
   }

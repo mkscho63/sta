@@ -66,6 +66,7 @@
   "sta.actor.belonging.starshipweapon2e.title": "Starship Weapon",
   "sta.actor.belonging.talent.title": "Talent",
   "sta.actor.belonging.value.title": "Value",
+  "sta.actor.belonging.trait.title": "Trait",
   "sta.actor.belonging.weapon.includescale": "Include Scale?",
   "sta.actor.belonging.weapon.title": "Weapons",
   "sta.actor.belonging.weapon.dmg": "Dmg",
@@ -169,7 +170,8 @@
   "sta.actor.starship.shieldmod": "Shield Modifier",
   "sta.actor.starship.shaken": "Shaken",
   "sta.actor.starship.reservepower": "Reserve Power",
-  "sta.actor.starship.shieldcrewmod": "Shield/Crew Mod",
+  "sta.actor.starship.shieldmod": "Shield Modifier",
+  "sta.actor.starship.crewmod": "Crew Modifier",
 
   "sta.actor.smallcraft.parent": "Parent Ship",
   "sta.actor.smallcraft.child": "Small Craft Type",
@@ -218,6 +220,10 @@
   "sta.apps.removemomentum": "removed {0} momentum from the pool",
   "sta.apps.addthreat": "added {0} threat to the pool",
   "sta.apps.removethreat": "removed {0} threat from the pool",
+  "sta.apps.deleteitem": "Delete Item",
+  "sta.apps.deleteconfirm": "Are you sure you want to delete this item?",
+  "sta.apps.yes": "Yes",
+  "sta.apps.no": "No",
 
   "sta.roll.success": "Success",
   "sta.roll.successPlural": "Successes",

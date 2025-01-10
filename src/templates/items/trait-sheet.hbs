@@ -9,6 +9,11 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.actor.belonging.other.quantity'}}</div>
+    <input type="number" class="numeric-entry" name="system.quantity" value="{{system.quantity}}" data-dtype="Number" />
+  </div>
+
   <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
   <div class="note">
     {{editor system.description target="system.description" button=true owner=owner editable=true}}
