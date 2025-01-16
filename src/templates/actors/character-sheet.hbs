@@ -50,7 +50,7 @@
 
       <div class="discipline-block">
         <div class="title">{{localize 'sta.actor.character.discipline.title'}}</div>
-        {{#each system.disciplineorder2e as |key|}}
+        {{#each system.disciplineorder as |key|}}
           {{#with (lookup ../system.disciplines key)}}
             <div class="row-right">
               <div class="list-entry">{{localize label}}</div>
