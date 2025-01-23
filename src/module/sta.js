@@ -147,7 +147,7 @@ Hooks.once('init', function() {
   Items.registerSheet('sta', STAGenericSheet, {
     types: ['injury'],
   });
-    Items.registerSheet('sta', STAGenericSheet, {
+  Items.registerSheet('sta', STAGenericSheet, {
     types: ['milestone'],
   });
   Items.registerSheet('sta', STASmallCraftContainerSheet, {
