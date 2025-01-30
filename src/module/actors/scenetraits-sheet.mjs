@@ -1,0 +1,185 @@
+import {
+  STARoll
+} from '../apps/roll.js';
+
+const api = foundry.applications.api;
+const sheets = foundry.applications.sheets;
+
+export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
+
+  static PARTS = {
+    charactersheet: {
+      template: "systems/STA/templates/actors/scenetraits-sheet.hbs"
+    }
+  };
+
+  static DEFAULT_OPTIONS = {
+    actions: {
+      onItemCreate: STASceneTraits._onItemCreate,
+      onItemEdit: STASceneTraits._onItemEdit,
+      onItemDelete: STASceneTraits._onItemDelete,
+      onItemtoChat: STASceneTraits._onItemtoChat,
+    },
+    form: {
+      submitOnChange: true,
+      closeOnSubmit: false,
+    },
+    position: {
+      height: "auto",
+      width: 300,
+    },
+  };
+
+  get title() {
+    return `${this.actor.name} - Scene Traits`;
+  }
+
+  async _prepareContext(options) {
+    const context = {
+      actor: this.actor,
+      items: this.actor.items?.contents || [],
+    };
+    return context;
+  }
+
+  async _onItemNameChange(event) {
+    const input = event.currentTarget;
+    const itemId = input.dataset.itemId;
+    const newName = input.value.trim();
+    const item = this.actor.items.get(itemId);
+    await item.update({
+      name: newName
+    });
+  }
+
+  async _onItemQuantityChange(event) {
+    const input = event.currentTarget;
+    const itemId = input.dataset.itemId;
+    const newQuantity = parseInt(input.value.trim(), 10);
+    if (isNaN(newQuantity) || newQuantity < 0) {
+      ui.notifications.error("Quantity must be a positive number.");
+      return;
+    }
+    const item = this.actor.items.get(itemId);
+    await item.update({
+      'system.quantity': newQuantity
+    });
+  }
+
+  static async _onItemtoChat(event) {
+    const entry = event.target.closest('.entry');
+    const itemId = entry.dataset.itemId;
+    event.preventDefault();
+    const item = this.actor.items.get(itemId);
+    const staRoll = new STARoll();
+    staRoll.performTraitRoll(item, this.actor);
+  }
+
+  _onItemTooltipShow(event) {
+    const input = event.currentTarget;
+    const itemId = input.dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    if (item) {
+      const description = item.system.description?.trim().replace(/\n/g, '<br>');
+      if (description) {
+        input._tooltipTimeout = setTimeout(() => {
+          let tooltip = document.querySelector('.item-tooltip');
+          if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.classList.add('item-tooltip');
+            document.body.appendChild(tooltip);
+          }
+          tooltip.innerHTML = `${description}`;
+          const {
+            clientX: mouseX,
+            clientY: mouseY
+          } = event;
+          tooltip.style.left = `${mouseX + 10}px`;
+          tooltip.style.top = `${mouseY + 10}px`;
+          const tooltipRect = tooltip.getBoundingClientRect();
+          if (tooltipRect.bottom > window.innerHeight) {
+            tooltip.style.top = `${window.innerHeight - tooltipRect.height - 20}px`;
+          }
+          input._tooltip = tooltip;
+        }, 1000);
+      }
+    }
+  }
+
+  _onItemTooltipHide(event) {
+    const input = event.currentTarget;
+    if (input._tooltipTimeout) {
+      clearTimeout(input._tooltipTimeout);
+      delete input._tooltipTimeout;
+    }
+    if (input._tooltip) {
+      input._tooltip.remove();
+      delete input._tooltip;
+    }
+  }
+
+  static async _onItemCreate(event, target) {
+    const docCls = getDocumentClass(target.dataset.documentClass || "Item");
+    const type = target.dataset.type || "item";
+    const docData = {
+      name: `New ${type.charAt(0).toUpperCase() + type.slice(1)}`,
+      type: type,
+      parent: this.actor,
+    };
+    for (const [dataKey, value] of Object.entries(target.dataset)) {
+      if (["action", "documentClass"].includes(dataKey)) continue;
+      foundry.utils.setProperty(docData, dataKey, value);
+    }
+    await docCls.create(docData, {
+      parent: this.actor
+    });
+  }
+
+  static async _onItemEdit(event) {
+    const entry = event.target.closest('.entry');
+    const itemId = entry.dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    item.sheet.render(true);
+  }
+
+  static async _onItemDelete(event) {
+    const entry = event.target.closest('.entry');
+    const itemId = entry.dataset.itemId;
+    new Dialog({
+      title: game.i18n.localize('sta.apps.deleteitem'),
+      content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
+      buttons: {
+        yes: {
+          icon: '<i class="fas fa-check"></i>',
+          label: game.i18n.localize('sta.apps.yes'),
+          callback: async () => {
+            await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
+          },
+        },
+        no: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize('sta.apps.no'),
+        },
+      },
+      default: 'no',
+    }).render(true);
+  }
+
+  _onRender(context, options) {
+    document.querySelectorAll('.item-name').forEach(input => {
+      input.addEventListener('change', this._onItemNameChange.bind(this));
+    });
+
+    document.querySelectorAll('.item-name').forEach(input => {
+      input.addEventListener('mouseover', this._onItemTooltipShow.bind(this));
+    });
+
+    document.querySelectorAll('.item-name').forEach(input => {
+      input.addEventListener('mouseout', this._onItemTooltipHide.bind(this));
+    });
+
+    document.querySelectorAll('.item-quantity').forEach(input => {
+      input.addEventListener('change', this._onItemQuantityChange.bind(this));
+    });
+  }
+}

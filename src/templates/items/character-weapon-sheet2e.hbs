@@ -1,29 +1,29 @@
-<form class="item-sheet" autocomplete="off">
+<div class="item-sheet">
   <div class="row">
     <div class="image-field">
-      <img class="img" src="{{img}}" data-edit="img" title="{{name}}" />
+      <img class="img" src="{{item.img}}" data-edit="img" data-action="editImage" title="{{item.name}}" />
     </div>
     <div class="column">
       <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
-      <input name="name" type="text" class="text-entry" value="{{name}}" placeholder="Name" />
+      <input name="name" type="text" class="text-entry" value="{{item.name}}" placeholder="Name" />
     </div>
   </div>
 
   <div class="row">
     <div class="grid">
       <div class="tracktitle">{{localize 'sta.item.genericitem.opportunity'}}</div>
-      <input type="number" class="numeric-entry" name="system.qualities.opportunity" value="{{system.qualities.opportunity}}" data-dtype="Number" />
+      <input type="number" class="numeric-entry" name="system.qualities.opportunity" value="{{item.system.qualities.opportunity}}" data-dtype="Number" />
     </div>
     <div class="grid">
       <div class="tracktitle">{{localize 'sta.item.genericitem.escalation'}}</div>
-      <input type="number" class="numeric-entry" name="system.qualities.escalation" value="{{system.qualities.escalation}}" data-dtype="Number" />
+      <input type="number" class="numeric-entry" name="system.qualities.escalation" value="{{item.system.qualities.escalation}}" data-dtype="Number" />
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.stun" data-dtype="Boolean" {{checked system.qualities.stun}}>
+      <input type="checkbox" name="system.qualities.stun" data-dtype="Boolean" {{checked item.system.qualities.stun}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.stun'}}</div>
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.deadly" data-dtype="Boolean" {{checked system.qualities.deadly}}>
+      <input type="checkbox" name="system.qualities.deadly" data-dtype="Boolean" {{checked item.system.qualities.deadly}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.deadly'}}</div>
     </div>
   </div>
@@ -32,74 +32,76 @@
     <div class="columnx4">
       <div class="title">{{localize 'sta.actor.belonging.weapon.range'}}</div>
       <select name="system.range">
-        <option value="melee" {{#if (eq system.range "melee")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.melee'}}</option>
-        <option value="ranged" {{#if (eq system.range "ranged")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.ranged'}}</option>
+        <option value="melee" {{#if (eq item.system.range "melee")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.melee'}}</option>
+        <option value="ranged" {{#if (eq item.system.range "ranged")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.ranged'}}</option>
       </select>
     </div>
     <div class="columnx4">
       <div class="title">{{localize 'sta.actor.belonging.weapon.hands'}}</div>
       <select name="system.hands">
-        <option value="1" {{#if (eq system.hands "1")}}selected{{/if}}>{{localize 'sta.counting.one'}}</option>
-        <option value="2" {{#if (eq system.hands "2")}}selected{{/if}}>{{localize 'sta.counting.two'}}</option>
+        <option value="1" {{#if (eq item.system.hands "1")}}selected{{/if}}>{{localize 'sta.counting.one'}}</option>
+        <option value="2" {{#if (eq item.system.hands "2")}}selected{{/if}}>{{localize 'sta.counting.two'}}</option>
       </select>
     </div>
     <div class="columnx4">
       <div class="title">{{localize 'sta.item.genericitem.severity'}}</div>
-      <input type="number" name="system.damage" value="{{system.damage}}" data-dtype="Number" />
+      <input type="number" name="system.damage" value="{{item.system.damage}}" data-dtype="Number" />
     </div>
   </div>
 
   <div class="row">
     <div class="grid">
-      <input type="checkbox" name="system.qualities.accurate" data-dtype="Boolean" {{checked system.qualities.accurate}}>
+      <input type="checkbox" name="system.qualities.accurate" data-dtype="Boolean" {{checked item.system.qualities.accurate}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.accurate'}}</div>
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.area" data-dtype="Boolean" {{checked system.qualities.area}}>
+      <input type="checkbox" name="system.qualities.area" data-dtype="Boolean" {{checked item.system.qualities.area}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.area'}}</div>
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.charge" data-dtype="Boolean" {{checked system.qualities.charge}}>
+      <input type="checkbox" name="system.qualities.charge" data-dtype="Boolean" {{checked item.system.qualities.charge}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.charge'}}</div>
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.cumbersome" data-dtype="Boolean" {{checked system.qualities.cumbersome}}>
+      <input type="checkbox" name="system.qualities.cumbersome" data-dtype="Boolean" {{checked item.system.qualities.cumbersome}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.cumbersome'}}</div>
     </div>
   </div>
 
   <div class="row">
     <div class="grid">
-      <input type="checkbox" name="system.qualities.debilitating" data-dtype="Boolean" {{checked system.qualities.debilitating}}>
+      <input type="checkbox" name="system.qualities.debilitating" data-dtype="Boolean" {{checked item.system.qualities.debilitating}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.debilitating'}}</div>
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.grenade" data-dtype="Boolean" {{checked system.qualities.grenade}}>
+      <input type="checkbox" name="system.qualities.grenade" data-dtype="Boolean" {{checked item.system.qualities.grenade}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.grenade'}}</div>
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.inaccurate" data-dtype="Boolean" {{checked system.qualities.inaccurate}}>
+      <input type="checkbox" name="system.qualities.inaccurate" data-dtype="Boolean" {{checked item.system.qualities.inaccurate}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.inaccurate'}}</div>
     </div>
     <div class="grid">
-      <input type="checkbox" name="system.qualities.intense" data-dtype="Boolean" {{checked system.qualities.intense}}>
+      <input type="checkbox" name="system.qualities.intense" data-dtype="Boolean" {{checked item.system.qualities.intense}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.intense'}}</div>
     </div>
   </div>
 
   <div class="row">
     <div class="grid">
-      <input type="checkbox" name="system.qualities.piercingx" data-dtype="Boolean" {{checked system.qualities.piercingx}}>
+      <input type="checkbox" name="system.qualities.piercingx" data-dtype="Boolean" {{checked item.system.qualities.piercingx}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.piercingx'}}</div>
     </div>
     <div class="grid">
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</div>
-      <input type="number" class="numeric-entry" name="system.qualities.hiddenx" value="{{system.qualities.hiddenx}}" data-dtype="Number" />
+      <input type="number" class="numeric-entry" name="system.qualities.hiddenx" value="{{item.system.qualities.hiddenx}}" data-dtype="Number" />
     </div>
   </div>
 
   <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
-  <div class="note">
-    {{editor system.description target="system.description" button=true owner=owner editable=true}}
-  </div>
-</form>
+    <div class="note">
+      <prose-mirror name="system.description" data-document-u-u-i-d="{{item.uuid}}" value="{{item.system.description}}" collaborate="true" toggled="true">
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+</div>

@@ -1,7 +1,15 @@
 /* SceneTraits Style Starts Here */
 
-.window-content:has(.scenetraits-sheet) {
-  background: $background;
+.theme-light {
+  &:has(.scenetraits-sheet) {
+    background: $background;
+  }
+
+  .scenetraits-sheet {
+    .title {
+      background-color: $borderblue;
+    }
+  }
 }
 
 .scenetraits-sheet {
@@ -17,7 +25,7 @@
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
+  background-color: $borderbluedark;
   margin-right: 2px;
 }
 

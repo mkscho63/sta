@@ -1,41 +1,43 @@
-<form class="extended-tasks" autocomplete="off">
+<div class="extended-tasks">
   <div class="row">
     <div class="image-field">
-      <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+      <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" title="{{actor.name}}" />
     </div>
 
     <div class="name-field">
       <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
-      <input name="name" type="text" class="text-entry" value="{{name}}" placeholder="{{localize 'sta.item.genericitem.name'}}" />
+      <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.item.genericitem.name'}}" />
     </div>
   </div>
 
   <div class="row">
     <div class="tracktitle">{{localize 'sta.actor.extendedtask.work'}}: </div>
-    <input name="system.work" type="number" id="work" class="numeric-entry" value="{{system.work}}" min="0" data-dtype="Number" />
+    <input name="system.work" type="number" id="work" class="numeric-entry" value="{{actor.system.work}}" min="0" data-dtype="Number" />
 
     <div class="tracktitle">{{localize 'sta.actor.extendedtask.difficulty'}}: </div>
-    <input name="system.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{system.difficulty}}" min="0" data-dtype="Number" />
+    <input name="system.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{actor.system.difficulty}}" min="0" data-dtype="Number" />
 
     <div class="tracktitle">{{localize 'sta.actor.extendedtask.magnitude'}}: </div>
-    <input name="system.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{system.magnitude}}" min="0" data-dtype="Number" />
+    <input name="system.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{actor.system.magnitude}}" min="0" data-dtype="Number" />
 
     <div class="tracktitle">{{localize 'sta.actor.extendedtask.resistance'}}: </div>
-    <input name="system.resistance" type="number" id="resistance" class="numeric-entry" value="{{system.resistance}}" min="0" data-dtype="Number" />
+    <input name="system.resistance" type="number" id="resistance" class="numeric-entry" value="{{actor.system.resistance}}" min="0" data-dtype="Number" />
   </div>
 
   <div class="track">
-    <input type="hidden" id="work-progress" name="system.workprogress" value="{{system.workprogress}}" data-dtype="Number" />
+    <input type="hidden" id="work-progress" name="system.workprogress" value="{{actor.system.workprogress}}" data-dtype="Number" />
     <div id="extendedtask-renderer" class="bar"></div>
   </div>
 
   <div class="row">
     <div class="tracktitle">{{localize 'sta.actor.extendedtask.breakthroughs'}}: </div>
-    <input name="system.breaches" type="number" id="breaches" class="numeric-entry" value="{{system.breaches}}" min="0" data-dtype="Number" />
+    <input name="system.breaches" type="number" id="breaches" class="numeric-entry" value="{{actor.system.breaches}}" min="0" data-dtype="Number" />
   </div>
 
   <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
-  <div class="note">
-    {{editor system.description target="system.description" button=true owner=owner editable=true}}
-  </div>
-</form>
+    <div class="note">
+      <prose-mirror name="system.description" data-document-u-u-i-d="{{actor.uuid}}" value="{{actor.system.description}}" collaborate="true" toggled="true">
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+</div>

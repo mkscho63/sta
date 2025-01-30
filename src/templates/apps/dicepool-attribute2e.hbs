@@ -1,0 +1,37 @@
+<form id="dice-pool-form" class="dialogue">
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.apps.focus'}}</div>
+        <input type="checkbox" name="usingFocus" id="usingFocus">
+    </div>
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.apps.dedicatedfocus'}}</div>
+        <input type="checkbox" name="usingDedicatedFocus" id="usingDedicatedFocus">
+    </div>
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.apps.determination'}}</div>
+        <input type="checkbox" name="usingDetermination" id="usingDetermination">
+    </div>
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.apps.complicationrange'}}</div>
+        <input class="numeric-entry" type="number" name="complicationRange" value="1" id="complicationRange">
+    </div>
+    <div class="row">
+        <div class="flex-1">
+            <div class="tracktitle">{{localize 'sta.apps.pool'}}</div>
+        </div>
+        <div class="flex-column flex-1">
+            <div class="row">
+                <span class="label align-left flex-1">{{localize 'sta.counting.one'}}</span>
+                <span class="centered flex-1"></span>
+                <span class="label centered flex-1">{{localize 'sta.counting.two'}}</span>
+                <span class="centered flex-1"></span>
+                <span class="label centered flex-1">{{localize 'sta.counting.three'}}</span>
+                <span class="centered flex-1"></span>
+                <span class="label centered flex-1">{{localize 'sta.counting.four'}}</span>
+                <span class="centered flex-1"></span>
+                <span class="label centered flex-1">{{localize 'sta.counting.five'}}</span>
+            </div>
+            <input type="range" name="dicePoolSlider" min="1" max="5" value="{{defaultValue}}" class="slider" id="dicePoolSlider">
+        </div>
+    </div>
+</form>

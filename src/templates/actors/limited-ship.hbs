@@ -1,0 +1,19 @@
+<div class="character-sheet">
+  <div class="split-section">
+    <div class="top-left-column">
+      <div class="image-field">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+      </div>
+    </div>
+
+    <div class="top-right-column">
+      <div class="name-field">
+        <div class="title">{{localize 'sta.actor.character.name'}}</div>
+        <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.character.name'}}" />
+      </div>
+
+      <div class="title">{{localize 'sta.actor.starship.designation'}}</div>
+      <input name="system.designation" type="text" value="{{actor.system.designation}}" placeholder="{{localize 'sta.actor.starship.designation'}}" />
+    </div>
+  </div>
+</div>

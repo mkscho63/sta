@@ -1,6 +1,21 @@
 /* Dialogue Style Starts Here */
 
-.window-content:has(.dialogue) {
+.theme-light {
+  &:has(.dialogue) {
+    background: $background;
+  }
+
+  .dialogue {
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
+}
+
+.theme-light:has(.dialogue) {
   background: $background;
 }
 
@@ -12,14 +27,13 @@
   width: 100%;
   margin-bottom: 10px;
   align-items: center;
-  justify-content: space-between; /* Pushes items to the far left and right */
+  justify-content: space-between;
 }
 
 
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
   margin-right: 2px;
 }
 
@@ -36,11 +50,11 @@
 }
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .numeric-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
   margin-right: 5px;
   width: 40px;
   text-align: right;

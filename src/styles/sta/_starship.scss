@@ -1,21 +1,42 @@
 /* Starship Style Starts Here */
 
-
-/* Page Styling */
 .window-content:has(.starship-sheet) {
-  background: $background;
+  overflow: scroll;
+  padding: 7px;
 }
 
+.theme-light {
+  &:has(.starship-sheet) {
+    background: $background;
+  }
+
+  .starship-sheet {
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+    .systems-block .stat.header.row {
+      background-color: $palestblue;
+    }
+  }
+}
+
+/* Page Styling */
 .starship-sheet {
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
+  background-color: $borderbluedark;
   margin-right: 2px;
 }
 
@@ -155,13 +176,6 @@
   gap: 10px;
   min-width: 100px;
 }
-
-.checkbox,
-.field.numeric-entry {
-  width: 30px;
-  text-align: right;
-  border-color: $borderblue;
-}
 }
 
 /* Note Field Styling */
@@ -201,24 +215,25 @@
   text-align: right;
 }
 
-.systems-block .field.numeric-entry {
+.numeric-entry {
   width: 30px;
+  height: 28px;
   text-align: right;
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .systems-block .field.breaches {
   width: 30px;
   margin-left: auto;
   text-align: right;
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .systems-block .stat.header.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $palestblue;
+  background-color: $palestbluedark;
 }
 
 .systems-block .stat.header.row .text.secondary-title {
@@ -245,13 +260,6 @@
 .departments-block .text.list-entry {
   flex: 1;
   text-align: right;
-}
-
-.departments-block .field.numeric-entry {
-  width: 30px;
-  text-align: right;
-  margin-right: 30px;
-  border-color: $borderblue;
 }
 
 .departments-block {

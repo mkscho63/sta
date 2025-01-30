@@ -1,14 +1,14 @@
 /* Momentum/Threat Tracker Starts Here */
 
-.sta.tracker-container {
+.tracker-container {
   position: absolute;
-  bottom: 80px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   -webkit-transition: bottom 0.5s linear;
   -moz-transition: bottom 0.5s linear;
   -ms-transition: bottom 0.5s linear;
@@ -51,7 +51,7 @@
   }
 
   &.hide {
-    bottom: -50px;
+    bottom: -25px;
     -webkit-transition: bottom 0.5s linear;
     -moz-transition: bottom 0.5s linear;
     -ms-transition: bottom 0.5s linear;
@@ -61,7 +61,6 @@
     &.av-bottom {
     bottom: 140px;
     }
-
   }
 
   .tracker {
@@ -112,7 +111,7 @@
       .input {
         text-align: center;
         border: none;
-        width: 30px;
+        width: 40px;
       }
 
       .threat-input {

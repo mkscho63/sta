@@ -1,21 +1,40 @@
 /* Character Style Starts Here */
 
-/* Page Styling */
 .window-content:has(.character-sheet) {
-  background: $background;
+  overflow: scroll;
+  padding: 7px;
 }
 
+.theme-light {
+  &:has(.character-sheet) {
+    background: $background;
+  }
+
+  .character-sheet {
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
+}
+
+/* Page Styling */
 .character-sheet {
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
   margin-right: 2px;
+  background-color: $borderbluedark;
 }
 
 .tracktitle {
@@ -190,8 +209,9 @@
 
   .numeric-entry {
     width: 30px;
+	height: 28px;
 	text-align: right;
-	border-color: $borderblue;
+	border-color: $borderbluedark;
   }
 }
 

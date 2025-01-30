@@ -1,6 +1,22 @@
 /* Items Style Starts Here */
-.window-content:has(.item-sheet) {
-  background: $background;
+
+
+.theme-light {
+  .window-content:has(.item-sheet) {
+    background: $background;
+  }
+
+  .item-sheet {
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
 }
 
 .item-sheet {
@@ -26,7 +42,7 @@
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
+  background-color: $borderbluedark;
   margin-right: 2px;
 }
 
@@ -59,11 +75,11 @@
 }
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .numeric-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
   margin-right: 10px;
   width: 40px
 }
