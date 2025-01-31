@@ -34,6 +34,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
       height: "auto",
       width: 850
     },
+    dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
   };
 
   get title() {
@@ -437,6 +438,89 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
 
     document.querySelectorAll('.item-quantity').forEach(input => {
       input.addEventListener('change', this._onItemQuantityChange.bind(this));
+    });
+
+    this.#dragDrop.forEach(d => d.bind(this.element));
+  }
+
+  #dragDrop;
+
+  constructor(...args) {
+    super(...args);
+    this.#dragDrop = this.#createDragDropHandlers();
+  }
+
+  get dragDrop() {
+    return this.#dragDrop;
+  }
+
+  _canDragStart(selector) {
+    return this.isEditable;
+  }
+
+  _canDragDrop(selector) {
+    return this.isEditable;
+  }
+
+  _onDragStart(event) {
+    const docRow = event.currentTarget.closest('li');
+    if ('link' in event.target.dataset) return;
+    let dragData = this._getEmbeddedDocument(docRow)?.toDragData();
+    if (!dragData) return;
+    event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
+  }
+
+  _onDragOver(event) {}
+
+  async _onDrop(event) {
+    const data = TextEditor.getDragEventData(event);
+    const actor = this.actor;
+    const allowed = Hooks.call('dropActorSheetData', actor, this, data);
+    if (allowed === false) return;
+    await this._onDropItem(event, data);
+  }
+
+  async _onDropItem(event, data) {
+    if (!this.actor.isOwner) return false;
+    const item = await Item.implementation.fromDropData(data);
+    const allowedSubtypes = [
+      "item",
+      "value",
+      "starshipweapon2e",
+      "talent",
+      "injury",
+      "trait"
+    ];
+
+    if (!allowedSubtypes.includes(item.type)) {
+      ui.notifications.warn(`${this.actor.name} ` + game.i18n.localize(`sta.notifications.actoritem`) + ` ${item.type}`);
+      return false;
+    }
+
+    if (this.actor.uuid === item.parent?.uuid) {
+      return await this._onSortItem(event, item);
+    }
+
+    return await this._onDropItemCreate(item, event);
+  }
+
+  async _onDropItemCreate(itemData, event) {
+    itemData = itemData instanceof Array ? itemData : [itemData];
+    return this.actor.createEmbeddedDocuments('Item', itemData);
+  }
+
+  #createDragDropHandlers() {
+    return this.options.dragDrop.map(d => {
+      d.permissions = {
+        dragstart: this._canDragStart.bind(this),
+        drop: this._canDragDrop.bind(this),
+      };
+      d.callbacks = {
+        dragstart: this._onDragStart.bind(this),
+        dragover: this._onDragOver.bind(this),
+        drop: this._onDrop.bind(this),
+      };
+      return new DragDrop(d);
     });
   }
 }

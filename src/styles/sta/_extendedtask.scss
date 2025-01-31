@@ -1,11 +1,12 @@
 /* Extended Tasks Style Starts Here */
 
-.theme-light {
-  &:has(.extended-tasks) {
-    background: $background;
-  }
+.window-content:has(.extended-tasks) {
+  padding: 0;
+}
 
+.theme-light {
   .extended-tasks {
+    background: $background;
     .title {
       background-color: $borderblue;
     }
@@ -19,6 +20,7 @@
 }
 
 .extended-tasks {
+  padding: 7px;
 
 .row {
   display: flex;

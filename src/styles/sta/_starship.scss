@@ -1,16 +1,12 @@
 /* Starship Style Starts Here */
 
 .window-content:has(.starship-sheet) {
-  overflow: scroll;
-  padding: 7px;
+  padding: 0;
 }
 
 .theme-light {
-  &:has(.starship-sheet) {
-    background: $background;
-  }
-
   .starship-sheet {
+    background: $background;
     .title {
       background-color: $borderblue;
     }
@@ -26,8 +22,9 @@
   }
 }
 
-/* Page Styling */
 .starship-sheet {
+  overflow: scroll;
+  padding-left: 7px;
 
 .text-entry {
   border-color: $borderbluedark;

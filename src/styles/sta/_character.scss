@@ -1,16 +1,12 @@
 /* Character Style Starts Here */
 
 .window-content:has(.character-sheet) {
-  overflow: scroll;
-  padding: 7px;
+  padding: 0;
 }
 
 .theme-light {
-  &:has(.character-sheet) {
-    background: $background;
-  }
-
   .character-sheet {
+    background: $background;
     .title {
       background-color: $borderblue;
     }
@@ -23,8 +19,9 @@
   }
 }
 
-/* Page Styling */
 .character-sheet {
+  overflow: scroll;
+  padding-left: 7px;
 
 .text-entry {
   border-color: $borderbluedark;

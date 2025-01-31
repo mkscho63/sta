@@ -1,12 +1,12 @@
 /* Items Style Starts Here */
 
+.window-content:has(.item-sheet) {
+  padding: 0;
+}
 
 .theme-light {
-  .window-content:has(.item-sheet) {
-    background: $background;
-  }
-
   .item-sheet {
+    background: $background;
     .title {
       background-color: $borderblue;
     }
@@ -21,7 +21,8 @@
 
 .item-sheet {
   width: 100%;
-
+  padding: 7px;
+  
 .row {
   display: flex;
   width: 100%;

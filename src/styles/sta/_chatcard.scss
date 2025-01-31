@@ -1,7 +1,6 @@
 /* Chat Log */
 
 .app .chat-message.message {
-
   .message-header,
   .message-content {
   }
@@ -25,21 +24,7 @@
 }
 
 .chat-message.message {
-
   background: $background;
-
-  .reroll-result { 
-    background-color: $background;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 0 auto;
-
-    &:hover {
-      box-shadow: none;
-      background-color: $borderblue;
-    }
-  }
 }
 
 /* Dice Pools Dialog and Chat Messages */

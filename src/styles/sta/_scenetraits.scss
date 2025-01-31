@@ -1,11 +1,12 @@
 /* SceneTraits Style Starts Here */
 
-.theme-light {
-  &:has(.scenetraits-sheet) {
-    background: $background;
-  }
+.window-content:has(.scenetraits-sheet) {
+  padding: 0;
+}
 
+.theme-light {
   .scenetraits-sheet {
+    background: $background;
     .title {
       background-color: $borderblue;
     }
@@ -14,6 +15,7 @@
 
 .scenetraits-sheet {
   width: 100%;
+  padding: 7px;
 
 .row {
   display: flex;

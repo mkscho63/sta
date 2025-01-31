@@ -270,6 +270,7 @@
   "sta.notifications.threatinvalidpermissions": "You do not have permission to change Threat!",
   "sta.notifications.threatmin": "You can't set Threat to a value below 0!",
   "sta.notifications.threatmax": "There is too much Threat!",
+  "sta.notifications.actoritem": "cannot hold items of type",
 
   "sta.dice.dsn.ufp.blue": "UFP Blue",
   "sta.dice.dsn.ufp.gold": "UFP Gold",

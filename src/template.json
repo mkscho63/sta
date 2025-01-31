@@ -435,7 +435,8 @@
       }
     },
     "injury": {
-      "templates": ["common"]
+      "templates": ["common"],
+      "quantity": 1
     },
     "smallcraftcontainer": {
       "templates": ["common"],

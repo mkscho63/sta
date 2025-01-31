@@ -270,6 +270,7 @@
   "sta.notifications.threatinvalidpermissions": "¡No tienes permiso para modificar la Amenaza!",
   "sta.notifications.threatmin": "¡No puedes poner la Amenaza por debajo de 0!",
   "sta.notifications.threatmax": "¡Hay demasiada Amenaza!",
+  "sta.notifications.actoritem": "no puede sostener objetos de tipo",
 
   "sta.dice.dsn.ufp.blue": "UFP Azul",
   "sta.dice.dsn.ufp.gold": "UFP Dorado",

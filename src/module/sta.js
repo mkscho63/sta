@@ -1,4 +1,3 @@
-CONFIG.debug.hooks = true;
 // Import Modules
 import {
   STACharacterSheet

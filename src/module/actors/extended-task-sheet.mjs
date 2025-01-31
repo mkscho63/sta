@@ -17,7 +17,7 @@ export class STAExtendedTaskSheet extends api.HandlebarsApplicationMixin(sheets.
       closeOnSubmit: false,
     },
     position: {
-      height: 500,
+      height: "auto",
       width: 500
     },
   };

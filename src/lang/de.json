@@ -270,6 +270,7 @@
   "sta.notifications.threatinvalidpermissions": "Sie haben keine Berechtigung, Bedrohung zu ändern!",
   "sta.notifications.threatmin": "Sie können Bedrohung nicht auf einen Wert unter 0 einstellen!",
   "sta.notifications.threatmax": "Es gibt zu viel Bedrohung!",
+  "sta.notifications.actoritem": "kann keine Gegenstände des Typs halten",
 
   "sta.dice.dsn.ufp.blue": "UFP Blau",
   "sta.dice.dsn.ufp.gold": "UFP Gold",

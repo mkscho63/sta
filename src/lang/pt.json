@@ -270,6 +270,7 @@
   "sta.notifications.threatinvalidpermissions": "Você não tem permissão para alterar a Ameaça!",
   "sta.notifications.threatmin": "Você não pode ajustar a Ameaça para menos que 0!",
   "sta.notifications.threatmax": "Há muita Ameaça na reserva!",
+  "sta.notifications.actoritem": "não pode segurar itens do tipo",
 
   "sta.dice.dsn.ufp.blue": "UFP Azul",
   "sta.dice.dsn.ufp.gold": "UFP Dourado",

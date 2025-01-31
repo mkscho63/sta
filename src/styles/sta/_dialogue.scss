@@ -1,11 +1,8 @@
 /* Dialogue Style Starts Here */
 
 .theme-light {
-  &:has(.dialogue) {
-    background: $background;
-  }
-
   .dialogue {
+    background: $background;
     .text-entry {
       border-color: $borderblue;
     }
@@ -13,10 +10,6 @@
       border-color: $borderblue !important;
     }
   }
-}
-
-.theme-light:has(.dialogue) {
-  background: $background;
 }
 
 .dialogue {

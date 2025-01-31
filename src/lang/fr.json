@@ -270,6 +270,7 @@
   "sta.notifications.threatinvalidpermissions": "Vous n'êtes pas autorisé à changer Menace !",
   "sta.notifications.threatmin": "Vous ne pouvez pas définir Menace sur une valeur inférieure à 0 !",
   "sta.notifications.threatmax": "Il y a trop de Menace !",
+  "sta.notifications.actoritem": "ne peut pas tenir d'objets de type",
 
   "sta.dice.dsn.ufp.blue": "FPU Bleue",
   "sta.dice.dsn.ufp.gold": "FPU Or",
