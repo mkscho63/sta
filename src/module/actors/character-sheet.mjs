@@ -149,7 +149,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       }
     });
     if (useReputationInstead) {
-      selectedDiscipline = "Reputation";
+      selectedDiscipline = "reputation";
       selectedDisciplineValue = reputationValue;
     } else {
       const departmentCheckboxes = this.element.querySelectorAll('.discipline-block .selector.discipline');
@@ -245,6 +245,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       }, ],
       close: () => null,
     });
+    if (!formData) return;
     const dicePool = formData?.get('dicePoolValue') || defaultValue;
     const staRoll = new STARoll();
     staRoll.performChallengeRoll(dicePool, weaponName, speaker);
@@ -334,6 +335,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       name: newName
     });
   }
+
   async _onItemQuantityChange(event) {
     const input = event.currentTarget;
     const itemId = input.dataset.itemId;
@@ -489,7 +491,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     }
     const fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
     const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);
-    const stressModValue = parseInt(this.element.querySelector('#stressmod')?.value || 0, 10);
+    const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
     let stressTrackMax = fitnessValue + securityValue + stressModValue;
     const hasResolute = this.element.querySelector(`[data-talent-name*="${localizedValues.resolute}"]`);
     if (hasResolute) {

@@ -1,6 +1,6 @@
 <div class="tracker-container">
   <div id="tracker-clickable" class="tracker-clickable">
-    <i id="tracker-clickable-plus" class="fas fa-plus hide" data-action="onMaximise"></i>
+    <i id="tracker-clickable-plus" class="fas fa-starship hide" data-action="onMaximise"></i>
     <i id="tracker-clickable-minus" class="fas fa-minus" data-action="onMinimise"></i>
   </div>
   <div id="sta-momentum-tracker" class="sta tracker momentum">
@@ -19,14 +19,16 @@
       </div>
     </div>
   </div>
-  <div id="sta-roll-task-button" class="button roll-task" title="{{localize 'sta.actor.attdis.task'}}" data-action="onTaskRoll">
-    <i class="fa-solid fa-dice-d20"></i>
-  </div>
-  <div id="sta-roll-challenge-button" class="button roll-challenge" title="{{localize 'sta.actor.challenge.roll'}}" data-action="onChallengeRoll">
-    <i class="fa-solid fa-dice"></i>
-  </div>
-  <div id="sta-roll-npc-button" class="button roll-npc" title="{{localize 'sta.roll.npccrew'}}" data-action="onNPCRoll">
-    <i class="fa-solid fa-starship"></i>
+  <div class="icon-container">
+    <div id="sta-roll-task-button" class="button roll-task" title="{{localize 'sta.actor.attdis.task'}}" data-action="onTaskRoll">
+      <i class="fa-solid fa-dice-d20"></i>
+    </div>
+    <div id="sta-roll-challenge-button" class="button roll-challenge" title="{{localize 'sta.actor.challenge.roll'}}" data-action="onChallengeRoll">
+      <i class="fa-solid fa-dice"></i>
+    </div>
+    <div id="sta-roll-npc-button" class="button roll-npc" title="{{localize 'sta.roll.npccrew'}}" data-action="onNPCRoll">
+      <i class="fa-solid fa-starship"></i>
+    </div>
   </div>
   <div id="sta-threat-tracker" class="sta tracker threat">
     <div class="header">

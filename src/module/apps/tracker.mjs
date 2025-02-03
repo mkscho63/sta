@@ -1,13 +1,16 @@
 import {
   STARoller
 } from '../apps/STAroller.mjs';
+
 const api = foundry.applications.api;
+
 export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2) {
   static PARTS = {
     tracker: {
       template: "systems/sta/templates/apps/tracker.hbs"
     },
   };
+
   static DEFAULT_OPTIONS = {
     classes: ["tracker-container"],
     actions: {
@@ -30,51 +33,50 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       positioned: false
     },
   };
+
   constructor(options = {}) {
     super(options);
   }
-  get onSettingsChanged() {
-    return this._onSettingsChanged;
-  }
-  _onSettingsChanged(changed) {
-    const keys = Object.keys(foundry.utils.flattenObject(changed));
-    this._updateRenderedPosition();
-    if (keys.includes('world.mode') || keys.includes('client.dockPosition') || keys.includes('client.hideDock')) {
-      this._updateRenderedPosition();
+
+  static async TrackerPosition(event) {
+    let trackerForm = document.querySelector('.tracker-container');
+    if (!trackerForm) {
+      trackerForm = document.createElement('div');
+      document.body.appendChild(trackerForm);
     }
+    this.startPositionUpdater(trackerForm);
   }
-  async _render(force = false, options = {}) {
-    await super._render(force, options);
-    this._updateRenderedPosition();
+
+  static positionDiceRoller(trackerForm) {
+    const targetButton = document.querySelector(
+      'button.collapse.ui-control.plain.icon[class*="fa-caret-"]'
+    );
+    const buttonRect = targetButton.getBoundingClientRect();
+    trackerForm.style.position = 'absolute';
+    trackerForm.style.top = `${buttonRect.bottom + 4}px`;
+    trackerForm.style.left = `${buttonRect.left - 90}px`;
   }
-  _updateRenderedPosition() {
-    const tracker = this.element[0];
-    if (!tracker) return;
-    const cameraViews = ui.webrtc;
-    const CSS_CLASSES = {
-      DOCK_BOTTOM: 'av-bottom',
+
+  static startPositionUpdater(trackerForm) {
+    const updatePosition = () => {
+      this.positionDiceRoller(trackerForm);
+      requestAnimationFrame(updatePosition);
     };
-    const element = cameraViews.element[0];
-    if (!element || element.nodeName === 'TEMPLATE' || cameraViews.hidden) {
-      tracker.classList.remove(CSS_CLASSES.DOCK_BOTTOM);
-      return;
-    }
-    const dockPosition = game.webrtc.settings.client.dockPosition;
-    if (AVSettings.DOCK_POSITIONS.BOTTOM === dockPosition) {
-      tracker.classList.add(CSS_CLASSES.DOCK_BOTTOM);
-    } else {
-      tracker.classList.remove(CSS_CLASSES.DOCK_BOTTOM);
-    }
-  }
+    requestAnimationFrame(updatePosition);
+}
+
   static UPDATE_SOCKET_NAME = "system.sta";
+
   static MessageType = {
     SetResource: "set-resource",
     UpdateResource: "update-resource",
   };
+
   static Resource = {
     Momentum: "momentum",
     Threat: "threat",
   };
+
   static SocketMessage = class {
     type;
     resource;
@@ -85,29 +87,37 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       this.value = value;
     }
   }
+
   static LimitOf(resource) {
     return resource == STATracker.Resource.Momentum ? game.settings.get('sta', 'maxNumberOfMomentum') : 99;
   }
+
   static ValueOf(resource) {
     return game.settings.get("sta", resource);
   }
+
   static SendUpdateMessage(type, resource, value) {
     game.socket.emit(STATracker.UPDATE_SOCKET_NAME,
       new STATracker.SocketMessage(type, resource, value)
     );
   }
+
   static UserHasPermissionFor(resource) {
     let requiredLevel = game.settings.get("sta", `${resource}PermissionLevel`);
     return game.user.hasRole(requiredLevel);
   }
+
   static UserCanWriteSettings() {
     return game.permissions.SETTINGS_MODIFY.includes(game.user.role);
   }
+
   static accumulatedChanges = {
     momentum: 0,
     threat: 0
   };
+
   static chatMessageTimeout = null;
+
   static async DoUpdateResource(resource, newValue) {
     if (!STATracker.UserHasPermissionFor(resource)) {
       ui.notifications.error(game.i18n.localize(`sta.notifications.${resource}invalidpermissions`));
@@ -173,17 +183,21 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       }, 1000);
     }
   }
+
   static OnAdjustTracker(resource, delta) {
     STATracker.DoUpdateResource(resource, STATracker.ValueOf(resource) + delta);
   }
+
   static OnInputTracker(resource) {
     const inputValue = Number.parseInt(document.getElementById(`sta-track-${resource}`).value);
     STATracker.DoUpdateResource(resource, inputValue);
   }
+
   static UpdateTracker() {
     document.getElementById('sta-track-momentum').value = STATracker.ValueOf(STATracker.Resource.Momentum);
     document.getElementById('sta-track-threat').value = STATracker.ValueOf(STATracker.Resource.Threat);
   }
+
   static ConfigureTrackerInterface() {
     STATracker.MomentumButtons = [
       document.getElementById('sta-momentum-track-decrease'),
@@ -202,6 +216,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       STATracker.ThreatInput.disabled = true;
     }
   }
+
   static _onMomentumIncrease() {
     STATracker.OnAdjustTracker(STATracker.Resource.Momentum, +1);
   }
@@ -214,6 +229,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
   static _onThreatDecrease() {
     STATracker.OnAdjustTracker(STATracker.Resource.Threat, -1);
   }
+
   static ConfigureTrackerInputActions() {
     const momentumInput = document.querySelector('#sta-track-momentum');
     const threatInput = document.querySelector('#sta-track-threat');
@@ -236,16 +252,19 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       threatInput.addEventListener('change', () => STATracker.OnInputTracker(STATracker.Resource.Threat));
     }
   }
+
   static _onMinimise() {
     document.getElementById('tracker-clickable-minus').classList.add('hide');
     document.getElementById('tracker-clickable-plus').classList.remove('hide');
     document.querySelectorAll('.tracker-container').forEach(el => el.classList.add('hide'));
   }
+
   static _onMaximise() {
     document.getElementById('tracker-clickable-plus').classList.add('hide');
     document.getElementById('tracker-clickable-minus').classList.remove('hide');
     document.querySelectorAll('.tracker-container').forEach(el => el.classList.remove('hide'));
   }
+
   static async OnSocketData(message) {
     switch (message.type) {
       case STATracker.MessageType.SetResource:
@@ -260,10 +279,12 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
         break;
     }
   }
+
   _onRender(context, options) {
     game.socket.on(STATracker.UPDATE_SOCKET_NAME, STATracker.OnSocketData);
     STATracker.ConfigureTrackerInputActions();
     STATracker.ConfigureTrackerInterface();
     STATracker.UpdateTracker();
+    STATracker.TrackerPosition()
   }
 }

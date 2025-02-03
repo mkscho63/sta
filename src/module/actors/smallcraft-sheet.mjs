@@ -204,6 +204,7 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
       }, ],
       close: () => null,
     });
+    if (!formData) return;
     const dicePool = formData?.get('dicePoolValue') || defaultValue;
     const staRoll = new STARoll();
     staRoll.performChallengeRoll(dicePool, weaponName, speaker);

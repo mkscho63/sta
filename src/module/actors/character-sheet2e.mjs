@@ -148,7 +148,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       }
     });
     if (useReputationInstead) {
-      selectedDiscipline = "Reputation";
+      selectedDiscipline = "reputation";
       selectedDisciplineValue = reputationValue;
     } else {
       const departmentCheckboxes = this.element.querySelectorAll('.discipline-block .selector.discipline');
@@ -458,7 +458,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       this.actor.system.stress.value = stressValue;
     }
     const fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
-    const stressModValue = parseInt(this.element.querySelector('#stressmod')?.value || 0, 10);
+    const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
     let stressTrackMax = fitnessValue + stressModValue;
     const hasTough = this.element.querySelector(`[data-talent-name*="${localizedValues.tough}"]`);
     if (hasTough) {

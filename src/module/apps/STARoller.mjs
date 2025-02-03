@@ -79,6 +79,7 @@ export class STARoller {
       );
     }
   }
+
   static async _onChallengeRoll(event) {
     event.preventDefault();
     const defaultValue = 2;
@@ -109,44 +110,12 @@ export class STARoller {
       }, ],
       close: () => null,
     });
+    if (!formData) return;
     const dicePool = formData?.get('dicePoolValue') || defaultValue;
     const staRoll = new STARoll();
     staRoll.performChallengeRoll(dicePool, weaponName, speaker);
   }
-  static async _onChallengeRoll(event) {
-    event.preventDefault();
-    const defaultValue = 2;
-    const speaker = game.user;
-    const weaponName = '';
-    const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
-    const html = await renderTemplate(template, {
-      defaultValue
-    });
-    const formData = await api.DialogV2.wait({
-      window: {
-        title: game.i18n.localize('sta.apps.dicepoolwindow')
-      },
-      position: {
-        height: "auto",
-        width: 350
-      },
-      content: html,
-      classes: ["dialogue"],
-      buttons: [{
-        action: "roll",
-        default: true,
-        label: game.i18n.localize('sta.apps.rolldice'),
-        callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
-          return form ? new FormData(form) : null;
-        },
-      }, ],
-      close: () => null,
-    });
-    const dicePool = formData?.get('dicePoolValue') || defaultValue;
-    const staRoll = new STARoll();
-    staRoll.performChallengeRoll(dicePool, weaponName, speaker);
-  }
+
   static async _onNPCRoll(event) {
     event.preventDefault();
     const defaultValue = 7;

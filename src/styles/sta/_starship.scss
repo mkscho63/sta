@@ -7,6 +7,7 @@
 .theme-light {
   .starship-sheet {
     background: $background;
+	scrollbar-color: $palestblue transparent;
     .title {
       background-color: $borderblue;
     }
@@ -25,6 +26,7 @@
 .starship-sheet {
   overflow: scroll;
   padding-left: 7px;
+  scrollbar-color: $darkestblue transparent;
 
 .text-entry {
   border-color: $borderbluedark;
@@ -112,7 +114,7 @@
 }
 
 .shieldmod .text-entry {
-  width: 30px;
+  width: 32px;
   margin-left: 10px;
   text-align: right;
 }
@@ -124,7 +126,7 @@
 }
 
 .crwmod .text-entry {
-  width: 30px;
+  width: 32px;
   margin-left: 10px;
   text-align: right;
 }
@@ -213,14 +215,14 @@
 }
 
 .numeric-entry {
-  width: 30px;
+  width: 32px;
   height: 28px;
   text-align: right;
   border-color: $borderbluedark;
 }
 
 .systems-block .field.breaches {
-  width: 30px;
+  width: 32px;
   margin-left: auto;
   text-align: right;
   border-color: $borderbluedark;
