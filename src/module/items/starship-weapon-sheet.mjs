@@ -15,10 +15,11 @@ export class STAStarshipWeaponSheet extends api.HandlebarsApplicationMixin(sheet
       closeOnSubmit: false,
     },
     position: {
-      height: 540,
+      height: "auto",
       width: 565,
     },
   };
+
   get title() {
     return `${this.item.name} - Starship Weapon (1e)`;
   }

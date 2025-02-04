@@ -15,7 +15,7 @@ export class STAArmorSheet extends api.HandlebarsApplicationMixin(sheets.ItemShe
       closeOnSubmit: false,
     },
     position: {
-      height: 370,
+      height: "auto",
       width: 500,
     },
   };

@@ -15,7 +15,7 @@ export class STAItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemShee
       closeOnSubmit: false,
     },
     position: {
-      height: 370,
+      height: "auto",
       width: 500,
     },
   };

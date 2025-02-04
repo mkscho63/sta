@@ -1,11 +1,13 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
+
 export class STATalentSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
       template: "systems/sta/templates/items/talent-sheet.hbs"
     },
   };
+
   static DEFAULT_OPTIONS = {
     actions: {},
     form: {
@@ -13,13 +15,15 @@ export class STATalentSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
       closeOnSubmit: false,
     },
     position: {
-      height: 570,
+      height: "auto",
       width: 565,
     },
   };
+
   get title() {
     return `${this.item.name} - Talent`;
   }
+
   async _prepareContext(options) {
     const context = {
       item: this.item,
@@ -27,6 +31,7 @@ export class STATalentSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
     };
     return context;
   }
+
   async _updateObject(event, formData) {
     await this.item.update(formData);
   }

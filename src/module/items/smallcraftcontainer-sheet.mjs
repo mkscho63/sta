@@ -15,10 +15,11 @@ export class STASmallCraftContainerSheet extends api.HandlebarsApplicationMixin(
       closeOnSubmit: false,
     },
     position: {
-      height: 390,
+      height: "auto",
       width: 680,
     },
   };
+
   get title() {
     return `${this.item.name} - Smallcraft Container`;
   }

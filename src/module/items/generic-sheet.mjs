@@ -1,11 +1,13 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
+
 export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
       template: "systems/sta/templates/items/generic-sheet.hbs"
     },
   };
+
   static DEFAULT_OPTIONS = {
     actions: {},
     form: {
@@ -13,10 +15,11 @@ export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemS
       closeOnSubmit: false,
     },
     position: {
-      height: 330,
+      height: "auto",
       width: 500,
     },
   };
+
   get title() {
     switch (this.item.type) {
       case 'value':
@@ -27,6 +30,7 @@ export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemS
         return `${this.item.name} - Milestone`;
     }
   }
+
   async _prepareContext(options) {
     const context = {
       item: this.item,
