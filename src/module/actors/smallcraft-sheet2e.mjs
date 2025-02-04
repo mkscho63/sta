@@ -323,7 +323,11 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
     if (event) {
       const clickedShield = event.target;
       const shieldValue = parseInt(clickedShield.textContent, 10);
-      this.actor.system.shields.value = shieldValue;
+      if (shieldValue === 1 && clickedShield.classList.contains('selected') && this.actor.system.shields.value === 1) {
+        this.actor.system.shields.value = 0;
+      } else {
+        this.actor.system.shields.value = shieldValue;
+      }
     }
     const structureValue = parseInt(this.element.querySelector('#structure')?.value || 0, 10);
     const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);

@@ -374,7 +374,11 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
     if (event) {
       const clickedShield = event.target;
       const shieldValue = parseInt(clickedShield.textContent, 10);
-      this.actor.system.shields.value = shieldValue;
+      if (shieldValue === 1 && clickedShield.classList.contains('selected') && this.actor.system.shields.value === 1) {
+        this.actor.system.shields.value = 0;
+      } else {
+        this.actor.system.shields.value = shieldValue;
+      }
     }
     const structureValue = parseInt(this.element.querySelector('#structure')?.value || 0, 10);
     const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);
@@ -413,7 +417,11 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
     if (event) {
       const clickedCrew = event.target;
       const crewValue = parseInt(clickedCrew.textContent, 10);
-      this.actor.system.crew.value = crewValue;
+      if (crewValue === 1 && clickedCrew.classList.contains('selected') && this.actor.system.crew.value === 1) {
+        this.actor.system.crew.value = 0;
+      } else {
+        this.actor.system.crew.value = crewValue;
+      }
     }
     const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
     const crwModValue = parseInt(this.element.querySelector('#crwmod')?.value || 0, 10);
@@ -450,7 +458,11 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
     if (event) {
       const clickedPower = event.target;
       const powerValue = parseInt(clickedPower.textContent, 10);
-      this.actor.system.power.value = powerValue;
+      if (powerValue === 1 && clickedPower.classList.contains('selected') && this.actor.system.power.value === 1) {
+        this.actor.system.power.value = 0;
+      } else {
+        this.actor.system.power.value = powerValue;
+      }
     }
     const engineValue = parseInt(this.element.querySelector('#engines')?.value || 0, 10);
     let powerTrackMax = engineValue;

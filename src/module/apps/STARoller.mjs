@@ -32,7 +32,9 @@ export class STARoller {
       }
     });
     const defaultValue = 2;
-    const speaker = game.user;
+    const speaker = {
+          type: 'sidebar'
+        };
     const template = 'systems/sta/templates/apps/dicepool-attribroller.hbs';
     const html = await renderTemplate(template, {
       defaultValue
@@ -160,10 +162,10 @@ export class STARoller {
       const selectedSystemValue = parseInt(formData.get('systemValue'), 10) || defaultValue;
       const selectedDepartment = 'STARoller';
       const selectedDepartmentValue = parseInt(formData.get('departmentValue'), 10) || defaultDepartmentValue;
-      const numDice = parseInt(formData.get('numDice'), 10) || 2;
+      const numDice = parseInt(formData.get('dicePoolSlider'), 10) || 2;
       const skillLevel = formData.get('skillLevel') || 'basic';
-      const complicationRange = parseInt(formData.get('complication'), 10) || 1;
-      const shipNumDice = parseInt(formData.get('shipNumDice'), 10) || 1;
+      const complicationRange = parseInt(formData.get('complicationRange'), 10) || 1;
+      const shipNumDice = 1;
       const shipAssist = formData.get('shipAssist') === 'on';
       let attributes = 8;
       let departments = 1;
@@ -183,7 +185,7 @@ export class STARoller {
       }
       if (!isStarship) {
         speakerStarship = {
-          type: 'sidebar'
+          type: 'npcship'
         };
       }
       const staRoll = new STARoll();

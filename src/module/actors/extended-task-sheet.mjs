@@ -40,7 +40,10 @@ export class STAExtendedTaskSheet extends api.HandlebarsApplicationMixin(sheets.
       if (!clickedBox || !clickedBox.id.startsWith('box')) return;
       const boxValue = parseInt(clickedBox.textContent, 10);
       const workProgressInput = this.element.querySelector('#work-progress');
-      if (workProgressInput) {
+	  const currentWorkValue = parseInt(workProgressInput.value, 10) || 0;
+      if (boxValue === 1 && clickedBox.classList.contains('selected') && currentWorkValue === 1) {
+        workProgressInput.value = 0;
+      } else {
         workProgressInput.value = boxValue;
       }
     }

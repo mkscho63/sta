@@ -455,7 +455,11 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     if (event) {
       const clickedStress = event.target;
       const stressValue = parseInt(clickedStress.textContent, 10);
-      this.actor.system.stress.value = stressValue;
+      if (stressValue === 1 && clickedStress.classList.contains('selected') && this.actor.system.stress.value === 1) {
+        this.actor.system.stress.value = 0;
+      } else {
+        this.actor.system.stress.value = stressValue;
+      }
     }
     const fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
     const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
@@ -501,7 +505,11 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     if (event) {
       const clickedDetermination = event.target;
       const determinationValue = parseInt(clickedDetermination.textContent, 10);
-      this.actor.system.determination.value = determinationValue;
+      if (determinationValue === 1 && clickedDetermination.classList.contains('selected') && this.actor.system.determination.value === 1) {
+        this.actor.system.determination.value = 0;
+      } else {
+        this.actor.system.determination.value = determinationValue;
+      }
     }
     const determinationTrackMax = 3;
     const barRenderer = this.element.querySelector('#bar-determination-renderer');
@@ -528,7 +536,11 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     if (event) {
       const clickedReputation = event.target;
       const reputationValue = parseInt(clickedReputation.textContent, 10);
-      this.actor.system.reputation = reputationValue;
+      if (reputationValue === 1 && clickedReputation.classList.contains('selected') && this.actor.system.reputation === 1) {
+        this.actor.system.reputation = 0;
+      } else {
+        this.actor.system.reputation = reputationValue;
+      }
     }
     const reputationTrackMax = game.settings.get('sta', 'maxNumberOfReputation2e');
     const barRenderer = this.element.querySelector('#bar-rep-renderer');

@@ -78,6 +78,10 @@ export class STARoll {
         break;
       case 'npccharacter':
         flavor = game.i18n.format('sta.roll.npccrew' + selectedAttribute) + ' ' + game.i18n.format('sta.roll.npccrew') + ' ' + game.i18n.format('sta.roll.task.name');
+        break;
+      case 'npcship':
+        flavor = game.i18n.format('sta.roll.npcship') + ' ' + game.i18n.format('sta.roll.task.name');
+        break;
     }
     const chatData = {
       speakerId: speaker.id,

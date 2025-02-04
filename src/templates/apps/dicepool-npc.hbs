@@ -1,39 +1,44 @@
 <div class="dialogue">
-  <h3>{{localize 'sta.roll.npccrew'}}</h3>
   <div class="row">
+  <div class="tracktitle">{{localize 'sta.roll.npccrew'}}: </div>
 	<label><input type="radio" name="skillLevel" value="basic" checked>{{localize 'sta.roll.npccrewbasic'}}</label><br>
     <label><input type="radio" name="skillLevel" value="proficient"> {{localize 'sta.roll.npccrewproficient'}}</label><br>
     <label><input type="radio" name="skillLevel" value="talented">{{localize 'sta.roll.npccrewtalented'}}</label><br>
     <label><input type="radio" name="skillLevel" value="exceptional">{{localize 'sta.roll.npccrewexceptional'}}</label>
   </div>
-  <div class="form-group">
-    <label>{{localize 'sta.apps.dicepoolwindow'}}: <span id="diceValue">2</span></label>
-    <input type="range" id="numDice" name="numDice" min="1" max="5" value="2" oninput="document.getElementById('diceValue').textContent = this.value">
+  <div class="row">
+      <div class="flex-1">
+          <div class="tracktitle">{{localize 'sta.apps.pool'}}</div>
+      </div>
+      <div class="flex-column flex-1">
+          <div class="row">
+              <span class="label align-left flex-1">{{localize 'sta.counting.one'}}</span>
+              <span class="centered flex-1"></span>
+              <span class="label centered flex-1">{{localize 'sta.counting.two'}}</span>
+              <span class="centered flex-1"></span>
+              <span class="label centered flex-1">{{localize 'sta.counting.three'}}</span>
+              <span class="centered flex-1"></span>
+              <span class="label centered flex-1">{{localize 'sta.counting.four'}}</span>
+              <span class="centered flex-1"></span>
+              <span class="label centered flex-1">{{localize 'sta.counting.five'}}</span>
+          </div>
+          <input type="range" name="dicePoolSlider" min="1" max="5" value="2" class="slider" id="dicePoolSlider">
+      </div>
   </div>
-  <h3>{{localize 'sta.roll.npcship'}}</h3>
-  <div class="form-group">
-    <label>{{localize 'sta.roll.shipassisting'}}<input type="checkbox" id="shipAssist" name="shipAssist" checked></label>
-  </div>  
-  <div class="form-group">
-    <label>{{localize 'sta.apps.dicepoolwindow'}}: <span id="shipDiceValue">1</span></label>
-    <input type="range" id="shipNumDice" name="shipNumDice" min="1" max="3" value="1" oninput="document.getElementById('shipDiceValue').textContent = this.value">
+  <div class="row">
+      <div class="tracktitle">{{localize 'sta.apps.complicationrange'}}</div>
+      <input class="numeric-entry" type="number" name="complicationRange" value="1" id="complicationRange">
   </div>
-  <div class="form-group">
-    <table>
-      <tr>
-        <td>
-          <h3>{{localize 'sta.actor.starship.system.title'}}</h3>
-          <input type="number" name="systemValue" min="1" value="{{defaultValue}}" class="numeric-entry" id="systemValue">
-        </td>
-        <td>
-          <h3>{{localize 'sta.actor.starship.department.title'}}</h3>
-          <input type="number" name="departmentValue" min="1" value="{{defaultDepartmentValue}}" class="numeric-entry" id="departmentValue">
-        </td>
-      </tr>
-    </table>
+  <div class="row">
+      <div class="tracktitle">{{localize 'sta.roll.shipassisting'}}</div>
+      <input type="checkbox" name="shipAssist" id="shipAssist" checked>
   </div>
-  <div class="form-group">
-    <label>{{localize 'sta.roll.complicationroller'}}: <span id="complicationValue">1</span></label>
-    <input type="range" id="complication" name="complication" min="1" max="5" value="1" oninput="document.getElementById('complicationValue').textContent = this.value">
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.actor.starship.system.title'}}</div>
+    <input type="number" name="systemValue" min="1" value="{{defaultValue}}" class="numeric-entry" id="systemValue">
+  </div>
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.actor.starship.department.title'}}</div>
+    <input type="number" name="departmentValue" min="1" value="{{defaultDepartmentValue}}" class="numeric-entry" id="departmentValue">
   </div>
 </div>
