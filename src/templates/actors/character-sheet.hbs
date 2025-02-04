@@ -216,7 +216,7 @@
                 <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                   <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat" /></div>
                   <input type="text" class="item-name {{#if (eq item.system.used true)}}strike-through{{/if}}" value="{{item.name}}" data-item-id="{{item._id}}">
-                  <a class="value-used control toggle"><i class="fas fa-toggle-{{#if (eq item.system.used true)}}on{{else}}off{{/if}}"></i></a>
+                  <a class="value-used control toggle"><i class="fas fa-toggle-{{#if (eq item.system.used true)}}on{{else}}off{{/if}}" data-action="onStrikeThrough"></i></a>
                   <div class="control">
                     <a class="edit" data-action="onItemEdit"  title="Edit Item"><i class="fas fa-edit"></i></a>
                     <a class="delete" data-action="onItemDelete" title="Delete Item"><i class="fas fa-trash"></i></a>

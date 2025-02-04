@@ -22,6 +22,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       onItemEdit: STACharacterSheet2e._onItemEdit,
       onItemDelete: STACharacterSheet2e._onItemDelete,
       onItemtoChat: STACharacterSheet2e._onItemtoChat,
+      onStrikeThrough: STACharacterSheet2e._onStrikeThrough,
       onSelectAttribute: this.prototype._onSelectAttribute,
       onSelectDiscipline: this.prototype._onSelectDiscipline,
       onAttributeTest: this.prototype._onAttributeTest,
@@ -354,6 +355,22 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       default:
         console.warn(`Unhandled item type: ${itemType}`);
     }
+  }
+
+  static async _onStrikeThrough(event) {
+    event.preventDefault();
+    const entry = event.target.closest('.entry');
+    const itemId = entry.dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    if (!item) return;
+    const isUsed = item.system.used;
+    item.system.used = !isUsed;
+    const icon = event.currentTarget.querySelector("i");
+    icon.classList.toggle('fa-toggle-on', !isUsed);
+    icon.classList.toggle('fa-toggle-off', isUsed);
+    entry.setAttribute('data-item-used', !isUsed);
+    entry.style.textDecoration = isUsed ? 'none' : 'line-through';
+    await item.update({ 'system.used': item.system.used });
   }
 
   static async _onItemCreate(event, target) {
