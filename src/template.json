@@ -330,7 +330,7 @@
     "characterweapon": {
       "templates": ["common"],
       "damage": 0,
-      "range": "",
+      "range": "melee",
       "hands": 1,
       "qualities": {
         "area": false,
@@ -377,7 +377,7 @@
     "starshipweapon": {
       "templates": ["common"],
       "damage": 0,
-      "range": "",
+      "range": "close",
       "qualities": {
         "area": false,
         "spread": false,

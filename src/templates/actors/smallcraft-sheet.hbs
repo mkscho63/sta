@@ -119,7 +119,7 @@
         {{#each items as |item id|}}
           {{#if (eq item.type "value")}}
             <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+              <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat"/></div>
               <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
               <div class="control">
                 <a class="edit" title="Edit Item" data-action="onItemEdit"><i class="fas fa-edit"></i></a>
@@ -142,7 +142,7 @@
             {{#each items as |item id|}}
               {{#if (eq item.type "talent")}}
                 <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat"/></div>
                   <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}" data-talent-name="{{item.name}}">
                   <div class="control">
                     <a class="edit" title="Edit Item" data-action="onItemEdit"><i class="fas fa-edit"></i></a>
@@ -164,7 +164,7 @@
             {{#each items as |item type id|}}
               {{#if (eq item.type "trait")}}
                 <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat"/></div>
                   <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
                   <input type="number" class="item-quantity" value="{{item.system.quantity}}" data-item-id="{{item._id}}">
                   <div class="control">
@@ -196,7 +196,7 @@
             {{#each items as |item type id|}}
               {{#if (eq item.type "starshipweapon")}}
                 <li class="row entry" id="starship-weapon-{{@index}}" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}" data-item-damage="{{item.system.damage}}" data-item-includescale="{{item.system.includescale}}">
-                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}"/></div>
+                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-item-name="{{item.name}}" data-action="onItemtoChat"/></div>
                   <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
                   <div class="two-column-with-roll-secondary list-entry damage">{{item.system.damage}}</div>
                   <div class="control">
@@ -215,7 +215,7 @@
             {{#each items as |item type id|}}
               {{#if (eq item.type "item")}}
                 <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat"/></div>
                   <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
                   <input type="number" class="item-quantity" value="{{item.system.quantity}}" data-item-id="{{item._id}}">
                   <div class="control">
@@ -236,7 +236,7 @@
             {{#each items as |item id|}}
               {{#if (eq item.type "injury")}}
                 <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}"/></div>
+                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat"/></div>
                   <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
                   <input type="number" class="item-quantity" value="{{item.system.quantity}}" data-item-id="{{item._id}}">
                   <div class="control">

@@ -282,6 +282,11 @@ export class STARoll {
       opportunity: 'sta.item.genericitem.opportunity',
     });
     const tags = [];
+    if (item.system.range === 'melee') {
+      tags.push(game.i18n.localize('sta.actor.belonging.weapon.melee'));
+    } else if (item.system.range === 'ranged') {
+      tags.push(game.i18n.localize('sta.actor.belonging.weapon.ranged'));
+    }
     const qualities = item.system.qualities;
     for (const property in qualities) {
       if (!Object.hasOwn(LABELS, property) || !qualities[property]) continue;
@@ -329,14 +334,6 @@ export class STARoll {
       .then((html) => this.sendToChat(speaker, html, item));
   }
 
-  async performArmorRoll(item, speaker) {
-    // Create variable div and populate it with localisation to use in the HTML.
-    const variablePrompt = game.i18n.format('sta.roll.armor.protect');
-    const variable = `<div class='dice-formula'> ` + variablePrompt.replace('|#|', item.system.protection) + `</div>`;
-    // Send the divs to populate a HTML template and sends to chat.
-    this.genericItemTemplate(item, speaker, variable)
-      .then((html) => this.sendToChat(speaker, html, item));
-  }
   /**
    * Parse out tag strings appropriate for a shipweapon Chat Card.
    *
@@ -370,8 +367,12 @@ export class STARoll {
     if (item.system.range) {
       tags.push(game.i18n.localize(`sta.actor.belonging.weapon.${item.system.range}`));
     }
-    if (item.system.includescale) {
-      tags.push(game.i18n.localize('sta.actor.belonging.weapon.includescale'));
+    if (item.system.includescale === 'energy') {
+      tags.push(game.i18n.localize('sta.actor.belonging.weapon.energy'));
+    } else if (item.system.includescale === 'torpedo') {
+      tags.push(game.i18n.localize('sta.actor.belonging.weapon.torpedo'));
+    } else if (item.system.includescale === true) {
+    tags.push(game.i18n.localize('sta.actor.belonging.weapon.includescale'))
     }
     const qualities = item.system.qualities;
     for (const property in qualities) {
@@ -382,6 +383,15 @@ export class STARoll {
       tags.push(tag);
     }
     return tags;
+  }
+
+  async performArmorRoll(item, speaker) {
+    // Create variable div and populate it with localisation to use in the HTML.
+    const variablePrompt = game.i18n.format('sta.roll.armor.protect');
+    const variable = `<div class='dice-formula'> ` + variablePrompt.replace('|#|', item.system.protection) + `</div>`;
+    // Send the divs to populate a HTML template and sends to chat.
+    this.genericItemTemplate(item, speaker, variable)
+      .then((html) => this.sendToChat(speaker, html, item));
   }
 
   /**

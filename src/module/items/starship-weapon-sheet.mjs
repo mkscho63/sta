@@ -1,11 +1,13 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
+
 export class STAStarshipWeaponSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
       template: "systems/sta/templates/items/starship-weapon-sheet.hbs"
     },
   };
+
   static DEFAULT_OPTIONS = {
     actions: {},
     form: {
@@ -20,6 +22,7 @@ export class STAStarshipWeaponSheet extends api.HandlebarsApplicationMixin(sheet
   get title() {
     return `${this.item.name} - Starship Weapon (1e)`;
   }
+
   async _prepareContext(options) {
     const context = {
       item: this.item,
@@ -27,6 +30,7 @@ export class STAStarshipWeaponSheet extends api.HandlebarsApplicationMixin(sheet
     };
     return context;
   }
+
   async _updateObject(event, formData) {
     await this.item.update(formData);
   }
