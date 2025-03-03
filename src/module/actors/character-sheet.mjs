@@ -434,23 +434,35 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
   static async _onItemDelete(event) {
     const entry = event.target.closest('.entry');
     const itemId = entry.dataset.itemId;
-    new Dialog({
-      title: game.i18n.localize('sta.apps.deleteitem'),
+    new api.DialogV2({
+      window: {
+        title: game.i18n.localize('sta.apps.deleteitem')
+      },
       content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
-      buttons: {
-        yes: {
-          icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize('sta.apps.yes'),
-          callback: async () => {
-            await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
-          },
-        },
-        no: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize('sta.apps.no'),
+      position: {
+        height: "auto",
+        width: 350
+      },
+      buttons: [{
+        action: "yes",
+        default: false,
+		icon: '<i class="fas fa-check"></i>',
+        label: game.i18n.localize('sta.apps.yes'),
+        callback: async () => {
+          await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
         },
       },
-      default: 'no',
+      {
+        action: "no",
+        default: true,
+		icon: '<i class="fas fa-times"></i>',
+        label: game.i18n.localize('sta.apps.no'),
+        callback: (event, button, htmlElement) => {
+          const form = htmlElement.querySelector("form");
+          return form ? new FormData(form) : null;
+        },
+      },],
+      close: () => null,
     }).render(true);
   }
 
