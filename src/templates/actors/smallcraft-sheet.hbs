@@ -24,7 +24,7 @@
 
       <div class="departments-block">
         <div class="title">{{localize 'sta.actor.starship.department.title'}}</div>
-        {{#each system.departmentorder2e as |key|}}
+        {{#each system.departmentorder as |key|}}
           {{#with (lookup ../system.departments key)}}
             <div class="stat row">
               <div class="text list-entry">{{localize label}}</div>
