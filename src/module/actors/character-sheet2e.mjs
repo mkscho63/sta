@@ -253,7 +253,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     const complicationThreshold = 20 - Math.min(currentReprimand, 5);
     const diceRollFormula = `${positiveInfluences}d20`;
     const roll = new Roll(diceRollFormula);
-    await roll.evaluate({async: true});
+    await roll.evaluate();
     let totalSuccesses = 0;
     let complications = 0;
     let acclaim = 0;
