@@ -36,7 +36,7 @@ export class STARoller {
           type: 'sidebar'
         };
     const template = 'systems/sta/templates/apps/dicepool-attribroller.hbs';
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
     });
     const formData = await api.DialogV2.wait({
@@ -88,7 +88,7 @@ export class STARoller {
     const speaker = game.user;
     const weaponName = '';
     const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
     });
     const formData = await api.DialogV2.wait({
@@ -131,7 +131,7 @@ export class STARoller {
     const token = canvas.tokens.controlled[0];
     const isStarship = token && (token.actor.type === 'starship' || token.actor.type === 'smallcraft');
     const template = 'systems/sta/templates/apps/dicepool-npc.hbs';
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue,
       defaultDepartmentValue,
       isStarship,

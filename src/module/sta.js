@@ -119,7 +119,7 @@ Hooks.once('init', function() {
   };
 
   // Register sheet application classes
-  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, "core", ActorSheet);
+  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, "core", foundry.appv1.sheets.ActorSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet, {
     types: ['character'],
     makeDefault: true
@@ -146,7 +146,7 @@ Hooks.once('init', function() {
     types: ['scenetraits'],
   });
 
-  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, "core", ItemSheet);
+  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, "core", foundry.appv1.sheets.ItemSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAItemSheet, {
     types: ['item'],
     makeDefault: true
@@ -279,13 +279,13 @@ Hooks.once('init', function() {
   });
 
   preloadHandlebarsTemplates();
-  Hooks.on('renderChatMessage', (msg, html, data) => {
+  Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
   });
 
   Hooks.on('ready', function() {
     const t = new STATracker();
-    renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
+    foundry.applications.handlebars.renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
       t.render(true);
     });
   });
@@ -299,7 +299,7 @@ async function preloadHandlebarsTemplates() {
   const paths = {
     ['sta.chat.weapon-roll']: 'systems/sta/templates/chat/challenge-roll.hbs',
   };
-  return loadTemplates(paths);
+  return foundry.applications.handlebars.loadTemplates(paths);
 }
 
 Hooks.on('preCreateItem', (item, options, userId) => {

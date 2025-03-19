@@ -170,7 +170,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       type: 'character'
     };
     const template = 'systems/sta/templates/apps/dicepool-attribute.hbs';
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
     });
     const formData = await api.DialogV2.wait({
@@ -222,7 +222,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     const speaker = game.user;
     const weaponName = '';
     const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
     });
     const formData = await api.DialogV2.wait({
@@ -258,7 +258,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     const currentReputation = parseInt(this.element.querySelector('#total-rep')?.value || 0, 10);
     const speaker = ChatMessage.getSpeaker();
     const template = 'systems/sta/templates/apps/dicepool-reputation.hbs';
-    const html = await renderTemplate(template);
+    const html = await foundry.applications.handlebars.renderTemplate(template);
     const formData = await api.DialogV2.wait({
         window: {
             title: game.i18n.localize('sta.apps.dicepoolwindow')
@@ -723,7 +723,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
         dragover: this._onDragOver.bind(this),
         drop: this._onDrop.bind(this),
       };
-      return new DragDrop(d);
+      return new foundry.applications.ux.DragDrop(d);
     });
   }
 }

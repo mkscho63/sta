@@ -97,7 +97,7 @@ export class STARoll {
       selectedDiscipline,
       selectedDisciplineValue,
     };
-    const html = await renderTemplate('systems/sta/templates/chat/attribute-test.hbs', chatData);
+    const html = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/attribute-test.hbs', chatData);
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d.showForRoll(r, game.user, true).then((displayed) => {
@@ -135,7 +135,7 @@ export class STARoll {
       `<div class="sta roll chat card" 
             data-token-id="${chatData.tokenId}" 
             data-speaker-id="${chatData.speakerId}">
-              ${await renderTemplate('systems/sta/templates/chat/challenge-roll.hbs', chatData)}
+              ${await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/challenge-roll.hbs', chatData)}
       </div>`;
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
@@ -421,7 +421,7 @@ export class STARoll {
       rolls: rolls,
     };
     // Returns it for the sendToChat to utilise.
-    return await renderTemplate('systems/sta/templates/chat/generic-item.hbs', cardData);
+    return await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/generic-item.hbs', cardData);
   }
 
   /**

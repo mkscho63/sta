@@ -127,7 +127,7 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
       type: 'starship'
     };
     const template = 'systems/sta/templates/apps/dicepool-attributess.hbs';
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
     });
     const formData = await api.DialogV2.wait({
@@ -607,7 +607,7 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
         dragover: this._onDragOver.bind(this),
         drop: this._onDrop.bind(this),
       };
-      return new DragDrop(d);
+      return new foundry.applications.ux.DragDrop(d);
     });
   }
 }
