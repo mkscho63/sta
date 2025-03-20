@@ -283,7 +283,7 @@ Hooks.once('init', function() {
     Collapsible.attachHeaderListener(html);
   });
 
-  Hooks.on('ready', function() {
+  Hooks.on('renderSidebar', function() {
     const t = new STATracker();
     foundry.applications.handlebars.renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
       t.render(true);
