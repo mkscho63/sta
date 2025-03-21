@@ -6,31 +6,8 @@ export class STARoller {
   static async _onTaskRoll(event) {
     event.preventDefault();
     let selectedAttribute = null;
-    let selectedAttributeValue = 0;
     let selectedDiscipline = null;
-    let selectedDisciplineValue = 0;
-    const systemCheckboxes = document.querySelectorAll('.attribute-block .selector.attribute');
-    systemCheckboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
-        const systemId = checkbox.id.replace('.selector', '');
-        selectedAttribute = systemId;
-        const systemValueInput = document.getElementById(systemId);
-        if (systemValueInput) {
-          selectedAttributeValue = parseInt(systemValueInput.value, 10) || 0;
-        }
-      }
-    });
-    const departmentCheckboxes = document.querySelectorAll('.discipline-block .selector.discipline');
-    departmentCheckboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
-        const departmentId = checkbox.id.replace('.selector', '');
-        selectedDiscipline = departmentId;
-        const departmentValueInput = document.getElementById(departmentId);
-        if (departmentValueInput) {
-          selectedDisciplineValue = parseInt(departmentValueInput.value, 10) || 0;
-        }
-      }
-    });
+
     const defaultValue = 2;
     const speaker = {
           type: 'sidebar'
@@ -62,6 +39,8 @@ export class STARoller {
     });
     if (formData) {
       let dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
+      const selectedAttributeValue = parseInt(document.getElementById("selectedAttributeValue").value, 10) || 0;
+      const selectedDisciplineValue = parseInt(document.getElementById("selectedDisciplineValue").value, 10) || 0;
       const usingFocus = formData.get('usingFocus') === 'on';
       const usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
       const usingDetermination = formData.get('usingDetermination') === 'on';
