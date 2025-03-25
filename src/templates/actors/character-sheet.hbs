@@ -271,29 +271,6 @@
                   {{/if}}
                 {{/each}}
               </div>
-
-              <div class="section injuries">
-                <div class="title">{{localize 'sta.actor.injury.title'}}</div>
-                <div class="header row item">
-                  <div class="image"></div>
-                  <div class="one-column-with-roll secondary-title">{{localize 'sta.item.genericitem.name'}}</div>
-                  <a class="control create" title="Create item" data-action="onItemCreate" data-type="injury"><i class="fas fa-plus"></i></a>
-                </div>
-
-                {{#each items as |item id|}}
-                  {{#if (eq item.type "injury")}}
-                    <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                      <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat" /></div>
-                      <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
-                      <input type="number" class="item-quantity" value="{{item.system.quantity}}" data-item-id="{{item._id}}">
-                      <div class="control">
-                        <a class="edit" data-action="onItemEdit"  title="Edit Item"><i class="fas fa-edit"></i></a>
-                        <a class="delete" data-action="onItemDelete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                      </div>
-                    </li>
-                  {{/if}}
-                {{/each}}
-              </div>
             </div>
 
             <div class="items-column-right">
@@ -374,6 +351,29 @@
 
                 {{#each items as |item type id|}}
                   {{#if (eq item.type "item")}}
+                    <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
+                      <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat" /></div>
+                      <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
+                      <input type="number" class="item-quantity" value="{{item.system.quantity}}" data-item-id="{{item._id}}">
+                      <div class="control">
+                        <a class="edit" data-action="onItemEdit"  title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="delete" data-action="onItemDelete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                      </div>
+                    </li>
+                  {{/if}}
+                {{/each}}
+              </div>
+
+              <div class="section injuries">
+                <div class="title">{{localize 'sta.actor.injury.title'}}</div>
+                <div class="header row item">
+                  <div class="image"></div>
+                  <div class="one-column-with-roll secondary-title">{{localize 'sta.item.genericitem.name'}}</div>
+                  <a class="control create" title="Create item" data-action="onItemCreate" data-type="injury"><i class="fas fa-plus"></i></a>
+                </div>
+
+                {{#each items as |item id|}}
+                  {{#if (eq item.type "injury")}}
                     <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
                       <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat" /></div>
                       <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
