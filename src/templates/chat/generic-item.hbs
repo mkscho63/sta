@@ -12,11 +12,11 @@
   <div class="content">
     {{#if varFieldHtml}}<div class="vars">{{{varFieldHtml}}}</div>{{/if}}
     {{#if tags}}
-    <div class='tags'>
-      {{#each tags}}
-      <div class="tag">{{this}}</div>
-      {{/each}}
-    </div>
+      <div class='tags'>
+        {{#each tags}}
+          <div class="tag" title="{{this.tooltip}}">{{this.label}}</div>
+        {{/each}}
+      </div>
     {{/if}}
     {{#if rolls}}
       {{#if rolls.challenge}}{{#with rolls.challenge}}{{> 'sta.chat.weapon-roll'}}{{/with}}{{/if}}

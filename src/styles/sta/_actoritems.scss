@@ -124,16 +124,16 @@
 
 .item-tooltip {
   position: absolute;
-  padding: 5px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
+  border: 1px solid #fff;
   border-radius: 4px;
   pointer-events: none;
   z-index: 1000;
   white-space: normal;
   overflow-wrap: break-word;
   max-width: 550px;
-  font-size: 0.9rem;
+  padding: 2px;
 }
 
 .item-name {

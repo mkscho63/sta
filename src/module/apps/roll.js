@@ -277,30 +277,66 @@ export class STARoll {
       viciousx: 'sta.actor.belonging.weapon.viciousx',
       severity: 'sta.item.genericitem.severity',
       stun: 'sta.actor.belonging.weapon.stun',
-      // 2E update introduced these duplicate Escalation and Opportunity qualities to this system, so we're doing those tags here.
       escalation: 'sta.item.genericitem.escalation',
       opportunity: 'sta.item.genericitem.opportunity',
     });
+
+    const tooltips = Object.freeze({
+      area: game.i18n.localize('sta.tooltip.character.weapon.area'),
+      intense: game.i18n.localize('sta.tooltip.character.weapon.intense'),
+      knockdown: game.i18n.localize('sta.tooltip.character.weapon.knockdown'),
+      accurate: game.i18n.localize('sta.tooltip.character.weapon.accurate'),
+      charge: game.i18n.localize('sta.tooltip.character.weapon.charge'),
+      cumbersome: game.i18n.localize('sta.tooltip.character.weapon.cumbersome'),
+      deadly: game.i18n.localize('sta.tooltip.character.weapon.deadly'),
+      debilitating: game.i18n.localize('sta.tooltip.character.weapon.debilitating'),
+      grenade: game.i18n.localize('sta.tooltip.character.weapon.grenade'),
+      inaccurate: game.i18n.localize('sta.tooltip.character.weapon.inaccurate'),
+      nonlethal: game.i18n.localize('sta.tooltip.character.weapon.nonlethal'),
+      hiddenx: game.i18n.localize('sta.tooltip.character.weapon.hiddenx'),
+      persistentx: game.i18n.localize('sta.tooltip.character.weapon.persistentx'),
+      piercingx: game.i18n.localize('sta.tooltip.character.weapon.piercingx'),
+      viciousx: game.i18n.localize('sta.tooltip.character.weapon.viciousx'),
+      severity: game.i18n.localize('sta.tooltip.character.weapon.severity'),
+    });
+
     const tags = [];
+  
+    // Add range tags
     if (item.system.range === 'melee') {
-      tags.push(game.i18n.localize('sta.actor.belonging.weapon.melee'));
+      tags.push({
+        label: game.i18n.localize(LABELS.melee),
+      });
     } else if (item.system.range === 'ranged') {
-      tags.push(game.i18n.localize('sta.actor.belonging.weapon.ranged'));
+      tags.push({
+        label: game.i18n.localize(LABELS.ranged),
+      });
     }
+
+    // Loop through item qualities and apply tooltips per quality
     const qualities = item.system.qualities;
     for (const property in qualities) {
       if (!Object.hasOwn(LABELS, property) || !qualities[property]) continue;
-      // Some qualities have tiers/ranks/numbers.
+
       const label = game.i18n.localize(LABELS[property]);
       const tag = Number.isInteger(qualities[property]) ? `${label} ${qualities[property]}` : label;
-      tags.push(tag);
+
+      tags.push({
+        label: tag,
+        tooltip: tooltips[property] || ""
+      });
     }
-    // Hands are a special case.
+
+    // Handle special case for hands
     if (item.system.hands) {
-      tags.push(`${item.system.hands} ${game.i18n.localize('sta.item.genericitem.handed')}`);
+      tags.push({
+        label: `${item.system.hands} ${game.i18n.localize('sta.item.genericitem.handed')}`,
+      });
     }
+
     return tags;
   }
+
 
   async performWeaponRoll2e(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
@@ -354,8 +390,6 @@ export class STARoll {
       highyield: 'sta.actor.belonging.weapon.highyield',
       intense: 'sta.actor.belonging.weapon.intense',
       jamming: 'sta.actor.belonging.weapon.jamming',
-      persistent: 'sta.actor.belonging.weapon.persistentx',
-      persistentx: 'sta.actor.belonging.weapon.persistentx',
       piercing: 'sta.actor.belonging.weapon.piercingx',
       piercingx: 'sta.actor.belonging.weapon.piercingx',
       slowing: 'sta.actor.belonging.weapon.slowing',
@@ -363,25 +397,66 @@ export class STARoll {
       versatilex: 'sta.actor.belonging.weapon.versatilex',
       viciousx: 'sta.actor.belonging.weapon.viciousx',
     });
+
+    const tooltips = Object.freeze({
+      area: game.i18n.localize('sta.tooltip.starship.weapon.area'),
+      calibration: game.i18n.localize('sta.tooltip.starship.weapon.calibration'),
+      cumbersome: game.i18n.localize('sta.tooltip.starship.weapon.cumbersome'),
+      dampening: game.i18n.localize('sta.tooltip.starship.weapon.dampening'),
+      depleting: game.i18n.localize('sta.tooltip.starship.weapon.depleting'),
+      devastating: game.i18n.localize('sta.tooltip.starship.weapon.devastating'),
+      hiddenx: game.i18n.localize('sta.tooltip.starship.weapon.hiddenx'),
+      highyield: game.i18n.localize('sta.tooltip.starship.weapon.highyield'),
+      intense: game.i18n.localize('sta.tooltip.starship.weapon.intense'),
+      jamming: game.i18n.localize('sta.tooltip.starship.weapon.jamming'),
+      piercing: game.i18n.localize('sta.tooltip.starship.weapon.piercing'),
+      piercingx: game.i18n.localize('sta.tooltip.starship.weapon.piercingx'),
+      slowing: game.i18n.localize('sta.tooltip.starship.weapon.slowing'),
+      spread: game.i18n.localize('sta.tooltip.starship.weapon.spread'),
+      versatilex: game.i18n.localize('sta.tooltip.starship.weapon.versatilex'),
+      viciousx: game.i18n.localize('sta.tooltip.starship.weapon.viciousx'),
+      scale: game.i18n.localize('sta.tooltip.starship.weapon.scale'),
+    });
+
     const tags = [];
+
+    // Add range tag if present
     if (item.system.range) {
-      tags.push(game.i18n.localize(`sta.actor.belonging.weapon.${item.system.range}`));
+      tags.push({
+        label: game.i18n.localize(`sta.actor.belonging.weapon.${item.system.range}`),
+      });
     }
+
+    // Handle energy, torpedo, or scale-based tags
     if (item.system.includescale === 'energy') {
-      tags.push(game.i18n.localize('sta.actor.belonging.weapon.energy'));
+      tags.push({
+        label: game.i18n.localize('sta.actor.belonging.weapon.energy'),
+      });
     } else if (item.system.includescale === 'torpedo') {
-      tags.push(game.i18n.localize('sta.actor.belonging.weapon.torpedo'));
+      tags.push({
+        label: game.i18n.localize('sta.actor.belonging.weapon.torpedo'),
+      });
     } else if (item.system.includescale === true) {
-    tags.push(game.i18n.localize('sta.actor.belonging.weapon.includescale'))
+      tags.push({
+        label: game.i18n.localize('sta.actor.belonging.weapon.includescale'),
+        tooltip: game.i18n.localize('sta.tooltip.starship.weapon.scale')
+      });
     }
+
+    // Loop through item qualities and generate tags + tooltips
     const qualities = item.system.qualities;
     for (const property in qualities) {
       if (!Object.hasOwn(LABELS, property) || !qualities[property]) continue;
-      // Some qualities have tiers/ranks/numbers.
+
       const label = game.i18n.localize(LABELS[property]);
       const tag = Number.isInteger(qualities[property]) ? `${label} ${qualities[property]}` : label;
-      tags.push(tag);
+
+      tags.push({
+        label: tag,
+        tooltip: tooltips[property] || ""
+      });
     }
+
     return tags;
   }
 
