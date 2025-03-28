@@ -5,11 +5,11 @@
   "version": "2.0.0",
   "compatibility": {
     "verified": "13",
-    "minimum": "10"
+    "minimum": "13"
   },
   "authors": [{
       "name": "mkscho63",
-      "discord": "FullMetalSeraph#7284",
+      "discord": "FullMetalSeraph",
       "flags": {}
     },
     {
@@ -57,7 +57,7 @@
     "units": "m"
   },
   "packs": [{
-      "label": "Personal Weapons (Core Starfleet)",
+      "label": "Personal Weapons (1e)",
       "name": "personal-weapons-core",
       "path": "assets/packs/1e/personal-weapons-core.db",
       "system": "sta",
@@ -66,7 +66,7 @@
       "flags": {}
     },
     {
-      "label": "Values (Core Starfleet)",
+      "label": "Values (1e)",
       "name": "values-core",
       "path": "assets/packs/1e/values-core.db",
       "system": "sta",
@@ -75,7 +75,7 @@
       "flags": {}
     },
     {
-      "label": "Species Talents (Core Starfleet)",
+      "label": "Species Talents (1e)",
       "name": "species-talents-core",
       "path": "assets/packs/1e/species-talents-core.db",
       "system": "sta",
@@ -84,7 +84,7 @@
       "flags": {}
     },
     {
-      "label": "General Talents (Core Starfleet)",
+      "label": "General Talents (1e)",
       "name": "general-talents-core",
       "path": "assets/packs/1e/general-talents-core.db",
       "system": "sta",
@@ -93,7 +93,7 @@
       "flags": {}
     },
     {
-      "label": "Discipline Talents (Core Starfleet)",
+      "label": "Discipline Talents (1e)",
       "name": "discipline-talents-core",
       "path": "assets/packs/1e/discipline-talents-core.db",
       "system": "sta",
@@ -102,7 +102,7 @@
       "flags": {}
     },
     {
-      "label": "Starship Talents (Core Starfleet)",
+      "label": "Starship Talents (1e)",
       "name": "starship-talents-core",
       "path": "assets/packs/1e/starship-talents-core.db",
       "system": "sta",
@@ -111,7 +111,7 @@
       "flags": {}
     },
     {
-      "label": "Focuses (Core Starfleet)",
+      "label": "Focuses (1e)",
       "name": "focuses-core",
       "path": "assets/packs/1e/focuses-core.db",
       "system": "sta",
@@ -120,7 +120,7 @@
       "flags": {}
     },
     {
-      "label": "Roles (Core Starfleet)",
+      "label": "Roles (1e)",
       "name": "roles-core",
       "path": "assets/packs/1e/roles-core.db",
       "system": "sta",
@@ -129,7 +129,7 @@
       "flags": {}
     },
     {
-      "label": "Damage (Core Starfleet)",
+      "label": "Damage (1e)",
       "name": "damage-core",
       "path": "assets/packs/1e/damage-core.db",
       "system": "sta",
@@ -138,7 +138,7 @@
       "flags": {}
     },
     {
-      "label": "Personal Equipment (Core Starfleet)",
+      "label": "Personal Equipment (1e)",
       "name": "personal-equipment-core",
       "path": "assets/packs/1e/personal-equipment-core.db",
       "system": "sta",
@@ -147,7 +147,7 @@
       "flags": {}
     },
     {
-      "label": "Roll Tables (Core Starfleet)",
+      "label": "Roll Tables (1e)",
       "name": "roll-tables-core",
       "path": "assets/packs/1e/roll-tables-core.db",
       "system": "sta",
@@ -156,7 +156,7 @@
       "flags": {}
     },
     {
-      "label": "Playable Species (Core Starfleet)",
+      "label": "Playable Species (1e)",
       "name": "playable-species-core",
       "path": "assets/packs/1e/playable-species-core.db",
       "system": "sta",
@@ -165,7 +165,7 @@
       "flags": {}
     },
     {
-      "label": "Starship Weapons (Core Starfleet)",
+      "label": "Starship Weapons (1e)",
       "name": "starship-weapons-core",
       "path": "assets/packs/1e/starship-weapons-core.db",
       "system": "sta",
@@ -174,7 +174,7 @@
       "flags": {}
     },
     {
-      "label": "Starfleet Starships (Core Starfleet)",
+      "label": "Starfleet Starships (1e)",
       "name": "starfleet-starships-core",
       "path": "assets/packs/1e/starfleet-starships-core.db",
       "system": "sta",
@@ -183,7 +183,7 @@
       "flags": {}
     },
     {
-      "label": "Alien Starships (Core Starfleet)",
+      "label": "Alien Starships (1e)",
       "name": "alien-starships-core",
       "path": "assets/packs/1e/alien-starships-core.db",
       "system": "sta",
@@ -192,7 +192,7 @@
       "flags": {}
     },
     {
-      "label": "NPC Starship Crew (Core Starfleet)",
+      "label": "NPC Starship Crew (1e)",
       "name": "npc-starship-crew-core",
       "path": "assets/packs/1e/npc-starship-crew-core.db",
       "system": "sta",
@@ -201,7 +201,7 @@
       "flags": {}
     },
     {
-      "label": "Default Maps (Core Starfleet)",
+      "label": "Default Maps (1e)",
       "name": "default-maps",
       "path": "assets/packs/1e/default-maps-core.db",
       "system": "sta",
@@ -210,7 +210,7 @@
       "flags": {}
     },
     {
-      "label": "System Damage",
+      "label": "System Damage (2e)",
       "name": "system-damage",
       "path": "assets/packs/2e/damage-and-injuries.db",
       "system": "sta",
@@ -219,7 +219,7 @@
       "flags": {}
     },
     {
-      "label": "Equipment (Crew)",
+      "label": "Equipment - Crew (2e)",
       "name": "equipment-crew",
       "path": "assets/packs/2e/equipment-crew.db",
       "system": "sta",
@@ -228,7 +228,7 @@
       "flags": {}
     },
     {
-      "label": "Equipment (Starship)",
+      "label": "Equipment - Starship (2e)",
       "name": "equipment-starship",
       "path": "assets/packs/2e/equipment-starships.db",
       "system": "sta",
@@ -237,7 +237,7 @@
       "flags": {}
     },
     {
-      "label": "Focuses",
+      "label": "Focuses (2e)",
       "name": "focuses",
       "path": "assets/packs/2e/focuses.db",
       "system": "sta",
@@ -246,7 +246,7 @@
       "flags": {}
     },
     {
-      "label": "Starships",
+      "label": "Starships (2e)",
       "name": "starships",
       "path": "assets/packs/2e/starships.db",
       "system": "sta",
@@ -255,7 +255,7 @@
       "flags": {}
     },
     {
-      "label": "Talents (Crew)",
+      "label": "Talents - Crew (2e)",
       "name": "talents-crew",
       "path": "assets/packs/2e/talents-crew.db",
       "system": "sta",
@@ -264,7 +264,7 @@
       "flags": {}
     },
     {
-      "label": "Talents (Starship)",
+      "label": "Talents - Starship (2e)",
       "name": "talents-starship",
       "path": "assets/packs/2e/talents-starship.db",
       "system": "sta",
@@ -273,7 +273,7 @@
       "flags": {}
     },
     {
-      "label": "Values",
+      "label": "Values (2e)",
       "name": "values",
       "path": "assets/packs/2e/values.db",
       "system": "sta",
@@ -282,7 +282,7 @@
       "flags": {}
     },
     {
-      "label": "Lifepath - Species",
+      "label": "Lifepath - Species (2e)",
       "name": "lifepath-species",
       "path": "assets/packs/2e/species.db",
       "system": "sta",
@@ -291,7 +291,7 @@
       "flags": {}
     },
     {
-      "label": "Lifepath - Career Path",
+      "label": "Lifepath - Career Path (2e)",
       "name": "lifepath-career-path",
       "path": "assets/packs/2e/lifepath-career-path.db",
       "system": "sta",
@@ -300,7 +300,7 @@
       "flags": {}
     },
     {
-      "label": "Lifepath - Environment",
+      "label": "Lifepath - Environment (2e)",
       "name": "lifepath-environment",
       "path": "assets/packs/2e/lifepath-environment.db",
       "system": "sta",
@@ -309,7 +309,7 @@
       "flags": {}
     },
     {
-      "label": "Lifepath - Upbringing",
+      "label": "Lifepath - Upbringing (2e)",
       "name": "lifepath-upbringing",
       "path": "assets/packs/2e/lifepath-upbringing.db",
       "system": "sta",
@@ -318,7 +318,7 @@
       "flags": {}
     },
     {
-      "label": "Lifepath - Career Events",
+      "label": "Lifepath - Career Events (2e)",
       "name": "lifepath-career-events",
       "path": "assets/packs/2e/lifepath-career-events.db",
       "system": "sta",
