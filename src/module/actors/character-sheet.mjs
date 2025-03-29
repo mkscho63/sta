@@ -166,9 +166,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       });
     }
     const defaultValue = 2;
-    const speaker = {
-      type: 'character'
-    };
+    const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attribute.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
@@ -219,7 +217,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
   async _onChallengeTest(event) {
     event.preventDefault();
     const defaultValue = 2;
-    const speaker = game.user;
+    const speaker = this.actor;
     const weaponName = '';
     const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
@@ -256,7 +254,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     event.preventDefault();
     const currentReprimand = parseInt(this.element.querySelector('#currentreprimand')?.value || 0, 10);
     const currentReputation = parseInt(this.element.querySelector('#total-rep')?.value || 0, 10);
-    const speaker = ChatMessage.getSpeaker();
+    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
     const template = 'systems/sta/templates/apps/dicepool-reputation.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template);
     const formData = await api.DialogV2.wait({

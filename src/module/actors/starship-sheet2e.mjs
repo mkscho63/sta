@@ -123,9 +123,7 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
       }
     });
     const defaultValue = 2;
-    const speaker = {
-      type: 'starship'
-    };
+    const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attributess.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue

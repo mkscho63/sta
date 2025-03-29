@@ -165,9 +165,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       });
     }
     const defaultValue = 2;
-    const speaker = {
-      type: 'character'
-    };
+    const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attribute2e.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
@@ -222,7 +220,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     event.preventDefault();
     const currentReprimand = parseInt(this.element.querySelector('#currentreprimand')?.value || 0, 10);
     const currentReputation = parseInt(this.element.querySelector('#total-rep')?.value || 0, 10);
-    const speaker = ChatMessage.getSpeaker();
+    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
     const template = 'systems/sta/templates/apps/dicepool-reputation.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template);
     const formData = await api.DialogV2.wait({

@@ -121,9 +121,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
       }
     });
     const defaultValue = 2;
-    const speaker = {
-      type: 'starship'
-    };
+    const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attributess.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue

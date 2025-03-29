@@ -124,9 +124,7 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
       }
     });
     const defaultValue = 2;
-    const speaker = {
-      type: 'starship'
-    };
+    const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attributess.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
@@ -177,7 +175,7 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
   async _onChallengeTest(event) {
     event.preventDefault();
     const defaultValue = 2;
-    const speaker = game.user;
+    const speaker = this.actor;
     const weaponName = '';
     const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
