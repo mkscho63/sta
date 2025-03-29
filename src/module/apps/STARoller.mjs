@@ -108,12 +108,10 @@ export class STARoller {
       type: 'starship'
     };
     const token = canvas.tokens.controlled[0];
-    const isStarship = token && (token.actor.type === 'starship' || token.actor.type === 'smallcraft');
     const template = 'systems/sta/templates/apps/dicepool-npc.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue,
       defaultDepartmentValue,
-      isStarship,
     });
     const formData = await api.DialogV2.wait({
       window: {
@@ -162,11 +160,9 @@ export class STARoller {
           departments = 4;
           break;
       }
-      if (!isStarship) {
-        speakerStarship = {
-          type: 'npcship'
-        };
-      }
+      speakerStarship = {
+        type: 'npcship'
+      };
       const staRoll = new STARoll();
       staRoll.performAttributeTest(
         numDice,
