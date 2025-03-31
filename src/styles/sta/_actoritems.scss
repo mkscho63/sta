@@ -103,7 +103,7 @@
     .small.disabled input {
       box-shadow: none;
       cursor: default;
-      color: grey;
+      color: $disabledinput;
     }
   }
 }
@@ -124,9 +124,9 @@
 
 .item-tooltip {
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border: 1px solid #fff;
+  background: $tooltipbackground;
+  color: $tooltiptext;
+  border: 1px solid $tooltiptext;
   border-radius: 4px;
   pointer-events: none;
   z-index: 1000;
@@ -139,7 +139,7 @@
 .item-name {
   border: none;
   outline: none;
-  background-color: transparent;
+  background-color: $itembackground;
 }
 
 .strike-through {

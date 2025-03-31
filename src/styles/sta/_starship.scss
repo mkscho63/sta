@@ -1,5 +1,3 @@
-/* Starship Style Starts Here */
-
 .window-content:has(.starship-sheet) {
   padding: 0;
 }
@@ -187,20 +185,16 @@
   }
 }
 
-/* Yellow highlight for damaged systems */
 .highlight-damaged {
-    border: 2px solid #eda515 !important;
-    color: #eda515 !important;
+	background-color: $damagedsystem !important;
 }
-/* Orange highlight for disabled systems */
+
 .highlight-disabled {
-    border: 2px solid #ed6c15 !important;
-    color: #ed6c15 !important;
+    background-color: $disabledsystem !important;
 }
-/* Red highlight for destroyed systems  */
+
 .highlight-destroyed {
-    border: 2px solid #ff0000 !important;
-    color: #ff0000 !important;
+    background-color: $destroyedsystem !important;
 }
 
 /* System stats styling here */
@@ -266,5 +260,3 @@
 }
 
 }
-
-/* Starship Style Ends Here */
