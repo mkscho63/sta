@@ -1,6 +1,3 @@
-import {
-  STARoll
-} from '../apps/roll.js';
 const api = foundry.applications.api;
 export class STARoller {
   static async _onTaskRoll(event) {

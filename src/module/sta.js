@@ -65,6 +65,9 @@ import {
 import {
   Collapsible
 } from './apps/Collapsible.mjs';
+import {
+  STARoll
+} from './apps/roll.js';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -111,6 +114,8 @@ Hooks.once('init', function() {
     },
     defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
   };
+
+window.STARoll = STARoll;
 
   // Define initiative for the system.
   CONFIG.Combat.initiative = {

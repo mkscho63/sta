@@ -1,7 +1,3 @@
-import {
-  STARoll
-} from '../apps/roll.js';
-
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
 
