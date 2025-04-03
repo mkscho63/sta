@@ -8,6 +8,9 @@ export class STARoll {
     let diceString = '';
     let success = 0;
     let complication = 0;
+    let withFocus = "";
+    let withDedicatedFocus = "";
+    let withDetermination = "";
     const checkTarget =
       parseInt(selectedAttributeValue) + parseInt(selectedDisciplineValue);
     const complicationMinimumValue = 20 - (complicationRange - 1);
@@ -37,10 +40,17 @@ export class STARoll {
         diceString += '<li class="roll die d20">' + result + '</li>';
       }
     }
+    if (usingFocus) {
+      withFocus = ", " + game.i18n.format('sta.actor.belonging.focus.title');
+    }
+    if (usingDedicatedFocus) {
+      withDedicatedFocus = withDedicatedFocus = ", " + game.i18n.format('sta.roll.dedicatedfocus');
+    }
     // If using a Value and Determination, automatically add in an extra critical roll
     if (usingDetermination) {
       diceString += '<li class="roll die d20 max">' + 1 + '</li>';
       success += 2;
+      withDetermination = ", " + game.i18n.format('sta.actor.character.determination');
     }
     // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
     let successText = '';
@@ -96,6 +106,9 @@ export class STARoll {
       selectedAttributeValue,
       selectedDiscipline,
       selectedDisciplineValue,
+      withFocus,
+      withDedicatedFocus,
+      withDetermination,
     };
     const html = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/attribute-test.hbs', chatData);
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.

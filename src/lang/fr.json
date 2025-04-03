@@ -253,6 +253,7 @@
   "sta.roll.gainreprimand": "Gagne {0} réprimande",
   "sta.roll.dicerolls": "Lancers de Dés:",
   "sta.roll.nochange": "Ne gagne ni renom ni réprimande",
+  "sta.roll.dedicatedfocus": "Concentration Dédiée",
 
   "sta.roll.weapon.damage": "<b>1</b> Dégât",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Dégâts",

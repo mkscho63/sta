@@ -214,8 +214,8 @@
   "sta.apps.complicationrange": "Komplikationsspanne (1 ist normal)?",
   "sta.apps.pool": "Nummer der Würfel im Pool",
   "sta.apps.rolldice": "Würfeln",
-  "sta.apps.dedicatedfocus": "STARoller",
-  "sta.apps.staroller": "Spezifischer Fokus verwendet?",
+  "sta.apps.dedicatedfocus": "Spezifischer Fokus verwendet?",
+  "sta.apps.staroller": "STARoller",
   "sta.apps.addmomentum": "{0} Momentum zum Pool {0} Momentum aus dem Pool entfernt",
   "sta.apps.removemomentum": "removed {0} momentum from the pool",
   "sta.apps.addthreat": "adde{0} Bedrohung zum Pool hinzugefügtd {0} threat to the pool",
@@ -253,6 +253,7 @@
   "sta.roll.gainreprimand": "Erhält {0} Rüge",
   "sta.roll.dicerolls": "Würfelergebnisse:",
   "sta.roll.nochange": "Erhält kein Ansehen oder Rüge",
+  "sta.roll.dedicatedfocus": "Fokus verwendet",
 
   "sta.roll.weapon.damage": "<b>1</b> Schadenswürfel",
   "sta.roll.weapon.damagePlural": "<b>|#|</b> Schadenswürfel",
