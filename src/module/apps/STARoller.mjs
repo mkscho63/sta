@@ -2,13 +2,13 @@ const api = foundry.applications.api;
 export class STARoller {
   static async _onTaskRoll(event) {
     event.preventDefault();
-    let selectedAttribute = null;
-    let selectedDiscipline = null;
+    const selectedAttribute = null;
+    const selectedDiscipline = null;
 
     const defaultValue = 2;
     const speaker = {
-          type: 'sidebar'
-        };
+      type: 'sidebar'
+    };
     const template = 'systems/sta/templates/apps/dicepool-attribroller.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
@@ -18,26 +18,26 @@ export class STARoller {
         title: game.i18n.localize('sta.apps.dicepoolwindow')
       },
       position: {
-        height: "auto",
+        height: 'auto',
         width: 350
       },
       content: html,
-      classes: ["dialogue"],
+      classes: ['dialogue'],
       buttons: [{
-        action: "roll",
+        action: 'roll',
         default: true,
         label: game.i18n.localize('sta.apps.rolldice'),
         callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
+          const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
-      }, ],
+      },],
       close: () => null,
     });
     if (formData) {
-      let dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
-      const selectedAttributeValue = parseInt(document.getElementById("selectedAttributeValue").value, 10) || 0;
-      const selectedDisciplineValue = parseInt(document.getElementById("selectedDisciplineValue").value, 10) || 0;
+      const dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
+      const selectedAttributeValue = parseInt(document.getElementById('selectedAttributeValue').value, 10) || 0;
+      const selectedDisciplineValue = parseInt(document.getElementById('selectedDisciplineValue').value, 10) || 0;
       const usingFocus = formData.get('usingFocus') === 'on';
       const usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
       const usingDetermination = formData.get('usingDetermination') === 'on';
@@ -72,20 +72,20 @@ export class STARoller {
         title: game.i18n.localize('sta.apps.dicepoolwindow')
       },
       position: {
-        height: "auto",
+        height: 'auto',
         width: 350
       },
       content: html,
-      classes: ["dialogue"],
+      classes: ['dialogue'],
       buttons: [{
-        action: "roll",
+        action: 'roll',
         default: true,
         label: game.i18n.localize('sta.apps.rolldice'),
         callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
+          const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
-      }, ],
+      },],
       close: () => null,
     });
     if (!formData) return;
@@ -128,7 +128,7 @@ export class STARoller {
           const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
-      }, ],
+      },],
       close: () => null,
     });
     if (formData) {
@@ -144,18 +144,18 @@ export class STARoller {
       let attributes = 8;
       let departments = 1;
       switch (skillLevel) {
-        case 'proficient':
-          attributes = 9;
-          departments = 2;
-          break;
-        case 'talented':
-          attributes = 10;
-          departments = 3;
-          break;
-        case 'exceptional':
-          attributes = 11;
-          departments = 4;
-          break;
+      case 'proficient':
+        attributes = 9;
+        departments = 2;
+        break;
+      case 'talented':
+        attributes = 10;
+        departments = 3;
+        break;
+      case 'exceptional':
+        attributes = 11;
+        departments = 4;
+        break;
       }
       speakerStarship = {
         type: 'npcship'

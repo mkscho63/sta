@@ -4,7 +4,7 @@ const sheets = foundry.applications.sheets;
 export class STAArmorSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
-      template: "systems/sta/templates/items/armor-sheet.hbs"
+      template: 'systems/sta/templates/items/armor-sheet.hbs'
     },
   };
 
@@ -15,7 +15,7 @@ export class STAArmorSheet extends api.HandlebarsApplicationMixin(sheets.ItemShe
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 500,
     },
   };

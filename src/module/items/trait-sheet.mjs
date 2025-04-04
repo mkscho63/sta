@@ -4,7 +4,7 @@ const sheets = foundry.applications.sheets;
 export class STATraitSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
-      template: "systems/sta/templates/items/trait-sheet.hbs"
+      template: 'systems/sta/templates/items/trait-sheet.hbs'
     },
   };
 
@@ -15,17 +15,17 @@ export class STATraitSheet extends api.HandlebarsApplicationMixin(sheets.ItemShe
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 500,
     },
   };
 
   get title() {
     switch (this.item.type) {
-      case 'trait':
-        return `${this.item.name} - Trait`;
-      case 'injury':
-        return `${this.item.name} - Injury`;
+    case 'trait':
+      return `${this.item.name} - Trait`;
+    case 'injury':
+      return `${this.item.name} - Injury`;
     }
   }
 

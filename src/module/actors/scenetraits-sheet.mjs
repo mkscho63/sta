@@ -2,10 +2,9 @@ const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
 
 export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
-
   static PARTS = {
     charactersheet: {
-      template: "systems/STA/templates/actors/scenetraits-sheet.hbs"
+      template: 'systems/STA/templates/actors/scenetraits-sheet.hbs'
     }
   };
 
@@ -21,10 +20,10 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 300,
     },
-    dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
+    dragDrop: [{dragSelector: '[data-drag]', dropSelector: null}],
   };
 
   get title() {
@@ -54,7 +53,7 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
     const itemId = input.dataset.itemId;
     const newQuantity = parseInt(input.value.trim(), 10);
     if (isNaN(newQuantity) || newQuantity < 0) {
-      ui.notifications.error("Quantity must be a positive number.");
+      ui.notifications.error('Quantity must be a positive number.');
       return;
     }
     const item = this.actor.items.get(itemId);
@@ -116,15 +115,15 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
   }
 
   static async _onItemCreate(event, target) {
-    const docCls = getDocumentClass(target.dataset.documentClass || "Item");
-    const type = target.dataset.type || "item";
+    const docCls = getDocumentClass(target.dataset.documentClass || 'Item');
+    const type = target.dataset.type || 'item';
     const docData = {
       name: `New ${type.charAt(0).toUpperCase() + type.slice(1)}`,
       type: type,
       parent: this.actor,
     };
     for (const [dataKey, value] of Object.entries(target.dataset)) {
-      if (["action", "documentClass"].includes(dataKey)) continue;
+      if (['action', 'documentClass'].includes(dataKey)) continue;
       foundry.utils.setProperty(docData, dataKey, value);
     }
     await docCls.create(docData, {
@@ -148,25 +147,25 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
       },
       content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
       position: {
-        height: "auto",
+        height: 'auto',
         width: 350
       },
       buttons: [{
-        action: "yes",
+        action: 'yes',
         default: false,
-		icon: '<i class="fas fa-check"></i>',
+        icon: '<i class="fas fa-check"></i>',
         label: game.i18n.localize('sta.apps.yes'),
         callback: async () => {
           await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
         },
       },
       {
-        action: "no",
+        action: 'no',
         default: true,
-		icon: '<i class="fas fa-times"></i>',
+        icon: '<i class="fas fa-times"></i>',
         label: game.i18n.localize('sta.apps.no'),
         callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
+          const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
       },],
@@ -175,23 +174,23 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
   }
 
   _onRender(context, options) {
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('change', this._onItemNameChange.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('mouseover', this._onItemTooltipShow.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('mouseout', this._onItemTooltipHide.bind(this));
     });
 
-    document.querySelectorAll('.item-quantity').forEach(input => {
+    document.querySelectorAll('.item-quantity').forEach((input) => {
       input.addEventListener('change', this._onItemQuantityChange.bind(this));
     });
 
-    this.#dragDrop.forEach(d => d.bind(this.element));
+    this.#dragDrop.forEach((d) => d.bind(this.element));
   }
 
   #dragDrop;
@@ -216,7 +215,7 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
   _onDragStart(event) {
     const docRow = event.currentTarget.closest('li');
     if ('link' in event.target.dataset) return;
-    let dragData = this._getEmbeddedDocument(docRow)?.toDragData();
+    const dragData = this._getEmbeddedDocument(docRow)?.toDragData();
     if (!dragData) return;
     event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
   }
@@ -235,7 +234,7 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
     if (!this.actor.isOwner) return false;
     const item = await Item.implementation.fromDropData(data);
     const allowedSubtypes = [
-      "trait"
+      'trait'
     ];
 
     if (!allowedSubtypes.includes(item.type)) {
@@ -256,7 +255,7 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
   }
 
   #createDragDropHandlers() {
-    return this.options.dragDrop.map(d => {
+    return this.options.dragDrop.map((d) => {
       d.permissions = {
         dragstart: this._canDragStart.bind(this),
         drop: this._canDragDrop.bind(this),

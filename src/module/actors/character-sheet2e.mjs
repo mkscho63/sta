@@ -2,13 +2,12 @@ const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
 
 export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
-
   static PARTS = {
     charactersheet: {
-      template: "systems/STA/templates/actors/character-sheet2e.hbs"
+      template: 'systems/STA/templates/actors/character-sheet2e.hbs'
     },
     limitedsheet: {
-      template: "systems/STA/templates/actors/limited-sheet.hbs"
+      template: 'systems/STA/templates/actors/limited-sheet.hbs'
     },
   };
 
@@ -32,10 +31,10 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 850
     },
-    dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
+    dragDrop: [{dragSelector: '[data-drag]', dropSelector: null}],
   };
 
   get title() {
@@ -74,25 +73,25 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
   }
 
   getTabs() {
-    let tabGroup = "primary";
+    const tabGroup = 'primary';
     if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'biography';
-    let tabs = {
+    const tabs = {
       biography: {
-        id: "biography",
+        id: 'biography',
         group: tabGroup,
       },
       traits: {
-        id: "traits",
+        id: 'traits',
         group: tabGroup,
       },
       notes: {
-        id: "notes",
+        id: 'notes',
         group: tabGroup,
       }
-    }
-    for (let tab in tabs) {
+    };
+    for (const tab in tabs) {
       if (this.tabGroups[tabGroup] === tabs[tab].id) {
-        tabs[tab].cssClass = "active";
+        tabs[tab].cssClass = 'active';
         tabs[tab].active = true;
       }
     }
@@ -145,7 +144,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       }
     });
     if (useReputationInstead) {
-      selectedDiscipline = "reputation";
+      selectedDiscipline = 'reputation';
       selectedDisciplineValue = reputationValue;
     } else {
       const departmentCheckboxes = this.element.querySelectorAll('.discipline-block .selector.discipline');
@@ -171,20 +170,20 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
         title: game.i18n.localize('sta.apps.dicepoolwindow')
       },
       position: {
-        height: "auto",
+        height: 'auto',
         width: 350
       },
       content: html,
-      classes: ["dialogue"],
+      classes: ['dialogue'],
       buttons: [{
-        action: "roll",
+        action: 'roll',
         default: true,
         label: game.i18n.localize('sta.apps.rolldice'),
         callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
+          const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
-      }, ],
+      },],
       close: () => null,
     });
     if (formData) {
@@ -216,29 +215,29 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     event.preventDefault();
     const currentReprimand = parseInt(this.element.querySelector('#currentreprimand')?.value || 0, 10);
     const currentReputation = parseInt(this.element.querySelector('#total-rep')?.value || 0, 10);
-    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+    const speaker = ChatMessage.getSpeaker({actor: this.actor});
     const template = 'systems/sta/templates/apps/dicepool-reputation.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template);
     const formData = await api.DialogV2.wait({
-        window: {
-            title: game.i18n.localize('sta.apps.dicepoolwindow')
+      window: {
+        title: game.i18n.localize('sta.apps.dicepoolwindow')
+      },
+      position: {
+        height: 'auto',
+        width: 350
+      },
+      content: html,
+      classes: ['dialogue'],
+      buttons: [{
+        action: 'roll',
+        default: true,
+        label: game.i18n.localize('sta.apps.rolldice'),
+        callback: (event, button, htmlElement) => {
+          const form = htmlElement.querySelector('form');
+          return form ? new FormData(form) : null;
         },
-        position: {
-            height: "auto",
-            width: 350
-        },
-        content: html,
-        classes: ["dialogue"],
-        buttons: [{
-            action: "roll",
-            default: true,
-            label: game.i18n.localize('sta.apps.rolldice'),
-            callback: (event, button, htmlElement) => {
-                const form = htmlElement.querySelector("form");
-                return form ? new FormData(form) : null;
-            },
-        }],
-        close: () => null,
+      }],
+      close: () => null,
     });
     if (!formData) return;
     const positiveInfluences = parseInt(formData.get('positiveInfluences'), 10) || 0;
@@ -253,37 +252,37 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     let acclaim = 0;
     let reprimand = 0;
     const diceResults = [];
-    roll.terms[0].results.forEach(die => {
-        let coloredDieResult;
-        if (die.result >= complicationThreshold) {
-            coloredDieResult = `<span style="color: red;">${die.result}</span>`;
-            complications += 1;
-        } else if (die.result <= currentReputation) {
-            coloredDieResult = `<span style="color: green;">${die.result}</span>`;
-            totalSuccesses += 2;
-        } else if (die.result <= targetNumber) {
-            coloredDieResult = `<span style="color: blue;">${die.result}</span>`;
-            totalSuccesses += 1;
-        } else {
-            coloredDieResult = `<span>${die.result}</span>`;
-        }
-        diceResults.push(coloredDieResult);
+    roll.terms[0].results.forEach((die) => {
+      let coloredDieResult;
+      if (die.result >= complicationThreshold) {
+        coloredDieResult = `<span style="color: red;">${die.result}</span>`;
+        complications += 1;
+      } else if (die.result <= currentReputation) {
+        coloredDieResult = `<span style="color: green;">${die.result}</span>`;
+        totalSuccesses += 2;
+      } else if (die.result <= targetNumber) {
+        coloredDieResult = `<span style="color: blue;">${die.result}</span>`;
+        totalSuccesses += 1;
+      } else {
+        coloredDieResult = `<span>${die.result}</span>`;
+      }
+      diceResults.push(coloredDieResult);
     });
     let chatContent = `${game.i18n.format('sta.roll.dicerolls')} ${diceResults.join(', ')}<br>`;
     if (totalSuccesses > negativeInfluences) {
-        acclaim = totalSuccesses - negativeInfluences;
-        chatContent += `<strong>${game.i18n.format('sta.roll.gainacclaim', { 0: acclaim })}</strong>`;
+      acclaim = totalSuccesses - negativeInfluences;
+      chatContent += `<strong>${game.i18n.format('sta.roll.gainacclaim', {0: acclaim})}</strong>`;
     } else {
-        reprimand = negativeInfluences - totalSuccesses + complications;
-        if (reprimand > 0) {
-            chatContent += `<strong>${game.i18n.format('sta.roll.gainreprimand', { 0: reprimand })}</strong>`;
-        } else {
-            chatContent += `<strong>${game.i18n.localize('sta.roll.nochange')}</strong>`;
-        }
+      reprimand = negativeInfluences - totalSuccesses + complications;
+      if (reprimand > 0) {
+        chatContent += `<strong>${game.i18n.format('sta.roll.gainreprimand', {0: reprimand})}</strong>`;
+      } else {
+        chatContent += `<strong>${game.i18n.localize('sta.roll.nochange')}</strong>`;
+      }
     }
     ChatMessage.create({
-        speaker,
-        content: chatContent,
+      speaker,
+      content: chatContent,
     });
   }
 
@@ -302,7 +301,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     const itemId = input.dataset.itemId;
     const newQuantity = parseInt(input.value.trim(), 10);
     if (isNaN(newQuantity) || newQuantity < 0) {
-      ui.notifications.error("Quantity must be a positive number.");
+      ui.notifications.error('Quantity must be a positive number.');
       return;
     }
     const item = this.actor.items.get(itemId);
@@ -319,35 +318,35 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     const item = this.actor.items.get(itemId);
     const staRoll = new STARoll();
     switch (itemType) {
-      case 'item':
-        staRoll.performItemRoll(item, this.actor);
-        break;
-      case 'focus':
-        staRoll.performFocusRoll(item, this.actor);
-        break;
-      case 'value':
-        staRoll.performValueRoll(item, this.actor);
-        break;
-      case 'characterweapon2e':
-        staRoll.performWeaponRoll2e(item, this.actor);
-        break;
-      case 'armor':
-        staRoll.performArmorRoll(item, this.actor);
-        break;
-      case 'talent':
-        staRoll.performTalentRoll(item, this.actor);
-        break;
-      case 'injury':
-        staRoll.performInjuryRoll(item, this.actor);
-        break;
-      case 'trait':
-        staRoll.performTraitRoll(item, this.actor);
-        break;
-      case 'milestone':
-        staRoll.performMilestoneRoll(item, this.actor);
-        break;
-      default:
-        console.warn(`Unhandled item type: ${itemType}`);
+    case 'item':
+      staRoll.performItemRoll(item, this.actor);
+      break;
+    case 'focus':
+      staRoll.performFocusRoll(item, this.actor);
+      break;
+    case 'value':
+      staRoll.performValueRoll(item, this.actor);
+      break;
+    case 'characterweapon2e':
+      staRoll.performWeaponRoll2e(item, this.actor);
+      break;
+    case 'armor':
+      staRoll.performArmorRoll(item, this.actor);
+      break;
+    case 'talent':
+      staRoll.performTalentRoll(item, this.actor);
+      break;
+    case 'injury':
+      staRoll.performInjuryRoll(item, this.actor);
+      break;
+    case 'trait':
+      staRoll.performTraitRoll(item, this.actor);
+      break;
+    case 'milestone':
+      staRoll.performMilestoneRoll(item, this.actor);
+      break;
+    default:
+      console.warn(`Unhandled item type: ${itemType}`);
     }
   }
 
@@ -359,24 +358,24 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     if (!item) return;
     const isUsed = item.system.used;
     item.system.used = !isUsed;
-    const icon = event.currentTarget.querySelector("i");
+    const icon = event.currentTarget.querySelector('i');
     icon.classList.toggle('fa-toggle-on', !isUsed);
     icon.classList.toggle('fa-toggle-off', isUsed);
     entry.setAttribute('data-item-used', !isUsed);
     entry.style.textDecoration = isUsed ? 'none' : 'line-through';
-    await item.update({ 'system.used': item.system.used });
+    await item.update({'system.used': item.system.used});
   }
 
   static async _onItemCreate(event, target) {
-    const docCls = getDocumentClass(target.dataset.documentClass || "Item");
-    const type = target.dataset.type || "item";
+    const docCls = getDocumentClass(target.dataset.documentClass || 'Item');
+    const type = target.dataset.type || 'item';
     const docData = {
       name: `New ${type.charAt(0).toUpperCase() + type.slice(1)}`,
       type: type,
       parent: this.actor,
     };
     for (const [dataKey, value] of Object.entries(target.dataset)) {
-      if (["action", "documentClass"].includes(dataKey)) continue;
+      if (['action', 'documentClass'].includes(dataKey)) continue;
       foundry.utils.setProperty(docData, dataKey, value);
     }
     await docCls.create(docData, {
@@ -400,25 +399,25 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       },
       content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
       position: {
-        height: "auto",
+        height: 'auto',
         width: 350
       },
       buttons: [{
-        action: "yes",
+        action: 'yes',
         default: false,
-		icon: '<i class="fas fa-check"></i>',
+        icon: '<i class="fas fa-check"></i>',
         label: game.i18n.localize('sta.apps.yes'),
         callback: async () => {
           await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
         },
       },
       {
-        action: "no",
+        action: 'no',
         default: true,
-		icon: '<i class="fas fa-times"></i>',
+        icon: '<i class="fas fa-times"></i>',
         label: game.i18n.localize('sta.apps.no'),
         callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
+          const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
       },],
@@ -593,23 +592,23 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     this._onDeterminationTrackUpdate();
     this._onReputationTrackUpdate();
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('change', this._onItemNameChange.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('mouseover', this._onItemTooltipShow.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('mouseout', this._onItemTooltipHide.bind(this));
     });
 
-    document.querySelectorAll('.item-quantity').forEach(input => {
+    document.querySelectorAll('.item-quantity').forEach((input) => {
       input.addEventListener('change', this._onItemQuantityChange.bind(this));
     });
 
-    this.#dragDrop.forEach(d => d.bind(this.element));
+    this.#dragDrop.forEach((d) => d.bind(this.element));
   }
 
   #dragDrop;
@@ -634,7 +633,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
   _onDragStart(event) {
     const docRow = event.currentTarget.closest('li');
     if ('link' in event.target.dataset) return;
-    let dragData = this._getEmbeddedDocument(docRow)?.toDragData();
+    const dragData = this._getEmbeddedDocument(docRow)?.toDragData();
     if (!dragData) return;
     event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
   }
@@ -653,15 +652,15 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     if (!this.actor.isOwner) return false;
     const item = await Item.implementation.fromDropData(data);
     const allowedSubtypes = [
-      "item",
-      "focus",
-      "value",
-      "characterweapon2e",
-      "armor",
-      "talent",
-      "milestone",
-      "injury",
-      "trait"
+      'item',
+      'focus',
+      'value',
+      'characterweapon2e',
+      'armor',
+      'talent',
+      'milestone',
+      'injury',
+      'trait'
     ];
 
     if (!allowedSubtypes.includes(item.type)) {
@@ -682,7 +681,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
   }
 
   #createDragDropHandlers() {
-    return this.options.dragDrop.map(d => {
+    return this.options.dragDrop.map((d) => {
       d.permissions = {
         dragstart: this._canDragStart.bind(this),
         drop: this._canDragDrop.bind(this),

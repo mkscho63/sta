@@ -4,7 +4,7 @@ const sheets = foundry.applications.sheets;
 export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
-      template: "systems/sta/templates/items/generic-sheet.hbs"
+      template: 'systems/sta/templates/items/generic-sheet.hbs'
     },
   };
 
@@ -15,19 +15,19 @@ export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemS
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 500,
     },
   };
 
   get title() {
     switch (this.item.type) {
-      case 'value':
-        return `${this.item.name} - Value`;
-      case 'focus':
-        return `${this.item.name} - Focus`;
-      case 'milestone':
-        return `${this.item.name} - Milestone`;
+    case 'value':
+      return `${this.item.name} - Value`;
+    case 'focus':
+      return `${this.item.name} - Focus`;
+    case 'milestone':
+      return `${this.item.name} - Milestone`;
     }
   }
 

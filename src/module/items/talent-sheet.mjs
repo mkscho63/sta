@@ -4,7 +4,7 @@ const sheets = foundry.applications.sheets;
 export class STATalentSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
-      template: "systems/sta/templates/items/talent-sheet.hbs"
+      template: 'systems/sta/templates/items/talent-sheet.hbs'
     },
   };
 
@@ -15,7 +15,7 @@ export class STATalentSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 565,
     },
   };

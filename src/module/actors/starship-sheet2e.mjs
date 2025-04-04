@@ -4,10 +4,10 @@ const sheets = foundry.applications.sheets;
 export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
   static PARTS = {
     charactersheet: {
-      template: "systems/STA/templates/actors/starship-sheet2e.hbs"
+      template: 'systems/STA/templates/actors/starship-sheet2e.hbs'
     },
     limitedsheet: {
-      template: "systems/STA/templates/actors/limited-ship.hbs"
+      template: 'systems/STA/templates/actors/limited-ship.hbs'
     },
   };
 
@@ -29,10 +29,10 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 850
     },
-    dragDrop: [{ dragSelector: "[data-drag]", dropSelector: null }],
+    dragDrop: [{dragSelector: '[data-drag]', dropSelector: null}],
   };
 
   get title() {
@@ -129,20 +129,20 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
         title: game.i18n.localize('sta.apps.dicepoolwindow')
       },
       position: {
-        height: "auto",
+        height: 'auto',
         width: 350
       },
       content: html,
-      classes: ["dialogue"],
+      classes: ['dialogue'],
       buttons: [{
-        action: "roll",
+        action: 'roll',
         default: true,
         label: game.i18n.localize('sta.apps.rolldice'),
         callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
+          const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
-      }, ],
+      },],
       close: () => null,
     });
     if (formData) {
@@ -182,7 +182,7 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
     const itemId = input.dataset.itemId;
     const newQuantity = parseInt(input.value.trim(), 10);
     if (isNaN(newQuantity) || newQuantity < 0) {
-      ui.notifications.error("Quantity must be a positive number.");
+      ui.notifications.error('Quantity must be a positive number.');
       return;
     }
     const item = this.actor.items.get(itemId);
@@ -199,26 +199,26 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
     const item = this.actor.items.get(itemId);
     const staRoll = new STARoll();
     switch (itemType) {
-      case 'item':
-        staRoll.performItemRoll(item, this.actor);
-        break;
-      case 'value':
-        staRoll.performValueRoll(item, this.actor);
-        break;
-      case 'starshipweapon2e':
-        staRoll.performStarshipWeaponRoll2e(item, this.actor);
-        break;
-      case 'talent':
-        staRoll.performTalentRoll(item, this.actor);
-        break;
-      case 'injury':
-        staRoll.performInjuryRoll(item, this.actor);
-        break;
-      case 'trait':
-        staRoll.performTraitRoll(item, this.actor);
-        break;
-      default:
-        console.warn(`Unhandled item type: ${itemType}`);
+    case 'item':
+      staRoll.performItemRoll(item, this.actor);
+      break;
+    case 'value':
+      staRoll.performValueRoll(item, this.actor);
+      break;
+    case 'starshipweapon2e':
+      staRoll.performStarshipWeaponRoll2e(item, this.actor);
+      break;
+    case 'talent':
+      staRoll.performTalentRoll(item, this.actor);
+      break;
+    case 'injury':
+      staRoll.performInjuryRoll(item, this.actor);
+      break;
+    case 'trait':
+      staRoll.performTraitRoll(item, this.actor);
+      break;
+    default:
+      console.warn(`Unhandled item type: ${itemType}`);
     }
   }
 
@@ -234,15 +234,15 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
   }
 
   static async _onItemCreate(event, target) {
-    const docCls = getDocumentClass(target.dataset.documentClass || "Item");
-    const type = target.dataset.type || "item";
+    const docCls = getDocumentClass(target.dataset.documentClass || 'Item');
+    const type = target.dataset.type || 'item';
     const docData = {
       name: `New ${type.charAt(0).toUpperCase() + type.slice(1)}`,
       type: type,
       parent: this.actor,
     };
     for (const [dataKey, value] of Object.entries(target.dataset)) {
-      if (["action", "documentClass"].includes(dataKey)) continue;
+      if (['action', 'documentClass'].includes(dataKey)) continue;
       foundry.utils.setProperty(docData, dataKey, value);
     }
     await docCls.create(docData, {
@@ -266,25 +266,25 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
       },
       content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
       position: {
-        height: "auto",
+        height: 'auto',
         width: 350
       },
       buttons: [{
-        action: "yes",
+        action: 'yes',
         default: false,
-		icon: '<i class="fas fa-check"></i>',
+        icon: '<i class="fas fa-check"></i>',
         label: game.i18n.localize('sta.apps.yes'),
         callback: async () => {
           await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
         },
       },
       {
-        action: "no",
+        action: 'no',
         default: true,
-		icon: '<i class="fas fa-times"></i>',
+        icon: '<i class="fas fa-times"></i>',
         label: game.i18n.localize('sta.apps.no'),
         callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector("form");
+          const form = htmlElement.querySelector('form');
           return form ? new FormData(form) : null;
         },
       },],
@@ -504,23 +504,23 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
     this._updateWeaponValues();
     this._updateBreachValues();
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('change', this._onItemNameChange.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('mouseover', this._onItemTooltipShow.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach(input => {
+    document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('mouseout', this._onItemTooltipHide.bind(this));
     });
 
-    document.querySelectorAll('.item-quantity').forEach(input => {
+    document.querySelectorAll('.item-quantity').forEach((input) => {
       input.addEventListener('change', this._onItemQuantityChange.bind(this));
     });
 
-    this.#dragDrop.forEach(d => d.bind(this.element));
+    this.#dragDrop.forEach((d) => d.bind(this.element));
   }
 
   #dragDrop;
@@ -545,7 +545,7 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
   _onDragStart(event) {
     const docRow = event.currentTarget.closest('li');
     if ('link' in event.target.dataset) return;
-    let dragData = this._getEmbeddedDocument(docRow)?.toDragData();
+    const dragData = this._getEmbeddedDocument(docRow)?.toDragData();
     if (!dragData) return;
     event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
   }
@@ -564,13 +564,13 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
     if (!this.actor.isOwner) return false;
     const item = await Item.implementation.fromDropData(data);
     const allowedSubtypes = [
-      "item",
-      "value",
-      "starshipweapon2e",
-      "talent",
-      "injury",
-      "smallcraftcontainer",
-      "trait"
+      'item',
+      'value',
+      'starshipweapon2e',
+      'talent',
+      'injury',
+      'smallcraftcontainer',
+      'trait'
     ];
 
     if (!allowedSubtypes.includes(item.type)) {
@@ -591,7 +591,7 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
   }
 
   #createDragDropHandlers() {
-    return this.options.dragDrop.map(d => {
+    return this.options.dragDrop.map((d) => {
       d.permissions = {
         dragstart: this._canDragStart.bind(this),
         drop: this._canDragDrop.bind(this),

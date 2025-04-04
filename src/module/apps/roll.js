@@ -8,9 +8,9 @@ export class STARoll {
     let diceString = '';
     let success = 0;
     let complication = 0;
-    let withFocus = "";
-    let withDedicatedFocus = "";
-    let withDetermination = "";
+    let withFocus = '';
+    let withDedicatedFocus = '';
+    let withDetermination = '';
     const checkTarget =
       parseInt(selectedAttributeValue) + parseInt(selectedDisciplineValue);
     const complicationMinimumValue = 20 - (complicationRange - 1);
@@ -41,16 +41,16 @@ export class STARoll {
       }
     }
     if (usingFocus) {
-      withFocus = ", " + game.i18n.format('sta.actor.belonging.focus.title');
+      withFocus = ', ' + game.i18n.format('sta.actor.belonging.focus.title');
     }
     if (usingDedicatedFocus) {
-      withDedicatedFocus = withDedicatedFocus = ", " + game.i18n.format('sta.roll.dedicatedfocus');
+      withDedicatedFocus = withDedicatedFocus = ', ' + game.i18n.format('sta.roll.dedicatedfocus');
     }
     // If using a Value and Determination, automatically add in an extra critical roll
     if (usingDetermination) {
       diceString += '<li class="roll die d20 max">' + 1 + '</li>';
       success += 2;
-      withDetermination = ", " + game.i18n.format('sta.actor.character.determination');
+      withDetermination = ', ' + game.i18n.format('sta.actor.character.determination');
     }
     // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
     let successText = '';
@@ -77,21 +77,21 @@ export class STARoll {
     // Set the flavour to "[Attribute] [Discipline] Attribute Test". This shows the chat what type of test occured.
     let flavor = '';
     switch (speaker.type) {
-      case 'character':
-        flavor = game.i18n.format('sta.actor.character.attribute.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.character.discipline.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
-        break;
-      case 'starship':
-        flavor = game.i18n.format('sta.actor.starship.system.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
-        break;
-      case 'sidebar':
-        flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
-        break;
-      case 'npccharacter':
-        flavor = game.i18n.format('sta.roll.npccrew' + selectedAttribute) + ' ' + game.i18n.format('sta.roll.npccrew') + ' ' + game.i18n.format('sta.roll.task.name');
-        break;
-      case 'npcship':
-        flavor = game.i18n.format('sta.roll.npcship') + ' ' + game.i18n.format('sta.roll.task.name');
-        break;
+    case 'character':
+      flavor = game.i18n.format('sta.actor.character.attribute.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.character.discipline.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'starship':
+      flavor = game.i18n.format('sta.actor.starship.system.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'sidebar':
+      flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'npccharacter':
+      flavor = game.i18n.format('sta.roll.npccrew' + selectedAttribute) + ' ' + game.i18n.format('sta.roll.npccrew') + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+    case 'npcship':
+      flavor = game.i18n.format('sta.roll.npcship') + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
     }
     const chatData = {
       speakerId: speaker.id,
@@ -336,7 +336,7 @@ export class STARoll {
 
       tags.push({
         label: tag,
-        tooltip: tooltips[property] || ""
+        tooltip: tooltips[property] || ''
       });
     }
 
@@ -466,7 +466,7 @@ export class STARoll {
 
       tags.push({
         label: tag,
-        tooltip: tooltips[property] || ""
+        tooltip: tooltips[property] || ''
       });
     }
 

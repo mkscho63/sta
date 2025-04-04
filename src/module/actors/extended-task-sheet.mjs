@@ -4,7 +4,7 @@ const sheets = foundry.applications.sheets;
 export class STAExtendedTaskSheet extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
   static PARTS = {
     charactersheet: {
-      template: "systems/STA/templates/actors/extended-task-sheet.hbs"
+      template: 'systems/STA/templates/actors/extended-task-sheet.hbs'
     },
   };
 
@@ -17,7 +17,7 @@ export class STAExtendedTaskSheet extends api.HandlebarsApplicationMixin(sheets.
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 500
     },
   };

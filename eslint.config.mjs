@@ -51,7 +51,7 @@ export default [
   google,
   {
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2022,
       sourceType: 'module',
       globals: {
         ...globals.browser,
@@ -99,6 +99,7 @@ export default [
       'no-trailing-spaces': 'off',
       'no-unused-vars': 'off',
       'no-useless-constructor': 'off',
+	  'new-cap': 'off',
     }
   },
 ];

@@ -7,12 +7,12 @@ const api = foundry.applications.api;
 export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2) {
   static PARTS = {
     tracker: {
-      template: "systems/sta/templates/apps/tracker.hbs"
+      template: 'systems/sta/templates/apps/tracker.hbs'
     },
   };
 
   static DEFAULT_OPTIONS = {
-    classes: ["tracker-container"],
+    classes: ['tracker-container'],
     actions: {
       onMomentumIncrease: STATracker._onMomentumIncrease,
       onMomentumDecrease: STATracker._onMomentumDecrease,
@@ -63,18 +63,18 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       requestAnimationFrame(updatePosition);
     };
     requestAnimationFrame(updatePosition);
-}
+  }
 
-  static UPDATE_SOCKET_NAME = "system.sta";
+  static UPDATE_SOCKET_NAME = 'system.sta';
 
   static MessageType = {
-    SetResource: "set-resource",
-    UpdateResource: "update-resource",
+    SetResource: 'set-resource',
+    UpdateResource: 'update-resource',
   };
 
   static Resource = {
-    Momentum: "momentum",
-    Threat: "threat",
+    Momentum: 'momentum',
+    Threat: 'threat',
   };
 
   static SocketMessage = class {
@@ -86,14 +86,14 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       this.resource = resource;
       this.value = value;
     }
-  }
+  };
 
   static LimitOf(resource) {
     return resource == STATracker.Resource.Momentum ? game.settings.get('sta', 'maxNumberOfMomentum') : 99;
   }
 
   static ValueOf(resource) {
-    return game.settings.get("sta", resource);
+    return game.settings.get('sta', resource);
   }
 
   static SendUpdateMessage(type, resource, value) {
@@ -103,7 +103,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
   }
 
   static UserHasPermissionFor(resource) {
-    let requiredLevel = game.settings.get("sta", `${resource}PermissionLevel`);
+    const requiredLevel = game.settings.get('sta', `${resource}PermissionLevel`);
     return game.user.hasRole(requiredLevel);
   }
 
@@ -131,7 +131,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       STATracker.UpdateTracker();
       return;
     }
-    let currentValue = STATracker.ValueOf(resource);
+    const currentValue = STATracker.ValueOf(resource);
     if (newValue !== currentValue) {
       if (STATracker.UserCanWriteSettings()) {
         await game.settings.set('sta', resource, newValue);
@@ -140,32 +140,32 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       } else {
         STATracker.SendUpdateMessage(STATracker.MessageType.SetResource, resource, newValue);
       }
-      let resourceName = resource === STATracker.Resource.Momentum ? "momentum" : "threat";
-      let diff = newValue - currentValue;
+      const resourceName = resource === STATracker.Resource.Momentum ? 'momentum' : 'threat';
+      const diff = newValue - currentValue;
       STATracker.accumulatedChanges[resourceName] += diff;
       if (STATracker.chatMessageTimeout) {
         clearTimeout(STATracker.chatMessageTimeout);
       }
       STATracker.chatMessageTimeout = setTimeout(() => {
-        let momentumDiff = STATracker.accumulatedChanges.momentum;
-        let threatDiff = STATracker.accumulatedChanges.threat;
+        const momentumDiff = STATracker.accumulatedChanges.momentum;
+        const threatDiff = STATracker.accumulatedChanges.threat;
         let chatMessage = '';
         if (momentumDiff !== 0) {
-          let momentumAction = momentumDiff > 0 ?
-            game.i18n.format("sta.apps.addmomentum", {
+          const momentumAction = momentumDiff > 0 ?
+            game.i18n.format('sta.apps.addmomentum', {
               0: momentumDiff
             }) :
-            game.i18n.format("sta.apps.removemomentum", {
+            game.i18n.format('sta.apps.removemomentum', {
               0: Math.abs(momentumDiff)
             });
           chatMessage += `${game.user.name} ${momentumAction}. `;
         }
         if (threatDiff !== 0) {
-          let threatAction = threatDiff > 0 ?
-            game.i18n.format("sta.apps.addthreat", {
+          const threatAction = threatDiff > 0 ?
+            game.i18n.format('sta.apps.addthreat', {
               0: threatDiff
             }) :
-            game.i18n.format("sta.apps.removethreat", {
+            game.i18n.format('sta.apps.removethreat', {
               0: Math.abs(threatDiff)
             });
           chatMessage += `${game.user.name} ${threatAction}.`;
@@ -173,7 +173,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
         if (chatMessage && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
           ChatMessage.create({
             speaker: {
-              alias: "STA"
+              alias: 'STA'
             },
             content: chatMessage
           });
@@ -204,7 +204,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       document.getElementById('sta-momentum-track-increase'),
     ];
     if (!this.UserHasPermissionFor(STATracker.Resource.Momentum)) {
-      STATracker.MomentumButtons.forEach(b => b.style.display = "none");
+      STATracker.MomentumButtons.forEach((b) => b.style.display = 'none');
       STATracker.MomentumInput.disabled = true;
     }
     STATracker.ThreatButtons = [
@@ -212,7 +212,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       document.getElementById('sta-threat-track-increase'),
     ];
     if (!this.UserHasPermissionFor(STATracker.Resource.Threat)) {
-      STATracker.ThreatButtons.forEach(b => b.style.display = "none");
+      STATracker.ThreatButtons.forEach((b) => b.style.display = 'none');
       STATracker.ThreatInput.disabled = true;
     }
   }
@@ -256,27 +256,27 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
   static _onMinimise() {
     document.getElementById('tracker-clickable-minus').classList.add('hide');
     document.getElementById('tracker-clickable-plus').classList.remove('hide');
-    document.querySelectorAll('.tracker-container').forEach(el => el.classList.add('hide'));
+    document.querySelectorAll('.tracker-container').forEach((el) => el.classList.add('hide'));
   }
 
   static _onMaximise() {
     document.getElementById('tracker-clickable-plus').classList.add('hide');
     document.getElementById('tracker-clickable-minus').classList.remove('hide');
-    document.querySelectorAll('.tracker-container').forEach(el => el.classList.remove('hide'));
+    document.querySelectorAll('.tracker-container').forEach((el) => el.classList.remove('hide'));
   }
 
   static async OnSocketData(message) {
     switch (message.type) {
-      case STATracker.MessageType.SetResource:
-        if (STATracker.UserCanWriteSettings()) {
-          await game.settings.set('sta', message.resource, message.value);
-          STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
-          STATracker.UpdateTracker();
-        }
-        break;
-      case STATracker.MessageType.UpdateResource:
+    case STATracker.MessageType.SetResource:
+      if (STATracker.UserCanWriteSettings()) {
+        await game.settings.set('sta', message.resource, message.value);
+        STATracker.SendUpdateMessage(STATracker.MessageType.UpdateResource);
         STATracker.UpdateTracker();
-        break;
+      }
+      break;
+    case STATracker.MessageType.UpdateResource:
+      STATracker.UpdateTracker();
+      break;
     }
   }
 
@@ -285,6 +285,6 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
     STATracker.ConfigureTrackerInputActions();
     STATracker.ConfigureTrackerInterface();
     STATracker.UpdateTracker();
-    STATracker.TrackerPosition()
+    STATracker.TrackerPosition();
   }
 }

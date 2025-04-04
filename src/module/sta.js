@@ -115,7 +115,7 @@ Hooks.once('init', function() {
     defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
   };
 
-window.STARoll = STARoll;
+  window.STARoll = STARoll;
 
   // Define initiative for the system.
   CONFIG.Combat.initiative = {
@@ -124,7 +124,7 @@ window.STARoll = STARoll;
   };
 
   // Register sheet application classes
-  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, "core", foundry.appv1.sheets.ActorSheet);
+  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, 'core', foundry.appv1.sheets.ActorSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet, {
     types: ['character'],
     makeDefault: true
@@ -151,7 +151,7 @@ window.STARoll = STARoll;
     types: ['scenetraits'],
   });
 
-  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, "core", foundry.appv1.sheets.ItemSheet);
+  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, 'core', foundry.appv1.sheets.ItemSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAItemSheet, {
     types: ['item'],
     makeDefault: true
@@ -325,7 +325,7 @@ Hooks.on('createActor', async (actor, options, userId) => {
     const item2 = await compendium1e.getDocument('3PTFLawY0tCva3gG');
 
     if (item1 && item2) {
-      const existingItems = actor.items.map(item => item.name);
+      const existingItems = actor.items.map((item) => item.name);
 
       const itemsToAdd = [];
       if (!existingItems.includes(item1.name)) itemsToAdd.push(item1.toObject());

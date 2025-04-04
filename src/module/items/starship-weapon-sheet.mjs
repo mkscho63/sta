@@ -4,7 +4,7 @@ const sheets = foundry.applications.sheets;
 export class STAStarshipWeaponSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
   static PARTS = {
     itemsheet: {
-      template: "systems/sta/templates/items/starship-weapon-sheet.hbs"
+      template: 'systems/sta/templates/items/starship-weapon-sheet.hbs'
     },
   };
 
@@ -15,7 +15,7 @@ export class STAStarshipWeaponSheet extends api.HandlebarsApplicationMixin(sheet
       closeOnSubmit: false,
     },
     position: {
-      height: "auto",
+      height: 'auto',
       width: 565,
     },
   };
