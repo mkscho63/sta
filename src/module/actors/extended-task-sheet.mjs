@@ -29,7 +29,7 @@ export class STAExtendedTaskSheet extends api.HandlebarsApplicationMixin(sheets.
   async _prepareContext(options) {
     const context = {
       actor: this.actor,
-      enrichedNotes: await TextEditor.enrichHTML(this.actor.system.description),
+      enrichedNotes: await foundry.applications.ux.TextEditor.enrichHTML(this.actor.system.description),
     };
     return context;
   }

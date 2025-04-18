@@ -53,7 +53,7 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
       systems: this.actor.system.systems,
       departments: this.actor.system.departments,
       departmentorder: this.actor.system.departmentorder,
-      enrichedNotes: await TextEditor.enrichHTML(this.actor.system.notes),
+      enrichedNotes: await foundry.applications.ux.TextEditor.enrichHTML(this.actor.system.notes),
     };
 
     Object.entries(context.systems).forEach(([key, system]) => {
@@ -140,8 +140,8 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
         action: 'roll',
         default: true,
         label: game.i18n.localize('sta.apps.rolldice'),
-        callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector('form');
+        callback: (event, button, dialog) => {
+          const form = dialog.element.querySelector('form');
           return form ? new FormData(form) : null;
         },
       },],
@@ -192,8 +192,8 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
         action: 'roll',
         default: true,
         label: game.i18n.localize('sta.apps.rolldice'),
-        callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector('form');
+        callback: (event, button, dialog) => {
+          const form = dialog.element.querySelector('form');
           return form ? new FormData(form) : null;
         },
       },],
@@ -599,7 +599,7 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
   _onDragOver(event) {}
 
   async _onDrop(event) {
-    const data = TextEditor.getDragEventData(event);
+    const data = foundry.applications.ux.TextEditor.getDragEventData(event);
     const actor = this.actor;
     const allowed = Hooks.call('dropActorSheetData', actor, this, data);
     if (allowed === false) return;

@@ -34,7 +34,7 @@ export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemS
   async _prepareContext(options) {
     const context = {
       item: this.item,
-      enrichedNotes: await TextEditor.enrichHTML(this.item.system.description),
+      enrichedNotes: await foundry.applications.ux.TextEditor.enrichHTML(this.item.system.description),
     };
     return context;
   }

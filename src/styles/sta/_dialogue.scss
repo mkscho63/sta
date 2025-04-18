@@ -26,6 +26,7 @@
   margin-top: 5px;
   font-weight: bold;
   margin-right: 2px;
+  font-size: 1.5rem;
 }
 
 .tracktitle {
@@ -55,6 +56,10 @@ label {
   margin-top: 5px;
   margin-right: 5px;
   font-weight: bold;
+}
+
+.form-select {
+  flex: 0 0 75%;
 }
 
 /* Flexbox classes */
