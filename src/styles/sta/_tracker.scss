@@ -1,9 +1,20 @@
 .tracker-container {
+  .combadge {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(+2px);
+  }
 
   .icon-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     .roll-challenge i {
       padding: 4px;
