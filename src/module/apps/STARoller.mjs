@@ -97,7 +97,7 @@ export class STARoller {
   static async _onNPCRoll(event) {
 let selectedTokens = canvas.tokens.controlled;
 let characterToken = selectedTokens.find(t => t.actor?.type === "character");
-let starshipToken = selectedTokens.find(t => t.actor?.type === "starship");
+let starshipToken = selectedTokens.find(t => ["starship", "smallcraft"].includes(t.actor?.type));
 let character = characterToken?.actor ?? { type: 'npccharacter' };
 let starship = starshipToken?.actor ?? { type: 'npcship' };
 
