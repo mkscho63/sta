@@ -101,6 +101,10 @@ let starshipToken = selectedTokens.find(t => ["starship", "smallcraft"].includes
 let character = characterToken?.actor ?? { type: 'npccharacter' };
 let starship = starshipToken?.actor ?? { type: 'npcship' };
 
+if (starshipToken?.actor?.type === "smallcraft") {
+  starship.type = "starship";
+}
+
 let attributes = ["control", "daring", "fitness", "insight", "presence", "reason"];
 let disciplines = ["command", "conn", "engineering", "security", "medicine", "science"];
 let systems = ["communications", "computers", "engines", "sensors", "structure", "weapons"];
