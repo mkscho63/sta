@@ -1,0 +1,22 @@
+<form id="dice-pool-form" class="dialogue">
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.actor.character.attribute.title'}} / {{localize 'sta.actor.starship.system.title'}}</div>
+        <input type="number" name="selectedAttributeValue" min="1" value="7" class="numeric-entry" id="selectedAttributeValue">
+    </div>
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.actor.character.discipline.title'}} / {{localize 'sta.actor.starship.department.title'}}</div>
+        <input type="number" name="selectedDisciplineValue" min="1" value="2" class="numeric-entry" id="selectedDisciplineValue">
+    </div>		
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.apps.focus'}}</div>
+        <input type="checkbox" name="usingFocus" id="usingFocus">
+    </div>
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.apps.complicationrange'}}</div>
+        <input class="numeric-entry" type="number" name="complicationRange" value="1" id="complicationRange">
+    </div>
+    <div class="row">
+        <div class="tracktitle">{{localize 'sta.apps.pool'}}</div>
+        <input class="numeric-entry" type="number" name="dicePoolSlider" value="{{defaultValue}}" id="dicePoolSlider">
+    </div>
+</form>

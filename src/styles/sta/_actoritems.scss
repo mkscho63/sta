@@ -1,0 +1,150 @@
+/* Actor-Item List Starts Here */
+
+.theme-light {
+  .section {
+    .header {
+      background-color: $palestblue;
+    }
+  }
+}
+
+.section {
+  .header {
+    background-color: $palestbluedark;
+  }
+  .row {
+    .image {
+      flex: 0 0 26px;
+      margin-right: 5px;
+
+      img {
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+        object-position: 50% 0;
+      }
+
+      .chat:hover {
+        content: url("/systems/sta/assets/icons/chat-bubble.svg");
+        box-shadow: none;
+        cursor: pointer;
+      }
+
+      .click-to-nav {
+        cursor: pointer;
+      }
+    }
+
+    .control {
+      width: 40px;
+      padding-right: 2px;
+	  display: flex;
+	  align-items: center;
+	  gap: 8px;
+    }
+
+    .delete {
+      &:hover {
+        color: $deletebuttonHover;
+        text-shadow: none;
+      }
+    }
+
+    .add,
+    .edit {
+      &:hover {
+        color: $editbuttonHover;
+        text-shadow: none;
+      }
+    }
+
+    .one-column-with-roll {
+      width: calc(100% - 58px);
+    }
+
+    .one-column-no-roll {
+      width: calc(100% - 32px);
+    }
+
+    .two-column-with-roll-primary {
+      width: calc((100% - 58px) * 0.85);
+    }
+
+    .two-column-with-roll-secondary {
+      width: calc((100% - 58px) * 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+    }
+
+    .item-quantity {
+      width: calc((100% - 58px) * 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+      border: none;
+      outline: none;
+      background-color: transparent;
+    }
+
+    .column-x2 {
+      width: 90%;
+      padding-left: 10%;
+    }
+
+    .small input {
+      height: 17px;
+    }
+
+    .small.disabled input {
+      box-shadow: none;
+      cursor: default;
+      color: $disabledinput;
+    }
+  }
+}
+
+.value-used {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+.row.equipable {
+  .control {
+    width: 506px;
+  }
+}
+
+.item-tooltip {
+  position: absolute;
+  background: $tooltipbackground;
+  color: $tooltiptext;
+  border: 1px solid $tooltiptext;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1000;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 550px;
+  padding: 2px;
+}
+
+.item-name {
+  border: none;
+  outline: none;
+  background-color: $itembackground;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+
+/* Actor-Item List Ends Here */

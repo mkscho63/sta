@@ -22,7 +22,7 @@ google.plugins = {
  */
 delete google.rules['require-jsdoc'];
 google.rules['jsdoc/require-jsdoc'] = ['error', {
-  'require':{
+  'require': {
     FunctionDeclaration: true,
     MethodDefinition: true,
     ClassDeclaration: true,
@@ -44,10 +44,14 @@ google.settings = {
 };
 
 export default [
+  // Temporarily ignoring tracker.js.  See tracker.js for details.
+  {
+    ignores: ['src/module/apps/tracker.js'],
+  },
   google,
   {
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2022,
       sourceType: 'module',
       globals: {
         ...globals.browser,
@@ -80,10 +84,10 @@ export default [
     rules: {
       'arrow-body-style': 'off',
       'comma-dangle': 'off',
-      'linebreak-style': ['error', 'windows'],
+      'linebreak-style': ['error', 'unix'],
       'indent': ['error', 2],
       'import/extensions': 'off',
-      'max-len': ['error', {'ignoreComments': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true}],
+      'max-len': ['error', {'code': 110, 'ignoreComments': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true}],
       'no-async-promise-executor': 'off',
       'no-await-in-loop': 'off',
       'no-console': 'off',
@@ -95,6 +99,7 @@ export default [
       'no-trailing-spaces': 'off',
       'no-unused-vars': 'off',
       'no-useless-constructor': 'off',
+	  'new-cap': 'off',
     }
   },
 ];

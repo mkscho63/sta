@@ -1,0 +1,47 @@
+.window-content:has(.scenetraits-sheet) {
+  padding: 0;
+}
+
+.theme-light {
+  .scenetraits-sheet {
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+  }
+}
+
+.scenetraits-sheet {
+  width: 100%;
+  padding: 7px;
+
+.row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.title {
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: $borderbluedark;
+  margin-right: 2px;
+}
+
+/* Image Styling */
+.image-field {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+}

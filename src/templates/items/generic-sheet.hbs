@@ -1,15 +1,18 @@
-<form class="{{cssClass}}" autocomplete="off">
-    <div class="header-fields">
-        <div class="row">
-            <img class="img" src="{{img}}" data-edit="img" title="{{name}}" />
-            <div class="one-column-with-roll">
-                <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
-                <input name="name" type="text" value="{{name}}" placeholder="Name" />
-            </div>
-        </div>
+<div class="item-sheet">
+  <div class="row">
+    <div class="image-field">
+      <img class="img" src="{{item.img}}" data-edit="img" data-action="editImage" title="{{item.name}}" />
     </div>
-  <div class="description">
-    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
-    {{editor system.description target="system.description" button=true owner=owner editable=true}}
+    <div class="column">
+      <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
+      <input name="name" type="text" class="text-entry" value="{{item.name}}" placeholder="Name" />
+    </div>
   </div>
-</form>
+
+  <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
+    <div class="note">
+      <prose-mirror name="system.description" data-document-u-u-i-d="{{item.uuid}}" value="{{item.system.description}}" collaborate="true" toggled="true">
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+</div>

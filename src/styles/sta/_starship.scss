@@ -1,0 +1,262 @@
+.window-content:has(.starship-sheet) {
+  padding: 0;
+}
+
+.theme-light {
+  .starship-sheet {
+    background: $background;
+	scrollbar-color: $palestblue transparent;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+    .systems-block .stat.header.row {
+      background-color: $palestblue;
+    }
+  }
+}
+
+.starship-sheet {
+  overflow: scroll;
+  padding-left: 7px;
+  scrollbar-color: $darkestblue transparent;
+
+.text-entry {
+  border-color: $borderbluedark;
+}
+
+.title {
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: $borderbluedark;
+  margin-right: 2px;
+}
+
+.tracktitle {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.split-section {
+  display: flex;
+  width: 100%;
+}
+
+.left-column {
+  flex: 0 0 205px;
+  padding-right: 5px;
+  align-self: flex-start;
+}
+
+.right-column {
+  flex: 0 0 625px;
+  padding-left: 5px;
+  align-self: flex-start;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.designation {
+  width: 30%;
+}
+
+.spaceframe {
+  width: 40%;
+}
+
+.servicedate {
+  width: 30%;
+}
+
+.missionprofile {
+  width: 65%;
+}
+
+.refit {
+  width: 35%;
+}
+
+.traits {
+  width: 100%;
+}
+
+.values {
+  margin-top: 20px;
+}
+
+.items-column-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-right: 5px;
+}
+
+.shieldmod {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 60px;
+}
+
+.shieldmod .text-entry {
+  width: 32px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.crwmod {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.crwmod .text-entry {
+  width: 32px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.items-column-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 5px;
+}
+
+/* Image Styling */
+.image-field {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Name Field Styling */
+.name-field .text-entry {
+  font-size: 2rem;
+  height: 3rem;
+}
+
+/* Main Row Field Styling */
+.big-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+
+.big-row-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 10px;
+  min-width: 100px;
+}
+}
+
+/* Note Field Styling */
+.note {
+  height: 250px;
+  text-align: left;
+
+  .editor {
+    height: 100%;
+  }
+}
+
+.highlight-damaged {
+	background-color: $damagedsystem !important;
+}
+
+.highlight-disabled {
+    background-color: $disabledsystem !important;
+}
+
+.highlight-destroyed {
+    background-color: $destroyedsystem !important;
+}
+
+/* System stats styling here */
+.systems-block .stat.row {
+  display: flex;
+  align-items: center;
+}
+
+.systems-block .text.list-entry {
+  flex: 1;
+  text-align: right;
+}
+
+.numeric-entry {
+  width: 32px;
+  height: 28px;
+  text-align: right;
+  border-color: $borderbluedark;
+}
+
+.systems-block .field.breaches {
+  width: 32px;
+  margin-left: auto;
+  text-align: right;
+  border-color: $borderbluedark;
+}
+
+.systems-block .stat.header.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $palestbluedark;
+}
+
+.systems-block .stat.header.row .text.secondary-title {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.systems-block .stat.header.row .field.secondary-title {
+  width: 50px;
+  text-align: center;
+}
+
+.systems-block {
+  margin-bottom: 10px;
+}
+
+/* Departments stats styling here */
+.departments-block .stat.row {
+  display: flex;
+  align-items: center;
+}
+
+.departments-block .text.list-entry {
+  flex: 1;
+  text-align: right;
+}
+
+.departments-block {
+  margin-bottom: 20px;
+}
+
+}

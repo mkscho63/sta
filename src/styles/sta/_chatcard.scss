@@ -1,0 +1,183 @@
+.app .chat-message.message {
+  .message-header,
+  .message-content {
+  }
+}
+
+.chat-message.message {
+  background: $background;
+}
+
+.dice-pool .flexrow {
+  padding: 4px 5px;
+}
+
+.sta.roll {
+
+  .dice-tooltip {
+    display: block;
+  }
+
+  header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+
+    img {
+      height: 45px;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: start;
+      white-space: nowrap;
+    }
+
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .type {
+      font-size: 0.9em;
+    }
+  }
+
+  .content {
+    &.dice-roll {
+      .dice-formula {
+        box-shadow: none;
+        line-height: normal;
+        cursor: pointer;
+        word-break: normal;
+      }
+    }
+
+    .tooltip, .dice-tooltip {
+      order: -1;
+    }
+
+    .vars {
+      flex: 0 0 100%;
+      position: relative;
+      margin-bottom: 5px;
+      line-height: normal;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid $textgrey;
+      border-radius: 3px;
+      box-shadow: none;
+      word-break: break-all;
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+
+      .tag {
+        width: calc(100% / 3);
+        font-size: 12px;
+        flex-grow: 1;
+        border: 0.5px solid $chatcardvars;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .dice-rolls {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 0;
+    overflow: hidden;
+
+    .roll {
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      background-image: url(../../../icons/svg/d6-grey.svg);
+      position: relative;
+      min-width: 24px;
+      line-height: 24px;
+      float: left;
+      margin-right: 1px;
+      font-size: var(--font-size-16);
+      color: $rolltext;
+      font-weight: bold;
+      text-align: center;
+
+      &.max {
+        color: $rollcriticalpass;
+        filter: sepia(0.5) hue-rotate(60deg);
+      }
+
+      &.min {
+        color: $rollcriticalfail;
+        filter: sepia(0.5) hue-rotate(-60deg);
+      }
+
+      &.d20 {
+        background-image: url(../../../icons/svg/d20-grey.svg);
+      }
+    }
+  }
+
+  .dice-formula {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .additional-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.collapsible {
+  cursor: pointer;
+  transition: all 250ms ease;
+
+  &.collapsed {
+    .collapsible-content {
+      grid-template-rows: 0fr;
+      visibility: hidden;
+    }
+  }
+
+  .collapsible-content {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: all 250ms ease;
+
+    > * {
+      overflow: hidden;
+      margin: 0;
+    }
+  }
+}
+
+.message-content {
+
+  .table-draw {
+    img.result-image {
+      background: $background;
+    }
+
+    .result-text {
+      a.entity-link {
+        background: $background;
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.tracker-container {
+  .combadge {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(+2px);
+  }
+
+  .icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .roll-challenge i {
+      padding: 4px;
+    }
+
+    .roll-challenge i,
+    .roll-npc i,
+    .roll-task i {
+      display: inline-block;
+      font-size: 2em;
+      color: $background;
+
+      &:hover {
+        color: $borderblue;
+      }
+    }
+  }
+
+  .tracker-clickable {
+    cursor: pointer;
+    color: $borderblue;
+    padding-left: 96px;
+
+    i:hover {
+      color: $borderblue;
+    }
+
+    i.hide {
+      width: 0px;
+      display: none;
+    }
+  }
+
+  &.hide {
+    .icon-container,
+    .tracker {
+      display: none;
+    }
+  }
+
+  .tracker {
+    position: relative;
+    display: block;
+    width: 120px;
+    padding: 0px;
+
+    .header {
+      text-align: center;
+      font-size: 1.25em;
+      text-transform: uppercase;
+      color: $textgrey;
+      background-color: $background;
+      width: 120px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      font-size: 1.5em;
+      background-color: $background;
+      width: 120px;
+      justify-content: center;
+      align-items: center;
+      color: $textgrey;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+
+      .button {
+        i:hover {
+          cursor: pointer;
+          color: $borderblue;
+        }
+
+        &.decrease {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        &.increase {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+
+      .input {
+        text-align: center;
+        border: none;
+        width: 40px;
+      }
+
+      .threat-input {
+        color: $challengebuttonColor;
+      }
+
+      .momentum-input {
+        color: $borderblue;
+      }
+    }
+  }
+}

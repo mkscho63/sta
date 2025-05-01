@@ -1,71 +1,43 @@
-<form class="{{cssClass}}" autocomplete="off">
-  <div class="main-content">
-    <div class="row">
-      <div class="lcars-column">
-        <div class="lcars-header-extendedtask1"></div>
-      </div>
-      <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" width="50" height="50"/>
-      <div class="column-headerfields1-name-extendedtasks">
-        <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
-        <input name="name" type="text" class="text-entry" value="{{name}}" placeholder="{{localize 'sta.item.genericitem.name'}}" />
-      </div>
-      <div class="column-headerfields1-other-extendedtasks">
-        <label class="label">{{localize 'sta.actor.extendedtask.work'}}</label>
-        <input name="system.work" type="number" id="work" class="numeric-entry" value="{{system.work}}" min="0" data-dtype="Number" />
-      </div>
-      <div class="column-headerfields1-other-extendedtasks">
-        <label class="label">{{localize 'sta.actor.extendedtask.difficulty'}}</label>
-        <input name="system.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{system.difficulty}}" min="0" data-dtype="Number" />
-      </div>
+<div class="extended-tasks">
+  <div class="row">
+    <div class="image-field">
+      <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" title="{{actor.name}}" />
     </div>
-    <div class="row">
-      <div class="lcars-column">
-        <div class="lcars-header-extendedtask2"></div>
-      </div>
-      <div class="column-headerfields2-extendedtasks">
-        <label class="label">{{localize 'sta.actor.extendedtask.breakthroughs'}}</label>
-        <input name="system.breaches" type="number" id="breaches" class="numeric-entry" value="{{system.breaches}}" min="0" data-dtype="Number" />
-      </div>
-      <div class="column-headerfields2-extendedtasks">
-        <label class="label">{{localize 'sta.actor.extendedtask.magnitude'}}</label>
-        <input name="system.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{system.magnitude}}" min="0" data-dtype="Number" />
-      </div>
-      <div class="column-headerfields2-extendedtasks">
-        <label class="label">{{localize 'sta.actor.extendedtask.resistance'}}</label>
-        <input name="system.resistance" type="number" id="resistance" class="numeric-entry" value="{{system.resistance}}" min="0" data-dtype="Number" />
-      </div>
+
+    <div class="name-field">
+      <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
+      <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.item.genericitem.name'}}" />
     </div>
-    <div class="row">
-      <div class="lcars-column">
-        <div class="lcars-header-extendedtask3"></div>
-      </div>
-      <div class="column-headerfields2-extendedtasks"></div>
-      <div class="column-headerfields2-extendedtasks">
-      </div>
-      <div class="column-headerfields2-extendedtasks"></div>
+  </div>
+
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.actor.extendedtask.work'}}: </div>
+    <input name="system.work" type="number" id="work" class="numeric-entry" value="{{actor.system.work}}" min="0" data-dtype="Number" />
+
+    <div class="tracktitle">{{localize 'sta.actor.extendedtask.difficulty'}}: </div>
+    <input name="system.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{actor.system.difficulty}}" min="0" data-dtype="Number" />
+
+    <div class="tracktitle">{{localize 'sta.actor.extendedtask.magnitude'}}: </div>
+    <input name="system.magnitude" type="number" id="magnitude" class="numeric-entry" value="{{actor.system.magnitude}}" min="0" data-dtype="Number" />
+
+    <div class="tracktitle">{{localize 'sta.actor.extendedtask.resistance'}}: </div>
+    <input name="system.resistance" type="number" id="resistance" class="numeric-entry" value="{{actor.system.resistance}}" min="0" data-dtype="Number" />
+  </div>
+
+  <div class="track">
+    <input type="hidden" id="work-progress" name="system.workprogress" value="{{actor.system.workprogress}}" data-dtype="Number" />
+    <div id="extendedtask-renderer" class="bar"></div>
+  </div>
+
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.actor.extendedtask.breakthroughs'}}: </div>
+    <input name="system.breakthroughs" type="number" id="breakthroughs" class="numeric-entry" value="{{actor.system.breakthroughs}}" min="0" data-dtype="Number" />
+  </div>
+
+  <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
+    <div class="note">
+      <prose-mirror name="system.description" data-document-u-u-i-d="{{actor.uuid}}" value="{{actor.system.description}}" collaborate="true" toggled="true">
+        {{{enrichedNotes}}}
+      </prose-mirror>
     </div>
-    <div class="row">
-      <div class="lcars-column">
-        <div class="lcars-header-extendedtask4"></div>
-        <div class="lcars-body-extendedtask1"></div>
-        <div class="lcars-body-extendedtask2"></div>
-      </div>
-      <div class="extendedtask track">
-        <input type="hidden" id="work-progress" name="system.workprogress" value="{{system.workprogress}}" data-dtype="Number" />
-        <div id="extendedtask-renderer" style="width: 100%" class="extendedtask track"></div>
-      </div>
-    </div>
-    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
-    <div class="main">
-     <div class="row">
-      <div class="column left-column">
-       <div class="section note">
-         <div class="note">
-          {{editor system.description target="system.description" button=true owner=owner editable=true}}
-         </div>
-	   </div>
-	  </div>
-	 </div>
-	</div>
-   </div>
-</form>
+</div>

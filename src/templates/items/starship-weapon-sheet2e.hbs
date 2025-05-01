@@ -1,118 +1,131 @@
-<form class="{{cssClass}}" autocomplete="off">
-  <div class="header-fields">
-    <div class="row">
-      <img class="img" src="{{img}}" data-edit="img" title="{{name}}" />
-      <div class="column-x3-img">
-        <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
-        <input name="name" type="text" value="{{name}}" placeholder="Name" />
-      </div>
+<div class="item-sheet">
+  <div class="row">
+    <div class="image-field">
+      <img class="img" src="{{item.img}}" data-edit="img" data-action="editImage" title="{{item.name}}" />
     </div>
-    <div class="row">
-      <div class="column-x4 label-top">
-        <label class="label">{{localize 'sta.actor.belonging.weapon.range'}}</label>
-          <select name="system.range">
-            <option value="close" {{#if (eq system.range "close")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.close'}}</option>
-            <option value="medium" {{#if (eq system.range "medium")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.medium'}}</option>
-            <option value="long" {{#if (eq system.range "long")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.long'}}</option>
-          </select>
-      </div>	
-      <div class="column-x4 label-top">
-        <label class="label">{{localize 'sta.item.talent.type.title'}}</label>
-          <select name="system.includescale">
-            <option value="energy" {{#if (eq system.includescale "energy")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.energy'}}</option>
-            <option value="torpedo" {{#if (eq system.includescale "torpedo")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.torpedo'}}</option>
-          </select>
+    <div class="column">
+      <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
+      <input name="name" type="text" class="text-entry" value="{{item.name}}" placeholder="Name" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.item.genericitem.opportunity'}}</div>
+    <input type="number" class="numeric-entry" name="system.opportunity" value="{{item.system.opportunity}}" data-dtype="Number" />
+
+    <div class="tracktitle">{{localize 'sta.item.genericitem.escalation'}}</div>
+    <input type="number" class="numeric-entry" name="system.escalation" value="{{item.system.escalation}}" data-dtype="Number" />
+  </div>
+
+  <div class="row">
+    <div class="columnx4">
+      <div class="title">{{localize 'sta.actor.belonging.weapon.range'}}</div>
+      <select name="system.range">
+        <option value="close" {{#if (eq item.system.range "close")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.close'}}</option>
+        <option value="medium" {{#if (eq item.system.range "medium")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.medium'}}</option>
+        <option value="long" {{#if (eq item.system.range "long")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.long'}}</option>
+      </select>
+    </div>  
+    <div class="columnx4">
+      <div class="title">{{localize 'sta.item.talent.type.title'}}</div>
+      <select name="system.includescale">
+        <option value="energy" {{#if (eq item.system.includescale "energy")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.energy'}}</option>
+        <option value="torpedo" {{#if (eq item.system.includescale "torpedo")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.torpedo'}}</option>
+      </select>
+    </div>
+    <div class="columnx4">
+      <div class="title">{{localize 'sta.actor.belonging.weapon.damage'}}</div>
+      <input type="number" name="system.damage" value="{{item.system.damage}}" data-dtype="Number" />  
+    </div>
+    {{#if (eq item.system.includescale "energy")}}
+      <div class="columnx4">
+        <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.energy'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</div>
+        {{item.system.damage}} + {{localize 'sta.actor.starship.scale'}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
       </div>
-      <div class="column-x4 label-top">
-        <label class="label">{{localize 'sta.actor.belonging.weapon.damage'}}</label>
-        <input type="number" name="system.damage" value="{{system.damage}}" data-dtype="Number" />	  
-      </div>
-    {{#if (eq system.includescale "energy")}}
-      <div class="column-x4 label-top">
-        <label class="label">{{localize 'sta.actor.belonging.weapon.energy'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</label>
-        {{system.damage}} + {{localize 'sta.actor.starship.scale'}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
-      </div>
-    {{else if (eq system.includescale "torpedo")}}
-      <div class="column-x4 label-top">
-        <label class="label">{{localize 'sta.actor.belonging.weapon.torpedo'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</label>
-        {{system.damage}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
+    {{else if (eq item.system.includescale "torpedo")}}
+      <div class="columnx4">
+        <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.torpedo'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</div>
+        {{item.system.damage}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
       </div>
     {{/if}} 
-      </div>
-	<br/>
-    <label class="label">{{localize 'sta.actor.belonging.weapon.qualities'}}</label>	
-    <div class="row">
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.area" data-dtype="Boolean" {{checked system.qualities.area}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.area'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.calibration" data-dtype="Boolean" {{checked system.qualities.calibration}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.calibration'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.cumbersome" data-dtype="Boolean" {{checked system.qualities.cumbersome}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.cumbersome'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.dampening" data-dtype="Boolean" {{checked system.qualities.dampening}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.dampening'}}</label>
-      </div>
+  </div>
+
+  <div class="row">
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.area" data-dtype="Boolean" {{checked item.system.qualities.area}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.area'}}</div>
     </div>
-    <div class="row">
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.depleting" data-dtype="Boolean" {{checked system.qualities.depleting}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.depleting'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.devastating" data-dtype="Boolean" {{checked system.qualities.devastating}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.devastating'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.highyield" data-dtype="Boolean" {{checked system.qualities.highyield}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.highyield'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.intense" data-dtype="Boolean" {{checked system.qualities.intense}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.intense'}}</label>
-      </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.calibration" data-dtype="Boolean" {{checked item.system.qualities.calibration}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.calibration'}}</div>
     </div>
-    <div class="row">
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.jamming" data-dtype="Boolean" {{checked system.qualities.jamming}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.jamming'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.persistent" data-dtype="Boolean" {{checked system.qualities.persistent}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.persistentx'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.piercing" data-dtype="Boolean" {{checked system.qualities.piercing}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.piercingx'}}</label>
-      </div>
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.slowing" data-dtype="Boolean" {{checked system.qualities.slowing}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.slowing'}}</label>
-      </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.cumbersome" data-dtype="Boolean" {{checked item.system.qualities.cumbersome}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.cumbersome'}}</div>
     </div>
-    <div class="row">
-      <div class="column-x4"> 
-        <input class="" type="checkbox" name="system.qualities.spread" data-dtype="Boolean" {{checked system.qualities.spread}}>
-        <label class="label">{{localize 'sta.actor.belonging.weapon.spread'}}</label>
-      </div>
-      <div class="column-x4">
-        <label class="label">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</label>
-        <input type="number" name="system.qualities.hiddenx" value="{{system.qualities.hiddenx}}" data-dtype="Number" />
-      </div>
-      <div class="column-x4">
-        <label class="label">{{localize 'sta.actor.belonging.weapon.versatilex'}}</label>
-        <input type="number" name="system.qualities.versatilex" value="{{system.qualities.versatilex}}" data-dtype="Number" />
-      </div>
-      <div class="column-x4 label-top"></div>
-	</div>
-	<br/>
-    <div class="description">
-      <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
-        {{editor system.description target="system.description" button=true owner=owner editable=true}}
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.dampening" data-dtype="Boolean" {{checked item.system.qualities.dampening}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.dampening'}}</div>
     </div>
-</form>
+  </div>
+
+  <div class="row">
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.depleting" data-dtype="Boolean" {{checked item.system.qualities.depleting}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.depleting'}}</div>
+    </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.devastating" data-dtype="Boolean" {{checked item.system.qualities.devastating}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.devastating'}}</div>
+    </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.highyield" data-dtype="Boolean" {{checked item.system.qualities.highyield}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.highyield'}}</div>
+    </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.intense" data-dtype="Boolean" {{checked item.system.qualities.intense}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.intense'}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.jamming" data-dtype="Boolean" {{checked item.system.qualities.jamming}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.jamming'}}</div>
+    </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.persistent" data-dtype="Boolean" {{checked item.system.qualities.persistent}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.persistentx'}}</div>
+    </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.piercing" data-dtype="Boolean" {{checked item.system.qualities.piercing}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.piercingx'}}</div>
+    </div>
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.slowing" data-dtype="Boolean" {{checked item.system.qualities.slowing}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.slowing'}}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="grid">
+      <input type="checkbox" name="system.qualities.spread" data-dtype="Boolean" {{checked item.system.qualities.spread}}>
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.spread'}}</div>
+    </div>
+    <div class="grid">
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</div>
+      <input type="number" class="numeric-entry" name="system.qualities.hiddenx" value="{{item.system.qualities.hiddenx}}" data-dtype="Number" />
+    </div>
+    <div class="grid">
+      <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.versatilex'}}</div>
+      <input type="number" class="numeric-entry" name="system.qualities.versatilex" value="{{item.system.qualities.versatilex}}" data-dtype="Number" />
+    </div>
+  </div>
+
+  <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
+    <div class="note">
+      <prose-mirror name="system.description" data-document-u-u-i-d="{{item.uuid}}" value="{{item.system.description}}" collaborate="true" toggled="true">
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+</div>
