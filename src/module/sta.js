@@ -1,33 +1,77 @@
 // Import Modules
-import {STAActor} from './actors/actor.js';
-import {STACharacterSheet} from './actors/sheets/character-sheet.js';
-import {STACharacterSheet2e} from './actors/sheets/character-sheet2e.js';
-import {STAStarshipSheet} from './actors/sheets/starship-sheet.js';
-import {STAStarshipSheet2e} from './actors/sheets/starship-sheet2e.js';
-import {STASmallCraftSheet} from './actors/sheets/smallcraft-sheet.js';
-import {STASmallCraftSheet2e} from './actors/sheets/smallcraft-sheet2e.js';
-import {STAExtendedTaskSheet} from './actors/sheets/extended-task-sheet.js';
-import {STASceneTraits} from './actors/sheets/scenetraits-sheet.js';
-import {STAItemSheet} from './items/item-sheet.js';
-import {STACharacterWeaponSheet} from './items/character-weapon-sheet.js';
-import {STACharacterWeaponSheet2e} from './items/character-weapon-sheet2e.js';
-import {STAStarshipWeaponSheet} from './items/starship-weapon-sheet.js';
-import {STAStarshipWeaponSheet2e} from './items/starship-weapon-sheet2e.js';
-import {STAArmorSheet} from './items/armor-sheet.js';
-import {STATalentSheet} from './items/talent-sheet.js';
-import {STATraitSheet} from './items/trait-sheet.js';
-import {STAGenericSheet} from './items/generic-sheet.js';
-import {STASmallCraftContainerSheet} from './items/smallcraftcontainer-sheet.js';
-import {STATracker} from './apps/tracker.js';
-import {STARoller} from './apps/STARoller.js';
-import {STAItem} from './items/item.js';
-import {registerDsnUfpThemes} from './apps/dice-so-nice.js';
-import {Collapsible} from './apps/Collapsible.js';
+import {
+  STACharacterSheet
+} from './actors/character-sheet.mjs';
+import {
+  STACharacterSheet2e
+} from './actors/character-sheet2e.mjs';
+import {
+  STAStarshipSheet
+} from './actors/starship-sheet.mjs';
+import {
+  STAStarshipSheet2e
+} from './actors/starship-sheet2e.mjs';
+import {
+  STASmallCraftSheet
+} from './actors/smallcraft-sheet.mjs';
+import {
+  STASmallCraftSheet2e
+} from './actors/smallcraft-sheet2e.mjs';
+import {
+  STAExtendedTaskSheet
+} from './actors/extended-task-sheet.mjs';
+import {
+  STASceneTraits
+} from './actors/scenetraits-sheet.mjs';
+import {
+  STAItemSheet
+} from './items/item-sheet.mjs';
+import {
+  STACharacterWeaponSheet
+} from './items/character-weapon-sheet.mjs';
+import {
+  STACharacterWeaponSheet2e
+} from './items/character-weapon-sheet2e.mjs';
+import {
+  STAStarshipWeaponSheet
+} from './items/starship-weapon-sheet.mjs';
+import {
+  STAStarshipWeaponSheet2e
+} from './items/starship-weapon-sheet2e.mjs';
+import {
+  STAArmorSheet
+} from './items/armor-sheet.mjs';
+import {
+  STATalentSheet
+} from './items/talent-sheet.mjs';
+import {
+  STATraitSheet
+} from './items/trait-sheet.mjs';
+import {
+  STAGenericSheet
+} from './items/generic-sheet.mjs';
+import {
+  STASmallCraftContainerSheet
+} from './items/smallcraftcontainer-sheet.mjs';
+import {
+  STATracker
+} from './apps/tracker.mjs';
+import {
+  STARoller
+} from './apps/STARoller.mjs';
+import {
+  registerDsnUfpThemes
+} from './apps/dice-so-nice.js';
+import {
+  Collapsible
+} from './apps/Collapsible.mjs';
+import {
+  STARoll
+} from './apps/roll.js';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
-
 Hooks.once('init', function() {
   const versionInfo = game.world.coreVersion;
   // Splash Screen
@@ -51,29 +95,27 @@ Hooks.once('init', function() {
   game.sta = {
     applications: {
       STACharacterSheet,
-	  STACharacterSheet2e,
+      STACharacterSheet2e,
       STAStarshipSheet,
-      STAStarshipSheet2e,	  
+      STAStarshipSheet2e,
       STASmallCraftSheet,
       STASmallCraftSheet2e,
       STAExtendedTaskSheet,
-	  STASceneTraits,
+      STASceneTraits,
       STAItemSheet,
       STACharacterWeaponSheet,
-	  STACharacterWeaponSheet2e,
+      STACharacterWeaponSheet2e,
       STAStarshipWeaponSheet,
       STAStarshipWeaponSheet2e,
       STAArmorSheet,
       STATalentSheet,
       STAGenericSheet,
       STASmallCraftContainerSheet,
-      STAItem,
-    },
-    entities: {
-      STAActor,
     },
     defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
   };
+
+  window.STARoll = STARoll;
 
   // Define initiative for the system.
   CONFIG.Combat.initiative = {
@@ -81,79 +123,75 @@ Hooks.once('init', function() {
     decimals: 0
   };
 
-  // Define custom Entity classes
-  CONFIG.Actor.entityClass = STAActor;
-  CONFIG.Item.entityClass = STAItem;
-
   // Register sheet application classes
-  Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('sta', STACharacterSheet, {
+  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, 'core', foundry.appv1.sheets.ActorSheet);
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet, {
     types: ['character'],
     makeDefault: true
   });
-  Actors.registerSheet('sta', STACharacterSheet2e, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet2e, {
     types: ['character']
   });
-  Actors.registerSheet('sta', STAStarshipSheet, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet, {
     types: ['starship']
   });
-  Actors.registerSheet('sta', STAStarshipSheet2e, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet2e, {
     types: ['starship']
   });
-  Actors.registerSheet('sta', STASmallCraftSheet, {
-    types: ['smallcraft'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet, {
+    types: ['smallcraft']
   });
-  Actors.registerSheet('sta', STASmallCraftSheet2e, {
-    types: ['smallcraft'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet2e, {
+    types: ['smallcraft']
   });
-  Actors.registerSheet('sta', STAExtendedTaskSheet, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAExtendedTaskSheet, {
     types: ['extendedtask']
   });
-  Actors.registerSheet('sta', STASceneTraits, {
-    types: ['scenetraits']
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASceneTraits, {
+    types: ['scenetraits'],
   });
-  Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('sta', STAItemSheet, {
+
+  foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, 'core', foundry.appv1.sheets.ItemSheet);
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAItemSheet, {
     types: ['item'],
     makeDefault: true
   });
-  Items.registerSheet('sta', STACharacterWeaponSheet, {
-    types: ['characterweapon'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STACharacterWeaponSheet, {
+    types: ['characterweapon']
   });
-  Items.registerSheet('sta', STACharacterWeaponSheet2e, {
-    types: ['characterweapon2e'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STACharacterWeaponSheet2e, {
+    types: ['characterweapon2e']
   });
-  Items.registerSheet('sta', STAStarshipWeaponSheet, {
-    types: ['starshipweapon'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAStarshipWeaponSheet, {
+    types: ['starshipweapon']
   });
-  Items.registerSheet('sta', STAStarshipWeaponSheet2e, {
-    types: ['starshipweapon2e'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAStarshipWeaponSheet2e, {
+    types: ['starshipweapon2e']
   });
-  Items.registerSheet('sta', STAArmorSheet, {
-    types: ['armor'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAArmorSheet, {
+    types: ['armor']
   });
-  Items.registerSheet('sta', STATalentSheet, {
-    types: ['talent'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATalentSheet, {
+    types: ['talent']
   });
-  Items.registerSheet('sta', STATraitSheet, {
-    types: ['trait'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATraitSheet, {
+    types: ['trait']
   });
-  Items.registerSheet('sta', STAGenericSheet, {
-    types: ['value'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATraitSheet, {
+    types: ['injury']
   });
-  Items.registerSheet('sta', STAGenericSheet, {
-    types: ['focus'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
+    types: ['value']
   });
-  Items.registerSheet('sta', STAGenericSheet, {
-    types: ['injury'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
+    types: ['focus']
   });
-  Items.registerSheet('sta', STAGenericSheet, {
-    types: ['milestone'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
+    types: ['milestone']
   });
-  Items.registerSheet('sta', STASmallCraftContainerSheet, {
-    types: ['smallcraftcontainer'],
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STASmallCraftContainerSheet, {
+    types: ['smallcraftcontainer']
   });
-
 
   // Register system settings
   game.settings.register('sta', 'multipleComplications', {
@@ -222,33 +260,6 @@ Hooks.once('init', function() {
     config: true
   });
 
-  game.settings.register('sta', 'characterAttributeLimitIgnore', {
-    name: 'Ignore normal Max/Min limits to Character/NPC Attributes:',
-    hint: 'At system creation characters and NPCs were limited to Attribute values between 7 and 12, this option removes that limit and sets the limit to between 0 and 99.',
-    scope: 'world',
-    type: Boolean,
-    default: false,
-    config: true
-  });
-    
-  game.settings.register('sta', 'characterDisciplineLimitIgnore', {
-    name: 'Ignore normal Max/Min limits to Character/NPC Disciplines:',
-    hint: 'At system creation characters and NPCs were limited to Discipline values between 0 and 5, this option removes that limit and sets the limit to between 0 and 99.',
-    scope: 'world',
-    type: Boolean,
-    default: false,
-    config: true
-  });
-  
-  game.settings.register('sta', 'shipDepartmentLimitIgnore', {
-    name: 'Ignore normal Max/Min limits to Starship/Small Craft Departments:',
-    hint: 'At system creation Starships and Small Craft were limited to Department values between 0 and 5, this option removes that limit and sets the limit to between 0 and 99.',
-    scope: 'world',
-    type: Boolean,
-    default: false,
-    config: true
-  });
-
   game.settings.register('sta', 'threat', {
     scope: 'world',
     type: Number,
@@ -273,19 +284,13 @@ Hooks.once('init', function() {
   });
 
   preloadHandlebarsTemplates();
-
-  Hooks.on('renderChatLog', (app, html, data) => {
-    STAItem.chatListeners($(html));
-  });
-
-
-  Hooks.on('renderChatMessage', (msg, html, data) => {
+  Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
   });
 
-  Hooks.on('ready', function() {
+  Hooks.on('renderSidebar', function() {
     const t = new STATracker();
-    renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
+    foundry.applications.handlebars.renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
       t.render(true);
     });
   });
@@ -297,16 +302,62 @@ Hooks.once('init', function() {
 
 async function preloadHandlebarsTemplates() {
   const paths = {
-    ['sta.chat.attribute-test']: 'systems/sta/templates/chat/attribute-test.hbs',
-    ['sta.chat.item-card']: 'systems/sta/templates/chat/generic-item.hbs',
     ['sta.chat.weapon-roll']: 'systems/sta/templates/chat/challenge-roll.hbs',
   };
-
-  return loadTemplates(paths);
+  return foundry.applications.handlebars.loadTemplates(paths);
 }
 
 Hooks.on('preCreateItem', (item, options, userId) => {
   if (!item.img || item.img === 'icons/svg/item-bag.svg') {
-    item.updateSource({img: 'systems/sta/assets/icons/VoyagerCombadgeIcon.png'});
+    item.updateSource({
+      img: 'systems/sta/assets/icons/VoyagerCombadgeIcon.png'
+    });
+  }
+});
+
+Hooks.on('createActor', async (actor, options, userId) => {
+  if (game.user.id !== userId) return;
+
+  if (actor.type === 'character') {
+    const compendium2e = await game.packs.get('sta.equipment-crew');
+    const item1 = await compendium2e.getDocument('cxIi0Ltb1sUCFnzp');
+    const compendium1e = await game.packs.get('sta.personal-weapons-core');
+    const item2 = await compendium1e.getDocument('3PTFLawY0tCva3gG');
+
+    if (item1 && item2) {
+      const existingItems = actor.items.map((item) => item.name);
+
+      const itemsToAdd = [];
+      if (!existingItems.includes(item1.name)) itemsToAdd.push(item1.toObject());
+      if (!existingItems.includes(item2.name)) itemsToAdd.push(item2.toObject());
+
+      if (itemsToAdd.length > 0) {
+        await actor.createEmbeddedDocuments('Item', itemsToAdd);
+      }
+    } else {
+      console.error('One or both items were not found in the compendiums.');
+    }
+  }
+});
+
+Hooks.on('renderActorSheet', async (actorSheet, html, data) => {
+  const actor = actorSheet.object;
+  if (actor.system.traits && actor.system.traits.trim()) {
+    const traitName = actor.system.traits.trim();
+    const existingTrait = actor.items.find((item) => item.name === traitName && item.type === 'trait');
+    if (!existingTrait) {
+      const traitItemData = {
+        name: traitName,
+        type: 'trait',
+      };
+      try {
+        await actor.createEmbeddedDocuments('Item', [traitItemData]);
+        await actor.update({
+          'system.traits': ''
+        });
+      } catch (err) {
+        console.error(`Error creating trait item for actor ${actor.name}:`, err);
+      }
+    }
   }
 });

@@ -1,11 +1,19 @@
-/* SceneTraits Style Starts Here */
-
 .window-content:has(.scenetraits-sheet) {
-  background: $background;
+  padding: 0;
+}
+
+.theme-light {
+  .scenetraits-sheet {
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+  }
 }
 
 .scenetraits-sheet {
   width: 100%;
+  padding: 7px;
 
 .row {
   display: flex;
@@ -17,7 +25,7 @@
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
+  background-color: $borderbluedark;
   margin-right: 2px;
 }
 
@@ -37,5 +45,3 @@
 }
 
 }
-
-/* SceneTraits Style Ends Here */

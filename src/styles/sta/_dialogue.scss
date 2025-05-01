@@ -1,7 +1,13 @@
-/* Dialogue Style Starts Here */
-
-.window-content:has(.dialogue) {
-  background: $background;
+.theme-light {
+  .dialogue {
+    background: $background;
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
 }
 
 .dialogue {
@@ -12,15 +18,15 @@
   width: 100%;
   margin-bottom: 10px;
   align-items: center;
-  justify-content: space-between; /* Pushes items to the far left and right */
+  justify-content: space-between;
 }
 
 
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
   margin-right: 2px;
+  font-size: 1.5rem;
 }
 
 .tracktitle {
@@ -36,11 +42,11 @@
 }
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .numeric-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
   margin-right: 5px;
   width: 40px;
   text-align: right;
@@ -50,6 +56,10 @@ label {
   margin-top: 5px;
   margin-right: 5px;
   font-weight: bold;
+}
+
+.form-select {
+  flex: 0 0 75%;
 }
 
 /* Flexbox classes */
@@ -75,5 +85,3 @@ label {
 }
 
 }
-
-/* Dialogue Style Ends Here */

@@ -1,14 +1,20 @@
-two-column-with-roll-secondary/* Actor-Item List Starts Here */
-.window-content:has(.item-sheet) {
-  background: $background;
+/* Actor-Item List Starts Here */
+
+.theme-light {
+  .section {
+    .header {
+      background-color: $palestblue;
+    }
+  }
 }
+
 .section {
   .header {
-    background-color: $palestblue;
+    background-color: $palestbluedark;
   }
   .row {
     .image {
-      width: 26px;
+      flex: 0 0 26px;
       margin-right: 5px;
 
       img {
@@ -30,7 +36,6 @@ two-column-with-roll-secondary/* Actor-Item List Starts Here */
     }
 
     .control {
-      color: $textgrey;
       width: 40px;
       padding-right: 2px;
 	  display: flex;
@@ -39,8 +44,6 @@ two-column-with-roll-secondary/* Actor-Item List Starts Here */
     }
 
     .delete {
-      color: $textgrey;
-
       &:hover {
         color: $deletebuttonHover;
         text-shadow: none;
@@ -76,6 +79,18 @@ two-column-with-roll-secondary/* Actor-Item List Starts Here */
       margin: 0;
     }
 
+    .item-quantity {
+      width: calc((100% - 58px) * 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+      border: none;
+      outline: none;
+      background-color: transparent;
+    }
+
     .column-x2 {
       width: 90%;
       padding-left: 10%;
@@ -83,13 +98,12 @@ two-column-with-roll-secondary/* Actor-Item List Starts Here */
 
     .small input {
       height: 17px;
-      color: $textgrey;
     }
 
     .small.disabled input {
       box-shadow: none;
       cursor: default;
-      color: grey;
+      color: $disabledinput;
     }
   }
 }
@@ -110,22 +124,22 @@ two-column-with-roll-secondary/* Actor-Item List Starts Here */
 
 .item-tooltip {
   position: absolute;
-  padding: 5px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  background: $tooltipbackground;
+  color: $tooltiptext;
+  border: 1px solid $tooltiptext;
   border-radius: 4px;
   pointer-events: none;
   z-index: 1000;
   white-space: normal;
   overflow-wrap: break-word;
   max-width: 550px;
-  font-size: 0.9rem;
+  padding: 2px;
 }
 
 .item-name {
-  border: none !important;
+  border: none;
   outline: none;
-  background-color: transparent;
+  background-color: $itembackground;
 }
 
 .strike-through {

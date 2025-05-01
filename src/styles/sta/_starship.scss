@@ -1,21 +1,39 @@
-/* Starship Style Starts Here */
-
-
-/* Page Styling */
 .window-content:has(.starship-sheet) {
-  background: $background;
+  padding: 0;
+}
+
+.theme-light {
+  .starship-sheet {
+    background: $background;
+	scrollbar-color: $palestblue transparent;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+    .systems-block .stat.header.row {
+      background-color: $palestblue;
+    }
+  }
 }
 
 .starship-sheet {
+  overflow: scroll;
+  padding-left: 7px;
+  scrollbar-color: $darkestblue transparent;
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
+  background-color: $borderbluedark;
   margin-right: 2px;
 }
 
@@ -94,7 +112,7 @@
 }
 
 .shieldmod .text-entry {
-  width: 30px;
+  width: 32px;
   margin-left: 10px;
   text-align: right;
 }
@@ -106,7 +124,7 @@
 }
 
 .crwmod .text-entry {
-  width: 30px;
+  width: 32px;
   margin-left: 10px;
   text-align: right;
 }
@@ -155,13 +173,6 @@
   gap: 10px;
   min-width: 100px;
 }
-
-.checkbox,
-.field.numeric-entry {
-  width: 30px;
-  text-align: right;
-  border-color: $borderblue;
-}
 }
 
 /* Note Field Styling */
@@ -174,20 +185,16 @@
   }
 }
 
-/* Yellow highlight for damaged systems */
 .highlight-damaged {
-    border: 2px solid #eda515 !important;
-    color: #eda515 !important;
+	background-color: $damagedsystem !important;
 }
-/* Orange highlight for disabled systems */
+
 .highlight-disabled {
-    border: 2px solid #ed6c15 !important;
-    color: #ed6c15 !important;
+    background-color: $disabledsystem !important;
 }
-/* Red highlight for destroyed systems  */
+
 .highlight-destroyed {
-    border: 2px solid #ff0000 !important;
-    color: #ff0000 !important;
+    background-color: $destroyedsystem !important;
 }
 
 /* System stats styling here */
@@ -201,24 +208,25 @@
   text-align: right;
 }
 
-.systems-block .field.numeric-entry {
-  width: 30px;
+.numeric-entry {
+  width: 32px;
+  height: 28px;
   text-align: right;
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .systems-block .field.breaches {
-  width: 30px;
+  width: 32px;
   margin-left: auto;
   text-align: right;
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .systems-block .stat.header.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $palestblue;
+  background-color: $palestbluedark;
 }
 
 .systems-block .stat.header.row .text.secondary-title {
@@ -247,17 +255,8 @@
   text-align: right;
 }
 
-.departments-block .field.numeric-entry {
-  width: 30px;
-  text-align: right;
-  margin-right: 30px;
-  border-color: $borderblue;
-}
-
 .departments-block {
   margin-bottom: 20px;
 }
 
 }
-
-/* Starship Style Ends Here */

@@ -7,3 +7,4 @@ src/sta.css
 
 # exception to maintain pack folder
 !src/assets/packs/.gitkeep
+/src/assets/packs

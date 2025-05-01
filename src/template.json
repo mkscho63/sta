@@ -1,449 +1,450 @@
 {
-    "Actor": {
-        "types": ["character", "starship", "extendedtask", "smallcraft", "scenetraits"],
-        "templates": {
-            "common": {
-                "notes":""
-            }
-        },
-        "character": {
-            "templates": ["common"],
-            "assignment": "",
-            "attributes": {
-                "control": {
-                    "label": "sta.actor.character.attribute.control",
-                    "value": 7,
-                    "selected": true
-                },
-                "daring": {
-                    "label": "sta.actor.character.attribute.daring",
-                    "value": 7,
-                    "selected": false
-                },
-                "fitness": {
-                    "label": "sta.actor.character.attribute.fitness",
-                    "value": 7,
-                    "selected": false
-                },
-                "insight": {
-                    "label": "sta.actor.character.attribute.insight",
-                    "value": 7,
-                    "selected": false
-                },
-                "presence": {
-                    "label": "sta.actor.character.attribute.presence",
-                    "value": 7,
-                    "selected": false
-                },
-                "reason": {
-                    "label": "sta.actor.character.attribute.reason",
-                    "value": 7,
-                    "selected": false
-                }
-            },
-            "determination": {
-                "value": 3,
-                "max": 3
-            },
-            "disciplineorder": ["command", "conn", "security", "engineering", "science", "medicine"],
-            "disciplineorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
-            "disciplines": {
-                "command": {
-                    "label": "sta.actor.character.discipline.command",
-                    "value": 0,
-                    "selected": true
-                },
-                "conn": {
-                    "label": "sta.actor.character.discipline.conn",
-                    "value": 0,
-                    "selected": false
-                },
-                "engineering": {
-                    "label": "sta.actor.character.discipline.engineering",
-                    "value": 0,
-                    "selected": false
-                },
-                "medicine": {
-                    "label": "sta.actor.character.discipline.medicine",
-                    "value": 0,
-                    "selected": false
-                },
-                "science": {
-                    "label": "sta.actor.character.discipline.science",
-                    "value": 0,
-                    "selected": false
-                },
-                "security": {
-                    "label": "sta.actor.character.discipline.security",
-                    "value": 0,
-                    "selected": false
-                }
-            },
-            "environment": "",
-            "milestones": "",
-            "pronouns": "",
-            "characterrole": "",
-            "rank": "",
-            "reputation": 0,
-            "acclaim": 0,
-            "reprimand": 0,
-            "species": "",
-            "careerpath": "",
-            "pastimes": "",
-            "experience": "",
-            "careerevents": "",
-            "house": "",
-            "caste": "",
-            "status": "",
-            "temperament": "",
-            "househistory": "",
-            "influence": 0,
-            "might": 0,
-            "wealth": 0,
-            "legacy": "",
-            "traits": "",
-            "stress": {
-                "value": 0
-            },
-            "strmod": 0,
-            "rollrepnotdis": false,
-            "upbringing": ""
-        },
-        "starship": {
-            "templates": ["common"],
-            "crew": {
-                "value": 0
-            },
-            "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
-            "departmentorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
-            "departments": {
-                "command": {
-                    "label": "sta.actor.starship.department.command",
-                    "value": 0,
-                    "selected": true
-                },
-                "conn": {
-                    "label": "sta.actor.starship.department.conn",
-                    "value": 0,
-                    "selected": false
-                },
-                "engineering": {
-                    "label": "sta.actor.starship.department.engineering",
-                    "value": 0,
-                    "selected": false
-                },
-                "medicine": {
-                    "label": "sta.actor.starship.department.medicine",
-                    "value": 0,
-                    "selected": false
-                },
-                "science": {
-                    "label": "sta.actor.starship.department.science",
-                    "value": 0,
-                    "selected": false
-                },
-                "security": {
-                    "label": "sta.actor.starship.department.security",
-                    "value": 0,
-                    "selected": false
-                }
-            },
-            "designation": "",
-            "missionprofile": "",
-            "power": {
-                "value": 0
-            },
-            "refit": "",
-            "resistance": 0,
-            "scale": 1,
-            "shields": {
-                "value": 0
-            },
-            "shieldmod": 0,
-            "crwmod": 0,
-            "reservepower": true,
-            "shaken": false,
-            "servicedate": "",
-            "spaceframe": "",
-            "systems": {
-                "communications": {
-                    "label": "sta.actor.starship.system.communications",
-                    "value": 7,
-                    "selected": true,
-                    "breaches": 0
-                },
-                "computers": {
-                    "label": "sta.actor.starship.system.computers",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "engines": {
-                    "label": "sta.actor.starship.system.engines",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "sensors": {
-                    "label": "sta.actor.starship.system.sensors",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "structure": {
-                    "label": "sta.actor.starship.system.structure",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "weapons": {
-                    "label": "sta.actor.starship.system.weapons",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                }
-            },
-            "traits": ""
-        },
-        "extendedtask": {
-            "templates": ["common"],
-            "magnitude": 1,
-            "difficulty": 0,
-            "work": 1,
-            "resistance": 0,
-            "breakthroughs": 0,
-            "workprogress": 0
-        },
-        "smallcraft": {
-            "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
-            "departmentorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
-            "departments": {
-                "command": {
-                    "label": "sta.actor.starship.department.command",
-                    "value": 0,
-                    "selected": true
-                },
-                "conn": {
-                    "label": "sta.actor.starship.department.conn",
-                    "value": 0,
-                    "selected": false
-                },
-                "engineering": {
-                    "label": "sta.actor.starship.department.engineering",
-                    "value": 0,
-                    "selected": false
-                },
-                "medicine": {
-                    "label": "sta.actor.starship.department.medicine",
-                    "value": 0,
-                    "selected": false
-                },
-                "science": {
-                    "label": "sta.actor.starship.department.science",
-                    "value": 0,
-                    "selected": false
-                },
-                "security": {
-                    "label": "sta.actor.starship.department.security",
-                    "value": 0,
-                    "selected": false
-                }
-            },
-            "missionprofile": "",
-            "parent": "",
-            "power": {
-                "value": 0
-            },
-            "resistance": 1,
-            "scale": 1,
-            "reservepower": true,
-            "shaken": false,
-            "shields": {
-                "value": 0
-            },
-            "shieldmod": 0,
-            "spaceframe": "",
-            "systems": {
-                "communications": {
-                    "label": "sta.actor.starship.system.communications",
-                    "value": 7,
-                    "selected": true,
-                    "breaches": 0
-                },
-                "computers": {
-                    "label": "sta.actor.starship.system.computers",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "engines": {
-                    "label": "sta.actor.starship.system.engines",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "sensors": {
-                    "label": "sta.actor.starship.system.sensors",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "structure": {
-                    "label": "sta.actor.starship.system.structure",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                },
-                "weapons": {
-                    "label": "sta.actor.starship.system.weapons",
-                    "value": 7,
-                    "selected": false,
-                    "breaches": 0
-                }
-            },
-            "traits": ""
-        },
-        "scenetraits": {
-            "templates": ["common"]
-        }
+  "Actor": {
+    "types": ["character", "starship", "extendedtask", "smallcraft", "scenetraits"],
+    "templates": {
+      "common": {
+        "notes": ""
+      }
     },
-    "Item": {
-        "types": ["item", "focus", "value", "characterweapon", "characterweapon2e", "starshipweapon", "starshipweapon2e", "armor", "talent", "milestone", "injury", "smallcraftcontainer", "trait"],
-        "templates": {
-            "common": {
-                "description": ""
-            }
+    "character": {
+      "templates": ["common"],
+      "assignment": "",
+      "attributes": {
+        "control": {
+          "label": "sta.actor.character.attribute.control",
+          "value": 7,
+          "selected": true
         },
-        "item": {
-            "templates": ["common"],
-            "quantity": 1,
-            "opportunity": 0,
-            "escalation": 0
+        "daring": {
+          "label": "sta.actor.character.attribute.daring",
+          "value": 7,
+          "selected": false
         },
-        "focus": {
-            "templates": ["common"]
+        "fitness": {
+          "label": "sta.actor.character.attribute.fitness",
+          "value": 7,
+          "selected": false
         },
-        "value": {
-            "templates": ["common"],
-            "used": false
+        "insight": {
+          "label": "sta.actor.character.attribute.insight",
+          "value": 7,
+          "selected": false
         },
-        "characterweapon": {
-            "templates": ["common"],
-            "damage": 0,
-            "range": "",
-            "hands": 1,
-            "qualities": {
-                "area": false,
-                "intense": false,
-                "knockdown": false,
-                "accurate": false,
-                "charge": false,
-                "cumbersome": false,
-                "deadly": false,
-                "debilitating": false,
-                "grenade": false,
-                "inaccurate": false,
-                "nonlethal": false,
-                "hiddenx": 0,
-                "piercingx": 0,
-                "viciousx": 0,
-                "opportunity": 0,
-                "escalation": 0
-            }
+        "presence": {
+          "label": "sta.actor.character.attribute.presence",
+          "value": 7,
+          "selected": false
         },
-        "characterweapon2e": {
-            "templates": ["common"],
-            "damage": 0,
-            "range": "melee",
-            "hands": 1,
-            "severity": 0,
-            "qualities": {
-                "deadly": false,
-                "stun": false,
-                "accurate": false,
-                "area": false,
-                "charge": false,
-                "cumbersome": false,
-                "debilitating": false,
-                "grenade": false,
-                "inaccurate": false,
-                "intense": false,
-                "piercingx": false,				
-                "hiddenx": 0,
-                "opportunity": 0,
-                "escalation": 0
-            }
-        },
-        "starshipweapon": {
-            "templates": ["common"],
-            "damage": 0,
-            "range": "",
-            "qualities": {
-                "area": false,
-                "spread": false,
-                "dampening": false,
-                "calibration": false,
-                "devastating": false,
-                "highyield": false,
-                "persistentx": 0,
-                "piercingx": 0,
-                "viciousx": 0,
-                "hiddenx": 0,
-                "versatilex": 0
-            }
-        },
-        "starshipweapon2e": {
-            "templates": ["common"],
-            "damage": 0,
-            "range": "close",
-            "includescale": "energy",
-            "qualities": {
-            "energy": false,
-            "torpedo": false,
-            "area": false,
-            "calibration": false,
-            "cumbersome": false,
-            "dampening": false,
-            "depleting": false,
-            "devastating": false,
-            "highyield": false,
-            "intense": false,
-            "jamming": false,
-            "persistent": false,
-            "piercing": false,
-            "slowing": false,
-            "spread": false,
-            "hiddenx": 0,
-            "versatilex": 0,
-            "opportunity": 0,
-            "escalation": 0
-            }				
-        },		
-        "armor": {
-            "templates": ["common"],
-            "protection": 0,
-            "equipped": true,
-            "opportunity": 0,
-            "escalation": 0
-        },
-        "talent": {
-            "templates": ["common"],
-            "talenttype": {
-              "typeenum": "",
-              "description":"",
-              "minimum":0
-            }
-        },
-        "injury": {
-            "templates": ["common"]
-        },
-        "smallcraftcontainer": {
-            "templates": ["common"],
-            "quantity": 1
-        },
-        "trait": {
-            "templates": ["common"],
-            "quantity": 1
+        "reason": {
+          "label": "sta.actor.character.attribute.reason",
+          "value": 7,
+          "selected": false
         }
+      },
+      "determination": {
+        "value": 3,
+        "max": 3
+      },
+      "disciplineorder": ["command", "conn", "security", "engineering", "science", "medicine"],
+      "disciplineorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
+      "disciplines": {
+        "command": {
+          "label": "sta.actor.character.discipline.command",
+          "value": 0,
+          "selected": true
+        },
+        "conn": {
+          "label": "sta.actor.character.discipline.conn",
+          "value": 0,
+          "selected": false
+        },
+        "engineering": {
+          "label": "sta.actor.character.discipline.engineering",
+          "value": 0,
+          "selected": false
+        },
+        "medicine": {
+          "label": "sta.actor.character.discipline.medicine",
+          "value": 0,
+          "selected": false
+        },
+        "science": {
+          "label": "sta.actor.character.discipline.science",
+          "value": 0,
+          "selected": false
+        },
+        "security": {
+          "label": "sta.actor.character.discipline.security",
+          "value": 0,
+          "selected": false
+        }
+      },
+      "environment": "",
+      "milestones": "",
+      "pronouns": "",
+      "characterrole": "",
+      "rank": "",
+      "reputation": 0,
+      "acclaim": 0,
+      "reprimand": 0,
+      "species": "",
+      "careerpath": "",
+      "pastimes": "",
+      "experience": "",
+      "careerevents": "",
+      "house": "",
+      "caste": "",
+      "status": "",
+      "temperament": "",
+      "househistory": "",
+      "influence": 0,
+      "might": 0,
+      "wealth": 0,
+      "legacy": "",
+      "traits": "",
+      "stress": {
+        "value": 0
+      },
+      "strmod": 0,
+      "rollrepnotdis": false,
+      "upbringing": ""
+    },
+    "starship": {
+      "templates": ["common"],
+      "crew": {
+        "value": 0
+      },
+      "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
+      "departmentorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
+      "departments": {
+        "command": {
+          "label": "sta.actor.starship.department.command",
+          "value": 0,
+          "selected": true
+        },
+        "conn": {
+          "label": "sta.actor.starship.department.conn",
+          "value": 0,
+          "selected": false
+        },
+        "engineering": {
+          "label": "sta.actor.starship.department.engineering",
+          "value": 0,
+          "selected": false
+        },
+        "medicine": {
+          "label": "sta.actor.starship.department.medicine",
+          "value": 0,
+          "selected": false
+        },
+        "science": {
+          "label": "sta.actor.starship.department.science",
+          "value": 0,
+          "selected": false
+        },
+        "security": {
+          "label": "sta.actor.starship.department.security",
+          "value": 0,
+          "selected": false
+        }
+      },
+      "designation": "",
+      "missionprofile": "",
+      "power": {
+        "value": 0
+      },
+      "refit": "",
+      "resistance": 0,
+      "scale": 1,
+      "shields": {
+        "value": 0
+      },
+      "shieldmod": 0,
+      "crwmod": 0,
+      "reservepower": true,
+      "shaken": false,
+      "servicedate": "",
+      "spaceframe": "",
+      "systems": {
+        "communications": {
+          "label": "sta.actor.starship.system.communications",
+          "value": 7,
+          "selected": true,
+          "breaches": 0
+        },
+        "computers": {
+          "label": "sta.actor.starship.system.computers",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "engines": {
+          "label": "sta.actor.starship.system.engines",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "sensors": {
+          "label": "sta.actor.starship.system.sensors",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "structure": {
+          "label": "sta.actor.starship.system.structure",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "weapons": {
+          "label": "sta.actor.starship.system.weapons",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        }
+      },
+      "traits": ""
+    },
+    "extendedtask": {
+      "templates": ["common"],
+      "magnitude": 1,
+      "difficulty": 0,
+      "work": 1,
+      "resistance": 0,
+      "breakthroughs": 0,
+      "workprogress": 0
+    },
+    "smallcraft": {
+      "departmentorder": ["command", "conn", "security", "engineering", "science", "medicine"],
+      "departmentorder2e": ["command", "conn", "engineering", "security", "medicine", "science"],
+      "departments": {
+        "command": {
+          "label": "sta.actor.starship.department.command",
+          "value": 0,
+          "selected": true
+        },
+        "conn": {
+          "label": "sta.actor.starship.department.conn",
+          "value": 0,
+          "selected": false
+        },
+        "engineering": {
+          "label": "sta.actor.starship.department.engineering",
+          "value": 0,
+          "selected": false
+        },
+        "medicine": {
+          "label": "sta.actor.starship.department.medicine",
+          "value": 0,
+          "selected": false
+        },
+        "science": {
+          "label": "sta.actor.starship.department.science",
+          "value": 0,
+          "selected": false
+        },
+        "security": {
+          "label": "sta.actor.starship.department.security",
+          "value": 0,
+          "selected": false
+        }
+      },
+      "missionprofile": "",
+      "parent": "",
+      "power": {
+        "value": 0
+      },
+      "resistance": 1,
+      "scale": 1,
+      "reservepower": true,
+      "shaken": false,
+      "shields": {
+        "value": 0
+      },
+      "shieldmod": 0,
+      "spaceframe": "",
+      "systems": {
+        "communications": {
+          "label": "sta.actor.starship.system.communications",
+          "value": 7,
+          "selected": true,
+          "breaches": 0
+        },
+        "computers": {
+          "label": "sta.actor.starship.system.computers",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "engines": {
+          "label": "sta.actor.starship.system.engines",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "sensors": {
+          "label": "sta.actor.starship.system.sensors",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "structure": {
+          "label": "sta.actor.starship.system.structure",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        },
+        "weapons": {
+          "label": "sta.actor.starship.system.weapons",
+          "value": 7,
+          "selected": false,
+          "breaches": 0
+        }
+      },
+      "traits": ""
+    },
+    "scenetraits": {
+      "templates": ["common"]
     }
+  },
+  "Item": {
+    "types": ["item", "focus", "value", "characterweapon", "characterweapon2e", "starshipweapon", "starshipweapon2e", "armor", "talent", "milestone", "injury", "smallcraftcontainer", "trait"],
+    "templates": {
+      "common": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["common"],
+      "quantity": 1,
+      "opportunity": 0,
+      "escalation": 0
+    },
+    "focus": {
+      "templates": ["common"]
+    },
+    "value": {
+      "templates": ["common"],
+      "used": false
+    },
+    "characterweapon": {
+      "templates": ["common"],
+      "damage": 0,
+      "range": "melee",
+      "hands": 1,
+      "qualities": {
+        "area": false,
+        "intense": false,
+        "knockdown": false,
+        "accurate": false,
+        "charge": false,
+        "cumbersome": false,
+        "deadly": false,
+        "debilitating": false,
+        "grenade": false,
+        "inaccurate": false,
+        "nonlethal": false,
+        "hiddenx": 0,
+        "piercingx": 0,
+        "viciousx": 0,
+        "opportunity": 0,
+        "escalation": 0
+      }
+    },
+    "characterweapon2e": {
+      "templates": ["common"],
+      "damage": 0,
+      "range": "melee",
+      "hands": 1,
+      "severity": 0,
+      "qualities": {
+        "deadly": false,
+        "stun": false,
+        "accurate": false,
+        "area": false,
+        "charge": false,
+        "cumbersome": false,
+        "debilitating": false,
+        "grenade": false,
+        "inaccurate": false,
+        "intense": false,
+        "piercingx": false,
+        "hiddenx": 0,
+        "opportunity": 0,
+        "escalation": 0
+      }
+    },
+    "starshipweapon": {
+      "templates": ["common"],
+      "damage": 0,
+      "range": "close",
+      "qualities": {
+        "area": false,
+        "spread": false,
+        "dampening": false,
+        "calibration": false,
+        "devastating": false,
+        "highyield": false,
+        "persistentx": 0,
+        "piercingx": 0,
+        "viciousx": 0,
+        "hiddenx": 0,
+        "versatilex": 0
+      }
+    },
+    "starshipweapon2e": {
+      "templates": ["common"],
+      "damage": 0,
+      "range": "close",
+      "includescale": "energy",
+      "qualities": {
+        "energy": false,
+        "torpedo": false,
+        "area": false,
+        "calibration": false,
+        "cumbersome": false,
+        "dampening": false,
+        "depleting": false,
+        "devastating": false,
+        "highyield": false,
+        "intense": false,
+        "jamming": false,
+        "persistent": false,
+        "piercing": false,
+        "slowing": false,
+        "spread": false,
+        "hiddenx": 0,
+        "versatilex": 0,
+        "opportunity": 0,
+        "escalation": 0
+      }
+    },
+    "armor": {
+      "templates": ["common"],
+      "protection": 0,
+      "equipped": true,
+      "opportunity": 0,
+      "escalation": 0
+    },
+    "talent": {
+      "templates": ["common"],
+      "talenttype": {
+        "typeenum": "",
+        "description": "",
+        "minimum": 0
+      }
+    },
+    "injury": {
+      "templates": ["common"],
+      "quantity": 1
+    },
+    "smallcraftcontainer": {
+      "templates": ["common"],
+      "quantity": 1
+    },
+    "trait": {
+      "templates": ["common"],
+      "quantity": 1
+    }
+  }
 }

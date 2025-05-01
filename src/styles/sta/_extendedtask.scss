@@ -1,10 +1,24 @@
-/* Extended Tasks Style Starts Here */
-
 .window-content:has(.extended-tasks) {
-  background: $background;
+  padding: 0;
+}
+
+.theme-light {
+  .extended-tasks {
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
 }
 
 .extended-tasks {
+  padding: 7px;
 
 .row {
   display: flex;
@@ -16,7 +30,7 @@
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
+  background-color: $borderbluedark;
   margin-right: 2px;
 }
 
@@ -32,11 +46,11 @@
 }
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .numeric-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
   margin-right: 10px;
   width: 40px
 }
@@ -72,5 +86,3 @@
 }
 
 }
-
-/* Extended Tasks Style Ends Here */

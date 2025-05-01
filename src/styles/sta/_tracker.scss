@@ -1,40 +1,42 @@
-/* Momentum/Threat Tracker Starts Here */
-
-.sta.tracker-container {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  -webkit-transition: bottom 0.5s linear;
-  -moz-transition: bottom 0.5s linear;
-  -ms-transition: bottom 0.5s linear;
-  -o-transition: bottom 0.5s linear;
-  transition: bottom 0.5s linear;
-
-  .roll-task i {
-    margin-left: 5px;
+.tracker-container {
+  .combadge {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(+2px);
   }
 
-  .roll-challenge i, .roll-npc i, .roll-task i {
-    font-size: 2em;
-    margin-right: 5px;
-	color: $background;
+  .icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-    &:hover {
-      color: $borderblue;
+    .roll-challenge i {
+      padding: 4px;
+    }
+
+    .roll-challenge i,
+    .roll-npc i,
+    .roll-task i {
+      display: inline-block;
+      font-size: 2em;
+      color: $background;
+
+      &:hover {
+        color: $borderblue;
+      }
     }
   }
 
   .tracker-clickable {
-    position: absolute;
-    bottom: 50px;
     cursor: pointer;
     color: $borderblue;
-    width: 15px;
+    padding-left: 96px;
 
     i:hover {
       color: $borderblue;
@@ -46,22 +48,11 @@
     }
   }
 
-  &.av-bottom {
-    bottom: +260px;
-  }
-
   &.hide {
-    bottom: -50px;
-    -webkit-transition: bottom 0.5s linear;
-    -moz-transition: bottom 0.5s linear;
-    -ms-transition: bottom 0.5s linear;
-    -o-transition: bottom 0.5s linear;
-    transition: bottom 0.5s linear;
-
-    &.av-bottom {
-    bottom: 140px;
+    .icon-container,
+    .tracker {
+      display: none;
     }
-
   }
 
   .tracker {
@@ -125,5 +116,3 @@
     }
   }
 }
-
-/* Momentum/Threat Tracker Ends Here */

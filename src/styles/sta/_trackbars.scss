@@ -1,4 +1,3 @@
-/* Trackbar Starts Here */
   .track {
     display: flex;
     flex-direction: row;
@@ -12,7 +11,7 @@
 
   .track .bar .box {
     height: 14px;
-    border: 1px solid $textgrey;
+    border: 1px solid;
     border-radius: 14px;
     border-collapse: collapse;
     padding: 0px;
@@ -28,7 +27,6 @@
 
     &.stress {
       background-color: $trackColors;
-      color: $textgrey;
 
       &.selected {
         background-color: $trackColorsselected;
@@ -38,7 +36,6 @@
 
     &.determination {
       background-color: $trackColors;
-      color: $textgrey;
 
       &.selected {
         background-color: $trackColorsselected;
@@ -48,7 +45,6 @@
 
     &.rep {
       background-color: $trackColors;
-      color: $textgrey;
 
       &.selected {
         background-color: $trackColorsselected;
@@ -58,7 +54,6 @@
 
     &.shields {
       background-color: $trackColors;
-      color: $textgrey;
 
       &.selected {
         background-color: $trackColorsselected;
@@ -68,7 +63,6 @@
 
     &.power {
       background-color: $trackColors;
-      color: $textgrey;
 
       &.selected {
         background-color: $trackColorsselected;
@@ -78,7 +72,6 @@
 
     &.crew {
       background-color: $trackColors;
-      color: $textgrey;
 
       &.selected {
         background-color: $trackColorsselected;
@@ -90,7 +83,6 @@
       height: 28px;
       font-size: 16pt;
       background-color: $trackColors;
-      color: $textgrey;
 
       &.selected {
         background-color: $trackColorsselected;
@@ -98,4 +90,3 @@
       }
     }
   }
-/* Trackbar Ends Here */

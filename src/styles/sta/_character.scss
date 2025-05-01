@@ -1,21 +1,37 @@
-/* Character Style Starts Here */
-
-/* Page Styling */
 .window-content:has(.character-sheet) {
-  background: $background;
+  padding: 0;
+}
+
+.theme-light {
+  .character-sheet {
+    background: $background;
+	scrollbar-color: $palestblue transparent;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
 }
 
 .character-sheet {
+  overflow: scroll;
+  padding-left: 7px;
+  scrollbar-color: $darkestblue transparent;
 
 .text-entry {
-  border-color: $borderblue;
+  border-color: $borderbluedark;
 }
 
 .title {
   margin-top: 5px;
   font-weight: bold;
-  background-color: $borderblue;
   margin-right: 2px;
+  background-color: $borderbluedark;
 }
 
 .tracktitle {
@@ -189,9 +205,10 @@
   justify-content: flex-end;
 
   .numeric-entry {
-    width: 30px;
+    width: 32px;
+	height: 28px;
 	text-align: right;
-	border-color: $borderblue;
+	border-color: $borderbluedark;
   }
 }
 
@@ -222,7 +239,7 @@
 }
 
 .stressmod .text-entry {
-  width: 30px;
+  width: 32px;
   margin-left: 10px;
   text-align: right;
 }
@@ -266,5 +283,3 @@ nav.sheet-tabs.tabs a.item:hover {
 }
 
 }
-
-/* Character Style Ends Here */

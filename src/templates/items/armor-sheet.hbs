@@ -1,27 +1,29 @@
-<form class="item-sheet" autocomplete="off">
+<div class="item-sheet">
   <div class="row">
     <div class="image-field">
-      <img class="img" src="{{img}}" data-edit="img" title="{{name}}" />
+      <img class="img" src="{{item.img}}" data-edit="img" data-action="editImage" title="{{item.name}}" />
     </div>
     <div class="column">
       <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
-      <input name="name" type="text" class="text-entry" value="{{name}}" placeholder="Name" />
+      <input name="name" type="text" class="text-entry" value="{{item.name}}" placeholder="Name" />
     </div>
   </div>
 
   <div class="row">
     <div class="tracktitle">{{localize 'sta.actor.belonging.armor.protection'}}</div>
-    <input type="number" class="numeric-entry" name="system.protection" value="{{system.protection}}" data-dtype="Number" />
+    <input type="number" class="numeric-entry" name="system.protection" value="{{item.system.protection}}" data-dtype="Number" />
 
     <div class="tracktitle">{{localize 'sta.item.genericitem.opportunity'}}</div>
-    <input type="number" class="numeric-entry" name="system.opportunity" value="{{system.opportunity}}" data-dtype="Number" />
+    <input type="number" class="numeric-entry" name="system.opportunity" value="{{item.system.opportunity}}" data-dtype="Number" />
 
     <div class="tracktitle">{{localize 'sta.item.genericitem.escalation'}}</div>
-    <input type="number" class="numeric-entry" name="system.escalation" value="{{system.escalation}}" data-dtype="Number" />
+    <input type="number" class="numeric-entry" name="system.escalation" value="{{item.system.escalation}}" data-dtype="Number" />
   </div>
 
   <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
-  <div class="note">
-    {{editor system.description target="system.description" button=true owner=owner editable=true}}
-  </div>
-</form>
+    <div class="note">
+      <prose-mirror name="system.description" data-document-u-u-i-d="{{item.uuid}}" value="{{item.system.description}}" collaborate="true" toggled="true">
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+</div>

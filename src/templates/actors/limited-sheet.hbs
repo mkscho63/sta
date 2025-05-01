@@ -1,19 +1,19 @@
-<form class="character-sheet" autocomplete="off">
+<div class="character-sheet">
   <div class="split-section">
     <div class="top-left-column">
       <div class="image-field">
-        <img class="profile-img" src="{{img}}" data-edit="img" title="{{name}}" />
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
       </div>
     </div>
 
     <div class="top-right-column">
       <div class="name-field">
         <div class="title">{{localize 'sta.actor.character.name'}}</div>
-        <input name="name" class="text-entry" type="text" value="{{name}}" placeholder="{{localize 'sta.actor.character.name'}}" />
+        <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.character.name'}}" />
       </div>
 
       <div class="title">{{localize 'sta.actor.character.rank'}}</div>
-      <input name="system.rank" type="text" value="{{system.rank}}" placeholder="{{localize 'sta.actor.character.rank'}}" />
+      <input name="system.rank" class="text-entry" type="text" value="{{actor.system.rank}}" placeholder="{{localize 'sta.actor.character.rank'}}" />
     </div>
   </div>
-</form>
+</div>
