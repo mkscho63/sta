@@ -4,10 +4,10 @@ const sheets = foundry.applications.sheets;
 export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
   static PARTS = {
     charactersheet: {
-      template: 'systems/STA/templates/actors/smallcraft-sheet.hbs'
+      template: 'systems/sta/templates/actors/smallcraft-sheet.hbs'
     },
     limitedsheet: {
-      template: 'systems/STA/templates/actors/limited-ship.hbs'
+      template: 'systems/sta/templates/actors/limited-ship.hbs'
     },
   };
 

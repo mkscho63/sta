@@ -57,9 +57,6 @@ import {
   STATracker
 } from './apps/tracker.mjs';
 import {
-  STARoller
-} from './apps/STARoller.mjs';
-import {
   registerDsnUfpThemes
 } from './apps/dice-so-nice.js';
 import {

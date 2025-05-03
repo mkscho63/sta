@@ -4,10 +4,10 @@ const sheets = foundry.applications.sheets;
 export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
   static PARTS = {
     charactersheet: {
-      template: 'systems/STA/templates/actors/character-sheet2e.hbs'
+      template: 'systems/sta/templates/actors/character-sheet2e.hbs'
     },
     limitedsheet: {
-      template: 'systems/STA/templates/actors/limited-sheet.hbs'
+      template: 'systems/sta/templates/actors/limited-sheet.hbs'
     },
   };
 

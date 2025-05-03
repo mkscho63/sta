@@ -4,7 +4,7 @@ const sheets = foundry.applications.sheets;
 export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
   static PARTS = {
     charactersheet: {
-      template: 'systems/STA/templates/actors/scenetraits-sheet.hbs'
+      template: 'systems/sta/templates/actors/scenetraits-sheet.hbs'
     }
   };
 
