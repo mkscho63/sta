@@ -1,6 +1,6 @@
 import {
   STARoller
-} from '../apps/STAroller.mjs';
+} from './STARoller.mjs';
 
 const api = foundry.applications.api;
 
