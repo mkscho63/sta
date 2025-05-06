@@ -54,7 +54,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
     const buttonRect = targetButton.getBoundingClientRect();
     trackerForm.style.position = 'absolute';
     trackerForm.style.top = `${buttonRect.bottom + 4}px`;
-    trackerForm.style.left = `${buttonRect.left - 90}px`;
+    trackerForm.style.left = `${buttonRect.left - 120}px`;
   }
 
   static startPositionUpdater(trackerForm) {
