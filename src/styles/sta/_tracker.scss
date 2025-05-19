@@ -1,3 +1,32 @@
+.theme-light {
+  .tracker-container {
+    .icon-container {
+      background-color: $borderblue;
+
+      .roll-challenge i,
+      .roll-npc i,
+      .roll-task i {
+        &:hover {
+          color: $borderbluedark;
+        }
+      }
+    }
+    .tracker {
+      .header {
+        background-color: $borderblue;
+        color: $textgrey;
+      }
+    }
+  .tracker-clickable {
+      color: $borderblue;
+
+      i:hover {
+        color: $borderbluedark;
+      }
+    }
+  }
+}
+
 .tracker-container {
   .combadge {
     display: inline-block;
