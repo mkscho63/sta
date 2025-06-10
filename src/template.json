@@ -42,7 +42,7 @@
         }
       },
       "determination": {
-        "value": 3,
+        "value": 1,
         "max": 3
       },
       "disciplineorder": ["command", "conn", "security", "engineering", "science", "medicine"],
@@ -84,7 +84,7 @@
       "pronouns": "",
       "characterrole": "",
       "rank": "",
-      "reputation": 0,
+      "reputation": 3,
       "acclaim": 0,
       "reprimand": 0,
       "species": "",
