@@ -57,10 +57,10 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
 
     switch (position) {
     case 'TopLeft':
-      targetButton = document.querySelector('#scene-navigation-expand');
+      targetButton = document.querySelector('#scene-navigation-active');
       buttonRect = targetButton?.getBoundingClientRect();
-      trackerForm.style.top = `${buttonRect.top - 25}px`;
-      trackerForm.style.left = `${buttonRect.right + 5}px`;
+      trackerForm.style.top = `${buttonRect.top - 18}px`;
+      trackerForm.style.left = `${buttonRect.right + 35}px`;
       clickable.style.paddingLeft = '0px';
       break;
 
