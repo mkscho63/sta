@@ -48,13 +48,47 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
   }
 
   static positionDiceRoller(trackerForm) {
-    const targetButton = document.querySelector(
-      'button.collapse.ui-control.plain.icon[class*="fa-caret-"]'
-    );
-    const buttonRect = targetButton.getBoundingClientRect();
+    const position = game.settings.get('sta', 'momentumTrackerPosition');
     trackerForm.style.position = 'absolute';
-    trackerForm.style.top = `${buttonRect.bottom + 4}px`;
-    trackerForm.style.left = `${buttonRect.left - 110}px`;
+    const clickable = document.querySelector('.tracker-container .tracker-clickable');
+
+    let targetButton;
+    let buttonRect;
+
+    switch (position) {
+      case 'TopLeft':
+        targetButton = document.querySelector('#scene-navigation-expand');
+        buttonRect = targetButton?.getBoundingClientRect();
+        trackerForm.style.top = `${buttonRect.top - 25}px`;
+        trackerForm.style.left = `${buttonRect.right + 5}px`;
+        clickable.style.paddingLeft = '0px';
+      break;
+
+      case 'TopRight':
+        targetButton = document.querySelector('#sidebar button.fa-comments');
+        buttonRect = targetButton?.getBoundingClientRect();
+        trackerForm.style.top = `${buttonRect.top - 18}px`;
+        trackerForm.style.left = `${buttonRect.left - 165}px`;
+        clickable.style.paddingLeft = '130px';
+      break;
+
+      case 'BottomLeft':
+        targetButton = document.querySelector('#players');
+        buttonRect = targetButton?.getBoundingClientRect();
+        trackerForm.style.top = `${buttonRect.top - 130}px`;
+        trackerForm.style.left = `${buttonRect.left}px`;
+        clickable.style.paddingLeft = '0px';
+      break;
+
+      case 'BottomRight':
+      default:
+        targetButton = document.querySelector('#sidebar button.collapse');
+        buttonRect = targetButton?.getBoundingClientRect();
+        trackerForm.style.top = `${buttonRect.bottom + 4}px`;
+        trackerForm.style.left = `${buttonRect.left - 110}px`;
+        clickable.style.paddingLeft = '119px';
+      break;
+    }
   }
 
   static startPositionUpdater(trackerForm) {

@@ -271,6 +271,21 @@ Hooks.once('init', function() {
     config: false
   });
 
+  game.settings.register('sta', 'momentumTrackerPosition', {
+    name: 'Screen position of the tracker',
+    hint: 'Where on the screen should the momentum/threat tracker be?',
+    scope: 'world',
+    type: String,
+    default: 'BottomRight',
+    config: true,
+    choices: {
+      'BottomRight': 'Bottom Right',
+      'BottomLeft': 'Bottom Left',
+      'TopRight': 'Top Right',
+      'TopLeft': 'Top Left',
+    }
+  });
+
   game.settings.register('sta', 'sendMomemtumThreatToChat', {
     name: 'Send Momentum and Threat Updates to Chat:',
     hint: 'Uncheck this if you do not want to see momentum and threat updates in the chat.',
