@@ -232,7 +232,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'maxNumberOfReputation', {
     name: 'Maximum Reputation (1st ed):',
-    hint: 'Max number of reputation that can be given to a character. 10 is default.',
+    hint: 'Max number of reputation that can be given to a character, 20 is default.',
     scope: 'world',
     type: Number,
     default: 20,
@@ -241,7 +241,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'maxNumberOfReputation2e', {
     name: 'Maximum Reputation (2nd ed):',
-    hint: 'Max number of reputation that can be given to a character. 3 is default.',
+    hint: 'Max number of reputation that can be given to a character, 5 is default.',
     scope: 'world',
     type: Number,
     default: 5,
