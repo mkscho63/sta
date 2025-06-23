@@ -1,3 +1,32 @@
+.theme-light {
+  .tracker-container {
+    .icon-container {
+      background-color: $borderblue;
+
+      .roll-challenge i,
+      .roll-npc i,
+      .roll-task i {
+        &:hover {
+          color: $borderbluedark;
+        }
+      }
+    }
+    .tracker {
+      .header {
+        background-color: $borderblue;
+        color: $textgrey;
+      }
+    }
+  .tracker-clickable {
+      color: $borderblue;
+
+      i:hover {
+        color: $borderbluedark;
+      }
+    }
+  }
+}
+
 .tracker-container {
   .combadge {
     display: inline-block;
@@ -11,20 +40,30 @@
   }
 
   .icon-container {
+    background-color: $borderbluedark;
+    border-top-left-radius: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    .roll-npc i {
+      margin-top: 15px;
+    }
+
+    .roll-task i {
+      padding: 8px;
+    }
+
     .roll-challenge i {
-      padding: 4px;
+
     }
 
     .roll-challenge i,
     .roll-npc i,
     .roll-task i {
       display: inline-block;
-      font-size: 2em;
+      font-size: 1.5em;
       color: $background;
 
       &:hover {
@@ -35,8 +74,7 @@
 
   .tracker-clickable {
     cursor: pointer;
-    color: $borderblue;
-    padding-left: 96px;
+    color: $borderbluedark;
 
     i:hover {
       color: $borderblue;
@@ -55,6 +93,17 @@
     }
   }
 
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
   .tracker {
     position: relative;
     display: block;
@@ -65,23 +114,19 @@
       text-align: center;
       font-size: 1.25em;
       text-transform: uppercase;
-      color: $textgrey;
-      background-color: $background;
+      color: $background;
+      background-color: $borderbluedark;
       width: 120px;
-      border-top-left-radius: 30px;
-      border-top-right-radius: 30px;
     }
 
     .button-group {
       display: flex;
       font-size: 1.5em;
-      background-color: $background;
+      background-color: $chatcardvars;
       width: 120px;
       justify-content: center;
       align-items: center;
       color: $textgrey;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
 
       .button {
         i:hover {

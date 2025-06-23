@@ -232,7 +232,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'maxNumberOfReputation', {
     name: 'Maximum Reputation (1st ed):',
-    hint: 'Max number of reputation that can be given to a character. 10 is default.',
+    hint: 'Max number of reputation that can be given to a character, 20 is default.',
     scope: 'world',
     type: Number,
     default: 20,
@@ -241,7 +241,7 @@ Hooks.once('init', function() {
 
   game.settings.register('sta', 'maxNumberOfReputation2e', {
     name: 'Maximum Reputation (2nd ed):',
-    hint: 'Max number of reputation that can be given to a character. 3 is default.',
+    hint: 'Max number of reputation that can be given to a character, 5 is default.',
     scope: 'world',
     type: Number,
     default: 5,
@@ -269,6 +269,21 @@ Hooks.once('init', function() {
     type: Number,
     default: 0,
     config: false
+  });
+
+  game.settings.register('sta', 'momentumTrackerPosition', {
+    name: 'Screen position of the tracker',
+    hint: 'Where on the screen should the momentum/threat tracker be?',
+    scope: 'world',
+    type: String,
+    default: 'BottomRight',
+    config: true,
+    choices: {
+      'BottomRight': 'Bottom Right',
+      'BottomLeft': 'Bottom Left',
+      'TopRight': 'Top Right',
+      'TopLeft': 'Top Left',
+    }
   });
 
   game.settings.register('sta', 'sendMomemtumThreatToChat', {

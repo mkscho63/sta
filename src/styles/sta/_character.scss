@@ -15,6 +15,25 @@
     .numeric-entry {
       border-color: $borderblue !important;
     }
+    .bottom-right-column {
+      border-left: 16px solid $borderblue;
+    }
+    nav.sheet-tabs.tabs {
+      background-color: $borderblue;
+    }
+    nav.sheet-tabs.tabs a.item {
+      border-right: 3px solid $background;
+    }
+    nav.sheet-tabs.tabs a.item:first-child {
+      border-left: 3px solid $background;
+    }
+    nav.sheet-tabs.tabs a.item.active {
+      text-shadow: none;
+      background-color: $palestblue;
+    }
+    nav.sheet-tabs.tabs a.item:hover {
+      text-shadow: 0 0 10px $palestblue, 0 0 10px $palestblue;
+    }
   }
 }
 
@@ -58,13 +77,14 @@
 
 .bottom-left-column {
   flex: 0 0 150px;
-  padding-right: 10px;
+  padding-right: 4px;
   align-self: flex-start;
 }
 
 .bottom-right-column {
   flex: 0 0 680px;
-  padding-left: 10px;
+  border-left: 16px solid $borderbluedark;
+  border-top-left-radius: 16px;
   align-self: flex-start;
 }
 
@@ -274,8 +294,29 @@
   }
 }
 
+nav.sheet-tabs.tabs {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 70px;
+  gap: 0px;
+  background-color: $borderbluedark;
+  border-top: none;
+  border-bottom: none;
+}
+
+nav.sheet-tabs.tabs a.item {
+  border-right: 3px solid $textgrey;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+}
+nav.sheet-tabs.tabs a.item:first-child {
+  border-left: 3px solid $textgrey;
+}
+
 nav.sheet-tabs.tabs a.item.active {
-  text-shadow: 0 0 10px $borderblue, 0 0 10px $borderblue, 0 0 10px $borderblue, 0 0 10px $borderblue, 0 0 10px $borderblue;
+  text-shadow: none;
+  background-color: $palestbluedark;
 }
 
 nav.sheet-tabs.tabs a.item:hover {
