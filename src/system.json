@@ -20,6 +20,18 @@
 		}
 	],
 	"esmodules": ["module/sta.js"],
+	"flags": {
+		"hotReload": {
+			"extensions": [
+				"css", "hbs", "json"
+			],
+			"paths": [
+				"sta.css",
+				"lang",
+				"templates"
+			]
+		}
+	},
 	"socket": true,
 	"styles": ["sta.css"],
 	"languages": [
