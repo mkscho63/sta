@@ -184,10 +184,10 @@
   "sta.actor.extendedtask.breakthroughs": "Progrès",
   "sta.actor.extendedtask.completed": "Tâche Étendue Finie !",
 
-  "sta.combat.combatantsturndone": "Turn Completed",
-  "sta.combat.combatantsturnnotdone": "Turn Not Completed",
-  "sta.combat.combatnotstarted": "Combat Has Not Started",
-  "sta.combat.togglecombatantsturndone": "Toggle Turn Completed",
+  "sta.combat.combatantsturndone": "Tour terminée",
+  "sta.combat.combatantsturnnotdone": "Tour non terminée",
+  "sta.combat.combatnotstarted": "Le combat n'a pas commencé",
+  "sta.combat.togglecombatantsturndone": "Basculer l'état 'Tour terminée'",
 
   "sta.item.genericitem.name": "Nom",
   "sta.item.genericitem.description": "Description",

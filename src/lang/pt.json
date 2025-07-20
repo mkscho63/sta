@@ -184,10 +184,10 @@
   "sta.actor.extendedtask.breakthroughs": "Avanços",
   "sta.actor.extendedtask.completed": "Tarefa Extendida Completada!",
 
-  "sta.combat.combatantsturndone": "Turn Completed",
-  "sta.combat.combatantsturnnotdone": "Turn Not Completed",
-  "sta.combat.combatnotstarted": "Combat Has Not Started",
-  "sta.combat.togglecombatantsturndone": "Toggle Turn Completed",
+  "sta.combat.combatantsturndone": "Turno concluído",
+  "sta.combat.combatantsturnnotdone": "Turno não concluído",
+  "sta.combat.combatnotstarted": "O combate ainda não começou",
+  "sta.combat.togglecombatantsturndone": "Alternar 'Turno concluído'",
 
   "sta.item.genericitem.name": "Nome",
   "sta.item.genericitem.description": "Descrição",
