@@ -184,6 +184,11 @@
   "sta.actor.extendedtask.breakthroughs": "Durchbruch",
   "sta.actor.extendedtask.completed": "Erweiterte Aufgabe abgeschlossen!",
 
+  "sta.combat.combatantsturndone": "Zug abgeschlossen",
+  "sta.combat.combatantsturnnotdone": "Zug nicht abgeschlossen",
+  "sta.combat.combatnotstarted": "Kampf hat noch nicht begonnen",
+  "sta.combat.togglecombatantsturndone": "Zug abgeschlossen umschalten",
+
   "sta.item.genericitem.name": "Name",
   "sta.item.genericitem.description": "Beschreibung",
   "sta.item.genericitem.opportunity": "Verzichtskosten",

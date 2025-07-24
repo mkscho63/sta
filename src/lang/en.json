@@ -184,6 +184,11 @@
   "sta.actor.extendedtask.breakthroughs": "Breakthroughs",
   "sta.actor.extendedtask.completed": "Extended Task Completed!",
 
+  "sta.combat.combatantsturndone": "Turn Completed",
+  "sta.combat.combatantsturnnotdone": "Turn Not Completed",
+  "sta.combat.combatnotstarted": "Combat Has Not Started",
+  "sta.combat.togglecombatantsturndone": "Toggle Turn Completed",
+
   "sta.item.genericitem.name": "Name",
   "sta.item.genericitem.description": "Description",
   "sta.item.genericitem.opportunity": "Opportunity",

@@ -1,5 +1,11 @@
 // Import Modules
 import {
+  default as Combat2d20
+} from './apps/Combat2d20.mjs';
+import {
+  default as CombatTracker2d20V2
+} from './apps/CombatTracker2d20V2.mjs';
+import {
   STACharacterSheet
 } from './actors/character-sheet.mjs';
 import {
@@ -78,11 +84,11 @@ Hooks.once('init', function() {
                .:::.
               .:::::.
           ***.:::::::.***
-     *******.:::::::::.*******       
-   ********.:::::::::::.********     
-  ********.:::::::::::::.********    
-  *******.::::::'***\::::.*******    
-  ******.::::'*********\'::.******    
+     *******.:::::::::.*******
+   ********.:::::::::::.********
+  ********.:::::::::::::.********
+  *******.::::::'***\::::.*******
+  ******.::::'*********\'::.******
    ****.:::'*************\':.****
      *.::'*****************\'.*
      .:'  ***************    .
@@ -113,6 +119,9 @@ Hooks.once('init', function() {
   };
 
   window.STARoll = STARoll;
+
+  CONFIG.ui.combat = CombatTracker2d20V2;
+  CONFIG.Combat.documentClass = Combat2d20;
 
   // Define initiative for the system.
   CONFIG.Combat.initiative = {
@@ -300,7 +309,7 @@ Hooks.once('init', function() {
     Collapsible.attachHeaderListener(html);
   });
 
-  Hooks.on('renderSidebar', function() {
+  Hooks.once('renderSidebar', function() {
     const t = new STATracker();
     foundry.applications.handlebars.renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
       t.render(true);
