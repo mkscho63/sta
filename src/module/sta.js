@@ -360,25 +360,3 @@ Hooks.on('createActor', async (actor, options, userId) => {
     }
   }
 });
-
-Hooks.on('renderActorSheet', async (actorSheet, html, data) => {
-  const actor = actorSheet.object;
-  if (actor.system.traits && actor.system.traits.trim()) {
-    const traitName = actor.system.traits.trim();
-    const existingTrait = actor.items.find((item) => item.name === traitName && item.type === 'trait');
-    if (!existingTrait) {
-      const traitItemData = {
-        name: traitName,
-        type: 'trait',
-      };
-      try {
-        await actor.createEmbeddedDocuments('Item', [traitItemData]);
-        await actor.update({
-          'system.traits': ''
-        });
-      } catch (err) {
-        console.error(`Error creating trait item for actor ${actor.name}:`, err);
-      }
-    }
-  }
-});
