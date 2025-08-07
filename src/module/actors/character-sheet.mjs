@@ -613,6 +613,27 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
   _onRender(context, options) {
     if (this.document.limited) return;
 
+    const actor = this.actor;
+    if (actor.system.traits && actor.system.traits.trim()) {
+      const traitName = actor.system.traits.trim();
+      const existingTrait = actor.items.find(
+        (trait) => trait.name === traitName && trait.type === 'trait'
+      );
+
+      if (!existingTrait) {
+        const traitItemData = {
+          name: traitName,
+          type: 'trait',
+        };
+
+        actor.createEmbeddedDocuments('Item', [traitItemData])
+          .then(() => actor.update({ 'system.traits': '' }))
+          .catch((err) => {
+            console.error(`Error creating trait item for actor ${actor.name}:`, err);
+          });
+      }
+    }
+
     this._onStressTrackUpdate();
     this._onDeterminationTrackUpdate();
     this._onReputationTrackUpdate();
