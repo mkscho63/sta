@@ -4,57 +4,52 @@
     <i id="tracker-clickable-minus" class="fas fa-minus" data-action="onMinimise"></i>
   </div>
 
-<div class="row">
+  <div class="row">
+    <div class="icon-container">
+      <div id="sta-roll-npc-button" class="button roll-npc" title="{{localize 'sta.roll.npccrew'}}" data-action="onNPCRoll">
+        <i class="combadge"></i>
+      </div>
+      <div id="sta-roll-task-button" class="button roll-task" title="{{localize 'sta.actor.attdis.task'}}" data-action="onTaskRoll">
+        <i class="fa-solid fa-dice-d20"></i>
+      </div>
+      <div id="sta-roll-challenge-button" class="button roll-challenge" title="{{localize 'sta.actor.challenge.roll'}}" data-action="onChallengeRoll">
+        <i class="fa-solid fa-dice"></i>
+      </div>
+    </div>
 
-  <div class="icon-container">
-    <div id="sta-roll-npc-button" class="button roll-npc" title="{{localize 'sta.roll.npccrew'}}" data-action="onNPCRoll">
-      <i class="combadge"></i>
-    </div>
-    <div id="sta-roll-task-button" class="button roll-task" title="{{localize 'sta.actor.attdis.task'}}" data-action="onTaskRoll">
-      <i class="fa-solid fa-dice-d20"></i>
-    </div>
-    <div id="sta-roll-challenge-button" class="button roll-challenge" title="{{localize 'sta.actor.challenge.roll'}}" data-action="onChallengeRoll">
-      <i class="fa-solid fa-dice"></i>
+    <div class="column">
+      <div id="sta-momentum-tracker" class="sta tracker momentum">
+        <div class="header">
+          {{localize 'sta.tracker.momentum'}}
+        </div>
+        <div class="button-group">
+          <div id="sta-momentum-track-decrease" data-action="onMomentumDecrease" class="button decrease sta-impermitable">
+            <i class="fas fa-minus"></i>
+          </div>
+          <div>
+            <input type="text" class="input momentum-input" id="sta-track-momentum" data-dtype="Number" />
+          </div>
+          <div id="sta-momentum-track-increase" data-action="onMomentumIncrease" class="button increase sta-impermitable">
+            <i class="fas fa-plus"></i>
+          </div>
+        </div>
+      </div>
+      <div id="sta-threat-tracker" class="sta tracker threat">
+        <div class="header">
+          {{localize 'sta.tracker.threat'}}
+        </div>
+        <div class="button-group">
+          <div id="sta-threat-track-decrease" data-action="onThreatDecrease" class="button decrease sta-impermitable">
+            <i class="fas fa-minus"></i>
+          </div>
+          <div>
+            <input type="text" class="input threat-input" id="sta-track-threat" data-dtype="Number" />
+          </div>
+          <div id="sta-threat-track-increase" data-action="onThreatIncrease" class="button increase sta-impermitable">
+            <i class="fas fa-plus"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-<div class="column">
-
-
-  <div id="sta-momentum-tracker" class="sta tracker momentum">
-    <div class="header">
-      {{localize 'sta.tracker.momentum'}}
-    </div>
-    <div class="button-group">
-      <div id="sta-momentum-track-decrease" data-action="onMomentumDecrease" class="button decrease sta-impermitable">
-        <i class="fas fa-minus"></i>
-      </div>
-      <div>
-        <input type="text" class="input momentum-input" id="sta-track-momentum" data-dtype="Number" />
-      </div>
-      <div id="sta-momentum-track-increase" data-action="onMomentumIncrease" class="button increase sta-impermitable">
-        <i class="fas fa-plus"></i>
-      </div>
-    </div>
-  </div>
-  <div id="sta-threat-tracker" class="sta tracker threat">
-    <div class="header">
-      {{localize 'sta.tracker.threat'}}
-    </div>
-    <div class="button-group">
-      <div id="sta-threat-track-decrease" data-action="onThreatDecrease" class="button decrease sta-impermitable">
-        <i class="fas fa-minus"></i>
-      </div>
-      <div>
-        <input type="text" class="input threat-input" id="sta-track-threat" data-dtype="Number" />
-      </div>
-      <div id="sta-threat-track-increase" data-action="onThreatIncrease" class="button increase sta-impermitable">
-        <i class="fas fa-plus"></i>
-      </div>
-    </div>
-  </div>
-
-</div>
-</div>
-
 </div>

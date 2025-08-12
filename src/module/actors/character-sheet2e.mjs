@@ -126,6 +126,31 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
 
   async _onAttributeTest(event) {
     event.preventDefault();
+    let calculatedComplicationRange = 1;
+    const sceneComplicationBonus = (() => {
+      try {
+        const scene = game.scenes?.active;
+        if (!scene) return 0;
+        let bonus = 0;
+
+        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
+        for (const tok of tokens) {
+          const actor = tok?.actor;
+          if (!actor || actor.type !== 'scenetraits') continue;
+
+          for (const item of actor.items ?? []) {
+            const m = /complication\s*range\s*\+(\d+)/i.exec(item.name ?? '');
+            if (m) bonus += Number(m[1]) || 0;
+          }
+        }
+        return bonus;
+      } catch (err) {
+        console.error('Scene complication bonus error:', err);
+        return 0;
+      }
+    })();
+    calculatedComplicationRange += sceneComplicationBonus;
+    calculatedComplicationRange = Math.min(5, Math.max(1, calculatedComplicationRange));
     let selectedAttribute = null;
     let selectedAttributeValue = 0;
     let selectedDiscipline = null;
@@ -163,7 +188,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attribute2e.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue
+      defaultValue, calculatedComplicationRange
     });
     const formData = await api.DialogV2.wait({
       window: {
@@ -602,7 +627,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
         };
 
         actor.createEmbeddedDocuments('Item', [traitItemData])
-          .then(() => actor.update({ 'system.traits': '' }))
+          .then(() => actor.update({'system.traits': ''}))
           .catch((err) => {
             console.error(`Error creating trait item for actor ${actor.name}:`, err);
           });
