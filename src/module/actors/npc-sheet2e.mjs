@@ -1,5 +1,5 @@
 
-import { STACharacterSheet2e } from "./character-sheet2e.mjs";
+import {STACharacterSheet2e} from './character-sheet2e.mjs';
 
 export class STANPCSheet2e extends STACharacterSheet2e {
   static PARTS = {
@@ -37,10 +37,10 @@ export class STANPCSheet2e extends STACharacterSheet2e {
 
     let fitnessValue = 0;
     if (npcType === 'notable') fitnessValue = 3;
-    if (npcType === 'major')   fitnessValue = 6 + numValues;
+    if (npcType === 'major') fitnessValue = 6 + numValues;
 
     const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
-    let stressTrackMax = fitnessValue + stressModValue;
+    const stressTrackMax = fitnessValue + stressModValue;
 
     const maxStressInput = this.element.querySelector('#max-stress');
     if (maxStressInput && maxStressInput.value != stressTrackMax) {

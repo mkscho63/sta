@@ -141,7 +141,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       try {
         const scene = game.scenes?.active;
         if (!scene) return 0;
-       let bonus = 0;
+        let bonus = 0;
         const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
         for (const tok of tokens) {
           const actor = tok?.actor;
@@ -380,7 +380,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     case 'log':
       staRoll.performLogRoll(item, this.actor);
       break;
-      default:
+    default:
       console.warn(`Unhandled item type: ${itemType}`);
     }
   }
@@ -622,17 +622,17 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
 
   async _onCheatSheet(event) {
     event?.preventDefault?.();
-    const tmpl = "systems/sta/templates/apps/cheat-sheet.hbs";
+    const tmpl = 'systems/sta/templates/apps/cheat-sheet.hbs';
     const content = await foundry.applications.handlebars.renderTemplate(tmpl);
     new foundry.applications.api.DialogV2({
-      window: { title: game.i18n.localize("sta.apps.dicepoolwindow") },
+      window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
       content,
       classes: ['dialogue'],
-      position: { width: 360, height: "auto" },
-     buttons: [
+      position: {width: 360, height: 'auto'},
+      buttons: [
         {
-          action: "close",
-          label: game.i18n.localize("sta.apps.close") || "Close",
+          action: 'close',
+          label: game.i18n.localize('sta.apps.close') || 'Close',
           default: true,
           callback: () => {}
         }

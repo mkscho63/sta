@@ -26,22 +26,22 @@ export class STAMilestoneSheet extends api.HandlebarsApplicationMixin(sheets.Ite
 
   async _prepareContext(options) {
     const actor = this.item.actor ?? null;
-    const availableLogs = actor
-      ? actor.items
-          .filter(i => i.type === "log" && actor.isOwner)
-          .map(i => ({ id: i.id, name: i.name }))
-      : [];
+    const availableLogs = actor ?
+      actor.items
+        .filter((i) => i.type === 'log' && actor.isOwner)
+        .map((i) => ({id: i.id, name: i.name})) :
+      [];
 
     const arc = this.item.system?.arc ?? {};
     const isArc = !!arc.isArc;
     let totalSteps = Number.isFinite(Number(arc.steps)) ? Number(arc.steps) : 3;
     totalSteps = Math.max(3, totalSteps);
     const extraCount = isArc ? Math.max(0, totalSteps - 2) : 0;
-    const letters = Array.from({ length: extraCount }, (_, i) => String.fromCharCode(67 + i));
-    const arcLetters = letters.map(L => ({
+    const letters = Array.from({length: extraCount}, (_, i) => String.fromCharCode(67 + i));
+    const arcLetters = letters.map((L) => ({
       key: `child${L}`,
       label: L,
-      value: this.item.system?.[`child${L}`] ?? ""
+      value: this.item.system?.[`child${L}`] ?? ''
     }));
 
     return {
@@ -50,8 +50,8 @@ export class STAMilestoneSheet extends api.HandlebarsApplicationMixin(sheets.Ite
       availableLogs,
       arcLetters,
       enrichedNotes: await foundry.applications.ux.TextEditor.enrichHTML(
-        this.item.system?.description ?? "",
-        { async: true, relativeTo: this.item }
+        this.item.system?.description ?? '',
+        {async: true, relativeTo: this.item}
       ),
     };
   }

@@ -137,7 +137,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       try {
         const scene = game.scenes?.active;
         if (!scene) return 0;
-       let bonus = 0;
+        let bonus = 0;
         const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
         for (const tok of tokens) {
           const actor = tok?.actor;
