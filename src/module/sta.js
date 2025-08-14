@@ -128,12 +128,9 @@ Hooks.once('init', function() {
 
   window.STARoll = STARoll;
 
-  CONFIG.ui.combat = CombatTracker2d20V2;
-  CONFIG.Combat.documentClass = Combat2d20;
-
   // Define initiative for the system.
   CONFIG.Combat.initiative = {
-    formula: '@disciplines.security.value',
+    formula: '@attributes.daring.value',
     decimals: 0
   };
 
@@ -315,6 +312,15 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'useSTAPopcornCombat', {
+    name: 'Use the built in STA Popcorn combat tracker:',
+    hint: 'Uncheck this if you do not want to use the built in combact tracker.',
+    scope: 'world',
+    type: Boolean,
+    default: true,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
@@ -330,6 +336,12 @@ Hooks.once('init', function() {
   Hooks.once('diceSoNiceReady', (dice3d) => {
     registerDsnUfpThemes(dice3d);
   });
+
+  const usePopcorn = game.settings.get('sta', 'useSTAPopcornCombat');
+  if (usePopcorn) {
+    CONFIG.ui.combat = CombatTracker2d20V2;
+    CONFIG.Combat.documentClass = Combat2d20;
+  }
 });
 
 async function preloadHandlebarsTemplates() {
