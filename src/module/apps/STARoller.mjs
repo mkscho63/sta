@@ -2,6 +2,33 @@ const api = foundry.applications.api;
 export class STARoller {
   static async _onTaskRoll(event) {
     event.preventDefault();
+    const i18nKey = 'sta.roll.complicationroller';
+    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
+    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
+    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
+    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
+    const sceneComplicationBonus = (() => {
+      try {
+        const scene = game.scenes?.active;
+        if (!scene) return 0;
+        let bonus = 0;
+        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
+        for (const tok of tokens) {
+          const actor = tok?.actor;
+          if (!actor || actor.type !== 'scenetraits') continue;
+          for (const item of actor.items ?? []) {
+            const m = compRx.exec(item.name ?? '');
+            if (m) bonus += Number(m[1]) || 0;
+          }
+        }
+        return bonus;
+      } catch (err) {
+        console.error('Scene complication bonus error:', err);
+        return 0;
+      }
+    })();
+    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
     const selectedAttribute = null;
     const selectedDiscipline = null;
 
@@ -11,7 +38,7 @@ export class STARoller {
     };
     const template = 'systems/sta/templates/apps/dicepool-attribroller.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue
+      defaultValue, calculatedComplicationRange
     });
     const formData = await api.DialogV2.wait({
       window: {
@@ -95,6 +122,34 @@ export class STARoller {
   }
 
   static async _onNPCRoll(event) {
+    event.preventDefault();
+    const i18nKey = 'sta.roll.complicationroller';
+    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
+    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
+    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
+    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
+    const sceneComplicationBonus = (() => {
+      try {
+        const scene = game.scenes?.active;
+        if (!scene) return 0;
+        let bonus = 0;
+        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
+        for (const tok of tokens) {
+          const actor = tok?.actor;
+          if (!actor || actor.type !== 'scenetraits') continue;
+          for (const item of actor.items ?? []) {
+            const m = compRx.exec(item.name ?? '');
+            if (m) bonus += Number(m[1]) || 0;
+          }
+        }
+        return bonus;
+      } catch (err) {
+        console.error('Scene complication bonus error:', err);
+        return 0;
+      }
+    })();
+    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
     const selectedTokens = canvas.tokens.controlled;
     const characterToken = selectedTokens.find((t) => t.actor?.type === 'character');
     const starshipToken = selectedTokens.find((t) => ['starship', 'smallcraft'].includes(t.actor?.type));
@@ -220,7 +275,7 @@ export class STARoller {
           <span class="centered flex-1"></span>
         `).join('')}
       </div>
-      <input type="range" name="complicationRange" min="1" max="5" value="1" class="slider" id="complication-range">
+      <input type="range" name="complicationRange" min="1" max="5" value="${calculatedComplicationRange}" class="slider" id="complication-range">
     </div>
   </div>
   <div class="row">

@@ -20,7 +20,7 @@
 .item-sheet {
   width: 100%;
   padding: 7px;
-  
+
 .row {
   display: flex;
   width: 100%;
@@ -37,6 +37,15 @@
   }
 }
 
+.col-name {
+  width: 60%;
+  padding-right: 5px;
+}
+
+.col-radio {
+  width: 10%;
+  text-align: center;
+}
 
 .title {
   margin-top: 5px;
@@ -107,5 +116,7 @@
     height: 100%;
   }
 }
-
+}
+.item-sheet.milestones {
+  overflow: auto;
 }

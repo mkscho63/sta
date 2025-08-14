@@ -308,7 +308,7 @@
     }
   },
   "Item": {
-    "types": ["item", "focus", "value", "characterweapon", "characterweapon2e", "starshipweapon", "starshipweapon2e", "armor", "talent", "milestone", "injury", "smallcraftcontainer", "trait"],
+    "types": ["item", "focus", "value", "characterweapon", "characterweapon2e", "starshipweapon", "starshipweapon2e", "armor", "talent", "milestone", "injury", "smallcraftcontainer", "trait", "log"],
     "templates": {
       "common": {
         "description": ""
@@ -443,6 +443,10 @@
       "quantity": 1
     },
     "trait": {
+      "templates": ["common"],
+      "quantity": 1
+    },
+    "log": {
       "templates": ["common"],
       "quantity": 1
     }

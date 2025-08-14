@@ -1,0 +1,70 @@
+<div class="item-sheet milestones">
+  <div class="row">
+    <div class="image-field">
+      <img class="img" src="{{item.img}}" data-edit="img" data-action="editImage" title="{{item.name}}" />
+    </div>
+    <div class="column">
+      <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
+      <input name="name" type="text" class="text-entry" value="{{item.name}}" placeholder="Name" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="tracktitle">{{localize "sta.actor.milestone.isarc"}}: </div>
+    <input type="checkbox" name="system.arc.isArc" {{checked item.system.arc.isArc}} />
+  </div>
+  {{#if item.system.arc.isArc}}
+    <div class="row">
+      <div class="tracktitle">{{localize "sta.actor.milestone.stepsinarc"}}:</div>
+      <input id="arc-steps"
+        type="number"
+        min="3"
+        step="1"
+        class="numeric-entry"
+        name="system.arc.steps"
+        data-dtype="Number"
+        value="{{#if item.system.arc.steps}}{{item.system.arc.steps}}{{else}}3{{/if}}" />
+    </div>
+  {{/if}}
+
+  <div class="title">{{localize 'sta.actor.milestone.milestonelogs'}}</div>
+
+  {{#if availableLogs.length}}
+    <select name="system.childA" class="party-input" data-dtype="String">
+      <option value="">-</option>
+      {{selectOptions availableLogs selected=item.system.childA valueAttr="id" labelAttr="name"}}
+    </select>
+  {{else}}
+    <div class="note"><em>{{localize "sta.milestone.noLogsOnActor"}}</em></div>
+  {{/if}}
+
+  {{#if availableLogs.length}}
+    <select name="system.childB" class="party-input" data-dtype="String">
+      <option value="">-</option>
+      {{selectOptions availableLogs selected=item.system.childB valueAttr="id" labelAttr="name"}}
+    </select>
+  {{else}}
+    <div class="note"><em>{{localize "sta.milestone.noLogsOnActor"}}</em></div>
+  {{/if}}
+
+  {{#if item.system.arc.isArc}}
+    {{#each arcLetters as |c|}}
+      {{#if ../availableLogs.length}}
+        <select name="system.{{c.key}}" class="party-input" data-dtype="String">
+          <option value="">-</option>
+          {{selectOptions ../availableLogs selected=c.value valueAttr="id" labelAttr="name"}}
+        </select>
+      {{else}}
+        <div class="note"><em>{{localize "sta.milestone.noLogsOnActor"}}</em></div>
+      {{/if}}
+    {{/each}}
+  {{/if}}
+
+  <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
+  <div class="note">
+    <prose-mirror name="system.description" data-document-u-u-i-d="{{item.uuid}}"
+                  value="{{item.system.description}}" collaborate="true" toggled="true">
+      {{{enrichedNotes}}}
+    </prose-mirror>
+  </div>
+</div>

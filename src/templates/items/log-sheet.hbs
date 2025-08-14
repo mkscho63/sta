@@ -1,0 +1,36 @@
+<div class="item-sheet">
+  <div class="row">
+    <div class="image-field">
+      <img class="img" src="{{item.img}}" data-edit="img" data-action="editImage" title="{{item.name}}" />
+    </div>
+    <div class="column">
+      <div class="title">{{localize 'sta.item.genericitem.name'}}</div>
+      <input name="name" type="text" class="text-entry" value="{{item.name}}" placeholder="Name" />
+    </div>
+  </div>
+
+  <div class="row title">
+    <div class="col-name">Value Name</div>
+    <div class="col-radio">Unused</div>
+    <div class="col-radio">Positive</div>
+   <div class="col-radio">Negative</div>
+    <div class="col-radio">Challenged</div>
+  </div>
+
+  {{#each actorValues as |v|}}
+    <div class="row">
+      <div class="col-name value-name">{{v.name}}</div>
+      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="unused" {{checked v.isUnused}}></div>
+      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="positive" {{checked v.isPositive}}></div>
+      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="negative" {{checked v.isNegative}}></div>
+      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="challenged" {{checked v.isChallenged}}></div>
+    </div>
+  {{/each}}
+
+  <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
+    <div class="note">
+      <prose-mirror name="system.description" data-document-u-u-i-d="{{item.uuid}}" value="{{item.system.description}}" collaborate="true" toggled="true">
+        {{{enrichedNotes}}}
+      </prose-mirror>
+    </div>
+</div>

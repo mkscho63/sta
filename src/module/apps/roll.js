@@ -205,6 +205,12 @@ export class STARoll {
       .then((html) => this.sendToChat(speaker, html, item));
   }
 
+  async performLogRoll(item, speaker) {
+    // Send the divs to populate a HTML template and sends to chat.
+    this.genericItemTemplate(item, speaker)
+      .then((html) => this.sendToChat(speaker, html, item));
+  }
+
   async performWeaponRoll(item, speaker) {
     let actorSecurity = 0;
     if (speaker.system.disciplines) {

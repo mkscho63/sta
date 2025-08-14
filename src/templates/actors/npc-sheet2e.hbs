@@ -12,21 +12,25 @@
         <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.character.name'}}" />
       </div>
 
-      <div class="tracktitle">{{localize 'sta.actor.character.reputation'}}</div>
-      <div class="track">
-        <input type="hidden" id="total-rep" name="system.reputation" value="{{actor.system.reputation}}" data-dtype="Number" />
-        <div id="bar-rep-renderer" class="bar"></div>
+      <div class="npc-block">
+        <div class="title">{{localize 'sta.actor.character.npc.section'}}</div>
+      <div class="row">
+<div class="column">
+          {{localize 'sta.actor.character.npc.minor'}}
+          <input type="radio" name="system.npcType" value="minor" {{checked (eq actor.system.npcType "minor")}}>
+</div>
+<div class="column">
+          {{localize 'sta.actor.character.npc.notable'}}
+          <input type="radio" name="system.npcType" value="notable" {{checked (eq actor.system.npcType "notable")}}>
+</div>
+<div class="column">
+          {{localize 'sta.actor.character.npc.major'}}
+          <input type="radio" name="system.npcType" value="major" {{checked (eq actor.system.npcType "major")}}>
+</div>
+</div>
       </div>
 
-      <div class="tracktitle">{{localize 'sta.actor.character.determination'}}</div>
-      <div class="track">
-        <input type="hidden" id="total-determination" name="system.determination.value" value="{{actor.system.determination.value}}" data-dtype="Number" />
-        <div class="bar">
-          <div id="bar-determination-renderer" class="bar"></div>
-        </div>
-      </div>
-
-      <div class="tracktitle">{{localize 'sta.actor.character.stress'}}</div>
+      <div class="tracktitle">{{localize 'sta.actor.character.personalthreat'}}</div>
       <div class="track">
         <input type="hidden" id="total-stress" name="system.stress.value" value="{{actor.system.stress.value}}" data-dtype="Number" />
         <input type="hidden" id="max-stress" name="system.stress.max" value="{{actor.system.stress.max}}" data-dtype="Number" />
@@ -62,18 +66,15 @@
       </div>
 
       <div class="rollrepnotdis">
-        {{localize 'sta.actor.character.rollrepnotdis'}}:
-        <input class="checkbox" type="checkbox" name="system.rollrepnotdis" data-dtype="Boolean" {{checked actor.system.rollrepnotdis}}>
         <a class="control create" title="Cheat Sheet" data-action="onCheatSheet"><i class="fa-solid fa-circle-info"></i></a>
       </div>
 
       <div class="buttons">
         <div class="check-button btn attribute" data-action="onAttributeTest" >{{localize 'sta.actor.attdis.task'}}</div>
-        <div class="check-button btn3 acclaim" data-action="onReputationTest" >{{localize 'sta.roll.acclaim'}}</div>
       </div>
 
       <div class="stressmod">
-        {{localize 'sta.actor.character.stressmod'}}
+        {{localize 'sta.actor.character.threatmod'}}
         <input class="text-entry" name="system.strmod" id="strmod" type="number" value="{{actor.system.strmod}}" placeholder="0" />
       </div>
     </div>
@@ -82,8 +83,6 @@
       <nav class="sheet-tabs tabs">
         <a class="item {{tabs.biography.cssClass}}" data-group="primary" data-action="tab" data-tab="biography">{{localize 'sta.actor.character.character'}}</a>
         <a class="item {{tabs.traits.cssClass}}" data-group="primary" data-action="tab" data-tab="traits">{{localize 'sta.actor.character.traits'}}</a>
-        <a class="item {{tabs.development.cssClass}}" data-group="primary" data-action="tab" data-tab="development">{{localize 'sta.actor.character.development'}}</a>
-        <a class="item {{tabs.notes.cssClass}}" data-group="primary" data-action="tab" data-tab="notes">{{localize 'sta.actor.note.title'}}</a>
       </nav>
 
       <section class="sheet-body">
@@ -123,28 +122,6 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="column environment">
-              <div class="title">{{localize 'sta.actor.character.environment'}}</div>
-              <input name="system.environment" class="text-entry" type="text" value="{{actor.system.environment}}" placeholder="{{localize 'sta.actor.character.environment'}}" />
-            </div>
-            <div class="column upbringing">
-              <div class="title">{{localize 'sta.actor.character.upbringing'}}</div>
-              <input name="system.upbringing" class="text-entry" type="text" value="{{actor.system.upbringing}}" placeholder="{{localize 'sta.actor.character.upbringing'}}" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="column pastimes">
-              <div class="title">{{localize 'sta.actor.character.pastimes'}}</div>
-              <input name="system.pastimes" class="text-entry" type="text" value="{{actor.system.pastimes}}" placeholder="{{localize 'sta.actor.character.pastimes'}}" />
-            </div>
-            <div class="column careerevents">
-              <div class="title">{{localize 'sta.actor.character.careerevents'}}</div>
-              <input name="system.careerevents" class="text-entry" type="text" value="{{actor.system.careerevents}}" placeholder="{{localize 'sta.actor.character.careerevents'}}" />
-            </div>
-          </div>
-
           <br>
 
           <div class="row">
@@ -177,27 +154,11 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="column acclaimfield">
-              <div class="title">{{localize 'sta.actor.character.acclaim'}}</div>
-              <input class="text-entry" name="system.acclaim" type="number" value="{{actor.system.acclaim}}" placeholder="0" />
-            </div>
-            <div class="column reprimand">
-              <div class="title">{{localize 'sta.actor.character.reprimand'}}</div>
-              <input class="text-entry" name="system.reprimand" id="currentreprimand" type="number" value="{{actor.system.reprimand}}" placeholder="0" />
-            </div>
-            <div class="column influence">
-              <div class="title">{{localize 'sta.actor.character.klingon.influence'}}</div>
-              <input name="system.influence" class="text-entry" type="number" value="{{actor.system.influence}}" placeholder="0" />
-            </div>
-            <div class="column might">
-              <div class="title">{{localize 'sta.actor.character.klingon.might'}}</div>
-              <input name="system.might" class="text-entry" type="number" value="{{actor.system.might}}" placeholder="0" />
-            </div>
-            <div class="column wealth">
-              <div class="title">{{localize 'sta.actor.character.klingon.wealth'}}</div>
-              <input name="system.wealth" class="text-entry" type="number" value="{{actor.system.wealth}}" placeholder="0" />
-            </div>
+          <div class="title">{{localize 'sta.actor.note.title'}}</div>
+          <div class="notenpc">
+            <prose-mirror name="system.notes" data-document-u-u-i-d="{{actor.uuid}}" value="{{actor.system.notes}}" collaborate="true" toggled="true">
+              {{{enrichedNotes}}}
+            </prose-mirror>
           </div>
         </div>
 
@@ -391,99 +352,10 @@
           </div>
         </div>
 
-        <div class="tab {{tabs.development.cssClass}}" data-group="primary" name="development" data-tab="development">
-          <!-- Content for development -->
-          <div class="section milestones">
-            <div class="title">{{localize 'sta.actor.log.title'}}</div>
-            <div class="header row item">
-              <div class="image"></div>
-              <div class="one-column-with-roll">{{localize 'sta.item.genericitem.name'}}</div>
-              <div class="value-used">{{localize 'sta.actor.log.used'}}</div>
-              <a class="control create" title="Create item" data-action="onItemCreate" data-type="log"><i class="fas fa-plus"></i></a>
-            </div>
-
-            {{#each items as |item id|}}
-              {{#if (eq item.type "log")}}
-                <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                  <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat" /></div>
-                  <input type="text" class="item-name {{#if (eq item.system.used true)}}strike-through{{/if}}" value="{{item.name}}" data-item-id="{{item._id}}">
-                  <a class="value-used control toggle"><i class="fas fa-toggle-{{#if (eq item.system.used true)}}on{{else}}off{{/if}}" data-action="onStrikeThrough"></i></a>
-                  <div class="control">
-                    <a class="edit" data-action="onItemEdit"  title="Edit Item"><i class="fas fa-edit"></i></a>
-                    <a class="delete" data-action="onItemDelete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                  </div>
-                </li>
-              {{/if}}
-            {{/each}}
-
-            <div class="title">{{localize 'sta.actor.milestone.title'}}</div>
-                <div class="header row item">
-                  <div class="image"></div>
-                  <div class="two-column-with-roll-primary">{{localize 'sta.item.genericitem.name'}}</div>
-                  <div class="two-column-with-roll-secondary">{{localize 'sta.actor.milestone.arc'}}</div>
-                  <a class="control create" title="Create item" data-action="onItemCreate" data-type="characterweapon2e"><i class="fas fa-plus"></i></a>
-                </div>
-
-                {{#each items as |item id|}}
-                  {{#if (eq item.type "milestone")}}
-                    <li class="row entry" data-item-id="{{item.id}}" data-item-type="{{item.type}}" data-item-value="{{item.name}}">
-                      <div class="image"><img class="chat" src="{{item.img}}" title="{{item.name}}" data-action="onItemtoChat" /></div>
-                      <input type="text" class="item-name" value="{{item.name}}" data-item-id="{{item._id}}">
-                      <input type="checkbox" class="item-quantity" {{checked item.system.arc.isArc}} disabled data-item-id="{{item.id}}" />
-                      <div class="control">
-                        <a class="edit" data-action="onItemEdit"  title="Edit Item"><i class="fas fa-edit"></i></a>
-                        <a class="delete" data-action="onItemDelete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                      </div>
-                    </li>
-                  {{/if}}
-                {{/each}}
-          </div>
-
-          <div class="split-section">
-            <div class="items-column-left two-col">
-              <div class="title">{{localize 'sta.actor.milestone.milestoneused'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.attributes.control" data-dtype="Boolean" {{checked actor.flags.sta.selections.attributes.control}}>{{localize 'sta.actor.character.attribute.control'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.attributes.daring" data-dtype="Boolean" {{checked actor.flags.sta.selections.attributes.daring}}>{{localize 'sta.actor.character.attribute.daring'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.attributes.fitness" data-dtype="Boolean" {{checked actor.flags.sta.selections.attributes.fitness}}>{{localize 'sta.actor.character.attribute.fitness'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.attributes.insight" data-dtype="Boolean" {{checked actor.flags.sta.selections.attributes.insight}}>{{localize 'sta.actor.character.attribute.insight'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.attributes.presence" data-dtype="Boolean" {{checked actor.flags.sta.selections.attributes.presence}}>{{localize 'sta.actor.character.attribute.presence'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.attributes.reason" data-dtype="Boolean" {{checked actor.flags.sta.selections.attributes.reason}}>{{localize 'sta.actor.character.attribute.reason'}}</div>
-
-              <div class="row"><input type="checkbox" name="flags.sta.selections.discipline.command" data-dtype="Boolean" {{checked actor.flags.sta.selections.discipline.command}}>{{localize 'sta.actor.character.discipline.command'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.discipline.conn" data-dtype="Boolean" {{checked actor.flags.sta.selections.discipline.conn}}>{{localize 'sta.actor.character.discipline.conn'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.discipline.engineering" data-dtype="Boolean" {{checked actor.flags.sta.selections.discipline.engineering}}>{{localize 'sta.actor.character.discipline.engineering'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.discipline.security" data-dtype="Boolean" {{checked actor.flags.sta.selections.discipline.security}}>{{localize 'sta.actor.character.discipline.security'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.discipline.medicine" data-dtype="Boolean" {{checked actor.flags.sta.selections.discipline.medicine}}>{{localize 'sta.actor.character.discipline.medicine'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.discipline.science" data-dtype="Boolean" {{checked actor.flags.sta.selections.discipline.science}}>{{localize 'sta.actor.character.discipline.science'}}</div>
-
-            </div>
-            <div class="items-column-right two-col">
-              <div class="title">{{localize 'sta.actor.milestone.arcused'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.system.communications" data-dtype="Boolean" {{checked actor.flags.sta.selections.system.communications}}>{{localize 'sta.actor.starship.system.communications'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.system.computers" data-dtype="Boolean" {{checked actor.flags.sta.selections.system.computers}}>{{localize 'sta.actor.starship.system.computers'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.system.engines" data-dtype="Boolean" {{checked actor.flags.sta.selections.system.engines}}>{{localize 'sta.actor.starship.system.engines'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.system.sensors" data-dtype="Boolean" {{checked actor.flags.sta.selections.system.sensors}}>{{localize 'sta.actor.starship.system.sensors'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.system.structure" data-dtype="Boolean" {{checked actor.flags.sta.selections.system.structure}}>{{localize 'sta.actor.starship.system.structure'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.system.weapons" data-dtype="Boolean" {{checked actor.flags.sta.selections.system.weapons}}>{{localize 'sta.actor.starship.system.weapons'}}</div>
-
-              <div class="row"><input type="checkbox" name="flags.sta.selections.department.command" data-dtype="Boolean" {{checked actor.flags.sta.selections.department.command}}>{{localize 'sta.actor.starship.department.command'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.department.conn" data-dtype="Boolean" {{checked actor.flags.sta.selections.department.conn}}>{{localize 'sta.actor.starship.department.conn'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.department.engineering" data-dtype="Boolean" {{checked actor.flags.sta.selections.department.engineering}}>{{localize 'sta.actor.starship.department.engineering'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.department.security" data-dtype="Boolean" {{checked actor.flags.sta.selections.department.security}}>{{localize 'sta.actor.starship.department.security'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.department.medicine" data-dtype="Boolean" {{checked actor.flags.sta.selections.department.medicine}}>{{localize 'sta.actor.starship.department.medicine'}}</div>
-              <div class="row"><input type="checkbox" name="flags.sta.selections.department.science" data-dtype="Boolean" {{checked actor.flags.sta.selections.department.science}}>{{localize 'sta.actor.starship.department.science'}}</div>
-            </div>
-          </div>
-        </div>
 
         <div class="tab {{tabs.notes.cssClass}}" data-group="primary" name="notes" data-tab="notes">
           <!-- Content for notes -->
-          <div class="title">{{localize 'sta.actor.note.title'}}</div>
-          <div class="note2e">
-            <prose-mirror name="system.notes" data-document-u-u-i-d="{{actor.uuid}}" value="{{actor.system.notes}}" collaborate="true" toggled="true">
-              {{{enrichedNotes}}}
-            </prose-mirror>
-          </div>
+
         </div>
       </section>
     </div>

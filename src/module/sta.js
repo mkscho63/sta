@@ -12,6 +12,9 @@ import {
   STACharacterSheet2e
 } from './actors/character-sheet2e.mjs';
 import {
+  STANPCSheet2e
+} from './actors/npc-sheet2e.mjs';
+import {
   STAStarshipSheet
 } from './actors/starship-sheet.mjs';
 import {
@@ -57,6 +60,12 @@ import {
   STAGenericSheet
 } from './items/generic-sheet.mjs';
 import {
+  STALogSheet
+} from './items/log-sheet.mjs';
+import {
+  STAMilestoneSheet
+} from './items/milestone-sheet.mjs';
+import {
   STASmallCraftContainerSheet
 } from './items/smallcraftcontainer-sheet.mjs';
 import {
@@ -99,6 +108,7 @@ Hooks.once('init', function() {
     applications: {
       STACharacterSheet,
       STACharacterSheet2e,
+      STANPCSheet2e,
       STAStarshipSheet,
       STAStarshipSheet2e,
       STASmallCraftSheet,
@@ -113,6 +123,8 @@ Hooks.once('init', function() {
       STAArmorSheet,
       STATalentSheet,
       STAGenericSheet,
+      STALogSheet,
+      STAMilestoneSheet,
       STASmallCraftContainerSheet,
     },
     defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
@@ -120,12 +132,9 @@ Hooks.once('init', function() {
 
   window.STARoll = STARoll;
 
-  CONFIG.ui.combat = CombatTracker2d20V2;
-  CONFIG.Combat.documentClass = Combat2d20;
-
   // Define initiative for the system.
   CONFIG.Combat.initiative = {
-    formula: '@disciplines.security.value',
+    formula: '@attributes.daring.value',
     decimals: 0
   };
 
@@ -133,22 +142,32 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, 'core', foundry.appv1.sheets.ActorSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet, {
     types: ['character'],
-    makeDefault: true
+    label: '1e Character'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet2e, {
-    types: ['character']
+    types: ['character'],
+    label: '2e Character',
+    makeDefault: true
+  });
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STANPCSheet2e, {
+    types: ['character'],
+    label: '2e NPC'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet, {
-    types: ['starship']
+    types: ['starship'],
+    label: '1e Starship'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet2e, {
-    types: ['starship']
+    types: ['starship'],
+    label: '2e Starship'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet, {
-    types: ['smallcraft']
+    types: ['smallcraft'],
+    label: '1e Small Craft'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet2e, {
-    types: ['smallcraft']
+    types: ['smallcraft'],
+    label: '2e Small Craft'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAExtendedTaskSheet, {
     types: ['extendedtask']
@@ -192,8 +211,11 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
     types: ['focus']
   });
-  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAMilestoneSheet, {
     types: ['milestone']
+  });
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STALogSheet, {
+    types: ['log']
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STASmallCraftContainerSheet, {
     types: ['smallcraftcontainer']
@@ -304,6 +326,15 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'useSTAPopcornCombat', {
+    name: 'Use the built in STA Popcorn combat tracker:',
+    hint: 'Uncheck this if you do not want to use the built in combact tracker.',
+    scope: 'world',
+    type: Boolean,
+    default: true,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
@@ -319,6 +350,12 @@ Hooks.once('init', function() {
   Hooks.once('diceSoNiceReady', (dice3d) => {
     registerDsnUfpThemes(dice3d);
   });
+
+  const usePopcorn = game.settings.get('sta', 'useSTAPopcornCombat');
+  if (usePopcorn) {
+    CONFIG.ui.combat = CombatTracker2d20V2;
+    CONFIG.Combat.documentClass = Combat2d20;
+  }
 });
 
 async function preloadHandlebarsTemplates() {
@@ -357,28 +394,6 @@ Hooks.on('createActor', async (actor, options, userId) => {
       }
     } else {
       console.error('One or both items were not found in the compendiums.');
-    }
-  }
-});
-
-Hooks.on('renderActorSheet', async (actorSheet, html, data) => {
-  const actor = actorSheet.object;
-  if (actor.system.traits && actor.system.traits.trim()) {
-    const traitName = actor.system.traits.trim();
-    const existingTrait = actor.items.find((item) => item.name === traitName && item.type === 'trait');
-    if (!existingTrait) {
-      const traitItemData = {
-        name: traitName,
-        type: 'trait',
-      };
-      try {
-        await actor.createEmbeddedDocuments('Item', [traitItemData]);
-        await actor.update({
-          'system.traits': ''
-        });
-      } catch (err) {
-        console.error(`Error creating trait item for actor ${actor.name}:`, err);
-      }
     }
   }
 });
