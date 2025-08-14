@@ -84,6 +84,10 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
         id: 'traits',
         group: tabGroup,
       },
+      development: {
+        id: 'development',
+        group: tabGroup,
+      },
       notes: {
         id: 'notes',
         group: tabGroup,
@@ -370,7 +374,10 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     case 'milestone':
       staRoll.performMilestoneRoll(item, this.actor);
       break;
-    default:
+    case 'log':
+      staRoll.performLogRoll(item, this.actor);
+      break;
+      default:
       console.warn(`Unhandled item type: ${itemType}`);
     }
   }

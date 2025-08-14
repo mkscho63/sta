@@ -219,6 +219,26 @@
   padding-left: 5px;
 }
 
+.two-col {
+  display: block;
+  column-count: 2;
+  column-gap: 12px;
+}
+
+.two-col .title {
+  column-span: all;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.two-col .row {
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .row-right {
   display: flex;
   width: 100%;
@@ -287,6 +307,15 @@
 /* Note Field Styling */
 .tab .note {
   height: 400px;
+  text-align: left;
+
+  .editor {
+    height: 100%;
+  }
+}
+
+.tab .note2e {
+  height: 580px;
   text-align: left;
 
   .editor {

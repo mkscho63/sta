@@ -57,6 +57,12 @@ import {
   STAGenericSheet
 } from './items/generic-sheet.mjs';
 import {
+  STALogSheet
+} from './items/log-sheet.mjs';
+import {
+  STAMilestoneSheet
+} from './items/milestone-sheet.mjs';
+import {
   STASmallCraftContainerSheet
 } from './items/smallcraftcontainer-sheet.mjs';
 import {
@@ -113,6 +119,8 @@ Hooks.once('init', function() {
       STAArmorSheet,
       STATalentSheet,
       STAGenericSheet,
+      STALogSheet,
+      STAMilestoneSheet,
       STASmallCraftContainerSheet,
     },
     defaultImage: 'systems/sta/assets/icons/voyagercombadgeicon.svg'
@@ -192,8 +200,11 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
     types: ['focus']
   });
-  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAMilestoneSheet, {
     types: ['milestone']
+  });
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STALogSheet, {
+    types: ['log']
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STASmallCraftContainerSheet, {
     types: ['smallcraftcontainer']
