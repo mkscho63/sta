@@ -628,7 +628,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
       content,
       classes: ['dialogue'],
-      position: {width: 360, height: 'auto'},
+      position: {width: 450, height: 'auto'},
       buttons: [
         {
           action: 'close',
