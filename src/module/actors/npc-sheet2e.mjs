@@ -18,7 +18,6 @@ export class STANPCSheet2e extends STACharacterSheet2e {
   }
 
   _onStressTrackUpdate(event) {
-
     if (event) {
       const clickedStress = event.target;
       const stressValue = parseInt(clickedStress.textContent, 10);
@@ -33,9 +32,12 @@ export class STANPCSheet2e extends STACharacterSheet2e {
       this.element.querySelector('input[name="system.npcType"]:checked')?.value ??
       'minor';
 
+    let numValues = 0;
+    numValues = this.actor.itemTypes.value.length;
+
     let fitnessValue = 0;
     if (npcType === 'notable') fitnessValue = 3;
-    if (npcType === 'major') fitnessValue = 8;
+    if (npcType === 'major')   fitnessValue = 6 + numValues;
 
     const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
     let stressTrackMax = fitnessValue + stressModValue;
