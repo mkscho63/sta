@@ -92,6 +92,33 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
 
   async _onAttributeTest(event) {
     event.preventDefault();
+    const i18nKey = 'sta.roll.complicationroller';
+    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
+    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
+    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
+    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
+    const sceneComplicationBonus = (() => {
+      try {
+        const scene = game.scenes?.active;
+        if (!scene) return 0;
+        let bonus = 0;
+        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
+        for (const tok of tokens) {
+          const actor = tok?.actor;
+          if (!actor || actor.type !== 'scenetraits') continue;
+          for (const item of actor.items ?? []) {
+            const m = compRx.exec(item.name ?? '');
+            if (m) bonus += Number(m[1]) || 0;
+          }
+        }
+        return bonus;
+      } catch (err) {
+        console.error('Scene complication bonus error:', err);
+        return 0;
+      }
+    })();
+    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
     let selectedAttribute = null;
     let selectedAttributeValue = 0;
     let selectedDiscipline = null;
@@ -123,7 +150,7 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
     const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attributess.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue
+      defaultValue, calculatedComplicationRange
     });
     const formData = await api.DialogV2.wait({
       window: {
@@ -493,6 +520,27 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
 
   _onRender(context, options) {
     if (this.document.limited) return;
+
+    const actor = this.actor;
+    if (actor.system.traits && actor.system.traits.trim()) {
+      const traitName = actor.system.traits.trim();
+      const existingTrait = actor.items.find(
+        (trait) => trait.name === traitName && trait.type === 'trait'
+      );
+
+      if (!existingTrait) {
+        const traitItemData = {
+          name: traitName,
+          type: 'trait',
+        };
+
+        actor.createEmbeddedDocuments('Item', [traitItemData])
+          .then(() => actor.update({'system.traits': ''}))
+          .catch((err) => {
+            console.error(`Error creating trait item for actor ${actor.name}:`, err);
+          });
+      }
+    }
 
     this._onShieldTrackUpdate();
     this._onPowerTrackUpdate();

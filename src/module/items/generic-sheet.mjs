@@ -26,8 +26,6 @@ export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemS
       return `${this.item.name} - Value`;
     case 'focus':
       return `${this.item.name} - Focus`;
-    case 'milestone':
-      return `${this.item.name} - Milestone`;
     }
   }
 

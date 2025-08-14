@@ -22,7 +22,8 @@
     margin: 8px 16px 4px;
     border-radius: 20px;
     font-weight: bold;
-  
+    max-width: 108px;
+
     &:hover {
       box-shadow: none;
       background-color: $taskbuttonColor;
@@ -37,7 +38,8 @@
     margin: 8px 16px 4px;
     border-radius: 20px;
     font-weight: bold;
-  
+    max-width: 108px;
+
     &:hover {
       box-shadow: none;
       background-color: $challengebuttonColor;
@@ -52,7 +54,8 @@
     margin: 8px 16px 4px;
     border-radius: 20px;
     font-weight: bold;
-  
+    max-width: 108px;
+
     &:hover {
       box-shadow: none;
       background-color: $acclaimbuttonColor;

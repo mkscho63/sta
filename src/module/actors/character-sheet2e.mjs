@@ -25,6 +25,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       onStressTrackUpdate: this.prototype._onStressTrackUpdate,
       onDeterminationTrackUpdate: this.prototype._onDeterminationTrackUpdate,
       onReputationTrackUpdate: this.prototype._onReputationTrackUpdate,
+      onCheatSheet: this.prototype._onCheatSheet,
     },
     form: {
       submitOnChange: true,
@@ -74,7 +75,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
 
   getTabs() {
     const tabGroup = 'primary';
-    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'biography';
+    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'traits';
     const tabs = {
       biography: {
         id: 'biography',
@@ -82,6 +83,10 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       },
       traits: {
         id: 'traits',
+        group: tabGroup,
+      },
+      development: {
+        id: 'development',
         group: tabGroup,
       },
       notes: {
@@ -126,6 +131,33 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
 
   async _onAttributeTest(event) {
     event.preventDefault();
+    const i18nKey = 'sta.roll.complicationroller';
+    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
+    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
+    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
+    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
+    const sceneComplicationBonus = (() => {
+      try {
+        const scene = game.scenes?.active;
+        if (!scene) return 0;
+        let bonus = 0;
+        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
+        for (const tok of tokens) {
+          const actor = tok?.actor;
+          if (!actor || actor.type !== 'scenetraits') continue;
+          for (const item of actor.items ?? []) {
+            const m = compRx.exec(item.name ?? '');
+            if (m) bonus += Number(m[1]) || 0;
+          }
+        }
+        return bonus;
+      } catch (err) {
+        console.error('Scene complication bonus error:', err);
+        return 0;
+      }
+    })();
+    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
     let selectedAttribute = null;
     let selectedAttributeValue = 0;
     let selectedDiscipline = null;
@@ -163,7 +195,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     const speaker = this.actor;
     const template = 'systems/sta/templates/apps/dicepool-attribute2e.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue
+      defaultValue, calculatedComplicationRange
     });
     const formData = await api.DialogV2.wait({
       window: {
@@ -344,6 +376,9 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       break;
     case 'milestone':
       staRoll.performMilestoneRoll(item, this.actor);
+      break;
+    case 'log':
+      staRoll.performLogRoll(item, this.actor);
       break;
     default:
       console.warn(`Unhandled item type: ${itemType}`);
@@ -585,8 +620,49 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     });
   }
 
+  async _onCheatSheet(event) {
+    event?.preventDefault?.();
+    const tmpl = 'systems/sta/templates/apps/cheat-sheet.hbs';
+    const content = await foundry.applications.handlebars.renderTemplate(tmpl);
+    new foundry.applications.api.DialogV2({
+      window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
+      content,
+      classes: ['dialogue'],
+      position: {width: 450, height: 'auto'},
+      buttons: [
+        {
+          action: 'close',
+          label: game.i18n.localize('sta.apps.close') || 'Close',
+          default: true,
+          callback: () => {}
+        }
+      ]
+    }).render(true);
+  }
+
   _onRender(context, options) {
     if (this.document.limited) return;
+
+    const actor = this.actor;
+    if (actor.system.traits && actor.system.traits.trim()) {
+      const traitName = actor.system.traits.trim();
+      const existingTrait = actor.items.find(
+        (trait) => trait.name === traitName && trait.type === 'trait'
+      );
+
+      if (!existingTrait) {
+        const traitItemData = {
+          name: traitName,
+          type: 'trait',
+        };
+
+        actor.createEmbeddedDocuments('Item', [traitItemData])
+          .then(() => actor.update({'system.traits': ''}))
+          .catch((err) => {
+            console.error(`Error creating trait item for actor ${actor.name}:`, err);
+          });
+      }
+    }
 
     this._onStressTrackUpdate();
     this._onDeterminationTrackUpdate();
