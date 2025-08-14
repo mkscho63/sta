@@ -12,6 +12,9 @@ import {
   STACharacterSheet2e
 } from './actors/character-sheet2e.mjs';
 import {
+  STANPCSheet2e
+} from './actors/npc-sheet2e.mjs';
+import {
   STAStarshipSheet
 } from './actors/starship-sheet.mjs';
 import {
@@ -105,6 +108,7 @@ Hooks.once('init', function() {
     applications: {
       STACharacterSheet,
       STACharacterSheet2e,
+      STANPCSheet2e,
       STAStarshipSheet,
       STAStarshipSheet2e,
       STASmallCraftSheet,
@@ -138,22 +142,32 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, 'core', foundry.appv1.sheets.ActorSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet, {
     types: ['character'],
-    makeDefault: true
+    label: '1e Character'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet2e, {
-    types: ['character']
+    types: ['character'],
+    label: '2e Character',
+    makeDefault: true
+  });
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STANPCSheet2e, {
+    types: ['character'],
+    label: '2e NPC'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet, {
-    types: ['starship']
+    types: ['starship'],
+    label: '1e Starship'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet2e, {
-    types: ['starship']
+    types: ['starship'],
+    label: '2e Starship'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet, {
-    types: ['smallcraft']
+    types: ['smallcraft'],
+    label: '1e Small Craft'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet2e, {
-    types: ['smallcraft']
+    types: ['smallcraft'],
+    label: '2e Small Craft'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAExtendedTaskSheet, {
     types: ['extendedtask']

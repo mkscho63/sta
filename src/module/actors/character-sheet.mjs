@@ -75,7 +75,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
 
   getTabs() {
     const tabGroup = 'primary';
-    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'biography';
+    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'traits';
     const tabs = {
       biography: {
         id: 'biography',

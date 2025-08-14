@@ -260,6 +260,22 @@
   margin-bottom: 10px;
 }
 
+.npc-block {
+  margin-top: 5px;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .rollrepnotdis {
   display: flex;
   align-items: center;
@@ -316,6 +332,15 @@
 
 .tab .note2e {
   height: 580px;
+  text-align: left;
+
+  .editor {
+    height: 100%;
+  }
+}
+
+.tab .notenpc {
+  height: 350px;
   text-align: left;
 
   .editor {
