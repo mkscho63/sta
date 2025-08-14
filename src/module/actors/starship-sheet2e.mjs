@@ -92,20 +92,23 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
 
   async _onAttributeTest(event) {
     event.preventDefault();
-    let calculatedComplicationRange = 1;
+    const i18nKey = 'sta.roll.complicationroller';
+    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
+    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
+    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
+    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
     const sceneComplicationBonus = (() => {
       try {
         const scene = game.scenes?.active;
         if (!scene) return 0;
-        let bonus = 0;
-
+       let bonus = 0;
         const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
         for (const tok of tokens) {
           const actor = tok?.actor;
           if (!actor || actor.type !== 'scenetraits') continue;
-
           for (const item of actor.items ?? []) {
-            const m = /complication\s*range\s*\+(\d+)/i.exec(item.name ?? '');
+            const m = compRx.exec(item.name ?? '');
             if (m) bonus += Number(m[1]) || 0;
           }
         }
@@ -115,8 +118,7 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
         return 0;
       }
     })();
-    calculatedComplicationRange += sceneComplicationBonus;
-    calculatedComplicationRange = Math.min(5, Math.max(1, calculatedComplicationRange));
+    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
     let selectedAttribute = null;
     let selectedAttributeValue = 0;
     let selectedDiscipline = null;
