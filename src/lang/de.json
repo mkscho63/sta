@@ -54,7 +54,6 @@
   "sta.actor.value.used": "Hinterfragt?",
   "sta.actor.note.title": "Notizen",
   "sta.actor.milestone.title": "Meilensteine / Handlungsbögen",
-  "sta.actor.milestone.title": "Meilensteine",
   "sta.actor.milestone.add": "Meilenstein hinzufügen",
   "sta.actor.milestone.milestoneused": "Verbessert durch Meilenstein (Charakter)",
   "sta.actor.milestone.arcused": "Verbessert durch Handlungsbogen (Raumschiff)",
@@ -241,6 +240,7 @@
   "sta.apps.deleteconfirm": "Sind Sie sicher, dass Sie dieses Element löschen möchten?",
   "sta.apps.yes": "Ja",
   "sta.apps.no": "Nein",
+  "sta.apps.close": "Schließen",
 
   "sta.roll.success": "Erfolg",
   "sta.roll.successPlural": "Erfolge",

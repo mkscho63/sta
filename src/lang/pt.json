@@ -240,6 +240,7 @@
   "sta.apps.deleteconfirm": "Tem certeza de que deseja excluir este item?",
   "sta.apps.yes": "Sim",
   "sta.apps.no": "Não",
+  "sta.apps.close": "Fechar",
 
   "sta.roll.success": "Sucesso",
   "sta.roll.successPlural": "Sucessos",

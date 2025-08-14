@@ -25,6 +25,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       onStressTrackUpdate: this.prototype._onStressTrackUpdate,
       onDeterminationTrackUpdate: this.prototype._onDeterminationTrackUpdate,
       onReputationTrackUpdate: this.prototype._onReputationTrackUpdate,
+      onCheatSheet: this.prototype._onCheatSheet,
     },
     form: {
       submitOnChange: true,
@@ -617,6 +618,26 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     this.actor?.update({
       'system.reputation': this.actor.system.reputation,
     });
+  }
+
+  async _onCheatSheet(event) {
+    event?.preventDefault?.();
+    const tmpl = "systems/sta/templates/apps/cheat-sheet.hbs";
+    const content = await foundry.applications.handlebars.renderTemplate(tmpl);
+    new foundry.applications.api.DialogV2({
+      window: { title: game.i18n.localize("sta.apps.dicepoolwindow") },
+      content,
+      classes: ['dialogue'],
+      position: { width: 360, height: "auto" },
+     buttons: [
+        {
+          action: "close",
+          label: game.i18n.localize("sta.apps.close") || "Close",
+          default: true,
+          callback: () => {}
+        }
+      ]
+    }).render(true);
   }
 
   _onRender(context, options) {

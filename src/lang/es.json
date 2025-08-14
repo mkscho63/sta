@@ -240,6 +240,7 @@
   "sta.apps.deleteconfirm": "¿Está seguro de que desea eliminar este elemento?",
   "sta.apps.yes": "Sí",
   "sta.apps.no": "No",
+  "sta.apps.close": "Cerrar",
 
   "sta.roll.success": "Éxito",
   "sta.roll.successPlural": "Éxitos",
