@@ -735,6 +735,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       'armor',
       'talent',
       'milestone',
+      'log',
       'injury',
       'trait'
     ];
