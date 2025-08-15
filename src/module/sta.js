@@ -170,10 +170,12 @@ Hooks.once('init', function() {
     label: '2e Small Craft'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAExtendedTaskSheet, {
-    types: ['extendedtask']
+    types: ['extendedtask'],
+    label: 'Extended Task'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASceneTraits, {
     types: ['scenetraits'],
+    label: 'Scene Traits'
   });
 
   foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, 'core', foundry.appv1.sheets.ItemSheet);
