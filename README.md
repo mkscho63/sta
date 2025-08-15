@@ -6,10 +6,9 @@
 You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-trek-adventures/products/star-trek-adventures-core-rulebook-pdf">Star Trek Adventures Tabletop RPG</a> to play this! This system does not attempt to explain the game or include any ready made characters, features or items. The system is designed for those who understand the rules and want to play via Foundry VTT. Modiphius own's the property, as such I will not discuss rules and content with those who have not purchased the system from Modiphius. I am in no way affiliated with Modiphius, I only share this with their permission.
 
 ---
-## Sample images
+## Sample image
 
-![Character Window Sample](https://i.imgur.com/KgCfcf8.png)
-![Starship Window Sample](https://i.imgur.com/O1b1xB8.png)
+<img width="2559" height="1440" alt="image" src="https://github.com/user-attachments/assets/1b20198c-bd56-45db-8095-0787ccbc08d7" />
 
 ---
 
@@ -66,7 +65,7 @@ You <b> MUST </b> own the <a href="https://www.modiphius.net/collections/star-tr
 - Unfortunately I only fluenty (?) speak English and would not do justice to any other translations. I do have the system set up for translations to be done, I simply need the translation files to be created for them.
 
 - **How much does this cost?**
-- It doesn't! I made this system because I've always really liked the Star Trek Adventures system and wanted to run this with my friends. Somewhere along the lines I thought "Hey, I wonder if other people would like to use it" and here we are. This is all available free of charge, though if you want to support further work in the Star Trek Adventures area, please purchase content from Modiphius. If you want to donate to me, I have a Ko-fi <a href="https://ko-fi.com/mkscho63" target="_blank">HERE</a> though I want to stress again that this was done because I thought it was fun to do, not for payment.
+- It doesn't! I made this system because I've always really liked the Star Trek Adventures system and wanted to run this with my friends. Somewhere along the lines I thought "Hey, I wonder if other people would like to use it" and here we are. This is all available free of charge, though if you want to support further work in the Star Trek Adventures area, please purchase content from Modiphius. If you want to donate to us, we have Ko-fi available for Mike<a href="https://ko-fi.com/mkscho63" target="_blank">HERE</a> and for CalinStar<a href="https://ko-fi.com/calinstar" target="_blank">HERE</a>though we want to stress again that this was done because we thought it was fun to do, not for payment.
 
 ---
 
@@ -91,7 +90,7 @@ $ npm run lint
 - Modiphius for creating the amazing Star Trek Adventures system, I definitely recommend trying it out if you are any level of a fan of Star Trek. Ensure you only use this system after purchasing the Star Trek Adventure system! <a href="https://www.modiphius.net/collections/star-trek-adventures">https://www.modiphius.net/</a>.
 - <a href="https://github.com/CurtR95" target="_blank">KaitoR/CurtR95</a> for making the <a href="https://github.com/CurtR95/FVTT-Dishonored" target="_blank">Dishonored VTT Unofficial</a> system for Foundry. This gave me a starting point for the Star Trek Adventures system and also let me learn a lot about how Foundry System Building works in general. Definitely check it out because Dishonored 2d20 is a very fun system, Dishonored has a very interesting world, and the system they have for Foundry supports it all extremely well.
 - <a href="https://github.com/tokeidlom" target="_blank">CalinStar/Tokeidlom</a> for adding in all the additional support for the second edition ruleset and plenty of bug fixes the system has needed. The system hasn't had the best of support from me in the long term and all of the work put in by CalinStar has enabled this to keep functioning for fans of the system and I cannot overstate how much the effort has been appreciated!
-- <a href="https://github.com/mikira7" target="_blank">Mikira7</a> for creating a maintaining the STA Macros repository. Please go check it out for additional resources. The NPC Crew Roller uses code that comes from this repository.
+- <a href="https://github.com/mikira7" target="_blank">Mikira7</a> for creating a maintaining the STA Macros repository. Please go check it out for additional resources.
 - Lorc for <a href="https://game-icons.net/1x1/lorc/magnifying-glass.html" target="_blank">Insight</a>, <a href="https://game-icons.net/1x1/lorc/icicles-aura.html" target="_blank">Presence</a>, and <a href="https://game-icons.net/1x1/lorc/open-book.html" target="_blank">Reason</a> Icons. They can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal blog: <a href="https://lorcblog.blogspot.com/" target="_blank">https://lorcblog.blogspot.com/</a>
 - Delapouite for <a href="https://game-icons.net/1x1/delapouite/weight-lifting-up.html" target="_blank">Fitness</a> and <a href="https://game-icons.net/1x1/delapouite/chat-bubble.html" target="_blank">Chat Bubble</a> Icons. It can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>. Personal website: <a href="https://delapouite.com/" target="_blank">https://delapouite.com/</a>
 - Skoll for <a href="https://game-icons.net/1x1/skoll/fist.html" target="_blank">Control</a> and <a href="https://game-icons.net/1x1/skoll/achievement.html" target="_blank">Daring</a> Icon. Can be found at <a href="https://game-icons.net/" target="_blank">https://game-icons.net/</a>.
