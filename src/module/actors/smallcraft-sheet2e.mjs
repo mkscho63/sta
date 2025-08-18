@@ -480,15 +480,19 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
     if (!Array.isArray(this._dragDrop) || !this._dragDrop.length) {
       this._dragDrop = this._createDragDropHandlers();
     }
-    this._dragDrop.forEach(d => d.bind(this.element));
+    this._dragDrop.forEach((d) => d.bind(this.element));
 
-    this.element.querySelectorAll('li[data-item-id]')?.forEach(li => {
+    this.element.querySelectorAll('li[data-item-id]')?.forEach((li) => {
       li.setAttribute('draggable', 'true');
     });
   }
 
-  _canDragStart(selector) { return this.isEditable; }
-  _canDragDrop(selector)  { return this.isEditable; }
+  _canDragStart(selector) {
+    return this.isEditable;
+  }
+  _canDragDrop(selector) {
+    return this.isEditable;
+  }
 
   _onDragStart(event) {
     const docRow = event.currentTarget.closest('li[data-item-id]');
@@ -498,8 +502,8 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
     const item = this.actor?.items?.get?.(docRow.dataset.itemId) ?? this._getEmbeddedDocument?.(docRow);
     if (!item) return;
 
-    const dragData = item.toDragData?.() ?? { type: "Item", uuid: item.uuid };
-    event.dataTransfer.effectAllowed = "copyMove";
+    const dragData = item.toDragData?.() ?? {type: 'Item', uuid: item.uuid};
+    event.dataTransfer.effectAllowed = 'copyMove';
     event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
   }
 
@@ -508,7 +512,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
     const li = event.target.closest('li[data-item-id]');
     if (!li) return;
     const r = li.getBoundingClientRect();
-    li.dataset.dropPosition = (event.clientY - r.top) < r.height / 2 ? "before" : "after";
+    li.dataset.dropPosition = (event.clientY - r.top) < r.height / 2 ? 'before' : 'after';
   }
 
   async _onDrop(event) {
@@ -516,7 +520,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
     const allowed = Hooks.call('dropActorSheetData', this.actor, this, data);
     if (allowed === false) return;
 
-    if (data.type === "Item") return this._onDropItem(event, data);
+    if (data.type === 'Item') return this._onDropItem(event, data);
   }
 
   async _onDropItem(event, data) {
@@ -532,7 +536,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
       'talent',
       'injury',
       'trait'
-  ]);
+    ]);
 
     if (!allowedSubtypes.has(item.type)) {
       ui.notifications.warn(
@@ -556,7 +560,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
 
   async _onDropItemCreate(itemOrData) {
     const arr = Array.isArray(itemOrData) ? itemOrData : [itemOrData];
-    const payload = arr.map(d => {
+    const payload = arr.map((d) => {
       const obj = d instanceof Item ? d.toObject() : d;
       delete obj._id;
       return obj;
@@ -572,7 +576,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
 
     const nodeList = container.querySelectorAll('li[data-item-id]');
     const siblings = Array.from(nodeList)
-      .map(el => this.actor.items.get(el.dataset.itemId))
+      .map((el) => this.actor.items.get(el.dataset.itemId))
       .filter(Boolean);
 
     if (!siblings.length) return false;
@@ -597,36 +601,38 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
       sortBefore: before
     });
 
-    const updates = sortUpdates.map(u => ({
+    const updates = sortUpdates.map((u) => ({
       _id: u.target.id ?? u.target._id,
       sort: u.update.sort
-    })).filter(u => u._id != null);
+    })).filter((u) => u._id != null);
 
     if (!updates.length) return false;
 
     return this.actor.updateEmbeddedDocuments('Item', updates);
   }
 
-  get dragDrop() { return this._dragDrop || []; }
+  get dragDrop() {
+    return this._dragDrop || [];
+  }
 
   _createDragDropHandlers() {
-    const cfgs = Array.isArray(this.options?.dragDrop) && this.options.dragDrop.length
-      ? this.options.dragDrop
-      : [{
-          dragSelector: 'li[data-item-id]',
-          dropSelector: '.window-content, .sheet-body, .tab, ul.items, .drop-zone'
-        }];
+    const cfgs = Array.isArray(this.options?.dragDrop) && this.options.dragDrop.length ?
+      this.options.dragDrop :
+      [{
+        dragSelector: 'li[data-item-id]',
+        dropSelector: '.window-content, .sheet-body, .tab, ul.items, .drop-zone'
+      }];
 
-    return cfgs.map(d => new foundry.applications.ux.DragDrop({
+    return cfgs.map((d) => new foundry.applications.ux.DragDrop({
       ...d,
       permissions: {
         dragstart: this._canDragStart.bind(this),
-        drop:      this._canDragDrop.bind(this),
+        drop: this._canDragDrop.bind(this),
       },
       callbacks: {
         dragstart: this._onDragStart.bind(this),
-        dragover:  this._onDragOver.bind(this),
-        drop:      this._onDrop.bind(this),
+        dragover: this._onDragOver.bind(this),
+        drop: this._onDrop.bind(this),
       }
     }));
   }
