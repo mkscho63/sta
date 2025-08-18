@@ -142,7 +142,7 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
     const els = Array.from(document.querySelectorAll('.item-name[data-item-id]'));
     for (const el of els) {
       const item = this.actor.items.get(el.dataset.itemId);
-      const raw  = (item?.system?.description ?? '').trim();
+      const raw = (item?.system?.description ?? '').trim();
       if (!raw) continue;
 
       const enriched = await foundry.applications.ux.TextEditor.enrichHTML(raw, {
