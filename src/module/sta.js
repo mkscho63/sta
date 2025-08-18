@@ -142,32 +142,32 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, 'core', foundry.appv1.sheets.ActorSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet, {
     types: ['character'],
-    label: '1e Character'
+    label: 'Character (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet2e, {
     types: ['character'],
-    label: '2e Character',
+    label: 'Character (2e)',
     makeDefault: true
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STANPCSheet2e, {
     types: ['character'],
-    label: '2e NPC'
+    label: 'NPC (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet, {
     types: ['starship'],
-    label: '1e Starship'
+    label: 'Starship (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet2e, {
     types: ['starship'],
-    label: '2e Starship'
+    label: 'Starship (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet, {
     types: ['smallcraft'],
-    label: '1e Small Craft'
+    label: 'Small Craft (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet2e, {
     types: ['smallcraft'],
-    label: '2e Small Craft'
+    label: 'Small Craft (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAExtendedTaskSheet, {
     types: ['extendedtask'],
@@ -181,46 +181,60 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, 'core', foundry.appv1.sheets.ItemSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAItemSheet, {
     types: ['item'],
+    label: 'Item',
     makeDefault: true
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STACharacterWeaponSheet, {
-    types: ['characterweapon']
+    types: ['characterweapon'],
+    label: 'Character Weapon (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STACharacterWeaponSheet2e, {
-    types: ['characterweapon2e']
+    types: ['characterweapon2e'],
+    label: 'Character Weapon (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAStarshipWeaponSheet, {
-    types: ['starshipweapon']
+    types: ['starshipweapon'],
+    label: 'Starship Weapon (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAStarshipWeaponSheet2e, {
-    types: ['starshipweapon2e']
+    types: ['starshipweapon2e'],
+    label: 'Starship Weapon (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAArmorSheet, {
-    types: ['armor']
+    types: ['armor'],
+    label: 'Armor'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATalentSheet, {
-    types: ['talent']
+    types: ['talent'],
+    label: 'Talent'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATraitSheet, {
-    types: ['trait']
+    types: ['trait'],
+    label: 'Trait'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATraitSheet, {
-    types: ['injury']
+    types: ['injury'],
+    label: 'Injury'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
-    types: ['value']
+    types: ['value'],
+    label: 'Value'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
-    types: ['focus']
+    types: ['focus'],
+    label: 'Focus'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAMilestoneSheet, {
-    types: ['milestone']
+    types: ['milestone'],
+    label: 'Milestone'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STALogSheet, {
-    types: ['log']
+    types: ['log'],
+    label: 'Log'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STASmallCraftContainerSheet, {
-    types: ['smallcraftcontainer']
+    types: ['smallcraftcontainer'],
+    label: 'Small Craft Container'
   });
 
   // Register system settings
