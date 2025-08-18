@@ -133,9 +133,9 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     event.preventDefault();
     const i18nKey = 'sta.roll.complicationroller';
     let localizedLabel = game.i18n.localize(i18nKey)?.trim();
-    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
+    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range';
     const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
+    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*');
     const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
     const sceneComplicationBonus = (() => {
       try {
@@ -162,7 +162,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     let selectedAttributeValue = 0;
     let selectedDiscipline = null;
     let selectedDisciplineValue = 0;
-    const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]').checked;
+    const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]')?.checked ?? false;
     const reputationValue = parseInt(this.element.querySelector('#total-rep')?.value, 10) || 0;
     const systemCheckboxes = this.element.querySelectorAll('.attribute-block .selector.attribute');
     systemCheckboxes.forEach((checkbox) => {
