@@ -460,49 +460,6 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     }).render(true);
   }
 
-  _onItemTooltipShow(event) {
-    const input = event.currentTarget;
-    const itemId = input.dataset.itemId;
-    const item = this.actor.items.get(itemId);
-    if (item) {
-      const description = item.system.description?.trim().replace(/\n/g, '<br>');
-      if (description) {
-        input._tooltipTimeout = setTimeout(() => {
-          let tooltip = document.querySelector('.item-tooltip');
-          if (!tooltip) {
-            tooltip = document.createElement('div');
-            tooltip.classList.add('item-tooltip');
-            document.body.appendChild(tooltip);
-          }
-          tooltip.innerHTML = `${description}`;
-          const {
-            clientX: mouseX,
-            clientY: mouseY
-          } = event;
-          tooltip.style.left = `${mouseX + 10}px`;
-          tooltip.style.top = `${mouseY + 10}px`;
-          const tooltipRect = tooltip.getBoundingClientRect();
-          if (tooltipRect.bottom > window.innerHeight) {
-            tooltip.style.top = `${window.innerHeight - tooltipRect.height - 20}px`;
-          }
-          input._tooltip = tooltip;
-        }, 1000);
-      }
-    }
-  }
-
-  _onItemTooltipHide(event) {
-    const input = event.currentTarget;
-    if (input._tooltipTimeout) {
-      clearTimeout(input._tooltipTimeout);
-      delete input._tooltipTimeout;
-    }
-    if (input._tooltip) {
-      input._tooltip.remove();
-      delete input._tooltip;
-    }
-  }
-
   _onStressTrackUpdate(event) {
     const localizedValues = {
       tough: game.i18n.localize('sta.actor.character.talents.tough'),
@@ -640,7 +597,7 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
     }).render(true);
   }
 
-  _onRender(context, options) {
+  async _onRender(context, options) {
     if (this.document.limited) return;
 
     const actor = this.actor;
@@ -672,17 +629,26 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       input.addEventListener('change', this._onItemNameChange.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach((input) => {
-      input.addEventListener('mouseover', this._onItemTooltipShow.bind(this));
-    });
-
-    document.querySelectorAll('.item-name').forEach((input) => {
-      input.addEventListener('mouseout', this._onItemTooltipHide.bind(this));
-    });
-
     document.querySelectorAll('.item-quantity').forEach((input) => {
       input.addEventListener('change', this._onItemQuantityChange.bind(this));
     });
+
+    const els = Array.from(document.querySelectorAll('.item-name[data-item-id]'));
+    for (const el of els) {
+      const item = this.actor.items.get(el.dataset.itemId);
+      const raw  = (item?.system?.description ?? '').trim();
+      if (!raw) continue;
+
+      const enriched = await foundry.applications.ux.TextEditor.enrichHTML(raw, {
+        async: true,
+        documents: true,
+        rolls: true,
+        secrets: false
+      });
+
+      el.setAttribute('data-tooltip', enriched);
+      el.setAttribute('data-tooltip-direction', 'UP');
+    }
 
     this.#dragDrop.forEach((d) => d.bind(this.element));
   }
