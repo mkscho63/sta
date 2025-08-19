@@ -360,6 +360,15 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'showNotesInLimited', {
+    name: 'Show notes in limited view:',
+    hint: 'Check this if you want to display character notes in the limited view.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);

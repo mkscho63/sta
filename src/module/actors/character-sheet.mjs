@@ -82,6 +82,11 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     Object.entries(context.disciplines).forEach(([key, disciplines]) => {
       disciplines.value = Math.max(0, Math.min(99, disciplines.value));
     });
+
+    const isLimited = this.document?.limited ?? this.actor?.limited ?? false;
+    const showLimitedProse = game.settings.get("sta", "showNotesInLimited");
+    context.showProseMirror = isLimited ? showLimitedProse : true;
+
     return context;
   }
 

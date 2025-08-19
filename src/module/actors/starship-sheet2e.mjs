@@ -73,6 +73,11 @@ export class STAStarshipSheet2e extends api.HandlebarsApplicationMixin(sheets.Ac
     Object.entries(context.departments).forEach(([key, department]) => {
       department.value = Math.max(0, Math.min(99, department.value));
     });
+
+    const isLimited = this.document?.limited ?? this.actor?.limited ?? false;
+    const showLimitedProse = game.settings.get("sta", "showNotesInLimited");
+    context.showProseMirror = isLimited ? showLimitedProse : true;
+
     return context;
   }
 
