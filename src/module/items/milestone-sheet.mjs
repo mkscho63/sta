@@ -18,6 +18,9 @@ export class STAMilestoneSheet extends api.HandlebarsApplicationMixin(sheets.Ite
       height: 'auto',
       width: 700,
     },
+	window: {
+      resizable: true,
+    },
   };
 
   get title() {

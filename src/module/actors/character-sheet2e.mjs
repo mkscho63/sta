@@ -35,6 +35,9 @@ export class STACharacterSheet2e extends api.HandlebarsApplicationMixin(sheets.A
       height: 'auto',
       width: 850
     },
+	window: {
+      resizable: true,
+    },
     dragDrop: [{
       dragSelector: 'li[data-item-id]',
       dropSelector: [

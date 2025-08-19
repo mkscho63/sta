@@ -23,6 +23,9 @@ export class STASceneTraits extends api.HandlebarsApplicationMixin(sheets.ActorS
       height: 'auto',
       width: 300,
     },
+	window: {
+      resizable: true,
+    },
     dragDrop: [{
       dragSelector: 'li[data-item-id]',
       dropSelector: [

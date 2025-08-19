@@ -32,6 +32,9 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
       height: 'auto',
       width: 850
     },
+	window: {
+      resizable: true,
+    },
     dragDrop: [{
       dragSelector: 'li[data-item-id]',
       dropSelector: [

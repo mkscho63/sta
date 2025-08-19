@@ -18,6 +18,9 @@ export class STACharacterWeaponSheet extends api.HandlebarsApplicationMixin(shee
       height: 'auto',
       width: 565,
     },
+	window: {
+      resizable: true,
+    },
   };
   get title() {
     return `${this.item.name} - Character Weapon (1e)`;
