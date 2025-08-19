@@ -11,6 +11,10 @@ export class STANPCSheet2e extends STACharacterSheet2e {
     },
   };
 
+  get title() {
+    return `${this.actor.name} - NPC (2e)`;
+  }
+
   _onDeterminationTrackUpdate(event) {
   }
 
@@ -65,5 +69,41 @@ export class STANPCSheet2e extends STACharacterSheet2e {
       'system.stress.value': this.actor.system.stress.value,
       'system.stress.max': stressTrackMax,
     });
+  }
+
+  async _onDropItem(event, data) {
+    if (!this.actor?.isOwner) return false;
+
+    const item = await Item.implementation.fromDropData(data);
+    if (!item) return false;
+
+    const allowedSubtypes = new Set([
+      'item',
+      'focus',
+      'value',
+      'characterweapon2e',
+      'armor',
+      'talent',
+      'injury',
+      'trait'
+    ]);
+
+    if (!allowedSubtypes.has(item.type)) {
+      ui.notifications.warn(
+        `${this.actor.name} ` +
+        game.i18n.localize('sta.notifications.actoritem') +
+        ` ${item.type}`
+      );
+      return false;
+    }
+
+    if (item.parent?.uuid === this.actor.uuid) {
+      return this._onSortItem(event, item);
+    }
+
+    const move = event.altKey === true;
+    const created = await this._onDropItemCreate(item);
+    if (move && item.parent?.isOwner) await item.delete();
+    return created;
   }
 }

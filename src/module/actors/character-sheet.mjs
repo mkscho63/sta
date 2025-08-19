@@ -35,7 +35,20 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       height: 'auto',
       width: 850
     },
-    dragDrop: [{dragSelector: '[data-drag]', dropSelector: null}],
+    window: {
+      resizable: true,
+    },
+    dragDrop: [{
+      dragSelector: 'li[data-item-id]',
+      dropSelector: [
+        '.window-content',
+        '.sheet-body',
+        '.sheet',
+        '.tab',
+        'ul.items',
+        '.drop-zone'
+      ].join(', ')
+    }]
   };
 
   get title() {
@@ -52,9 +65,11 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
   }
 
   async _prepareContext(options) {
+    const items = this.actor.items?.contents || [];
+    const itemsSorted = [...items].sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0));
     const context = {
       actor: this.actor,
-      items: this.actor.items?.contents || [],
+      items: itemsSorted,
       attributes: this.actor.system.attributes,
       disciplines: this.actor.system.disciplines,
       disciplineorder: this.actor.system.disciplineorder,
@@ -70,6 +85,11 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     Object.entries(context.disciplines).forEach(([key, disciplines]) => {
       disciplines.value = Math.max(0, Math.min(99, disciplines.value));
     });
+
+    const isLimited = this.document?.limited ?? this.actor?.limited ?? false;
+    const showLimitedProse = game.settings.get('sta', 'showNotesInLimited');
+    context.showProseMirror = isLimited ? showLimitedProse : true;
+
     return context;
   }
 
@@ -129,9 +149,9 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     event.preventDefault();
     const i18nKey = 'sta.roll.complicationroller';
     let localizedLabel = game.i18n.localize(i18nKey)?.trim();
-    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
+    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range';
     const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
+    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*');
     const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
     const sceneComplicationBonus = (() => {
       try {
@@ -486,49 +506,6 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     }).render(true);
   }
 
-  _onItemTooltipShow(event) {
-    const input = event.currentTarget;
-    const itemId = input.dataset.itemId;
-    const item = this.actor.items.get(itemId);
-    if (item) {
-      const description = item.system.description?.trim().replace(/\n/g, '<br>');
-      if (description) {
-        input._tooltipTimeout = setTimeout(() => {
-          let tooltip = document.querySelector('.item-tooltip');
-          if (!tooltip) {
-            tooltip = document.createElement('div');
-            tooltip.classList.add('item-tooltip');
-            document.body.appendChild(tooltip);
-          }
-          tooltip.innerHTML = `${description}`;
-          const {
-            clientX: mouseX,
-            clientY: mouseY
-          } = event;
-          tooltip.style.left = `${mouseX + 10}px`;
-          tooltip.style.top = `${mouseY + 10}px`;
-          const tooltipRect = tooltip.getBoundingClientRect();
-          if (tooltipRect.bottom > window.innerHeight) {
-            tooltip.style.top = `${window.innerHeight - tooltipRect.height - 20}px`;
-          }
-          input._tooltip = tooltip;
-        }, 1000);
-      }
-    }
-  }
-
-  _onItemTooltipHide(event) {
-    const input = event.currentTarget;
-    if (input._tooltipTimeout) {
-      clearTimeout(input._tooltipTimeout);
-      delete input._tooltipTimeout;
-    }
-    if (input._tooltip) {
-      input._tooltip.remove();
-      delete input._tooltip;
-    }
-  }
-
   _onStressTrackUpdate(event) {
     const localizedValues = {
       resolute: game.i18n.localize('sta.actor.character.talents.resolute'),
@@ -637,7 +614,7 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
     });
   }
 
-  _onRender(context, options) {
+  async _onRender(context, options) {
     if (this.document.limited) return;
 
     const actor = this.actor;
@@ -669,62 +646,80 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       input.addEventListener('change', this._onItemNameChange.bind(this));
     });
 
-    document.querySelectorAll('.item-name').forEach((input) => {
-      input.addEventListener('mouseover', this._onItemTooltipShow.bind(this));
-    });
-
-    document.querySelectorAll('.item-name').forEach((input) => {
-      input.addEventListener('mouseout', this._onItemTooltipHide.bind(this));
-    });
-
     document.querySelectorAll('.item-quantity').forEach((input) => {
       input.addEventListener('change', this._onItemQuantityChange.bind(this));
     });
 
-    this.#dragDrop.forEach((d) => d.bind(this.element));
-  }
+    const els = Array.from(document.querySelectorAll('.item-name[data-item-id]'));
+    for (const el of els) {
+      const item = this.actor.items.get(el.dataset.itemId);
+      const raw = (item?.system?.description ?? '').trim();
+      if (!raw) continue;
 
-  #dragDrop;
+      const enriched = await foundry.applications.ux.TextEditor.enrichHTML(raw, {
+        async: true,
+        documents: true,
+        rolls: true,
+        secrets: false
+      });
 
-  constructor(...args) {
-    super(...args);
-    this.#dragDrop = this.#createDragDropHandlers();
-  }
+      el.setAttribute('data-tooltip', enriched);
+      el.setAttribute('data-tooltip-direction', 'UP');
+    }
 
-  get dragDrop() {
-    return this.#dragDrop;
+    if (!Array.isArray(this._dragDrop) || !this._dragDrop.length) {
+      this._dragDrop = this._createDragDropHandlers();
+    }
+    this._dragDrop.forEach((d) => d.bind(this.element));
+
+    this.element.querySelectorAll('li[data-item-id]')?.forEach((li) => {
+      li.setAttribute('draggable', 'true');
+    });
   }
 
   _canDragStart(selector) {
     return this.isEditable;
   }
-
   _canDragDrop(selector) {
     return this.isEditable;
   }
 
   _onDragStart(event) {
-    const docRow = event.currentTarget.closest('li');
+    const docRow = event.currentTarget.closest('li[data-item-id]');
+    if (!docRow) return;
     if ('link' in event.target.dataset) return;
-    const dragData = this._getEmbeddedDocument(docRow)?.toDragData();
-    if (!dragData) return;
+
+    const item = this.actor?.items?.get?.(docRow.dataset.itemId) ?? this._getEmbeddedDocument?.(docRow);
+    if (!item) return;
+
+    const dragData = item.toDragData?.() ?? {type: 'Item', uuid: item.uuid};
+    event.dataTransfer.effectAllowed = 'copyMove';
     event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
   }
 
-  _onDragOver(event) {}
+  _onDragOver(event) {
+    event.preventDefault();
+    const li = event.target.closest('li[data-item-id]');
+    if (!li) return;
+    const r = li.getBoundingClientRect();
+    li.dataset.dropPosition = (event.clientY - r.top) < r.height / 2 ? 'before' : 'after';
+  }
 
   async _onDrop(event) {
     const data = foundry.applications.ux.TextEditor.getDragEventData(event);
-    const actor = this.actor;
-    const allowed = Hooks.call('dropActorSheetData', actor, this, data);
+    const allowed = Hooks.call('dropActorSheetData', this.actor, this, data);
     if (allowed === false) return;
-    await this._onDropItem(event, data);
+
+    if (data.type === 'Item') return this._onDropItem(event, data);
   }
 
   async _onDropItem(event, data) {
-    if (!this.actor.isOwner) return false;
+    if (!this.actor?.isOwner) return false;
+
     const item = await Item.implementation.fromDropData(data);
-    const allowedSubtypes = [
+    if (!item) return false;
+
+    const allowedSubtypes = new Set([
       'item',
       'focus',
       'value',
@@ -734,37 +729,104 @@ export class STACharacterSheet extends api.HandlebarsApplicationMixin(sheets.Act
       'milestone',
       'injury',
       'trait'
-    ];
+    ]);
 
-    if (!allowedSubtypes.includes(item.type)) {
-      ui.notifications.warn(`${this.actor.name} ` + game.i18n.localize(`sta.notifications.actoritem`) + ` ${item.type}`);
+    if (!allowedSubtypes.has(item.type)) {
+      ui.notifications.warn(
+        `${this.actor.name} ` +
+        game.i18n.localize('sta.notifications.actoritem') +
+        ` ${item.type}`
+      );
       return false;
     }
 
-    if (this.actor.uuid === item.parent?.uuid) {
-      return await this._onSortItem(event, item);
+    if (item.parent?.uuid === this.actor.uuid) {
+      return this._onSortItem(event, item);
     }
 
-    return await this._onDropItemCreate(item, event);
+    const move = event.altKey === true;
+    const created = await this._onDropItemCreate(item);
+    if (move && item.parent?.isOwner) await item.delete();
+    return created;
   }
 
-  async _onDropItemCreate(itemData, event) {
-    itemData = itemData instanceof Array ? itemData : [itemData];
-    return this.actor.createEmbeddedDocuments('Item', itemData);
+
+  async _onDropItemCreate(itemOrData) {
+    const arr = Array.isArray(itemOrData) ? itemOrData : [itemOrData];
+    const payload = arr.map((d) => {
+      const obj = d instanceof Item ? d.toObject() : d;
+      delete obj._id;
+      return obj;
+    });
+    return this.actor.createEmbeddedDocuments('Item', payload);
   }
 
-  #createDragDropHandlers() {
-    return this.options.dragDrop.map((d) => {
-      d.permissions = {
+  async _onSortItem(event, item) {
+    const container =
+      event.target?.closest?.('ul.items') ||
+      event.currentTarget?.closest?.('ul.items') ||
+      this.element;
+
+    const nodeList = container.querySelectorAll('li[data-item-id]');
+    const siblings = Array.from(nodeList)
+      .map((el) => this.actor.items.get(el.dataset.itemId))
+      .filter(Boolean);
+
+    if (!siblings.length) return false;
+
+    const li = event.target.closest('li[data-item-id]');
+    let target = null;
+    let before = false;
+
+    if (li) {
+      target = this.actor.items.get(li.dataset.itemId) || null;
+      before = (li.dataset.dropPosition === 'before');
+      if (target?.id === item.id) return false;
+    } else {
+      target = siblings[siblings.length - 1] || null;
+      before = false;
+    }
+
+    const sortUpdates = foundry.utils.performIntegerSort(item, {
+      target,
+      siblings,
+      sortKey: 'sort',
+      sortBefore: before
+    });
+
+    const updates = sortUpdates.map((u) => ({
+      _id: u.target.id ?? u.target._id,
+      sort: u.update.sort
+    })).filter((u) => u._id != null);
+
+    if (!updates.length) return false;
+
+    return this.actor.updateEmbeddedDocuments('Item', updates);
+  }
+
+  get dragDrop() {
+    return this._dragDrop || [];
+  }
+
+  _createDragDropHandlers() {
+    const cfgs = Array.isArray(this.options?.dragDrop) && this.options.dragDrop.length ?
+      this.options.dragDrop :
+      [{
+        dragSelector: 'li[data-item-id]',
+        dropSelector: '.window-content, .sheet-body, .tab, ul.items, .drop-zone'
+      }];
+
+    return cfgs.map((d) => new foundry.applications.ux.DragDrop({
+      ...d,
+      permissions: {
         dragstart: this._canDragStart.bind(this),
         drop: this._canDragDrop.bind(this),
-      };
-      d.callbacks = {
+      },
+      callbacks: {
         dragstart: this._onDragStart.bind(this),
         dragover: this._onDragOver.bind(this),
         drop: this._onDrop.bind(this),
-      };
-      return new foundry.applications.ux.DragDrop(d);
-    });
+      }
+    }));
   }
 }

@@ -15,6 +15,9 @@ import {
   STANPCSheet2e
 } from './actors/npc-sheet2e.mjs';
 import {
+  STASupportingSheet2e
+} from './actors/supporting-sheet2e.mjs';
+import {
   STAStarshipSheet
 } from './actors/starship-sheet.mjs';
 import {
@@ -109,6 +112,7 @@ Hooks.once('init', function() {
       STACharacterSheet,
       STACharacterSheet2e,
       STANPCSheet2e,
+      STASupportingSheet2e,
       STAStarshipSheet,
       STAStarshipSheet2e,
       STASmallCraftSheet,
@@ -142,83 +146,103 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Actor, 'core', foundry.appv1.sheets.ActorSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet, {
     types: ['character'],
-    label: '1e Character'
+    label: 'Character (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STACharacterSheet2e, {
     types: ['character'],
-    label: '2e Character',
+    label: 'Character (2e)',
     makeDefault: true
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STANPCSheet2e, {
     types: ['character'],
-    label: '2e NPC'
+    label: 'NPC (2e)'
+  });
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASupportingSheet2e, {
+    types: ['character'],
+    label: 'Supporting Character (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet, {
     types: ['starship'],
-    label: '1e Starship'
+    label: 'Starship (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet2e, {
     types: ['starship'],
-    label: '2e Starship'
+    label: 'Starship (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet, {
     types: ['smallcraft'],
-    label: '1e Small Craft'
+    label: 'Small Craft (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASmallCraftSheet2e, {
     types: ['smallcraft'],
-    label: '2e Small Craft'
+    label: 'Small Craft (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAExtendedTaskSheet, {
-    types: ['extendedtask']
+    types: ['extendedtask'],
+    label: 'Extended Task'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASceneTraits, {
     types: ['scenetraits'],
+    label: 'Scene Traits'
   });
 
   foundry.applications.apps.DocumentSheetConfig.unregisterSheet(Item, 'core', foundry.appv1.sheets.ItemSheet);
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAItemSheet, {
     types: ['item'],
+    label: 'Item',
     makeDefault: true
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STACharacterWeaponSheet, {
-    types: ['characterweapon']
+    types: ['characterweapon'],
+    label: 'Character Weapon (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STACharacterWeaponSheet2e, {
-    types: ['characterweapon2e']
+    types: ['characterweapon2e'],
+    label: 'Character Weapon (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAStarshipWeaponSheet, {
-    types: ['starshipweapon']
+    types: ['starshipweapon'],
+    label: 'Starship Weapon (1e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAStarshipWeaponSheet2e, {
-    types: ['starshipweapon2e']
+    types: ['starshipweapon2e'],
+    label: 'Starship Weapon (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAArmorSheet, {
-    types: ['armor']
+    types: ['armor'],
+    label: 'Armor'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATalentSheet, {
-    types: ['talent']
+    types: ['talent'],
+    label: 'Talent'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATraitSheet, {
-    types: ['trait']
+    types: ['trait'],
+    label: 'Trait'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STATraitSheet, {
-    types: ['injury']
+    types: ['injury'],
+    label: 'Injury'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
-    types: ['value']
+    types: ['value'],
+    label: 'Value'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAGenericSheet, {
-    types: ['focus']
+    types: ['focus'],
+    label: 'Focus'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STAMilestoneSheet, {
-    types: ['milestone']
+    types: ['milestone'],
+    label: 'Milestone'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STALogSheet, {
-    types: ['log']
+    types: ['log'],
+    label: 'Log'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Item, 'sta', STASmallCraftContainerSheet, {
-    types: ['smallcraftcontainer']
+    types: ['smallcraftcontainer'],
+    label: 'Small Craft Container'
   });
 
   // Register system settings
@@ -332,6 +356,24 @@ Hooks.once('init', function() {
     scope: 'world',
     type: Boolean,
     default: true,
+    config: true
+  });
+
+  game.settings.register('sta', 'characterActionsPerRound', {
+    name: 'Number of character turns per combat round:',
+    hint: '1 is default, but some people like 2 to track minor and major actions, etc.',
+    scope: 'world',
+    type: Number,
+    default: 1,
+    config: true
+  });
+
+  game.settings.register('sta', 'showNotesInLimited', {
+    name: 'Show notes in limited view:',
+    hint: 'Check this if you want to display character notes in the limited view.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
     config: true
   });
 
