@@ -1,9 +1,9 @@
-<ol class="combat-tracker plain">
+<ol class="combat-tracker">
     {{#each turns}}
-    <li class="combatant {{ css }}" data-combatant-id="{{ id }}" data-action="activateCombatant">
-        {{!-- TODO: Targets --}}
+      <li class="combatant {{ css }} dispo-{{ disposition.name }}"
+        {{#if disposition.color}}style="--disposition-color: {{ disposition.color }};"{{/if}}
+        data-combatant-id="{{ id }}" data-action="activateCombatant">
 
-        {{!-- Image --}}
         <img class="token-image" src="{{ img }}" alt="{{ name }}" loading="lazy">
 
         {{!-- Name & Controls --}}
@@ -43,10 +43,21 @@
         </div>
         {{/if}}
 
+        {{!-- Actions Remaining --}}
+        <div class="token-actions-remaining" data-tooltip="{{ localize 'sta.combat.restoreaction' }}">
+          {{#if @root.user.isGM}}
+            <button type="button" class="inline-control combatant-control icon fa-solid fa-circle-plus" data-action="incAction"
+            aria-label="{{ localize 'sta.combat.grantOneAction' }}"></button>
+          {{/if}}
+          <span class="actions-remaining">
+            {{ actionsRemaining }} / {{ actionsPerRound }}
+          </span>
+        </div>
+
         {{!-- Turn Completed Toggle Button --}}
 		<div class="token-turn-completed">
 			<a
-				class="conan-combatant-control"
+				class="sta-combatant-control"
 				{{#if turnDone}}
 					style="color: var(--color-text-subtle);"
 				{{/if}}

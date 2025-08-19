@@ -14,6 +14,20 @@
 
       <div class="title">{{localize 'sta.actor.starship.designation'}}</div>
       <input name="system.designation" class="text-entry" type="text" value="{{actor.system.designation}}" placeholder="{{localize 'sta.actor.starship.designation'}}" />
+      {{#if showProseMirror}}
+        <div class="title">{{localize 'sta.actor.note.title'}}</div>
+        <div class="note2e">
+          <prose-mirror
+            name="system.notes"
+            document-uuid="{{actor.uuid}}"
+            value="{{actor.system.notes}}"
+            collaborate="true"
+            toggled="false"
+            {{#unless editable}}disabled{{/unless}}>
+            {{{enrichedNotes}}}
+          </prose-mirror>
+        </div>
+      {{/if}}
     </div>
   </div>
 </div>

@@ -1,14 +1,11 @@
-export default class CombatTracker2d20V2
-  extends foundry.applications.sidebar.tabs.CombatTracker {
-  /** @inheritDoc */
+export default class CombatTracker2d20V2 extends foundry.applications.sidebar.tabs.CombatTracker {
   static DEFAULT_OPTIONS = {
     actions: {
       toggleCombatantTurnDone: CombatTracker2d20V2._onCombatantControl,
+      incAction: CombatTracker2d20V2._onCombatantPlus,
     },
   };
 
-
-  /** @override */
   static PARTS = {
     header: {
       // We're still using the default Foundry template for this part
@@ -22,7 +19,6 @@ export default class CombatTracker2d20V2
       template: 'templates/sidebar/tabs/combat/footer.hbs',
     },
   };
-
 
   _onCombatantMouseDown(event, target) {
     super._onCombatantMouseDown(event, target);
@@ -55,47 +51,129 @@ export default class CombatTracker2d20V2
     }
   }
 
-
   static async _onCombatantControl(event, target) {
     event.preventDefault();
     event.stopPropagation();
 
     if (!game.user.isGM) return;
 
-    if (!this.viewed.started) {
-      ui.notifications.warn(
-        game.i18n.localize('sta.combat.combatnotstarted')
-      );
+
+    const combat = this.viewed;
+    if (!combat?.started) {
+      ui.notifications.warn(game.i18n.localize('sta.combat.combatnotstarted'));
       return;
     }
 
-    const {combatantId} = target.closest('[data-combatant-id]')?.dataset ?? {};
-    const combatant = this.viewed?.combatants.get(combatantId);
+    const {combatantId} = target?.closest('[data-combatant-id]')?.dataset ?? {};
+    if (!combatantId) return;
 
+    const combatant = combat.combatants.get(combatantId);
     if (!combatant) return;
 
-    if (combatant.isOwner) {
-      this.viewed.toggleTurnDone(combatant.id);
+    const max = combat.actionsPerRoundFor?.(combatant) ?? 1;
+
+    let before = combat.actionsRemainingThisRound?.[combatantId];
+    if (before == null) {
+      await combat.setActionsRemaining?.(combatantId, max);
+      before = max;
     }
+
+    if (before > 0) {
+      await combat.adjustActionsRemaining?.(combatantId, -1);
+      const after =
+        combat.actionsRemainingThisRound?.[combatantId] ?? Math.max(0, before - 1);
+
+      if (after === 0) {
+        await combat.toggleTurnDone(combatant.id);
+      }
+    } else {
+      await combat.toggleTurnDone(combatant.id);
+    }
+    ui.combat?.render(true);
   }
 
+  static async _onCombatantPlus(event, target) {
+    event?.preventDefault?.();
+    event?.stopPropagation?.();
 
-  /**
-   * Prepare render context for the tracker part.
-   * @param {ApplicationRenderContext} context
-   * @param {HandlebarsRenderOptions} options
-   * @returns {Promise<void>}
-   * @protected
-   */
-  async _prepareTrackerContext(context, options) {
-    await super._prepareTrackerContext(context, options);
+    if (!game.user.isGM) return;
 
     const combat = this.viewed;
-    if ( !combat ) return;
-
-    const combatantsTurnDone = combat.combatantsTurnsDoneThisRound;
-    for (const turn of context.turns) {
-      turn.turnDone = combatantsTurnDone[turn.id] ?? false;
+    if (!combat?.started) {
+      ui.notifications?.warn?.(game.i18n.localize('sta.combat.combatnotstarted'));
+      return;
     }
+
+    const {combatantId} = target?.closest('[data-combatant-id]')?.dataset ?? {};
+    if (!combatantId) return;
+    const combatant = combat.combatants.get(combatantId);
+    if (!combatant) return;
+
+    const max = combat.actionsPerRoundFor?.(combatant) ?? 1;
+    if (combat.actionsRemainingThisRound?.[combatantId] == null) {
+      await combat.setActionsRemaining?.(combatantId, max);
+    }
+
+    const after = await combat.adjustActionsRemaining?.(combatantId, +1);
+
+    const wasDone = combat.getTurnDone?.(combatantId) ?? (combatant.getFlag('sta', 'turnDone') ?? false);
+    if (after > 0 && wasDone) {
+      await combat.toggleTurnDone?.(combatant.id, false);
+    }
+    ui.combat?.render(true);
+  }
+
+  async _prepareTrackerContext(context, options) {
+    await super._prepareTrackerContext(context, options);
+    const combat = this.viewed;
+    if (!combat) return;
+
+    const resourceToNumber = (res) => {
+      if (res == null) return Number.NEGATIVE_INFINITY;
+      if (typeof res === 'number' && Number.isFinite(res)) return res;
+      const s = String(res).replace(/<[^>]*>/g, '');
+      const m = s.match(/-?\d+(?:\.\d+)?/);
+      return m ? Number(m[0]) : Number.NEGATIVE_INFINITY;
+    };
+
+    const dispositionInfo = (combatant) => {
+      const disp = combatant?.token?.disposition ?? 0;
+      const keyByVal = {[-1]: 'HOSTILE', 0: 'NEUTRAL', 1: 'FRIENDLY', 2: 'FRIENDLY'};
+      const nameByVal = {[-1]: 'hostile', 0: 'neutral', 1: 'friendly', 2: 'friendly'};
+      const key = keyByVal[disp] ?? 'NEUTRAL';
+      const name = nameByVal[disp] ?? 'neutral';
+      const palette = (CONFIG?.Canvas?.dispositionColors) || {};
+      let color = palette[key];
+      if (typeof color === 'number') color = `#${color.toString(16).padStart(6, '0')}`;
+      if (typeof color !== 'string') color = null;
+      return {value: disp, name, color};
+    };
+
+    const rem = combat.actionsRemainingThisRound;
+
+    for (const turn of context.turns) {
+      const c = combat.combatants.get(turn.id);
+      if (!c) continue;
+
+      const max = combat.actionsPerRoundFor(c);
+      turn.actionsPerRound = max;
+      turn.actionsRemaining = rem[turn.id] ?? max;
+
+      const disp = dispositionInfo(c);
+      turn.disposition = disp;
+      turn.css = `${turn.css ?? ''} dispo-${disp.name}`.trim();
+
+      const flagDone = c.getFlag('sta', 'turnDone') ?? false;
+      turn.turnDone = (turn.actionsRemaining <= 0) || flagDone;
+
+      const basis = (turn.resource != null && turn.resource !== '') ? turn.resource : turn.actionsRemaining;
+      turn._resourceSort = resourceToNumber(basis);
+    }
+
+    context.turns.sort((a, b) => {
+      const d = (b._resourceSort ?? -Infinity) - (a._resourceSort ?? -Infinity);
+      if (d) return d;
+      return String(a.name ?? '').localeCompare(String(b.name ?? ''));
+    });
   }
 }

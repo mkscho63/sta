@@ -20,6 +20,9 @@ export class STAExtendedTaskSheet extends api.HandlebarsApplicationMixin(sheets.
       height: 'auto',
       width: 500
     },
+    window: {
+      resizable: true,
+    },
   };
 
   get title() {

@@ -18,6 +18,9 @@ export class STALogSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheet
       height: 'auto',
       width: 700,
     },
+    window: {
+      resizable: true,
+    },
   };
 
   get title() {

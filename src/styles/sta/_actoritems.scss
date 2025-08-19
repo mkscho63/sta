@@ -1,5 +1,3 @@
-/* Actor-Item List Starts Here */
-
 .theme-light {
   .section {
     .header {
@@ -122,20 +120,6 @@
   }
 }
 
-.item-tooltip {
-  position: absolute;
-  background: $tooltipbackground;
-  color: $tooltiptext;
-  border: 1px solid $tooltiptext;
-  border-radius: 4px;
-  pointer-events: none;
-  z-index: 1000;
-  white-space: normal;
-  overflow-wrap: break-word;
-  max-width: 550px;
-  padding: 2px;
-}
-
 .item-name {
   border: none;
   outline: none;
@@ -145,5 +129,3 @@
 .strike-through {
   text-decoration: line-through;
 }
-
-/* Actor-Item List Ends Here */
