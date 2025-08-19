@@ -146,19 +146,52 @@ export default class CombatTracker2d20V2 extends foundry.applications.sidebar.ta
     const combat = this.viewed;
     if (!combat) return;
 
+    const resourceToNumber = (res) => {
+      if (res == null) return Number.NEGATIVE_INFINITY;
+      if (typeof res === 'number' && Number.isFinite(res)) return res;
+      const s = String(res).replace(/<[^>]*>/g, '');
+      const m = s.match(/-?\d+(?:\.\d+)?/);
+      return m ? Number(m[0]) : Number.NEGATIVE_INFINITY;
+    };
+
+    const dispositionInfo = (combatant) => {
+      const disp = combatant?.token?.disposition ?? 0;
+      const keyByVal = {[-1]: 'HOSTILE', 0: 'NEUTRAL', 1: 'FRIENDLY', 2: 'FRIENDLY'};
+      const nameByVal = {[-1]: 'hostile', 0: 'neutral', 1: 'friendly', 2: 'friendly'};
+      const key = keyByVal[disp] ?? 'NEUTRAL';
+      const name = nameByVal[disp] ?? 'neutral';
+      const palette = (CONFIG?.Canvas?.dispositionColors) || {};
+      let color = palette[key];
+      if (typeof color === 'number') color = `#${color.toString(16).padStart(6, '0')}`;
+      if (typeof color !== 'string') color = null;
+      return {value: disp, name, color};
+    };
+
     const rem = combat.actionsRemainingThisRound;
+
     for (const turn of context.turns) {
       const c = combat.combatants.get(turn.id);
+      if (!c) continue;
+
       const max = combat.actionsPerRoundFor(c);
       turn.actionsPerRound = max;
       turn.actionsRemaining = rem[turn.id] ?? max;
 
-      const disp = this.constructor._dispositionInfo(c);
+      const disp = dispositionInfo(c);
       turn.disposition = disp;
       turn.css = `${turn.css ?? ''} dispo-${disp.name}`.trim();
 
       const flagDone = c.getFlag('sta', 'turnDone') ?? false;
       turn.turnDone = (turn.actionsRemaining <= 0) || flagDone;
+
+      const basis = (turn.resource != null && turn.resource !== '') ? turn.resource : turn.actionsRemaining;
+      turn._resourceSort = resourceToNumber(basis);
     }
+
+    context.turns.sort((a, b) => {
+      const d = (b._resourceSort ?? -Infinity) - (a._resourceSort ?? -Infinity);
+      if (d) return d;
+      return String(a.name ?? '').localeCompare(String(b.name ?? ''));
+    });
   }
 }
