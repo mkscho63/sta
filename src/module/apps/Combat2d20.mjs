@@ -167,4 +167,14 @@ export default class Combat2d20 extends Combat {
     await c.setFlag('sta', 'turnDone', next);
     return next;
   }
+
+  async setTurn(newTurn) {
+    this.turn = newTurn;
+
+    // Update the document, passing data through a hook first
+    const updateData = {round: this.round, turn: newTurn};
+    const updateOptions = {advanceTime: CONFIG.time.turnTime, direction: 1};
+    Hooks.callAll('combatTurn', this, updateData, updateOptions);
+    return this.update(updateData, updateOptions);
+  }
 }

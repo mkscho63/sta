@@ -20,11 +20,43 @@ export default class CombatTracker2d20V2 extends foundry.applications.sidebar.ta
     },
   };
 
+  _onCombatantMouseDown(event, target) {
+    super._onCombatantMouseDown(event, target);
+
+    const isInputElement = (event.target instanceof HTMLInputElement);
+    const isButtonElement = (event.target instanceof HTMLButtonElement);
+
+    if (isInputElement || isButtonElement) return;
+
+    if (game.user.isGM && this.viewed.started) {
+      const {combatantId} = target?.dataset ?? {};
+
+      const combat = this.viewed;
+
+      const currentTurn = combat.turn ?? -1;
+
+      let newTurn = currentTurn;
+
+      for (const [i, turn] of combat.turns.entries() ) {
+        if (turn.isDefeated) continue;
+        if (turn.id === combatantId) {
+          newTurn = i;
+          break;
+        }
+      }
+
+      if (newTurn !== currentTurn) {
+        combat.setTurn(newTurn);
+      }
+    }
+  }
+
   static async _onCombatantControl(event, target) {
     event.preventDefault();
     event.stopPropagation();
 
     if (!game.user.isGM) return;
+
 
     const combat = this.viewed;
     if (!combat?.started) {
