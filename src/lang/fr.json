@@ -224,7 +224,8 @@
   "sta.combat.combatantsturndone": "Tour terminée",
   "sta.combat.combatantsturnnotdone": "Tour non terminée",
   "sta.combat.combatnotstarted": "Le combat n'a pas commencé",
-  "sta.combat.togglecombatantsturndone": "Basculer l'état 'Tour terminée'",
+  "sta.combat.togglecombatantsturndone": "Effectuer une action",
+  "sta.combat.restoreaction": "Restaurer une action",
 
   "sta.item.genericitem.name": "Nom",
   "sta.item.genericitem.description": "Description",

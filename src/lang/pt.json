@@ -224,7 +224,8 @@
   "sta.combat.combatantsturndone": "Turno concluído",
   "sta.combat.combatantsturnnotdone": "Turno não concluído",
   "sta.combat.combatnotstarted": "O combate ainda não começou",
-  "sta.combat.togglecombatantsturndone": "Alternar 'Turno concluído'",
+  "sta.combat.togglecombatantsturndone": "Executar uma ação",
+  "sta.combat.restoreaction": "Restaurar uma ação",
 
   "sta.item.genericitem.name": "Nome",
   "sta.item.genericitem.description": "Descrição",

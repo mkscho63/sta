@@ -351,6 +351,15 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'characterActionsPerRound', {
+    name: 'Number of character turns per combat round:',
+    hint: '1 is default, but some people like 2 to track minor and major actions, etc.',
+    scope: 'world',
+    type: Number,
+    default: 1,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);

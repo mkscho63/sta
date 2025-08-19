@@ -1,0 +1,12 @@
+.combat-tracker .combatant[class*="dispo-"] {
+  position: relative;
+}
+.combat-tracker .combatant[class*="dispo-"]::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--disposition-color, currentColor);
+  opacity: 0.9;
+  border-radius: 2px;
+}

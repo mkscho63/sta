@@ -224,7 +224,8 @@
   "sta.combat.combatantsturndone": "Zug abgeschlossen",
   "sta.combat.combatantsturnnotdone": "Zug nicht abgeschlossen",
   "sta.combat.combatnotstarted": "Kampf hat noch nicht begonnen",
-  "sta.combat.togglecombatantsturndone": "Zug abgeschlossen umschalten",
+  "sta.combat.togglecombatantsturndone": "Aktion ausführen",
+  "sta.combat.restoreaction": "Eine Aktion wiederherstellen",
 
   "sta.item.genericitem.name": "Name",
   "sta.item.genericitem.description": "Beschreibung",
