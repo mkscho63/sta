@@ -276,6 +276,20 @@
   }
 }
 
+.supporting-char-grid .row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.supporting-char-grid .label {
+  flex: 0 0 200px;
+}
+
+.supporting-char-grid .inputs {
+  flex: 1;
+}
+
 .rollrepnotdis {
   display: flex;
   align-items: center;

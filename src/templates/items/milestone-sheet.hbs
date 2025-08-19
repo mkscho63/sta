@@ -34,8 +34,6 @@
       <option value="">-</option>
       {{selectOptions availableLogs selected=item.system.childA valueAttr="id" labelAttr="name"}}
     </select>
-  {{else}}
-    <div class="note"><em>{{localize "sta.milestone.noLogsOnActor"}}</em></div>
   {{/if}}
 
   {{#if availableLogs.length}}
@@ -43,8 +41,6 @@
       <option value="">-</option>
       {{selectOptions availableLogs selected=item.system.childB valueAttr="id" labelAttr="name"}}
     </select>
-  {{else}}
-    <div class="note"><em>{{localize "sta.milestone.noLogsOnActor"}}</em></div>
   {{/if}}
 
   {{#if item.system.arc.isArc}}
@@ -54,8 +50,6 @@
           <option value="">-</option>
           {{selectOptions ../availableLogs selected=c.value valueAttr="id" labelAttr="name"}}
         </select>
-      {{else}}
-        <div class="note"><em>{{localize "sta.milestone.noLogsOnActor"}}</em></div>
       {{/if}}
     {{/each}}
   {{/if}}

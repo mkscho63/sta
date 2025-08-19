@@ -15,6 +15,9 @@ import {
   STANPCSheet2e
 } from './actors/npc-sheet2e.mjs';
 import {
+  STASupportingSheet2e
+} from './actors/supporting-sheet2e.mjs';
+import {
   STAStarshipSheet
 } from './actors/starship-sheet.mjs';
 import {
@@ -109,6 +112,7 @@ Hooks.once('init', function() {
       STACharacterSheet,
       STACharacterSheet2e,
       STANPCSheet2e,
+      STASupportingSheet2e,
       STAStarshipSheet,
       STAStarshipSheet2e,
       STASmallCraftSheet,
@@ -152,6 +156,10 @@ Hooks.once('init', function() {
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STANPCSheet2e, {
     types: ['character'],
     label: 'NPC (2e)'
+  });
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STASupportingSheet2e, {
+    types: ['character'],
+    label: 'Supporting Character (2e)'
   });
   foundry.applications.apps.DocumentSheetConfig.registerSheet(Actor, 'sta', STAStarshipSheet, {
     types: ['starship'],
