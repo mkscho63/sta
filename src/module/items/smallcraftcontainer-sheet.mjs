@@ -18,7 +18,7 @@ export class STASmallCraftContainerSheet extends api.HandlebarsApplicationMixin(
       height: 'auto',
       width: 680,
     },
-	window: {
+    window: {
       resizable: true,
     },
   };

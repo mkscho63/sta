@@ -18,7 +18,7 @@ export class STAArmorSheet extends api.HandlebarsApplicationMixin(sheets.ItemShe
       height: 'auto',
       width: 500,
     },
-	window: {
+    window: {
       resizable: true,
     },
   };

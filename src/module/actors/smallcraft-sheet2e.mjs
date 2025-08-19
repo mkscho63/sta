@@ -30,7 +30,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
       height: 'auto',
       width: 850
     },
-	window: {
+    window: {
       resizable: true,
     },
     dragDrop: [{
@@ -76,7 +76,7 @@ export class STASmallCraftSheet2e extends api.HandlebarsApplicationMixin(sheets.
     });
 
     const isLimited = this.document?.limited ?? this.actor?.limited ?? false;
-    const showLimitedProse = game.settings.get("sta", "showNotesInLimited");
+    const showLimitedProse = game.settings.get('sta', 'showNotesInLimited');
     context.showProseMirror = isLimited ? showLimitedProse : true;
 
     return context;

@@ -18,7 +18,7 @@ export class STAGenericSheet extends api.HandlebarsApplicationMixin(sheets.ItemS
       height: 'auto',
       width: 500,
     },
-	window: {
+    window: {
       resizable: true,
     },
   };

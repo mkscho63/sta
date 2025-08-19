@@ -18,7 +18,7 @@ export class STACharacterWeaponSheet extends api.HandlebarsApplicationMixin(shee
       height: 'auto',
       width: 565,
     },
-	window: {
+    window: {
       resizable: true,
     },
   };

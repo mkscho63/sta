@@ -18,7 +18,7 @@ export class STAItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemShee
       height: 'auto',
       width: 500,
     },
-	window: {
+    window: {
       resizable: true,
     },
   };

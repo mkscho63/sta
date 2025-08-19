@@ -18,7 +18,7 @@ export class STATalentSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
       height: 'auto',
       width: 565,
     },
-	window: {
+    window: {
       resizable: true,
     },
   };

@@ -34,7 +34,7 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
       height: 'auto',
       width: 850
     },
-	window: {
+    window: {
       resizable: true,
     },
     dragDrop: [{
@@ -80,7 +80,7 @@ export class STAStarshipSheet extends api.HandlebarsApplicationMixin(sheets.Acto
     });
 
     const isLimited = this.document?.limited ?? this.actor?.limited ?? false;
-    const showLimitedProse = game.settings.get("sta", "showNotesInLimited");
+    const showLimitedProse = game.settings.get('sta', 'showNotesInLimited');
     context.showProseMirror = isLimited ? showLimitedProse : true;
 
     return context;

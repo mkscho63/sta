@@ -18,7 +18,7 @@ export class STAStarshipWeaponSheet extends api.HandlebarsApplicationMixin(sheet
       height: 'auto',
       width: 565,
     },
-	window: {
+    window: {
       resizable: true,
     },
   };
