@@ -123,24 +123,6 @@ export default class CombatTracker2d20V2 extends foundry.applications.sidebar.ta
     ui.combat?.render(true);
   }
 
-  static _dispositionInfo(combatant) {
-    const disp = combatant?.token?.disposition ?? 0;
-
-    const map = {
-      [-1]: {name: 'hostile', key: 'HOSTILE'},
-      [0]: {name: 'neutral', key: 'NEUTRAL'},
-      [1]: {name: 'friendly', key: 'FRIENDLY'},
-      [2]: {name: 'friendly', key: 'FRIENDLY'},
-    };
-    const info = map[disp] ?? map[0];
-
-    const colors = (CONFIG.Canvas && CONFIG.Canvas.dispositionColors) || {};
-    const hexNum = colors[info.key];
-    const color = Number.isFinite(hexNum) ? `#${hexNum.toString(16).padStart(6, '0')}` : null;
-
-    return {value: disp, name: info.name, color};
-  }
-
   async _prepareTrackerContext(context, options) {
     await super._prepareTrackerContext(context, options);
     const combat = this.viewed;
