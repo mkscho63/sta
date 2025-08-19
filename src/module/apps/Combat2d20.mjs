@@ -79,13 +79,18 @@ export default class Combat2d20 extends Combat {
   async _resetActionsForRound() {
     if (!this.started) return;
     const map = this.actionsRemainingThisRound;
+    const clears = [];
+
     for (const c of this.combatants) {
       const id = c.id;
       if (map[id] == null) map[id] = this.actionsPerRoundFor(c);
+      clears.push(c.setFlag('sta', 'turnDone', false).catch(() => {}));
     }
+
     const all = this.actionsRemainingFlag;
     all[this.round] = map;
     await this.setFlag('sta', 'actionsRemaining', all);
+    await Promise.all(clears);
   }
 
   async startCombat() {

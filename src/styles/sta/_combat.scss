@@ -10,3 +10,14 @@
   opacity: 0.9;
   border-radius: 2px;
 }
+/* Toggle button uses disposition color by default */
+.combat-tracker .token-turn-completed .sta-combatant-control {
+  color: var(--disposition-color);
+  transition: color 120ms ease;
+}
+
+/* Optional: a little feedback on hover/focus */
+.combat-tracker .token-turn-completed .sta-combatant-control:hover,
+.combat-tracker .token-turn-completed .sta-combatant-control:focus {
+  opacity: 0.9;
+}

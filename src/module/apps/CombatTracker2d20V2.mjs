@@ -66,8 +66,7 @@ export default class CombatTracker2d20V2 extends foundry.applications.sidebar.ta
 
     if (!game.user.isGM) return;
 
-    const tracker = (this && this.viewed && this.render) ? this : ui.combat;
-    const combat = tracker?.viewed ?? game.combats?.active;
+    const combat = this.viewed;
     if (!combat?.started) {
       ui.notifications?.warn?.(game.i18n.localize('sta.combat.combatnotstarted'));
       return;
@@ -79,19 +78,17 @@ export default class CombatTracker2d20V2 extends foundry.applications.sidebar.ta
     if (!combatant) return;
 
     const max = combat.actionsPerRoundFor?.(combatant) ?? 1;
-    let remaining = combat.actionsRemainingThisRound?.[combatantId];
-    if (remaining == null) {
+    if (combat.actionsRemainingThisRound?.[combatantId] == null) {
       await combat.setActionsRemaining?.(combatantId, max);
-      remaining = max;
     }
 
     const after = await combat.adjustActionsRemaining?.(combatantId, +1);
 
-    if (combatant.turnDone && (after ?? (remaining + 1)) > 0) {
-      await combat.toggleTurnDone(combatant.id);
+    const wasDone = combat.getTurnDone?.(combatantId) ?? (combatant.getFlag('sta', 'turnDone') ?? false);
+    if (after > 0 && wasDone) {
+      await combat.toggleTurnDone?.(combatant.id, false);
     }
-
-    tracker.render(true);
+    ui.combat?.render(true);
   }
 
   static _dispositionInfo(combatant) {
