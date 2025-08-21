@@ -1,7 +1,8 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
+import {STAActors} from './sta-actors.mjs';
 
-export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
+export class STASmallCraftSheet extends STAActors {
   static PARTS = {
     charactersheet: {
       template: 'systems/sta/templates/actors/smallcraft-sheet.hbs'
@@ -11,103 +12,29 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
     },
   };
 
-  static DEFAULT_OPTIONS = {
-    actions: {
-      onItemCreate: STASmallCraftSheet._onItemCreate,
-      onItemEdit: STASmallCraftSheet._onItemEdit,
-      onItemDelete: STASmallCraftSheet._onItemDelete,
-      onItemtoChat: STASmallCraftSheet._onItemtoChat,
-      onShieldTrackUpdate: this.prototype._onShieldTrackUpdate,
-      onPowerTrackUpdate: this.prototype._onPowerTrackUpdate,
-      onSelectSystem: this.prototype._onSelectSystem,
-      onSelectDepartment: this.prototype._onSelectDepartment,
-      onAttributeTest: this.prototype._onAttributeTest,
-      onChallengeTest: this.prototype._onChallengeTest,
-    },
-    form: {
-      submitOnChange: true,
-      closeOnSubmit: false,
-    },
-    position: {
-      height: 'auto',
-      width: 850
-    },
-    window: {
-      resizable: true,
-    },
-    dragDrop: [{
-      dragSelector: 'li[data-item-id]',
-      dropSelector: [
-        '.window-content',
-        '.sheet-body',
-        '.sheet',
-        '.tab',
-        'ul.items',
-        '.drop-zone'
-      ].join(', ')
-    }]
-  };
-
   get title() {
     return `${this.actor.name} - Small Craft (1e)`;
   }
 
-  _configureRenderOptions(options) {
-    super._configureRenderOptions(options);
-    options.parts = this.document.limited ? ['limitedsheet'] : ['charactersheet'];
-  }
-
-  async _prepareContext(options) {
-    const items = this.actor.items?.contents || [];
-    const itemsSorted = [...items].sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0));
-    const context = {
-      actor: this.actor,
-      items: itemsSorted,
-      systems: this.actor.system.systems,
-      departments: this.actor.system.departments,
-      departmentorder: this.actor.system.departmentorder,
-      enrichedNotes: await foundry.applications.ux.TextEditor.enrichHTML(this.actor.system.notes),
+  get tracks() {
+    return {
+      ...super.tracks,
+      shield: true,
+      power: true,
+      weapon: true,
+      breach: true,
     };
-
-    Object.entries(context.systems).forEach(([key, system]) => {
-      system.value = Math.max(0, Math.min(99, system.value));
-    });
-
-    Object.entries(context.departments).forEach(([key, department]) => {
-      department.value = Math.max(0, Math.min(99, department.value));
-    });
-
-    const isLimited = this.document?.limited ?? this.actor?.limited ?? false;
-    const showLimitedProse = game.settings.get('sta', 'showNotesInLimited');
-    context.showProseMirror = isLimited ? showLimitedProse : true;
-
-    return context;
   }
 
-  _onSelectSystem(event) {
-    const clickedCheckbox = event.target;
-    if (!clickedCheckbox.checked) {
-      clickedCheckbox.checked = true;
-      return;
-    }
-    this.element.querySelectorAll('.selector.system').forEach((checkbox) => {
-      if (checkbox !== clickedCheckbox) {
-        checkbox.checked = false;
-      }
-    });
-  }
-
-  _onSelectDepartment(event) {
-    const clickedCheckbox = event.target;
-    if (!clickedCheckbox.checked) {
-      clickedCheckbox.checked = true;
-      return;
-    }
-    this.element.querySelectorAll('.selector.department').forEach((checkbox) => {
-      if (checkbox !== clickedCheckbox) {
-        checkbox.checked = false;
-      }
-    });
+  get allowedItemTypes() {
+    return new Set([
+      'item',
+      'value',
+      'starshipweapon',
+      'talent',
+      'injury',
+      'trait'
+    ]);
   }
 
   async _onAttributeTest(event) {
@@ -213,156 +140,6 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
         speaker
       );
     }
-  }
-
-  async _onChallengeTest(event) {
-    event.preventDefault();
-    const defaultValue = 2;
-    const speaker = this.actor;
-    const weaponName = '';
-    const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
-    const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue
-    });
-    const formData = await api.DialogV2.wait({
-      window: {
-        title: game.i18n.localize('sta.apps.dicepoolwindow')
-      },
-      position: {
-        height: 'auto',
-        width: 350
-      },
-      content: html,
-      classes: ['dialogue'],
-      buttons: [{
-        action: 'roll',
-        default: true,
-        label: game.i18n.localize('sta.apps.rolldice'),
-        callback: (event, button, dialog) => {
-          const form = dialog.element.querySelector('form');
-          return form ? new FormData(form) : null;
-        },
-      },],
-      close: () => null,
-    });
-    if (!formData) return;
-    const dicePool = formData?.get('dicePoolValue') || defaultValue;
-    const staRoll = new STARoll();
-    staRoll.performChallengeRoll(dicePool, weaponName, speaker);
-  }
-
-  async _onItemNameChange(event) {
-    const input = event.currentTarget;
-    const itemId = input.dataset.itemId;
-    const newName = input.value.trim();
-    const item = this.actor.items.get(itemId);
-    await item.update({
-      name: newName
-    });
-  }
-
-  async _onItemQuantityChange(event) {
-    const input = event.currentTarget;
-    const itemId = input.dataset.itemId;
-    const newQuantity = parseInt(input.value.trim(), 10);
-    if (isNaN(newQuantity) || newQuantity < 0) {
-      ui.notifications.error('Quantity must be a positive number.');
-      return;
-    }
-    const item = this.actor.items.get(itemId);
-    await item.update({
-      'system.quantity': newQuantity
-    });
-  }
-
-  static async _onItemtoChat(event) {
-    const entry = event.target.closest('.entry');
-    const itemId = entry.dataset.itemId;
-    const itemType = entry.dataset.itemType;
-    event.preventDefault();
-    const item = this.actor.items.get(itemId);
-    const staRoll = new STARoll();
-    switch (itemType) {
-    case 'item':
-      staRoll.performItemRoll(item, this.actor);
-      break;
-    case 'value':
-      staRoll.performValueRoll(item, this.actor);
-      break;
-    case 'starshipweapon':
-      staRoll.performWeaponRoll(item, this.actor);
-      break;
-    case 'talent':
-      staRoll.performTalentRoll(item, this.actor);
-      break;
-    case 'injury':
-      staRoll.performInjuryRoll(item, this.actor);
-      break;
-    case 'trait':
-      staRoll.performTraitRoll(item, this.actor);
-      break;
-    default:
-      console.warn(`Unhandled item type: ${itemType}`);
-    }
-  }
-
-  static async _onItemCreate(event, target) {
-    const docCls = getDocumentClass(target.dataset.documentClass || 'Item');
-    const type = target.dataset.type || 'item';
-    const docData = {
-      name: `New ${type.charAt(0).toUpperCase() + type.slice(1)}`,
-      type: type,
-      parent: this.actor,
-    };
-    for (const [dataKey, value] of Object.entries(target.dataset)) {
-      if (['action', 'documentClass'].includes(dataKey)) continue;
-      foundry.utils.setProperty(docData, dataKey, value);
-    }
-    await docCls.create(docData, {
-      parent: this.actor
-    });
-  }
-
-  static async _onItemEdit(event) {
-    const entry = event.target.closest('.entry');
-    const itemId = entry.dataset.itemId;
-    const item = this.actor.items.get(itemId);
-    item.sheet.render(true);
-  }
-
-  static async _onItemDelete(event) {
-    const entry = event.target.closest('.entry');
-    const itemId = entry.dataset.itemId;
-    new api.DialogV2({
-      window: {
-        title: game.i18n.localize('sta.apps.deleteitem')
-      },
-      content: `<p>${game.i18n.localize('sta.apps.deleteconfirm')}</p>`,
-      position: {
-        height: 'auto',
-        width: 350
-      },
-      buttons: [{
-        action: 'yes',
-        default: false,
-        icon: '<i class="fas fa-check"></i>',
-        label: game.i18n.localize('sta.apps.yes'),
-        callback: async () => {
-          await this.actor.deleteEmbeddedDocuments('Item', [itemId]);
-        },
-      },
-      {
-        action: 'no',
-        default: true,
-        icon: '<i class="fas fa-times"></i>',
-        label: game.i18n.localize('sta.apps.no'),
-        callback: (event, button, htmlElement) => {
-          const form = htmlElement.querySelector('form');
-          return form ? new FormData(form) : null;
-        },
-      },],
-      close: () => null,
-    }).render(true);
   }
 
   async _onShieldTrackUpdate(event) {
@@ -493,219 +270,5 @@ export class STASmallCraftSheet extends api.HandlebarsApplicationMixin(sheets.Ac
         input.classList.add('highlight-destroyed');
       }
     });
-  }
-
-  async _onRender(context, options) {
-    if (this.document.limited) return;
-
-    const actor = this.actor;
-    if (actor.system.traits && actor.system.traits.trim()) {
-      const traitName = actor.system.traits.trim();
-      const existingTrait = actor.items.find(
-        (trait) => trait.name === traitName && trait.type === 'trait'
-      );
-
-      if (!existingTrait) {
-        const traitItemData = {
-          name: traitName,
-          type: 'trait',
-        };
-
-        actor.createEmbeddedDocuments('Item', [traitItemData])
-          .then(() => actor.update({'system.traits': ''}))
-          .catch((err) => {
-            console.error(`Error creating trait item for actor ${actor.name}:`, err);
-          });
-      }
-    }
-
-    this._onShieldTrackUpdate();
-    this._onPowerTrackUpdate();
-    this._updateWeaponValues();
-    this._updateBreachValues();
-
-    document.querySelectorAll('.item-name').forEach((input) => {
-      input.addEventListener('change', this._onItemNameChange.bind(this));
-    });
-
-    document.querySelectorAll('.item-quantity').forEach((input) => {
-      input.addEventListener('change', this._onItemQuantityChange.bind(this));
-    });
-
-    const els = Array.from(document.querySelectorAll('.item-name[data-item-id]'));
-    for (const el of els) {
-      const item = this.actor.items.get(el.dataset.itemId);
-      const raw = (item?.system?.description ?? '').trim();
-      if (!raw) continue;
-
-      const enriched = await foundry.applications.ux.TextEditor.enrichHTML(raw, {
-        async: true,
-        documents: true,
-        rolls: true,
-        secrets: false
-      });
-
-      el.setAttribute('data-tooltip', enriched);
-      el.setAttribute('data-tooltip-direction', 'UP');
-    }
-
-    if (!Array.isArray(this._dragDrop) || !this._dragDrop.length) {
-      this._dragDrop = this._createDragDropHandlers();
-    }
-    this._dragDrop.forEach((d) => d.bind(this.element));
-
-    this.element.querySelectorAll('li[data-item-id]')?.forEach((li) => {
-      li.setAttribute('draggable', 'true');
-    });
-  }
-
-  _canDragStart(selector) {
-    return this.isEditable;
-  }
-  _canDragDrop(selector) {
-    return this.isEditable;
-  }
-
-  _onDragStart(event) {
-    const docRow = event.currentTarget.closest('li[data-item-id]');
-    if (!docRow) return;
-    if ('link' in event.target.dataset) return;
-
-    const item = this.actor?.items?.get?.(docRow.dataset.itemId) ?? this._getEmbeddedDocument?.(docRow);
-    if (!item) return;
-
-    const dragData = item.toDragData?.() ?? {type: 'Item', uuid: item.uuid};
-    event.dataTransfer.effectAllowed = 'copyMove';
-    event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
-  }
-
-  _onDragOver(event) {
-    event.preventDefault();
-    const li = event.target.closest('li[data-item-id]');
-    if (!li) return;
-    const r = li.getBoundingClientRect();
-    li.dataset.dropPosition = (event.clientY - r.top) < r.height / 2 ? 'before' : 'after';
-  }
-
-  async _onDrop(event) {
-    const data = foundry.applications.ux.TextEditor.getDragEventData(event);
-    const allowed = Hooks.call('dropActorSheetData', this.actor, this, data);
-    if (allowed === false) return;
-
-    if (data.type === 'Item') return this._onDropItem(event, data);
-  }
-
-  async _onDropItem(event, data) {
-    if (!this.actor?.isOwner) return false;
-
-    const item = await Item.implementation.fromDropData(data);
-    if (!item) return false;
-
-    const allowedSubtypes = new Set([
-      'item',
-      'value',
-      'starshipweapon',
-      'talent',
-      'injury',
-      'trait'
-    ]);
-
-    if (!allowedSubtypes.has(item.type)) {
-      ui.notifications.warn(
-        `${this.actor.name} ` +
-        game.i18n.localize('sta.notifications.actoritem') +
-        ` ${item.type}`
-      );
-      return false;
-    }
-
-    if (item.parent?.uuid === this.actor.uuid) {
-      return this._onSortItem(event, item);
-    }
-
-    const move = event.altKey === true;
-    const created = await this._onDropItemCreate(item);
-    if (move && item.parent?.isOwner) await item.delete();
-    return created;
-  }
-
-
-  async _onDropItemCreate(itemOrData) {
-    const arr = Array.isArray(itemOrData) ? itemOrData : [itemOrData];
-    const payload = arr.map((d) => {
-      const obj = d instanceof Item ? d.toObject() : d;
-      delete obj._id;
-      return obj;
-    });
-    return this.actor.createEmbeddedDocuments('Item', payload);
-  }
-
-  async _onSortItem(event, item) {
-    const container =
-      event.target?.closest?.('ul.items') ||
-      event.currentTarget?.closest?.('ul.items') ||
-      this.element;
-
-    const nodeList = container.querySelectorAll('li[data-item-id]');
-    const siblings = Array.from(nodeList)
-      .map((el) => this.actor.items.get(el.dataset.itemId))
-      .filter(Boolean);
-
-    if (!siblings.length) return false;
-
-    const li = event.target.closest('li[data-item-id]');
-    let target = null;
-    let before = false;
-
-    if (li) {
-      target = this.actor.items.get(li.dataset.itemId) || null;
-      before = (li.dataset.dropPosition === 'before');
-      if (target?.id === item.id) return false;
-    } else {
-      target = siblings[siblings.length - 1] || null;
-      before = false;
-    }
-
-    const sortUpdates = foundry.utils.performIntegerSort(item, {
-      target,
-      siblings,
-      sortKey: 'sort',
-      sortBefore: before
-    });
-
-    const updates = sortUpdates.map((u) => ({
-      _id: u.target.id ?? u.target._id,
-      sort: u.update.sort
-    })).filter((u) => u._id != null);
-
-    if (!updates.length) return false;
-
-    return this.actor.updateEmbeddedDocuments('Item', updates);
-  }
-
-  get dragDrop() {
-    return this._dragDrop || [];
-  }
-
-  _createDragDropHandlers() {
-    const cfgs = Array.isArray(this.options?.dragDrop) && this.options.dragDrop.length ?
-      this.options.dragDrop :
-      [{
-        dragSelector: 'li[data-item-id]',
-        dropSelector: '.window-content, .sheet-body, .tab, ul.items, .drop-zone'
-      }];
-
-    return cfgs.map((d) => new foundry.applications.ux.DragDrop({
-      ...d,
-      permissions: {
-        dragstart: this._canDragStart.bind(this),
-        drop: this._canDragDrop.bind(this),
-      },
-      callbacks: {
-        dragstart: this._onDragStart.bind(this),
-        dragover: this._onDragOver.bind(this),
-        drop: this._onDrop.bind(this),
-      }
-    }));
   }
 }
