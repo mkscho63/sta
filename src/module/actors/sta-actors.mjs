@@ -917,6 +917,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
     this.submit();
   }
+  
   async _onShieldTrackUpdate(event) {
     const localizedValues = {
       advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
