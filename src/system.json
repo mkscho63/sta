@@ -388,8 +388,6 @@
 			]
 		}
 	],
-	"primaryTokenAttribute": "stress",
-	"secondaryTokenAttribute": "determination",
 	"url": "https://github.com/mkscho63/sta",
 	"manifest": "https://raw.githubusercontent.com/mkscho63/sta/master/src/system.json",
 	"download": "https://raw.githubusercontent.com/mkscho63/sta/v2.2.0/package/sta-v2.2.0.zip"
