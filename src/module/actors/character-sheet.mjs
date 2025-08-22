@@ -150,6 +150,26 @@ export class STACharacterSheet extends STAActors {
     }
   }
 
+  async _onCheatSheet(event) {
+    event?.preventDefault?.();
+    const tmpl = 'systems/sta/templates/apps/cheat-sheet1e.hbs';
+    const content = await foundry.applications.handlebars.renderTemplate(tmpl);
+    new foundry.applications.api.DialogV2({
+      window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
+      content,
+      classes: ['dialogue'],
+      position: {width: 500, height: 'auto'},
+      buttons: [
+        {
+          action: 'close',
+          label: game.i18n.localize('sta.apps.close') || 'Close',
+          default: true,
+          callback: () => {}
+        }
+      ]
+    }).render(true);
+  }
+
   _onStressTrackUpdate(event) {
     const localizedValues = {
       resolute: game.i18n.localize('sta.actor.character.talents.resolute'),

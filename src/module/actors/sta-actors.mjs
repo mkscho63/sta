@@ -1104,7 +1104,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     this.element.querySelectorAll('.field.numeric-entry.breaches').forEach((input) => {
       const breachValue = parseInt(input.value, 10) || 0;
       totalBreaches += breachValue;
-      const isSystemDestroyed = breachValue >= Math.ceil(shipScaleValue / 2);
+      const isSystemDestroyed = breachValue > (shipScaleValue / 2);
       input.classList.remove('highlight-damaged', 'highlight-destroyed');
       if (breachValue > 0 && !isSystemDestroyed) {
         input.classList.add('highlight-damaged');
