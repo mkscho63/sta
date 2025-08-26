@@ -67,17 +67,6 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     window: {
       resizable: true,
     },
-    dragDrop: [{
-      dragSelector: 'li[data-item-id]',
-      dropSelector: [
-        '.window-content',
-        '.sheet-body',
-        '.sheet',
-        '.tab',
-        'ul.items',
-        '.drop-zone'
-      ].join(', ')
-    }]
   };
 
   _configureRenderOptions(options) {
@@ -206,7 +195,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
     this._dragDrop.forEach((d) => d.bind(this.element));
 
-    this.element.querySelectorAll('li[data-item-id]')?.forEach((li) => {
+    this.element.querySelectorAll('a.edit[data-action="onItemEdit"], a.delete[data-action="onItemDelete"], img.chat[data-action="onItemtoChat"]')?.forEach((li) => {
       li.setAttribute('draggable', 'true');
     });
   }
@@ -1257,8 +1246,15 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     const cfgs = Array.isArray(this.options?.dragDrop) && this.options.dragDrop.length ?
       this.options.dragDrop :
       [{
-        dragSelector: 'li[data-item-id]',
-        dropSelector: '.window-content, .sheet-body, .tab, ul.items, .drop-zone'
+        dragSelector: 'a.edit[data-action="onItemEdit"], a.delete[data-action="onItemDelete"], img.chat[data-action="onItemtoChat"]',
+      dropSelector: [
+        '.window-content',
+        '.sheet-body',
+        '.sheet',
+        '.tab',
+        'ul.items',
+        '.drop-zone'
+      ].join(', ')
       }];
 
     return cfgs.map((d) => new foundry.applications.ux.DragDrop({
