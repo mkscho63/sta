@@ -229,15 +229,15 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // Limit to view only for observers
   async _setObserver() {
     const selectors = [
-      ".extended-tasks",
-      ".scenetraits-sheet",
-      ".starship-sheet",
-      ".top-right-column",
-      ".bottom-left-column",
-      ".sheet-body",
-    ].join(", ");
+      '.extended-tasks',
+      '.scenetraits-sheet',
+      '.starship-sheet',
+      '.top-right-column',
+      '.bottom-left-column',
+      '.sheet-body',
+    ].join(', ');
 
-    for (const el of this.element.querySelectorAll(selectors)) el.setAttribute("inert", "");
+    for (const el of this.element.querySelectorAll(selectors)) el.setAttribute('inert', '');
   }
 
   // ------------------------------------------------------------
@@ -1263,14 +1263,14 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       this.options.dragDrop :
       [{
         dragSelector: 'a.edit[data-action="onItemEdit"], a.delete[data-action="onItemDelete"], img.chat[data-action="onItemtoChat"]',
-      dropSelector: [
-        '.window-content',
-        '.sheet-body',
-        '.sheet',
-        '.tab',
-        'ul.items',
-        '.drop-zone'
-      ].join(', ')
+        dropSelector: [
+          '.window-content',
+          '.sheet-body',
+          '.sheet',
+          '.tab',
+          'ul.items',
+          '.drop-zone'
+        ].join(', ')
       }];
 
     return cfgs.map((d) => new foundry.applications.ux.DragDrop({
