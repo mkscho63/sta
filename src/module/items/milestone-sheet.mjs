@@ -1,7 +1,8 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
+import {STAItems} from './sta-items.mjs';
 
-export class STAMilestoneSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
+export class STAMilestoneSheet extends STAItems {
   static PARTS = {
     itemsheet: {
       template: 'systems/sta/templates/items/milestone-sheet.hbs'
@@ -9,23 +10,11 @@ export class STAMilestoneSheet extends api.HandlebarsApplicationMixin(sheets.Ite
   };
 
   static DEFAULT_OPTIONS = {
-    actions: {},
-    form: {
-      submitOnChange: true,
-      closeOnSubmit: false,
-    },
     position: {
       height: 'auto',
       width: 700,
     },
-    window: {
-      resizable: true,
-    },
   };
-
-  get title() {
-    return `${this.item.name} - Milestone`;
-  }
 
   async _prepareContext(options) {
     const actor = this.item.actor ?? null;

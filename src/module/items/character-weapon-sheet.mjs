@@ -1,7 +1,8 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
+import {STAItems} from './sta-items.mjs';
 
-export class STACharacterWeaponSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
+export class STACharacterWeaponSheet extends STAItems {
   static PARTS = {
     itemsheet: {
       template: 'systems/sta/templates/items/character-weapon-sheet.hbs'
@@ -9,32 +10,9 @@ export class STACharacterWeaponSheet extends api.HandlebarsApplicationMixin(shee
   };
 
   static DEFAULT_OPTIONS = {
-    actions: {},
-    form: {
-      submitOnChange: true,
-      closeOnSubmit: false,
-    },
     position: {
       height: 'auto',
       width: 565,
     },
-    window: {
-      resizable: true,
-    },
   };
-  get title() {
-    return `${this.item.name} - Character Weapon (1e)`;
-  }
-
-  async _prepareContext(options) {
-    const context = {
-      item: this.item,
-      enrichedNotes: await foundry.applications.ux.TextEditor.enrichHTML(this.item.system.description),
-    };
-    return context;
-  }
-
-  async _updateObject(event, formData) {
-    await this.item.update(formData);
-  }
 }
