@@ -154,7 +154,9 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   async _onRender(context, options) {
     if (this.document.limited) return;
 
-    this._convertLegacy();
+    if (!this.document.isOwner) this._setObserver();
+
+    if (this.document.isOwner) this._convertLegacy();
     if (this.tracks.stress) this._onStressTrackUpdate();
     if (this.tracks.determination) this._onDeterminationTrackUpdate();
     if (this.tracks.reputation) this._onReputationTrackUpdate();
@@ -222,6 +224,20 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
           });
       }
     }
+  }
+
+  // Limit to view only for observers
+  async _setObserver() {
+    const selectors = [
+      ".extended-tasks",
+      ".scenetraits-sheet",
+      ".starship-sheet",
+      ".top-right-column",
+      ".bottom-left-column",
+      ".sheet-body",
+    ].join(", ");
+
+    for (const el of this.element.querySelectorAll(selectors)) el.setAttribute("inert", "");
   }
 
   // ------------------------------------------------------------
