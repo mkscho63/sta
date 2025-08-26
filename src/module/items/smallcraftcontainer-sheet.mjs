@@ -1,7 +1,8 @@
 const api = foundry.applications.api;
 const sheets = foundry.applications.sheets;
+import {STAItems} from './sta-items.mjs';
 
-export class STASmallCraftContainerSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
+export class STASmallCraftContainerSheet extends STAItems {
   static PARTS = {
     itemsheet: {
       template: 'systems/sta/templates/items/smallcraftcontainer-sheet.hbs'
@@ -9,23 +10,11 @@ export class STASmallCraftContainerSheet extends api.HandlebarsApplicationMixin(
   };
 
   static DEFAULT_OPTIONS = {
-    actions: {},
-    form: {
-      submitOnChange: true,
-      closeOnSubmit: false,
-    },
     position: {
       height: 'auto',
       width: 680,
     },
-    window: {
-      resizable: true,
-    },
   };
-
-  get title() {
-    return `${this.item.name} - Smallcraft Container`;
-  }
 
   async _prepareContext(options) {
     const availableSmallcrafts = game.actors.filter((target) => target.type === 'smallcraft' && target.isOwner);
@@ -38,9 +27,5 @@ export class STASmallCraftContainerSheet extends api.HandlebarsApplicationMixin(
       availableSmallcrafts: availableSmallcrafts,
     };
     return context;
-  }
-
-  async _updateObject(event, formData) {
-    await this.item.update(formData);
   }
 }
