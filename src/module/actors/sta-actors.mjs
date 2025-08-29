@@ -334,6 +334,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // Rollable tests start here
   // ------------------------------------------------------------
 
+  // Attribute test for 2e character - overridden in other sheets
   async _onAttributeTest(event) {
     event.preventDefault();
     const i18nKey = 'sta.roll.complicationroller';
@@ -448,6 +449,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
   }
 
+  // Challenge test for all sheets
   async _onChallengeTest(event) {
     event.preventDefault();
     const defaultValue = 2;
@@ -484,6 +486,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     staRoll.performChallengeRoll(dicePool, weaponName, speaker);
   }
 
+  // Reputation roll for 1e and 2e characters
   async _onReputationTest(event) {
     event.preventDefault();
     const currentReprimand = parseInt(this.element.querySelector('#currentreprimand')?.value || 0, 10);
@@ -559,6 +562,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Cheat sheet for 2e characters overridden in 1e sheet
   async _onCheatSheet(event) {
     event?.preventDefault?.();
     const tmpl = 'systems/sta/templates/apps/cheat-sheet.hbs';
@@ -749,6 +753,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // Track bars from here
   // ------------------------------------------------------------
 
+  // Stress track for 2e characters, overridden in every other sheet
   _onStressTrackUpdate(event) {
     const localizedValues = {
       tough: game.i18n.localize('sta.actor.character.talents.tough'),
@@ -804,6 +809,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Determination track for characters
   _onDeterminationTrackUpdate(event) {
     if (event) {
       const clickedDetermination = event.target;
@@ -835,6 +841,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Reputation track for 1e and 2e characters
   _onReputationTrackUpdate(event) {
     if (event) {
       const clickedReputation = event.target;
@@ -866,6 +873,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Work track for extended tasks
   _onWorkTrackUpdate(event) {
     if (event) {
       const clickedBox = event.target;
@@ -922,7 +930,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
     this.submit();
   }
-  
+
+  // Shields track for 2e starships & small craft, overridden in 1e ship sheets
   async _onShieldTrackUpdate(event) {
     const localizedValues = {
       advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
@@ -975,6 +984,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Crew track for 2e starships, overridden in 1e ship sheets
   async _onCrewTrackUpdate(event) {
     const localizedValues = {
       extensiveautomation: game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
@@ -1030,6 +1040,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Power track for 1e starships and small craft
   async _onPowerTrackUpdate(event) {
     const localizedValues = {
       secondaryreactors: game.i18n.localize('sta.actor.starship.talents.secondaryreactors'),
@@ -1078,6 +1089,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // Weapons and breaches here
   // ------------------------------------------------------------
 
+  // Weapon damage update for 2e starships and small craft, overridden in 1e ship sheets
   _updateWeaponValues() {
     this.element.querySelectorAll('[id^=starship-weapon-]').forEach((element) => {
       const weaponDamage = parseInt(element.dataset.itemDamage, 10) || 0;
@@ -1103,6 +1115,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Breach update for 2e starships and small craft, overridden in 1e ship sheets
   _updateBreachValues() {
     const scaleInput = this.element.querySelector('#scale');
     const shipScaleValue = scaleInput ? parseInt(scaleInput.value, 10) || 0 : 0;

@@ -1,27 +1,1778 @@
+// ######################################################
+// #                                                    #
+// #                 General Styles                     #
+// #                                                    #
+// ######################################################
+
 @font-face {
+  font-display: swap;
   font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: url(https://fonts.gstatic.com/s/robotocondensed/v27/ieVo2ZhZI2eCN5jzbjEETS9weq8-_d6T_POl0fRJeyWyovBJ.ttf) format('truetype');
 }
 
 body {
-    font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed';
 }
 
-/* Import styles. */
-@import 'sta/colors';
-@import 'sta/trackbars';
-@import 'sta/buttons';
-@import 'sta/actoritems';
-@import 'sta/character';
-@import 'sta/starship';
-@import 'sta/extendedtask';
-@import 'sta/items';
-@import 'sta/scenetraits';
-@import 'sta/dialogue';
-@import 'sta/chatcard';
-@import 'sta/tracker';
-@import 'sta/combat';
+// ######################################################
+// #                                                    #
+// #                    Colours                         #
+// #                                                    #
+// ######################################################
 
+$acclaimbuttonColor: #F2CC0D;
+$background: #FAF9F6;
+$borderblue: #89CFF0;
+$borderbluedark: #003399;
+$challengebuttonColor: red;
+$chatcardvars: #808080;
+$damagedsystem: #ed6c15;
+$darkestblue: #00273f;
+$deletebuttonHover: red;
+$destroyedsystem: #ff0000;
+$disabledinput: grey;
+$disabledsystem: #808080;
+$editbuttonHover: orange;
+$itembackground: transparent;
+$palestblue: #E2FFFF;
+$palestbluedark: #6699ff;
+$rollcriticalfail: red;
+$rollcriticalpass: green;
+$rolltext: #000;
+$taskbuttonColor: #009dff;
+$textgrey: #191813;
+$tooltipbackground: rgba(0, 0, 0, 0.8);
+$tooltiptext: #fff;
+$trackColors: transparent;
+$trackColorsselected: #F2CC0D;
+
+// ######################################################
+// #                                                    #
+// #                   Trackbars                        #
+//                                                    #
+// ######################################################
+
+.track {
+  display: flex;
+  flex-direction: row;
+
+  .bar:not(.extendedtask) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.track .bar .box {
+  border: 1px solid;
+  border-collapse: collapse;
+  border-radius: 14px;
+  display: block;
+  font-size: 8pt;
+  font-weight: bold;
+  height: 14px;
+  padding: 0px;
+  text-align: center;
+
+  &:hover {
+    box-shadow: 0 0 8px $taskbuttonColor;
+    cursor: pointer;
+  }
+
+  &.stress {
+    background-color: $trackColors;
+
+    &.selected {
+      background-color: $trackColorsselected;
+      color: $textgrey;
+    }
+  }
+
+  &.determination {
+    background-color: $trackColors;
+
+    &.selected {
+      background-color: $trackColorsselected;
+      color: $textgrey;
+    }
+  }
+
+  &.rep {
+    background-color: $trackColors;
+
+    &.selected {
+      background-color: $trackColorsselected;
+      color: $textgrey;
+    }
+  }
+
+  &.shields {
+    background-color: $trackColors;
+
+    &.selected {
+      background-color: $trackColorsselected;
+      color: $textgrey;
+    }
+  }
+
+  &.power {
+    background-color: $trackColors;
+
+    &.selected {
+      background-color: $trackColorsselected;
+      color: $textgrey;
+    }
+  }
+
+  &.crew {
+    background-color: $trackColors;
+
+    &.selected {
+      background-color: $trackColorsselected;
+      color: $textgrey;
+    }
+  }
+
+  &.extendedtask {
+    background-color: $trackColors;
+    font-size: 16pt;
+    height: 28px;
+
+    &.selected {
+      background-color: $trackColorsselected;
+      color: $textgrey;
+    }
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                    Buttons                         #
+// #                                                    #
+// ######################################################
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.check-button {
+  font-weight: unset;
+  background-color: $itembackground;
+  font-size: 14px;
+  max-width: 110px;
+  text-align: center;
+}
+
+.btn {
+  border: solid $taskbuttonColor;
+  border-radius: 20px;
+  border-width: 0 20px;
+  font-weight: bold;
+  margin: 8px 16px 4px;
+  max-width: 108px;
+  width: unset;
+
+  &:hover {
+    background-color: $taskbuttonColor;
+    box-shadow: none;
+    cursor: pointer;
+  }
+}
+
+.btn2 {
+  border: solid $challengebuttonColor;
+  border-radius: 20px;
+  border-width: 0 20px;
+  font-weight: bold;
+  margin: 8px 16px 4px;
+  max-width: 108px;
+  width: unset;
+
+  &:hover {
+    background-color: $challengebuttonColor;
+    box-shadow: none;
+    cursor: pointer;
+  }
+}
+
+.btn3 {
+  border: solid $acclaimbuttonColor;
+  border-radius: 20px;
+  border-width: 0 20px;
+  font-weight: bold;
+  margin: 8px 16px 4px;
+  max-width: 108px;
+  width: unset;
+
+  &:hover {
+    background-color: $acclaimbuttonColor;
+    box-shadow: none;
+    cursor: pointer;
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #               Items on Actor Sheets                #
+// #                                                    #
+// ######################################################
+
+.theme-light {
+  .section {
+    .header {
+      background-color: $palestblue;
+    }
+  }
+}
+
+.section {
+  .header {
+    background-color: $palestbluedark;
+  }
+  .row {
+    .image {
+      flex: 0 0 26px;
+      margin-right: 5px;
+
+      img {
+        height: 24px;
+        object-fit: cover;
+        object-position: 50% 0;
+        width: 24px;
+      }
+
+      .chat:hover {
+        content: url("/systems/sta/assets/icons/chat-bubble.svg");
+        box-shadow: none;
+        cursor: pointer;
+      }
+
+      .click-to-nav {
+        cursor: pointer;
+      }
+    }
+
+    .control {
+          align-items: center;
+          display: flex;
+          gap: 8px;
+      padding-right: 2px;
+      width: 40px;
+    }
+
+    .delete {
+      &:hover {
+        color: $deletebuttonHover;
+        text-shadow: none;
+      }
+    }
+
+    .add,
+    .edit {
+      &:hover {
+        color: $editbuttonHover;
+        text-shadow: none;
+      }
+    }
+
+    .one-column-with-roll {
+      width: calc(100% - 58px);
+    }
+
+    .one-column-no-roll {
+      width: calc(100% - 32px);
+    }
+
+    .two-column-with-roll-primary {
+      width: calc((100% - 58px) * 0.85);
+    }
+
+    .two-column-with-roll-secondary {
+      width: calc((100% - 58px) * 0.15);
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      text-align: center;
+    }
+
+    .item-quantity {
+      width: calc((100% - 58px) * 0.15);
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      outline: none;
+      text-align: center;
+    }
+
+    .column-x2 {
+      width: 90%;
+      padding-left: 10%;
+    }
+
+    .small input {
+      height: 17px;
+    }
+
+    .small.disabled input {
+      box-shadow: none;
+      color: $disabledinput;
+      cursor: default;
+    }
+  }
+}
+
+.value-used {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+
+.row.equipable {
+  .control {
+    width: 506px;
+  }
+}
+
+.item-name {
+  background-color: $itembackground;
+  border: none;
+  outline: none;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+// ######################################################
+// #                                                    #
+// #                    Characters                      #
+// #                                                    #
+// ######################################################
+
+.window-content:has(.character-sheet) {
+  padding: 0;
+}
+
+.theme-light {
+  .character-sheet {
+      scrollbar-color: $palestblue transparent;
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+    .bottom-right-column {
+      border-left: 16px solid $borderblue;
+    }
+    nav.sheet-tabs.tabs {
+      background-color: $borderblue;
+    }
+    nav.sheet-tabs.tabs a.item {
+      border-right: 3px solid $background;
+    }
+    nav.sheet-tabs.tabs a.item:first-child {
+      border-left: 3px solid $background;
+    }
+    nav.sheet-tabs.tabs a.item.active {
+      background-color: $palestblue;
+      text-shadow: none;
+    }
+    nav.sheet-tabs.tabs a.item:hover {
+      text-shadow: 0 0 10px $palestblue, 0 0 10px $palestblue;
+    }
+  }
+}
+
+.character-sheet {
+  overflow: scroll;
+  padding-left: 7px;
+  scrollbar-color: $darkestblue transparent;
+
+  .text-entry {
+    border-color: $borderbluedark;
+  }
+
+  .title {
+    margin-top: 5px;
+    background-color: $borderbluedark;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+
+  .tracktitle {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  .split-section {
+    display: flex;
+    width: 100%;
+  }
+
+  .top-left-column {
+    flex: 0 0 205px;
+    align-self: flex-start;
+    padding-right: 5px;
+  }
+
+  .top-right-column {
+    flex: 0 0 625px;
+    align-self: flex-start;
+    padding-left: 5px;
+  }
+
+  .bottom-left-column {
+    flex: 0 0 150px;
+    align-self: flex-start;
+    padding-right: 4px;
+  }
+
+  .bottom-right-column {
+    flex: 0 0 680px;
+    align-self: flex-start;
+    border-left: 16px solid $borderbluedark;
+    border-top-left-radius: 16px;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pronouns {
+    width: 15%;
+  }
+
+  .species {
+    width: 25%;
+  }
+
+  .rank {
+    width: 25%;
+  }
+
+  .assignment {
+    width: 35%;
+  }
+
+  .careerpath {
+    width: 50%;
+  }
+
+  .characterrole {
+    width: 25%;
+  }
+
+  .experience {
+    width: 25%;
+  }
+
+  .environment {
+    width: 50%;
+  }
+
+  .upbringing {
+    width: 50%;
+  }
+
+  .pastimes {
+    width: 40%;
+  }
+
+  .careerevents {
+    width: 60%;
+  }
+
+  .traits {
+    width: 100%;
+  }
+
+  .house {
+    width: 25%;
+  }
+
+  .caste {
+    width: 25%;
+  }
+
+  .status {
+    width: 25%;
+  }
+
+  .legacy {
+    width: 25%;
+  }
+
+  .temperament {
+    width: 25%;
+  }
+
+  .househistory {
+    width: 75%;
+  }
+
+  .acclaimfield {
+    width: 20%;
+    .text-entry {
+      text-align: right;
+    }
+  }
+
+  .reprimand {
+    width: 20%;
+    .text-entry {
+      text-align: right;
+    }
+  }
+
+  .influence {
+    width: 20%;
+    .text-entry {
+      text-align: right;
+    }
+  }
+
+  .might {
+    width: 20%;
+    .text-entry {
+      text-align: right;
+    }
+  }
+
+  .wealth {
+    width: 20%;
+    .text-entry {
+      text-align: right;
+    }
+  }
+
+  .items-column-left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-right: 5px;
+  }
+
+  .items-column-right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-left: 5px;
+  }
+
+  .two-col {
+    display: block;
+    column-count: 2;
+    column-gap: 12px;
+  }
+
+  .two-col .title {
+    column-span: all;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .two-col .row {
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+    align-items: center;
+    display: flex;
+    gap: 6px;
+  }
+
+  .row-right {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    .numeric-entry {
+        border-color: $borderbluedark;
+        height: 28px;
+        text-align: right;
+      width: 32px;
+    }
+  }
+
+  .attribute-block {
+    margin-bottom: 10px;
+  }
+
+  .discipline-block {
+    margin-bottom: 10px;
+  }
+
+  .npc-block {
+    margin-top: 5px;
+
+    .row {
+      display: flex;
+      gap: 60px;
+      justify-content: left;
+    }
+
+    .column {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  .supporting-char-grid .row {
+    align-items: center;
+    display: flex;
+    margin-bottom: 6px;
+  }
+
+  .supporting-char-grid .label {
+    flex: 0 0 200px;
+  }
+
+  .supporting-char-grid .inputs {
+    flex: 1;
+  }
+
+  .rollrepnotdis {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .rollrepnotdis .checkbox {
+    margin-left: 10px;
+  }
+
+  .stressmod {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+
+  .stressmod .text-entry {
+    width: 32px;
+    margin-left: 10px;
+    text-align: right;
+  }
+
+  /* Image Styling */
+  .image-field {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* Name Field Styling */
+  .name-field .text-entry {
+    font-size: 2rem;
+    height: 3rem;
+  }
+
+  /* Note Field Styling */
+  .tab .note {
+    height: 400px;
+    text-align: left;
+
+    .editor {
+      height: 100%;
+    }
+  }
+
+  .tab .note2e {
+    height: 580px;
+    text-align: left;
+
+    .editor {
+      height: 100%;
+    }
+  }
+
+  .tab .notenpc {
+    height: 350px;
+    text-align: left;
+
+    .editor {
+      height: 100%;
+    }
+  }
+
+  nav.sheet-tabs.tabs {
+    background-color: $borderbluedark;
+    border-bottom: none;
+    border-top: none;
+    display: flex;
+    gap: 0px;
+    justify-content: flex-start;
+    padding-left: 70px;
+  }
+
+  nav.sheet-tabs.tabs a.item {
+    border-right: 3px solid $textgrey;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+  }
+  nav.sheet-tabs.tabs a.item:first-child {
+    border-left: 3px solid $textgrey;
+  }
+
+  nav.sheet-tabs.tabs a.item.active {
+    text-shadow: none;
+    background-color: $palestbluedark;
+  }
+
+  nav.sheet-tabs.tabs a.item:hover {
+    text-shadow: 0 0 10px $borderblue, 0 0 10px $borderblue;
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                    Starships                       #
+// #                                                    #
+// ######################################################
+
+.window-content:has(.starship-sheet) {
+  padding: 0;
+}
+
+.theme-light {
+  .starship-sheet {
+      scrollbar-color: $palestblue transparent;
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+    .systems-block .stat.header.row {
+      background-color: $palestblue;
+    }
+  }
+}
+
+.starship-sheet {
+  overflow: scroll;
+  padding-left: 7px;
+  scrollbar-color: $darkestblue transparent;
+
+  .text-entry {
+    border-color: $borderbluedark;
+  }
+
+  .title {
+    margin-top: 5px;
+    background-color: $borderbluedark;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+
+  .tracktitle {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  .split-section {
+    display: flex;
+    width: 100%;
+  }
+
+  .left-column {
+    flex: 0 0 205px;
+    align-self: flex-start;
+    padding-right: 5px;
+  }
+
+  .right-column {
+    flex: 0 0 625px;
+    align-self: flex-start;
+    padding-left: 5px;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .designation {
+    width: 30%;
+  }
+
+  .spaceframe {
+    width: 40%;
+  }
+
+  .servicedate {
+    width: 30%;
+  }
+
+  .missionprofile {
+    width: 65%;
+  }
+
+  .refit {
+    width: 35%;
+  }
+
+  .traits {
+    width: 100%;
+  }
+
+  .values {
+    margin-top: 20px;
+  }
+
+  .items-column-left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-right: 5px;
+  }
+
+  .shieldmod {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 60px;
+  }
+
+  .shieldmod .text-entry {
+    width: 32px;
+    margin-left: 10px;
+    text-align: right;
+  }
+
+  .crwmod {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .crwmod .text-entry {
+    width: 32px;
+    margin-left: 10px;
+    text-align: right;
+  }
+
+  .items-column-right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-left: 5px;
+  }
+
+  /* Image Styling */
+  .image-field {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .profile-img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* Name Field Styling */
+  .name-field .text-entry {
+    font-size: 2rem;
+    height: 3rem;
+  }
+
+  /* Main Row Field Styling */
+  .big-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+
+    .big-row-column {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      gap: 10px;
+      justify-content: flex-end;
+      min-width: 100px;
+    }
+  }
+
+  /* Note Field Styling */
+  .note {
+    height: 250px;
+    text-align: left;
+
+    .editor {
+      height: 100%;
+    }
+  }
+
+  .highlight-damaged {
+      background-color: $damagedsystem !important;
+  }
+
+  .highlight-disabled {
+    background-color: $disabledsystem !important;
+  }
+
+  .highlight-destroyed {
+    background-color: $destroyedsystem !important;
+  }
+
+  /* System stats styling here */
+  .systems-block .stat.row {
+    display: flex;
+    align-items: center;
+  }
+
+  .systems-block .text.list-entry {
+    flex: 1;
+    text-align: right;
+  }
+
+  .numeric-entry {
+    width: 32px;
+    border-color: $borderbluedark;
+    height: 28px;
+    text-align: right;
+  }
+
+  .systems-block .field.breaches {
+    width: 32px;
+    border-color: $borderbluedark;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .systems-block .stat.header.row {
+    display: flex;
+    align-items: center;
+    background-color: $palestbluedark;
+    justify-content: space-between;
+  }
+
+  .systems-block .stat.header.row .text.secondary-title {
+    flex: 1;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .systems-block .stat.header.row .field.secondary-title {
+    width: 50px;
+    text-align: center;
+  }
+
+  .systems-block {
+    margin-bottom: 10px;
+  }
+
+  /* Departments stats styling here */
+  .departments-block .stat.row {
+    display: flex;
+    align-items: center;
+  }
+
+  .departments-block .text.list-entry {
+    flex: 1;
+    text-align: right;
+  }
+
+  .departments-block {
+    margin-bottom: 20px;
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                  Extended Tasks                    #
+// #                                                    #
+// ######################################################
+
+.window-content:has(.extended-tasks) {
+  padding: 0;
+}
+
+.theme-light {
+  .extended-tasks {
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
+}
+
+.extended-tasks {
+  padding: 7px;
+
+  .row {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .title {
+    margin-top: 5px;
+    background-color: $borderbluedark;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+
+  .tracktitle {
+    margin-top: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-entry {
+    border-color: $borderbluedark;
+  }
+
+  .numeric-entry {
+    border-color: $borderbluedark;
+    margin-right: 10px;
+    width: 40px
+  }
+
+  /* Image Styling */
+  .image-field {
+    width: 65px;
+    height: 65px;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+
+  .profile-img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .name-field .text-entry {
+    font-size: 2rem;
+    height: 3rem;
+  }
+
+  /* Note Field Styling */
+  .note {
+    height: 200px;
+    text-align: left;
+
+    .editor {
+      height: 100%;
+    }
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                      Items                         #
+// #                                                    #
+// ######################################################
+
+.window-content:has(.item-sheet) {
+  padding: 0;
+}
+
+.theme-light {
+  .item-sheet {
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
+}
+
+.item-sheet {
+  width: 100%;
+  padding: 7px;
+
+  .row {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+
+    .grid {
+      align-items: center;
+      display: flex;
+      width: 25%;
+    }
+    .columnx4 {
+      width: 25%;
+    }
+  }
+
+  .col-name {
+    padding-right: 5px;
+    width: 60%;
+  }
+
+  .col-radio {
+    width: 10%;
+    text-align: center;
+  }
+
+  .title {
+    margin-top: 5px;
+    background-color: $borderbluedark;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+
+  .tracktitle {
+    margin-top: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .traits {
+    flex-grow: 0;
+    width: 30%;
+  }
+
+  .inline-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .inline-container select,
+  .inline-container input[type="number"] {
+    flex-grow: 0;
+  }
+
+  .text-entry {
+    border-color: $borderbluedark;
+  }
+
+  .numeric-entry {
+    border-color: $borderbluedark;
+    margin-right: 10px;
+    width: 40px
+  }
+
+  /* Image Styling */
+  .image-field {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+
+  .img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* Note Field Styling */
+  .note {
+    height: 200px;
+    text-align: left;
+
+    .editor {
+      height: 100%;
+    }
+  }
+}
+.item-sheet.milestones {
+  overflow: auto;
+}
+
+// ######################################################
+// #                                                    #
+// #                    Scene Traits                    #
+// #                                                    #
+// ######################################################
+
+.window-content:has(.scenetraits-sheet) {
+  padding: 0;
+}
+
+.theme-light {
+  .scenetraits-sheet {
+    background: $background;
+    .title {
+      background-color: $borderblue;
+    }
+  }
+}
+
+.scenetraits-sheet {
+  width: 100%;
+  padding: 7px;
+
+  .row {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .title {
+    margin-top: 5px;
+    background-color: $borderbluedark;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+
+  /* Image Styling */
+  .image-field {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+
+  .profile-img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                    Dialogs                         #
+// #                                                    #
+// ######################################################
+
+.theme-light {
+  .dialogue {
+    background: $background;
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+  }
+}
+
+.dialogue {
+  width: 100%;
+
+  .row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .title {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 2px;
+  }
+
+  .tracktitle {
+    margin-top: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .tracktitle.cheatsheet {
+    flex: 0 0 140px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .column.value {
+    margin-top: 5px;
+  }
+
+  .text-entry {
+    border-color: $borderbluedark;
+  }
+
+  .numeric-entry {
+    border-color: $borderbluedark;
+    margin-right: 5px;
+    text-align: right;
+    width: 40px;
+  }
+
+  label {
+    margin-top: 5px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .form-select {
+    flex: 0 0 75%;
+  }
+
+  /* Flexbox classes */
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                    Chat Cards                      #
+// #                                                    #
+// ######################################################
+
+.chat-message.message {
+  background: $background;
+}
+
+.dice-pool .flexrow {
+  padding: 4px 5px;
+}
+
+.sta.roll {
+
+  .dice-tooltip {
+    display: block;
+  }
+
+  header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+
+    img {
+      height: 45px;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: start;
+      white-space: nowrap;
+    }
+
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .type {
+      font-size: 0.9em;
+    }
+  }
+
+  .content {
+    &.dice-roll {
+      .dice-formula {
+        box-shadow: none;
+        cursor: pointer;
+        line-height: normal;
+        word-break: normal;
+      }
+    }
+
+    .tooltip, .dice-tooltip {
+      order: -1;
+    }
+
+    .vars {
+      flex: 0 0 100%;
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid $textgrey;
+      border-radius: 3px;
+      box-shadow: none;
+      line-height: normal;
+      margin-bottom: 5px;
+      position: relative;
+      text-align: center;
+      word-break: break-all;
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+      text-align: center;
+
+      .tag {
+        border: 0.5px solid $chatcardvars;
+        border-radius: 3px;
+        flex-grow: 1;
+        font-size: 12px;
+        width: calc(100% / 3);
+      }
+    }
+  }
+
+  .dice-rolls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 5px 0;
+    overflow: hidden;
+    padding: 0;
+
+    .roll {
+      background-image: url(../../../icons/svg/d6-grey.svg);
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      color: $rolltext;
+      float: left;
+      font-size: var(--font-size-16);
+      font-weight: bold;
+      line-height: 24px;
+      margin-right: 1px;
+      min-width: 24px;
+      position: relative;
+      text-align: center;
+
+      &.max {
+        color: $rollcriticalpass;
+        filter: sepia(0.5) hue-rotate(60deg);
+      }
+
+      &.min {
+        color: $rollcriticalfail;
+        filter: sepia(0.5) hue-rotate(-60deg);
+      }
+
+      &.d20 {
+        background-image: url(../../../icons/svg/d20-grey.svg);
+      }
+    }
+  }
+
+  .dice-formula {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .additional-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.collapsible {
+  cursor: pointer;
+  transition: all 250ms ease;
+
+  &.collapsed {
+    .collapsible-content {
+      grid-template-rows: 0fr;
+      visibility: hidden;
+    }
+  }
+
+  .collapsible-content {
+    display: grid;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    transition: all 250ms ease;
+
+    > * {
+      margin: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.message-content {
+
+  .table-draw {
+    img.result-image {
+      background: $background;
+    }
+
+    .result-text {
+      a.entity-link {
+        background: $background;
+      }
+    }
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #            Momentum & Threat Tracker               #
+// #                                                    #
+// ######################################################
+
+.theme-light {
+  .tracker-container {
+    .icon-container {
+      background-color: $borderblue;
+
+      .roll-challenge i,
+      .roll-npc i,
+      .roll-task i {
+        &:hover {
+          color: $borderbluedark;
+        }
+      }
+    }
+    .tracker {
+      .header {
+        background-color: $borderblue;
+        color: $textgrey;
+      }
+    }
+    .tracker-clickable {
+      color: $borderblue;
+
+      i:hover {
+        color: $borderbluedark;
+      }
+    }
+  }
+}
+
+.tracker-container {
+  .combadge {
+    display: inline-block;
+    background-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 1em;
+    transform: translateY(+2px);
+    width: 1em;
+  }
+
+  .icon-container {
+    background-color: $borderbluedark;
+    align-items: center;
+    border-top-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .roll-npc i {
+      margin-top: 15px;
+    }
+
+    .roll-task i {
+      padding: 8px;
+    }
+
+    .roll-challenge i,
+    .roll-npc i,
+    .roll-task i {
+      display: inline-block;
+      color: $background;
+      font-size: 1.5em;
+
+      &:hover {
+        color: $borderblue;
+      }
+    }
+  }
+
+  .tracker-clickable {
+    cursor: pointer;
+    color: $borderbluedark;
+
+    i:hover {
+      color: $borderblue;
+    }
+
+    i.hide {
+      width: 0px;
+      display: none;
+    }
+  }
+
+  &.hide {
+    .icon-container,
+    .tracker {
+      display: none;
+    }
+  }
+
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tracker {
+    position: relative;
+    display: block;
+    padding: 0px;
+    width: 120px;
+
+    .header {
+      background-color: $borderbluedark;
+      color: $background;
+      font-size: 1.25em;
+      text-align: center;
+      text-transform: uppercase;
+      width: 120px;
+    }
+
+    .button-group {
+      display: flex;
+      align-items: center;
+      background-color: $chatcardvars;
+      color: $textgrey;
+      font-size: 1.5em;
+      justify-content: center;
+      width: 120px;
+
+      .button {
+        i:hover {
+          cursor: pointer;
+          color: $borderblue;
+        }
+
+        &.decrease {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        &.increase {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+
+      .input {
+        border: none;
+        text-align: center;
+        width: 40px;
+      }
+
+      .threat-input {
+        color: $challengebuttonColor;
+      }
+
+      .momentum-input {
+        color: $borderblue;
+      }
+    }
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                 Combat Encounters                  #
+// #                                                    #
+// ######################################################
+
+.combat-tracker .combatant[class*="dispo-"] {
+  position: relative;
+}
+.combat-tracker .combatant[class*="dispo-"]::before {
+  background: var(--disposition-color, currentColor);
+  border-radius: 2px;
+  content: "";
+  left: 0; top: 0; bottom: 0;
+  opacity: 0.9;
+  position: absolute;
+  width: 4px;
+}
+
+.combat-tracker .token-turn-completed .sta-combatant-control {
+  color: var(--disposition-color);
+  transition: color 120ms ease;
+}
+
+.combat-tracker .token-turn-completed .sta-combatant-control:hover,
+.combat-tracker .token-turn-completed .sta-combatant-control:focus {
+  opacity: 0.9;
+}
