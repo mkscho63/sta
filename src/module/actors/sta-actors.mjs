@@ -228,16 +228,16 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Limit to view only for observers
   async _setObserver() {
-    const selectors = [
-      '.extended-tasks',
-      '.scenetraits-sheet',
-      '.starship-sheet',
-      '.top-right-column',
-      '.bottom-left-column',
-      '.sheet-body',
-    ].join(', ');
-
-    for (const el of this.element.querySelectorAll(selectors)) el.setAttribute('inert', '');
+    for (const el of this.element.querySelectorAll(
+      '.extended-tasks, .scenetraits-sheet, .starship-sheet, .top-right-column, .bottom-left-column, .sheet-body'
+    )) {
+      el.classList.add('observer');
+      el.querySelectorAll('button, input, select, textarea, a, [tabindex]').forEach((ctrl) => {
+        if (ctrl.tagName === 'TEXTAREA') ctrl.readOnly = true;
+        else if ('disabled' in ctrl) ctrl.disabled = true;
+        ctrl.tabIndex = -1;
+      });
+    }
   }
 
   // ------------------------------------------------------------

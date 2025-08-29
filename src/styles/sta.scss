@@ -16,6 +16,13 @@ body {
   font-family: 'Roboto Condensed';
 }
 
+.observer {
+  pointer-events: none !important;
+  [data-tooltip] {
+    pointer-events: auto !important;
+  }
+}
+
 // ######################################################
 // #                                                    #
 // #                    Colours                         #
