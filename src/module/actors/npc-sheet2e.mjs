@@ -80,6 +80,7 @@ export class STANPCSheet2e extends STAActors {
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.stress.value': this.actor.system.stress.value,
       'system.stress.max': stressTrackMax,

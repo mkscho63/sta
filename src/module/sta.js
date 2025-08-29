@@ -377,6 +377,15 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'observersCanRoll', {
+    name: 'Observers can make rolls:',
+    hint: 'Check this if you want Observers to be able to make rolls from the actor sheet.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
