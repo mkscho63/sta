@@ -832,6 +832,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.stress.value': this.actor.system.stress.value,
       'system.stress.max': stressTrackMax,
@@ -1007,6 +1008,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.shields.value': this.actor.system.shields.value,
       'system.shields.max': shieldsTrackMax,
@@ -1063,6 +1065,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.crew.value': this.actor.system.crew.value,
       'system.crew.max': crewTrackMax,
@@ -1108,6 +1111,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.power.value': this.actor.system.power.value,
       'system.power.max': powerTrackMax,
