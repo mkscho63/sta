@@ -228,9 +228,28 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Limit to view only for observers
   async _setObserver() {
-    for (const el of this.element.querySelectorAll(
-      '.extended-tasks, .scenetraits-sheet, .starship-sheet, .top-right-column, .bottom-left-column, .sheet-body'
-    )) {
+    const observersCanRoll = game.settings.get('sta', 'observersCanRoll');
+    const restrictedWhenFalse = [
+      '.extended-tasks',
+      '.scenetraits-sheet',
+      '.starship-sheet',
+      '.top-right-column',
+      '.bottom-left-column',
+      '.sheet-body'
+    ];
+    const restrictedWhenTrue = [
+      '.extended-tasks',
+      '.scenetraits-sheet',
+      '.right-column',
+      '.top-right-column',
+      '.numeric-entry',
+      '.text-entry',
+      '.sheet-body'
+    ];
+
+    const selectors = (observersCanRoll ? restrictedWhenTrue : restrictedWhenFalse).join(', ');
+
+    for (const el of this.element.querySelectorAll(selectors)) {
       el.classList.add('observer');
       el.querySelectorAll('button, input, select, textarea, a, [tabindex]').forEach((ctrl) => {
         if (ctrl.tagName === 'TEXTAREA') ctrl.readOnly = true;
@@ -240,9 +259,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
   }
 
-  // ------------------------------------------------------------
-  // Set up tabs for the sheets
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #           Set up tabs for the sheets               #
+  // #                                                    #
+  // ######################################################
 
   getTabs() {
     const tabGroup = 'primary';
@@ -274,9 +295,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     return tabs;
   }
 
-  // ------------------------------------------------------------
-  // Handle click events on attributes
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #        Handle click events on attributes           #
+  // #                                                    #
+  // ######################################################
 
   _onSelectAttribute(event) {
     const clickedCheckbox = event.target;
@@ -330,9 +353,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // ------------------------------------------------------------
-  // Rollable tests start here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #            Rollable tests start here               #
+  // #                                                    #
+  // ######################################################
 
   // Attribute test for 2e character - overridden in other sheets
   async _onAttributeTest(event) {
@@ -583,9 +608,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }).render(true);
   }
 
-  // ------------------------------------------------------------
-  // Manage actions with on sheet items
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #       Manage actions with on sheet items           #
+  // #                                                    #
+  // ######################################################
 
   async _onItemNameChange(event) {
     const input = event.currentTarget;
@@ -749,9 +776,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }).render(true);
   }
 
-  // ------------------------------------------------------------
-  // Track bars from here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #              Track bars from here                  #
+  // #                                                    #
+  // ######################################################
 
   // Stress track for 2e characters, overridden in every other sheet
   _onStressTrackUpdate(event) {
@@ -1085,9 +1114,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // ------------------------------------------------------------
-  // Weapons and breaches here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #            Weapons and breaches here               #
+  // #                                                    #
+  // ######################################################
 
   // Weapon damage update for 2e starships and small craft, overridden in 1e ship sheets
   _updateWeaponValues() {
@@ -1145,9 +1176,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
   }
 
-  // ------------------------------------------------------------
-  // Drag drop starte from here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #           Drag drop starts from here               #
+  // #                                                    #
+  // ######################################################
 
   _canDragStart(selector) {
     return this.isEditable;
