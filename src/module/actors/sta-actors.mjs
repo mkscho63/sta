@@ -100,6 +100,14 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
           async: true
         }
       ),
+      enrichedDescription: await foundry.applications.ux.TextEditor.enrichHTML(
+        this.actor.system.description, 
+        {secrets: this.actor.isOwner, 
+          relativeTo: this.actor, 
+          rollData: this.actor.getRollData?.() ?? {}, 
+          async: true
+        }
+      ),
       tabGroups: this.tabGroups,
       tabs: this.getTabs(),
     };
