@@ -62,13 +62,16 @@ export class STARoller {
       close: () => null,
     });
     if (formData) {
-      const dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
+      let dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
       const selectedAttributeValue = parseInt(document.getElementById('selectedAttributeValue').value, 10) || 0;
       const selectedDisciplineValue = parseInt(document.getElementById('selectedDisciplineValue').value, 10) || 0;
       const usingFocus = formData.get('usingFocus') === 'on';
       const usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
       const usingDetermination = formData.get('usingDetermination') === 'on';
       const complicationRange = parseInt(formData.get('complicationRange'), 10) || 1;
+      if (usingDetermination) {
+        dicePool = dicePool - 1;
+      }
       const staRoll = new STARoll();
       staRoll.performAttributeTest(
         dicePool,

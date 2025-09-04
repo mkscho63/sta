@@ -183,6 +183,7 @@ export class STAStarshipSheet extends STAActors {
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.shields.value': this.actor.system.shields.value,
       'system.shields.max': shieldsTrackMax,
@@ -221,6 +222,7 @@ export class STAStarshipSheet extends STAActors {
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.crew.value': this.actor.system.crew.value,
       'system.crew.max': crewTrackMax,
