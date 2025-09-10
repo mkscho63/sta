@@ -100,6 +100,14 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
           async: true
         }
       ),
+      enrichedDescription: await foundry.applications.ux.TextEditor.enrichHTML(
+        this.actor.system.description, 
+        {secrets: this.actor.isOwner, 
+          relativeTo: this.actor, 
+          rollData: this.actor.getRollData?.() ?? {}, 
+          async: true
+        }
+      ),
       tabGroups: this.tabGroups,
       tabs: this.getTabs(),
     };
@@ -228,21 +236,42 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Limit to view only for observers
   async _setObserver() {
-    const selectors = [
+    const observersCanRoll = game.settings.get('sta', 'observersCanRoll');
+    const restrictedWhenFalse = [
       '.extended-tasks',
       '.scenetraits-sheet',
       '.starship-sheet',
       '.top-right-column',
       '.bottom-left-column',
-      '.sheet-body',
-    ].join(', ');
+      '.sheet-body'
+    ];
+    const restrictedWhenTrue = [
+      '.extended-tasks',
+      '.scenetraits-sheet',
+      '.right-column',
+      '.top-right-column',
+      '.numeric-entry',
+      '.text-entry',
+      '.sheet-body'
+    ];
 
-    for (const el of this.element.querySelectorAll(selectors)) el.setAttribute('inert', '');
+    const selectors = (observersCanRoll ? restrictedWhenTrue : restrictedWhenFalse).join(', ');
+
+    for (const el of this.element.querySelectorAll(selectors)) {
+      el.classList.add('observer');
+      el.querySelectorAll('button, input, select, textarea, a, [tabindex]').forEach((ctrl) => {
+        if (ctrl.tagName === 'TEXTAREA') ctrl.readOnly = true;
+        else if ('disabled' in ctrl) ctrl.disabled = true;
+        ctrl.tabIndex = -1;
+      });
+    }
   }
 
-  // ------------------------------------------------------------
-  // Set up tabs for the sheets
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #           Set up tabs for the sheets               #
+  // #                                                    #
+  // ######################################################
 
   getTabs() {
     const tabGroup = 'primary';
@@ -274,9 +303,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     return tabs;
   }
 
-  // ------------------------------------------------------------
-  // Handle click events on attributes
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #        Handle click events on attributes           #
+  // #                                                    #
+  // ######################################################
 
   _onSelectAttribute(event) {
     const clickedCheckbox = event.target;
@@ -330,10 +361,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // ------------------------------------------------------------
-  // Rollable tests start here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #            Rollable tests start here               #
+  // #                                                    #
+  // ######################################################
 
+  // Attribute test for 2e character - overridden in other sheets
   async _onAttributeTest(event) {
     event.preventDefault();
     const i18nKey = 'sta.roll.complicationroller';
@@ -448,6 +482,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
   }
 
+  // Challenge test for all sheets
   async _onChallengeTest(event) {
     event.preventDefault();
     const defaultValue = 2;
@@ -484,6 +519,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     staRoll.performChallengeRoll(dicePool, weaponName, speaker);
   }
 
+  // Reputation roll for 1e and 2e characters
   async _onReputationTest(event) {
     event.preventDefault();
     const currentReprimand = parseInt(this.element.querySelector('#currentreprimand')?.value || 0, 10);
@@ -559,6 +595,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Cheat sheet for 2e characters overridden in 1e sheet
   async _onCheatSheet(event) {
     event?.preventDefault?.();
     const tmpl = 'systems/sta/templates/apps/cheat-sheet.hbs';
@@ -579,9 +616,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }).render(true);
   }
 
-  // ------------------------------------------------------------
-  // Manage actions with on sheet items
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #       Manage actions with on sheet items           #
+  // #                                                    #
+  // ######################################################
 
   async _onItemNameChange(event) {
     const input = event.currentTarget;
@@ -745,10 +784,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }).render(true);
   }
 
-  // ------------------------------------------------------------
-  // Track bars from here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #              Track bars from here                  #
+  // #                                                    #
+  // ######################################################
 
+  // Stress track for 2e characters, overridden in every other sheet
   _onStressTrackUpdate(event) {
     const localizedValues = {
       tough: game.i18n.localize('sta.actor.character.talents.tough'),
@@ -798,12 +840,14 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.stress.value': this.actor.system.stress.value,
       'system.stress.max': stressTrackMax,
     });
   }
 
+  // Determination track for characters
   _onDeterminationTrackUpdate(event) {
     if (event) {
       const clickedDetermination = event.target;
@@ -835,6 +879,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Reputation track for 1e and 2e characters
   _onReputationTrackUpdate(event) {
     if (event) {
       const clickedReputation = event.target;
@@ -866,6 +911,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Work track for extended tasks
   _onWorkTrackUpdate(event) {
     if (event) {
       const clickedBox = event.target;
@@ -922,7 +968,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
     this.submit();
   }
-  
+
+  // Shields track for 2e starships & small craft, overridden in 1e ship sheets
   async _onShieldTrackUpdate(event) {
     const localizedValues = {
       advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
@@ -969,12 +1016,14 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.shields.value': this.actor.system.shields.value,
       'system.shields.max': shieldsTrackMax,
     });
   }
 
+  // Crew track for 2e starships, overridden in 1e ship sheets
   async _onCrewTrackUpdate(event) {
     const localizedValues = {
       extensiveautomation: game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
@@ -1024,12 +1073,14 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.crew.value': this.actor.system.crew.value,
       'system.crew.max': crewTrackMax,
     });
   }
 
+  // Power track for 1e starships and small craft
   async _onPowerTrackUpdate(event) {
     const localizedValues = {
       secondaryreactors: game.i18n.localize('sta.actor.starship.talents.secondaryreactors'),
@@ -1068,16 +1119,20 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       }
       barRenderer.appendChild(div);
     }
+    if (!this.document.isOwner) return;
     this.actor?.update({
       'system.power.value': this.actor.system.power.value,
       'system.power.max': powerTrackMax,
     });
   }
 
-  // ------------------------------------------------------------
-  // Weapons and breaches here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #            Weapons and breaches here               #
+  // #                                                    #
+  // ######################################################
 
+  // Weapon damage update for 2e starships and small craft, overridden in 1e ship sheets
   _updateWeaponValues() {
     this.element.querySelectorAll('[id^=starship-weapon-]').forEach((element) => {
       const weaponDamage = parseInt(element.dataset.itemDamage, 10) || 0;
@@ -1103,6 +1158,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
+  // Breach update for 2e starships and small craft, overridden in 1e ship sheets
   _updateBreachValues() {
     const scaleInput = this.element.querySelector('#scale');
     const shipScaleValue = scaleInput ? parseInt(scaleInput.value, 10) || 0 : 0;
@@ -1132,9 +1188,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
   }
 
-  // ------------------------------------------------------------
-  // Drag drop starte from here
-  // ------------------------------------------------------------
+  // ######################################################
+  // #                                                    #
+  // #           Drag drop starts from here               #
+  // #                                                    #
+  // ######################################################
 
   _canDragStart(selector) {
     return this.isEditable;
