@@ -18,8 +18,8 @@ export class STASmallCraftContainerSheet extends STAItems {
 
   async _prepareContext(options) {
     const availableSmallcrafts = game.actors.filter((target) => target.type === 'smallcraft' && target.isOwner);
-    if (!this.item.system.child) {
-      this.item.system.child = availableSmallcrafts[0].id;
+    if (!this.item.system.child && availableSmallcrafts.length > 0) {
+      await this.item.update({'system.child': availableSmallcrafts[0].id});
     }
     const context = {
       item: this.item,
