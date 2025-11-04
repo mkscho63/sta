@@ -601,7 +601,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     const tmpl = 'systems/sta/templates/apps/cheat-sheet.hbs';
     const content = await foundry.applications.handlebars.renderTemplate(tmpl);
     new foundry.applications.api.DialogV2({
-      window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
+      window: {title: game.i18n.localize('sta.apps.cheatsheet') + ' - 2e'},
       content,
       classes: ['dialogue'],
       position: {width: 450, height: 'auto'},
