@@ -522,30 +522,33 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // Reputation roll for 1e and 2e characters
   async _onReputationTest(event) {
     event.preventDefault();
-    const currentReprimand = parseInt(this.element.querySelector('#currentreprimand')?.value || 0, 10);
-    const currentReputation = parseInt(this.element.querySelector('#total-rep')?.value || 0, 10);
-    const speaker = ChatMessage.getSpeaker({actor: this.actor});
-    const template = 'systems/sta/templates/apps/dicepool-reputation.hbs';
-    const html = await foundry.applications.handlebars.renderTemplate(template);
+    const currentReprimand = parseInt(
+      this.element.querySelector('#currentreprimand')?.value || 0,
+      10
+    );
+    const currentReputation = parseInt(
+      this.element.querySelector('#total-rep')?.value || 0,
+      10
+    );
+    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
     const formData = await api.DialogV2.wait({
-      window: {
-        title: game.i18n.localize('sta.apps.dicepoolwindow')
-      },
-      position: {
-        height: 'auto',
-        width: 350
-      },
-      content: html,
+      window: { title: game.i18n.localize('sta.apps.dicepoolwindow') },
+      position: { height: 'auto', width: 350 },
+      content: await foundry.applications.handlebars.renderTemplate(
+        'systems/sta/templates/apps/dicepool-reputation.hbs'
+      ),
       classes: ['dialogue'],
-      buttons: [{
-        action: 'roll',
-        default: true,
-        label: game.i18n.localize('sta.apps.rolldice'),
-        callback: (event, button, dialog) => {
-          const form = dialog.element.querySelector('form');
-          return form ? new FormData(form) : null;
+      buttons: [
+        {
+          action: 'roll',
+          default: true,
+          label: game.i18n.localize('sta.apps.rolldice'),
+          callback: (event, button, dialog) => {
+            const form = dialog.element.querySelector('form');
+            return form ? new FormData(form) : null;
+          },
         },
-      }],
+      ],
       close: () => null,
     });
     if (!formData) return;
@@ -556,42 +559,52 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     const diceRollFormula = `${positiveInfluences}d20`;
     const roll = new Roll(diceRollFormula);
     await roll.evaluate();
+    let diceHtml = '';
     let totalSuccesses = 0;
     let complications = 0;
-    let acclaim = 0;
-    let reprimand = 0;
-    const diceResults = [];
     roll.terms[0].results.forEach((die) => {
-      let coloredDieResult;
+      const dieResult = Math.round(parseFloat(die.result));
+      let dieClass = 'roll die d20';
       if (die.result >= complicationThreshold) {
-        coloredDieResult = `<span style="color: red;">${die.result}</span>`;
+        dieClass += ' min';
         complications += 1;
       } else if (die.result <= currentReputation) {
-        coloredDieResult = `<span style="color: green;">${die.result}</span>`;
+        dieClass += ' max';
         totalSuccesses += 2;
       } else if (die.result <= targetNumber) {
-        coloredDieResult = `<span style="color: blue;">${die.result}</span>`;
         totalSuccesses += 1;
-      } else {
-        coloredDieResult = `<span>${die.result}</span>`;
       }
-      diceResults.push(coloredDieResult);
+      diceHtml += `<li class="${dieClass}">${dieResult}</li>`;
     });
-    let chatContent = `${game.i18n.format('sta.roll.dicerolls')} ${diceResults.join(', ')}<br>`;
+    let outcomeText = '';
     if (totalSuccesses > negativeInfluences) {
-      acclaim = totalSuccesses - negativeInfluences;
-      chatContent += `<strong>${game.i18n.format('sta.roll.gainacclaim', {0: acclaim})}</strong>`;
+      const acclaim = totalSuccesses - negativeInfluences;
+      outcomeText = game.i18n.format('sta.roll.gainacclaim', { 0: acclaim });
     } else {
-      reprimand = negativeInfluences - totalSuccesses + complications;
+      const reprimand = negativeInfluences - totalSuccesses + complications;
       if (reprimand > 0) {
-        chatContent += `<strong>${game.i18n.format('sta.roll.gainreprimand', {0: reprimand})}</strong>`;
+        outcomeText = game.i18n.format('sta.roll.gainreprimand', { 0: reprimand });
       } else {
-        chatContent += `<strong>${game.i18n.localize('sta.roll.nochange')}</strong>`;
+        outcomeText = game.i18n.localize('sta.roll.nochange');
       }
     }
+    const chatData = {
+      speakerId: speaker.actor?.id ?? speaker.id,
+      tokenId: speaker.token?.uuid ?? null,
+      dicePool: positiveInfluences,
+      diceHtml,
+      outcomeText,
+      targetNumber,
+      complicationThreshold,
+      negativeInfluences,
+    };
+    const chatHtml = await foundry.applications.handlebars.renderTemplate(
+      'systems/sta/templates/chat/reputation-roll.hbs',
+      chatData
+    );
     ChatMessage.create({
       speaker,
-      content: chatContent,
+      content: chatHtml,
     });
   }
 
