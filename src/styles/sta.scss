@@ -1302,7 +1302,21 @@ $trackColorsselected: #F2CC0D;
 // #                                                    #
 // ######################################################
 
+.dialogue::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 100%;
+  background-color: $borderbluedark;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .theme-light {
+  .dialogue::before {
+    background-color: $borderblue;
+  }
   .dialogue {
     background: $background;
     .text-entry {
@@ -1310,6 +1324,9 @@ $trackColorsselected: #F2CC0D;
     }
     .numeric-entry {
       border-color: $borderblue !important;
+    }
+    .title {
+      background-color: $borderblue;
     }
   }
 }
@@ -1330,6 +1347,7 @@ $trackColorsselected: #F2CC0D;
     font-size: 1.5rem;
     font-weight: bold;
     margin-right: 2px;
+    background-color: $borderbluedark;
   }
 
   .tracktitle {
