@@ -1328,6 +1328,22 @@ $trackColorsselected: #F2CC0D;
     .title {
       background-color: $borderblue;
     }
+    nav.sheet-tabs.tabs {
+      background-color: $borderblue;
+    }
+    nav.sheet-tabs.tabs a.item {
+      border-right: 3px solid $background;
+    }
+    nav.sheet-tabs.tabs a.item:first-child {
+      border-left: 3px solid $background;
+    }
+    nav.sheet-tabs.tabs a.item.active {
+      background-color: $palestblue;
+      text-shadow: none;
+    }
+    nav.sheet-tabs.tabs a.item:hover {
+      text-shadow: 0 0 10px $palestblue, 0 0 10px $palestblue;
+    }
   }
 }
 
@@ -1344,7 +1360,7 @@ $trackColorsselected: #F2CC0D;
 
   .title {
     margin-top: 5px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     margin-right: 2px;
     background-color: $borderbluedark;
@@ -1411,6 +1427,35 @@ $trackColorsselected: #F2CC0D;
 
   .align-left {
     text-align: left;
+  }
+
+  nav.sheet-tabs.tabs {
+    background-color: $borderbluedark;
+    border-bottom: none;
+    border-top: none;
+    display: flex;
+    gap: 0px;
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+
+  nav.sheet-tabs.tabs a.item {
+    border-right: 3px solid $textgrey;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+  }
+  nav.sheet-tabs.tabs a.item:first-child {
+    border-left: 3px solid $textgrey;
+  }
+
+  nav.sheet-tabs.tabs a.item.active {
+    text-shadow: none;
+    background-color: $palestbluedark;
+  }
+
+  nav.sheet-tabs.tabs a.item:hover {
+    text-shadow: 0 0 10px $borderblue, 0 0 10px $borderblue;
   }
 }
 
