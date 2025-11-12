@@ -100,7 +100,6 @@ export class RerollHandler {
       <div class="dialogue">
         ${game.i18n.localize(`sta.roll.rerollwhichresults`)}
         ${RerollHandler.createCheckableChallengeDice(chatData.diceHtml, chatData)}
-        ${chatData.effectHtml ? `<div class="effect-block">${chatData.effectHtml}</div>` : ''}
       </div>
     `;
   }
