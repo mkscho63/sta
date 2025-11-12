@@ -54,6 +54,7 @@ $tooltipbackground: rgba(0, 0, 0, 0.8);
 $tooltiptext: #fff;
 $trackColors: transparent;
 $trackColorsselected: #F2CC0D;
+$palebackground: rgba(0, 0, 0, 0.1);
 
 // ######################################################
 // #                                                    #
@@ -1354,7 +1355,6 @@ $trackColorsselected: #F2CC0D;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
     width: 100%;
   }
 
@@ -1456,6 +1456,45 @@ $trackColorsselected: #F2CC0D;
 
   nav.sheet-tabs.tabs a.item:hover {
     text-shadow: 0 0 10px $borderblue, 0 0 10px $borderblue;
+  }
+
+  .dice-rolls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 5px 0;
+    overflow: hidden;
+    padding: 0;
+
+    .roll {
+      background-image: url(../../../icons/svg/d6-grey.svg);
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      color: $rolltext;
+      float: left;
+      font-size: var(--font-size-16);
+      font-weight: bold;
+      line-height: 24px;
+      margin-right: 1px;
+      min-width: 24px;
+      position: relative;
+      text-align: center;
+
+      &.max {
+        color: $rollcriticalpass;
+        filter: sepia(0.5) hue-rotate(60deg);
+      }
+
+      &.min {
+        color: $rollcriticalfail;
+        filter: sepia(0.5) hue-rotate(-60deg);
+      }
+
+      &.d20 {
+        background-image: url(../../../icons/svg/d20-grey.svg);
+      }
+    }
   }
 }
 
@@ -1601,6 +1640,15 @@ $trackColorsselected: #F2CC0D;
     gap: 10px;
     justify-content: center;
     width: 100%;
+  }
+
+  .reroll-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &:hover {
+	  background: $palebackground;
+    }
   }
 }
 

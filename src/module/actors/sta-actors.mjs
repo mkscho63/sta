@@ -530,10 +530,10 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       this.element.querySelector('#total-rep')?.value || 0,
       10
     );
-    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+    const speaker = ChatMessage.getSpeaker({actor: this.actor});
     const formData = await api.DialogV2.wait({
-      window: { title: game.i18n.localize('sta.apps.dicepoolwindow') },
-      position: { height: 'auto', width: 350 },
+      window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
+      position: {height: 'auto', width: 350},
       content: await foundry.applications.handlebars.renderTemplate(
         'systems/sta/templates/apps/dicepool-reputation.hbs'
       ),
@@ -579,11 +579,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     let outcomeText = '';
     if (totalSuccesses > negativeInfluences) {
       const acclaim = totalSuccesses - negativeInfluences;
-      outcomeText = game.i18n.format('sta.roll.gainacclaim', { 0: acclaim });
+      outcomeText = game.i18n.format('sta.roll.gainacclaim', {0: acclaim});
     } else {
       const reprimand = negativeInfluences - totalSuccesses + complications;
       if (reprimand > 0) {
-        outcomeText = game.i18n.format('sta.roll.gainreprimand', { 0: reprimand });
+        outcomeText = game.i18n.format('sta.roll.gainreprimand', {0: reprimand});
       } else {
         outcomeText = game.i18n.localize('sta.roll.nochange');
       }
