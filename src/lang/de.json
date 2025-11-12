@@ -24,6 +24,7 @@
   "TYPES.Item.smallcraftcontainer": "Kleines-Schiff-Container",
   "TYPES.Item.trait": "Merkmal",
   "TYPES.Item.log": "Logbuch",
+  "EFFECT.StatusDead": "Besiegt",
 
   "sta.actor.character.reputation": "Ansehen",
   "sta.actor.character.name": "Name",

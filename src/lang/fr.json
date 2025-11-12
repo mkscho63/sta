@@ -24,6 +24,7 @@
   "TYPES.Item.smallcraftcontainer": "Conteneur de petit vaisseau",
   "TYPES.Item.trait": "Trait",
   "TYPES.Item.log": "Journal",
+  "EFFECT.StatusDead": "Vaincu",
 
   "sta.actor.character.reputation": "Suivi de Réputation",
   "sta.actor.character.name": "Nom",

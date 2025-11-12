@@ -24,6 +24,7 @@
   "TYPES.Item.smallcraftcontainer": "Contêiner de nave auxiliar",
   "TYPES.Item.trait": "Traço",
   "TYPES.Item.log": "Registro",
+  "EFFECT.StatusDead": "Derrotado",
 
   "sta.actor.character.reputation": "Total de Reputação",
   "sta.actor.character.name": "Nome",

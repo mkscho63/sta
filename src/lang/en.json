@@ -24,6 +24,7 @@
   "TYPES.Item.smallcraftcontainer": "Small Craft Container",
   "TYPES.Item.trait": "Trait",
   "TYPES.Item.log": "Log",
+  "EFFECT.StatusDead": "Defeated",
 
   "sta.actor.character.reputation": "Reputation Track",
   "sta.actor.character.name": "Name",
