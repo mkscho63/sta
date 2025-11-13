@@ -1320,6 +1320,11 @@ $palebackground: rgba(0, 0, 0, 0.1);
   }
   .dialogue {
     background: $background;
+
+    .window-header {
+      background-color: $borderblue;
+    }
+
     .text-entry {
       border-color: $borderblue;
     }
@@ -1350,6 +1355,10 @@ $palebackground: rgba(0, 0, 0, 0.1);
 
 .dialogue {
   width: 100%;
+
+  .window-header {
+    background-color: $borderbluedark;
+  }
 
   .row {
     align-items: center;

@@ -43,12 +43,12 @@ export class RerollHandler {
         width: 400
       },
       content: `
-      <div class="dialogue">
-        ${game.i18n.localize(`sta.roll.rerollwhichresults`)}
-        ${isChallengeRoll ? RerollHandler.challengeRerollDialog(chatData) : RerollHandler.taskRerollDialog(chatData)}
-      </div>
-`,
-
+        <div class="dialogue">
+          ${game.i18n.localize(`sta.roll.rerollwhichresults`)}
+          ${isChallengeRoll ? RerollHandler.challengeRerollDialog(chatData) : RerollHandler.taskRerollDialog(chatData)}
+        </div>
+      `,
+      classes: ['dialogue'],
       buttons: [
         {
           action: 'reroll',
