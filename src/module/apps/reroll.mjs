@@ -40,9 +40,15 @@ export class RerollHandler {
       },
       position: {
         height: 'auto',
-        width: 350
+        width: 400
       },
-      content: isChallengeRoll ? RerollHandler.challengeRerollDialog(chatData) : RerollHandler.taskRerollDialog(chatData),
+      content: `
+      <div class="dialogue">
+        ${game.i18n.localize(`sta.roll.rerollwhichresults`)}
+        ${isChallengeRoll ? RerollHandler.challengeRerollDialog(chatData) : RerollHandler.taskRerollDialog(chatData)}
+      </div>
+`,
+
       buttons: [
         {
           action: 'reroll',
@@ -87,21 +93,11 @@ export class RerollHandler {
   }
 
   static taskRerollDialog(chatData) {
-    return `
-      <div class="dialogue">
-        ${game.i18n.localize(`sta.roll.rerollwhichresults`)}
-        ${RerollHandler.createCheckableTaskDice(chatData.diceHtml, chatData)}
-      </div>
-    `;
+    return RerollHandler.createCheckableTaskDice(chatData.diceHtml, chatData);
   }
 
   static challengeRerollDialog(chatData) {
-    return `
-      <div class="dialogue">
-        ${game.i18n.localize(`sta.roll.rerollwhichresults`)}
-        ${RerollHandler.createCheckableChallengeDice(chatData.diceHtml, chatData)}
-      </div>
-    `;
+    return RerollHandler.createCheckableChallengeDice(chatData.diceHtml, chatData);
   }
 
   static createCheckableTaskDice(diceHtml, chatData) {
@@ -142,9 +138,15 @@ export class RerollHandler {
       }
 
       checkableDiceHtml += `
-        <input type="checkbox" name="reroll-die" value="${index}" data-die-value="${dieValue}" data-die-type="task">
-        ${diceString}
-      `;
+      <div>
+        <div class="die-image">
+          ${diceString}
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" name="reroll-die" value="${index}" data-die-value="${dieValue}" data-die-type="task">
+        </div>
+      </div>
+    `;
     });
 
     checkableDiceHtml += '</div>';
@@ -189,9 +191,17 @@ export class RerollHandler {
 
     diceElements.forEach((die, index) => {
       const dieValue = results[index];
+
       checkableDiceHtml += `
-        <input type="checkbox" name="reroll-die" value="${index}" data-die-value="${dieValue}" data-die-type="challenge"> ${die.outerHTML}
-      `;
+      <div>
+        <div class="die-image">
+          ${die.outerHTML}
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" name="reroll-die" value="${index}" data-die-value="${dieValue}" data-die-type="challenge">
+        </div>
+      </div>
+    `;
     });
 
     checkableDiceHtml += '</div>';

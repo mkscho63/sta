@@ -1459,13 +1459,23 @@ $palebackground: rgba(0, 0, 0, 0.1);
   }
 
   .dice-rolls {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 10px;
+    justify-items: center;
     list-style: none;
     margin: 5px 0;
-    overflow: hidden;
     padding: 0;
+
+    .checkbox-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .die-image {
+      display: flex;
+      justify-content: center;
+    }
 
     .roll {
       background-image: url(../../../icons/svg/d6-grey.svg);
