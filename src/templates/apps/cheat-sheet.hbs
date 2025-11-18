@@ -1,204 +1,349 @@
-<section class="dialogue">
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.melee"}}">{{localize "sta.roll.melee"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.daring"}} & 
-      {{localize "sta.actor.character.discipline.security"}}
-    </div>
-  </div>
+<div class="dialogue">
+  <nav class="sheet-tabs tabs">
+    <a class="item active" data-group="primary" data-action="tab" data-tab="actions">{{localize 'sta.apps.action'}}</a>
+    <a class="item" data-group="primary" data-action="tab" data-tab="shipactions">{{localize 'sta.apps.starshipaction'}}</a>
+    <a class="item" data-group="primary" data-action="tab" data-tab="momentum">{{localize 'sta.tracker.momentum'}}</a>
+    <a class="item" data-group="primary" data-action="tab" data-tab="threat">{{localize 'sta.tracker.threat'}}</a>
+  </nav>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.ranged"}}">{{localize "sta.roll.ranged"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.security"}}
-    </div>
-  </div>
+  <section class="sheet-body">
+    <div class="tab active" data-group="primary" data-tab="actions">
+      <!-- Content for actions -->
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.melee"}}">{{localize "sta.roll.melee"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.daring"}} & 
+          {{localize "sta.actor.character.discipline.security"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.firstaid"}}">{{localize "sta.roll.firstaid"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.daring"}} & 
-      {{localize "sta.actor.character.discipline.medicine"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.ranged"}}">{{localize "sta.roll.ranged"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.security"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.direct"}}">{{localize "sta.roll.direct"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.command"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.firstaid"}}">{{localize "sta.roll.firstaid"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.daring"}} & 
+          {{localize "sta.actor.character.discipline.medicine"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.guard"}}">{{localize "sta.roll.guard"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.insight"}} & 
-      {{localize "sta.actor.character.discipline.security"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.direct"}}">{{localize "sta.roll.direct"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.command"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.sprint"}}">{{localize "sta.roll.sprint"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.fitness"}} & 
-      {{localize "sta.actor.character.discipline.conn"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.guard"}}">{{localize "sta.roll.guard"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.insight"}} & 
+          {{localize "sta.actor.character.discipline.security"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.rally"}}">{{localize "sta.roll.rally"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.presence"}} & 
-      {{localize "sta.actor.character.discipline.command"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.sprint"}}">{{localize "sta.roll.sprint"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.fitness"}} & 
+          {{localize "sta.actor.character.discipline.conn"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.damagecontrol"}}">{{localize "sta.roll.damagecontrol"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.presence"}} & 
-      {{localize "sta.actor.character.discipline.engineering"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.rally"}}">{{localize "sta.roll.rally"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.presence"}} & 
+          {{localize "sta.actor.character.discipline.command"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.regainpower"}}">{{localize "sta.roll.regainpower"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.engineering"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.damagecontrol"}}">{{localize "sta.roll.damagecontrol"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.presence"}} & 
+          {{localize "sta.actor.character.discipline.engineering"}}
+        </div>
+      </div>
 
-  <!-- New rows -->
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.attack"}}">{{localize "sta.roll.attack"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.security"}} | 
-      {{localize "sta.actor.starship.system.weapons"}} & 
-      {{localize "sta.actor.starship.department.security"}}
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.regainpower"}}">{{localize "sta.roll.regainpower"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.engineering"}}
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.transport"}}">{{localize "sta.roll.transport"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.engineering"}} | 
-      {{localize "sta.actor.starship.system.sensors"}} & 
-      {{localize "sta.actor.starship.department.science"}}
-    </div>
-  </div>
+    <div class="tab {{tabs.shipactions.cssClass}}" data-group="primary" name="traits" data-tab="shipactions">
+      <!-- Content for shipactions -->
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.attack"}}">{{localize "sta.roll.attack"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.security"}} | 
+          {{localize "sta.actor.starship.system.weapons"}} & 
+          {{localize "sta.actor.starship.department.security"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.attackpattern"}}">{{localize "sta.roll.attackpattern"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.conn"}} | 
-      {{localize "sta.actor.starship.system.engines"}} & 
-      {{localize "sta.actor.starship.department.conn"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.transport"}}">{{localize "sta.roll.transport"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.engineering"}} | 
+          {{localize "sta.actor.starship.system.sensors"}} & 
+          {{localize "sta.actor.starship.department.science"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.evasiveaction"}}">{{localize "sta.roll.evasiveaction"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.daring"}} & 
-      {{localize "sta.actor.character.discipline.conn"}} | 
-      {{localize "sta.actor.starship.system.structure"}} & 
-      {{localize "sta.actor.starship.department.conn"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.attackpattern"}}">{{localize "sta.roll.attackpattern"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.conn"}} | 
+          {{localize "sta.actor.starship.system.engines"}} & 
+          {{localize "sta.actor.starship.department.conn"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.maneuver"}}">{{localize "sta.roll.maneuver"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.conn"}} | 
-      {{localize "sta.actor.starship.system.engines"}} & 
-      {{localize "sta.actor.starship.department.conn"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.evasiveaction"}}">{{localize "sta.roll.evasiveaction"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.daring"}} & 
+          {{localize "sta.actor.character.discipline.conn"}} | 
+          {{localize "sta.actor.starship.system.structure"}} & 
+          {{localize "sta.actor.starship.department.conn"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.ram"}}">{{localize "sta.roll.ram"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.daring"}} & 
-      {{localize "sta.actor.character.discipline.conn"}} | 
-      {{localize "sta.actor.starship.system.engines"}} & 
-      {{localize "sta.actor.starship.department.conn"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.maneuver"}}">{{localize "sta.roll.maneuver"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.conn"}} | 
+          {{localize "sta.actor.starship.system.engines"}} & 
+          {{localize "sta.actor.starship.department.conn"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.warp"}}">{{localize "sta.roll.warp"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.conn"}} | 
-      {{localize "sta.actor.starship.system.engines"}} & 
-      {{localize "sta.actor.starship.department.conn"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.ram"}}">{{localize "sta.roll.ram"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.daring"}} & 
+          {{localize "sta.actor.character.discipline.conn"}} | 
+          {{localize "sta.actor.starship.system.engines"}} & 
+          {{localize "sta.actor.starship.department.conn"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.regenerateshields"}}">{{localize "sta.roll.regenerateshields"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.engineering"}} | 
-      {{localize "sta.actor.starship.system.structure"}} & 
-      {{localize "sta.actor.starship.department.engineering"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.warp"}}">{{localize "sta.roll.warp"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.conn"}} | 
+          {{localize "sta.actor.starship.system.engines"}} & 
+          {{localize "sta.actor.starship.department.conn"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.reveal"}}">{{localize "sta.roll.reveal"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.reason"}} & 
-      {{localize "sta.actor.character.discipline.science"}} | 
-      {{localize "sta.actor.starship.system.sensors"}} & 
-      {{localize "sta.actor.starship.department.science"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.regenerateshields"}}">{{localize "sta.roll.regenerateshields"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.engineering"}} | 
+          {{localize "sta.actor.starship.system.structure"}} & 
+          {{localize "sta.actor.starship.department.engineering"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.scanforweakness"}}">{{localize "sta.roll.scanforweakness"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.science"}} | 
-      {{localize "sta.actor.starship.system.sensors"}} & 
-      {{localize "sta.actor.starship.department.security"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.reveal"}}">{{localize "sta.roll.reveal"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.reason"}} & 
+          {{localize "sta.actor.character.discipline.science"}} | 
+          {{localize "sta.actor.starship.system.sensors"}} & 
+          {{localize "sta.actor.starship.department.science"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.sensorsweep"}}">{{localize "sta.roll.sensorsweep"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.reason"}} & 
-      {{localize "sta.actor.character.discipline.science"}} | 
-      {{localize "sta.actor.starship.system.sensors"}} & 
-      {{localize "sta.actor.starship.department.science"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.scanforweakness"}}">{{localize "sta.roll.scanforweakness"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.science"}} | 
+          {{localize "sta.actor.starship.system.sensors"}} & 
+          {{localize "sta.actor.starship.department.security"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.defensivefire"}}">{{localize "sta.roll.defensivefire"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.daring"}} & 
-      {{localize "sta.actor.character.discipline.security"}} | 
-      {{localize "sta.actor.starship.system.weapons"}} & 
-      {{localize "sta.actor.starship.department.security"}}
-    </div>
-  </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.sensorsweep"}}">{{localize "sta.roll.sensorsweep"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.reason"}} & 
+          {{localize "sta.actor.character.discipline.science"}} | 
+          {{localize "sta.actor.starship.system.sensors"}} & 
+          {{localize "sta.actor.starship.department.science"}}
+        </div>
+      </div>
 
-  <div class="row">
-    <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.tractorbeam"}}">{{localize "sta.roll.tractorbeam"}}</span>
-    <div class="column value">
-      {{localize "sta.actor.character.attribute.control"}} & 
-      {{localize "sta.actor.character.discipline.security"}} | 
-      {{localize "sta.actor.starship.system.structure"}} & 
-      {{localize "sta.actor.starship.department.security"}}
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.defensivefire"}}">{{localize "sta.roll.defensivefire"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.daring"}} & 
+          {{localize "sta.actor.character.discipline.security"}} | 
+          {{localize "sta.actor.starship.system.weapons"}} & 
+          {{localize "sta.actor.starship.department.security"}}
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.action.tractorbeam"}}">{{localize "sta.roll.tractorbeam"}}</span>
+        <div class="column value">
+          {{localize "sta.actor.character.attribute.control"}} & 
+          {{localize "sta.actor.character.discipline.security"}} | 
+          {{localize "sta.actor.starship.system.structure"}} & 
+          {{localize "sta.actor.starship.department.security"}}
+        </div>
+      </div> 
     </div>
-  </div>
-</section>
+
+    <div class="tab {{tabs.momentum.cssClass}}" data-group="primary" name="momentum" data-tab="momentum">
+      <!-- Content for momentum -->
+      <div class="row title">
+        {{localize "sta.momentum.common"}}
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.createopportunity"}}">{{localize "sta.momentum.createopportunity"}}</span>
+        <div class="column value">
+          {{localize "sta.momentum.immediate"}}, {{localize "sta.momentum.repeatable"}}, 1-6 {{localize "sta.tracker.momentum"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.altertrait"}}">{{localize "sta.momentum.altertrait"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.momentum"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.reducetime"}}">{{localize "sta.momentum.reducetime"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.momentum"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.swiftaction"}}">{{localize "sta.momentum.swiftaction"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.momentum"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.minorturn"}}">{{localize "sta.momentum.minorturn"}}</span>
+        <div class="column value">
+          1 {{localize "sta.tracker.momentum"}}
+        </div>
+      </div>
+      <div class="row title">
+        {{localize "sta.momentum.conflict"}}
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.addedseverity"}}">{{localize "sta.momentum.addedseverity"}}</span>
+        <div class="column value">
+          {{localize "sta.momentum.repeatable"}}, 2 {{localize "sta.tracker.momentum"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.buyd20s"}}">{{localize "sta.momentum.buyd20s"}}</span>
+          {{localize "sta.momentum.immediate"}}, {{localize "sta.momentum.repeatable"}}, 1-3 {{localize "sta.tracker.momentum"}}
+        <div class="column value">
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.disarm"}}">{{localize "sta.momentum.disarm"}}</span>
+          1-2 {{localize "sta.tracker.momentum"}}
+        <div class="column value">
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.keepinitiative"}}">{{localize "sta.momentum.keepinitiative"}}</span>
+          {{localize "sta.momentum.immediate"}}, 2 {{localize "sta.tracker.momentum"}}
+        <div class="column value">
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.obtaininformation"}}">{{localize "sta.momentum.obtaininformation"}}</span>
+          {{localize "sta.momentum.repeatable"}}, 1-3 {{localize "sta.tracker.momentum"}}
+        <div class="column value">
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.recoverstress"}}">{{localize "sta.momentum.recoverstress"}}</span>
+        <div class="column value">
+          {{localize "sta.momentum.repeatable"}}, 2 {{localize "sta.tracker.momentum"}}
+        </div>
+      </div>
+      <div class="row title">
+        {{localize "sta.momentum.combat"}}
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.addeddamage"}}">{{localize "sta.momentum.addeddamage"}}</span>
+          {{localize "sta.momentum.repeatable"}}, 2 {{localize "sta.tracker.momentum"}}
+        <div class="column value">
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.momentum.devastatingattack"}}">{{localize "sta.momentum.devastatingattack"}}</span>
+          2 {{localize "sta.tracker.momentum"}}
+        <div class="column value">
+        </div>
+      </div>
+    </div>
+
+    <div class="tab {{tabs.threat.cssClass}}" data-group="primary" name="threat" data-tab="threat">
+      <!-- Content for threat -->
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.threat.complication"}}">{{localize "sta.threat.complication"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.threat"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.threat.effects"}}">{{localize "sta.threat.effects"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.threat"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.threat.npccomplication"}}">{{localize "sta.threat.npccomplication"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.threat"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.threat.npcmomentum"}}">{{localize "sta.threat.npcmomentum"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.threat"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.threat.npcthreat"}}">{{localize "sta.threat.npcthreat"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.threat"}}
+        </div>
+      </div>
+      <div class="row">
+        <span class="tracktitle cheatsheet" title="{{localize "sta.tooltip.threat.reinforcements"}}">{{localize "sta.threat.reinforcements"}}</span>
+        <div class="column value">
+          2 {{localize "sta.tracker.threat"}}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -40,6 +40,9 @@ export class STARoll {
         diceString += '<li class="roll die d20">' + result + '</li>';
       }
     }
+    // Here we add the successes and complications from the reroll
+    success += speaker.previousSuccess || 0;
+    complication += speaker.previousComplication || 0;
     if (usingFocus) {
       withFocus = ', ' + game.i18n.format('sta.actor.belonging.focus.title');
     }
@@ -74,6 +77,26 @@ export class STARoll {
     } else {
       complicationText = '';
     }
+    const chatData = {
+      speakerId: speaker.id,
+      tokenId: speaker.token ? speaker.token.uuid : null,
+      dicePool,
+      checkTarget,
+      complicationMinimumValue,
+      diceHtml: diceString,
+      complicationHtml: complicationText,
+      successText,
+      selectedAttribute,
+      selectedAttributeValue,
+      selectedDiscipline,
+      selectedDisciplineValue,
+      withFocus,
+      withDedicatedFocus,
+      withDetermination,
+      previousRoll: speaker.previousRoll,
+      rollType: 'attribute'
+    };
+    let html = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/attribute-test.hbs', chatData);
     // Set the flavour to "[Attribute] [Discipline] Attribute Test". This shows the chat what type of test occured.
     let flavor = '';
     switch (speaker.type) {
@@ -92,32 +115,18 @@ export class STARoll {
     case 'npcship':
       flavor = game.i18n.format('sta.roll.npcship') + ' ' + game.i18n.format('sta.roll.task.name');
       break;
+    case 'reroll':
+      flavor = game.i18n.format('sta.roll.rerollresults') + ' ' + speaker.id + ' ' + game.i18n.format('sta.roll.task.name');
+      html = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/reroll.hbs', chatData);
+      break;
     }
-    const chatData = {
-      speakerId: speaker.id,
-      tokenId: speaker.token ? speaker.token.uuid : null,
-      dicePool,
-      checkTarget,
-      complicationMinimumValue: complicationMinimumValue + '+',
-      diceHtml: diceString,
-      complicationHtml: complicationText,
-      successText,
-      selectedAttribute,
-      selectedAttributeValue,
-      selectedDiscipline,
-      selectedDisciplineValue,
-      withFocus,
-      withDedicatedFocus,
-      withDetermination,
-    };
-    const html = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/attribute-test.hbs', chatData);
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d.showForRoll(r, game.user, true).then((displayed) => {
-        this.sendToChat(speaker, html, undefined, r, flavor, '');
+        this.sendToChat(speaker, html, undefined, r, flavor, '', chatData);
       });
     } else {
-      this.sendToChat(speaker, html, undefined, r, flavor, 'sounds/dice.wav');
+      this.sendToChat(speaker, html, undefined, r, flavor, 'sounds/dice.wav', chatData);
     };
   }
 
@@ -125,8 +134,10 @@ export class STARoll {
     // Foundry will soon make rolling async only, setting it up as such now avoids a warning. 
     const rolledChallenge = await new Roll(dicePool + 'd6').evaluate({});
     const flavor = challengeName + ' ' + game.i18n.format('sta.roll.challenge.name');
-    const successes = getSuccessesChallengeRoll(rolledChallenge);
-    const effects = getEffectsFromChallengeRoll(rolledChallenge);
+    let successes = getSuccessesChallengeRoll(rolledChallenge);
+    successes += speaker.previousSuccess || 0;
+    let effects = getEffectsFromChallengeRoll(rolledChallenge);
+    effects += speaker.previousEffect || 0;
     const diceString = getDiceImageListFromChallengeRoll(rolledChallenge);
     // pluralize success string
     let successText = '';
@@ -143,20 +154,27 @@ export class STARoll {
       diceHtml: diceString,
       successText,
       effectHtml: effectText,
+	  previousRoll: speaker.previousRoll,
+      rollType: 'challenge'
     };
-    const html =
-      `<div class="sta roll chat card" 
-            data-token-id="${chatData.tokenId}" 
-            data-speaker-id="${chatData.speakerId}">
-              ${await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/challenge-roll.hbs', chatData)}
-      </div>`;
+    let html = '';
+    if (speaker.type === 'reroll') {
+      html = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/reroll.hbs', chatData);
+    } else {
+      html =
+        `<div class="sta roll chat card" 
+              data-token-id="${chatData.tokenId}" 
+              data-speaker-id="${chatData.speakerId}">
+                ${await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/challenge-roll.hbs', chatData)}
+        </div>`;
+    };
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d.showForRoll(rolledChallenge, game.user, true).then((displayed) => {
-        this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, '');
+        this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, '', chatData);
       });
     } else {
-      this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, 'sounds/dice.wav');
+      this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, 'sounds/dice.wav', chatData);
     };
   }
 
@@ -249,6 +267,10 @@ export class STARoll {
         successText,
       }
     };
+    const chatData = {
+      diceHtml: diceString,
+      rollType: 'weapon'
+    };
     const flags = {
       sta: {
         itemData: item.toObject(),
@@ -260,10 +282,10 @@ export class STARoll {
       const finalHTML = genericItemHTML;
       if (game.dice3d) {
         game.dice3d.showForRoll(damageRoll, game.user, true).then(() => {
-          this.sendToChat(speaker, finalHTML, item, damageRoll, item.name, '');
+          this.sendToChat(speaker, finalHTML, item, damageRoll, item.name, '', chatData);
         });
       } else {
-        this.sendToChat(speaker, finalHTML, item, damageRoll, item.name, 'sounds/dice.wav');
+        this.sendToChat(speaker, finalHTML, item, damageRoll, item.name, 'sounds/dice.wav', chatData);
       }
     });
   }
@@ -542,7 +564,7 @@ export class STARoll {
     return tags;
   }
 
-  async sendToChat(speaker, content, item, roll, flavor, sound) {
+  async sendToChat(speaker, content, item, roll, flavor, sound, chatData) {
     const rollMode = game.settings.get('core', 'rollMode');
     const messageProps = {
       user: game.user.id,
@@ -556,6 +578,12 @@ export class STARoll {
     if (typeof item != 'undefined') {
       messageProps.flags.sta = {
         itemData: item.toObject(),
+      };
+    }
+    if (chatData) {
+      messageProps.flags.sta = {
+        ...messageProps.flags.sta,
+        chatData: chatData,
       };
     }
     if (typeof roll != 'undefined') {

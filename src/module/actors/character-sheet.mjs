@@ -155,7 +155,7 @@ export class STACharacterSheet extends STAActors {
     const tmpl = 'systems/sta/templates/apps/cheat-sheet1e.hbs';
     const content = await foundry.applications.handlebars.renderTemplate(tmpl);
     new foundry.applications.api.DialogV2({
-      window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
+      window: {title: game.i18n.localize('sta.apps.cheatsheet') + ' - 1e'},
       content,
       classes: ['dialogue'],
       position: {width: 500, height: 'auto'},
