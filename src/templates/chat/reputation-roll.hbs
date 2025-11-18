@@ -1,0 +1,28 @@
+{{!-- systems/sta/templates/chat/reputation-roll.hbs --}}
+<div class="sta roll chat card" data-token-id="{{tokenId}}" data-speaker-id="{{speakerId}}">
+  <div class="dice-roll collapsible">
+    <div class="dice-result">
+      <div class="dice-formula">
+        <div class="dice-pool">
+          {{dicePool}}d20 {{localize "sta.actor.extendedtask.difficulty"}}: {{negativeInfluences}}
+        </div>
+        <div class="additional-info">
+          <div class="target">
+            {{localize "sta.roll.target"}}: {{targetNumber}}
+          </div>
+          <div class="range">
+            {{localize "sta.roll.complicationrange"}} {{complicationThreshold}}
+          </div>
+        </div>
+      </div>
+      <div class="tooltip">
+        <section class="tooltip-part collapsible-content">
+          <div class="dice">
+            <ul class="dice-rolls">{{{diceHtml}}}</ul>
+          </div>
+        </section>
+      </div>
+      <h4 class="dice-total">{{outcomeText}}</h4>
+    </div>
+  </div>
+</div>
