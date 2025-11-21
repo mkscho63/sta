@@ -10,20 +10,25 @@
   </div>
 
   <div class="row">
-    <div class="tracktitle">{{localize "sta.actor.milestone.isarc"}}: </div>
-    <input type="checkbox" name="system.arc.isArc" {{checked item.system.arc.isArc}} />
+    <div class="grid-numbers">
+      <div class="tracktitle">{{localize "sta.actor.milestone.isarc"}}: </div>
+      <input type="checkbox" name="system.arc.isArc" {{checked item.system.arc.isArc}} />
+    </div>
   </div>
   {{#if item.system.arc.isArc}}
     <div class="row">
-      <div class="tracktitle">{{localize "sta.actor.milestone.stepsinarc"}}:</div>
-      <input id="arc-steps"
-        type="number"
-        min="3"
-        step="1"
-        class="numeric-entry"
-        name="system.arc.steps"
-        data-dtype="Number"
-        value="{{#if item.system.arc.steps}}{{item.system.arc.steps}}{{else}}3{{/if}}" />
+      <div class="grid-numbers">
+        <div class="tracktitle">{{localize "sta.actor.milestone.stepsinarc"}}:</div>
+        <input id="arc-steps"
+          type="number"
+          min="3"
+          step="1"
+          class="numeric-entry"
+          name="system.arc.steps"
+          data-dtype="Number"
+          value="{{#if item.system.arc.steps}}{{item.system.arc.steps}}{{else}}3{{/if}}" 
+        />
+      </div>
     </div>
   {{/if}}
 

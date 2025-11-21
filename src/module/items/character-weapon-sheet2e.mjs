@@ -8,11 +8,4 @@ export class STACharacterWeaponSheet2e extends STAItems {
       template: 'systems/sta/templates/items/character-weapon-sheet2e.hbs'
     },
   };
-
-  static DEFAULT_OPTIONS = {
-    position: {
-      height: 'auto',
-      width: 565,
-    },
-  };
 }

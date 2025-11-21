@@ -10,7 +10,7 @@ export class STAItems extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2)
     },
     position: {
       height: 'auto',
-      width: 500,
+      width: 565,
     },
     window: {
       resizable: true,

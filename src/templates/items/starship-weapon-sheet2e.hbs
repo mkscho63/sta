@@ -10,11 +10,14 @@
   </div>
 
   <div class="row">
-    <div class="tracktitle">{{localize 'sta.item.genericitem.opportunity'}}</div>
-    <input type="number" class="numeric-entry" name="system.opportunity" value="{{item.system.opportunity}}" data-dtype="Number" />
-
-    <div class="tracktitle">{{localize 'sta.item.genericitem.escalation'}}</div>
-    <input type="number" class="numeric-entry" name="system.escalation" value="{{item.system.escalation}}" data-dtype="Number" />
+    <div class="grid-numbers">
+      <div class="tracktitle">{{localize 'sta.item.genericitem.opportunity'}}</div>
+      <input type="number" class="numeric-entry" name="system.opportunity" value="{{item.system.opportunity}}" data-dtype="Number" />
+    </div>
+    <div class="grid-numbers">
+      <div class="tracktitle">{{localize 'sta.item.genericitem.escalation'}}</div>
+      <input type="number" class="numeric-entry" name="system.escalation" value="{{item.system.escalation}}" data-dtype="Number" />
+    </div>
   </div>
 
   <div class="row">
@@ -112,11 +115,11 @@
       <input type="checkbox" name="system.qualities.spread" data-dtype="Boolean" {{checked item.system.qualities.spread}}>
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.spread'}}</div>
     </div>
-    <div class="grid">
+    <div class="grid-numbers">
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.hiddenx'}}</div>
       <input type="number" class="numeric-entry" name="system.qualities.hiddenx" value="{{item.system.qualities.hiddenx}}" data-dtype="Number" />
     </div>
-    <div class="grid">
+    <div class="grid-numbers">
       <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.versatilex'}}</div>
       <input type="number" class="numeric-entry" name="system.qualities.versatilex" value="{{item.system.qualities.versatilex}}" data-dtype="Number" />
     </div>

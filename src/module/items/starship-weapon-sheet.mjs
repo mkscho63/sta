@@ -8,11 +8,4 @@ export class STAStarshipWeaponSheet extends STAItems {
       template: 'systems/sta/templates/items/starship-weapon-sheet.hbs'
     },
   };
-
-  static DEFAULT_OPTIONS = {
-    position: {
-      height: 'auto',
-      width: 565,
-    },
-  };
 }
