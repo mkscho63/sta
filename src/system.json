@@ -68,6 +68,99 @@
 			"flags": {}
 		}
 	],
+
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": [
+          "notes",
+          "assignment",
+          "environment",
+          "milestones",
+          "species",
+          "careerpath",
+          "pastimes",
+          "experience",
+          "careerevents",
+          "house",
+          "househistory",
+          "legacy",
+          "traits",
+          "upbringing"
+        ]
+      },
+      "starship": {
+        "htmlFields": [
+          "notes",
+          "designation",
+          "missionprofile",
+          "refit",
+          "servicedate",
+          "spaceframe",
+          "traits"
+        ]
+      },
+      "extendedtask": {
+        "htmlFields": ["notes"]
+      },
+      "smallcraft": {
+        "htmlFields": [
+          "missionprofile",
+          "parent",
+          "spaceframe",
+          "traits"
+        ]
+      },
+      "scenetraits": {
+        "htmlFields": ["notes"]
+      }
+    },
+    "Item": {
+      "item": {
+        "htmlFields": ["description"]
+      },
+      "focus": {
+        "htmlFields": ["description"]
+      },
+      "value": {
+        "htmlFields": ["description"]
+      },
+      "characterweapon": {
+        "htmlFields": ["description"]
+      },
+      "characterweapon2e": {
+        "htmlFields": ["description"]
+      },
+      "starshipweapon": {
+        "htmlFields": ["description"]
+      },
+      "starshipweapon2e": {
+        "htmlFields": ["description"]
+      },
+      "armor": {
+        "htmlFields": ["description"]
+      },
+      "talent": {
+        "htmlFields": ["description"]
+      },
+      "milestone": {
+        "htmlFields": ["description"]
+      },
+      "injury": {
+        "htmlFields": ["description"]
+      },
+      "smallcraftcontainer": {
+        "htmlFields": ["description"]
+      },
+      "trait": {
+        "htmlFields": ["description"]
+      },
+      "log": {
+        "htmlFields": ["description"]
+      }
+    }
+  },
+
 	"grid": {
 		"distance": 5,
 		"units": "m"

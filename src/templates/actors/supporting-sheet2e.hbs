@@ -136,33 +136,31 @@
             </div>
           </div>
 
-          <br>
-
           <div class="row">
-            <div class="column house">
+            <div class="column house {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.house'}}</div>
               <input name="system.house" class="text-entry" type="text" value="{{actor.system.house}}" placeholder="{{localize 'sta.actor.character.klingon.house'}}" />
             </div>
-            <div class="column caste">
+            <div class="column caste {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.caste'}}</div>
               <input name="system.caste" class="text-entry" type="text" value="{{actor.system.caste}}" placeholder="{{localize 'sta.actor.character.klingon.caste'}}" />
             </div>
-            <div class="column status">
+            <div class="column status {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.status'}}</div>
               <input name="system.status" class="text-entry" type="text" value="{{actor.system.status}}" placeholder="{{localize 'sta.actor.character.klingon.status'}}" />
             </div>
-            <div class="column legacy">
+            <div class="column legacy {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.legacy'}}</div>
               <input name="system.legacy" class="text-entry" type="text" value="{{actor.system.legacy}}" placeholder="{{localize 'sta.actor.character.klingon.legacy'}}" />
             </div>
           </div>
 
           <div class="row">
-            <div class="column temperament">
+            <div class="column temperament {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.temperament'}}</div>
               <input name="system.temperament" class="text-entry" type="text" value="{{actor.system.temperament}}" placeholder="{{localize 'sta.actor.character.klingon.temperament'}}" />
             </div>
-            <div class="column househistory">
+            <div class="column househistory {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.househistory'}}</div>
               <input name="system.househistory" class="text-entry" type="text" value="{{actor.system.househistory}}" placeholder="{{localize 'sta.actor.character.klingon.househistory'}}" />
             </div>
@@ -170,25 +168,31 @@
 
           <div class="row">
             <div class="column acclaimfield">
-              <div class="title">{{localize 'sta.actor.character.acclaim'}}</div>
+              <div class="title {{#if actor.system.showklingon}}hidden{{/if}}">{{localize 'sta.actor.character.acclaim'}}</div>
+              <div class="title {{#unless actor.system.showklingon}}hidden{{/unless}}">{{localize 'sta.actor.character.klingon.glory'}}</div>
               <input class="text-entry" name="system.acclaim" type="number" value="{{actor.system.acclaim}}" placeholder="0" />
             </div>
             <div class="column reprimand">
-              <div class="title">{{localize 'sta.actor.character.reprimand'}}</div>
+              <div class="title {{#if actor.system.showklingon}}hidden{{/if}}">{{localize 'sta.actor.character.reprimand'}}</div>
+              <div class="title {{#unless actor.system.showklingon}}hidden{{/unless}}">{{localize 'sta.actor.character.klingon.shame'}}</div>
               <input class="text-entry" name="system.reprimand" id="currentreprimand" type="number" value="{{actor.system.reprimand}}" placeholder="0" />
             </div>
-            <div class="column influence">
+            <div class="column influence {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.influence'}}</div>
               <input name="system.influence" class="text-entry" type="number" value="{{actor.system.influence}}" placeholder="0" />
             </div>
-            <div class="column might">
+            <div class="column might {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.might'}}</div>
               <input name="system.might" class="text-entry" type="number" value="{{actor.system.might}}" placeholder="0" />
             </div>
-            <div class="column wealth">
+            <div class="column wealth {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.wealth'}}</div>
               <input name="system.wealth" class="text-entry" type="number" value="{{actor.system.wealth}}" placeholder="0" />
             </div>
+          </div>
+          <div class="amiklingon">
+            {{localize 'sta.actor.character.klingon.Klingon'}}:
+            <input class="checkbox" type="checkbox" name="system.showklingon" data-dtype="Boolean" {{checked actor.system.showklingon}}> 
           </div>
         </div>
 

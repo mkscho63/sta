@@ -9,13 +9,6 @@ export class STASmallCraftContainerSheet extends STAItems {
     },
   };
 
-  static DEFAULT_OPTIONS = {
-    position: {
-      height: 'auto',
-      width: 680,
-    },
-  };
-
   async _prepareContext(options) {
     const availableSmallcrafts = game.actors.filter((target) => target.type === 'smallcraft' && target.isOwner);
     if (!this.item.system.child && availableSmallcrafts.length > 0) {

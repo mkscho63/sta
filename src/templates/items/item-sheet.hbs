@@ -10,14 +10,18 @@
   </div>
 
   <div class="row">
-    <div class="tracktitle">{{localize 'sta.actor.belonging.other.quantity'}}</div>
-    <input type="number" class="numeric-entry" name="system.quantity" value="{{item.system.quantity}}" data-dtype="Number" />
-
-    <div class="tracktitle">{{localize 'sta.item.genericitem.opportunity'}}</div>
-    <input type="number" class="numeric-entry" name="system.opportunity" value="{{item.system.opportunity}}" data-dtype="Number" />
-
-    <div class="tracktitle">{{localize 'sta.item.genericitem.escalation'}}</div>
-    <input type="number" class="numeric-entry" name="system.escalation" value="{{item.system.escalation}}" data-dtype="Number" />
+    <div class="grid-numbers">
+      <div class="tracktitle">{{localize 'sta.actor.belonging.other.quantity'}}</div>
+      <input type="number" class="numeric-entry" name="system.quantity" value="{{item.system.quantity}}" data-dtype="Number" />
+    </div>
+    <div class="grid-numbers">
+      <div class="tracktitle">{{localize 'sta.item.genericitem.opportunity'}}</div>
+      <input type="number" class="numeric-entry" name="system.opportunity" value="{{item.system.opportunity}}" data-dtype="Number" />
+    </div>
+    <div class="grid-numbers">
+      <div class="tracktitle">{{localize 'sta.item.genericitem.escalation'}}</div>
+      <input type="number" class="numeric-entry" name="system.escalation" value="{{item.system.escalation}}" data-dtype="Number" />
+    </div>
   </div>
 
   <div class="title">{{localize 'sta.item.genericitem.description'}}</div>

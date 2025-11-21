@@ -259,10 +259,15 @@ export class STARoller {
     </div>
     <div class="flex-column flex-1">
       <div class="row">
-        ${[1, 2, 3, 4, 5].map((n) => `
-          <span class="label ${n === 1 ? 'align-left' : 'centered'} flex-1">${n}</span>
-          <span class="centered flex-1"></span>
-        `).join('')}
+        <span class="label align-left flex-1">1</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">2</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">3</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">4</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">5</span>
       </div>
       <input type="range" name="charDicePool" min="1" max="5" value="2" class="slider" id="char-dice-pool">
     </div>
@@ -273,10 +278,15 @@ export class STARoller {
     </div>
     <div class="flex-column flex-1">
       <div class="row">
-        ${[20, '19+', '18+', '17+', '16+'].map((label) => `
-          <span class="label ${label === 20 ? 'align-left' : 'centered'} flex-1">${label}</span>
-          <span class="centered flex-1"></span>
-        `).join('')}
+        <span class="label align-left flex-1">20</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">19+</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">18+</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">17+</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">16+</span>
       </div>
       <input type="range" name="complicationRange" min="1" max="5" value="${calculatedComplicationRange}" class="slider" id="complication-range">
     </div>

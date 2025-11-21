@@ -33,6 +33,7 @@ export class STACharacterSheet extends STAActors {
       'characterweapon',
       'armor',
       'talent',
+      'log',
       'milestone',
       'injury',
       'trait'
