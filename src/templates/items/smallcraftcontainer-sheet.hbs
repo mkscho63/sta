@@ -10,15 +10,16 @@
   </div>
 
   <div class="row">
-    <div class="column traits">
+    <div class="columnx2">
       <div class="title">{{localize 'sta.actor.smallcraft.child'}}</div>
       <select name="system.child">
         {{selectOptions availableSmallcrafts selected=item.system.child valueAttr="id" labelAttr="name"}}
       </select>
     </div>
-
-    <div class="tracktitle">{{localize 'sta.actor.belonging.other.quantity'}}</div>
-    <input type="number" class="numeric-entry" name="system.quantity" value="{{item.system.quantity}}" data-dtype="Number" />
+    <div class="grid-numbers">
+      <div class="tracktitle">{{localize 'sta.actor.belonging.other.quantity'}}</div>
+      <input type="number" class="numeric-entry" name="system.quantity" value="{{item.system.quantity}}" data-dtype="Number" />
+    </div>
   </div>
 
   <div class="title">{{localize 'sta.item.genericitem.description'}}</div>
