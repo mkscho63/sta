@@ -931,7 +931,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       if (!clickedBox || !clickedBox.id.startsWith('box')) return;
       const boxValue = parseInt(clickedBox.textContent, 10);
       const workProgressInput = this.element.querySelector('#work-progress');
-	  const currentWorkValue = parseInt(workProgressInput.value, 10) || 0;
+      const currentWorkValue = parseInt(workProgressInput.value, 10) || 0;
       if (boxValue === 1 && clickedBox.classList.contains('selected') && currentWorkValue === 1) {
         workProgressInput.value = 0;
       } else {

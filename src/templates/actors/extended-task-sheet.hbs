@@ -12,7 +12,7 @@
 
   <div class="row">
     <div class="tracktitle">{{localize 'sta.actor.extendedtask.work'}}: </div>
-    <input name="system.work" type="number" id="work" class="numeric-entry" value="{{actor.system.work}}" min="0" data-dtype="Number" />
+    <input name="system.workprogress.max" type="number" id="work" class="numeric-entry" value="{{actor.system.workprogress.max}}" min="0" data-dtype="Number" />
 
     <div class="tracktitle">{{localize 'sta.actor.extendedtask.difficulty'}}: </div>
     <input name="system.difficulty" type="number" id="difficulty" class="numeric-entry" value="{{actor.system.difficulty}}" min="0" data-dtype="Number" />
@@ -25,7 +25,7 @@
   </div>
 
   <div class="track">
-    <input type="hidden" id="work-progress" name="system.workprogress" value="{{actor.system.workprogress}}" data-dtype="Number" />
+    <input type="hidden" id="work-progress" name="system.workprogress.value" value="{{actor.system.workprogress.value}}" data-dtype="Number" />
     <div id="extendedtask-renderer" class="bar"></div>
   </div>
 

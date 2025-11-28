@@ -74,10 +74,14 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
       }),
 
       stress: new fields.SchemaField({
-        value: new fields.NumberField({required: true, integer: true, initial: 0})
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
-      reputation: new fields.NumberField({required: true, integer: true, initial: 3}),
+      reputation: new fields.SchemaField({
+        value: new fields.NumberField({required: true, integer: true, initial: 3}),
+        max: new fields.NumberField({required: true, integer: true, initial: 5})
+      }),
 
       environment: new fields.StringField({initial: ''}),
       milestones: new fields.StringField({initial: ''}),
@@ -145,15 +149,18 @@ export class StarshipData extends foundry.abstract.TypeDataModel {
       }),
 
       crew: new fields.SchemaField({
-        value: new fields.NumberField({required: true, integer: true, initial: 0})
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
       power: new fields.SchemaField({
-        value: new fields.NumberField({required: true, integer: true, initial: 0})
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
       shields: new fields.SchemaField({
-        value: new fields.NumberField({required: true, integer: true, initial: 0})
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
       designation: new fields.StringField({initial: ''}),
@@ -179,11 +186,14 @@ export class ExtendedTaskData extends foundry.abstract.TypeDataModel {
     return {
       magnitude: new fields.NumberField({required: true, integer: true, initial: 1}),
       difficulty: new fields.NumberField({required: true, integer: true, initial: 0}),
-      work: new fields.NumberField({required: true, integer: true, initial: 1}),
       resistance: new fields.NumberField({required: true, integer: true, initial: 0}),
       breakthroughs: new fields.NumberField({required: true, integer: true, initial: 0}),
-      workprogress: new fields.NumberField({required: true, integer: true, initial: 0}),
-      description: new fields.StringField({initial: ''})
+      description: new fields.StringField({initial: ''}),
+
+      workprogress: new fields.SchemaField({
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
+      }),
     };
   }
 }
@@ -222,11 +232,13 @@ export class SmallCraftData extends foundry.abstract.TypeDataModel {
       }),
 
       power: new fields.SchemaField({
-        value: new fields.NumberField({required: true, integer: true, initial: 0})
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
       shields: new fields.SchemaField({
-        value: new fields.NumberField({required: true, integer: true, initial: 0})
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
       refit: new fields.StringField({initial: ''}),
