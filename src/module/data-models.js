@@ -187,13 +187,17 @@ export class ExtendedTaskData extends foundry.abstract.TypeDataModel {
       magnitude: new fields.NumberField({required: true, integer: true, initial: 1}),
       difficulty: new fields.NumberField({required: true, integer: true, initial: 0}),
       resistance: new fields.NumberField({required: true, integer: true, initial: 0}),
-      breakthroughs: new fields.NumberField({required: true, integer: true, initial: 0}),
       description: new fields.StringField({initial: ''}),
+
+      breakthroughs: new fields.SchemaField({
+        value: new fields.NumberField({required: true, integer: true, initial: 0}),
+        max: new fields.NumberField({required: true, integer: true, initial: 0})
+      }),
 
       workprogress: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
         max: new fields.NumberField({required: true, integer: true, initial: 0})
-      }),
+      })
     };
   }
 }
