@@ -14,20 +14,20 @@
 
       <div class="npc-block">
         <div class="title">{{localize 'sta.actor.character.npc.section'}}</div>
-      <div class="row">
-<div class="column">
-          {{localize 'sta.actor.character.npc.minor'}}
-          <input type="radio" name="system.npcType" value="minor" {{checked (eq actor.system.npcType "minor")}}>
-</div>
-<div class="column">
-          {{localize 'sta.actor.character.npc.notable'}}
-          <input type="radio" name="system.npcType" value="notable" {{checked (eq actor.system.npcType "notable")}}>
-</div>
-<div class="column">
-          {{localize 'sta.actor.character.npc.major'}}
-          <input type="radio" name="system.npcType" value="major" {{checked (eq actor.system.npcType "major")}}>
-</div>
-</div>
+        <div class="row">
+          <div class="column">
+            {{localize 'sta.actor.character.npc.minor'}}
+            <input type="radio" name="system.npcType" value="minor" {{checked (eq actor.system.npcType "minor")}}>
+          </div>
+          <div class="column">
+            {{localize 'sta.actor.character.npc.notable'}}
+            <input type="radio" name="system.npcType" value="notable" {{checked (eq actor.system.npcType "notable")}}>
+          </div>
+          <div class="column">
+            {{localize 'sta.actor.character.npc.major'}}
+            <input type="radio" name="system.npcType" value="major" {{checked (eq actor.system.npcType "major")}}>
+          </div>
+        </div>
       </div>
 
       <div class="tracktitle">{{localize 'sta.actor.character.personalthreat'}}</div>
@@ -122,36 +122,38 @@
             </div>
           </div>
 
-          <br>
-
           <div class="row">
-            <div class="column house">
+            <div class="column house {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.house'}}</div>
               <input name="system.house" class="text-entry" type="text" value="{{actor.system.house}}" placeholder="{{localize 'sta.actor.character.klingon.house'}}" />
             </div>
-            <div class="column caste">
+            <div class="column caste {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.caste'}}</div>
               <input name="system.caste" class="text-entry" type="text" value="{{actor.system.caste}}" placeholder="{{localize 'sta.actor.character.klingon.caste'}}" />
             </div>
-            <div class="column status">
+            <div class="column status {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.status'}}</div>
               <input name="system.status" class="text-entry" type="text" value="{{actor.system.status}}" placeholder="{{localize 'sta.actor.character.klingon.status'}}" />
             </div>
-            <div class="column legacy">
+            <div class="column legacy {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.legacy'}}</div>
               <input name="system.legacy" class="text-entry" type="text" value="{{actor.system.legacy}}" placeholder="{{localize 'sta.actor.character.klingon.legacy'}}" />
             </div>
           </div>
 
           <div class="row">
-            <div class="column temperament">
+            <div class="column temperament  {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.temperament'}}</div>
               <input name="system.temperament" class="text-entry" type="text" value="{{actor.system.temperament}}" placeholder="{{localize 'sta.actor.character.klingon.temperament'}}" />
             </div>
-            <div class="column househistory">
+            <div class="column househistory {{#unless actor.system.showklingon}}hidden{{/unless}}">
               <div class="title">{{localize 'sta.actor.character.klingon.househistory'}}</div>
               <input name="system.househistory" class="text-entry" type="text" value="{{actor.system.househistory}}" placeholder="{{localize 'sta.actor.character.klingon.househistory'}}" />
             </div>
+          </div>
+          <div class="amiklingon">
+            {{localize 'sta.actor.character.klingon.Klingon'}}:
+            <input class="checkbox" type="checkbox" name="system.showklingon" data-dtype="Boolean" {{checked actor.system.showklingon}}> 
           </div>
 
           <div class="title">{{localize 'sta.actor.note.title'}}</div>

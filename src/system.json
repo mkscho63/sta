@@ -68,6 +68,33 @@
 			"flags": {}
 		}
 	],
+
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "starship": {},
+      "extendedtask": {},
+      "smallcraft": {},
+      "scenetraits": {}
+    },
+    "Item": {
+      "item": {},
+      "focus": {},
+      "value": {},
+      "characterweapon": {},
+      "characterweapon2e": {},
+      "starshipweapon": {},
+      "starshipweapon2e": {},
+      "armor": {},
+      "talent": {},
+      "milestone": {},
+      "injury": {},
+      "smallcraftcontainer": {},
+      "trait": {},
+      "log": {}
+    }
+  },
+
 	"grid": {
 		"distance": 5,
 		"units": "m"

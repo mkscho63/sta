@@ -87,6 +87,31 @@ import {
   STARoll
 } from './apps/roll.js';
 
+import {
+  CharacterData,
+  StarshipData,
+  ExtendedTaskData,
+  SmallCraftData,
+  SceneTraitsData
+} from './data-models.js';
+
+import {
+  ItemData,
+  FocusData,
+  ValueData,
+  CharacterWeaponData,
+  CharacterWeapon2eData,
+  StarshipWeaponData,
+  StarshipWeapon2eData,
+  ArmorData,
+  TalentData,
+  MilestoneData,
+  InjuryData,
+  SmallCraftContainerData,
+  TraitData,
+  LogData
+} from './data-models.js';
+
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
@@ -108,6 +133,33 @@ Hooks.once('init', function() {
      *.::'*****************\'.*
      .:'  ***************    .
     .`);
+
+  // Register Actor data models
+  CONFIG.Actor.dataModels = {
+    character: CharacterData,
+    starship: StarshipData,
+    extendedtask: ExtendedTaskData,
+    smallcraft: SmallCraftData,
+    scenetraits: SceneTraitsData
+  };
+
+  // Register Item data models
+  CONFIG.Item.dataModels = {
+    item: ItemData,
+    focus: FocusData,
+    value: ValueData,
+    characterweapon: CharacterWeaponData,
+    characterweapon2e: CharacterWeapon2eData,
+    starshipweapon: StarshipWeaponData,
+    starshipweapon2e: StarshipWeapon2eData,
+    armor: ArmorData,
+    talent: TalentData,
+    milestone: MilestoneData,
+    injury: InjuryData,
+    smallcraftcontainer: SmallCraftContainerData,
+    trait: TraitData,
+    log: LogData
+  };
 
   // Create a namespace within the game global
   game.sta = {

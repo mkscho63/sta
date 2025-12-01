@@ -8,11 +8,4 @@ export class STATalentSheet extends STAItems {
       template: 'systems/sta/templates/items/talent-sheet.hbs'
     },
   };
-
-  static DEFAULT_OPTIONS = {
-    position: {
-      height: 'auto',
-      width: 565,
-    },
-  };
 }
