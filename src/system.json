@@ -71,93 +71,27 @@
 
   "documentTypes": {
     "Actor": {
-      "character": {
-        "htmlFields": [
-          "notes",
-          "assignment",
-          "environment",
-          "milestones",
-          "species",
-          "careerpath",
-          "pastimes",
-          "experience",
-          "careerevents",
-          "house",
-          "househistory",
-          "legacy",
-          "traits",
-          "upbringing"
-        ]
-      },
-      "starship": {
-        "htmlFields": [
-          "notes",
-          "designation",
-          "missionprofile",
-          "refit",
-          "servicedate",
-          "spaceframe",
-          "traits"
-        ]
-      },
-      "extendedtask": {
-        "htmlFields": ["notes"]
-      },
-      "smallcraft": {
-        "htmlFields": [
-          "missionprofile",
-          "parent",
-          "spaceframe",
-          "traits"
-        ]
-      },
-      "scenetraits": {
-        "htmlFields": ["notes"]
-      }
+      "character": {},
+      "starship": {},
+      "extendedtask": {},
+      "smallcraft": {},
+      "scenetraits": {}
     },
     "Item": {
-      "item": {
-        "htmlFields": ["description"]
-      },
-      "focus": {
-        "htmlFields": ["description"]
-      },
-      "value": {
-        "htmlFields": ["description"]
-      },
-      "characterweapon": {
-        "htmlFields": ["description"]
-      },
-      "characterweapon2e": {
-        "htmlFields": ["description"]
-      },
-      "starshipweapon": {
-        "htmlFields": ["description"]
-      },
-      "starshipweapon2e": {
-        "htmlFields": ["description"]
-      },
-      "armor": {
-        "htmlFields": ["description"]
-      },
-      "talent": {
-        "htmlFields": ["description"]
-      },
-      "milestone": {
-        "htmlFields": ["description"]
-      },
-      "injury": {
-        "htmlFields": ["description"]
-      },
-      "smallcraftcontainer": {
-        "htmlFields": ["description"]
-      },
-      "trait": {
-        "htmlFields": ["description"]
-      },
-      "log": {
-        "htmlFields": ["description"]
-      }
+      "item": {},
+      "focus": {},
+      "value": {},
+      "characterweapon": {},
+      "characterweapon2e": {},
+      "starshipweapon": {},
+      "starshipweapon2e": {},
+      "armor": {},
+      "talent": {},
+      "milestone": {},
+      "injury": {},
+      "smallcraftcontainer": {},
+      "trait": {},
+      "log": {}
     }
   },
 
