@@ -2,7 +2,7 @@
 	"id": "sta",
 	"title": "Star Trek Adventures Roleplaying Game",
 	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
-	"version": "2.4.2",
+	"version": "2.4.3",
 	"compatibility": {
 		"verified": "13",
 		"minimum": "13"
@@ -68,33 +68,31 @@
 			"flags": {}
 		}
 	],
-
-  "documentTypes": {
-    "Actor": {
-      "character": {},
-      "starship": {},
-      "extendedtask": {},
-      "smallcraft": {},
-      "scenetraits": {}
-    },
-    "Item": {
-      "item": {},
-      "focus": {},
-      "value": {},
-      "characterweapon": {},
-      "characterweapon2e": {},
-      "starshipweapon": {},
-      "starshipweapon2e": {},
-      "armor": {},
-      "talent": {},
-      "milestone": {},
-      "injury": {},
-      "smallcraftcontainer": {},
-      "trait": {},
-      "log": {}
-    }
-  },
-
+	"documentTypes": {
+		"Actor": {
+			"character": {},
+			"starship": {},
+			"extendedtask": {},
+			"smallcraft": {},
+			"scenetraits": {}
+		},
+		"Item": {
+			"item": {},
+			"focus": {},
+			"value": {},
+			"characterweapon": {},
+			"characterweapon2e": {},
+			"starshipweapon": {},
+			"starshipweapon2e": {},
+			"armor": {},
+			"talent": {},
+			"milestone": {},
+			"injury": {},
+			"smallcraftcontainer": {},
+			"trait": {},
+			"log": {}
+		}
+	},
 	"grid": {
 		"distance": 5,
 		"units": "m"
@@ -417,5 +415,5 @@
 	],
 	"url": "https://github.com/mkscho63/sta",
 	"manifest": "https://raw.githubusercontent.com/mkscho63/sta/master/src/system.json",
-	"download": "https://raw.githubusercontent.com/mkscho63/sta/v2.4.2/package/sta-v2.4.2.zip"
+	"download": "https://raw.githubusercontent.com/mkscho63/sta/v2.4.3/package/sta-v2.4.3.zip"
 }
