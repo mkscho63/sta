@@ -78,11 +78,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
         max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
-      reputation: new fields.SchemaField({
-        value: new fields.NumberField({required: true, integer: true, initial: 3}),
-        max: new fields.NumberField({required: true, integer: true, initial: 5})
-      }),
-
+      reputation: new fields.StringField({initial: ''}),
       environment: new fields.StringField({initial: ''}),
       milestones: new fields.StringField({initial: ''}),
       pronouns: new fields.StringField({initial: ''}),
