@@ -741,9 +741,9 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   static async _onItemCreate(event, target) {
     const docCls = getDocumentClass(target.dataset.documentClass || 'Item');
     const type = target.dataset.type || 'item';
-    const existingItems = this.actor.items.filter(i => i.type === type);
+    const existingItems = this.actor.items.filter((i) => i.type === type);
     const maxSort = existingItems.length > 0 ? 
-      Math.max(...existingItems.map(i => i.sort || 0)) : 0;
+      Math.max(...existingItems.map((i) => i.sort || 0)) : 0;
     const docData = {
       name: `New ${type.charAt(0).toUpperCase() + type.slice(1)}`,
       type: type,
