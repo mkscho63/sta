@@ -78,7 +78,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
         max: new fields.NumberField({required: true, integer: true, initial: 0})
       }),
 
-      reputation: new fields.StringField({initial: ''}),
+      reputation: new fields.NumberField({required: true, integer: true, initial: 3}),
       environment: new fields.StringField({initial: ''}),
       milestones: new fields.StringField({initial: ''}),
       pronouns: new fields.StringField({initial: ''}),
@@ -106,7 +106,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
       rollrepnotdis: new fields.BooleanField({initial: false}),
       upbringing: new fields.StringField({initial: ''}),
       npcType: new fields.StringField({initial: 'minor'}),
-	  showklingon: new fields.BooleanField({initial: false})
+      showklingon: new fields.BooleanField({initial: false})
     };
   }
 }
@@ -503,6 +503,7 @@ export class LogData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     const fields = foundry.data.fields;
     return {
+      used: new fields.BooleanField({initial: false}),
       description: new fields.StringField({initial: ''}),
       valueStates: new fields.ObjectField({initial: {}})
     };
