@@ -1,0 +1,30 @@
+folder: RW459khswQr1n6zj
+name: Interrogation
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+system:
+  description: >-
+    <p>When you succeed at a task to coerce someone to reveal information in a
+    social conflict, you may ask one question for free, as per the Obtain
+    Information Momentum spend.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: HtVMka9JEtwsG7ou
+ownership:
+  default: 0
+sort: 0
+_key: '!items!HtVMka9JEtwsG7ou'

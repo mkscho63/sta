@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Constantly Watching
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>At the start of an action scene, the gamemaster must spend an additional
+    2 Threat to have an NPC take the first turn. You may also re-roll 1d20 on
+    any task attempted to locate a hidden enemy or danger.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 4I7fmGrbonUYWTxn
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!4I7fmGrbonUYWTxn'

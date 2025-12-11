@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Applied Force
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Security 4+, Fitness 9+</p>
+
+    <p><br>When you make a Melee Attack, you may use Fitness instead of Daring.
+    In addition, you add 1 to the Severity of your Unarmed Attacks.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: kZXkOUbdq7JIWw0b
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!kZXkOUbdq7JIWw0b'

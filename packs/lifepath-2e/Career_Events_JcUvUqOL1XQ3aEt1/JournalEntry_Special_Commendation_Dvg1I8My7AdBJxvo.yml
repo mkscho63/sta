@@ -1,0 +1,56 @@
+name: Special Commendation
+pages:
+  - sort: 100000
+    name: Special Commendation
+    type: text
+    _id: 2C9YyagOlzrOH0nx
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>During a crisis, the character saved the lives of several colleagues,
+        helping them to safety. This earned the character a special
+        commendation.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Fitness</p></li><li><p>DEPARTMENT: + 1 Any</p></li><li><p>FOCUS
+        SUGGESTIONS: Athletics, Survival, Emergency Medicine</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!Dvg1I8My7AdBJxvo.2C9YyagOlzrOH0nx'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: Dvg1I8My7AdBJxvo
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!Dvg1I8My7AdBJxvo'

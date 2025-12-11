@@ -1,0 +1,56 @@
+name: Death of a Friend
+pages:
+  - sort: 100000
+    name: Death of a Friend
+    type: text
+    _id: fQvKPO6Cle8DzQJn
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>One of the character’s friends was killed in
+        action.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Insight</p></li><li><p>DEPARTMENT: + 1 Medicine</p></li><li><p>FOCUS
+        SUGGESTIONS: Counseling, but it may also represent a skill or pursuit
+        the character takes up in their fallen friend’s memory</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!kxV3tWE28a4Pp6L7.fQvKPO6Cle8DzQJn'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: kxV3tWE28a4Pp6L7
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!kxV3tWE28a4Pp6L7'

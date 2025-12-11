@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Telepathic
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-andorian.svg
+system:
+  description: >-
+    <p>Aenar can sense the minds of other living creatures in their vicinity,
+    and can read the thoughts of others, though they have strict taboos about
+    reading a mind without permission. See the&nbsp;Telepathy talent on page 156
+    for more details.</p>
+  talenttype:
+    typeenum: species
+    description: Aenar
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: HCSFqry1Ln9Y1Foc
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!HCSFqry1Ln9Y1Foc'

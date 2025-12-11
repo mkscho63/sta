@@ -1,0 +1,50 @@
+name: Phase Pistol
+type: characterweapon
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Standard Issue</strong></p>
+
+    <p>Phase pistols were early forms of directed energy weapon used before the
+    development of phasers. Phase pistols were introduced in 2151 to replace the
+    EM-33 plasma pistol.</p>
+  damage: 3
+  range: ranged
+  hands: 1
+  qualities:
+    area: false
+    intense: false
+    knockdown: false
+    accurate: false
+    charge: false
+    cumbersome: false
+    deadly: false
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 0
+  opportunity: null
+  escalation: null
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 8IjLXsTE5r78IgAl
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!8IjLXsTE5r78IgAl'

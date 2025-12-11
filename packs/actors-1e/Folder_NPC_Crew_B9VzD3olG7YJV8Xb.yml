@@ -1,0 +1,20 @@
+type: Actor
+folder: null
+name: NPC Crew
+color: null
+sorting: a
+_id: B9VzD3olG7YJV8Xb
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450409111
+  modifiedTime: 1765450409111
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_key: '!folders!B9VzD3olG7YJV8Xb'

@@ -1,0 +1,37 @@
+name: 'Crew, Talented (A: 10/D: 3)'
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-career-experienced.svg
+system:
+  description: >-
+    <p><strong>Talented Crew Quality: Attribute 10, Discipline 3</strong></p>
+
+    <p>An NPC ship does not have specific crew at individual positions on the
+    bridge &mdash; this level of detail is unnecessary for running an NPC ship.
+    Instead, each NPC vessel has a Crew Quality, which provides ratings which
+    serve as the Attribute and Discipline scores needed by the vessel for any
+    given Task. NPC crew used in this way are always considered to have an
+    applicable Focus.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: FdUrY03y4nODTFqb
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!FdUrY03y4nODTFqb'

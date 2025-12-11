@@ -1,0 +1,46 @@
+folder: RW459khswQr1n6zj
+name: Chief Engineer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-chief-engineer.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <section class="journal-page-content">
+
+    <p>The chief engineer is responsible for ensuring the ship remains
+    operational and functional, and commands the engineering department aboard
+    the ship.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: You reduce the opportunity cost of engineering teams by 1,
+    to a minimum of 0. Further, when you attempt a task to perform repairs to a
+    starship or attempt to push the ship&rsquo;s capabilities beyond its normal
+    limits, you may spend 1 Momentum (Immediate) to re-roll a d20.</p>
+
+    </section>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: I4EGxgAxEdzyaigc
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!I4EGxgAxEdzyaigc'

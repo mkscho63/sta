@@ -1,0 +1,38 @@
+name: Anti-grav Sled
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 2</strong></p>
+
+    <p>The anti-grav sled resembles a small cart without wheels. On the bottom
+    of the device there are multiple graviton emitters that counter the local
+    gravity field, effectively making the sled and any items placed on it nearly
+    weightless, though not massless. In a natural gravity field the sled is less
+    efficient, while on a vessel that has gravity plating, the sled interacts
+    with the ships computer to lower the artificial gravity around the sled,
+    allowing more mass to be moved and for a longer operational timespan.
+    Versions which double as stretchers for transporting injured personnel are
+    often used in sickbays and hospitals.</p>
+  quantity: 1
+  opportunity: 2
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: CLvKfG3z1UyDr0kZ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!CLvKfG3z1UyDr0kZ'

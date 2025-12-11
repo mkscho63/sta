@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Kolinahr
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-vulcan.svg
+system:
+  description: >-
+    <p>You have undergone the ritual journey to purge all emotion, allowing you
+    to dispassionately observe and dissect your emotional responses and render
+    them powerless. When you ignore emotions using your Mental Discipline
+    Species Ability, you may avoid&nbsp;emotional traits by taking 1 Stress
+    instead of 2, and you no longer increase the potency of emotional traits
+    when Fatigued.</p>
+  talenttype:
+    typeenum: species
+    description: Vulcan
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: i21UHsOEr09tL9Ou
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!i21UHsOEr09tL9Ou'

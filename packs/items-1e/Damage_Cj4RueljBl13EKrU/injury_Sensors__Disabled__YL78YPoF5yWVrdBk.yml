@@ -1,0 +1,33 @@
+name: Sensors (Disabled)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-disabled-sensors.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p>If the total number of Breaches the Sensors System has suffered is equal
+    to the Scale of the ship, then the system has been Disabled. The Sensors
+    System cannot be used to perform or assist any Tasks (even those that would
+    normally be Difficulty 0), and attacks made by the ship increase in
+    Difficulty by +2. The Difficulty to repair this is 4, though at the
+    Gamemaster&rsquo;s discretion this may be replaced with an Extended Task
+    (Work 10, Magnitude 2, Resistance 1, base Difficulty 2).</p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: YL78YPoF5yWVrdBk
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!YL78YPoF5yWVrdBk'

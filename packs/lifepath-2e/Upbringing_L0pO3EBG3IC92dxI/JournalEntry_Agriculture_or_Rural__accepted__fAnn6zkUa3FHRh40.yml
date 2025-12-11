@@ -1,0 +1,66 @@
+name: Agriculture or Rural (accepted)
+pages:
+  - sort: 100000
+    name: Agriculture or Rural (accepted)
+    type: text
+    _id: SvMKmXrG8KGVg3uF
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character grew up surrounded more by nature than by people, in
+        rural communities, on the frontier, or somewhere else distanced from the
+        bustle of cities. They might be heavily involved in agriculture, growing
+        real food to supplement synthesized or replicated
+        meals.</p><p></p><p>ATTRIBUTES</p><p>If the character accepted this
+        Upbringing, the tough, practical life on the land breeds a strong work
+        ethic and a healthy body, increasing their Control by 1 and their
+        Fitness by 2.</p><p></p><p>DEPARTMENTS, FOCUS, AND TALENT</p><p>The
+        character’s living off the land and growing up on the edge of
+        civilization allows them to increase one of Conn, Security, or
+        Medicine</p><p>The character’s focus should relate to the character’s
+        rural lifestyle, and the skills they learned there. Examples include:
+        Animal Handling, Athletics, Emergency Medicine, Endurance, Ground
+        Vehicles, Infectious Diseases, Navigation, Toxicology, Survival
+        Training.</p><p>The character also gains a single talent.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!fAnn6zkUa3FHRh40.SvMKmXrG8KGVg3uF'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452028706
+  modifiedTime: 1765452028706
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: L0pO3EBG3IC92dxI
+categories: []
+_id: fAnn6zkUa3FHRh40
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!fAnn6zkUa3FHRh40'

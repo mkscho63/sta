@@ -1,0 +1,36 @@
+name: Detronal Scanner
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>The advances in molecular and atomic scanning as well as computing power
+    allowed the development of hand-held genetic analysis devices such as the
+    detronal scanner. This device allows a trained physician to scan the skin
+    and deeper layers of tissue of a humanoid and perform an analysis of the
+    patient&rsquo;s genome. If the patient is of a known and previously studied
+    species, the device can also provide analysis of any genetic drift or damage
+    due to external sources.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: Xy450dGUx18z3JHE
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Xy450dGUx18z3JHE'

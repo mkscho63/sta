@@ -1,0 +1,42 @@
+folder: lWBHbmoPN9FHtgLe
+name: Saucer Separation and Reconnect
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+system:
+  description: >-
+    <p>The ship is designed so the saucer section can be separated from the
+    engineering section to operate as two distinct ships. Each section has the
+    same systems, talents, and weapons, but their Scale is 1 lower than that of
+    the original vessel (recalculate anything derived from Scale). Further, if
+    the ship suffered any breaches prior to separating, ongoing effects of those
+    breaches apply equally to both sections. The saucer section, which usually
+    contains the crew quarters and recreation areas, does not have the capacity
+    to go to warp. The secondary hull is commanded from main
+    engineering.<br>Separating is a major action attempted from the bridge
+    (Operations panel) or main engineering, requiring a Control + Conn task with
+    a Difficulty of 3, assisted by the ship&rsquo;s Structure + Engineering.
+    Reconnecting takes a major action, but the process is automated and requires
+    no task attempt. Separating and reconnecting cannot be completed if the ship
+    (or either part of it) has suffered one or more breaches to Structure.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 8GhtMOkm9O029HsW
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!8GhtMOkm9O029HsW'

@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Bedside Manner
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Command 3+ and Medicine 3+</p>
+
+    <p><br>When you succeed at a Medicine task to heal an Injury, you may
+    immediately remove a negative trait from the patient, even if that trait was
+    unrelated to the Injury being treated. In addition, when you attempt a
+    Reputation Check, add one additional positive influence.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 15NToqld9kZ0EqOv
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!15NToqld9kZ0EqOv'

@@ -1,0 +1,32 @@
+folder: vxwA3LkDPxUcWMFA
+name: PADD
+type: item
+img: systems/sta/assets/compendia/icons/items-core/padd.webp
+system:
+  description: >-
+    <p>The &lsquo;Personal Access Display Device&rsquo; allows crew
+    to&nbsp;access the database of their posting, tying them into the subspace
+    network subspace network. This gives a user as much data access as they have
+    clearance for, access to subspace communication, and the ability to record
+    and transmit text, audio, and video recordings.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: UPFtus09oAO3Y3ZS
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!UPFtus09oAO3Y3ZS'

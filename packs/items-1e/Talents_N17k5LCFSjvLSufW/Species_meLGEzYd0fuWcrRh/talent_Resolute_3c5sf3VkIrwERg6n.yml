@@ -1,0 +1,34 @@
+name: Resolute
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-human.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement</strong>: Human, or Gamemaster&rsquo;s
+    discretion.</p>
+
+    <p>You are indomitable, and unwilling to succumb to adversity. You increase
+    your maximum Stress by 3.</p>
+  talenttype:
+    typeenum: species
+    description: Human
+    minimum: 0
+_id: 3c5sf3VkIrwERg6n
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!3c5sf3VkIrwERg6n'

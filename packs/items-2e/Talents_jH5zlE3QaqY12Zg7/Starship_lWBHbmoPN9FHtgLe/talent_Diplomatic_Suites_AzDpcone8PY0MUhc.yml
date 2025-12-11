@@ -1,0 +1,36 @@
+folder: lWBHbmoPN9FHtgLe
+name: Diplomatic Suites
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-peace.svg
+system:
+  description: >-
+    <p>The ship has numerous high-quality staterooms for hosting VIPs, as well
+    as briefing rooms and other facilities that allow the ship to serve as a
+    neutral ground for diplomatic summits, trade negotiations, and similar
+    functions, including making environmental adjustments to make alien
+    diplomats more comfortable.</p>
+
+    <p><br>When hosting negotiations, members of the crew may be assisted by the
+    ship&rsquo;s Computers + Command or Structure + Command.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: AzDpcone8PY0MUhc
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!AzDpcone8PY0MUhc'

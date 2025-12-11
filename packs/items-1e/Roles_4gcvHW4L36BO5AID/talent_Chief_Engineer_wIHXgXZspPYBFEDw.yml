@@ -1,0 +1,37 @@
+name: Chief Engineer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-chief-engineer.svg
+system:
+  description: >-
+    <p><strong>Requirements:</strong> Engineering department only.</p>
+
+    <p>The chief engineer is responsible for ensuring that the ship remains
+    operational and functional, and commands the engineering department aboard
+    the ship.</p>
+
+    <p>When aboard the ship, the chief engineer always has the Advantage
+    &ldquo;Engineering Department&rdquo;, which represents the ship&rsquo;s
+    complement of engineers and technicians.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450837129
+  modifiedTime: 1765450837129
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: 4gcvHW4L36BO5AID
+_id: wIHXgXZspPYBFEDw
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!wIHXgXZspPYBFEDw'

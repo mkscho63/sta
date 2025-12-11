@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Theory into Practice
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Science 3+ and Testing a Theory talent</p>
+
+    <p>&nbsp;</p>
+
+    <p>When you succeed at a task using Engineering or&nbsp;Science where you
+    gain the additional d20 from the Testing a Theory talent, or which benefits
+    from a trait that represents a hypothesis you&rsquo;ve made, you generate 2
+    bonus Momentum. Bonus Momentum may not be saved.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: sEOsvQ8UUeOsLaGJ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!sEOsvQ8UUeOsLaGJ'

@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Surgery Savant
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>When attempting a Medicine task during an extended&nbsp;task relating to
+    surgery, your Impact is increased by 1. Impact is explained in more detail
+    on page 271.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 0UjeeNKjzjuKli5a
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!0UjeeNKjzjuKli5a'

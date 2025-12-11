@@ -1,0 +1,36 @@
+name: Advanced Sensor Suites
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The vessel&rsquo;s sensors are amongst the most sophisticated and
+    advanced available in the fleet. Unless the ship&rsquo;s Sensors have
+    suffered one or more Breaches, whenever a character performs a Task assisted
+    by the ship&rsquo;s Sensors, they may reduce the Difficulty of the Task by
+    one, to a minimum of 0.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: l37BUs5EVDsUvrs3
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!l37BUs5EVDsUvrs3'

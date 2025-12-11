@@ -1,0 +1,39 @@
+name: Orb Experience
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-bajoran.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement</strong>: Bajoran, or Gamemaster&rsquo;s
+    permission.</p>
+
+    <p>You have received a vision from the Bajoran Prophets, through one of the
+    Orbs. This rare experience, though confusing at first, has shaped your life
+    and outlook. You have one additional Value, reflecting the insights you
+    received from the experience. The first time this Value is Challenged, roll
+    1 Challenge Die; if an Effect is rolled, then some foretold element of the
+    Orb Experience has come to pass, and the Value is not crossed out as it
+    would normally be.</p>
+  talenttype:
+    typeenum: species
+    description: Bajoran
+    minimum: 0
+_id: YUvGEeZBPspC42Dt
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!YUvGEeZBPspC42Dt'

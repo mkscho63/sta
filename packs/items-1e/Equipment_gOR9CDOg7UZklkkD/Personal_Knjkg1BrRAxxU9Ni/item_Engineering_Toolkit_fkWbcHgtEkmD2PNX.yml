@@ -1,0 +1,43 @@
+name: Engineering Toolkit
+type: item
+img: systems/sta/assets/compendia/icons/items-core/engineering_kit.webp
+effects: []
+folder: Knjkg1BrRAxxU9Ni
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Standard Issue for Engineers, Opportunity 1
+    otherwise</strong></p>
+
+    <p>Beginning with the introduction of duotronic computing in the mid-23rd
+    century, analysis of engineering faults in systems controlled by electronics
+    became more difficult due to the high-energy transfer rates and EM
+    interference. The engineering multitool was developed and acted as a
+    tricorder like device to detect and diagnose system faults and could be used
+    in a general role as a multi-purpose tool to repair and maintain systems.
+    With the advent of isolinear systems, the multi-tool was rendered obsolete
+    and many of the uses of the device were supplanted by the tricorder, but
+    tools were still needed to maintain and repair damaged equipment, so the
+    Starfleet engineering tool-kit was introduced to provide nearly every tool a
+    damage control or engineering team may need outside of unusual
+    circumstances.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: fkWbcHgtEkmD2PNX
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!fkWbcHgtEkmD2PNX'

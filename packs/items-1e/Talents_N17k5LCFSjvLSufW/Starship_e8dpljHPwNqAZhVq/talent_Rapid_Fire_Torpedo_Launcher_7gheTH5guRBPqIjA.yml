@@ -1,0 +1,35 @@
+name: Rapid Fire Torpedo Launcher
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-torpedo.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The vessel&rsquo;s torpedo launchers have been redesigned to allow the
+    ship to fire multiple torpedoes much more quickly and accurately. Whenever
+    the crew add 3 to Threat to fire a torpedo salvo, they may re-roll a single
+    d20 on the attack, and any number of Challenge Dice on the damage roll.</p>
+  talenttype:
+    typeenum: general
+    description: science
+    minimum: 2
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: 7gheTH5guRBPqIjA
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!7gheTH5guRBPqIjA'

@@ -1,0 +1,35 @@
+name: Improved Power Systems
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-power.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The ship&rsquo;s power systems are extremely efficient, allowing power to
+    be redirected and rerouted from different systems very quickly. Whenever a
+    character succeeds at a Power Management Task, the ship gains 2 Power per
+    Momentum spent (Repeatable) instead of 1.</p>
+  talenttype:
+    typeenum: general
+    description: security
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: Wxx8zBdLT8leE9UC
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Wxx8zBdLT8leE9UC'

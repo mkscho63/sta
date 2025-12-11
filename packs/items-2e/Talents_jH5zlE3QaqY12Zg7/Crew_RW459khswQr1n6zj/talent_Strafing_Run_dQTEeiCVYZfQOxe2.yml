@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Strafing Run
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>Whenever you succeed at the Attack Pattern task and then Keep the
+    Initiative, the cost to Keep the Initiative is reduced to 0. If the
+    character taking the next turn makes&nbsp;an Attack, they may re-roll one
+    d20.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dQTEeiCVYZfQOxe2
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!dQTEeiCVYZfQOxe2'

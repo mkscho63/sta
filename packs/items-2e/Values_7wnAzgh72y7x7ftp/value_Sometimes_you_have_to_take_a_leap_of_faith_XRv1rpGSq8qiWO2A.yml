@@ -1,0 +1,25 @@
+name: Sometimes you have to take a leap of faith
+type: value
+img: systems/sta/assets/compendia/icons/values-core/value-aspiration.svg
+system:
+  description: ''
+  used: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451337246
+  modifiedTime: 1765451337246
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: 7wnAzgh72y7x7ftp
+_id: XRv1rpGSq8qiWO2A
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!XRv1rpGSq8qiWO2A'

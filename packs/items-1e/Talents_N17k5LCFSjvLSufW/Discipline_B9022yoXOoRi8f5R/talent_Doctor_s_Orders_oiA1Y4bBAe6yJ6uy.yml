@@ -1,0 +1,35 @@
+name: Doctor's Orders
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>REQUIREMENT</strong>: Medicine 4+</p>
+
+    <p>When you attempt a Task to coordinate others, or to coerce someone into
+    taking or refraining from a specific course of action, you may use your
+    <strong>Medicine</strong> Discipline instead of
+    <strong>Command</strong>.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 4
+_id: oiA1Y4bBAe6yJ6uy
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!oiA1Y4bBAe6yJ6uy'

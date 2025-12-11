@@ -1,0 +1,2746 @@
+name: Starship Token Gallery
+navigation: false
+navName: ''
+background:
+  src: systems/sta/assets/compendia/maps/empty-space-zones.webp
+  scaleX: 1
+  scaleY: 1
+  offsetX: 0
+  offsetY: 0
+  rotation: 0
+  tint: '#ffffff'
+  anchorX: 0
+  anchorY: 0
+  fit: fill
+  alphaThreshold: 0
+foreground: null
+foregroundElevation: 4
+thumb: worlds/sta/assets/scenes/fcv27nH2KilOhqJg-thumb.webp
+width: 3200
+height: 3200
+padding: 0
+initial:
+  x: null
+  'y': null
+  scale: null
+backgroundColor: '#000000'
+grid:
+  type: 0
+  size: 100
+  color: '#000000'
+  alpha: 0.2
+  distance: 1
+  units: ''
+  style: solidLines
+  thickness: 1
+tokenVision: false
+drawings: []
+tokens:
+  - name: Shuttlepod
+    displayName: 30
+    actorLink: true
+    texture:
+      src: >-
+        systems/sta/assets/compendia/ships/starfleet/type-15-shuttlepod-token.webp
+      scaleX: 0.5
+      scaleY: 0.5
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 1
+    height: 1
+    lockRotation: false
+    rotation: 315
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: pU8EwY2rHYxTUeyM
+    x: 931
+    'y': 856
+    hidden: false
+    _id: bPEpIGAQ6PWpS9gE
+    elevation: 0
+    delta:
+      _id: bPEpIGAQ6PWpS9gE
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.bPEpIGAQ6PWpS9gE.bPEpIGAQ6PWpS9gE'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.bPEpIGAQ6PWpS9gE'
+  - name: Shuttlecraft
+    displayName: 30
+    actorLink: true
+    texture:
+      src: >-
+        systems/sta/assets/compendia/ships/starfleet/type-6-shuttlepod-token.webp
+      scaleX: 0.7
+      scaleY: 0.7
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 1
+    height: 1
+    lockRotation: false
+    rotation: 315
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: RxGE0nvCnztSH08b
+    x: 518
+    'y': 383
+    hidden: false
+    _id: QrRJ8hcSmAvwPSfZ
+    elevation: 0
+    delta:
+      _id: QrRJ8hcSmAvwPSfZ
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.QrRJ8hcSmAvwPSfZ.QrRJ8hcSmAvwPSfZ'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.QrRJ8hcSmAvwPSfZ'
+  - name: Runabout
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/danube-runabout-token.webp
+      scaleX: 0.6
+      scaleY: 0.6
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 1.5
+    height: 1.5
+    lockRotation: false
+    rotation: 315
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: ZZmLMVI3OpWhIWMH
+    x: 561
+    'y': 760
+    hidden: false
+    _id: ZchUzCseZwNWN7Jp
+    elevation: 0
+    delta:
+      _id: ZchUzCseZwNWN7Jp
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.ZchUzCseZwNWN7Jp.ZchUzCseZwNWN7Jp'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.ZchUzCseZwNWN7Jp'
+  - name: Akira
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/akira-token.webp
+      scaleX: 1.1
+      scaleY: 1.1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3
+    height: 3
+    lockRotation: false
+    rotation: 315
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: fKYuVchI6SM3d2m7
+    x: 735
+    'y': 438
+    hidden: false
+    _id: Dc5r918uCnhvfDRq
+    elevation: 0
+    delta:
+      _id: Dc5r918uCnhvfDRq
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.Dc5r918uCnhvfDRq.Dc5r918uCnhvfDRq'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.Dc5r918uCnhvfDRq'
+  - name: Constitution
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/constitution-token.webp
+      scaleX: 1
+      scaleY: 1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2.5
+    height: 2.5
+    lockRotation: false
+    rotation: 345
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: dmqv2tqdR0vIdXLK
+    x: 1381
+    'y': 872
+    hidden: false
+    _id: 5Jkn9P8O7tClLhq7
+    elevation: 0
+    delta:
+      _id: 5Jkn9P8O7tClLhq7
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.5Jkn9P8O7tClLhq7.5Jkn9P8O7tClLhq7'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.5Jkn9P8O7tClLhq7'
+  - name: Defiant
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/defiant-token.webp
+      scaleX: 0.6
+      scaleY: 0.6
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2
+    height: 2
+    lockRotation: false
+    rotation: 285
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: 45WxiLeykT5t2hyR
+    x: 937
+    'y': 1383
+    hidden: false
+    _id: 5kna192NMwBqXMG3
+    elevation: 0
+    delta:
+      _id: 5kna192NMwBqXMG3
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.5kna192NMwBqXMG3.5kna192NMwBqXMG3'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.5kna192NMwBqXMG3'
+  - name: Constellation
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/constellation-token.webp
+      scaleX: 1
+      scaleY: 1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2.5
+    height: 2.5
+    lockRotation: false
+    rotation: 330
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: 64SWanXacUxQfAjU
+    x: 1103
+    'y': 737
+    hidden: false
+    _id: Aj6dxu3UHOjP8bpD
+    elevation: 0
+    delta:
+      _id: Aj6dxu3UHOjP8bpD
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.Aj6dxu3UHOjP8bpD.Aj6dxu3UHOjP8bpD'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.Aj6dxu3UHOjP8bpD'
+  - name: Excelsior Class Template
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/excelsior-token.webp
+      scaleX: 1.1
+      scaleY: 1.1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3
+    height: 3
+    lockRotation: false
+    rotation: 285
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: us8fOmSVGsnZRJ0Y
+    x: 274
+    'y': 1005
+    hidden: false
+    _id: 5seV1CbkOavFW2oc
+    elevation: 0
+    delta:
+      _id: 5seV1CbkOavFW2oc
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.5seV1CbkOavFW2oc.5seV1CbkOavFW2oc'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.5seV1CbkOavFW2oc'
+  - name: Galaxy
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/galaxy-token.webp
+      scaleX: 1.2
+      scaleY: 1.2
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3.5
+    height: 3.5
+    lockRotation: false
+    rotation: 315
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: 5BOYp7orQB5avrjx
+    x: 1069
+    'y': 1072
+    hidden: false
+    _id: lUK5elJrRXbUvnaL
+    elevation: 0
+    delta:
+      _id: lUK5elJrRXbUvnaL
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.lUK5elJrRXbUvnaL.lUK5elJrRXbUvnaL'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.lUK5elJrRXbUvnaL'
+  - name: Intrepid
+    displayName: 30
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/intrepid-token.webp
+      scaleX: 1.1
+      scaleY: 1.1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2.5
+    height: 2.5
+    lockRotation: false
+    rotation: 285
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: FUglp9F8uDmPSY28
+    x: 616
+    'y': 1276
+    hidden: false
+    _id: EijjkAiriu0KCvXW
+    elevation: 0
+    delta:
+      _id: EijjkAiriu0KCvXW
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.EijjkAiriu0KCvXW.EijjkAiriu0KCvXW'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.EijjkAiriu0KCvXW'
+  - name: Miranda
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/miranda-token.webp
+      scaleX: 0.7
+      scaleY: 0.7
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2.5
+    height: 2.5
+    lockRotation: false
+    rotation: 300
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: hGFW1uiyA8PI9q9W
+    x: 652
+    'y': 968
+    hidden: false
+    _id: txWNH2b5fgu2nmm4
+    elevation: 0
+    delta:
+      _id: txWNH2b5fgu2nmm4
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.txWNH2b5fgu2nmm4.txWNH2b5fgu2nmm4'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.txWNH2b5fgu2nmm4'
+  - name: Nova
+    displayName: 30
+    actorLink: true
+    texture:
+      src: systems/sta/assets/compendia/ships/starfleet/nova-token.webp
+      scaleX: 0.8
+      scaleY: 0.8
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2
+    height: 2
+    lockRotation: false
+    rotation: 300
+    alpha: 1
+    disposition: 1
+    displayBars: 30
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: 4qEZbYYEIKcmfaTd
+    x: 225
+    'y': 672
+    hidden: false
+    _id: pUgouj0TSpwO2RT5
+    elevation: 0
+    delta:
+      _id: pUgouj0TSpwO2RT5
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.pUgouj0TSpwO2RT5.pUgouj0TSpwO2RT5'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.pUgouj0TSpwO2RT5'
+  - name: K'Vort
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/klingon/k-vort-token.webp
+      scaleX: 0.5
+      scaleY: 0.5
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3
+    height: 3
+    lockRotation: false
+    rotation: 45
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: oPoMs89Ft7I9lQhq
+    x: 2172
+    'y': 893
+    hidden: false
+    _id: vEXvl7H8m7zN8JV2
+    elevation: 0
+    delta:
+      _id: vEXvl7H8m7zN8JV2
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.vEXvl7H8m7zN8JV2.vEXvl7H8m7zN8JV2'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.vEXvl7H8m7zN8JV2'
+  - name: B'rel
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/klingon/b-rel-token.webp
+      scaleX: 0.5
+      scaleY: 0.5
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2
+    height: 2
+    lockRotation: false
+    rotation: 45
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: 483e9bbXosGE2mkR
+    x: 2419
+    'y': 414
+    hidden: false
+    _id: tRdGQCb0jQdZnlNN
+    elevation: 0
+    delta:
+      _id: tRdGQCb0jQdZnlNN
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.tRdGQCb0jQdZnlNN.tRdGQCb0jQdZnlNN'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.tRdGQCb0jQdZnlNN'
+  - name: Vor'cha
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/klingon/vor-cha-token.webp
+      scaleX: 1.2
+      scaleY: 1.2
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3
+    height: 3
+    lockRotation: false
+    rotation: 45
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: 8THwHif8DSSJK57I
+    x: 1878
+    'y': 1120
+    hidden: false
+    _id: PWBTiTgeCeozvEm8
+    elevation: 0
+    delta:
+      _id: PWBTiTgeCeozvEm8
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.PWBTiTgeCeozvEm8.PWBTiTgeCeozvEm8'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.PWBTiTgeCeozvEm8'
+  - name: D7
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/klingon/d7-battle-cruiser-token.webp
+      scaleX: 1
+      scaleY: 1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2.5
+    height: 2.5
+    lockRotation: false
+    rotation: 45
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: uX3K0KmG3k09AdGx
+    x: 2126
+    'y': 518
+    hidden: false
+    _id: eCfMrmB9TILsyhcl
+    elevation: 0
+    delta:
+      _id: eCfMrmB9TILsyhcl
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.eCfMrmB9TILsyhcl.eCfMrmB9TILsyhcl'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.eCfMrmB9TILsyhcl'
+  - name: Bird-of-Prey
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/romulan/bird-of-prey-token.webp
+      scaleX: 0.7
+      scaleY: 0.7
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2
+    height: 2
+    lockRotation: false
+    rotation: 75
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: al8alsWzoXSS53xF
+    x: 2280
+    'y': 1339
+    hidden: false
+    _id: Eaodywlh4felHFi6
+    elevation: 0
+    delta:
+      _id: Eaodywlh4felHFi6
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.Eaodywlh4felHFi6.Eaodywlh4felHFi6'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.Eaodywlh4felHFi6'
+  - name: D'deridex
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/romulan/d-deridex-token.webp
+      scaleX: 1.6
+      scaleY: 1.6
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3.5
+    height: 3.5
+    lockRotation: false
+    rotation: 75
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: UNcJDHDhaYyL5Odv
+    x: 2584
+    'y': 1055
+    hidden: false
+    _id: BzZUwWE2UdR6poTG
+    elevation: 0
+    delta:
+      _id: BzZUwWE2UdR6poTG
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.BzZUwWE2UdR6poTG.BzZUwWE2UdR6poTG'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.BzZUwWE2UdR6poTG'
+  - name: Galor
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/cardassian/galor-token.webp
+      scaleX: 1.2
+      scaleY: 1.2
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2.5
+    height: 2.5
+    lockRotation: false
+    rotation: 15
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: Xtf7bUNs5M4uOFOr
+    x: 1682
+    'y': 829
+    hidden: false
+    _id: VCgZPSNpYmP3iO2N
+    elevation: 0
+    delta:
+      _id: VCgZPSNpYmP3iO2N
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.VCgZPSNpYmP3iO2N.VCgZPSNpYmP3iO2N'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.VCgZPSNpYmP3iO2N'
+  - name: Attack Ship
+    displayName: 20
+    actorLink: false
+    texture:
+      src: >-
+        systems/sta/assets/compendia/ships/dominion/jem-hadar-attack-ship-token.webp
+      scaleX: 0.5
+      scaleY: 0.5
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2
+    height: 2
+    lockRotation: false
+    rotation: 240
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: 1nYRn6HISNM2ev1X
+    x: 1101
+    'y': 1791
+    hidden: false
+    _id: JDZa028cQ1v2wjlw
+    elevation: 0
+    delta:
+      _id: JDZa028cQ1v2wjlw
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.JDZa028cQ1v2wjlw.JDZa028cQ1v2wjlw'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.JDZa028cQ1v2wjlw'
+  - name: Battle Cruiser
+    displayName: 20
+    actorLink: false
+    texture:
+      src: >-
+        systems/sta/assets/compendia/ships/dominion/jem-hadar-battle-cruiser-token.webp
+      scaleX: 1.2
+      scaleY: 1.2
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3.5
+    height: 3.5
+    lockRotation: false
+    rotation: 255
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: ItpyDA7hqkADLBBl
+    x: 656
+    'y': 1689
+    hidden: false
+    _id: vmmaGD2e728ze2pK
+    elevation: 0
+    delta:
+      _id: vmmaGD2e728ze2pK
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.vmmaGD2e728ze2pK.vmmaGD2e728ze2pK'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.vmmaGD2e728ze2pK'
+  - name: Borg Sphere
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/borg/borg-sphere-token.webp
+      scaleX: 1
+      scaleY: 1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 4
+    height: 4
+    lockRotation: false
+    rotation: 0
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: W9Bo3qGs0Opf3jMu
+    x: 1404
+    'y': 1406
+    hidden: false
+    _id: z3VTjQtHCxjPNp5j
+    elevation: 0
+    delta:
+      _id: z3VTjQtHCxjPNp5j
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.z3VTjQtHCxjPNp5j.z3VTjQtHCxjPNp5j'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.z3VTjQtHCxjPNp5j'
+  - name: Borg Sphere
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/borg/borg-cube-token.webp
+      scaleX: 1.5
+      scaleY: 1.5
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 7
+    height: 7
+    lockRotation: false
+    rotation: 75
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: WVHw08Yk78xqN08F
+    x: 2023
+    'y': 1920
+    hidden: false
+    _id: vkE5bv3dpZDmGHJg
+    elevation: 0
+    delta:
+      _id: vkE5bv3dpZDmGHJg
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.vkE5bv3dpZDmGHJg.vkE5bv3dpZDmGHJg'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.vkE5bv3dpZDmGHJg'
+  - name: Raider
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/maquis/maquis-raider-token.webp
+      scaleX: 0.4
+      scaleY: 0.4
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 2
+    height: 2
+    lockRotation: false
+    rotation: 45
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: oG9t7MFYZi3D8jaR
+    x: 2456
+    'y': 720
+    hidden: false
+    _id: D3GISenOSsmX1Mvn
+    elevation: 0
+    delta:
+      _id: D3GISenOSsmX1Mvn
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.D3GISenOSsmX1Mvn.D3GISenOSsmX1Mvn'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.D3GISenOSsmX1Mvn'
+  - name: Fighter
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/maquis/maquis-fighter-token.webp
+      scaleX: 0.6
+      scaleY: 0.6
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 1
+    height: 1
+    lockRotation: false
+    rotation: 60
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: pUSY7VytzzEo18B0
+    x: 2780
+    'y': 744
+    hidden: false
+    _id: dFP2J120sQWsBW5C
+    elevation: 0
+    delta:
+      _id: dFP2J120sQWsBW5C
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.dFP2J120sQWsBW5C.dFP2J120sQWsBW5C'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.dFP2J120sQWsBW5C'
+  - name: D'Kora
+    displayName: 20
+    actorLink: false
+    texture:
+      src: systems/sta/assets/compendia/ships/ferengi/d-kora-token.webp
+      scaleX: 1.3
+      scaleY: 1.3
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: contain
+      alphaThreshold: 0.75
+    width: 3
+    height: 3
+    lockRotation: false
+    rotation: 270
+    alpha: 1
+    disposition: -1
+    displayBars: 20
+    bar1:
+      attribute: shields
+    bar2:
+      attribute: power
+    light:
+      alpha: 0.5
+      angle: 360
+      bright: 0
+      color: null
+      coloration: 1
+      dim: 0
+      attenuation: 0.5
+      luminosity: 0.5
+      saturation: 0
+      contrast: 0
+      shadows: 0
+      animation:
+        type: null
+        speed: 5
+        intensity: 5
+        reverse: false
+      darkness:
+        min: 0
+        max: 1
+      negative: false
+      priority: 0
+    sight:
+      enabled: false
+      range: 0
+      angle: 360
+      visionMode: basic
+      color: null
+      attenuation: 0.1
+      brightness: 0
+      saturation: 0
+      contrast: 0
+    detectionModes: []
+    flags: {}
+    actorId: Z6UvouDCAp2yJJWS
+    x: 213
+    'y': 1524
+    hidden: false
+    _id: Nit2adqfziOberHw
+    elevation: 0
+    delta:
+      _id: Nit2adqfziOberHw
+      name: null
+      type: null
+      img: null
+      system: {}
+      items: []
+      effects: []
+      flags: {}
+      ownership: null
+      _key: '!scenes.tokens.delta!fcv27nH2KilOhqJg.Nit2adqfziOberHw.Nit2adqfziOberHw'
+    shape: 4
+    sort: 0
+    locked: false
+    occludable:
+      radius: 0
+    ring:
+      enabled: false
+      colors:
+        ring: null
+        background: null
+      effects: 1
+      subject:
+        scale: 1
+        texture: null
+    turnMarker:
+      mode: 1
+      animation: null
+      src: null
+      disposition: false
+    movementAction: null
+    _movementHistory: []
+    _regions: []
+    _key: '!scenes.tokens!fcv27nH2KilOhqJg.Nit2adqfziOberHw'
+lights: []
+notes: []
+sounds: []
+templates: []
+tiles:
+  - texture:
+      src: systems/sta/assets/compendia/sta-compendia-logo.png
+      scaleX: 1
+      scaleY: 1
+      offsetX: 0
+      offsetY: 0
+      rotation: 0
+      tint: '#ffffff'
+      anchorX: 0.5
+      anchorY: 0.5
+      fit: fill
+      alphaThreshold: 0.75
+    x: 1060
+    'y': 280
+    width: 1050
+    height: 420
+    _id: jSu2eiFZxqW33VBI
+    rotation: 0
+    alpha: 1
+    hidden: false
+    locked: false
+    occlusion:
+      mode: 0
+      alpha: 0
+    video:
+      loop: true
+      autoplay: true
+      volume: 0
+    flags: {}
+    sort: 100
+    restrictions:
+      light: false
+      weather: false
+    elevation: 0
+    _key: '!scenes.tiles!fcv27nH2KilOhqJg.jSu2eiFZxqW33VBI'
+walls: []
+playlist: null
+playlistSound: null
+journal: null
+journalEntryPage: null
+weather: ''
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450323548
+  modifiedTime: 1765450323548
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+regions: []
+environment:
+  globalLight:
+    luminosity: 0
+    enabled: false
+    darkness:
+      max: 1
+      min: 0
+    alpha: 0.5
+    bright: false
+    color: null
+    coloration: 1
+    saturation: 0
+    contrast: 0
+    shadows: 0
+  darknessLevel: 0
+  darknessLock: false
+  cycle: true
+  base:
+    hue: 0
+    intensity: 0
+    luminosity: 0
+    saturation: 0
+    shadows: 0
+  dark:
+    hue: 0.7138888888888889
+    intensity: 0
+    luminosity: -0.25
+    saturation: 0
+    shadows: 0
+fog:
+  exploration: false
+  reset: 1660769143211
+  overlay: null
+  colors:
+    explored: null
+    unexplored: null
+_id: fcv27nH2KilOhqJg
+navOrder: 0
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+active: false
+sort: 0
+_key: '!scenes!fcv27nH2KilOhqJg'

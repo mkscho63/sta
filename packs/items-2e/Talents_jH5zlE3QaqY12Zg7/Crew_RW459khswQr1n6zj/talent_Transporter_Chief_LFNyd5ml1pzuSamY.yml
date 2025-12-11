@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Transporter Chief
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>You&rsquo;re well-versed in the operation of transporter systems and can
+    often get them to function in extreme circumstances or to achieve outcomes
+    that few could manage. Such efforts are never without risk, given the
+    delicacy of the technology. When you attempt a task to use, repair, or
+    modify a transporter, you may add&nbsp;2 Threat to reduce the Difficulty of
+    the task by 2, to a minimum of 0.</p>
+  talenttype:
+    typeenum: discipline
+    description: engineering
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: LFNyd5ml1pzuSamY
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!LFNyd5ml1pzuSamY'

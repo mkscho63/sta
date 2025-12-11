@@ -1,0 +1,88 @@
+name: Denobulan
+pages:
+  - sort: 200000
+    name: Denobulan
+    type: text
+    _id: RDyhnA4xAWyfMA0w
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Hailing from the planet Denobula, Denobulans are a gregarious,
+        inquisitive people who have been allies of humanity since the 2130s.
+        Denobulans are long-lived and highly sociable, with large
+        families—Denobulans are typically polyamorous, with individuals
+        potentially having several spouses, each of whom may have several
+        spouses of their own, and dozens of children between them—living in
+        relatively close, communal environments. Culturally, Denobulans are an
+        intellectually curious people, highly perceptive, and interested in a
+        wide range of philosophies, with their long lives allowing them to
+        pursue a wide range of fields of study, often granting them unusual
+        perspectives on the different philosophies and fields of expertise
+        they’ve studied.</p><p>Denobulans enjoy learning new things, meeting new
+        people, and they revel in the drama, intrigue, and gossip that come from
+        a rich and complex social environment. They are extraordinarily patient,
+        taking a long view of the changes that happen in life, but they dislike
+        solitude, and even a busy starship or starbase can sometimes seem a
+        little empty to a Denobulan.</p><p></p><p>SAMPLE
+        VALUES:</p><ul><li><p>You cannot truly learn about people unless you
+        talk to them</p></li><li><p>Comfort in numbers</p></li><li><p>There's
+        always someone new to meet</p></li><li><p>My patience exceeds your
+        stubbornness</p></li></ul><p></p><p>ATTRIBUTES: +1 Fitness, +1 Insight,
+        +1 Reason</p><p></p><p>TRAIT: Denobulan. Denobulans have a robust immune
+        system, but a vulnerability to various forms of radiation poisoning.
+        They are adept climbers. Denobulans do not need to sleep, but must
+        hibernate for several days each year, becoming disoriented if kept awake
+        during this period.</p><p></p><p>BREADTH OF STUDY (SPECIES ABILITY): You
+        may select two additional focuses.</p><p></p><p>DENOBULAN NAMES:
+        Denobulans tend to only have a single name—an individual Denobulan may
+        be part of several overlapping families. Some Denobulans may use the
+        name of one of their spouses as a surname; however, this is often to
+        indicate association to species that may not understand complex
+        Denobulan families.</p><p></p><p>MASCULINE: Biras, Bogga, Delix, Grolik,
+        Groznik, Nettus, Moga, Morox, Plox, Rinix, Takis, Tropp, Tuglian, Vinku,
+        Yolen, Zepht, Zinet</p><p>FEMININE: Anari, Andora, Asha, Daphina,
+        Feezal, Forliza, Kessil, Liera, Lusis, Miral, Natala, Ninsen, Henna,
+        Sabra, Secka, Symmé, Trevis, Vesena</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!ExGxjySexhVXTyXZ.RDyhnA4xAWyfMA0w'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: ExGxjySexhVXTyXZ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!ExGxjySexhVXTyXZ'

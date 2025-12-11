@@ -1,0 +1,60 @@
+name: Serious Injury
+pages:
+  - sort: 100000
+    name: Serious Injury
+    type: text
+    _id: XuFXylFdJ26m4fX6
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character was seriously hurt and needed to spend a considerable
+        amount of time recovering.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Fitness</p></li><li><p>DEPARTMENT: + 1 Medicine</p></li><li><p>FOCUS
+        SUGGESTIONS: The focus should reflect the circumstances of the
+        character’s injury, something that helped them through recovery, or
+        something they took up after recovering.</p></li><li><p>TRAIT: The
+        character may gain a trait, which should reflect some lasting effect of
+        the character’s injury or the way they recovered. Examples: Prosthetic
+        Implant or some form of disability.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!yB5sUdsdjbAZ3OfC.XuFXylFdJ26m4fX6'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: yB5sUdsdjbAZ3OfC
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!yB5sUdsdjbAZ3OfC'

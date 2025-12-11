@@ -1,0 +1,35 @@
+folder: lWBHbmoPN9FHtgLe
+name: Wormhole Relay System
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 2371 or later</p>
+
+    <p><br>The ship has an additional sensor system outfitted with high-energy
+    transceivers, verteron sensors, and neutrino sensors. These sensors,
+    combined with field-generation devices, allow the ship to send and receive
+    data streams through wormholes. The Difficulty of all Science tasks to send
+    or receive data through a wormhole is reduced by 2, to a minimum of 0.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ptSM89DIknEubhlb
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ptSM89DIknEubhlb'

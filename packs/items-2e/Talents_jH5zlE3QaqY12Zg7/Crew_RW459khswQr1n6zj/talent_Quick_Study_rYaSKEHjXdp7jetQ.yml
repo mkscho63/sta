@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Quick Study
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Science 3+ or Medicine 3+</p>
+
+    <p><br>When attempting a task that will involve an unfamiliar practice,
+    technique, or medical procedure, or which is to treat an unfamiliar species,
+    ignore any Difficulty or complication range increase stemming from your
+    unfamiliarity.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: rYaSKEHjXdp7jetQ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!rYaSKEHjXdp7jetQ'

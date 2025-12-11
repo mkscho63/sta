@@ -1,0 +1,39 @@
+folder: RW459khswQr1n6zj
+name: Extrasensory Perception
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-presence.svg
+system:
+  description: >-
+    <p>You have an ability to perceive things beyond the normal limits of
+    humanoid senses, allowing you to gain knowledge of people, places, and
+    objects beyond your ability to sense them conventionally. This is known as
+    extra-sensory perception, or ESP. It is not directly under your control but
+    instead tends to come in the form of accurate guesses, strong feelings, or
+    flashes of insight. Such sensitivity often leaves you vulnerable to psychic
+    dangers as&nbsp;well. At any point during play, you may ask the gamemaster
+    for hints or insights about the current situation, and the gamemaster may
+    similarly offer you information about the current situation that you would
+    not normally be able to determine. Each hint adds 1 Threat, and you may
+    always refuse to accept the hints offered.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: B4SWQQYiHAmlMSBM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!B4SWQQYiHAmlMSBM'

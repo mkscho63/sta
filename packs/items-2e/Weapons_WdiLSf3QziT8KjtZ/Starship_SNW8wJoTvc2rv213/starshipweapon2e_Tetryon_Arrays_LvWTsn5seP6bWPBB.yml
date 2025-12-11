@@ -1,0 +1,54 @@
+folder: SNW8wJoTvc2rv213
+name: Tetryon Arrays
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-array.svg
+system:
+  description: >-
+    <p>Beams of concentrated tetryon radiation have an effect which can disrupt
+    standard starship deflector shields.</p>
+
+    <p>Long linked strips of emitters allow the weapon&nbsp;to discharge at any
+    point along the strip, and often at multiple points along the strip if
+    needed. This versatility allows a vessel to fire at multiple targets, or
+    maintain fire on a moving target, from any direction.</p>
+  damage: 0
+  range: medium
+  qualities:
+    energy: false
+    torpedo: false
+    area: true
+    calibration: false
+    cumbersome: false
+    dampening: false
+    depleting: true
+    devastating: false
+    highyield: false
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: false
+    slowing: false
+    spread: true
+    hiddenx: 0
+    versatilex: 0
+  includescale: energy
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: LvWTsn5seP6bWPBB
+ownership:
+  default: 0
+sort: 0
+_key: '!items!LvWTsn5seP6bWPBB'

@@ -1,0 +1,38 @@
+name: Emergency Medical Hologram
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> 2371 or later</p>
+
+    <p>The ship&rsquo;s sickbay is equipped with holoemitters and a
+    stateof-the-art holographic doctor, able to assist medical personnel during
+    emergencies. The ship has one additional Supporting Character, an Emergency
+    Medical Hologram, using the Attributes, Disciplines, and so forth as shown
+    in the sidebar, which does not cost any Crew Support to introduce, and which
+    does not automatically improve when introduced. This character cannot go
+    into any location not equipped with holoemitters.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: 8o6dXUisIe3IgeMw
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!8o6dXUisIe3IgeMw'

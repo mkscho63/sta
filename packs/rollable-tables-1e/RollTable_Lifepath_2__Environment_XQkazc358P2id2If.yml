@@ -1,0 +1,146 @@
+name: 'Lifepath 2: Environment'
+img: systems/sta/assets/compendia/icons/plain-core/plain-heritage.svg
+description: Rolls a random heritage for a player character.
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: 2OM2oYH7nxna7ZjQ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Homeworld
+    name: ''
+    _key: '!tables.results!XQkazc358P2id2If.2OM2oYH7nxna7ZjQ'
+  - type: text
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: AjdQMxdrjvj9dVMW
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Busy Colony
+    name: ''
+    _key: '!tables.results!XQkazc358P2id2If.AjdQMxdrjvj9dVMW'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: XdeDgByRuKzd1SnM
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Isolated Colony
+    name: ''
+    _key: '!tables.results!XQkazc358P2id2If.XdeDgByRuKzd1SnM'
+  - type: text
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: OsZAuqpBn9bQa3T0
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Frontier Colony
+    name: ''
+    _key: '!tables.results!XQkazc358P2id2If.OsZAuqpBn9bQa3T0'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: ZsiaOnH1ImyLMjWe
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Starship or Starbase
+    name: ''
+    _key: '!tables.results!XQkazc358P2id2If.ZsiaOnH1ImyLMjWe'
+  - type: text
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: j6mxmU6sssOKuWJF
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Another Species' World
+    name: ''
+    _key: '!tables.results!XQkazc358P2id2If.j6mxmU6sssOKuWJF'
+formula: 1d6
+replacement: true
+displayRoll: true
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452265880
+  modifiedTime: 1765452265880
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+_id: XQkazc358P2id2If
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!tables!XQkazc358P2id2If'

@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Cutting Edge Medicine
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>Whenever you attempt a Medicine task with a Difficulty&nbsp;of 3 or
+    higher, you may spend up to 3 Momentum (Immediate) to reduce the Difficulty
+    by the number of Momentum spent, to a minimum Difficulty of 1. However, as
+    these latest advances are often experimental, the complication range of the
+    task increases by 1 for each Momentum spent.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: tEl7E2Fhh45pgfBE
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!tEl7E2Fhh45pgfBE'

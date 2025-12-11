@@ -1,0 +1,50 @@
+folder: SNW8wJoTvc2rv213
+name: Polaron Torpedo Salvo
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-plasma-torpedo-salvo.svg
+system:
+  description: >-
+    <p>Installed on several Klingon vessels after the Dominion War, polaron
+    torpedoes are more able to pierce a target&rsquo;s shields and other
+    defenses.</p>
+  damage: 4
+  range: long
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: true
+    cumbersome: false
+    dampening: false
+    depleting: false
+    devastating: false
+    highyield: false
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: true
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: torpedo
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: AD6BoD3zyPyKgE3m
+ownership:
+  default: 0
+sort: 0
+_key: '!items!AD6BoD3zyPyKgE3m'

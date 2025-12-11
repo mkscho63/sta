@@ -1,0 +1,42 @@
+name: The Ushaan
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-andorian.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><span class="fontstyle0"><strong><span
+    class="fontstyle0">Requirement</span>:</strong> </span><span
+    class="fontstyle2">Andorian, or Gamemaster&rsquo;s permission.</span></p>
+
+    <p><span class="fontstyle2">You are experienced in the tradition of
+    honor-dueling known as the </span><span
+    class="fontstyle3">Ushaan</span><span class="fontstyle2">, having spilt much
+    blood upon the ice. When you make a melee Attack, or are targeted by a melee
+    Attack, and buy one or more d20s by adding to Threat, you may re-roll the
+    dice pool for the Task. Further, you own an
+    @Compendium[sta-compendia.weapons-core.tu9pAibgZ9B1kbCT]{Ushaan-tor}</span><span
+    class="fontstyle2">, a razor-sharp ice-miner&rsquo;s tool used in these
+    duels.</span></p>
+  talenttype:
+    typeenum: species
+    description: Andorian
+    minimum: 0
+_id: wGLyYYtzIL0Zmx3H
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!wGLyYYtzIL0Zmx3H'

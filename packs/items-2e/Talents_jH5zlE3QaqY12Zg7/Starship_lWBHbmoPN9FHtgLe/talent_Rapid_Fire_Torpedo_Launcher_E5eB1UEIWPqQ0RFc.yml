@@ -1,0 +1,33 @@
+folder: lWBHbmoPN9FHtgLe
+name: Rapid-Fire Torpedo Launcher
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-torpedo.svg
+system:
+  description: >-
+    <p>The vessel&rsquo;s torpedo launchers have been designed&nbsp;to allow the
+    ship to fire multiple torpedoes much more quickly and accurately. When the
+    ship fires a torpedo salvo (page 229), the character at Tactical may re-roll
+    a d20 on the Attack. Also, the weapon&rsquo;s Damage rating is increased by
+    1.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: E5eB1UEIWPqQ0RFc
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!E5eB1UEIWPqQ0RFc'

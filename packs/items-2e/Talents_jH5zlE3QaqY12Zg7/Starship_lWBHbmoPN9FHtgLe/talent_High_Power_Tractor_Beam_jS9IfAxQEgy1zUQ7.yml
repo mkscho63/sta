@@ -1,0 +1,31 @@
+folder: lWBHbmoPN9FHtgLe
+name: High-Power Tractor Beam
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-tractor-beam.svg
+system:
+  description: >-
+    <p>The ship&rsquo;s tractor beam systems channel far greater&nbsp;quantities
+    of power and exert much more force on the target. Increase the strength of
+    the ship&rsquo;s tractor beam by 2.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: jS9IfAxQEgy1zUQ7
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!jS9IfAxQEgy1zUQ7'

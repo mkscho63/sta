@@ -1,0 +1,53 @@
+name: Disruptor Bank (Scale 4)
+type: starshipweapon
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-bank.svg
+system:
+  description: >-
+    <p>Used by Klingon and Romulan vessels, disruptors are potent weapons that
+    inflict grievous damage.</p>
+
+    <p>Banks are a collection of emitters, designed to fire in unison. They
+    produce a focused beam of energy that can inflict considerable damage. Banks
+    have a Range category of medium, and increase the weapon&rsquo;s damage by
+    +1 Challenge Die.</p>
+
+    <p><strong>Vicious 1:</strong> The Attack inflicts 1 additional damage for
+    each Effect rolled.</p>
+  damage: 5
+  range: medium
+  qualities:
+    area: false
+    spread: false
+    dampening: false
+    calibration: false
+    devastating: false
+    highyield: false
+    persistentx: 0
+    piercingx: 0
+    viciousx: 1
+    hiddenx: 0
+    versatilex: 0
+  opportunity: null
+  escalation: null
+  includescale: false
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450919428
+  modifiedTime: 1765450919428
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: df7XVvmWD0zslvJ5
+_id: vIinTnjrulBTn3cD
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!vIinTnjrulBTn3cD'

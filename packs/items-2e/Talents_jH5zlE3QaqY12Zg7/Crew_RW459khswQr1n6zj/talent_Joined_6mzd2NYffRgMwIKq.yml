@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Joined
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-trill.svg
+system:
+  description: >-
+    <p>You are bonded with a symbiont and have lifetimes of memories to draw
+    upon. You gain an additional character trait, which is the name of the
+    symbiont; this reflects potential advantages of being Joined, as well as the
+    ability to perform rites and rituals to awaken past hosts&rsquo; memories,
+    and the vulnerabilities inherent in the connection. Furthermore, up to twice
+    per adventure, you may declare that a past Host had experience or expertise
+    in a particular field: you gain an additional focus when you do this, which
+    remains for the rest of the adventure.</p>
+  talenttype:
+    typeenum: species
+    description: Trill
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 6mzd2NYffRgMwIKq
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!6mzd2NYffRgMwIKq'

@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Sensory Replacement
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-control.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Cyborg trait</p>
+
+    <p><br>You have a cybernetic device that replaces one of your
+    senses&mdash;most commonly sight or hearing. You gain the Artificial Sense
+    trait, which represents the ways that your senses differ from those of other
+    members of your species. Further, when you attempt a task to locate
+    something hidden or concealed, or to detect details not normally perceptible
+    to that sense, you may re-roll a single d20.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ciS6qa7ILRhRnJtV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ciS6qa7ILRhRnJtV'

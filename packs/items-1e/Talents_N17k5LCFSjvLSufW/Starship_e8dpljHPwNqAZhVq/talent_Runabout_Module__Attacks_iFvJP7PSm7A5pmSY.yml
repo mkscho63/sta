@@ -1,0 +1,34 @@
+name: 'Runabout Module: Attacks'
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-weapons.svg
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Danube Class Runabout, no other modules
+    present</p>
+
+    <p>The runabout&rsquo;s aft module has been converted to provide additional,
+    and higher-powered, weaponry. Add +2 Challenge Dice to damage of the
+    runabout&rsquo;s weapons. This has a Cost: Escalation 2 (see p. 184).</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: iFvJP7PSm7A5pmSY
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!iFvJP7PSm7A5pmSY'

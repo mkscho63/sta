@@ -1,0 +1,24 @@
+name: Triage
+type: focus
+img: systems/sta/assets/compendia/icons/focuses-core/focus-medical.svg
+effects: []
+folder: 8vY0DBXh5lBFnJ6q
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450651875
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: ''
+_id: zy1kvPRlYNMnknDl
+ownership:
+  default: 0
+sort: 0
+_key: '!items!zy1kvPRlYNMnknDl'

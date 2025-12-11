@@ -1,0 +1,42 @@
+folder: RW459khswQr1n6zj
+name: Flight Controller
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-flight-controller.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>Also known as a helmsman on 22nd and 23rd century Starfleet vessels. Not
+    a typical senior staff role, though some captains, particularly those
+    operating in uncharted space, choose the most senior helmsman or flight
+    control officer to serve on the senior staff.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: When you attempt an engineering task related to flight or
+    propulsion, you may use your Conn rating instead of Engineering. When you
+    succeed at a Conn task to pilot a starship, you generate 1 bonus Momentum to
+    be used on that task (bonus Momentum may not be saved).</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: BlwvDQwKSO8xVAGs
+ownership:
+  default: 0
+sort: 0
+_key: '!items!BlwvDQwKSO8xVAGs'

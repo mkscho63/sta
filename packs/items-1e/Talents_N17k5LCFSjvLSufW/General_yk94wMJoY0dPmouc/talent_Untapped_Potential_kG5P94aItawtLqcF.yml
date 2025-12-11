@@ -1,0 +1,41 @@
+name: Untapped Potential
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-career-young.svg
+effects: []
+folder: yk94wMJoY0dPmouc
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450670543
+  modifiedTime: 1765450670543
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirements</strong>: Young Officer</p>
+
+    <p>The character is inexperienced, but talented and with a bright future in
+    Starfleet. The character may not have or increase any Attribute above 11, or
+    any Discipline above 4 while they have this Talent (and may have to adjust
+    Attributes and Disciplines accordingly at the end of character creation).
+    Whenever the character succeeds at a Task for which they bought one or more
+    additional dice with either Momentum or Threat, they may roll 1 Challenge
+    Die. The character receives bonus Momentum equal to the roll of the
+    Challenge Die, and adds one point to Threat if an Effect is rolled. The
+    character cannot gain any higher rank than lieutenant (junior grade) while
+    they possess this Talent.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_id: kG5P94aItawtLqcF
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!kG5P94aItawtLqcF'
