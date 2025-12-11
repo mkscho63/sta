@@ -1,0 +1,89 @@
+name: Orion
+pages:
+  - sort: 200000
+    name: Orion
+    type: text
+    _id: 1N47ChNOSlDtunbL
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>A species with a colorful reputation, the Orions are subject to
+        rumor, speculation, and flights of fancy, to the point where there are
+        numerous common misconceptions about their species and culture. This
+        seems to be at least partially by design. Orions are accustomed to
+        taking full advantage of any opportunity that passes their way, and the
+        uncertainty and misdirection that surrounds them is a considerable
+        advantage. The influence of Orion traders and the Orion Syndicate can be
+        felt across the Alpha and Beta Quadrants, often in ways that flout the
+        laws of other cultures, and often employing agents of other
+        species.</p><p>Orion culture appears to be divided along gender lines,
+        and there is evidence to suggest they have a broadly matriarchal
+        culture, with the women serving in leadership roles, while Orion males
+        more often serving as muscle, laborers, and minor operatives, though
+        this has shifted somewhat over the centuries. This appears to be due to
+        a trait of some Orion females, who have been observed to produce
+        pheromones that can make male Orions (and males of some other species,
+        including Humans) compliant. It isn’t known how widespread this trait
+        is.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>Everything has a
+        price</p></li><li><p>Your expectations limit you</p></li><li><p>I am not
+        who you expect me to be</p></li><li><p>I thrive because I do not ignore
+        opportunities</p><p></p></li></ul><p>ATTRIBUTES: +1 Daring, +1 Fitness,
+        +1 Presence</p><p></p><p>TRAIT: Orion. Orions have similar environmental
+        tolerances to Humans and are physically and culturally well-accustomed
+        to interstellar travel. The Orions’ reputation as thieves, pirates, and
+        illicit traders can make others wary of them, but it can also open doors
+        and create opportunities in more unsavory parts of the
+        Galaxy.</p><p></p><p>NEVER AT FACE VALUE (SPECIES ABILITY): Once per
+        scene, you may add 1 Threat to ask the gamemaster a question about the
+        situation, as if you had spent Momentum to Obtain
+        Information.</p><p></p><p>ORION NAMES: Orions tend to be known by a
+        single name; separate personal and family names are known to exist, but
+        in most cases, an Orion will only use one name—either a personal or
+        family name, or a nickname they’ve adopted—unless they need to
+        distinguish themselves from another similarly-named
+        Orion.</p><p></p><p>FEMININE: D’Nesh, Devna, D’Vana, Gaila, Maras,
+        Marta, Navaar, Osyraa, Shava</p><p>MASCULINE: Bashorat, Bri’onn,
+        Harrad-Sar, Harral, Ithor, Mesh, Paska, Shavo, Tolor</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!rnuTEOhw4xtHGU0b.1N47ChNOSlDtunbL'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: rnuTEOhw4xtHGU0b
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!rnuTEOhw4xtHGU0b'

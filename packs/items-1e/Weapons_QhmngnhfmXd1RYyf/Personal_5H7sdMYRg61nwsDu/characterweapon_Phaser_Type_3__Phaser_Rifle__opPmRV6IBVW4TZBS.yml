@@ -1,0 +1,51 @@
+name: Phaser Type-3 (Phaser Rifle)
+type: characterweapon
+img: >-
+  systems/sta/assets/compendia/icons/weapons-core/phaser-type-3-phaser-rifle.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p>Phaser Type-3, or phaser rifles, are higher-powered weapons designed for
+    hazardous situations and combat. In addition to a larger power supply, they
+    have numerous targeting and beam-focusing systems that make them more
+    accurate. They are only issued to properly-trained personnel, and only when
+    necessary.</p>
+  damage: 4
+  range: ranged
+  hands: 2
+  qualities:
+    area: false
+    intense: false
+    knockdown: false
+    accurate: true
+    charge: true
+    cumbersome: false
+    deadly: false
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 0
+  opportunity: 1
+  escalation: 2
+_id: opPmRV6IBVW4TZBS
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!opPmRV6IBVW4TZBS'

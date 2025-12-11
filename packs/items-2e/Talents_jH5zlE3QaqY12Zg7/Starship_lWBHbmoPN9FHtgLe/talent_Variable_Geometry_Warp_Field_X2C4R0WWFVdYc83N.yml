@@ -1,0 +1,33 @@
+folder: lWBHbmoPN9FHtgLe
+name: Variable Geometry Warp Field
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>A ship with a variable geometry warp field can adjust its&nbsp;subspace
+    field in highly turbulent spacetime and can continue to provide propulsive
+    force even then. When you attempt a task to go to warp, you may select one
+    trait in play which negatively affects the task roll, and ignore its
+    effects.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: X2C4R0WWFVdYc83N
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!X2C4R0WWFVdYc83N'

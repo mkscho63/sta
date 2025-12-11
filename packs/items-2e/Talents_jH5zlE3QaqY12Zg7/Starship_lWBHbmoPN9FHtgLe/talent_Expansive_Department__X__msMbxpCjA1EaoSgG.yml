@@ -1,0 +1,34 @@
+folder: lWBHbmoPN9FHtgLe
+name: Expansive Department (X)
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+system:
+  description: >-
+    <p>REQUIREMENT: A department with a score of 5</p>
+
+    <p><br>When you select this talent, select a single department on the ship
+    with a score of 5. Whenever a ship assists a task roll using the chosen
+    department, you may ignore a complication by spending 1 Momentum (Immediate,
+    Repeatable).</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: msMbxpCjA1EaoSgG
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!msMbxpCjA1EaoSgG'

@@ -1,0 +1,35 @@
+folder: lWBHbmoPN9FHtgLe
+name: Dual Environment
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-insight.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 24th century or later</p>
+
+    <p><br>The ship is outfitted with redundant system rooms that can be filled
+    with gases or liquids that allow crew members requiring different
+    atmospheric conditions to work side by side with the rest of the crew. A
+    character who is in a redundant system room may assist others in the
+    connected system room as if they were in the same room.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: aWZTeTmY1OewodnU
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!aWZTeTmY1OewodnU'

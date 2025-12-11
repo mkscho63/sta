@@ -1,0 +1,47 @@
+folder: RW459khswQr1n6zj
+name: Chief Medical Officer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-chief-medical-officer.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>The chief medical officer is responsible for the health and well-being of
+    the crew and other people aboard the ship and leads the ship&rsquo;s medical
+    department. A chief medical officer can order, and countermand the orders
+    of, senior officers where matters of that officer&rsquo;s health are
+    concerned. In extreme situations, the chief medical officer can declare an
+    officer unfit and remove them from active duty (including the commanding
+    officer). A ship may have either a chief medical officer or a ship&rsquo;s
+    doctor.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: You reduce the opportunity cost of medical equipment and
+    medical teams by 1, to a minimum of 0. Further, when you attempt a task
+    using your Medicine rating, and you have assistance, you generate 1 bonus
+    Momentum (bonus Momentum may not be saved).</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 2sRJXQE7UiATLJcD
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2sRJXQE7UiATLJcD'

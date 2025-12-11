@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Chosen Speaker
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-andorian.svg
+system:
+  description: >-
+    <p>Among Aenar communities, leaders and mediators are chosen as and when the
+    need arises, nominating an individual to serve as Speaker. You&rsquo;ve been
+    chosen for this role often and are adept at using your senses and your
+    telepathy to aid communication. When attempting a task to communicate
+    telepathically with a willing being,&nbsp;you may re-roll 1d20.</p>
+  talenttype:
+    typeenum: species
+    description: Aenar
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dywP2OqF51Q2I3Ca
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!dywP2OqF51Q2I3Ca'

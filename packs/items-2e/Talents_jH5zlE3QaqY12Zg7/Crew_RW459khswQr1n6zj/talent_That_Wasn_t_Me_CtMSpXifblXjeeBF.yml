@@ -1,0 +1,38 @@
+folder: RW459khswQr1n6zj
+name: That Wasn’t Me
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-daring.svg
+system:
+  description: >-
+    <p>The Orions are known as one of the most untrustworthy species in the
+    Galaxy, next to the Ferengi, and yet people are willing to do business with
+    them or are often tricked&nbsp;or misled by them. You&rsquo;ve learned the
+    subtle interplay of social interactions, reputations, and plausible denials
+    that allow others to trust you despite what they&rsquo;ve heard about
+    &lsquo;those other Orions&rsquo;. When another character attempts a task to
+    determine if they can trust you, you may spend 2 Momentum if you are
+    sincere, or add 2 Threat if you&rsquo;re attempting to deceive them. Either
+    way, the character does not need to make a task roll: you convince them you
+    are trustworthy.</p>
+  talenttype:
+    typeenum: species
+    description: Orion
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: CtMSpXifblXjeeBF
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!CtMSpXifblXjeeBF'

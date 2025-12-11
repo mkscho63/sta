@@ -1,0 +1,36 @@
+folder: lWBHbmoPN9FHtgLe
+name: Advanced Transporters
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 24th century or later</p>
+
+    <p><br>When you use the transporters, if you have rerouted Reserve Power to
+    the ship&rsquo;s Sensors, select one trait in play that is negatively
+    affecting the transporter&rsquo;s task. If the trait is increasing the
+    task&rsquo;s Difficulty, ignore the effects of that trait. If the trait
+    instead makes the transporter&rsquo;s task impossible, change that effect to
+    instead increase the Difficulty by 1.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 4JeZVhU8kPQk9wzH
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!4JeZVhU8kPQk9wzH'

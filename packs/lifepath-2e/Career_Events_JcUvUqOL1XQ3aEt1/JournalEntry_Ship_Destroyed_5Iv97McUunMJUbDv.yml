@@ -1,0 +1,57 @@
+name: Ship Destroyed
+pages:
+  - sort: 100000
+    name: Ship Destroyed
+    type: text
+    _id: wFwaDkPcKzZJ6Ys2
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The ship the character was serving on was destroyed during a mission,
+        and the character was one of the few who
+        survived.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Daring</p></li><li><p>DEPARTMENT: + 1 Security</p></li><li><p>FOCUS
+        SUGGESTIONS: Extra Vehicular Operations, Small Craft,
+        Survival</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!5Iv97McUunMJUbDv.wFwaDkPcKzZJ6Ys2'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: 5Iv97McUunMJUbDv
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!5Iv97McUunMJUbDv'

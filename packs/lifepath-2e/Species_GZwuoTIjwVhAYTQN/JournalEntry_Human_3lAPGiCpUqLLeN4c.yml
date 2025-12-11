@@ -1,0 +1,83 @@
+name: Human
+pages:
+  - sort: 200000
+    name: Human
+    type: text
+    _id: RAMH8I7p4b0n32s3
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Originating on the planet Earth in the Sol system, Humans are a hardy
+        and ambitious species, who went from the brink of mutual annihilation to
+        a united peaceful society in less than a century. A century after that,
+        humanity had established itself as part of an interplanetary alliance,
+        the United Federation of Planets, bringing former rivals together as
+        allies. Humans often exhibit a dichotomy in their nature—sometimes
+        strongly emotional and passionate like Klingons or Andorians, yet at
+        others highly analytical and rational like Tellarites or Vulcans—which
+        has allowed them to grow beyond their warlike and fractious past, but
+        their capacity for ambition and aggression are as much a part of their
+        success as their curiosity and analytical minds.</p><p>Humans tend to
+        draw upon two sets of cultural values. As a central and founding member
+        of the Federation, the traditions and ideals of the Federation (or even
+        those of Starfleet) are often regarded as synonymous with “Human
+        culture” (though the Federation draws a lot from each of its members),
+        to the point where nobody is entirely sure where Earth ends and the
+        Federation begins. Yet, conversely, this can also lead to Humans finding
+        value in preserving the traditions and cultures of their pre-warp
+        ancestors.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>I believe in what
+        the Federation stands for</p></li><li><p>Learn something new every
+        day</p></li><li><p>We are stronger together</p></li><li><p>Seek out new
+        life and new civilizations</p><p></p></li></ul><p>ATTRIBUTES: Add 1 each
+        to any three attributes.</p><p></p><p>TRAIT: Human. Humans are adaptable
+        and resilient, and their resolve and ambition often allow them to resist
+        great hardship and triumph despite great adversity. However, Humans can
+        also be reckless, stubborn, irrational, and
+        unpredictable.</p><p></p><p>FAITH OF THE HEART (SPECIES ABILITY): When
+        you use one of your values to spend or gain Determination, you may also
+        add 1 Momentum to the group pool.</p><p></p><p>HUMAN NAMES: Players may
+        use a variety of sources for names, considering the vast range of
+        real-world languages, cultures, and traditions to draw from.</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!3lAPGiCpUqLLeN4c.RAMH8I7p4b0n32s3'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: 3lAPGiCpUqLLeN4c
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!3lAPGiCpUqLLeN4c'

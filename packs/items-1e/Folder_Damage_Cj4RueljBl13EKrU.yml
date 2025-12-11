@@ -1,0 +1,20 @@
+type: Item
+folder: null
+name: Damage
+color: null
+sorting: a
+_id: Cj4RueljBl13EKrU
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450532973
+  modifiedTime: 1765450532973
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_key: '!folders!Cj4RueljBl13EKrU'

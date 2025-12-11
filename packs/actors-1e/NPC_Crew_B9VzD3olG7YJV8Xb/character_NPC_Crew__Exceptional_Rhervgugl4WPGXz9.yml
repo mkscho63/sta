@@ -1,0 +1,322 @@
+name: NPC Crew, Exceptional
+type: character
+img: systems/sta/assets/compendia/icons/tokens-core/enemy-alpha-token.svg
+system:
+  notes: >-
+    <p>NPC crew are always considered to have an applicable Focus.</p>
+
+    <p>Because individual NPC crew are not being tracked, each NPC ship takes
+    multiple Turns during each Round &mdash; one Turn for each point of Scale
+    the ship has &mdash; representing the individual actions of that
+    ship&rsquo;s crew. However, each Task attempted after the first during each
+    Round from any single role increases in Difficulty by 1.</p>
+  assignment: ''
+  attributes:
+    control:
+      label: sta.actor.character.attribute.control
+      value: 11
+      selected: true
+    daring:
+      label: sta.actor.character.attribute.daring
+      value: 11
+      selected: false
+    fitness:
+      label: sta.actor.character.attribute.fitness
+      value: 11
+      selected: false
+    insight:
+      label: sta.actor.character.attribute.insight
+      value: 11
+      selected: false
+    presence:
+      label: sta.actor.character.attribute.presence
+      value: 11
+      selected: false
+    reason:
+      label: sta.actor.character.attribute.reason
+      value: 11
+      selected: false
+  determination:
+    value: 0
+    max: 3
+  disciplines:
+    command:
+      label: sta.actor.character.discipline.command
+      value: 4
+      selected: true
+    conn:
+      label: sta.actor.character.discipline.conn
+      value: 4
+      selected: false
+    engineering:
+      label: sta.actor.character.discipline.engineering
+      value: 4
+      selected: false
+    medicine:
+      label: sta.actor.character.discipline.medicine
+      value: 4
+      selected: false
+    science:
+      label: sta.actor.character.discipline.science
+      value: 4
+      selected: false
+    security:
+      label: sta.actor.character.discipline.security
+      value: 4
+      selected: false
+  environment: ''
+  milestones: ''
+  rank: ''
+  reputation: null
+  species: ''
+  stress:
+    value: 0
+    max: 15
+  upbringing: ''
+  traits: ''
+  disciplineorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  disciplineorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  pronouns: ''
+  characterrole: ''
+  acclaim: 0
+  reprimand: 0
+  careerpath: ''
+  pastimes: ''
+  experience: ''
+  careerevents: ''
+  house: ''
+  caste: ''
+  status: ''
+  temperament: ''
+  househistory: ''
+  influence: 0
+  might: 0
+  wealth: 0
+  legacy: ''
+  strmod: 0
+  rollrepnotdis: false
+  npcType: minor
+  showklingon: false
+prototypeToken:
+  name: Exceptional NPC Crew
+  displayName: 0
+  actorLink: false
+  texture:
+    src: systems/sta/assets/compendia/icons/tokens-core/enemy-alpha-token.svg
+    scaleX: 1
+    scaleY: 1
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 1
+  height: 1
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: stress
+  bar2:
+    attribute: determination
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Focus for All Tasks
+    type: focus
+    img: systems/sta/assets/compendia/icons/focuses-core/focus-custom.svg
+    system:
+      description: ''
+    _id: 3KaeNwZfnwDiWvB9
+    effects: []
+    folder: null
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!Rhervgugl4WPGXz9.3KaeNwZfnwDiWvB9'
+  - folder: null
+    name: Unarmed Strike
+    type: characterweapon2e
+    img: systems/sta/assets/compendia/icons/weapons-core/unarmed-strike.webp
+    system:
+      description: ''
+      damage: 2
+      range: melee
+      hands: 1
+      severity: 0
+      qualities:
+        deadly: false
+        stun: true
+        accurate: false
+        area: false
+        charge: false
+        cumbersome: false
+        debilitating: false
+        grenade: false
+        inaccurate: false
+        intense: false
+        piercingx: false
+        hiddenx: 0
+        opportunity: 0
+        escalation: 0
+    effects: []
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: ZbJOpTejjl4aHFDb
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!Rhervgugl4WPGXz9.ZbJOpTejjl4aHFDb'
+  - name: Unarmed Strike
+    type: characterweapon
+    img: systems/sta/assets/compendia/icons/weapons-core/unarmed-strike.webp
+    effects: []
+    folder: null
+    sort: 0
+    flags:
+      core: {}
+    _id: q1IGkiPDNowBVWHH
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    system:
+      description: >-
+        <p>While not really equipment, every character has the means to make an
+        unarmed attack, striking with fists, feet, knees, elbows, head, or
+        otherwise using brute force without a weapon. Countless martial arts,
+        such as Klingon <em>mok&rsquo;bara</em>, Vulcan <em>suus mahna</em>, and
+        Human styles like boxing or <em>aikido</em>, exist to allow individuals
+        to hone their ability to disable foes without weapons</p>
+      damage: 1
+      range: melee
+      hands: 1
+      qualities:
+        area: false
+        intense: false
+        knockdown: true
+        accurate: false
+        charge: false
+        cumbersome: false
+        deadly: false
+        debilitating: false
+        grenade: false
+        inaccurate: false
+        nonlethal: true
+        hiddenx: 0
+        piercingx: 0
+        viciousx: 0
+      opportunity: null
+      escalation: null
+    ownership:
+      default: 0
+    _key: '!actors.items!Rhervgugl4WPGXz9.q1IGkiPDNowBVWHH'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450422216
+  modifiedTime: 1765450422216
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: B9VzD3olG7YJV8Xb
+_id: Rhervgugl4WPGXz9
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!Rhervgugl4WPGXz9'

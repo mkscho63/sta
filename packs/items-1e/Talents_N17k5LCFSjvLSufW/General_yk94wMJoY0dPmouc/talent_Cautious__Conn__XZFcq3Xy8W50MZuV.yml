@@ -1,0 +1,36 @@
+name: Cautious (Conn)
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+effects: []
+folder: yk94wMJoY0dPmouc
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450670543
+  modifiedTime: 1765450670543
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirements</strong>: None</p>
+
+    <p>Whenever you attempt a Task with <strong>Conn</strong>, and you buy one
+    or more d20s by spending Momentum, you may re-roll a single d20. You may
+    select this Talent multiple times, once for each Discipline. You may not
+    select this Talent for any Discipline for which you already have the Bold
+    Talent.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_id: XZFcq3Xy8W50MZuV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!XZFcq3Xy8W50MZuV'

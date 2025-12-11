@@ -1,0 +1,34 @@
+folder: lWBHbmoPN9FHtgLe
+name: Grappler Cable
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-tractor-beam.svg
+system:
+  description: >-
+    <p>The ship utilizes a physical cable with a magnetic hook&nbsp;at the end,
+    in place of the graviton-based tractor beams used by ships in later eras.
+    This functions as a tractor beam, but if the target breaks free, roll a d20:
+    if you roll above the ship&rsquo;s Weapons system, the cable is damaged, and
+    cannot be used until repaired. Repairing the cable is treated as repairing a
+    breach.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 5eW6jYs9Ui5AMkII
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!5eW6jYs9Ui5AMkII'

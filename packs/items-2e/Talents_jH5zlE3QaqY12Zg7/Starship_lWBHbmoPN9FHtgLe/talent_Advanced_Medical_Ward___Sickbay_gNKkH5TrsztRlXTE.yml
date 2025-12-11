@@ -1,0 +1,35 @@
+folder: lWBHbmoPN9FHtgLe
+name: Advanced Medical Ward / Sickbay
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>The ship gains the Advanced Medical Ward or Advanced Sickbay trait, which
+    applies to all tasks related to medicine and biology performed within the
+    ward or sickbay, and stacks with the normal benefits of being in sickbay
+    (see page 190). This trait is lost if the ship&rsquo;s Computers system is
+    disabled. In addition, the ship receives one additional Crew Support, which
+    may only be used to introduce supporting characters from the Medical
+    department.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: gNKkH5TrsztRlXTE
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!gNKkH5TrsztRlXTE'

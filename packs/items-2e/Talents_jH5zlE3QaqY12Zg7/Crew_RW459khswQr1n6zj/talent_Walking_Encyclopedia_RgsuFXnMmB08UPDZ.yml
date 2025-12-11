@@ -1,0 +1,35 @@
+folder: RW459khswQr1n6zj
+name: Walking Encyclopedia
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Science 2+ and Reason 9+</p>
+
+    <p><br>Once per session, when you attempt a task, you may spend 2 Momentum
+    (Immediate) to gain an additional focus for the remainder of the session,
+    due to your breadth of knowledge. However, any task using that focus
+    increases its complication range by 1, as you are not a true expert on that
+    subject.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 2
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: RgsuFXnMmB08UPDZ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!RgsuFXnMmB08UPDZ'

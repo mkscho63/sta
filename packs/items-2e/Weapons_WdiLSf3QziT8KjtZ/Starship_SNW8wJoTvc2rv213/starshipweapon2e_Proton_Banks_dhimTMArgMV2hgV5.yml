@@ -1,0 +1,53 @@
+folder: SNW8wJoTvc2rv213
+name: Proton Banks
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-polaron-bank.svg
+system:
+  description: >-
+    <p>Focused proton beams can leave lingering disruptive energy that wears
+    away at the target&rsquo;s shields and hull over time.&nbsp;</p>
+
+    <p>An energy weapon bank consists of multiple emitters packed together,
+    producing a focused beam or several longer pulses, inflicting damage to
+    enemies.</p>
+  damage: 1
+  range: medium
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: false
+    cumbersome: false
+    dampening: false
+    depleting: false
+    devastating: false
+    highyield: false
+    intense: false
+    jamming: false
+    persistent: true
+    piercing: false
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: energy
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dhimTMArgMV2hgV5
+ownership:
+  default: 0
+sort: 0
+_key: '!items!dhimTMArgMV2hgV5'

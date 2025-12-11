@@ -1,0 +1,64 @@
+name: Frontier Colony
+pages:
+  - sort: 100000
+    name: Frontier Colony
+    type: text
+    _id: 5bVngYs0I4Qo4wOF
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character comes from a colony located on the fringes of known
+        space, either on the edge of uncharted space or on the border with
+        another civilization. Frontier colonists tend to be hardy and
+        determined, even stubborn, and well-prepared for the dangers that their
+        home may pose.</p><p></p><ul><li><p>VALUE: At this step, the character
+        gains a single value. This value should reflect the environment and
+        culture the character was raised within. This is a good opportunity to
+        consider how the character views their own culture, and how they
+        connect—or possibly, don’t connect—to the philosophies and traditions of
+        their people.</p></li><li><p>ATTRIBUTE: Choose one of the following
+        attributes and increase it by 1: Control or
+        Fitness.</p></li><li><p>DEPARTMENT: Choose one of Conn, Security, or
+        Medicine; increase that department by 1.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!hqhS2PvJMSlzHu1E.5bVngYs0I4Qo4wOF'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452001741
+  modifiedTime: 1765452001741
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Kjpd5UzKteKgjIqB
+categories: []
+_id: hqhS2PvJMSlzHu1E
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!hqhS2PvJMSlzHu1E'

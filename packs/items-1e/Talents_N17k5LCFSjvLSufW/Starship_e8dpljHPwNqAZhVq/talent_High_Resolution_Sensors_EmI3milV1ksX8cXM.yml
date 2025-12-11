@@ -1,0 +1,35 @@
+name: High Resolution Sensors
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+effects: []
+folder: e8dpljHPwNqAZhVq
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Voraussetzungen:</strong> keine</p>
+
+    <p>The vessel&rsquo;s sensors can gain large amounts of accurate data,
+    though they are extremely sensitive. While the vessel is not in combat, any
+    successful Task that is assisted by the ship&rsquo;s Sensors gains one bonus
+    Momentum.</p>
+  talenttype:
+    typeenum: general
+    description: science
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: EmI3milV1ksX8cXM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!EmI3milV1ksX8cXM'

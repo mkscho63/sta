@@ -1,0 +1,37 @@
+name: Command Ship
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+effects: []
+folder: e8dpljHPwNqAZhVq
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> Command 3+</p>
+
+    <p>The ship has command and control systems allowing it to coordinate easily
+    with allies during a crisis. When a character on the ship succeeds at a
+    <em>Direct </em>Task to create an Advantage, they may always be assisted by
+    the ship&rsquo;s <strong>Communications + Command</strong>, and they may
+    confer the Advantage to allied ships or away teams with whom the ship
+    maintains a communications link.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: qDzmky9VXU1EmPDH
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!qDzmky9VXU1EmPDH'

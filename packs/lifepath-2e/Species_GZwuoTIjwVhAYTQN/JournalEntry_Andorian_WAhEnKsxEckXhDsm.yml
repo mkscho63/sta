@@ -1,0 +1,85 @@
+name: Andorian
+pages:
+  - sort: 300000
+    name: Andorian
+    type: text
+    _id: ZGR6UUI0pvpZWLKW
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>An aggressive, passionate people from the frozen moon Andoria, the
+        Andorians have been part of the Federation since its foundation. Their
+        blue skin, pale hair, and antennae give them a distinctive appearance,
+        and while the Andorian Imperial Guard was demobilized when the
+        Federation was founded, they still maintain strong military traditions,
+        and a tradition of ritualized honor-duels known as Ushaan, using
+        razor-sharp ice-mining tools.</p><p>Andorians have developed powerful
+        traditions of ritual, convention, and personal honor to help direct
+        their intensity and energy towards constructive
+        ends.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>I always repay my
+        debts</p></li><li><p>No challenge unmet</p></li><li><p>Proud child of
+        Andoria</p></li><li><p>Question my word, question my
+        honor</p><p></p></li></ul><p>ATTRIBUTES: +1 Control, +1 Daring, +1
+        Presence</p><p></p><p>TRAIT: Andorian. This trait may reduce the
+        Difficulty of tasks to resist extreme cold, or tasks impacted by
+        extremely low temperatures. Their antennae aid in balance and spatial
+        awareness; a lost antenna can be debilitating until it regrows.
+        Andorians also have a high metabolism, meaning, among other things, that
+        they tire more quickly than Humans; this also makes them more vulnerable
+        to infection from certain types of injury.</p><p></p><p>INTENSE (SPECIES
+        ABILITY): When you succeed at a task where you purchased one or more
+        d20s by adding to Threat, you generate 1 bonus Momentum for each d20
+        purchased. Bonus Momentum may not be saved.</p><p></p><p>ANDORIAN NAMES:
+        Andorian names tend to be harsh-sounding, and have a personal name
+        followed by a clan name. It's common to begin the clan name with a
+        gender-specific prefix: “zh” or “sh” for females, and “ch” or “th” for
+        males. This is placed before the family name, separated by an
+        apostrophe.</p><p></p><p>FEMININE: Athytti, Vryvih, Zyle, Vyssia,
+        Thriras, Shreri, Vrossaan, Itamaan, Ishrelia, Vreraat,
+        Talas</p><p>MASCULINE: Ishrath, Thoss, Shon, Oshrev, Atheth, Tyvaass,
+        Thasiv, Tyssab, Tylihr, Thy’lek, Shras, Thelev</p><p>CLAN NAMES:
+        Tharhat, Qiaqir, Chiaqis, Thenehr, Zynes, Raviq, Thilrerh, Azonan,
+        Azollarh, Shran</p><p>EXAMPLES: Ishrelia zh’Azonan, Atheth th’Zynes</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!WAhEnKsxEckXhDsm.ZGR6UUI0pvpZWLKW'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: WAhEnKsxEckXhDsm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!WAhEnKsxEckXhDsm'

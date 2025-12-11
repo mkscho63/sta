@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Intense Scrutiny
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Engineering 3+ or Science 3+</p>
+
+    <p><br>Whenever you succeed at a task using Reason or Control as part of an
+    extended task, you ignore any Resistance on that extended task.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: DQafL6JOnX5fOJnr
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!DQafL6JOnX5fOJnr'

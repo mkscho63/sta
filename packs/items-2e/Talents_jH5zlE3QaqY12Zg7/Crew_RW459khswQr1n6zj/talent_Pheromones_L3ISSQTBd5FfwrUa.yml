@@ -1,0 +1,39 @@
+folder: RW459khswQr1n6zj
+name: Pheromones
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-daring.svg
+system:
+  description: >-
+    <p>You are capable of emitting pheromones which can render Orion males (and
+    others) suggestible. These pheromones affect several other
+    species&mdash;including Humans&mdash;in a similar way. When dealing with
+    males of a species affected by these pheromones, you gain 2 bonus Momentum
+    on all tasks to persuade or command them. However, female members of species
+    affected often suffer headaches because of the pheromones, increasing the
+    complication range of tasks to interact with them by 1. Vulcans are known to
+    be unaffected, while Denobulans experience a different effect and become
+    drowsy. The gamemaster&rsquo;s discretion applies as to which species are
+    affected, which are immune, and which suffer unexpected effects, but most
+    species are&nbsp;affected similarly to Humans and Orions.</p>
+  talenttype:
+    typeenum: species
+    description: Orion
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: L3ISSQTBd5FfwrUa
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!L3ISSQTBd5FfwrUa'

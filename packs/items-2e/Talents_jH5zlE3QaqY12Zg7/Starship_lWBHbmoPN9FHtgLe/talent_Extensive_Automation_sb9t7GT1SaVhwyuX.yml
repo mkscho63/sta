@@ -1,0 +1,39 @@
+folder: lWBHbmoPN9FHtgLe
+name: Extensive Automation
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-computers.svg
+system:
+  description: >-
+    <p>The ship has been configured to operate on a much smaller crew, relying
+    on automation to handle tasks normally performed by personnel. Even purely
+    physical tasks can be replaced by automation, using compact technical
+    drones, such as the DOT-7 present on some 23rd century Starfleet vessels,
+    like the U.S.S. Discovery.</p>
+
+    <p><br>The ship&rsquo;s Crew Support is reduced to half its normal value
+    (rounded up). However, the ship may attempt tasks by itself, and may even
+    take a turn during a combat round by itself. If it does so, add 1 Threat
+    before a task is attempted, and make the roll using the ship&rsquo;s systems
+    and departments.</p>
+  talenttype:
+    typeenum: systems
+    description: computers
+    minimum: 10
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: sb9t7GT1SaVhwyuX
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!sb9t7GT1SaVhwyuX'

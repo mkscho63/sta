@@ -1,0 +1,58 @@
+name: Medkit
+type: item
+img: systems/sta/assets/compendia/icons/items-core/medkit.webp
+effects: []
+folder: Knjkg1BrRAxxU9Ni
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Standard Issue for Starfleet medical personnel, Opportunity 1 for
+    non-medical personnel</strong></p>
+
+    <p>If a character is in sickbay at the time a specific medical device is
+    required, reduce the Opportunity Cost by 1, to a minimum of 0. A few of the
+    items listed below are considered part of a standard medkit, which is
+    standard issue for all Starfleet medical personnel. A medkit has a Cost of
+    Opportunity 1 for non-medical personnel.</p>
+
+    <p><strong>Anabolic Protoplaser/Dermal Regenerator (Part of Medkit)</strong>
+    A common tool in first aid kits on Starfleet vessels, the dermal regenerator
+    allows a physician to stimulate an injured humanoid's natural healing
+    process to accelerate the production of new skin cells and connective
+    tissue, effectively healing superficial wounds.</p>
+
+    <p><strong>Hypospray (Part of Medkit):</strong> In use since before the
+    Eugenics Wars on Earth in the 1990s, hypospray devices provide a high speed
+    and efficient means to deliver drugs that would normally have to be given by
+    hypodermic needle or IV drip. Hyposprays in the 23rd century and beyond have
+    improved far beyond those early models and are able to deliver drugs in a
+    much more efficient way to the patient.</p>
+
+    <p><strong>Tri-laser Connector (Part of Medkit):</strong> Used to heal and
+    repair damaged neurons and nerve tissue, the tri-laser connector uses laser
+    light to stimulate a projected stream of stem cells to specialize into
+    predetermined neural pathways. With a detailed enough scan of a patient,
+    such as one provided by transporter systems, the tri-laser connector is able
+    to repair and reconstruct damaged brain tissue with little to no detectable
+    differences in the patient&rsquo;s cognitive functions if undertaken within
+    days of the last scan.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: tMK7ql8fg7OmU4TU
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!tMK7ql8fg7OmU4TU'

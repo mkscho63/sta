@@ -1,0 +1,56 @@
+name: Discovered an Artifact
+pages:
+  - sort: 100000
+    name: Discovered an Artifact
+    type: text
+    _id: 3IegntbXToFxAFMu
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character discovered a device or fragment of technology from a
+        now-extinct civilization.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Reason</p></li><li><p>DEPARTMENT: + 1 Engineering</p></li><li><p>FOCUS
+        SUGGESTIONS: Ancient Technology, Computers, Reverse
+        Engineering</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!bipVYyMRkhgiwqD3.3IegntbXToFxAFMu'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: bipVYyMRkhgiwqD3
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!bipVYyMRkhgiwqD3'

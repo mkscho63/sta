@@ -1,0 +1,471 @@
+folder: RequP5BfIEe9xvAT
+name: D-Deridex
+type: starship
+img: systems/sta/assets/compendia/ships/romulan/d-deridex-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: The Romulan Empire kept to itself through the first half of the
+    24th century, continually expanding its borders away from the Federation.
+    Using ideas gleaned from the Klingon Empire&rsquo;s trade of D7s in the late
+    2260s and further native technological advances, the Empire produced the
+    D&rsquo;Deridex class warbird beginning in 2350. The D&rsquo;Deridex was
+    successful enough that the Empire continued to produce it until the
+    shipyards capable of building them were destroyed in the Romulan
+    supernova.</p>
+
+    <p>CAPABILITIES: The massive spaceframe utilizes two different types of warp
+    coil design. At each side standard warp nacelles and coils produce the warp
+    field, but monopolar subspace field generators installed across the dorsal
+    and ventral &lsquo;wings&rsquo; of the vessel provide stability while at
+    high warp velocities. This class is the first vessel of its size to be
+    powered by an artificial quantum singularity, essentially a subspace
+    compressed mass replicating a black hole on a small scale. The immense
+    amount of power this can produce is augmented by standard fusion reactors
+    and allows the ship to move at speeds of warp 9.6, and warp 6 even while
+    under cloak.</p>
+
+    <p>REFITS AND VARIANTS: Refits leading into the Dominion War saw
+    improvements to weapon and sensor systems. Plans for improving the quantum
+    singularity reactor were begun in the 2380s but halted with the destruction
+    of the Romulan star system.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Battlecruiser, Multirole Explorer,
+    Espionage/Intelligence, Tactical Operations, Technical Testbed.</p>
+
+    <p>NAMING CONVENTIONS: D&rsquo;Deridex names include famous starship
+    commanders from Romulan history and important Imperial worlds.</p>
+  crew:
+    value: 0
+    max: 12
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 1
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 6
+  scale: 6
+  shields:
+    value: 0
+    max: 18
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2350'
+  spaceframe: D-Deridex
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 8
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 9
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 10
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 10
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 11
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: Romulan Starship, D'Deridex class, Imposing
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: D-Deridex
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/romulan/d-deridex-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 5)
+    type: item
+    _id: rqXHOuPHzSLTEnIw
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!vLHPjhXmYmjlcM5y.rqXHOuPHzSLTEnIw'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Disruptor Banks
+    type: starshipweapon2e
+    _id: mF83SQoxhmPwJPlH
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-bank.svg
+    system:
+      description: >-
+        <p>Disruptors are potent, damaging weapons favored by Klingons,
+        Romulans, and a variety of other civilizations&rsquo; fleets.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!vLHPjhXmYmjlcM5y.mF83SQoxhmPwJPlH'
+  - folder: pS84k3Kl5ehfssKo
+    name: Plasma Torpedo
+    type: starshipweapon2e
+    _id: SyOtYYMS4xYvY4rQ
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-plasma-torpedo.svg
+    system:
+      description: >-
+        <p>A common armament of Romulan warships, plasma&nbsp;torpedoes generate
+        a field of destructive plasma around the target, which continues to
+        damage the target over time.</p>
+      damage: 5
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: true
+        cumbersome: true
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: true
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!vLHPjhXmYmjlcM5y.SyOtYYMS4xYvY4rQ'
+  - folder: pS84k3Kl5ehfssKo
+    name: Plasma Torpedo Salvo
+    type: starshipweapon2e
+    _id: yvmbwtDKP5qnkQy8
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-plasma-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>A common armament of Romulan warships, plasma torpedoes generate a
+        field of destructive plasma around the target, which continues to damage
+        the target over time.</p>
+      damage: 6
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: true
+        cumbersome: true
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: true
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!vLHPjhXmYmjlcM5y.yvmbwtDKP5qnkQy8'
+  - folder: vmwcoPlFxxenIHcL
+    name: Cloaking Device
+    type: talent
+    _id: gGgaYchm0sq6R6Ol
+    img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+    system:
+      description: >-
+        <p>REQUIREMENT: Klingon or Romulan ship, or gamemaster&rsquo;s
+        discretion</p>
+
+        <p><br>Activating the device is a major action which requires Reserve
+        Power, and which requires a Control +&nbsp;Engineering task with a
+        Difficulty of 2, assisted by the ship&rsquo;s Engines + Security. This
+        is operated from the ship&rsquo;s Tactical position. If successful, the
+        vessel gains the Cloaked trait. While cloaked, the vessel cannot attempt
+        any attacks, nor can it be the target of an attack unless the attacker
+        has found some way of detecting the cloaked vessel. While cloaked, a
+        vessel&rsquo;s shields are down. Deactivating the cloaking device
+        requires a minor action.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!vLHPjhXmYmjlcM5y.gGgaYchm0sq6R6Ol'
+  - folder: V0BW4gsU31fGCghx
+    name: Abundant Personnel
+    type: talent
+    _id: nUR2wHNIOVh9I6kF
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>The ship&rsquo;s Crew Support is doubled, after any other modifiers,
+        and any effects or abilities which would increase Crew Support have
+        twice the normal effect aboard a ship with this special rule. Further,
+        when you introduce a supporting character, you may use one additional
+        Crew Support to grant them an improvement immediately</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!vLHPjhXmYmjlcM5y.nUR2wHNIOVh9I6kF'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: vLHPjhXmYmjlcM5y
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!vLHPjhXmYmjlcM5y'

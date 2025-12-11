@@ -1,0 +1,34 @@
+name: Intense Scrutiny
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-operations.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Engineering 3+ or Science 3+</p>
+
+    <p>Whenever you succeed at a Task using <strong>Reason </strong>or
+    <strong>Control </strong>as part of an Extended Task, you may ignore up to
+    two Resistance for every Effect rolled.</p>
+  talenttype:
+    typeenum: discipline
+    description: engineering
+    minimum: 3
+_id: Z7EfJn4VpeWiRgBj
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Z7EfJn4VpeWiRgBj'

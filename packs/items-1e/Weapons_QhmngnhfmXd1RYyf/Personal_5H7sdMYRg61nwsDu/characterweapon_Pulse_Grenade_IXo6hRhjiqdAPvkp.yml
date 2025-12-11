@@ -1,0 +1,58 @@
+name: Pulse Grenade
+type: characterweapon
+img: systems/sta/assets/compendia/icons/weapons-core/pulse-grenade.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Pulse Grenades</strong> work on a similar principle to hand
+    phasers. The user selects a setting and a countdown timer. When the timer
+    reaches zero, the grenade discharges its power cell at once in all
+    directions. After discharge, the grenade&rsquo;s components burn out,
+    rendering them inert to prevent them being reused. Pulse grenades cover a
+    number of similar technologies used throughout Starfleet&rsquo;s history
+    &mdash; from the stun grenades used by United Earth MACO forces, to photon
+    grenades employed in the 24th century.</p>
+
+    <p>The weapon is a throwable explosive or energetic device, normally carried
+    in small quantities. It cannot be used to make attacks against an enemy at
+    Long or Extreme range. A character with a Grenade weapon has sufficient
+    grenades to make three attacks with it during a scene.</p>
+  damage: 4
+  range: ranged
+  hands: 1
+  qualities:
+    area: true
+    intense: false
+    knockdown: false
+    accurate: false
+    charge: true
+    cumbersome: false
+    deadly: false
+    debilitating: false
+    grenade: true
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 1
+  opportunity: 1
+  escalation: 2
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: IXo6hRhjiqdAPvkp
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!IXo6hRhjiqdAPvkp'

@@ -1,0 +1,31 @@
+folder: vxwA3LkDPxUcWMFA
+name: Plasma Torch
+type: item
+img: systems/sta/assets/compendia/icons/plain-core/plain-operations.svg
+system:
+  description: >-
+    <p>Plasma torches are high-energy cutting tools. Helium&nbsp;is superheated
+    and ionized before being focused by a magnetic field into a microscopic
+    beam, allowing the beam to cut through all but the strongest of
+    materials.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: XGDW9AvXEj0of7tB
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!XGDW9AvXEj0of7tB'

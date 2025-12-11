@@ -1,0 +1,43 @@
+folder: RW459khswQr1n6zj
+name: Chief Tactical Officer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-chief-of-security.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>A presence on 22nd and 23rd century Starfleet ships, and common in other
+    organizations, this role is also known as an armory officer or weapons
+    officer. The officer is responsible for the upkeep and use of the
+    ship&rsquo;s armaments and is typically an expert in ship-to-ship
+    combat.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: When you succeed at an Attack with the ship&rsquo;s
+    weapons, you may increase the damage rating of that weapon system by
+    spending 1 Momentum rather than 2.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 39z8qUuIVngMzOAV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!39z8qUuIVngMzOAV'

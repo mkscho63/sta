@@ -1,0 +1,25 @@
+name: Competitive with [name of other character]
+type: value
+img: systems/sta/assets/compendia/icons/values-core/value-relationship.svg
+effects: []
+folder: ZJr0gR5cWuowPaJB
+flags: {}
+system:
+  description: ''
+  used: false
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450946891
+  modifiedTime: 1765450946891
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Um7n3MEuMNYw5hMt
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Um7n3MEuMNYw5hMt'

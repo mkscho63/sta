@@ -1,0 +1,634 @@
+name: Galaxy Class Template
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/galaxy-token.webp
+system:
+  notes: >-
+    <p><strong>Entered Service:</strong> 2359</p>
+
+    <p><strong>Overview:</strong> Designed to be the best exploration and
+    science vessel ever deployed by Starfleet, the Galaxy class was put into
+    service with many of the most advanced technologies available in the late
+    2350s along with its sister design, the Nebula class. It also represented a
+    new philosophy in Starfleet where officers and crew on deep space and long
+    duration assignments could bring along their families and loved ones rather
+    than be apart from them for years. This philosophy meant the starship was
+    one of the largest produced with often over 2000 crew and their family
+    members aboard at any given time, and an emergency evacuation limit of
+    around 15,000, but more typical crew levels numbered near 1000. While
+    non-Starfleet personnel amounted to only between 15-20% of the total crew,
+    each Galaxy-class starship had facilities and services onboard to serve
+    Starfleet crew and civilians typically only seen on starbases including
+    schools for children, bars and in some cases restaurants, day-care, and the
+    largest holodecks produced at that time.</p>
+
+    <p><strong>Capabilities:</strong> With much of the interior space of a
+    Galaxy class empty and waiting for mission specific modules to be installed,
+    each vessel quickly became unique compared to others of its class. Often the
+    occupations of the vessel&rsquo;s civilians would dictate what kind of
+    research facilities would be installed. As an example, the civilian husband
+    of a serving science officer may be a metallurgist and request a facility
+    able to handle the specialized needs of his smelting and fabrication
+    research. This adaptability and capability for expansion also meant that
+    these large vessels often ended up with a specialist for any situation, and
+    civilian specialists that Starfleet required the expertise of would receive
+    temporary rank and further space consideration for their facilities and
+    hobbies onboard. Each Galaxy-class vessel had the largest warp core then
+    produced by the Federation and designed by the Theoretical Propulsion Group
+    of Mars. This powerplant provided the massive starship with the capability
+    to maintain a cruising speed of warp 6 and an emergency velocity of warp
+    9.8. Three identical isolinear computer cores with FTL processing
+    capabilities tie the wide variety of scientific sensors, laboratories, and
+    research facilities onboard together. These cores could each take over all
+    computer needs on the ship in the case of the destruction of the other two.
+    This meant that in the case of the destruction of the vessel, the data
+    stored by a Galaxy-class starship could be pieced back together based on
+    pieces recovered from each core. Unlike most Starfleet vessels before it,
+    the Galaxy class was designed with the ability to separate and reattach its
+    saucer without the need for a return to dry dock, allowing this use for both
+    for emergency purposes and in tactical engagements such as when U.S.S.
+    Enterprise NCC- 1701-D used the technique against the Borg following the
+    Battle of Wolf 359 in 2367. Auxiliary shuttle craft are located in three
+    separate shuttlebays, and typically include ten Type 6 or 7 personnel
+    shuttles, ten type-9A cargo shuttles, and twelve type-15, 15A, or 16
+    shuttlepods.</p>
+  crew:
+    value: 0
+    max: 6
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 1
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 10
+    max: 10
+  refit: ''
+  resistance: 6
+  scale: 6
+  shields:
+    value: 10
+    max: 10
+  servicedate: ''
+  spaceframe: Galaxy Class
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 9
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 10
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 10
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 9
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 10
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 10
+      selected: false
+      breaches: 0
+  traits: Federation Starship
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+prototypeToken:
+  name: Galaxy
+  displayName: 30
+  actorLink: true
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/galaxy-token.webp
+    scaleX: 1.2
+    scaleY: 1.2
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 3.5
+  height: 3.5
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: 1
+  displayBars: 30
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Phaser Arrays - Area (Scale 6)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array-area.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Arrays are long strips of linked emitters that share a power feed,
+        allowing the ship to fire from any point along the strip. This allows
+        the ship to fire in multiple directions at once, or to adjust and fire
+        on moving targets repeatedly in quick succession. Arrays have a Range
+        category of Medium. Further, when declaring the target of an attack with
+        an Array, the attacking character may choose to grant one of the Area or
+        Spread effects to the attack.</p>
+
+        <p><strong>Area:</strong> The attack affects a wider area, and can
+        affect several targets at once. The attack automatically affects any
+        vessel or damageable object within Contact of the initial target, and
+        then one additional target within Close range of the initial target for
+        each Effect rolled, starting with the next closest (as determined by the
+        GM). If one or more Complications is rolled when using an Area attack,
+        the GM may choose to use Complications to have an allied vessel or
+        neutral bystander in the area affected by the attack. A target cannot be
+        hit if it would have been more difficult to hit than the initial
+        target.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 6
+      range: Medium
+      qualities:
+        area: true
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: dJkU6rQ9FakdPJ6H
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.dJkU6rQ9FakdPJ6H'
+  - name: Phaser Arrays - Spread (Scale 6)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array-spread.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Arrays are long strips of linked emitters that share a power feed,
+        allowing the ship to fire from any point along the strip. This allows
+        the ship to fire in multiple directions at once, or to adjust and fire
+        on moving targets repeatedly in quick succession. Arrays have a Range
+        category of Medium. Further, when declaring the target of an attack with
+        an Array, the attacking character may choose to grant one of the Area or
+        Spread effects to the attack.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 4
+      range: Medium
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: TuCGQiiyaJlsK6SD
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.TuCGQiiyaJlsK6SD'
+  - name: Photon Torpedo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+      damage: 3
+      range: Long
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 1
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: TdvdfPflQCeQ2C4S
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.TdvdfPflQCeQ2C4S'
+  - name: Photon Torpedo Salvo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p>Torpedoes may be fired in a salvo: a volley of several torpedoes,
+        intended to have a much greater effect. Firing a salvo of torpedoes adds
+        2 Threat to the pool, along with the 1 point of Threat for a torpedo
+        attack, for a total of 3 Threat. Firing a salvo of torpedoes adds +3 to
+        Threat instead of +1, but it increases the attack&rsquo;s damage by +1
+        Challenge Die, and grants the Spread effect to the attack.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually</p>
+      damage: 4
+      range: Long
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 3
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: Ug29zExcVfVUERNA
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.Ug29zExcVfVUERNA'
+  - name: Tractor Beam (Strength 5)
+    type: item
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The tactical officer engages a tractor beam at a nearby object or
+        vessel. This requires a <strong>Control + Security</strong> Task,
+        assisted by the ship&rsquo;s <strong>Structure + Security</strong> with
+        a Difficulty of 2, and can only be directed at a target within Close
+        range. If successful, the target vessel is immobilized and cannot move
+        unless it can break free, using their shield modulations, the raw power
+        of their engines, or disabling the tractor beam emitter (a Task in its
+        own right), with a Difficulty of 5.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: pr5oqfFnlafIx9xH
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.pr5oqfFnlafIx9xH'
+  - name: Saucer Separation
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> Galaxy class or Gamemaster's
+        discretion only</p>
+
+        <p>The ship is designed so that the saucer section can be separated from
+        the engineering section, to operate as two distinct ships. Each section
+        has the same Systems, Departments, Talents, and weapons, but their Scale
+        is one lower than the whole ship (recalculate anything derived from
+        Scale), and each section only has half the Power (round down) that the
+        ship had before separation. Further, if the ship has suffered any
+        damage, ongoing effects of that damage apply equally to both sections.
+        The saucer section, which contains the crew quarters and recreational
+        areas, does not have the capacity to go to warp.</p>
+
+        <p>Separating is a <strong>Control + Conn</strong> Task with a
+        Difficulty of 3, assisted by the ship&rsquo;s <strong>Structure +
+        Engineering</strong>, performed from the internal systems position or
+        main engineering. Reconnecting requires the same Task with Difficulty 1,
+        but from crew in both parts of the ship; if either Task fails, the
+        reconnection fails. Separating and reconnection cannot be done if the
+        Structure of either ship has been Damaged or Disabled.</p>
+      talenttype:
+        typeenum: general
+        description: science
+        minimum: 2
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: OD9bWsEASyJWPpKP
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.OD9bWsEASyJWPpKP'
+  - name: Modular Laboratories
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The ship has considerable numbers of empty, multi-purpose
+        compartments that can be converted to laboratories as and when required.
+        At the start of an adventure, the crew may decide how the modular
+        laboratories are configured; this configuration counts as an Advantage
+        which applies to work performed within the laboratories.</p>
+      talenttype:
+        typeenum: discipline
+        description: science
+        minimum: 2
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: yjbInOvho98qdc5y
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.yjbInOvho98qdc5y'
+  - name: Redundant Systems
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The ship has multiple additional redundancies that allow it to
+        withstand severe damage more easily. Nominate a single System. When that
+        system becomes Damaged or Disabled, the crew may choose to activate the
+        backups as a Minor Action; if the System was Damaged, it is no longer
+        Damaged. If it was Disabled, it becomes Damaged instead. A
+        System&rsquo;s backups may only be activated once per adventure, so
+        subsequent damage will have the normal effect.</p>
+      talenttype:
+        typeenum: general
+        description: science
+        minimum: 2
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: yOb076hGIWXA5cng
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BFb2TqRd9Zs0YDo3.yOb076hGIWXA5cng'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450397815
+  modifiedTime: 1765450397815
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: t4Q7RLfVtdKjRuDV
+_id: BFb2TqRd9Zs0YDo3
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!BFb2TqRd9Zs0YDo3'

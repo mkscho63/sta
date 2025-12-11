@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Glancing Impact
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>Whenever you succeed at the Evasive Action major action, increase the
+    Resistance of the ship you are piloting&nbsp;by 2; this bonus lasts until
+    the start of your next turn.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: YlRV4mensMT5laXm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!YlRV4mensMT5laXm'

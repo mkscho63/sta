@@ -1,0 +1,497 @@
+folder: RequP5BfIEe9xvAT
+name: B'Rel
+type: starship
+img: systems/sta/assets/compendia/ships/klingon/b-rel-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: Before K&rsquo;tinga discovered the Romulan treachery with
+    trading faulty cloaking devices, the engineers in the KDF began designing a
+    starship capable of using the faulty cloaking device as is. It was
+    determined that a bird-of-prey design similar to the Vo&rsquo;n&rsquo;talk
+    class would provide the ideal form for the new vessel, and the first
+    B&rsquo;rel launched in 2280.</p>
+
+    <p>CAPABILITIES: The forward command pod contains the bridge and large
+    captain&rsquo;s quarters that contained an area dedicated to either a
+    targ-pit or gagh breeding tub so the commanding officer may always have
+    fresh food. The majority of the small crew lived and worked in the
+    engineering hull. The power generated from the multistage fusion reactors
+    give the class an impressive sublight acceleration and a top warp velocity
+    of 9.9 for a short duration. While the cloak is active, the drain on power
+    is extreme, and cruising warp velocities are reduced to warp 5.</p>
+
+    <p>REFITS AND VARIANTS: Engineers continued to improve the cloaking devices
+    through the 23rd and early 24th centuries, allowing for greater warp speeds
+    while cloaked. Improvements to weapons systems and targeting arrays were
+    also prioritized.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Crisis and Emergency Response, Patrol,
+    Tactical Operations.</p>
+
+    <p>NAMING CONVENTIONS: Klingon vessels have little in the way of standard
+    naming conventions. Each House has its own traditions, as does the KDF.</p>
+  crew:
+    value: 0
+    max: 3
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 2
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 3
+  scale: 3
+  shields:
+    value: 0
+    max: 12
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2280'
+  spaceframe: B'Rel
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 8
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 7
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 9
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 7
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 7
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: Klingon Starship, Bird of Prey, B’rel class, Agile Raider
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: B'Rel
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/klingon/b-rel-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Disruptor Cannon
+    type: starshipweapon2e
+    _id: T4yqJX99sOfgjei2
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-cannon.svg
+    system:
+      description: >-
+        <p>Disruptors are potent, damaging weapons favored by Klingons,
+        Romulans, and a variety of other civilizations&rsquo; fleets.</p>
+
+        <p>Compact weapon systems designed to produce short, powerful pulses or
+        bolts of energy at the target.</p>
+      damage: 2
+      range: close
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!fd52zIxXSzl5g4BD.T4yqJX99sOfgjei2'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: krSnZtdNRmOr7FwS
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!fd52zIxXSzl5g4BD.krSnZtdNRmOr7FwS'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: KyjLqwmEFSaNi3SB
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!fd52zIxXSzl5g4BD.KyjLqwmEFSaNi3SB'
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 2)
+    type: item
+    _id: pbGA5KLWkdAc090T
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!fd52zIxXSzl5g4BD.pbGA5KLWkdAc090T'
+  - folder: vmwcoPlFxxenIHcL
+    name: Cloaking Device
+    type: talent
+    _id: qRimREWrFJTN0iQy
+    img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+    system:
+      description: >-
+        <p>REQUIREMENT: Klingon or Romulan ship, or gamemaster&rsquo;s
+        discretion</p>
+
+        <p><br>Activating the device is a major action which requires Reserve
+        Power, and which requires a Control +&nbsp;Engineering task with a
+        Difficulty of 2, assisted by the ship&rsquo;s Engines + Security. This
+        is operated from the ship&rsquo;s Tactical position. If successful, the
+        vessel gains the Cloaked trait. While cloaked, the vessel cannot attempt
+        any attacks, nor can it be the target of an attack unless the attacker
+        has found some way of detecting the cloaked vessel. While cloaked, a
+        vessel&rsquo;s shields are down. Deactivating the cloaking device
+        requires a minor action.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!fd52zIxXSzl5g4BD.qRimREWrFJTN0iQy'
+  - folder: vmwcoPlFxxenIHcL
+    name: Fast Targeting Systems
+    type: talent
+    _id: XKYSCXN7N3favknH
+    img: systems/sta/assets/compendia/icons/talents-core/talent-weapons.svg
+    system:
+      description: >-
+        <p>When you use the Targeting Solution minor action, you&nbsp;may gain
+        both benefits: re-roll a d20 on the next attack and choose the system
+        hit by the attack.</p>
+      talenttype:
+        typeenum: discipline
+        description: security
+        minimum: 3
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!fd52zIxXSzl5g4BD.XKYSCXN7N3favknH'
+  - folder: V0BW4gsU31fGCghx
+    name: Landing Gear
+    type: talent
+    _id: t2p1PbKRvCOiKEj0
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>The vessel is equipped to land safely on a planetary&nbsp;surface,
+        and can return to space afterward. To land a ship requires Reserve Power
+        be rerouted to Structure, and then requires someone at the helm to
+        attempt a Control + Conn task with a Difficulty equal to the
+        ship&rsquo;s Scale, assisted by the ship&rsquo;s Structure + Conn. This
+        can Succeed at Cost. Success means the ship lands on the planet&rsquo;s
+        surface. Taking off requires the same task attempt, but the Difficulty
+        is reduced by 2.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!fd52zIxXSzl5g4BD.t2p1PbKRvCOiKEj0'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: fd52zIxXSzl5g4BD
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!fd52zIxXSzl5g4BD'

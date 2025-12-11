@@ -1,0 +1,503 @@
+folder: RequP5BfIEe9xvAT
+name: Ambassador
+type: starship
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  notes: >-
+    <p>OVERVIEW: Starfleet had been relying on Excelsior-class and the few
+    Constitution-class starships still in service to continue its aims of
+    discovery, but even with the planned refits of those spaceframes, they still
+    required visits to logistical hubs every five years as systems wore down.
+    Utopia Planitia Fleet Yards began to develop a new deep-space exploration
+    cruiser that would address these concerns. The Ambassador class was
+    developed and launched, and many of the engineering techniques, design
+    ideas, and technologies created would be refined and become the basis for
+    the Galaxy class.</p>
+
+    <p>CAPABILITIES: The Ambassador class was designed in a similar way to
+    previous Starfleet cruisers, with a saucer-shaped primary hull and a
+    cylindrical secondary engineering hull. The most obvious difference is the
+    then-unique warp nacelles containing high-efficiency warp coils with
+    directional subspace buffers. The Ambassador class was wildly successful,
+    but also a victim of its own innovation. Research and development continued
+    on the ground-breaking systems, improving them faster than they could be
+    installed, and it became apparent the Ambassador class wasn&rsquo;t able to
+    keep up with technological development. Production was halted on further
+    spaceframes, replacing newer construction with the Galaxy class beginning in
+    the 2360s.</p>
+
+    <p>REFITS AND VARIANTS: Two separate refit programs were used. The
+    Enterprise program improved the vessel&rsquo;s subspace communication and
+    sensor platforms. The Pollux program was dedicated to improving the
+    vessel&rsquo;s weapon systems and warp drive.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Multirole Explorer, Scientific and Survey
+    Operations, Strategic and Diplomatic Operations.</p>
+
+    <p>NAMING CONVENTIONS: Ambassador-class vessels are often named after
+    important ambassadors and peacemakers, great battles and ships of the past,
+    or hopeful ideas for the future. T&rsquo;Pau, Merrimack, and Progress are
+    all examples. The U.S.S. Ambassador had a registry of NX/NCC-10521, and
+    subsequent vessels have higher registries.</p>
+  crew:
+    value: 0
+    max: 5
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 5
+  scale: 5
+  shields:
+    value: 0
+    max: 14
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2335'
+  spaceframe: Ambassador
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 9
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 9
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 9
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 9
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 9
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: Federation Starship, Ambassador class
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Ambassador
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Arrays
+    type: starshipweapon2e
+    _id: kIvGoU8tWICyBv7e
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>Long linked strips of emitters allow the weapon to discharge at any
+        point along the strip, and often at multiple points along the strip if
+        needed. This versatility allows a vessel to fire at multiple targets, or
+        maintain fire on a moving target, from any direction.</p>
+      damage: 0
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: true
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: true
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!zyEqQgCiH2oNpHaE.kIvGoU8tWICyBv7e'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: YmPx17JhH1TzsAoN
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!zyEqQgCiH2oNpHaE.YmPx17JhH1TzsAoN'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: CFYa9mvyiidSuYgO
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!zyEqQgCiH2oNpHaE.CFYa9mvyiidSuYgO'
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 4)
+    type: item
+    _id: m39DzqQ2THw18t0d
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!zyEqQgCiH2oNpHaE.m39DzqQ2THw18t0d'
+  - folder: vmwcoPlFxxenIHcL
+    name: High-Resolution Sensors
+    type: talent
+    _id: uMCSBHmdN0Wh6LgR
+    img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+    system:
+      description: >-
+        <p>The vessel&rsquo;s sensors can gain large amounts of
+        accurate&nbsp;data, though they are extremely sensitive. While the
+        vessel is not in combat, any successful task assisted by the
+        ship&rsquo;s Sensors gains 1 bonus Momentum. Bonus Momentum may not be
+        saved.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!zyEqQgCiH2oNpHaE.uMCSBHmdN0Wh6LgR'
+  - folder: vmwcoPlFxxenIHcL
+    name: Improved Impulse Drive
+    type: talent
+    _id: X7LdyakLp95jCgix
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    system:
+      description: >-
+        <p>When a character uses the Impulse minor action while&nbsp;on this
+        ship, they may spend 2 Momentum to increase the Difficulty of attacks
+        against the ship by +1 until the start of that character&rsquo;s next
+        turn, due to the ship&rsquo;s rapid acceleration.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!zyEqQgCiH2oNpHaE.X7LdyakLp95jCgix'
+  - folder: V0BW4gsU31fGCghx
+    name: Sauder Separation
+    type: talent
+    _id: bSZzBXsNPJnymXVt
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>Vessels of this class have the capability to detach their&nbsp;saucer
+        section in an emergency. Once the saucer has detached, the two sections
+        of the ship cannot be reconnected outside of a drydock. Ship&rsquo;s
+        systems are halved (round up) for the saucer and the secondary hull when
+        separated, the saucer is unable to enter warp speeds or launch small
+        craft, and each section is considered a separate vessel with Scale 1
+        less than the original vessel; the secondary hull is commanded from main
+        engineering. The saucer can land on a planetary surface with emergency
+        landing gear.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!zyEqQgCiH2oNpHaE.bSZzBXsNPJnymXVt'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: zyEqQgCiH2oNpHaE
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!zyEqQgCiH2oNpHaE'

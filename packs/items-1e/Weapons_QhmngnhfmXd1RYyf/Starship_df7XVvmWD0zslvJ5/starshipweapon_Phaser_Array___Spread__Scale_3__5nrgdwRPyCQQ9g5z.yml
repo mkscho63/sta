@@ -1,0 +1,64 @@
+name: Phaser Array - Spread (Scale 3)
+type: starshipweapon
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array-spread.svg
+system:
+  description: >-
+    <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+    adaptable weapon.</p>
+
+    <p>Arrays are long strips of linked emitters that share a power feed,
+    allowing the ship to fire from any point along the strip. This allows the
+    ship to fire in multiple directions at once, or to adjust and fire on moving
+    targets repeatedly in quick succession. Arrays have a Range category of
+    medium. Further, when declaring the target of an attack with an Array, the
+    attacking character may choose to grant one of the Area or Spread effects to
+    the attack.</p>
+
+    <p><strong>Spread:</strong> The Attack inflicts additional damage elsewhere
+    on the target. If one or more Effects is rolled, the Attack inflicts one
+    additional hit to a random system (even if the Attack was targeting a
+    specific system), which deals half the damage of the initial hit, rounding
+    up, +1 for every Effect rolled after the first. This additional hit is
+    resolved separately, and each hit against the target is reduced by
+    Resistance, reduces Shields, and potentially causes Breaches,
+    individually.</p>
+
+    <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus Momentum
+    if successful.</p>
+  damage: 3
+  range: medium
+  qualities:
+    area: false
+    spread: true
+    dampening: false
+    calibration: false
+    devastating: false
+    highyield: false
+    persistentx: 0
+    piercingx: 0
+    viciousx: 0
+    hiddenx: 0
+    versatilex: 2
+  opportunity: null
+  escalation: null
+  includescale: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450919428
+  modifiedTime: 1765450919428
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: df7XVvmWD0zslvJ5
+_id: 5nrgdwRPyCQQ9g5z
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!5nrgdwRPyCQQ9g5z'

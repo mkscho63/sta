@@ -1,0 +1,34 @@
+folder: vxwA3LkDPxUcWMFA
+name: Emergency Surgical Kit
+type: item
+img: systems/sta/assets/compendia/icons/plain-core/plain-medical.svg
+system:
+  description: >-
+    <p>A standard emergency surgical kit provides single-use&nbsp;medical
+    supplies capable of allowing a trained physician the means to perform
+    complex surgical procedures in the field at the expense of equipment
+    durability. The kit contains a built-in PADD that gives readouts on basic
+    biological functions important to physicians such as blood pressure,
+    heartbeat, temperature, etc. The display walks unskilled civilians through
+    triage steps.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: nkOWaIpb9ShxClpL
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!nkOWaIpb9ShxClpL'

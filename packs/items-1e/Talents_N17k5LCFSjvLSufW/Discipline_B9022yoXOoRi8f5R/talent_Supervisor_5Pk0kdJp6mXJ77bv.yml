@@ -1,0 +1,34 @@
+name: Supervisor
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement</strong>: Main Character</p>
+
+    <p>The ship&rsquo;s Crew Support increases by one. This increase is
+    cumlative if multiple Main Characters in the group select it, but each Main
+    Character may only select this Talent once.</p>
+  talenttype:
+    typeenum: general
+    description: command
+    minimum: 3
+_id: 5Pk0kdJp6mXJ77bv
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!5Pk0kdJp6mXJ77bv'

@@ -1,0 +1,551 @@
+name: Service Roles
+pages:
+  - sort: 100000
+    name: Service Roles
+    type: text
+    _id: 6PAVJ8Mz9jEoRVNS
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The following roles are found within Starfleet in all eras of play,
+        unless otherwise noted. Non-Starfleet characters in similar
+        organizations (e.g., the Klingon Defense Force or Romulan Imperial Navy)
+        may select from this list of roles as well, gaining the same
+        benefit.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.6PAVJ8Mz9jEoRVNS'
+  - sort: 200000
+    name: Commanding Officer
+    type: text
+    _id: QD9sZ9FT946xWCWL
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Even if the commanding officer does not hold the rank of captain,
+        they are usually referred to as captain by their subordinates aboard a
+        starship. Aboard stations, commanding officers are referred to by their
+        rank. </p><p>Commanding officers are responsible for the ship or
+        facility under their command as well as executing the orders and
+        directives from their leadership.</p><p></p><p>ROLE BENEFIT: You may
+        spend Determination to grant any other character you can communicate
+        with 1 Determination; this does not have to be linked to using or
+        challenging a value.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.QD9sZ9FT946xWCWL'
+  - sort: 300000
+    name: Executive Officer
+    type: text
+    _id: WPpCDe1Oyj77qrcb
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Second-in-command. The executive officer is the captain’s chief
+        advisor and takes command in situations where the captain is unable to.
+        If a ship does not have a dedicated executive officer, an officer in
+        another role should be noted as second-in-command, but they will not
+        gain the benefits of this role.</p><p></p><p>ROLE BENEFIT: When an
+        allied character in communication with you spends Determination, you may
+        spend 3 Momentum (Immediate) to enable that character to regain the
+        spent point of Determination.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.WPpCDe1Oyj77qrcb'
+  - sort: 400000
+    name: Operations Manager
+    type: text
+    _id: XNVQnCC1W6MNWiUC
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The operations manager manages and oversees all technical operations
+        aboard or involving the ship, normally from the operations station on
+        the bridge, or in conjunction with the chief engineer (on smaller ships,
+        one officer may fill both roles). This often entails taking on the
+        duties of a science officer if there is no dedicated science officer
+        among the senior staff.</p><p></p><p>ROLE BENEFIT: Whenever you create a
+        trait representing a piece of equipment, or an alteration made to
+        existing equipment, any character who benefits from that trait while you
+        are present in the scene may re-roll a d20.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.XNVQnCC1W6MNWiUC'
+  - sort: 500000
+    name: Chief Engineer
+    type: text
+    _id: Vx7oMNo1lHgRZ8CO
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The chief engineer is responsible for ensuring the ship remains
+        operational and functional, and commands the engineering department
+        aboard the ship.</p><p></p><p>ROLE BENEFIT: You reduce the opportunity
+        cost of engineering teams by 1, to a minimum of 0. Further, when you
+        attempt a task to perform repairs to a starship or attempt to push the
+        ship’s capabilities beyond its normal limits, you may spend 1 Momentum
+        (Immediate) to re-roll a d20.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.Vx7oMNo1lHgRZ8CO'
+  - sort: 600000
+    name: Chief of Security
+    type: text
+    _id: mlQSMdDSTiX5GJEb
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The chief of security oversees the ship’s security department and is
+        responsible for ensuring the safety of the ship and crew during
+        missions, for the investigation of disciplinary and criminal matters,
+        and for overseeing the protection of important persons aboard the
+        ship.</p><p></p><p>ROLE BENEFIT: You reduce the opportunity cost of
+        weapons and security teams by 1, to a minimum of 0. Further, when you
+        succeed at an Attack against an enemy during personal combat, you may
+        spend 1 Momentum to increase the Difficulty of that enemy’s next Attack
+        by 1.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.mlQSMdDSTiX5GJEb'
+  - sort: 700000
+    name: Chief Tactical Officer
+    type: text
+    _id: qlCALQJ3hobeTO8z
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>A presence on 22nd and 23rd century Starfleet ships, and common in
+        other organizations, this role is also known as an armory officer or
+        weapons officer. The officer is responsible for the upkeep and use of
+        the ship’s armaments and is typically an expert in ship-to-ship
+        combat.</p><p></p><p>ROLE BENEFIT: When you succeed at an Attack with
+        the ship’s weapons, you may increase the damage rating of that weapon
+        system by spending 1 Momentum rather than 2.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.qlCALQJ3hobeTO8z'
+  - sort: 800000
+    name: Flight Controller
+    type: text
+    _id: jlND0Qp7bilq1VNQ
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Also known as a helmsman on 22nd and 23rd century Starfleet vessels.
+        Not a typical senior staff role, though some captains, particularly
+        those operating in uncharted space, choose the most senior helmsman or
+        flight control officer to serve on the senior staff.</p><p></p><p>ROLE
+        BENEFIT: When you attempt an engineering task related to flight or
+        propulsion, you may use your Conn rating instead of Engineering. When
+        you succeed at a Conn task to pilot a starship, you generate 1 bonus
+        Momentum to be used on that task (bonus Momentum may not be saved).</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.jlND0Qp7bilq1VNQ'
+  - sort: 900000
+    name: Navigator
+    type: text
+    _id: kvUAX77tA48O3pZn
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>On vessels exploring the uncharted frontiers of space, a skilled
+        navigator, astrometrics officer, or stellar cartographer plots courses,
+        studies and updates astrometrics charts and data, and supports the
+        helmsman or flight controller. Navigators are rarely called to serve on
+        the senior staff.</p><p></p><p>ROLE BENEFIT: When you attempt a science
+        task related to astrophysics or stellar navigation, you may use your
+        Conn rating instead of Science. When you attempt or Assist a task to
+        maneuver a starship through difficult or dangerous terrain, you may
+        spend 1 Momentum to ignore a complication suffered (Repeatable).</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.kvUAX77tA48O3pZn'
+  - sort: 1000000
+    name: Science Officer
+    type: text
+    _id: iVgClMVO4YsCi0dT
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The science officer (sometimes referred to as the chief science
+        officer) is responsible for advising the commanding officer on all
+        scientific matters, providing hypotheses concerning the unknown. The
+        science officer is also responsible for all science personnel on the
+        ship or station.</p><p></p><p>ROLE BENEFIT: When you succeed at a task
+        assisted by the ship’s Sensors or Computers, or a task using a tricorder
+        or other sensing device, you may ask one additional question as if you
+        had spent Momentum on Obtain Information.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.iVgClMVO4YsCi0dT'
+  - sort: 1100000
+    name: Chief Medical Officer
+    type: text
+    _id: Lrg07DdtE3z8b7iv
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The chief medical officer is responsible for the health and
+        well-being of the crew and other people aboard the ship and leads the
+        ship’s medical department. A chief medical officer can order, and
+        countermand the orders of, senior officers where matters of that
+        officer’s health are concerned. In extreme situations, the chief medical
+        officer can declare an officer unfit and remove them from active duty
+        (including the commanding officer). A ship may have either a chief
+        medical officer or a ship’s doctor.</p><p></p><p>ROLE BENEFIT: You
+        reduce the opportunity cost of medical equipment and medical teams by 1,
+        to a minimum of 0. Further, when you attempt a task using your Medicine
+        rating, and you have assistance, you generate 1 bonus Momentum (bonus
+        Momentum may not be saved).</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.Lrg07DdtE3z8b7iv'
+  - sort: 1200000
+    name: Ship's Doctor
+    type: text
+    _id: 5f2D8GoB6CciSVkM
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You care for the crew of your ship, or the station you serve on (in
+        which case, rename the role to Station’s Doctor), but unlike a chief
+        medical officer, you do not have an extensive medical department to
+        manage or to aid you. This is common in smaller crews which do not
+        require a large sickbay or infirmary and tends to mean these smaller
+        postings favor generalists who can adapt to a variety of
+        circumstances.</p><p>A ship may have either a chief medical officer or a
+        ship’s doctor.</p><p></p><p>ROLE BENEFIT: You have two additional
+        focuses, which must relate to medicine fields of study. However, your
+        ship cannot use Crew Support to introduce supporting characters who are
+        medical personnel.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.5f2D8GoB6CciSVkM'
+  - sort: 1300000
+    name: Ship's (or Station's) Counselor
+    type: text
+    _id: YdeoFQWgEEDbp6BU
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>On larger ships and starbases, it’s common (especially in the 24th
+        century and beyond) to have personnel dedicated to the mental well-being
+        of the crew. Some captains regard them as valuable advisors, as their
+        training covers both culture and psychology, making them exceptionally
+        good at reading the moods and intentions of others.</p><p></p><p>ROLE
+        BENEFIT: When you Assist a character suffering from a trait representing
+        a negative emotional state, you may re-roll your assist die.
+        Additionally, once per mission, you may spend a scene counseling a
+        character who has challenged one of their values during the current
+        mission. At the end of the scene, the character may rewrite their
+        crossed-out value immediately, rather than waiting until the end of the
+        mission. If they do this, they immediately gain 1 Determination as
+        well.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.YdeoFQWgEEDbp6BU'
+  - sort: 1400000
+    name: Communications Officer
+    type: text
+    _id: SdWLzdXRKFaCkrAT
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>More common in the earlier days of Starfleet, dedicated
+        communications officers are typically skilled in linguistics and
+        cryptography, and aided with advanced translation and decryption
+        technologies, and are valuable during encounters with new cultures,
+        hostile or otherwise.</p><p></p><p>ROLE BENEFIT: When you attempt a task
+        assisted by the ship’s Computers or Communications systems, do not roll
+        the ship’s assist die: instead, count the ship’s die as if it had rolled
+        a 1.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!j3pDCqQ7uiV8q1w1.SdWLzdXRKFaCkrAT'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: j3pDCqQ7uiV8q1w1
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!j3pDCqQ7uiV8q1w1'

@@ -1,0 +1,34 @@
+folder: lWBHbmoPN9FHtgLe
+name: Polarized Hull Plating
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-structure.svg
+system:
+  description: >-
+    <p>Vessels of this spaceframe lack deflector shields&nbsp;common to many
+    other ships, and instead rely upon polarization of the hull plating to
+    resist damage. The ship&rsquo;s Shields track instead represents the state
+    of the ship&rsquo;s polarized hull. The ship&rsquo;s Shields are equal to
+    its Structure, with no additional modifiers. However, these do not count as
+    shields for the purposes of blocking transporter use.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Pquu5jlh2IW0Gy3p
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Pquu5jlh2IW0Gy3p'

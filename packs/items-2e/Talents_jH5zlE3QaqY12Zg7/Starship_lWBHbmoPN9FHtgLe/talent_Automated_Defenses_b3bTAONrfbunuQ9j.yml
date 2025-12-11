@@ -1,0 +1,34 @@
+folder: lWBHbmoPN9FHtgLe
+name: Automated Defenses
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-weapons.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 23rd century or later</p>
+
+    <p><br>At the end of a round, if no attacks were made using the ship&rsquo;s
+    weapons, the ship may make an energy weapon attack using its Weapons +
+    Security (without assistance) against a target within Close range. Momentum
+    may be used and generated as normal for this attack.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: b3bTAONrfbunuQ9j
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!b3bTAONrfbunuQ9j'

@@ -1,0 +1,38 @@
+folder: RW459khswQr1n6zj
+name: Telepathy
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-presence.svg
+system:
+  description: >-
+    <p>You can sense the surface thoughts and emotions of most living beings
+    nearby, and can communicate telepathically with other empaths and telepaths,
+    as well as those with whom you are extremely familiar. You cannot choose not
+    to sense the emotions or read the surface thoughts of those nearby, except
+    for those resistant to telepathy. It requires effort and a task to pick out
+    the emotions or thoughts of a specific individual in a crowd, to search a
+    creature&rsquo;s mind for specific thoughts or memories, or to block out the
+    minds of those nearby. Increase the Difficulty if the situation is
+    stressful, if there are many beings present, if the target target is
+    resistant&nbsp;to telepathy, etc.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: gilyA4m9eZ5cISE6
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!gilyA4m9eZ5cISE6'

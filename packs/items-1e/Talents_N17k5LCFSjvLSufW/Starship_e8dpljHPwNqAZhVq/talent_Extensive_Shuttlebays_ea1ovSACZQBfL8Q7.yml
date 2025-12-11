@@ -1,0 +1,36 @@
+name: Extensive Shuttlebays
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+effects: []
+folder: e8dpljHPwNqAZhVq
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The vessel&rsquo;s shuttlebays are large, well-supplied, and able to
+    support a larger number of active shuttle missions simultaneously. The ship
+    may have twice as many small craft active at any one time as it would
+    normally allow, and it may carry up to two Scale 2 small craft. For more on
+    small craft operations, see p. 232.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ea1ovSACZQBfL8Q7
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ea1ovSACZQBfL8Q7'

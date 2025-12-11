@@ -1,0 +1,65 @@
+name: Isolated Colony
+pages:
+  - sort: 100000
+    name: Isolated Colony
+    type: text
+    _id: kwALp3nPxpb6HOiG
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character comes from a colony that is isolated from broader
+        galactic society. Worlds like the Vulcan monastery on P’Jem use the vast
+        distances between star systems as an opportunity for contemplative
+        isolation, while others are settled because they present unique research
+        opportunities. The cultures of these colonies tend to focus on learning
+        and introspection.</p><p></p><ul><li><p>VALUE: At this step, the
+        character gains a single value. This value should reflect the
+        environment and culture the character was raised within. This is a good
+        opportunity to consider how the character views their own culture, and
+        how they connect—or possibly, don’t connect—to the philosophies and
+        traditions of their people.</p></li><li><p>ATTRIBUTE: Choose one of the
+        following attributes and increase it by 1: Reason or
+        Insight.</p></li><li><p>DEPARTMENT: Choose one of Engineering, Science,
+        or Medicine; increase that department by 1.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!JUFl731u3zy45uD1.kwALp3nPxpb6HOiG'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452001741
+  modifiedTime: 1765452001741
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Kjpd5UzKteKgjIqB
+categories: []
+_id: JUFl731u3zy45uD1
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!JUFl731u3zy45uD1'

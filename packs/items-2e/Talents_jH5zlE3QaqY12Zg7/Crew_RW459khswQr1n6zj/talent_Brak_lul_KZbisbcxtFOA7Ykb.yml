@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Brak'lul
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-klingon.svg
+system:
+  description: >-
+    <p>You gain 1 Protection which stacks with the benefits of any armor worn.
+    Further, when another character attempts First Aid to&nbsp;heal you, they
+    may re-roll a d20.</p>
+  talenttype:
+    typeenum: species
+    description: Klingon
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: KZbisbcxtFOA7Ykb
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!KZbisbcxtFOA7Ykb'

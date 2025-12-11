@@ -1,0 +1,30 @@
+folder: RW459khswQr1n6zj
+name: Precision Maneuvering
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>Whenever you attempt a task that requires precise or careful maneuvering,
+    or where there is a risk of colliding&nbsp;with another object, you may
+    re-roll 1d20.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: k49XARAxIiZBZQJK
+ownership:
+  default: 0
+sort: 0
+_key: '!items!k49XARAxIiZBZQJK'

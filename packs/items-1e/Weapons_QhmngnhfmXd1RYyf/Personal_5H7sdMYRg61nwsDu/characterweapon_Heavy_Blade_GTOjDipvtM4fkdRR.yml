@@ -1,0 +1,49 @@
+name: Heavy Blade
+type: characterweapon
+img: systems/sta/assets/compendia/icons/weapons-core/bat-leth.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Heavy blades</strong> like the <em>bat&rsquo;leth</em>,
+    <em>kar&rsquo;takin</em>, and the Vulcan <em>lirpa</em> only see use in
+    heavily ritualized combat or in very limited situations where hand-to-hand
+    combat is almost assured.</p>
+  damage: 3
+  range: melee
+  hands: 2
+  qualities:
+    area: false
+    intense: false
+    knockdown: false
+    accurate: false
+    charge: false
+    cumbersome: false
+    deadly: false
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 1
+  opportunity: 1
+  escalation: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: GTOjDipvtM4fkdRR
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!GTOjDipvtM4fkdRR'

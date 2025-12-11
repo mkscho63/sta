@@ -1,0 +1,40 @@
+name: Audio Receiver
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Standard Issue for Communications Officer, Opportunity 1
+    otherwise</strong></p>
+
+    <p>The Starfleet ear receiver has fallen out of favor since the 23rd
+    century, but still can be seen in use by specialists in communication
+    technologies, lingual, and other aural sciences. The ear receiver ties
+    directly into shipboard communication networks and allows the user to listen
+    to data coming across both sub-space frequencies typically used for
+    long-range communication and ship to surface, but also listening to computer
+    alerts and data so as not to distract others at nearby stations with the
+    chatter. The receiver can also be programmed to provide aural or vibrational
+    feedback to users allowing sensor operators greater accuracy in their
+    duties.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: x05PwWU5glqrofu6
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!x05PwWU5glqrofu6'

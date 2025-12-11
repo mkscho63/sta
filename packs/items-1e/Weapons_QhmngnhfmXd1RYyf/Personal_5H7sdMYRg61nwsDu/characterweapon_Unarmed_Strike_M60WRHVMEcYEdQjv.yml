@@ -1,0 +1,51 @@
+name: Unarmed Strike
+type: characterweapon
+img: systems/sta/assets/compendia/icons/weapons-core/unarmed-strike.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p>While not really equipment, every character has the means to make an
+    unarmed attack, striking with fists, feet, knees, elbows, head, or otherwise
+    using brute force without a weapon. Countless martial arts, such as Klingon
+    <em>mok&rsquo;bara</em>, Vulcan <em>suus mahna</em>, and Human styles like
+    boxing or <em>aikido</em>, exist to allow individuals to hone their ability
+    to disable foes without weapons</p>
+  damage: 1
+  range: melee
+  hands: 1
+  qualities:
+    area: false
+    intense: false
+    knockdown: true
+    accurate: false
+    charge: false
+    cumbersome: false
+    deadly: false
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    nonlethal: true
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 0
+  opportunity: null
+  escalation: null
+_id: M60WRHVMEcYEdQjv
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!M60WRHVMEcYEdQjv'

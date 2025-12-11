@@ -1,0 +1,40 @@
+folder: RW459khswQr1n6zj
+name: Telepathic Projection
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-presence.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Telepathy</p>
+
+    <p><br>Your telepathic ability is more potent than most, and you are
+    accustomed to projecting your thoughts into other minds. You can send your
+    thoughts into the minds of other creatures&mdash;other than those immune to
+    telepathy&mdash;even if those creatures are not telepathic themselves. You
+    can &lsquo;hear&rsquo; their responses by reading their minds. You are also
+    capable of using this ability offensively, overwhelming a target&rsquo;s
+    mind with pain-inducing psychic noise. This requires a Presence + Security
+    task with a Difficulty of 2 (increasing by 1 for each range category beyond
+    Close); success inflicts a Stun or Deadly Injury with Severity 3 and the
+    Piercing effect.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: LnixytRofTetXZ15
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!LnixytRofTetXZ15'

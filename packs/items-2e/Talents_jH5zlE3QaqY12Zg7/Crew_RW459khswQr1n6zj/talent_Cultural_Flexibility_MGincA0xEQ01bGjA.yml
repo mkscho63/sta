@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Cultural Flexibility
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-denobulan.svg
+system:
+  description: >-
+    <p>You are at ease when meeting new cultures, and you adapt to unfamiliar
+    social structures easily. When you attempt a task to learn about an
+    unfamiliar culture, or to act in an appropriate manner when interacting
+    with&nbsp;members of such a culture, you may re-roll 1d20.</p>
+  talenttype:
+    typeenum: species
+    description: Denobulan
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: MGincA0xEQ01bGjA
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!MGincA0xEQ01bGjA'

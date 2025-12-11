@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Methodical Planning
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>When an ally attempts a task which benefits from a trait you created
+    which represents your plan or strategy, then you may Assist that
+    ally&rsquo;s task even if you are not present. In combat, this assistance
+    does not require you&nbsp;to use your task to Assist that ally.</p>
+  talenttype:
+    typeenum: attribute
+    description: reason
+    minimum: 9
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: woWl1b7qoU2DTBYg
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!woWl1b7qoU2DTBYg'

@@ -1,0 +1,41 @@
+name: Joined
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-trill.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Trill, requires Gamemaster&rsquo;s
+    permission to take this Talent after Character Creation.</p>
+
+    <p>You have a symbiont, with lifetimes of memories to draw upon. Once per
+    mission, you may declare that a former host had expertise in a relevant
+    skill or field of study; you gain a single Focus for the remainder of the
+    scene, as you draw upon those memories. Additionally, you gain a Trait with
+    the name of the Symbiont; this reflects potential advantages of the Joining,
+    the ability to perform rites and rituals to awaken past hosts&rsquo;
+    memories, and the vulnerabilities inherent in the connection. Former
+    Initiate cannot be taken if the character has the Joined Talent &mdash; they
+    are mutually exclusive.</p>
+  talenttype:
+    typeenum: species
+    description: Trill
+    minimum: 0
+_id: N6ZSwgiEd8XrIcAr
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!N6ZSwgiEd8XrIcAr'

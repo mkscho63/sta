@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Close Protection
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+system:
+  description: >-
+    <p>When you make a successful Attack, you may spend 1 Momentum to protect a
+    single ally within Close range. The next Attack against that ally before the
+    start of your&nbsp;next turn increases in Difficulty by 1.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Dm6LuI1AMObD6JJz
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Dm6LuI1AMObD6JJz'

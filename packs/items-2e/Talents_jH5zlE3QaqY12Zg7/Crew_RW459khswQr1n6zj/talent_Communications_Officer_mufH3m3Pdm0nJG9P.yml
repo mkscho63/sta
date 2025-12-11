@@ -1,0 +1,42 @@
+folder: RW459khswQr1n6zj
+name: Communications Officer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-communications-officer.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>More common in the earlier days of Starfleet, dedicated communications
+    officers are typically skilled in linguistics and cryptography, and aided
+    with advanced translation and decryption technologies, and are valuable
+    during encounters with new cultures, hostile or otherwise.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: When you attempt a task assisted by the ship&rsquo;s
+    Computers or Communications systems, do not roll the ship&rsquo;s assist
+    die: instead, count the ship&rsquo;s die as if it had rolled a 1.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: mufH3m3Pdm0nJG9P
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!mufH3m3Pdm0nJG9P'

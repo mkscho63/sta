@@ -1,0 +1,50 @@
+name: Micro-Torpedo
+type: starshipweapon
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+system:
+  description: >-
+    <p>Photon torpedoes use a simple payload of matter and anti-matter to create
+    a large and devastating explosion. They&rsquo;re commonly used by many
+    cultures, including the Klingons, the Cardassians, and the Federation. They
+    have a base Damage of 3 Challenge Dice, with the High-Yield Quality.</p>
+
+    <p><strong>High-Yield:</strong> The weapon inflicts massive damage to enemy
+    vessels; if the Attack inflicts one or more Breaches to a system, it
+    inflicts one additional Breach.</p>
+  damage: 3
+  range: long
+  qualities:
+    area: false
+    spread: false
+    dampening: false
+    calibration: false
+    devastating: false
+    highyield: true
+    persistentx: 0
+    piercingx: 0
+    viciousx: 0
+    hiddenx: 0
+    versatilex: 0
+  opportunity: null
+  escalation: 1
+  includescale: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450919428
+  modifiedTime: 1765450919428
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: df7XVvmWD0zslvJ5
+_id: NkeoWybT00SUUivG
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!NkeoWybT00SUUivG'

@@ -1,0 +1,82 @@
+name: Betazoid
+pages:
+  - sort: 100000
+    name: Betazoid
+    type: text
+    _id: TtvsXY37zZTysXz9
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <img style="display:block;margin:0px auto"
+        src="systems/sta/assets/compendia/icons/plain-core/plain-betazoid.svg"
+        width="256" height="256" /><p><strong>Requirements:</strong> The Next
+        Generation era only</p><p>The peaceful Betazoid people hail from the
+        idyllic, verdant world Betazed. The world is a valued member of the
+        Federation, and its people can be found across Federation space,
+        including Starfleet. Betazoids appear almost identical to Humans, but
+        differ in one major way: they are naturally telepathic, developing
+        mental abilities during adolescence. The potency of this ability varies
+        between individuals, but it has resulted in a culture where honesty and
+        directness are fundamental: it is difficult to keep secrets when
+        everyone around you can read minds.</p><p><strong>Example
+        Value:</strong>
+        @UUID[Compendium.sta-compendia.values-core.cIeqRw9PNOrEmkNo]{Compassion
+        through understanding}</p><ul><li><p><strong>Attributes:</strong> +1
+        Insight, +1 Presence, +1 Reason</p></li><li><p><strong>Trait:</strong>
+        Betazoid. All Betazoids are telepathic to varying degrees, and even when
+        not actively using their abilities, they are highly perceptive of others
+        around them, but also highly sensitive to telepathic disturbances and
+        mental assaults. They have little familiarity with lies and deception,
+        due to their open culture and ability to read the thoughts and emotions
+        of others. As they are sensitive to the minds of other living beings,
+        they tend not to be comfortable around animals, for fear of losing
+        themselves in the minds of wild
+        creatures.</p></li><li><p><strong>Talents:</strong> The character
+        receives access to the following talents. A Betazoid character must
+        select one of the Betazoid talents at some point during character
+        creation, to reflect their telepathy. Characters who are only partially
+        Betazoid may not select the Telepath
+        talent.</p><ul><li><p>@UUID[Compendium.sta-compendia.species-talents-core.5qsqsqexlX3CMaJo]{Empath}</p></li><li><p>@UUID[Compendium.sta-compendia.species-talents-core.Bi3fCsJGbSc1zgJK]{Telepath}</p></li></ul></li></ul>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SDNdB84hMk65VGuh.TtvsXY37zZTysXz9'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451925417
+  modifiedTime: 1765451925417
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: HkRr5Gk1P0pTwfaY
+categories: []
+_id: SDNdB84hMk65VGuh
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!SDNdB84hMk65VGuh'

@@ -1,0 +1,35 @@
+name: Structure (Destroyed)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-destroyed-structure.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p>If the total number of Breaches the Structure System has suffered exceeds
+    the ship&rsquo;s Scale, then the ship&rsquo;s hull integrity has been
+    massively compromised, requiring nothing less than a full rebuild in
+    Spacedock. With hull breaches across the ship, fires raging, and life
+    support systems failing, the ship is crippled. The ship&rsquo;s Resistance
+    is 0, Tasks to repair other systems on the ship can no longer be attempted
+    during combat, and the ship may not move except by thrusters, as rapid
+    movement might tear the ship apart. Subsequent hits to Structure affect the
+    Engines System instead.</p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ahVQrEEImrjpTIB3
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ahVQrEEImrjpTIB3'

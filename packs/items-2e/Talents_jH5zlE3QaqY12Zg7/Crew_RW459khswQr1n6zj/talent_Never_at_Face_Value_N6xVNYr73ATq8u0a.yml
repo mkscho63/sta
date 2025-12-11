@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Never at Face Value
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-daring.svg
+system:
+  description: >-
+    <p>Once per scene, you may add 1 Threat to ask the gamemaster a question
+    about the situation, as if you had spent&nbsp;Momentum to Obtain
+    Information.</p>
+  talenttype:
+    typeenum: species
+    description: Orion
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: N6xVNYr73ATq8u0a
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!N6xVNYr73ATq8u0a'

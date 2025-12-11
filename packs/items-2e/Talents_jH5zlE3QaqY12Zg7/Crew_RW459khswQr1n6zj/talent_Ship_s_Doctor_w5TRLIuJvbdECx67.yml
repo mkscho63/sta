@@ -1,0 +1,47 @@
+folder: RW459khswQr1n6zj
+name: Ship's Doctor
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-chief-medical-officer.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>You care for the crew of your ship, or the station you serve on (in which
+    case, rename the role to Station&rsquo;s Doctor), but unlike a chief medical
+    officer, you do not have an extensive medical department to manage or to aid
+    you. This is common in smaller crews which do not require a large sickbay or
+    infirmary and tends to mean these smaller postings favor generalists who can
+    adapt to a variety of circumstances.</p>
+
+    <p>A ship may have either a chief medical officer or a ship&rsquo;s
+    doctor.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: You have two additional focuses, which must relate to
+    medicine fields of study. However, your ship cannot use Crew Support to
+    introduce supporting characters who are medical personnel.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: w5TRLIuJvbdECx67
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!w5TRLIuJvbdECx67'

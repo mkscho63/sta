@@ -1,0 +1,33 @@
+name: I Know My Ship
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-operations.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Engineering 4+</p>
+
+    <p>Whenever you attempt a Task to determine the source of a technical
+    problem with your ship, add one bonus d20.</p>
+  talenttype:
+    typeenum: discipline
+    description: engineering
+    minimum: 4
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: GlbGdzRFU5mD0Aad
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!GlbGdzRFU5mD0Aad'

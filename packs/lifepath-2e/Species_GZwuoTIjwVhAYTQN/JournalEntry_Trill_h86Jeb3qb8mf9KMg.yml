@@ -1,0 +1,92 @@
+name: Trill
+pages:
+  - sort: 200000
+    name: Trill
+    type: text
+    _id: PDtvkayNEVniCP46
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The Trill are a pair of species who originate from a world of the
+        same name. The Trill that most outsiders know appear almost identical to
+        Humans or Betazoids, but for a row of irregular spots running down the
+        sides of their bodies. The other Trill species are small invertebrates,
+        which dwell in subterranean caverns. There are relatively few of this
+        second species, species, but they are extremely intelligent and capable
+        of living for centuries.</p><p>While not a secret, it is not widely
+        discussed that a small portion of humanoid Trill are capable of bonding
+        with the invertebrates, commonly referred to as symbionts, and in this
+        bond—called a Joining—creates a gestalt person, a combination of the
+        minds, memories, and personalities of both creatures. While a symbiont
+        cannot be removed without killing its host, upon a host’s death, a
+        symbiont will be passed to a new host, preserving knowledge and memory
+        over generations.</p><p>Trill society has been shaped by the Joined,
+        with Trill culture tending to take a long view of social development,
+        and pursuing intellectual and philosophical development over
+        interpersonal conflict. The Trill are a firm and dedicated member of the
+        Federation.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>Several lifetimes
+        of experience</p></li><li><p>What will this mean a century from
+        now?</p></li><li><p>What can I discover today?</p></li><li><p>Who I was
+        is only part of who I am</p><p></p></li></ul><p>ATTRIBUTES: +1 Control,
+        +1 Presence, +1 Reason</p><p></p><p>TRAIT: Trill. Trill are especially
+        resistant to parasites and similar intrusion. However, they tend to have
+        strong allergic reactions to insect bites and other venoms, which can
+        disrupt their neurochemistry, especially if they are Joined. Many of the
+        specifics of Trill physiology—specifically with regards to symbionts—are
+        not widely understood by non-Trill doctors, which can result in medical
+        complications. Many Joined Trill find using a transporter to be
+        uncomfortable.</p><p></p><p>PATIENT (SPECIES ABILITY): When you succeed
+        at a task where you purchased one or more d20s by spending Momentum, you
+        generate 1 bonus Momentum for each d20 purchased. Bonus Momentum may not
+        be saved.</p><p></p><p>TRILL NAMES: Trill names consist of a personal
+        name and a family name, though in the case of a joined Trill, the family
+        name is replaced with the name of the symbiont.</p><p></p><p>FEMININE:
+        Audrid, Azala, Emony, Kareel, Lenara, Nilani, Reeza, Zharaina, Koria,
+        Lidra, Diranne, Kimoni</p><p>MASCULINE: Arjin, Bejal, Curzon, Hanor,
+        Joran, Tobin, Torias, Verad, Yedrin, Keman, Sabin</p><p>FAMILY: Nedan,
+        Sozenn, Rulon, Les, Tral, Inazin, Hama, Kelen, Imonim, Razix, Idiron,
+        Paron, Tanan, Sulil, Kerev</p><p>SYMBIONT: Jexen, Del, Ogar, Kyl, Eku,
+        Nala, Cela, Pohr, Ral, Okir, Etahn, Lahl</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!h86Jeb3qb8mf9KMg.PDtvkayNEVniCP46'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: h86Jeb3qb8mf9KMg
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!h86Jeb3qb8mf9KMg'

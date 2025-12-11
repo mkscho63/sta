@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Sturdy
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-tellarite.svg
+system:
+  description: >-
+    <p>You gain +1 Protection against Stun Attacks only. Further, when you
+    suffer a complication that represents a physical hindrance or being stunned,
+    dazed, or disoriented, you may take 1 Stress to&nbsp;ignore that
+    complication (and remove any associated trait).</p>
+  talenttype:
+    typeenum: species
+    description: Tellarite
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 4DIRtDqtNv5lYAtw
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!4DIRtDqtNv5lYAtw'

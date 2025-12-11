@@ -1,0 +1,33 @@
+name: 'Runabout Module: Long Duration Mission'
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-aspiration.svg
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Danube Class Runabout, no other modules
+    present</p>
+
+    <p>The runabout&rsquo;s aft module has been configured to serve as a rest
+    area and sleeping quarters for up to four personnel.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: 80xlR33kfpLhpHU9
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!80xlR33kfpLhpHU9'

@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Thread the Needle
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>When you perform the Impulse minor action or Warp major action when
+    piloting a starship, enemy Attacks from ships with a greater Scale than
+    yours increase in difficulty by +1. If attacked by a ship with a Scale that
+    is double or more the Scale of your ship, then you increase&nbsp;the
+    Difficulty by 2 instead.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: uSFc2iWJ5MtUKd2Q
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!uSFc2iWJ5MtUKd2Q'

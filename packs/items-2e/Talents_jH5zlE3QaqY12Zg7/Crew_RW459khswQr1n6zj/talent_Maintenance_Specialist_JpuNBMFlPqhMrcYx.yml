@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Maintenance Specialist
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>You may ignore the first complication rolled on any Engineering task.
+    Further, when you create any equipment trait, any character who uses that
+    piece of equipment in a task may ignore the first complication rolled.</p>
+  talenttype:
+    typeenum: discipline
+    description: engineering
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: JpuNBMFlPqhMrcYx
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!JpuNBMFlPqhMrcYx'

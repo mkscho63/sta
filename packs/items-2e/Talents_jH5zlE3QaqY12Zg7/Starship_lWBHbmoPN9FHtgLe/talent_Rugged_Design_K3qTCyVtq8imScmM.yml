@@ -1,0 +1,32 @@
+folder: lWBHbmoPN9FHtgLe
+name: Rugged Design
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-structure.svg
+system:
+  description: >-
+    <p>Whenever a task roll is attempted to patch or repair a&nbsp;breach, a d20
+    may be re-rolled. Further, if the task is successful, the crew may spend
+    Momentum to patch a second breach; this will cost 2 Momentum, +1 per
+    additional step of Potency on that second breach.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: K3qTCyVtq8imScmM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!K3qTCyVtq8imScmM'

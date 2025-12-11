@@ -1,0 +1,33 @@
+name: Anti-grav
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>Anti-gravs are a range of different devices designed to reduce or negate
+    the weight of any object to which they&rsquo;re attached, allowing heavy
+    objects to be moved easily. Multiple anti-gravs are used to provide lift for
+    vehicles like hovercars.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: bXasRIpRFTMxh2m8
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!bXasRIpRFTMxh2m8'

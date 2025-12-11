@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Killer’s Instinct
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-klingon.svg
+system:
+  description: >-
+    <p>So familiar are you with the intent to kill that you can even see it in
+    others when you look them in the eyes. When you make a Deadly Attack, reduce
+    the amount you add to Threat to 0. In addition, when an enemy attempts to
+    make a Deadly Attack against you, you may add 1 Threat to increase the
+    Difficulty of their Attack by 1, as&nbsp;you react to their intent.</p>
+  talenttype:
+    typeenum: species
+    description: Klingon
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: llSg1s73UK0LNK5m
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!llSg1s73UK0LNK5m'

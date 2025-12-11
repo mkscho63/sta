@@ -1,0 +1,51 @@
+folder: SNW8wJoTvc2rv213
+name: Tetryonic Torpedo Salvo
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-quantum-torpedo-salvo.svg
+system:
+  description: >-
+    <p>Originally of Tzenkethi design, tetryon torpedoes are&nbsp;primarily used
+    against hardened targets&mdash;those with heavy defenses, strong shields,
+    and armored hulls. After depleting shields, they are liable to cause major
+    damage.</p>
+  damage: 3
+  range: long
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: false
+    cumbersome: false
+    dampening: false
+    depleting: true
+    devastating: false
+    highyield: true
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: false
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: torpedo
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: zYslWKgQtTJ6FvI8
+ownership:
+  default: 0
+sort: 0
+_key: '!items!zYslWKgQtTJ6FvI8'

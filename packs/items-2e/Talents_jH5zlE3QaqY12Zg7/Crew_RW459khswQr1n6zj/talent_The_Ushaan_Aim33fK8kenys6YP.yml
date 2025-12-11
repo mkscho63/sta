@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: The Ushaan
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-andorian.svg
+system:
+  description: >-
+    <p>You are experienced in the tradition of honor-dueling known as the
+    Ushaan. When you make a Melee Attack, or are targeted by a Melee Attack, and
+    buy one or more d20s by adding to Threat, you may re-roll any number of dice
+    in your dice pool for the task. Further, you own an Ushaan-tor, a
+    razor-sharp ice-miner&rsquo;s tool used in these duels. The Ushaan-tor is a
+    blade (see page 242), and it&nbsp;counts as standard issue for you.</p>
+  talenttype:
+    typeenum: species
+    description: Andorian
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Aim33fK8kenys6YP
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Aim33fK8kenys6YP'

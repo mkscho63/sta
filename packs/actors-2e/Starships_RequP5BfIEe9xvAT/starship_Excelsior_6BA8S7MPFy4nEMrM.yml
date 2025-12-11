@@ -1,0 +1,470 @@
+folder: RequP5BfIEe9xvAT
+name: Excelsior
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/excelsior-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: What was originally intended as a testbed for the highly
+    experimental &ldquo;transwarp&rdquo; propulsion system, the &ldquo;Great
+    Experiment&rdquo; was seen as a disaster after the complete failure of
+    Excelsior&rsquo;s propulsion systems in 2285. After a total redesign was
+    performed on nearly all ship&rsquo;s systems, the transwarp propulsion was
+    replaced with standard warp propulsion. The versatile Excelsior spaceframe
+    became a standard sight across the Federation and beyond, and it continued
+    to be manufactured into the 2390s.</p>
+
+    <p>CAPABILITIES: Originally intended for the large transwarp coils, the
+    spaceframe&rsquo;s nacelles provided ample room for extra standard coils
+    that allowed the class to have some of the highest sustained warp speeds for
+    a ship of its size. Stemming from the initial high-power needs for the
+    transwarp system, the spaceframe had nearly double the amount of fusion
+    reactors required for secondary power systems and the impulse drive. These
+    same reactors provide extra power to the ship&rsquo;s defensive shielding.
+    The Excelsior also had two dedicated shuttlebays, the main shuttlebay and a
+    lower bay on the underside of the secondary hull used for cargo transport
+    and storage.</p>
+
+    <p>REFITS AND VARIANTS: A single variant built at San Francisco Shipyards
+    spread across the Federation. While visually similar to the standard
+    spaceframe, the saucer section of the vessel contained double the number of
+    fusion reactors and added two additional impulse drive units. The incredible
+    sublight acceleration this provided meant the secondary hull had two
+    &nbsp;extensions built to contain improvements to the inertial
+    dampeners.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Strategic and Diplomatic Operations,
+    Multirole Explorer, Technical Testbed.</p>
+
+    <p>NAMING CONVENTIONS: Excelsior-class vessels take names from concepts of
+    exploration, achievement, and great leaders from across the Federation; many
+    are also named after famous ships from previous generations. Forrest,
+    Archer, and Victory are all examples.</p>
+  crew:
+    value: 0
+    max: 5
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 2
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 5
+  scale: 5
+  shields:
+    value: 0
+    max: 14
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2285'
+  spaceframe: Excelsior
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 8
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 7
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 9
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 8
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 9
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 8
+      selected: false
+      breaches: 0
+  traits: Federation Starship, Excelsior class, Starfleet Mainstay, Long-serving
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Excelsior
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/excelsior-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Banks
+    type: starshipweapon2e
+    _id: O9Nta90vB6yPnVQr
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!6BA8S7MPFy4nEMrM.O9Nta90vB6yPnVQr'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: OeUHxA79hVv6WPY7
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!6BA8S7MPFy4nEMrM.OeUHxA79hVv6WPY7'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: h7I3y6f6dKB3NA7I
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!6BA8S7MPFy4nEMrM.h7I3y6f6dKB3NA7I'
+  - folder: vmwcoPlFxxenIHcL
+    name: Improved Warp Drive
+    type: talent
+    _id: iLxB9J2b6CpzM2iD
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    system:
+      description: >-
+        <p>Whenever the ship takes the Warp major action, roll a&nbsp;d20; if
+        you roll equal to or under the ship&rsquo;s Engines, you do not spend
+        Reserve Power for the ship.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!6BA8S7MPFy4nEMrM.iLxB9J2b6CpzM2iD'
+  - folder: vmwcoPlFxxenIHcL
+    name: Secondary Reactors
+    type: talent
+    _id: fL528nkM1JbAq2dq
+    img: systems/sta/assets/compendia/icons/talents-core/talent-power.svg
+    system:
+      description: >-
+        <p>The ship has additional impulse and fusion reactors&nbsp;which allow
+        the ship to generate far greater quantities of energy. Once per scene,
+        when you take the Reroute Power action, you may spend 2 Momentum
+        (Immediate) to immediately regain the use of Reserve Power.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!6BA8S7MPFy4nEMrM.fL528nkM1JbAq2dq'
+  - folder: V0BW4gsU31fGCghx
+    name: Sauder Separation
+    type: talent
+    _id: r16q9wPIYAmwwLLq
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>Vessels of this class have the capability to detach their&nbsp;saucer
+        section in an emergency. Once the saucer has detached, the two sections
+        of the ship cannot be reconnected outside of a drydock. Ship&rsquo;s
+        systems are halved (round up) for the saucer and the secondary hull when
+        separated, the saucer is unable to enter warp speeds or launch small
+        craft, and each section is considered a separate vessel with Scale 1
+        less than the original vessel; the secondary hull is commanded from main
+        engineering. The saucer can land on a planetary surface with emergency
+        landing gear.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!6BA8S7MPFy4nEMrM.r16q9wPIYAmwwLLq'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 6BA8S7MPFy4nEMrM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!6BA8S7MPFy4nEMrM'

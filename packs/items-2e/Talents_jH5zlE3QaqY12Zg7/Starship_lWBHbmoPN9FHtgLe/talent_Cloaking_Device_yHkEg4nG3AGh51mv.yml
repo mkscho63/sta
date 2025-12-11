@@ -1,0 +1,39 @@
+folder: lWBHbmoPN9FHtgLe
+name: Cloaking Device
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Klingon or Romulan ship, or gamemaster&rsquo;s
+    discretion</p>
+
+    <p><br>Activating the device is a major action which requires Reserve Power,
+    and which requires a Control +&nbsp;Engineering task with a Difficulty of 2,
+    assisted by the ship&rsquo;s Engines + Security. This is operated from the
+    ship&rsquo;s Tactical position. If successful, the vessel gains the Cloaked
+    trait. While cloaked, the vessel cannot attempt any attacks, nor can it be
+    the target of an attack unless the attacker has found some way of detecting
+    the cloaked vessel. While cloaked, a vessel&rsquo;s shields are down.
+    Deactivating the cloaking device requires a minor action.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: yHkEg4nG3AGh51mv
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!yHkEg4nG3AGh51mv'

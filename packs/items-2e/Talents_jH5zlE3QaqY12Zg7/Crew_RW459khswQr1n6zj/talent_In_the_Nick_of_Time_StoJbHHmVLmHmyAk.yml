@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: In the Nick of Time
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Engineering 3+ or Science 3+</p>
+
+    <p><br>Whenever you succeed at an Engineering or Science task as part of an
+    extended task, you increase your Impact by 1.</p>
+  talenttype:
+    typeenum: discipline
+    description: engineering
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: StoJbHHmVLmHmyAk
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!StoJbHHmVLmHmyAk'

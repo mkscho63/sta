@@ -1,0 +1,35 @@
+folder: RW459khswQr1n6zj
+name: Repair Team Leader
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Engineering 3+ and Command 2+</p>
+
+    <p><br>You are trained to direct and lead damage repair teams during
+    emergencies, giving them your guidance and expert knowledge of the
+    ship&rsquo;s systems. If you succeed at the Damage Control major action
+    (page 303) you may spend 2 Momentum (Repeatable) to repair one additional
+    Breach.</p>
+  talenttype:
+    typeenum: discipline
+    description: engineering
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dXz7B4k92ZJ2A4v3
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!dXz7B4k92ZJ2A4v3'

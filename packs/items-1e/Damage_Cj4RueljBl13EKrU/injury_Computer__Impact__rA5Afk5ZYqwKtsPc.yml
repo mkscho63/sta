@@ -1,0 +1,33 @@
+name: Computer (Impact)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-hit-computers.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p>Whenever the Computers system suffers one or more Breaches, it disrupts
+    those functions temporarily. Until the officer at the internal systems
+    position (or someone in Engineering) performs the <em>Restore </em>Minor
+    Action, the Computers system cannot be used to perform or assist any Tasks;
+    additionally, all other Tasks attempted which are assisted by the ship
+    increase their Complication range by 2, until that <em>Restore </em>Minor
+    Action has been performed, due to disruptions in automation.</p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: rA5Afk5ZYqwKtsPc
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!rA5Afk5ZYqwKtsPc'

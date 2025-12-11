@@ -1,0 +1,35 @@
+name: Body Armor
+type: armor
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1, Escalation 1</strong></p>
+
+    <p>Body Armor has been issued periodically to Starfleet security at various
+    times in Starfleet&rsquo;s history. In the late 23rd century, it took the
+    form of a bulky vest and helmet, designed to absorb and disperse impacts and
+    energy attacks. By the 24th century, ablative body armor is used mainly by
+    personnel engaged in protracted conflict.</p>
+  protection: 2
+  equipped: true
+  opportunity: 1
+  escalation: 1
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: q2ZosUJw3p3JnEbr
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!q2ZosUJw3p3JnEbr'

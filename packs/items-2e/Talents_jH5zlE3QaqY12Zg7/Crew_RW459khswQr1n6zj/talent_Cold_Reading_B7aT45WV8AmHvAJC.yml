@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Cold Reading
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>When you succeed at a task during social conflict, you generate 1 bonus
+    Momentum which must be used for the Obtain Information Momentum spend to
+    gain knowledge about one of the people you&rsquo;re interacting with. If the
+    social conflict with that person involves an extended task, you may ignore
+    any Resistance the&nbsp;extended task has.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: B7aT45WV8AmHvAJC
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!B7aT45WV8AmHvAJC'

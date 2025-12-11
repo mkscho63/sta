@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Gut Feeling
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>When the gamemaster spends Threat to introduce reinforcements or to cause
+    a Reversal, they must spend 2 additional Threat to do so. This is 2 extra
+    Threat in total,&nbsp;not per reinforcement.</p>
+  talenttype:
+    typeenum: attribute
+    description: insight
+    minimum: 11
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: M6sqEEr9qYWAGkKV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!M6sqEEr9qYWAGkKV'

@@ -1,0 +1,20 @@
+type: JournalEntry
+folder: null
+name: Species
+color: null
+sorting: a
+_id: GZwuoTIjwVhAYTQN
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452006814
+  modifiedTime: 1765452006814
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_key: '!folders!GZwuoTIjwVhAYTQN'

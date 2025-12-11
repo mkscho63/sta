@@ -1,0 +1,18 @@
+type: Item
+folder: jH5zlE3QaqY12Zg7
+name: Starship
+color: null
+sorting: a
+_id: lWBHbmoPN9FHtgLe
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  lastModifiedBy: null
+_key: '!folders!lWBHbmoPN9FHtgLe'

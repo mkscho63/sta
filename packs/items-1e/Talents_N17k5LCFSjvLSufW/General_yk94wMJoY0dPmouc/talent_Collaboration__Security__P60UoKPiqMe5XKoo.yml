@@ -1,0 +1,34 @@
+name: Collaboration (Security)
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+effects: []
+folder: yk94wMJoY0dPmouc
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450670543
+  modifiedTime: 1765450670543
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirements</strong>: None</p>
+
+    <p>Whenever an ally attempts a Task using <strong>Security</strong>, you may
+    spend one Momentum (Immediate) to allow them to use your score for that
+    Discipline, and one of your Focuses.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_id: P60UoKPiqMe5XKoo
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!P60UoKPiqMe5XKoo'

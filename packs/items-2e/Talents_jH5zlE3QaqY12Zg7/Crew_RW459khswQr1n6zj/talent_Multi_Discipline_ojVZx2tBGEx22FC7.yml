@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Multi-Discipline
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Command 3+, not the commanding officer</p>
+
+    <p>&nbsp;</p>
+
+    <p>You may select one additional Role Benefit, which may&nbsp;not be
+    Commanding Officer.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ojVZx2tBGEx22FC7
+ownership:
+  default: 0
+sort: 0
+_key: '!items!ojVZx2tBGEx22FC7'

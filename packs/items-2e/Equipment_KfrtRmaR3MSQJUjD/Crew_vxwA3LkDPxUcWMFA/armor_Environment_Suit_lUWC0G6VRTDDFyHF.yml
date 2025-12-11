@@ -1,0 +1,32 @@
+folder: vxwA3LkDPxUcWMFA
+name: Environment Suit
+type: armor
+img: systems/sta/assets/compendia/icons/items-core/eva_suit.webp
+system:
+  description: >-
+    <p>Environment suits or EV suits are normally used for extravehicular
+    activities&mdash;such as moving in hard vacuum. These suits are issued as
+    required&mdash;the opportunity cost may be ignored if the mission takes
+    place in a deadly environment.</p>
+  protection: 1
+  equipped: true
+  opportunity: 2
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: lUWC0G6VRTDDFyHF
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!lUWC0G6VRTDDFyHF'

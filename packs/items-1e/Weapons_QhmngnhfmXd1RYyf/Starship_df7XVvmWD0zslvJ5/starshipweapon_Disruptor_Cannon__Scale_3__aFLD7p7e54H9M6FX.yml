@@ -1,0 +1,54 @@
+name: Disruptor Cannon (Scale 3)
+type: starshipweapon
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-cannon.svg
+system:
+  description: >-
+    <p>Used by Klingon and Romulan vessels, disruptors are potent weapons that
+    inflict grievous damage.</p>
+
+    <p>Cannons are close range, rapid-firing weapons that project pulses or
+    bolts of energy rather than consistent beams. These are inaccurate at longer
+    ranges, but the volley of quick pulses can be devastating. Cannons have a
+    Range category of close, and increase the weapon&rsquo;s damage by +2
+    Challenge Dice.</p>
+
+    <p><strong>Vicious 1:</strong> The Attack inflicts 1 additional damage for
+    each Effect rolled.</p>
+  damage: 5
+  range: close
+  qualities:
+    area: false
+    spread: false
+    dampening: false
+    calibration: false
+    devastating: false
+    highyield: false
+    persistentx: 0
+    piercingx: 0
+    viciousx: 1
+    hiddenx: 0
+    versatilex: 0
+  opportunity: null
+  escalation: null
+  includescale: false
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450919428
+  modifiedTime: 1765450919428
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: df7XVvmWD0zslvJ5
+_id: aFLD7p7e54H9M6FX
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!aFLD7p7e54H9M6FX'

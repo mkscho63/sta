@@ -1,0 +1,65 @@
+name: Artistic and Creative (accepted)
+pages:
+  - sort: 100000
+    name: Artistic and Creative (accepted)
+    type: text
+    _id: CC7geW5QXoMC6OaT
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character’s life was filled with arts and creativity of all
+        kinds, and no matter what pursuits the character favors, they are
+        exposed to the great works of many cultures, and given every opportunity
+        to express themselves.</p><p></p><p>ATTRIBUTES</p><p>If the character
+        accepted this Upbringing, they develop a greater understanding of
+        emotion and communication, increasing their Insight by 1 and their
+        Presence by 2.</p><p></p><p>DEPARTMENTS, FOCUS, AND TALENT</p><p>The
+        character’s ease with creativity and self-expression lend themselves to
+        many pursuits, allowing the character to increase one of Command,
+        Engineering, or Science.</p><p>The character’s focus should relate to
+        the character’s preferred way of applying their skills. Examples
+        include: Botany, Cultural Studies, Holoprogramming, Linguistics, Music,
+        Observation, Persuasion, Psychology.</p><p>The character also gains a
+        single talent.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!5kmGTGrcQnCpIv3D.CC7geW5QXoMC6OaT'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452028706
+  modifiedTime: 1765452028706
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: L0pO3EBG3IC92dxI
+categories: []
+_id: 5kmGTGrcQnCpIv3D
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!5kmGTGrcQnCpIv3D'

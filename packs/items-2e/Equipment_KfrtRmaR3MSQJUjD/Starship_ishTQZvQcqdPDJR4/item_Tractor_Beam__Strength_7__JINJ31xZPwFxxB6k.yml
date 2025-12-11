@@ -1,0 +1,32 @@
+folder: ishTQZvQcqdPDJR4
+name: Tractor Beam (Strength 7)
+type: item
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+system:
+  description: >-
+    <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale minus
+    1. Trapping a target within the beam is a Difficulty 2 Control + Security
+    task assisted by the ship&rsquo;s Structure + Security. If successful, the
+    target is immobilized and cannot move until it can break free.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451154214
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: JINJ31xZPwFxxB6k
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!JINJ31xZPwFxxB6k'

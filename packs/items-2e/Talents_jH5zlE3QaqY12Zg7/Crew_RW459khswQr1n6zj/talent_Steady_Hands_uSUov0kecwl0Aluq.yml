@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Steady Hands
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Security 3+ and Control 9+</p>
+
+    <p><br>When you take the Aim minor action (page 288) before a Ranged Attack,
+    you add 1 to the Attack&rsquo;s Severity, in addition to the other effects
+    of aiming.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: uSUov0kecwl0Aluq
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!uSUov0kecwl0Aluq'

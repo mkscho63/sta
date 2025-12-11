@@ -1,0 +1,45 @@
+folder: RW459khswQr1n6zj
+name: Operations Manager
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-operations-manager.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>The operations manager manages and oversees all technical operations
+    aboard or involving the ship, normally from the operations station on the
+    bridge, or in conjunction with the chief engineer (on smaller ships, one
+    officer may fill both roles). This often entails taking on the duties of a
+    science officer if there is no dedicated science officer among the senior
+    staff.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: Whenever you create a trait representing a piece of
+    equipment, or an alteration made to existing equipment, any character who
+    benefits from that trait while you are present in the scene may re-roll a
+    d20.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: IpAp4zr7M1GQdgps
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!IpAp4zr7M1GQdgps'
