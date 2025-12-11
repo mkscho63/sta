@@ -10,7 +10,7 @@ const argv = require('yargs').argv;
 const chalk = require('chalk');
 
 // Required to build the packs
-const { compilePack } = require('@foundryvtt/foundryvtt-cli');
+const {compilePack} = require('@foundryvtt/foundryvtt-cli');
 
 gulp.task('sass', function(cb) {
   gulp
@@ -91,7 +91,7 @@ async function buildPacks() {
     // Read all pack directories
     const packs = await fs.readdir(packsDir);
     for (const pack of packs) {
-      if (pack.startsWith(".")) continue;
+      if (pack.startsWith('.')) continue;
       console.log('Packing ' + pack);
       
       // Create destination directory if it doesn't exist
@@ -101,7 +101,7 @@ async function buildPacks() {
       await compilePack(
         `./packs/${pack}`,
         `./src/assets/packs/${pack}`,
-        { yaml, recursive: folders }
+        {yaml, recursive: folders}
       );
     }
   } catch (err) {
