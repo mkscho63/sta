@@ -155,7 +155,6 @@ async function clean() {
     'module',
     `${name}.js`,
     'system.json',
-    'template.json'
   );
 
 
