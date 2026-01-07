@@ -441,6 +441,33 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'observersHideCharacter', {
+    name: 'Observers do not see the Character tab:',
+    hint: 'Check this if you want Observers not to see the Character tab on the character sheet.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
+  game.settings.register('sta', 'observersHideDevelopment', {
+    name: 'Observers do not see the Development tab:',
+    hint: 'Check this if you want Observers not to see the Development tab on the character sheet.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
+  game.settings.register('sta', 'observersHideNotes', {
+    name: 'Observers do not see the Notes tab:',
+    hint: 'Check this if you want Observers not to see the Notes tab on the character sheet.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
 
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {

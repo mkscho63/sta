@@ -237,6 +237,10 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // Limit to view only for observers
   async _setObserver() {
     const observersCanRoll = game.settings.get('sta', 'observersCanRoll');
+    const observersHideCharacter = game.settings.get('sta', 'observersHideCharacter');
+    const observersHideDevelopment = game.settings.get('sta', 'observersHideDevelopment');
+    const observersHideNotes = game.settings.get('sta', 'observersHideNotes');
+
     const restrictedWhenFalse = [
       '.extended-tasks',
       '.scenetraits-sheet',
@@ -264,6 +268,16 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         else if ('disabled' in ctrl) ctrl.disabled = true;
         ctrl.tabIndex = -1;
       });
+    }
+
+    if (observersHideCharacter) {
+      this.element.querySelector('a[data-tab="biography"]')?.closest('.item').classList.add('hidden');
+    }
+    if (observersHideDevelopment) {
+      this.element.querySelector('a[data-tab="development"]')?.closest('.item').classList.add('hidden');
+    }
+    if (observersHideNotes) {
+      this.element.querySelector('a[data-tab="notes"]')?.closest('.item').classList.add('hidden');
     }
   }
 
