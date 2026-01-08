@@ -1,0 +1,66 @@
+name: Phased Polaron Beam Array - Area (Scale 3)
+type: starshipweapon
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-polaron-array-area.svg
+system:
+  description: >-
+    <p>Used mainly by the starships of the Dominion, Phased polaron weapons are
+    especially effective at overwhelming deflector shields.</p>
+
+    <p>Arrays are long strips of linked emitters that share a power feed,
+    allowing the ship to fire from any point along the strip. This allows the
+    ship to fire in multiple directions at once, or to adjust and fire on moving
+    targets repeatedly in quick succession. Arrays have a Range category of
+    medium. Further, when declaring the target of an attack with an Array, the
+    attacking character may choose to grant one of the Area or Spread effects to
+    the attack.</p>
+
+    <p><strong>Area:</strong> The attack affects a wider area, and can affect
+    several targets at once. The attack automatically affects any vessel or
+    damageable object within Contact of the initial target, and then one
+    additional target within close range of the initial target for each Effect
+    rolled, starting with the next closest (as determined by the GM). If one or
+    more Complications is rolled when using an Area attack, the GM may choose to
+    use Complications to have an allied vessel or neutral bystander in the area
+    affected by the attack. A target cannot be hit if it would have been more
+    difficult to hit than the initial target.</p>
+
+    <p><strong>Piercing 2:</strong> The attack ignores 2 points of the
+    target&rsquo;s total Resistance for each Effect rolled.</p>
+  damage: 3
+  range: medium
+  qualities:
+    area: true
+    spread: false
+    dampening: false
+    calibration: false
+    devastating: false
+    highyield: false
+    persistentx: 0
+    piercingx: 2
+    viciousx: 0
+    hiddenx: 0
+    versatilex: 0
+  opportunity: null
+  escalation: null
+  includescale: false
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450919428
+  modifiedTime: 1765450919428
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: df7XVvmWD0zslvJ5
+_id: PjvAhpf4f5f7u8CM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!PjvAhpf4f5f7u8CM'

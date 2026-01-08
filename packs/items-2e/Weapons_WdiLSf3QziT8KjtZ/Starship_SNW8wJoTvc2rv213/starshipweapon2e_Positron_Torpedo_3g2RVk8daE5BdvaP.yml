@@ -1,0 +1,50 @@
+folder: SNW8wJoTvc2rv213
+name: Positron Torpedo
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-quantum-torpedo.svg
+system:
+  description: >-
+    <p>Introduced by the Dominion by the Kessok, positron&nbsp;torpedoes are
+    slow-moving compared to other torpedoes of the time, and easy to avoid or
+    intercept. However, their payload is large and potent.</p>
+  damage: 5
+  range: long
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: true
+    cumbersome: true
+    dampening: true
+    depleting: false
+    devastating: false
+    highyield: false
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: false
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: torpedo
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 3g2RVk8daE5BdvaP
+ownership:
+  default: 0
+sort: 0
+_key: '!items!3g2RVk8daE5BdvaP'

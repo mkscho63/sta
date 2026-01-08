@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-900,0)">
-        <g transform="matrix(1,0,0,1,900,0)">
-            <rect id="enemy-delta-token" x="0" y="0" width="256" height="256" style="fill:none;"/>
-            <g id="enemy-delta-token1" serif:id="enemy-delta-token">
-                <circle cx="128" cy="128" r="128"/>
-                <path d="M128,0C198.645,0 256,57.355 256,128C256,198.645 198.645,256 128,256C57.355,256 0,198.645 0,128C0,57.355 57.355,0 128,0ZM128,8C61.77,8 8,61.77 8,128C8,194.23 61.77,248 128,248C194.23,248 248,194.23 248,128C248,61.77 194.23,8 128,8Z" style="fill:rgb(145,19,8);"/>
-                <g transform="matrix(1,0,0,1,-42.6718,59.5243)">
-                    <g transform="matrix(200,0,0,200,223.162,137.714)">
-                    </g>
-                    <text x="118.182px" y="137.714px" style="font-family:'CambriaMath', 'Cambria Math', serif;font-size:200px;fill:rgb(245,77,61);">δ</text>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" viewBox="0 0 256 256"><path d="M0 0h256v256H0z" style="fill:none"/><g><circle cx="128" cy="128" r="128"/><path d="M128 0c70.645 0 128 57.355 128 128s-57.355 128-128 128S0 198.645 0 128 57.355 0 128 0m0 8C61.77 8 8 61.77 8 128s53.77 120 120 120 120-53.77 120-120S194.23 8 128 8" style="fill:#911308"/><text x="118.182" y="137.714" style="font-family:&quot;CambriaMath&quot;,&quot;Cambria Math&quot;,serif;font-size:200px;fill:#f54d3d" transform="translate(-42.672 59.524)">δ</text></g></svg>

@@ -1,0 +1,39 @@
+folder: RW459khswQr1n6zj
+name: Executive Officer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-executive-officer.svg
+system:
+  description: >-
+    <p data-pm-slice="1 1 []">Second-in-command. The executive officer is the
+    captain&rsquo;s chief advisor and takes command in situations where the
+    captain is unable to. If a ship does not have a dedicated executive officer,
+    an officer in another role should be noted as second-in-command, but they
+    will not gain the benefits of this role.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: When an allied character in communication with you spends
+    Determination, you may spend 3 Momentum (Immediate) to enable that character
+    to regain the spent point of Determination.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: bpnORpJnCYk9s3sg
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!bpnORpJnCYk9s3sg'

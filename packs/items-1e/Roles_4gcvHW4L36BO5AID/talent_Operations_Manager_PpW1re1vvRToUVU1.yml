@@ -1,0 +1,41 @@
+name: Operations Manager
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-operations-manager.svg
+system:
+  description: >-
+    <p><strong>Requirements:</strong> Engineering department only.</p>
+
+    <p>The operations manager manages and oversees all technical operations
+    aboard or involving the ship, normally from the Operations station on the
+    Bridge, or in conjunction with the chief engineer (on smaller ships, one
+    officer may fill both roles). This often entails taking on the duties of a
+    science officer, if there is no dedicated science officer in the senior
+    staff.</p>
+
+    <p>When the operations manager succeeds at a Task assisted by the
+    ship&rsquo;s Computers or Sensors, or using a tricorder, the character
+    generates one bonus Momentum, which may only be used on the Obtain
+    Information Momentum Spend.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450837129
+  modifiedTime: 1765450837129
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: 4gcvHW4L36BO5AID
+_id: PpW1re1vvRToUVU1
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!PpW1re1vvRToUVU1'

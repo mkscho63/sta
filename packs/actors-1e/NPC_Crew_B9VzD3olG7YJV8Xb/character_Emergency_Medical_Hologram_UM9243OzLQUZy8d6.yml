@@ -1,0 +1,363 @@
+name: Emergency Medical Hologram
+type: character
+img: systems/sta/assets/compendia/icons/plain-core/plain-medical.svg
+system:
+  notes: >-
+    <p>This profile represents a Mark I Emergency Medical Hologram, an acerbic
+    and ill-tempered program often disliked by the crews serving alongside
+    them.</p>
+  assignment: ''
+  attributes:
+    control:
+      label: sta.actor.character.attribute.control
+      value: 10
+      selected: true
+    daring:
+      label: sta.actor.character.attribute.daring
+      value: 9
+      selected: false
+    fitness:
+      label: sta.actor.character.attribute.fitness
+      value: 8
+      selected: false
+    insight:
+      label: sta.actor.character.attribute.insight
+      value: 8
+      selected: false
+    presence:
+      label: sta.actor.character.attribute.presence
+      value: 7
+      selected: false
+    reason:
+      label: sta.actor.character.attribute.reason
+      value: 9
+      selected: false
+  determination:
+    value: 0
+    max: 3
+  disciplines:
+    command:
+      label: sta.actor.character.discipline.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.character.discipline.conn
+      value: 2
+      selected: false
+    engineering:
+      label: sta.actor.character.discipline.engineering
+      value: 2
+      selected: false
+    medicine:
+      label: sta.actor.character.discipline.medicine
+      value: 4
+      selected: false
+    science:
+      label: sta.actor.character.discipline.science
+      value: 3
+      selected: false
+    security:
+      label: sta.actor.character.discipline.security
+      value: 1
+      selected: false
+  environment: ''
+  milestones: ''
+  rank: ''
+  reputation: null
+  species: Hologram
+  stress:
+    value: 9
+    max: 9
+  upbringing: ''
+  traits: Hologram
+  disciplineorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  disciplineorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  pronouns: ''
+  characterrole: ''
+  acclaim: 0
+  reprimand: 0
+  careerpath: ''
+  pastimes: ''
+  experience: ''
+  careerevents: ''
+  house: ''
+  caste: ''
+  status: ''
+  temperament: ''
+  househistory: ''
+  influence: 0
+  might: 0
+  wealth: 0
+  legacy: ''
+  strmod: 0
+  rollrepnotdis: false
+  npcType: minor
+  showklingon: false
+prototypeToken:
+  name: Emergency Medical Hologram
+  displayName: 0
+  actorLink: false
+  texture:
+    src: systems/sta/assets/compendia/icons/plain-core/plain-medical.svg
+    scaleX: 1
+    scaleY: 1
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 1
+  height: 1
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: stress
+  bar2:
+    attribute: determination
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: AXOJN4d1j2DyoR8r
+    name: Emergency Medicine
+    type: focus
+    img: systems/sta/assets/compendia/icons/focuses-core/focus-medical.svg
+    system:
+      description: ''
+    effects: []
+    sort: 0
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: UVXDEWKOnm1KYZlz
+    ownership:
+      default: 0
+    _key: '!actors.items!UM9243OzLQUZy8d6.UVXDEWKOnm1KYZlz'
+  - folder: AXOJN4d1j2DyoR8r
+    name: Surgery
+    type: focus
+    img: systems/sta/assets/compendia/icons/focuses-core/focus-medical.svg
+    system:
+      description: ''
+    effects: []
+    sort: 0
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: FV5IHeiYJCLm9jmS
+    ownership:
+      default: 0
+    _key: '!actors.items!UM9243OzLQUZy8d6.FV5IHeiYJCLm9jmS'
+  - folder: AXOJN4d1j2DyoR8r
+    name: Xenobiology
+    type: focus
+    img: systems/sta/assets/compendia/icons/focuses-core/focus-science.svg
+    system:
+      description: ''
+    effects: []
+    sort: 0
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: aqMZNagrKRfsvNP0
+    ownership:
+      default: 0
+    _key: '!actors.items!UM9243OzLQUZy8d6.aqMZNagrKRfsvNP0'
+  - folder: null
+    name: Unarmed Strike
+    type: characterweapon2e
+    img: systems/sta/assets/compendia/icons/weapons-core/unarmed-strike.webp
+    system:
+      description: ''
+      damage: 2
+      range: melee
+      hands: 1
+      severity: 0
+      qualities:
+        deadly: false
+        stun: true
+        accurate: false
+        area: false
+        charge: false
+        cumbersome: false
+        debilitating: false
+        grenade: false
+        inaccurate: false
+        intense: false
+        piercingx: false
+        hiddenx: 0
+        opportunity: 0
+        escalation: 0
+    effects: []
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: 0t7NdWUL4lf60dKZ
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!UM9243OzLQUZy8d6.0t7NdWUL4lf60dKZ'
+  - name: Unarmed Strike
+    type: characterweapon
+    img: systems/sta/assets/compendia/icons/weapons-core/unarmed-strike.webp
+    effects: []
+    folder: null
+    sort: 0
+    flags:
+      core: {}
+    _id: xbl7Rz9Ko4g8SHZO
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    system:
+      description: >-
+        <p>While not really equipment, every character has the means to make an
+        unarmed attack, striking with fists, feet, knees, elbows, head, or
+        otherwise using brute force without a weapon. Countless martial arts,
+        such as Klingon <em>mok&rsquo;bara</em>, Vulcan <em>suus mahna</em>, and
+        Human styles like boxing or <em>aikido</em>, exist to allow individuals
+        to hone their ability to disable foes without weapons</p>
+      damage: 1
+      range: melee
+      hands: 1
+      qualities:
+        area: false
+        intense: false
+        knockdown: true
+        accurate: false
+        charge: false
+        cumbersome: false
+        deadly: false
+        debilitating: false
+        grenade: false
+        inaccurate: false
+        nonlethal: true
+        hiddenx: 0
+        piercingx: 0
+        viciousx: 0
+      opportunity: null
+      escalation: null
+    ownership:
+      default: 0
+    _key: '!actors.items!UM9243OzLQUZy8d6.xbl7Rz9Ko4g8SHZO'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450422216
+  modifiedTime: 1765450422216
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: B9VzD3olG7YJV8Xb
+_id: UM9243OzLQUZy8d6
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!UM9243OzLQUZy8d6'

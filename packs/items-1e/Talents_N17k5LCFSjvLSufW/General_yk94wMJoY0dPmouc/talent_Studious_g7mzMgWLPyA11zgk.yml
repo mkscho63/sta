@@ -1,0 +1,34 @@
+name: Studious
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-knowledge.svg
+effects: []
+folder: yk94wMJoY0dPmouc
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450670543
+  modifiedTime: 1765450670543
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirements</strong>: None</p>
+
+    <p>Whenever you spend one or more Momentum to Obtain Information, you may
+    ask one additional question (in total, not per Momentum spent on Obtain
+    Information).</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_id: g7mzMgWLPyA11zgk
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!g7mzMgWLPyA11zgk'

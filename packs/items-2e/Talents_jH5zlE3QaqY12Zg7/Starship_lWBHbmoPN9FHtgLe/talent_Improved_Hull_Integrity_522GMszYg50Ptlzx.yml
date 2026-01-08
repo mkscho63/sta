@@ -1,0 +1,30 @@
+folder: lWBHbmoPN9FHtgLe
+name: Improved Hull Integrity
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-structure.svg
+system:
+  description: >-
+    <p>The ship&rsquo;s hull has been reinforced to better endure
+    stress&nbsp;and damage. The ship&rsquo;s Resistance is increased by 1.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 522GMszYg50Ptlzx
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!522GMszYg50Ptlzx'

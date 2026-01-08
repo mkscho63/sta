@@ -1,0 +1,41 @@
+folder: RW459khswQr1n6zj
+name: Positive Reinforcement
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Ship&rsquo;s Counselor role, Medicine 3+, and Presence
+    9+</p>
+
+    <p>&nbsp;</p>
+
+    <p>Once per mission, you may attempt a Presence +&nbsp;Medicine task with a
+    Difficulty of 3, while providing emotional or mental treatment for another
+    character. Success creates a character trait for your patient that lasts
+    until the end of the mission: Boosted Confidence. In addition to the normal
+    effects of the trait, that character can reroll their dice pool, as if
+    they&rsquo;d spent Determination, once before the end of the mission. If the
+    task the character used their reroll on fails, they lose the trait created
+    by this talent.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dv7coity7bUDrUdp
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!dv7coity7bUDrUdp'

@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Dedicated Focus (X)
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>When this talent is taken, choose one of your focuses. When attempting a
+    task where that focus applies, you score a critical success for any die
+    which rolls equal to&nbsp;or under twice the relevant department.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: VGng26toC4wRGELm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!VGng26toC4wRGELm'

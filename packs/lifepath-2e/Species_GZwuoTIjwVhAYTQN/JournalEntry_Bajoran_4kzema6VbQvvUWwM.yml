@@ -1,0 +1,89 @@
+name: Bajoran
+pages:
+  - sort: 200000
+    name: Bajoran
+    type: text
+    _id: F0aQnxj4Rr5QTnjR
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>A spiritual, dauntless people from the planet Bajor, the Bajorans
+        lost much after decades of occupation by the Cardassian Union. Many
+        Bajorans were scattered across the Alpha Quadrant as they fled the
+        Occupation, while those who remained on Bajor often toiled in labor
+        camps or fought as insurgents. The Occupation ended in 2369, but the
+        scars it left will take generations to heal. Bajor sought membership in
+        the Federation soon afterwards (though this application was delayed by
+        the Dominion War), but many Bajorans have found their way into
+        Starfleet. Bajoran culture places a strong belief in the Prophets,
+        celestial beings who are said to have watched over Bajor for millennia;
+        modern religious doctrine states the Bajoran wormhole is the Prophets’
+        Celestial Temple.</p><p>Bajoran spirituality has long been a powerful
+        factor in their lives, even for Bajorans who did not believe strongly in
+        the Prophets. The unifying presence of their religion provided a source
+        of hope and courage. A common sign of this faith is the D’ja pagh, a
+        symbolic earring.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>I help
+        others to be closer to the Prophets</p></li><li><p>Survival at any
+        cost</p></li><li><p>We are in the hands of the
+        Prophets</p></li><li><p>You cannot explain faith to those who lack
+        it</p><p></p></li></ul><p>ATTRIBUTES: +1 Control, +1 Daring, +1 Insight
+        TRAIT: Bajoran. Bajorans tend to be hostile towards Cardassians, and
+        resentful of those who are dismissive of, or turned a blind eye to, the
+        suffering of the Bajoran people. While not all Bajorans are spiritual or
+        religious to the same degree, most have a cultural understanding of the
+        Prophets’ place in their society.</p><p></p><p>THE WILL OF THE PROPHETS
+        (SPECIES ABILITY): You may find strength in the Prophets even when the
+        situation is dire: once per adventure, when the gamemaster spends 3 or
+        more Threat at once, you gain 1 Determination.</p><p></p><p>BAJORAN
+        NAMES: Traditional Bajoran names begin with the family name, followed by
+        a personal name, though some diaspora Bajorans place their personal name
+        first as is common in many other cultures. Bajor is traditionally
+        matriarchal, with children taking their mother’s family
+        name.</p><p></p><p>FEMININE: Adami, Chami, Fala, Jaxa, Laren, Lipras,
+        Leeta, Lupaza, Meru, Neela, Nerys, Seriah, Sul, Yesa</p><p>MASCULINE:
+        Anaphis, Edon, Essa, Furel, Gel, Holem, Hovath, Kag, Los, Mabrin, Nalas,
+        Reon, Taban, Tennan</p><p>FAMILY: Anbara, Anjohl, Faren, Jaro, Kalem,
+        Krim, Kubus, Latara, Latha, Lenaris, Li, Tahna, Reil</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!4kzema6VbQvvUWwM.F0aQnxj4Rr5QTnjR'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: 4kzema6VbQvvUWwM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!4kzema6VbQvvUWwM'

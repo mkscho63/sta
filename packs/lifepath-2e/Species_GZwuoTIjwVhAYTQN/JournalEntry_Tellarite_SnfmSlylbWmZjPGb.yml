@@ -1,0 +1,94 @@
+name: Tellarite
+pages:
+  - sort: 200000
+    name: Tellarite
+    type: text
+    _id: czBQQbPGygWLCFlI
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The stubborn, argumentative Tellarite species originated upon Tellar
+        Prime, a temperate planet in the Alpha Quadrant. Their bodies are
+        thick-set and covered in dense hair, and they stand a little shorter
+        than Humans on average. Many male Tellarites possess tusks to some
+        degree, though they vary in size and prominence.</p><p>Tellarites are
+        known to be highly argumentative, even rude by the standards of other
+        cultures, often complaining frequently or insulting others as part of
+        social interactions. In truth, this comes from a sense of intellectual
+        honesty and rigorous skepticism. To a Tellarite, no idea, concept or
+        person is beyond challenge or analysis, and any notion that cannot stand
+        up to scrutiny is an unworthy one. Tellarites revel in debates, and
+        enjoy arguing, and the criticisms, complaints, and insults issued during
+        conversations are intended to be met in kind: to do otherwise is to
+        display a weak character, an inability to stand up for oneself, or an
+        unwillingness to confront one’s own flaws.</p><p></p><p>SAMPLE
+        VALUES:</p><ul><li><p>No notion is above proper
+        scrutiny</p></li><li><p>No voice silenced, no perspective
+        unheard</p></li><li><p>You’ll never get an answer if you don’t ask
+        questions</p></li><li><p>An idea left unchallenged can be
+        dangerous</p></li></ul><p></p><p>ATTRIBUTES: +1 Control, +1 Fitness, +1
+        Insight</p><p></p><p>TRAIT: Tellarite. Tellarites have keen senses of
+        smell and hearing, and excellent spatial awareness, allowing them to
+        judge distance, depth, and dimension with considerable accuracy. They
+        have a high tolerance for many common drugs, toxins, and inebriants
+        (Tellarites don’t get drunk, just ‘feisty’).</p><p></p><p>STURDY
+        (SPECIES ABILITY): You gain +1 Protection against Stun Attacks only.
+        Further, when you suffer a complication that represents a physical
+        hindrance or being stunned, dazed, or disoriented, you may take 1 Stress
+        to ignore that complication (and remove any associated
+        trait).</p><p></p><p>TELLARITE NAMES: Tellarites have considerable
+        variation in their names, but all tend to be composed of harsh, even
+        guttural sounds. Tellarite names consist of a personal name and a family
+        name, though the family name is sometimes a compound, indicating the
+        family name is a patronym or matronym (the name of a father or mother,
+        respectively), toponym (derived from a place) or
+        similar.</p><p></p><p>FEMININE: Pola, Cherthish, Zhuggaa, Torthem,
+        Neshlel, Verg, Kholo, Fratho, Skig, Vaolli, Glavom</p><p>MASCULINE:
+        Prugm, Brag, Dash, Gisich, Gullerg, Zankir, Hellek, Trar, Jankom, Jorsh,
+        Geshniv, Tuk</p><p>PREFIXES: bav, glov, blasch, lorin, jav, bim,
+        glasch</p><p>FAMILY: Gronnahk, Nonkursh, Slaal, Ker, Zhiv, Blav,
+        Zhuffand, Khebloss, Pend, Pog, Brin, Wenkurn</p><p>EXAMPLES: Pola jav
+        Brin (Feminine), Tuk glasch Khutohk (Masculine)</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SnfmSlylbWmZjPGb.czBQQbPGygWLCFlI'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: SnfmSlylbWmZjPGb
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!SnfmSlylbWmZjPGb'

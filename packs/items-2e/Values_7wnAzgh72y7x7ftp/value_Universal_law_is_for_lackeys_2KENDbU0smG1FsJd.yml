@@ -1,0 +1,25 @@
+name: Universal law is for lackeys
+type: value
+img: systems/sta/assets/compendia/icons/values-core/value-conflict.svg
+system:
+  description: ''
+  used: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451337246
+  modifiedTime: 1765451337246
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: 7wnAzgh72y7x7ftp
+_id: 2KENDbU0smG1FsJd
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2KENDbU0smG1FsJd'

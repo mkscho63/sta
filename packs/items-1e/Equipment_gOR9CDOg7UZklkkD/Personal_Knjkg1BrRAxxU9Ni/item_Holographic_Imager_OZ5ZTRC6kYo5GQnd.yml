@@ -1,0 +1,38 @@
+name: Holographic Imager
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>Imaging technology has improved dramatically since the invention of the
+    photographic camera. The current state of the art imaging device is the
+    holographic imager, a hand-held multi-spectral camera capable of recording
+    nearly unlimited still and moving images with a resolution down to the
+    micron level. Use of the device can range from recording happy memories from
+    the latest shore leave all the way to recording the behaviors of a new
+    life-form on a newly charted planet. The devices output is detailed enough
+    that the recorded data can be used to recreate the setting inside holodecks,
+    allowing for accurate computer simulations.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: OZ5ZTRC6kYo5GQnd
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!OZ5ZTRC6kYo5GQnd'

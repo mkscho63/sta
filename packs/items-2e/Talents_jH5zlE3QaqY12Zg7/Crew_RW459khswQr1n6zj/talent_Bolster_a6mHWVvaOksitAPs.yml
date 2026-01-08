@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Bolster
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>When you succeed at any task using your Command during an action scene,
+    you may spend Momentum to recover Stress suffered by your allies. When you
+    spend 1&nbsp;Momentum (Repeatable), one ally who can see and hear you
+    recovers 1 Stress. You may affect multiple allies, but each ally affected
+    may only recover 1 Stress in this way each time this talent is used.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: a6mHWVvaOksitAPs
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!a6mHWVvaOksitAPs'

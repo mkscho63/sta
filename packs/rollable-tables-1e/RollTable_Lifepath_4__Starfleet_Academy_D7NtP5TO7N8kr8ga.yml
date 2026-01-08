@@ -1,0 +1,86 @@
+name: 'Lifepath 4: Starfleet Academy'
+img: systems/sta/assets/compendia/icons/plain-core/plain-academy.svg
+description: Rolls a random academy track for a player character.
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 2
+    drawn: false
+    _id: 2OM2oYH7nxna7ZjQ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Command Track
+    name: ''
+    _key: '!tables.results!D7NtP5TO7N8kr8ga.2OM2oYH7nxna7ZjQ'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 4
+    drawn: false
+    _id: AjdQMxdrjvj9dVMW
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Operations Track
+    name: ''
+    _key: '!tables.results!D7NtP5TO7N8kr8ga.AjdQMxdrjvj9dVMW'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 6
+    drawn: false
+    _id: XdeDgByRuKzd1SnM
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Science Track
+    name: ''
+    _key: '!tables.results!D7NtP5TO7N8kr8ga.XdeDgByRuKzd1SnM'
+formula: 1d6
+replacement: true
+displayRoll: true
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452265880
+  modifiedTime: 1765452265880
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+_id: D7NtP5TO7N8kr8ga
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!tables!D7NtP5TO7N8kr8ga'

@@ -1,0 +1,38 @@
+folder: lWBHbmoPN9FHtgLe
+name: Dependable Workhorse
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-custom.svg
+system:
+  description: >-
+    <p>The ship is dependable, with a solid record of successful&nbsp;missions
+    and accomplishments. While overshadowed by more famous ships, this vessel is
+    nevertheless a mainstay of the fleet, with a competent, dedicated
+    crew.&nbsp;</p>
+
+    <p>&nbsp;</p>
+
+    <p>RELIABLE: Whenever the ship rolls to assist a task attempt, the group may
+    spend 1 Momentum to ignore any complications rolled on the ship&rsquo;s
+    die.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dMk2s80RYGlYLKw1
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!dMk2s80RYGlYLKw1'

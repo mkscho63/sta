@@ -1,0 +1,32 @@
+name: Computer (Damaged)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-damaged-computers.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p>If the total number of Breaches the Computers System has suffered is
+    equal to or greater than half the Scale of the ship, then the System has
+    been significantly Damaged. This increases the Difficulty of all Tasks that
+    involve or are assisted by the ship&rsquo;s Computers by +2, and increases
+    the Complication range of all other Tasks assisted by the ship by 1, until
+    repaired. The Difficulty to repair this is 3.</p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ewmcit0utDaHrkfX
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ewmcit0utDaHrkfX'

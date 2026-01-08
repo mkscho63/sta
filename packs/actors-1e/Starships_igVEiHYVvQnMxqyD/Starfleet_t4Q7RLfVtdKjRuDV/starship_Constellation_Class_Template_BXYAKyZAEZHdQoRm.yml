@@ -1,0 +1,504 @@
+name: Constellation Class Template
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/constellation-token.webp
+system:
+  notes: >-
+    <p><strong>Entered Service:</strong> 2285</p>
+
+    <p><strong>Overview:</strong> Designed in the mid-2280s in response to
+    increasing tensions between the Klingon Empire and the Federation, the
+    Constellation class was originally intended for use as a perimeter patrol
+    vessel and heavy interceptor. The design was not intended as a true warship,
+    therefore, when the initial Khitomer Accords were signed in 2293, the
+    class&rsquo; production wasn&rsquo;t ceased, but its assignments were
+    changed from being an alert interceptor to an emergency response vessel used
+    to deal with crises that could rapidly spiral out of control without
+    Starfleet&rsquo;s intervention.</p>
+
+    <p><strong>Capabilities:</strong> Until the deployment of the Constellation
+    class, Starfleet had never commissioned a four-nacelle design for general
+    use in the fleet. The intent for the potent combination of four warp
+    nacelles and two separate impulse drive reactor arrays was to provide the
+    craft with the ability to maintain high warp speeds by alternating the use
+    of two nacelles at a time and then switching the active nacelles before the
+    warp coils would overheat and normally require a starship to drop out of
+    warp. While Constellation-class vessels were not the highest velocity craft
+    at warp speeds, the maximum sustained cruising speed of the vessel was just
+    over warp 8. All four nacelles could be used to increase warp acceleration
+    or push the maximum velocity of the craft to over warp 9. At sublight
+    speeds, the two impulse arrays would tax the class&rsquo;s structural
+    integrity field by accelerating from full stop to full impulse in less than
+    five seconds, often surprising non-Federation crews by what was known as the
+    &lsquo;Constellation Sprint&rsquo;. Another tactic developed on U.S.S.
+    Stargazer NCC-2893 by then Lieutenant Commander JeanLuc Picard became known
+    as the &lsquo;Picard Maneuver&rsquo; where the starship would accelerate and
+    jump into warp and then drop back out to nearly full stop so the starship
+    appeared to be in two places at once. This agility and speed lent itself to
+    its re-designation as an emergency response vehicle. In addition, the
+    vessels three large shuttle/fighter bays located along the edges of the
+    saucer were redesigned for use in regular planetary shuttles or cargo
+    shuttles. This made the Constellation class ideal for delivering large
+    quantities of emergency supplies to vast areas of a planet&rsquo;s surface,
+    or transporting colonists to newly terraformed worlds. The usefulness of
+    this design has been great enough that Starfleet has kept many of these
+    vessels on active duty, continuing to use them as couriers and rapid
+    response, refitting them with new developments in technology over its
+    decades of service.</p>
+  crew:
+    value: 0
+    max: 4
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 1
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 9
+    max: 9
+  refit: ''
+  resistance: 4
+  scale: 4
+  shields:
+    value: 9
+    max: 9
+  servicedate: ''
+  spaceframe: Constellation Class
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 8
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 7
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 9
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 9
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 8
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: Federation Starship
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+prototypeToken:
+  name: Constellation
+  displayName: 30
+  actorLink: true
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/constellation-token.webp
+    scaleX: 1
+    scaleY: 1
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 2.5
+  height: 2.5
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: 1
+  displayBars: 30
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Phaser Bank (Scale 4)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Banks are a collection of emitters, designed to fire in unison. They
+        produce a focused beam of energy that can inflict considerable damage.
+        Banks have a Range category of Medium, and increase the weapon&rsquo;s
+        damage by +1 Challenge Die.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 5
+      range: Medium
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: VxnDAMEL8x3Glj29
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BXYAKyZAEZHdQoRm.VxnDAMEL8x3Glj29'
+  - name: Photon Torpedo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+      damage: 3
+      range: Long
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 1
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: BML6Atw88fcrQnri
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BXYAKyZAEZHdQoRm.BML6Atw88fcrQnri'
+  - name: Photon Torpedo Salvo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p>Torpedoes may be fired in a salvo: a volley of several torpedoes,
+        intended to have a much greater effect. Firing a salvo of torpedoes adds
+        2 Threat to the pool, along with the 1 point of Threat for a torpedo
+        attack, for a total of 3 Threat. Firing a salvo of torpedoes adds +3 to
+        Threat instead of +1, but it increases the attack&rsquo;s damage by +1
+        Challenge Die, and grants the Spread effect to the attack.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually</p>
+      damage: 4
+      range: Long
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 3
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: nPWW3hGbWcl2jO0u
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BXYAKyZAEZHdQoRm.nPWW3hGbWcl2jO0u'
+  - name: Tractor Beam (Strength 3)
+    type: item
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The tactical officer engages a tractor beam at a nearby object or
+        vessel. This requires a <strong>Control + Security</strong> Task,
+        assisted by the ship&rsquo;s <strong>Structure + Security</strong> with
+        a Difficulty of 2, and can only be directed at a target within Close
+        range. If successful, the target vessel is immobilized and cannot move
+        unless it can break free, using their shield modulations, the raw power
+        of their engines, or disabling the tractor beam emitter (a Task in its
+        own right), with a Difficulty of 3.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: 6ZdhXUN20spHy7rs
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BXYAKyZAEZHdQoRm.6ZdhXUN20spHy7rs'
+  - name: Improved Warp Drive
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The ship&rsquo;s warp drive is more efficient, capitalizing on
+        improved field dynamics, better control of antimatter flow rates, or
+        some other advancement that allows the ship to expend less energy when
+        travelling at warp. Whenever the ship spends Power to go to warp, roll 1
+        Challenge Die for each Power spent; for each Effect rolled, that point
+        of Power is not spent.</p>
+      talenttype:
+        typeenum: general
+        description: security
+        minimum: 3
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: dwVdXucHTlA6kBZD
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!BXYAKyZAEZHdQoRm.dwVdXucHTlA6kBZD'
+  - name: Extensive Shuttlebays
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    effects: []
+    folder: null
+    sort: 0
+    flags:
+      core: {}
+    _id: 3ynwNRqpCjmMcpba
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The vessel&rsquo;s shuttlebays are large, well-supplied, and able to
+        support a larger number of active shuttle missions simultaneously. The
+        ship may have twice as many small craft active at any one time as it
+        would normally allow, and it may carry up to two Scale 2 small craft.
+        For more on small craft operations, see p. 232.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!BXYAKyZAEZHdQoRm.3ynwNRqpCjmMcpba'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450397815
+  modifiedTime: 1765450397815
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: t4Q7RLfVtdKjRuDV
+_id: BXYAKyZAEZHdQoRm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!BXYAKyZAEZHdQoRm'

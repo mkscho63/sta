@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Guile and Cunning
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-romulan.svg
+system:
+  description: >-
+    <p>When you attempt to remain hidden or for your actions to remain
+    unnoticed, you may add 1 Threat to add 1 to the Difficulty of any task to
+    detect you or reveal the&nbsp;nature of your actions.</p>
+  talenttype:
+    typeenum: species
+    description: Romulan
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 6jNDZNYhXOJh0dSg
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!6jNDZNYhXOJh0dSg'

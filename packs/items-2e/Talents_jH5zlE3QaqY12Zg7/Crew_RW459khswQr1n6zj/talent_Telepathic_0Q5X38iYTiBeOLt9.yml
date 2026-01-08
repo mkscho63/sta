@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Telepathic
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-betazoid.svg
+system:
+  description: >-
+    <p>Betazoids can sense the minds of living creatures in their vicinity and
+    can read the thoughts and emotions of others. Each Betazoid has either
+    Telepathy or Empathy (see page 155-page 156 for more details). Part-Betazoid
+    characters generally have Empathy rather than Telepathy.</p>
+  talenttype:
+    typeenum: species
+    description: Betazoid
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 0Q5X38iYTiBeOLt9
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!0Q5X38iYTiBeOLt9'

@@ -1,0 +1,34 @@
+folder: vxwA3LkDPxUcWMFA
+name: Pattern Enhancer
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p>Used to boost the resolution and strength of a transporter scanning beam,
+    pattern enhancers allow transporter systems to achieve a signal lock even
+    with interference from terrain or cosmic phenomena. These devices are
+    approximately a meter long when deployed on tripods and require at least
+    three to function when placed equidistant around a target. Each
+    device&rsquo;s power cell allows for two transports, and additional pattern
+    enhancers can increase the area and number of transports.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: nlNmkdgMM5CXHwcS
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!nlNmkdgMM5CXHwcS'

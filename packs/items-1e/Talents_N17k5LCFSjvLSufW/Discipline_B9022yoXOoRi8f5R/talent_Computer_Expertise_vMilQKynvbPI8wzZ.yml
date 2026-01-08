@@ -1,0 +1,33 @@
+name: Computer Expertise
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Science 2+</p>
+
+    <p>Whenever you attempt a Task that involves the programming or study of a
+    computer system, you may add a bonus d20 to your pool.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 2
+_id: vMilQKynvbPI8wzZ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!vMilQKynvbPI8wzZ'

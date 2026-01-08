@@ -1,0 +1,20 @@
+type: Actor
+folder: igVEiHYVvQnMxqyD
+name: Alien
+color: null
+sorting: a
+_id: pLS2MCOpeczSRhrl
+description: ''
+sort: 100000
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450370254
+  modifiedTime: 1765450373216
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_key: '!folders!pLS2MCOpeczSRhrl'

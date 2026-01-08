@@ -1,0 +1,86 @@
+name: Trill
+pages:
+  - sort: 100000
+    name: Trill
+    type: text
+    _id: TtvsXY37zZTysXz9
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <img style="display:block;margin:0px auto"
+        src="systems/sta/assets/compendia/icons/plain-core/plain-trill.svg"
+        width="256" height="256" /><p><strong>Requirements:</strong> <em>The
+        Original Series</em> and <em>The Next Generation</em> era only</p><p>The
+        Trill species, from their homeworld of the same name, appear almost
+        identical to Humans, but for rows of spots running down the sides of
+        their bodies, from head to toe. However, this superficial similarity
+        conceals a considerable difference — the Trill are capable of bonding
+        with a symbiotic organism known as a symbiont, creating a distinct being
+        from the two individual creatures. The symbionts can live for many
+        centuries, and are placed with successive hosts, carrying the memories
+        and knowledge of previous hosts into a new joining with each new
+        generation. This fact isn’t widely known outside the Trill themselves,
+        but it isn’t a secret — it simply isn’t widely discussed, and the number
+        of joined Trill is relatively small. The Trill have been part of the
+        Federation for well over a century, with several renowned Trill serving
+        important roles in shaping the Federation. The Trill, as a culture, tend
+        to be focused on intellectual pursuits first and foremost, as learning
+        and wisdom are prized by the symbionts in their
+        hosts.</p><p><strong>Example Value:</strong>
+        @UUID[Compendium.sta-compendia.values-core.rlycl1Ugie7JceVy]{Four
+        lifetimes of adventure}</p><ul><li><p><strong>Attributes:</strong> +1
+        Control, +1 Presence, +1 Reason</p></li><li><p><strong>Trait:</strong>
+        Trill. Trill are especially resilient to parasites, as a quirk of their
+        potential to be Joined; Joined Trill are entirely immune to parasitic
+        infection. However, they tend to have strong allergic reactions to
+        insect bites and other forms of venom, which can disrupt their
+        neurochemistry, particularly if they’re Joined. As many of the specifics
+        of Trill physiology — especially with regards to symbiosis — are not
+        widely known, this can result in medical
+        complications.</p></li><li><p><strong>Talents:</strong> The character
+        receives access to the following
+        talents:</p><ul><li><p>@UUID[Compendium.sta-compendia.species-talents-core.Vw3dwdhscvugLyMA]{Former
+        Initiate}</p></li><li><p>@UUID[Compendium.sta-compendia.species-talents-core.Vc5tTNaulEWuzpHK]{Joined}</p></li></ul></li></ul>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!iBWNyAfjBV3bhRXp.TtvsXY37zZTysXz9'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451925417
+  modifiedTime: 1765451925417
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: HkRr5Gk1P0pTwfaY
+categories: []
+_id: iBWNyAfjBV3bhRXp
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!iBWNyAfjBV3bhRXp'

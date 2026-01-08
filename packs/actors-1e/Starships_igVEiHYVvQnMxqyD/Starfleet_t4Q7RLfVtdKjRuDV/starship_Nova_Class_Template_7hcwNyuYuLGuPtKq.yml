@@ -1,0 +1,560 @@
+name: Nova Class Template
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/nova-token.webp
+system:
+  notes: >-
+    <p><strong>Entered Service:</strong> 2368</p>
+
+    <p><strong>Overview:</strong> Starfleet Command and the Federation Science
+    Council formed a committee in 2363 to discuss the state of Starfleet&rsquo;s
+    aging science and exploration vessels. While the Galaxy class was considered
+    a success, the amount of personnel and resources required to construct one
+    of the massive exploration cruisers was significant. The end conclusion of
+    the committee was that Starfleet required a new science and exploration
+    vessel that was small, easy to maintain, but had the best sensor and
+    scientific equipment possible in a small spaceframe. The Nova class is the
+    result, only entering service in the past few years.</p>
+
+    <p><strong>Capabilities:</strong> The designers at Utopia Planitia Fleet
+    Yards (UPFY) had been devising various next-generation designs for several
+    years when work began on the Nova class. The science vessel was
+    approximately the same size as the NX class from the 22nd century and had a
+    similar amount of crew, typically requiring around 80 crew, depending on the
+    assignment. Like many ships designed around this time, the Nova class had an
+    integrated secondary hull under its wedge-like primary saucer, capitalizing
+    on both the most recent theories on warp field dynamics and the faster
+    manufacturing that this simpler cross-section would allow. However, though
+    many next-generation technologies were in their infancy at the time, the
+    designers chose to make use of tried, tested, and established components
+    instead, continuing to use an isolinear processing system for both its
+    primary and secondary computer cores and forgoing the use of variable
+    geometry warp drive. The reasoning behind this was that the newer systems
+    were still too bulky for the small vessel and tended to make simulated Nova
+    designs far too cramped for even a bare minimum of crew members. Designers
+    at UPFY nevertheless improved upon these basic components by increasing the
+    strength of the warp field around both computer cores, improving the
+    processing speeds by nearly doubling the field strength around the FTL
+    elements. The warp coils needed for the starship were small, and engineers
+    were able to place gimbal and gyroscopic control elements around each of the
+    individual coils, giving the Nova class an even greater ability to modify
+    the geometry of its warp field than any other starship of its mass at the
+    cost of maintaining a steep field gradient, i.e. a lower maximum speed. To
+    save space, UPFY engineers compressed the impulse systems into a single unit
+    along the vessels spine and only installed forward facing torpedo systems.
+    The type 10 phaser strips were short, reducing weapon arcs but giving the
+    vessel more interior volume that could be utilized by life support and
+    sensor systems rather than EPS transfer systems and heat exchangers. The
+    small crew size and the slow cruising speed of the Nova class mean that its
+    primary assignments are planetary survey and short to mid-range exploration
+    missions lasting no more than six months before crews rotate to larger
+    vessels or facilities.</p>
+
+    <p>Since the launch of U.S.S. Nova in 2368, three Nova-class vessels have
+    been destroyed or are presumed destroyed including Borealis, Equinox, and
+    Zodiac. While the reason for the loss of Equinox in early 2371 is not yet
+    known, it is thought to be due to a failure of the anti-matter containment
+    systems when attempting to enter warp while under heavy sublight
+    acceleration. This failure occurred in the other two starships, both in
+    2371. UPFY engineers are currently studying these failures to determine if
+    there are any serious flaws with the design itself; this may determine
+    whether the Nova class has a future within Starfleet.</p>
+  crew:
+    value: 0
+    max: 3
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 2
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 9
+    max: 9
+  refit: ''
+  resistance: 3
+  scale: 3
+  shields:
+    value: 8
+    max: 8
+  servicedate: ''
+  spaceframe: Nova Class
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 10
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 10
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 9
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 10
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 8
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 8
+      selected: false
+      breaches: 0
+  traits: ''
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+prototypeToken:
+  name: Nova
+  displayName: 30
+  actorLink: true
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/nova-token.webp
+    scaleX: 0.8
+    scaleY: 0.8
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 2
+  height: 2
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: 1
+  displayBars: 30
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Phaser Arrays - Area (Scale 3)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array-area.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Arrays are long strips of linked emitters that share a power feed,
+        allowing the ship to fire from any point along the strip. This allows
+        the ship to fire in multiple directions at once, or to adjust and fire
+        on moving targets repeatedly in quick succession. Arrays have a Range
+        category of Medium. Further, when declaring the target of an attack with
+        an Array, the attacking character may choose to grant one of the Area or
+        Spread effects to the attack.</p>
+
+        <p><strong>Area:</strong> The attack affects a wider area, and can
+        affect several targets at once. The attack automatically affects any
+        vessel or damageable object within Contact of the initial target, and
+        then one additional target within Close range of the initial target for
+        each Effect rolled, starting with the next closest (as determined by the
+        GM). If one or more Complications is rolled when using an Area attack,
+        the GM may choose to use Complications to have an allied vessel or
+        neutral bystander in the area affected by the attack. A target cannot be
+        hit if it would have been more difficult to hit than the initial
+        target.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 3
+      range: Medium
+      qualities:
+        area: true
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: plumkSlQLlruYZlf
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!7hcwNyuYuLGuPtKq.plumkSlQLlruYZlf'
+  - name: Phaser Arrays - Spread (Scale 3)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array-spread.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Arrays are long strips of linked emitters that share a power feed,
+        allowing the ship to fire from any point along the strip. This allows
+        the ship to fire in multiple directions at once, or to adjust and fire
+        on moving targets repeatedly in quick succession. Arrays have a Range
+        category of Medium. Further, when declaring the target of an attack with
+        an Array, the attacking character may choose to grant one of the Area or
+        Spread effects to the attack.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 3
+      range: Medium
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: ZA5eH09L3dFGBVHi
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!7hcwNyuYuLGuPtKq.ZA5eH09L3dFGBVHi'
+  - name: Photon Torpedo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+      damage: 3
+      range: Long
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 1
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: WfzbGrjHy2v0OLPZ
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!7hcwNyuYuLGuPtKq.WfzbGrjHy2v0OLPZ'
+  - name: Photon Torpedo Salvo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p>Torpedoes may be fired in a salvo: a volley of several torpedoes,
+        intended to have a much greater effect. Firing a salvo of torpedoes adds
+        2 Threat to the pool, along with the 1 point of Threat for a torpedo
+        attack, for a total of 3 Threat. Firing a salvo of torpedoes adds +3 to
+        Threat instead of +1, but it increases the attack&rsquo;s damage by +1
+        Challenge Die, and grants the Spread effect to the attack.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually</p>
+      damage: 4
+      range: Long
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 3
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: m7wlzXYrqhH738iU
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!7hcwNyuYuLGuPtKq.m7wlzXYrqhH738iU'
+  - name: Tractor Beam (Strength 2)
+    type: item
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The tactical officer engages a tractor beam at a nearby object or
+        vessel. This requires a <strong>Control + Security</strong> Task,
+        assisted by the ship&rsquo;s <strong>Structure + Security</strong> with
+        a Difficulty of 2, and can only be directed at a target within Close
+        range. If successful, the target vessel is immobilized and cannot move
+        unless it can break free, using their shield modulations, the raw power
+        of their engines, or disabling the tractor beam emitter (a Task in its
+        own right), with a Difficulty of 2.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: T73gss2k1f7NWmcV
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!7hcwNyuYuLGuPtKq.T73gss2k1f7NWmcV'
+  - name: Advanced Sensor Suites
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The vessel&rsquo;s sensors are amongst the most sophisticated and
+        advanced available in the fleet. Unless the ship&rsquo;s Sensors have
+        suffered one or more Breaches, whenever a character performs a Task
+        assisted by the ship&rsquo;s Sensors, they may reduce the Difficulty of
+        the Task by one, to a minimum of 0.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: zhYiOP1ZZrZbNsrM
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!7hcwNyuYuLGuPtKq.zhYiOP1ZZrZbNsrM'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450397815
+  modifiedTime: 1765450397815
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: t4Q7RLfVtdKjRuDV
+_id: 7hcwNyuYuLGuPtKq
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!7hcwNyuYuLGuPtKq'

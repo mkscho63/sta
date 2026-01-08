@@ -1,0 +1,37 @@
+folder: RW459khswQr1n6zj
+name: Experienced
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-career-experienced.svg
+system:
+  description: >-
+    <p>You have many years of experience in your chosen field, and you&rsquo;re
+    enjoying a promising career. This is the default assumption for characters
+    created using these rules.</p>
+
+    <p><br>VALUE: The character receives a value, which may be chosen
+    freely.</p>
+
+    <p><br>TALENT: The character receives a single talent, which may be chosen
+    freely.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: BzEFWAKBkP1d3mEY
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!BzEFWAKBkP1d3mEY'

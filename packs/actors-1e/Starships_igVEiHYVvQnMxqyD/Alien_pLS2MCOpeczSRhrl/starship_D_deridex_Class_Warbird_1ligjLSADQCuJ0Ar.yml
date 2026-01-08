@@ -1,0 +1,204 @@
+name: D'deridex Class Warbird
+type: starship
+img: systems/sta/assets/compendia/ships/romulan/d-deridex-token.webp
+system:
+  notes: >-
+    <p><strong>Please refer to page 263 of the "Core Rulebook" to find details
+    on this ship.</strong></p>
+
+    <p>Due to the terms of Modiphius' permission to adapt "Star Trek Adventures"
+    for this module, we may not provide information intended exclusively for
+    Gamemasters.</p>
+  crew:
+    value: 0
+    max: 1
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: 7
+  refit: ''
+  resistance: 0
+  scale: 1
+  shields:
+    value: 0
+    max: 7
+  servicedate: ''
+  spaceframe: ''
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 7
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 7
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 7
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 7
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 7
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 7
+      selected: false
+      breaches: 0
+  traits: ''
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+prototypeToken:
+  name: D'deridex
+  displayName: 20
+  actorLink: false
+  texture:
+    src: systems/sta/assets/compendia/ships/romulan/d-deridex-token.webp
+    scaleX: 1.6
+    scaleY: 1.6
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 3.5
+  height: 3.5
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 20
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items: []
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450380505
+  modifiedTime: 1765450380505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: pLS2MCOpeczSRhrl
+_id: 1ligjLSADQCuJ0Ar
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!1ligjLSADQCuJ0Ar'

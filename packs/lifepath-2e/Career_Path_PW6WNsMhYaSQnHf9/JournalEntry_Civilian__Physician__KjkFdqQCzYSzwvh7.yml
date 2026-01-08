@@ -1,0 +1,75 @@
+name: Civilian (Physician)
+pages:
+  - sort: 100000
+    name: Civilian (Physician)
+    type: text
+    _id: lKCRT2EVoyeLn905
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You’ve devoted your life to healing others. You may be trained as a
+        doctor, a paramedic, a counselor, or you may be a medical researcher
+        rather than a practicing physician, but either way, the goal is to help
+        people who are hurt in some way. Your skills are in demand across
+        explored space, and even civilian-trained physicians can find themselves
+        aboard Starfleet and military ships.</p><p></p><p>EXAMPLE CHARACTERS:
+        Phlox (Enterprise)</p><p></p><ul><li><p>TRAIT: The character gains the
+        trait Physician. This can be adjusted to reflect a particular specialty,
+        such as Surgeon or Geneticist.</p></li><li><p>VALUE: You gain a single
+        value, which should reflect the character’s beliefs developed during
+        their studies, or which led them to enter medicine in the first place.
+        Examples include:</p><ul><li><p>The Hippocratic Oath</p></li><li><p>I
+        must respect my patient’s wishes</p></li><li><p>An ounce of prevention
+        is worth a pound of cure</p></li></ul></li><li><p>ATTRIBUTES: You gain
+        three points, which may be divided among two or three attributes freely
+        (either one gets 2 and the other gets 1, or all three get 1). These may
+        be assigned freely.</p></li><li><p>DEPARTMENTS: You increase your
+        Medicine by 2, and two other departments by 1. In addition, you may
+        reduce one of your other departments by 1 and add that point to any
+        department not already increased.</p></li><li><p>FOCUSES: You select
+        three focuses. Examples include:</p><ul><li><p>Emergency Medicine,
+        Surgery, Psychiatry, Virology, Cybernetics, Genetics,
+        Xenobiology</p></li></ul></li><li><p>TALENT: The character gains a
+        single talent.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!KjkFdqQCzYSzwvh7.lKCRT2EVoyeLn905'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451988240
+  modifiedTime: 1765451988240
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: PW6WNsMhYaSQnHf9
+categories: []
+_id: KjkFdqQCzYSzwvh7
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!KjkFdqQCzYSzwvh7'

@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Diagnostic Expertise
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>When you succeed at a Medicine task to identify and&nbsp;diagnose the
+    nature of a medical problem, you may ask one question&mdash;as per Obtain
+    Information&mdash;for every additional d20 you bought by spending
+    Momentum.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 9oF0KnIe9xE6D6EX
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!9oF0KnIe9xE6D6EX'

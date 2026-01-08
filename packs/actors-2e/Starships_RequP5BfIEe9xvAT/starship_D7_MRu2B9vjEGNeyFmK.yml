@@ -1,0 +1,479 @@
+folder: RequP5BfIEe9xvAT
+name: D7
+type: starship
+img: systems/sta/assets/compendia/ships/klingon/d7-battle-cruiser-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: The Klingon fleets of the mid-23rd century were a scattered
+    collection of individual House fleets up until the late 2250s. After the
+    ascension of Chancellor L&rsquo;Rell of House Mo&rsquo;Kai, the Klingon
+    Empire began a concerted fleet reconstruction effort, consolidating military
+    power with the Klingon Defense Force. Central to this was a ship design
+    presented by the Chancellor as a new symbol of Klingon unity: this design
+    would become known as the D7 Battlecruiser, and it would remain as the
+    cornerstone of Klingon military might in space for decades to come.</p>
+
+    <p>CAPABILITIES: The D7 continues the long design traditions of the KDF by
+    having a command pod at the end of a long detachable boom that connects to
+    the engineering hull. With the primary purpose of the D7 being war, the
+    weapon systems on board had top priority for the use of internal volume. Two
+    separate photon torpedo launchers provide the spaceframe&rsquo;s primary
+    destructive capabilities.</p>
+
+    <p>REFITS AND VARIANTS: Refits for the D7, and its successor the
+    K&rsquo;t&rsquo;inga-class depended greatly on if it was in service to the
+    KDF or a Great House. One major development was the reintroduction of
+    cloaking to the fleet in 2269.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Battlecruiser, Strategic and Diplomatic
+    Operations, Reserve Fleet.</p>
+
+    <p>NAMING CONVENTIONS: Klingon vessels have little in the way of standard
+    naming conventions. Each House has its own traditions, as does the KDF.</p>
+  crew:
+    value: 0
+    max: 4
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 2
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 3
+  scale: 4
+  shields:
+    value: 0
+    max: 14
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2257'
+  spaceframe: D7
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 7
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 7
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 8
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 6
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 8
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: Klingon Starship, D7 class, Symbol of Klingon Unity
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: D7
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/klingon/d7-battle-cruiser-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Disruptor Cannon
+    type: starshipweapon2e
+    _id: Ksc5pe11EaDLazmt
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-cannon.svg
+    system:
+      description: >-
+        <p>Disruptors are potent, damaging weapons favored by Klingons,
+        Romulans, and a variety of other civilizations&rsquo; fleets.</p>
+
+        <p>Compact weapon systems designed to produce short, powerful pulses or
+        bolts of energy at the target.</p>
+      damage: 2
+      range: close
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!MRu2B9vjEGNeyFmK.Ksc5pe11EaDLazmt'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Banks
+    type: starshipweapon2e
+    _id: sEW84MANCTMyyAf5
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!MRu2B9vjEGNeyFmK.sEW84MANCTMyyAf5'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: cHWv5mbo69M3pE1U
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!MRu2B9vjEGNeyFmK.cHWv5mbo69M3pE1U'
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 3)
+    type: item
+    _id: QKZVE0aCB6LD06UG
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!MRu2B9vjEGNeyFmK.QKZVE0aCB6LD06UG'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: i2iTnQSfgRNNbWVz
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!MRu2B9vjEGNeyFmK.i2iTnQSfgRNNbWVz'
+  - folder: vmwcoPlFxxenIHcL
+    name: Rugged Design
+    type: talent
+    _id: JiDB9OkTvrEn1esZ
+    img: systems/sta/assets/compendia/icons/talents-core/talent-structure.svg
+    system:
+      description: >-
+        <p>Whenever a task roll is attempted to patch or repair a&nbsp;breach, a
+        d20 may be re-rolled. Further, if the task is successful, the crew may
+        spend Momentum to patch a second breach; this will cost 2 Momentum, +1
+        per additional step of Potency on that second breach.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!MRu2B9vjEGNeyFmK.JiDB9OkTvrEn1esZ'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: MRu2B9vjEGNeyFmK
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!MRu2B9vjEGNeyFmK'

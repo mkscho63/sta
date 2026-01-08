@@ -1,0 +1,33 @@
+folder: vxwA3LkDPxUcWMFA
+name: Artificial Organs
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p>Artificial organs have been in use since the mid-20th&nbsp;century.
+    Advances in neuron meshing and cybernetics have improved these devices and
+    made them virtually identical in capability to biological ones. Characters
+    who need an artificial organ and do not possess them will die within minutes
+    to days depending on the organ and are typically kept on life support while
+    one is fabricated.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: bjEmLXtmPTy6RrJn
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!bjEmLXtmPTy6RrJn'

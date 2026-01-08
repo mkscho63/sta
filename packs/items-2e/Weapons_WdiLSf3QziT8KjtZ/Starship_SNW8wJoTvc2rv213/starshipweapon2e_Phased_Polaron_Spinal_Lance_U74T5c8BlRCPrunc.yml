@@ -1,0 +1,53 @@
+folder: SNW8wJoTvc2rv213
+name: Phased Polaron Spinal Lance
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-polaron-array-spread.svg
+system:
+  description: >-
+    <p>Favored by the Dominion, phased polaron weapons are highly effective
+    at&nbsp;cutting through deflector shields and other starship defenses.</p>
+
+    <p>Some ships integrate large weapon systems into their hulls, often running
+    the length of the ship. These weapons are very powerful, but difficult to
+    bring to bear against a target.</p>
+  damage: 3
+  range: long
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: false
+    cumbersome: true
+    dampening: false
+    depleting: false
+    devastating: false
+    highyield: false
+    intense: true
+    jamming: false
+    persistent: false
+    piercing: true
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: energy
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: U74T5c8BlRCPrunc
+ownership:
+  default: 0
+sort: 0
+_key: '!items!U74T5c8BlRCPrunc'

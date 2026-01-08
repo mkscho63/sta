@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Jury-Rig
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>Whenever you attempt an Engineering task to perform repairs, you may
+    reduce the Difficulty by 2, to a minimum of 0. If you do this, however, then
+    the repairs are only temporary and will last only a single scene before they
+    fail again; you may increase this duration&nbsp;by one scene by spending 1
+    Momentum (Repeatable). Jury-rigged repairs can only be applied once, and the
+    Difficulty to repair a device that has been Jury-rigged increases by 1.</p>
+  talenttype:
+    typeenum: discipline
+    description: engineering
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 2SrTfRsJBYXe9w8e
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2SrTfRsJBYXe9w8e'

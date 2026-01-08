@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Zero-G Combat
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Conn 3+ and Security 3+</p>
+
+    <p><br>In combat, when you make an Attack while in a zero-gravity or
+    micro-gravity environment, you may use the higher of your Conn or Security
+    departments for the task, and you ignore any difficulty increases caused by
+    the lack of gravity. In addition, enemies who lack similar training increase
+    the Difficulty of Attacks against you by 1.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: agALNYcVPNgGzB99
+ownership:
+  default: 0
+sort: 0
+_key: '!items!agALNYcVPNgGzB99'

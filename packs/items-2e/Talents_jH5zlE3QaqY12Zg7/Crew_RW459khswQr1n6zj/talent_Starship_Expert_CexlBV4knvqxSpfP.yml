@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Starship Expert
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>Whenever you succeed at a Conn task to identify a type of starship, or to
+    try to understand an unknown form of starship, you gain 1 bonus Momentum,
+    which may only be used on the Obtain Information Momentum spend, or to pay
+    part of the cost of the Create Trait Momentum spend (where the trait must
+    represent some form of&nbsp;known or observed weakness in the ship being
+    studied).</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: CexlBV4knvqxSpfP
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!CexlBV4knvqxSpfP'

@@ -1,0 +1,82 @@
+name: Andorian
+pages:
+  - sort: 100000
+    name: Andorian
+    type: text
+    _id: TtvsXY37zZTysXz9
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <img style="display:block;margin:0px auto"
+        src="systems/sta/assets/compendia/icons/plain-core/plain-andorian.svg"
+        width="256" height="256" /><p><strong>Requirements:</strong> All Eras of
+        Play</p><p>An aggressive, passionate people from the frozen moon
+        Andoria, the Andorians have been part of the United Federation of
+        Planets since its foundation, having been firm allies of Humanity for
+        several years beforehand. Their blue skin, pale hair, and antennae give
+        them a distinctive appearance, and while the Andorian Imperial Guard was
+        demobilized when the Federation was founded, they still maintain strong
+        military traditions, and a tradition of ritualized honor-duels known as
+        Ushaan, using razorsharp ice-mining tools.</p><p><strong>Example
+        Value:</strong>
+        @UUID[Compendium.sta-compendia.values-core.fGr184MVY2vRVE9M]{Proud
+        son/doughter of Andoria}</p><ul><li><p><strong>Attributes:</strong> +1
+        Daring, +1 Control, +1 Presence</p></li><li><p><strong>Trait:</strong>
+        Andorian. This trait may reduce the Difficulty of Tasks to resist
+        extreme cold, or Tasks impacted by extremely low temperatures. Their
+        antennae aid in balance and spatial awareness; a lost antenna can be
+        debilitating until it regrows. Andorians also have a high metabolism,
+        meaning, amongst other things, that they tire more quickly than Humans;
+        this also makes them more vulnerable to infection from certain types of
+        injury. Before the Federation, Andorians and Vulcans had numerous
+        disputes; though these issues are largely considered to be ancient
+        history, Andorians and Vulcans don’t always get
+        along.</p></li><li><p><strong>Talents:</strong> The character receives
+        access to the following
+        talents:</p><ul><li><p>@UUID[Compendium.sta-compendia.species-talents-core.MlGPqf4xP5MB8dx6]{Proud
+        and
+        Honorable}</p></li><li><p>@UUID[Compendium.sta-compendia.species-talents-core.NJgSVuSLtjqkzeFU]{The
+        Ushaan}</p></li></ul></li></ul>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!uCYouzHwk243VwCt.TtvsXY37zZTysXz9'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451925417
+  modifiedTime: 1765451925417
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: HkRr5Gk1P0pTwfaY
+categories: []
+_id: uCYouzHwk243VwCt
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!uCYouzHwk243VwCt'

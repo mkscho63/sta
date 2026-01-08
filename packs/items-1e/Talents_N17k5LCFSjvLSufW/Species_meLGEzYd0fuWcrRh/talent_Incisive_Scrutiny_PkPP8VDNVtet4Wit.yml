@@ -1,0 +1,37 @@
+name: Incisive Scrutiny
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-tellarite.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Tellarite, or Gamemaster&rsquo;s
+    permission.</p>
+
+    <p>You have a knack for finding weak spots in arguments, theories, and
+    machines alike to glean information from them, learning about things by how
+    they respond to pressure against vulnerable points. When you succeed at a
+    Task using Control or Insight, you gain one bonus Momentum, which may only
+    be used for the Obtain Information Momentum Spend.</p>
+  talenttype:
+    typeenum: species
+    description: Tellarite
+    minimum: 0
+_id: PkPP8VDNVtet4Wit
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!PkPP8VDNVtet4Wit'

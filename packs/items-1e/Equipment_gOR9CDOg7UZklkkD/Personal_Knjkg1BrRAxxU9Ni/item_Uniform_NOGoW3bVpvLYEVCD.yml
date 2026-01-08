@@ -1,0 +1,37 @@
+name: Uniform
+type: item
+img: systems/sta/assets/compendia/icons/items-core/uniform_gold.webp
+effects: []
+folder: Knjkg1BrRAxxU9Ni
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Standard Issue</strong></p>
+
+    <p>All characters naturally receive their uniforms. The precise style of
+    uniform will vary based on the era, and on the preferences of the Commanding
+    Officer. Individual characters may have alterations or additional elements
+    on their uniforms &mdash; such as a devotional earring for Bajorans, or a
+    lab coat for medical personnel &mdash; as required. Characters will receive
+    duty uniforms appropriate for their department and their duties, as well as
+    a dress uniform for formal occasions.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: NOGoW3bVpvLYEVCD
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!NOGoW3bVpvLYEVCD'

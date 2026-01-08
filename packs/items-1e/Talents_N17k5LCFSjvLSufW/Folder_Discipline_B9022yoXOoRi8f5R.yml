@@ -1,0 +1,18 @@
+type: Item
+folder: N17k5LCFSjvLSufW
+name: Discipline
+color: null
+sorting: a
+_id: B9022yoXOoRi8f5R
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  lastModifiedBy: null
+_key: '!folders!B9022yoXOoRi8f5R'

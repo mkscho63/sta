@@ -1,0 +1,38 @@
+folder: lWBHbmoPN9FHtgLe
+name: Point Defense System
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+system:
+  description: >-
+    <p>The ship is equipped with a system of small energy&nbsp;weapon emitters
+    that operates independently from the main weapons systems. When a torpedo
+    targets the ship, these emitters start firing in the direction the torpedo
+    is traveling from, potentially destroying it before it impacts the shields
+    or the ship&rsquo;s hull.</p>
+
+    <p><br>This system does not function while the ship is travelling at warp.
+    The ship is considered to have Cover against torpedo attacks, increasing the
+    Difficulty of the attack by 1. This talent stops functioning if the ship has
+    suffered one or more breaches to the Weapons system.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: DXgzQhZa6BaKg9oP
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!DXgzQhZa6BaKg9oP'

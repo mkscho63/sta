@@ -1,0 +1,36 @@
+folder: lWBHbmoPN9FHtgLe
+name: Expanded Emergency Medical Facilities
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>Whenever a character attempts a task to identify specific&nbsp;illnesses
+    or injuries, or to determine the severity of a patient&rsquo;s condition,
+    they may diagnose a number of patients equal to the ship&rsquo;s Medical
+    rating. If the character also has the Triage talent, they may diagnose two
+    additional patients by spending 1 Momentum (Repeatable).</p>
+
+    <p><br>During an extended task to process and treat many sick or injured
+    patients, a character aboard the ship increases their Impact by 1.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dArrsr5nrlkxK0Bz
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!dArrsr5nrlkxK0Bz'

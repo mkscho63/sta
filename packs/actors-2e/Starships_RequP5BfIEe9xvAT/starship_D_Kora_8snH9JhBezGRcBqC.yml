@@ -1,0 +1,414 @@
+folder: RequP5BfIEe9xvAT
+name: D'Kora
+type: starship
+img: systems/sta/assets/compendia/ships/ferengi/d-kora-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: By the mid-24th century, the Ferengi Alliance had expanded
+    across multiple sectors. The vast range of societies and species it
+    encountered meant the Alliance, while heavily centralized in the Ferenginar
+    system, had to maintain the ever-growing trade lanes as well as ensure the
+    markets would stay linked to the homeworld, through free trade or by force.
+    The Ferengi Congress of Economic Advisors levied a tax on all non-Ferengi
+    economic activity to begin construction of the D’Kora-class marauder.
+    Ferenginar had no active force like Starfleet, but the Congress would
+    provide a letter of marque to any free trader willing to captain and crew a
+    vessel for the good of the Alliance. D’Kora marauders quickly became a
+    symbol of the Ferengi Alliance across the Alpha and Beta Quadrants, feared
+    for their weaponry and the economic exploitation that would occur in their
+    presence.</p>
+
+    <p>CAPABILITIES: The D’Kora needed a large amount of its internal volume as
+    mission adaptable space, but the vast majority of commanding officers used
+    this space as cargo storage. The standard production vessel included a
+    unique system tied to the vessel’s warp coils. If these warp coils were
+    purposely put out of alignment and charged, the plasma could be discharge as
+    a powerful electromagnetic pulse, disrupting a hostile ship’s systems and
+    defensive shielding, and, in a best case, render the other ship powerless
+    and available for acquisition.</p>
+
+    <p>REFITS AND VARIANTS: The Ferengi Alliance stayed out of the Dominion War
+    except for arms sales to both sides. Trading in war zones can be hazardous
+    to the safety of one’s ship, thus the Alliance put forth a rare regulation
+    to improve the marauder’s shielding, structural integrity fields, and other
+    safety equipment.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Espionage/Intelligence, Pathfinder and
+    Reconnaissance, Tactical Operations, Technical Testbed.</p>
+
+    <p>NAMING CONVENTIONS: D’Kora-class maruaders take&nbsp;names from their
+    commanding officers or their loved ones, or the limited liability companies
+    they are owned by.</p>
+  crew:
+    value: 0
+    max: 5
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 5
+  scale: 5
+  shields:
+    value: 0
+    max: 15
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2350'
+  spaceframe: D'Kora
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 9
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 8
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 10
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 9
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 10
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 7
+      selected: false
+      breaches: 0
+  traits: Ferengi Starship, D’Kora class, Marauder, The Best Latinum Can Buy
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: D'Kora
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/ferengi/d-kora-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 4)
+    type: item
+    _id: iv80DceNqJpnucOc
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!8snH9JhBezGRcBqC.iv80DceNqJpnucOc'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Banks
+    type: starshipweapon2e
+    _id: UhwmTUofbhFJNU9A
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!8snH9JhBezGRcBqC.UhwmTUofbhFJNU9A'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Electromagnetic or Ionic Cannon
+    type: starshipweapon2e
+    _id: nSARgKpcxl733bXh
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-cannon.svg
+    system:
+      description: >-
+        <p>Electromagnetic or ionic weapons can disrupt power systems, draining
+        power from the ships they hit.</p>
+
+        <p>Compact weapon systems designed to produce short, powerful pulses or
+        bolts of energy at the target.</p>
+      damage: 2
+      range: close
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: true
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: true
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!8snH9JhBezGRcBqC.nSARgKpcxl733bXh'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Disruptor Banks
+    type: starshipweapon2e
+    _id: 9M9yAZEslU5ZOM06
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-bank.svg
+    system:
+      description: >-
+        <p>Disruptors are potent, damaging weapons favored by Klingons,
+        Romulans, and a variety of other civilizations&rsquo; fleets.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!8snH9JhBezGRcBqC.9M9yAZEslU5ZOM06'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 8snH9JhBezGRcBqC
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!8snH9JhBezGRcBqC'

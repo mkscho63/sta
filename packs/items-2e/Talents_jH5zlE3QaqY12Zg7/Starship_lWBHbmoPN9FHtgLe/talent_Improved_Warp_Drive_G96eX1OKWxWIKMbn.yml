@@ -1,0 +1,31 @@
+folder: lWBHbmoPN9FHtgLe
+name: Improved Warp Drive
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>Whenever the ship takes the Warp major action, roll a&nbsp;d20; if you
+    roll equal to or under the ship&rsquo;s Engines, you do not spend Reserve
+    Power for the ship.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: G96eX1OKWxWIKMbn
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!G96eX1OKWxWIKMbn'

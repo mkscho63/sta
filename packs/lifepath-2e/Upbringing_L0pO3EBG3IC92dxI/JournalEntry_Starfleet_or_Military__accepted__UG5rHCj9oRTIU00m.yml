@@ -1,0 +1,71 @@
+name: Starfleet or Military (accepted)
+pages:
+  - sort: 100000
+    name: Starfleet or Military (accepted)
+    type: text
+    _id: MFmhulBEixsACziD
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character’s family may have a strong tradition of naval service,
+        with at least one member of the family in every generation serving their
+        people in this way. Perhaps both the character’s parents served in the
+        military, who met in service. Either way, the character’s formative
+        years were influenced by a military life. In the Federation, this will
+        normally refer to Starfleet, but it may just as easily apply to groups
+        like the Bajoran Militia, the Andorian Imperial Guard, the Klingon
+        Defense Fleet, Imperial Romulan Navy, or any of a number of other
+        military forces.</p><p></p><p>ATTRIBUTES</p><p>If the character accepted
+        this Upbringing, the orderly, purposeful life increases their Control by
+        2 and their Fitness by 1.</p><p></p><p>DEPARTMENTS, FOCUS, AND
+        TALENT</p><p>The character’s exposure to the ways and traditions of
+        Starfleet allows them to increase any one department rating by
+        1.</p><p>The character’s focus should relate to their connection to
+        Starfleet, covering skills learned during the character’s formative
+        years. Examples include: Astronavigation, Composure, Extra-Vehicular
+        Activity, Hand-to-Hand Combat (may be renamed to a specific martial
+        art), Hand Phasers, Small Craft, Starfleet Protocol, Starship
+        Recognition, or History.</p><p>The character also gains a single
+        talent.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!UG5rHCj9oRTIU00m.MFmhulBEixsACziD'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452028706
+  modifiedTime: 1765452028706
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: L0pO3EBG3IC92dxI
+categories: []
+_id: UG5rHCj9oRTIU00m
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!UG5rHCj9oRTIU00m'

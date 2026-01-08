@@ -1,0 +1,36 @@
+name: Backup EPS Conduits
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-power.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The ship&rsquo;s power conduits have additional redundancies, which can
+    be activated to reroute power more easily in case of an emergency, keeping
+    it from being lost when the ship is damaged. Whenever the ship would lose
+    one or more Power because of suffering damage, roll Challenge Dice for each
+    Power lost. Each Effect rolled prevents the loss of that point of Power.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: duQ4dh7XT7RsUW5q
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!duQ4dh7XT7RsUW5q'

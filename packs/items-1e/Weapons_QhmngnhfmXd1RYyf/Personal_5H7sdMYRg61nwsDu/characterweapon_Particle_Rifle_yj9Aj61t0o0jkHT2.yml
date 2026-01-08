@@ -1,0 +1,50 @@
+name: Particle Rifle
+type: characterweapon
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Standard Issue</strong></p>
+
+    <p>Particle rifles were early forms of directed energy weapon used before
+    the development of phasers. The most advanced designs of particle rifle were
+    those produced for United Earth MACO forces in the 22nd century.</p>
+  damage: 4
+  range: ranged
+  hands: 2
+  qualities:
+    area: false
+    intense: false
+    knockdown: false
+    accurate: true
+    charge: false
+    cumbersome: false
+    deadly: false
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 0
+  opportunity: null
+  escalation: null
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: yj9Aj61t0o0jkHT2
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!yj9Aj61t0o0jkHT2'

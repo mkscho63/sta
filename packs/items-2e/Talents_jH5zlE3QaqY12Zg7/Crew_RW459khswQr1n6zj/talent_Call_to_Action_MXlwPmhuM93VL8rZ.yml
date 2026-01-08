@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Call to Action
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>In a conflict, you may use the Prepare minor action to grant one ally who
+    you can communicate with a minor&nbsp;action of their choice, which they
+    perform immediately.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: MXlwPmhuM93VL8rZ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!MXlwPmhuM93VL8rZ'

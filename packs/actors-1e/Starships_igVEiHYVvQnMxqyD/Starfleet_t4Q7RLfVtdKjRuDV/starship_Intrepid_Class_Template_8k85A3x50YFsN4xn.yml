@@ -1,0 +1,621 @@
+name: Intrepid Class Template
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/intrepid-token.webp
+system:
+  notes: >-
+    <p><strong>Entered Service:</strong> 2371</p>
+
+    <p><strong>Overview:</strong> By the mid-2360s the success and failures of
+    the Galaxy class were clear to Starfleet. Its large size and crew along with
+    increasing use as a diplomatic vessel rather than exploratory craft made
+    engineers in Starfleet begin designing the next great explorer, the Intrepid
+    class. This first of its class was launched in 2371 to great fanfare and was
+    quickly seen by the Federation Science Council as a valuable resource. It is
+    small compared to the Galaxy class, more closely resembling a Constitution
+    class, but contains the best technology available to the Federation.</p>
+
+    <p><strong>Capabilities:</strong> The sleek curves of the Intrepid class
+    weren&rsquo;t just a stylistic choice, they assisted the variable geometry
+    warp nacelles in producing a tight warp field over the starship with a steep
+    and stable field gradient in even turbulent space-time conditions, giving
+    these vessels both an impressive warp acceleration and stability. These
+    features, along with the vessels primary class-9 warp drive and its
+    secondary warp assembly allowed the class an impressive top speed of warp
+    9.975. While its sustained warp speeds are considerably slower, they are
+    still fast enough to allow Starfleet to hail the design as its new
+    deep-space explorer. To aid in this role, Intrepid-class vessels are also
+    equipped with the best technology in the Federation, including the newest
+    generation of multi-spectral subspace sensors linked into the most powerful
+    shipboard computer yet in service in Starfleet. This computing power is
+    possible through a breakthrough in the use of bio-neural circuitry, allowing
+    the vessels&rsquo; computer to form information connections in a faster and
+    more natural way, giving the main computer the unique ability to adapt to
+    new and confusing situations as well as improvise solutions much like
+    sentient life-forms. This increased computer power allows the Intrepid class
+    more automation than many Starfleet vessels, keeping the typical crew
+    rosters down to between 130&ndash;150 officers and crew. As it&rsquo;s a
+    deep-space exploratory vessel, all Intrepid-class starships have an
+    impressive amount of tactical systems as standard, the reasoning being that
+    it would be operating far from any other allied starships and may need to
+    defend itself against multiple attackers. The Intrepid class has thirteen
+    type-10 phaser strips, an additional four type 8 phaser emitters, and five
+    torpedo launchers (two forward, two aft, and one ventral launcher that is
+    typically only loaded with probes). To further planetary exploration, all
+    Intrepid-class vessels are assigned at least four type-6 or type-8
+    shuttlecraft in addition to the class-specific aeroshuttle that is located
+    on the ventral side of the primary hull. For crew recreation, new high
+    resolution holo-emitters and integrated replicator systems made holodecks
+    power efficient and able to create permanent matter in the simulation to
+    prevent continual holo-emitter use and degradation. These same holo-emitters
+    are also installed in the sickbay, allowing the new Emergency Medical
+    Hologram system (EMH) to assist medical personnel when they require it.</p>
+  crew:
+    value: 0
+    max: 4
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 2
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 11
+    max: 11
+  refit: ''
+  resistance: 4
+  scale: 4
+  shields:
+    value: 8
+    max: 8
+  servicedate: ''
+  spaceframe: Intrepid Class
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 10
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 11
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 11
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 10
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 8
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: ''
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+prototypeToken:
+  name: Intrepid Class Template
+  displayName: 30
+  actorLink: false
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/intrepid-token.webp
+    scaleX: 1.1
+    scaleY: 1.1
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 2.5
+  height: 2.5
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 30
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Phaser Arrays - Area (Scale 4)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array-area.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Arrays are long strips of linked emitters that share a power feed,
+        allowing the ship to fire from any point along the strip. This allows
+        the ship to fire in multiple directions at once, or to adjust and fire
+        on moving targets repeatedly in quick succession. Arrays have a Range
+        category of Medium. Further, when declaring the target of an attack with
+        an Array, the attacking character may choose to grant one of the Area or
+        Spread effects to the attack.</p>
+
+        <p><strong>Area:</strong> The attack affects a wider area, and can
+        affect several targets at once. The attack automatically affects any
+        vessel or damageable object within Contact of the initial target, and
+        then one additional target within Close range of the initial target for
+        each Effect rolled, starting with the next closest (as determined by the
+        GM). If one or more Complications is rolled when using an Area attack,
+        the GM may choose to use Complications to have an allied vessel or
+        neutral bystander in the area affected by the attack. A target cannot be
+        hit if it would have been more difficult to hit than the initial
+        target.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 4
+      range: Medium
+      qualities:
+        area: true
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: sZvkNR1yFKTAZPOe
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.sZvkNR1yFKTAZPOe'
+  - name: Phaser Arrays - Spread (Scale 4)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array-spread.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Arrays are long strips of linked emitters that share a power feed,
+        allowing the ship to fire from any point along the strip. This allows
+        the ship to fire in multiple directions at once, or to adjust and fire
+        on moving targets repeatedly in quick succession. Arrays have a Range
+        category of Medium. Further, when declaring the target of an attack with
+        an Array, the attacking character may choose to grant one of the Area or
+        Spread effects to the attack.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 4
+      range: Medium
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: V82c8VaIRgjC3tOw
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.V82c8VaIRgjC3tOw'
+  - name: Photon Torpedo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+      damage: 3
+      range: Long
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 1
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: skBRHn9pJgev87pa
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.skBRHn9pJgev87pa'
+  - name: Photon Torpedo Salvo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p>Torpedoes may be fired in a salvo: a volley of several torpedoes,
+        intended to have a much greater effect. Firing a salvo of torpedoes adds
+        2 Threat to the pool, along with the 1 point of Threat for a torpedo
+        attack, for a total of 3 Threat. Firing a salvo of torpedoes adds +3 to
+        Threat instead of +1, but it increases the attack&rsquo;s damage by +1
+        Challenge Die, and grants the Spread effect to the attack.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually</p>
+      damage: 4
+      range: Long
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 3
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: CFyiCHOsAvcGIOiq
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.CFyiCHOsAvcGIOiq'
+  - name: Tractor Beam (Strength 3)
+    type: item
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The tactical officer engages a tractor beam at a nearby object or
+        vessel. This requires a <strong>Control + Security</strong> Task,
+        assisted by the ship&rsquo;s <strong>Structure + Security</strong> with
+        a Difficulty of 2, and can only be directed at a target within Close
+        range. If successful, the target vessel is immobilized and cannot move
+        unless it can break free, using their shield modulations, the raw power
+        of their engines, or disabling the tractor beam emitter (a Task in its
+        own right), with a Difficulty of 3.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: DYlLAYKeQJpUG0GW
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.DYlLAYKeQJpUG0GW'
+  - name: Improved Warp Drive
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The ship&rsquo;s warp drive is more efficient, capitalizing on
+        improved field dynamics, better control of antimatter flow rates, or
+        some other advancement that allows the ship to expend less energy when
+        travelling at warp. Whenever the ship spends Power to go to warp, roll 1
+        Challenge Die for each Power spent; for each Effect rolled, that point
+        of Power is not spent.</p>
+      talenttype:
+        typeenum: general
+        description: security
+        minimum: 3
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: tAPCM19N5f4kDWoa
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.tAPCM19N5f4kDWoa'
+  - name: Advanced Sensor Suites
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The vessel&rsquo;s sensors are amongst the most sophisticated and
+        advanced available in the fleet. Unless the ship&rsquo;s Sensors have
+        suffered one or more Breaches, whenever a character performs a Task
+        assisted by the ship&rsquo;s Sensors, they may reduce the Difficulty of
+        the Task by one, to a minimum of 0.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: tzAzDahlwBYcdqoh
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.tzAzDahlwBYcdqoh'
+  - name: Emergency Medical Hologram
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> 2371 or later</p>
+
+        <p>The ship&rsquo;s sickbay is equipped with holoemitters and a
+        stateof-the-art holographic doctor, able to assist medical personnel
+        during emergencies. The ship has one additional Supporting Character, an
+        Emergency Medical Hologram, using the Attributes, Disciplines, and so
+        forth as shown in the sidebar, which does not cost any Crew Support to
+        introduce, and which does not automatically improve when introduced.
+        This character cannot go into any location not equipped with
+        holoemitters.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: tgrPELW6fJjrUumI
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!8k85A3x50YFsN4xn.tgrPELW6fJjrUumI'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450397815
+  modifiedTime: 1765450397815
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: t4Q7RLfVtdKjRuDV
+_id: 8k85A3x50YFsN4xn
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!8k85A3x50YFsN4xn'

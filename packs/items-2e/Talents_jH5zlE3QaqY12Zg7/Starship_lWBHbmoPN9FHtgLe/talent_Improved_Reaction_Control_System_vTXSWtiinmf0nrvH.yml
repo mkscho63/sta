@@ -1,0 +1,30 @@
+folder: lWBHbmoPN9FHtgLe
+name: Improved Reaction Control System
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>Whenever the ship attempts to move through difficult&nbsp;terrain, reduce
+    the Momentum cost of the difficult terrain by 1, to a minimum of 0.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: vTXSWtiinmf0nrvH
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!vTXSWtiinmf0nrvH'

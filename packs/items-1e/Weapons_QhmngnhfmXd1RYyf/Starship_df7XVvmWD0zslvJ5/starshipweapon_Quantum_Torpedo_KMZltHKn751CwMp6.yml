@@ -1,0 +1,55 @@
+name: Quantum Torpedo
+type: starshipweapon
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-quantum-torpedo.svg
+system:
+  description: >-
+    <p>Quantum torpedoes are a recent development by the Federation, though
+    others have made similar developments. They&rsquo;re more powerful than
+    photon torpedoes, though the way they achieve this is classified. They have
+    a base Damage of 4 Challenge Dice Vicious 1, with the Calibration and
+    High-Yield Qualities.</p>
+
+    <p><strong>Calibration:</strong> The weapon requires careful calibration
+    before firing. The weapon cannot be used to attack unless a <em>Prepare
+    </em>Minor Action is performed during the same Turn.</p>
+
+    <p><strong>High-Yield:</strong> The weapon inflicts massive damage to enemy
+    vessels; if the Attack inflicts one or more Breaches to a system, it
+    inflicts one additional Breach.</p>
+  damage: 4
+  range: long
+  qualities:
+    area: false
+    spread: false
+    dampening: false
+    calibration: true
+    devastating: false
+    highyield: true
+    persistentx: 0
+    piercingx: 0
+    viciousx: 1
+    hiddenx: 0
+    versatilex: 0
+  opportunity: null
+  escalation: 1
+  includescale: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450919428
+  modifiedTime: 1765450919428
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: df7XVvmWD0zslvJ5
+_id: KMZltHKn751CwMp6
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!KMZltHKn751CwMp6'

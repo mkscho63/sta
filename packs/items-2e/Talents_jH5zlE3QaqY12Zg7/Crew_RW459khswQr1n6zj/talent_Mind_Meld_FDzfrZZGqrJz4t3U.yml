@@ -1,0 +1,37 @@
+folder: RW459khswQr1n6zj
+name: Mind Meld
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-vulcan.svg
+system:
+  description: >-
+    <p>You&rsquo;ve undergone training in telepathic techniques that allow the
+    melding of minds through physical contact. This always requires a task
+    (normally Control + Sciences) with a Difficulty of at least 1, which can be
+    opposed by an unwilling participant. If successful, you link minds with the
+    participant, sharing thoughts and memories. Momentum may be spent to gain
+    more information or perform deeper telepathic exchanges. This link goes both
+    ways, and it is a tiring and potentially hazardous process. Complications
+    can result in taking Stress, pain, disorientation, or lingering emotional
+    or&nbsp;behavioral difficulties.</p>
+  talenttype:
+    typeenum: species
+    description: Vulcan
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: FDzfrZZGqrJz4t3U
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!FDzfrZZGqrJz4t3U'

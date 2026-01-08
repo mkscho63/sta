@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Bargain
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>When you use Negotiation to make an offer to someone during social
+    conflict, you may re-roll a single d20 on your next Persuade task to
+    convince that person. If the&nbsp;social conflict with that person involves
+    an extended task, your Impact is increased by 1.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: gwrNeoAdUiQgILXR
+ownership:
+  default: 0
+sort: 0
+_key: '!items!gwrNeoAdUiQgILXR'

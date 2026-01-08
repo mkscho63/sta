@@ -1,0 +1,26 @@
+name: Logic is the beginning, not the end, of wisdom
+type: value
+img: systems/sta/assets/compendia/icons/values-core/value-vulcan.svg
+system:
+  description: ''
+  used: false
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450946891
+  modifiedTime: 1765450946891
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: ZJr0gR5cWuowPaJB
+_id: eVfwSX7qUEBQp2JF
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!eVfwSX7qUEBQp2JF'

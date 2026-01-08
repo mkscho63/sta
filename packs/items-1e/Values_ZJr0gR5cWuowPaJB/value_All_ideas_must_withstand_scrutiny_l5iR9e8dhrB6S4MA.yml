@@ -1,0 +1,25 @@
+name: All ideas must withstand scrutiny
+type: value
+img: systems/sta/assets/compendia/icons/values-core/value-tellarite.svg
+effects: []
+folder: ZJr0gR5cWuowPaJB
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450946891
+  modifiedTime: 1765450946891
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: ''
+  used: false
+_id: l5iR9e8dhrB6S4MA
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!l5iR9e8dhrB6S4MA'

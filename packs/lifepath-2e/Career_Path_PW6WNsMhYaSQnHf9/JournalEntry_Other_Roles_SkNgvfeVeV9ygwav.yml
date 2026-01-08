@@ -1,0 +1,304 @@
+name: Other Roles
+pages:
+  - sort: 100000
+    name: Other Roles
+    type: text
+    _id: LX21XyeiVZf1f0zg
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Not all characters serve in Starfleet or in other civilization’s
+        space exploration organizations. Review the list of additional roles
+        below and select one as desired.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SkNgvfeVeV9ygwav.LX21XyeiVZf1f0zg'
+  - sort: 200000
+    name: Bodyguard
+    type: text
+    _id: CbbaoNg3cmfUu17G
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You specialize in personal security, protecting an individual,
+        whether a paying client, or someone you were assigned to. Militaries
+        tend not to employ specific bodyguards in this sense, but they may have
+        specialists trained in protecting important personnel—ambassadors,
+        admirals, political figures, and similar—as needed.</p><p></p><p>ROLE
+        BENEFIT: Choose a single character—another player character or an
+        NPC—who you are assigned to protect. When you are in the same zone as
+        that character, you may spend 1 Momentum (Immediate) when that character
+        is attacked to have the Attack target you instead. If you do this, the
+        attack’s Difficulty is increased by 1.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SkNgvfeVeV9ygwav.CbbaoNg3cmfUu17G'
+  - sort: 300000
+    name: Expert
+    type: text
+    _id: XIGFwQDnM1RxHNjL
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You are an expert in a particular field, working alongside the crew
+        to consult upon a matter related to your expertise. You are highly
+        specialized and extremely capable in your chosen field, but this may
+        lead you to ignore or overlook things that fall outside your knowledge
+        or result in an obsession that causes you to prioritize your work over
+        other concerns.</p><p></p><p>ROLE BENEFIT: You gain one additional
+        value, which must reflect the importance of your work to you. In
+        addition, select one of your focuses—this is the field you are an expert
+        in. When you use this focus on a task and succeed, you generate 1 bonus
+        Momentum (bonus Momentum may not be saved).</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SkNgvfeVeV9ygwav.XIGFwQDnM1RxHNjL'
+  - sort: 400000
+    name: Intelligence Agent
+    type: text
+    _id: 8VryGZAqWRFjAeD6
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You are not a traditional part of the fleet. Instead, you are an
+        operative of the intelligence services of your civilization. You are
+        charged with gathering information from places and people that don’t
+        want their information gathered, and you achieve this through a
+        combination of your own skills and the network of informants and
+        contacts you have cultivated.</p><p></p><p>ROLE BENEFIT: Once per
+        adventure, you may create a trait without requiring a task or spending
+        any Momentum, Threat, or Determination. This trait must reflect
+        information, physical resources, or access to a location (such as access
+        codes or identification data) provided to you by a contact or by your
+        agency.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SkNgvfeVeV9ygwav.8VryGZAqWRFjAeD6'
+  - sort: 500000
+    name: Merchant
+    type: text
+    _id: caNFulIJqEtx5A0s
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You’re a merchant or trader, exchanging valuable goods for latinum or
+        other goods. Even in the Federation, merchants are necessary for
+        ensuring resources can easily move from place to place. The Federation
+        and its members maintain reserves of latinum and other precious
+        commodities to allow them to trade with other civilizations. In a
+        practical sense, merchants are well-connected and often have access to
+        unusual items or specialized resources not usually
+        available.</p><p></p><p>ROLE BENEFIT: Once per adventure, you can ignore
+        the opportunity costs on up to three items of equipment being acquired
+        by other player characters. You may even allow other player characters
+        to obtain items not normally available to them (such as disruptors to a
+        Starfleet crew, or items which are restricted or illegal), though you
+        add 1 Threat for each such item provided.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SkNgvfeVeV9ygwav.caNFulIJqEtx5A0s'
+  - sort: 600000
+    name: Political Liaison
+    type: text
+    _id: n2zsuGe6QgxZuoNv
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You serve as a representative of a government, representing their
+        needs and interests during the operations of the crew, and providing the
+        crew with a means of communicating with that government in turn. This is
+        often the case where multiple groups are required to coexist, such as a
+        Starfleet facility operating close to an allied non-Federation world, or
+        as part of a joint operation between Starfleet and Klingon Defense Force
+        personnel.</p><p></p><p>ROLE BENEFIT: You represent the official
+        government your organization belongs to—i.e., if you are a member of the
+        Bajoran Militia, you represent the current Bajoran government. You gain
+        an additional Directive, which only applies to you, which reflects the
+        political stance of the government you represent.</p><p>Your gamemaster
+        will work with you to determine the wording of this Directive. It serves
+        to provide you with a source of complications and potential restrictions
+        when acting against the interests of your government, and benefits when
+        you are acting with the full support of your superiors.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SkNgvfeVeV9ygwav.n2zsuGe6QgxZuoNv'
+  - sort: 700000
+    name: Translator
+    type: text
+    _id: FP8Ax2VjNKytVfZS
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You are an expert in language and communication. While the
+        development of the universal translator has reduced the need for
+        translators during daily life in the 23rd and 24th centuries, there are
+        still situations which call for experts in linguistics. Encounters with
+        new cultures often require support from xenolinguistics experts to
+        smooth over any problems that the universal translator has, particularly
+        if a culture has an unusual style or method of communication. Similarly,
+        archaeological research often requires piecing together extinct
+        languages from evidence in ways that can’t easily be
+        automated.</p><p></p><p>ROLE BENEFIT: When attempting to read,
+        understand, or speak a language unfamiliar to you, you may spend 2
+        Momentum (Immediate) to piece together a basic understanding of that
+        language immediately, enough to convey simple ideas. This allows social
+        tasks to be attempted in this language, but the complication range of
+        these tasks is increased to 18–20. Deeper study, at the gamemaster’s
+        discretion, allows you to remove this penalty and discuss more complex
+        ideas.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SkNgvfeVeV9ygwav.FP8Ax2VjNKytVfZS'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451988240
+  modifiedTime: 1765451988240
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: PW6WNsMhYaSQnHf9
+categories: []
+_id: SkNgvfeVeV9ygwav
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!SkNgvfeVeV9ygwav'

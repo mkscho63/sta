@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Voice of Authority
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>When you Assist someone, and use your Presence to do so, you may add 2
+    Threat to treat your assistance die as&nbsp;if it had rolled a 1 instead of
+    rolling it.</p>
+  talenttype:
+    typeenum: attribute
+    description: presence
+    minimum: 11
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: LmZHWrM8gMKPZNRD
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!LmZHWrM8gMKPZNRD'

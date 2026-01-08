@@ -1,0 +1,37 @@
+name: Improved Warp Drive
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The ship&rsquo;s warp drive is more efficient, capitalizing on improved
+    field dynamics, better control of antimatter flow rates, or some other
+    advancement that allows the ship to expend less energy when travelling at
+    warp. Whenever the ship spends Power to go to warp, roll 1 Challenge Die for
+    each Power spent; for each Effect rolled, that point of Power is not
+    spent.</p>
+  talenttype:
+    typeenum: general
+    description: security
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: CKaZN1Ip31okyL2f
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!CKaZN1Ip31okyL2f'

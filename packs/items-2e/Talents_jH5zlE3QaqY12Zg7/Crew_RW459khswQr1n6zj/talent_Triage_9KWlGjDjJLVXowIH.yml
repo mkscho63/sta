@@ -1,0 +1,30 @@
+folder: RW459khswQr1n6zj
+name: Triage
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>When you attempt a task to identify specific Injuries&nbsp;or illnesses,
+    or to determine the severity of a patient&rsquo;s condition, you may spend 1
+    Momentum (Repeatable) to diagnose one additional patient.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 9KWlGjDjJLVXowIH
+ownership:
+  default: 0
+sort: 0
+_key: '!items!9KWlGjDjJLVXowIH'

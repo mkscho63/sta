@@ -1,0 +1,45 @@
+folder: RW459khswQr1n6zj
+name: Navigator
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-flight-controller.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>On vessels exploring the uncharted frontiers of space, a skilled
+    navigator, astrometrics officer, or stellar cartographer plots courses,
+    studies and updates astrometrics charts and data, and supports the helmsman
+    or flight controller. Navigators are rarely called to serve on the senior
+    staff.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: When you attempt a science task related to astrophysics or
+    stellar navigation, you may use your Conn rating instead of Science. When
+    you attempt or Assist a task to maneuver a starship through difficult or
+    dangerous terrain, you may spend 1 Momentum to ignore a complication
+    suffered (Repeatable).</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: gDItWTpcIFIbIxAm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!gDItWTpcIFIbIxAm'

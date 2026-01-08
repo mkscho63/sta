@@ -1,0 +1,39 @@
+name: Chronometer
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>The chronometer is a useful device that has far more functionality than a
+    clock, as its name suggests. A chronometer records the passing of time in
+    the universe outside of the immediate vicinity of the device. This is
+    accomplished by monitoring hundreds of pulsars and standing gravity waves in
+    subspace with accuracy down to nearly Planck-time scales. Comparison of a
+    chronometer and a local &lsquo;ships clock&rsquo; is what allows crews to
+    monitor for relativistic effects and any strange occurrences in space-time.
+    Hand-held chronometers allow for a more localized monitoring of spacetime in
+    a smaller more humanoid sized space around the user rather than ship-mounted
+    chronometers.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: 5GO038BJGngS0fR5
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!5GO038BJGngS0fR5'

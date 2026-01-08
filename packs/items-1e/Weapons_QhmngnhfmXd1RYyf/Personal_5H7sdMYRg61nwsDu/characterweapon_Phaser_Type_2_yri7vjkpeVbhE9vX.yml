@@ -1,0 +1,53 @@
+name: Phaser Type-2
+type: characterweapon
+img: systems/sta/assets/compendia/icons/weapons-core/phaser-type-2.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Standard Issue</strong></p>
+
+    <p>Phaser Type-2 refers to the larger form of hand phaser, carried by
+    security personnel and Starfleet officers going into dangerous environments.
+    Versions used in the 23rd century are a pistol grip attachment that can be
+    fitted to a phaser type-1, with a secondary power cell to increase output.
+    24th century hand phasers are a distinct design, with a curved ergonomic
+    grip.</p>
+  damage: 3
+  range: ranged
+  hands: 1
+  qualities:
+    area: false
+    intense: false
+    knockdown: false
+    accurate: false
+    charge: true
+    cumbersome: false
+    deadly: false
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 0
+  opportunity: null
+  escalation: null
+_id: yri7vjkpeVbhE9vX
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!yri7vjkpeVbhE9vX'

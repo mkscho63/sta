@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Constant Presence
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Supporting character only, must have at least two values
+    and at least two other talents</p>
+
+    <p><br>You&rsquo;re a regular fixture of away missions and other important
+    work, relied upon by the senior staff for your expertise and judgment.
+    Introducing this supporting character in subsequent adventures no longer
+    costs Crew Support, and the supporting character gains 1 Determination the
+    first time they are used in an adventure.</p>
+  talenttype:
+    typeenum: general
+    description: leaders
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 55xovy2U29ZAaZZm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!55xovy2U29ZAaZZm'

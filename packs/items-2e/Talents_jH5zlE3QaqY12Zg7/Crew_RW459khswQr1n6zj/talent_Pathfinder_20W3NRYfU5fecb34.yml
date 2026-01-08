@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Pathfinder
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>Whenever you attempt a task to plot a course through unknown territory,
+    reduce the Difficulty of the task by 1, 2, or 3, to a minimum of 1. For each
+    point by which you reduce the Difficulty, increase the complication range
+    of&nbsp;that task.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 20W3NRYfU5fecb34
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!20W3NRYfU5fecb34'

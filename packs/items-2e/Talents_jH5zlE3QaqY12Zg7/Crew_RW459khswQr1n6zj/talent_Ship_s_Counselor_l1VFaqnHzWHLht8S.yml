@@ -1,0 +1,47 @@
+folder: RW459khswQr1n6zj
+name: Ship's Counselor
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-ships-counsellor.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>On larger ships and starbases, it&rsquo;s common (especially in the 24th
+    century and beyond) to have personnel dedicated to the mental well-being of
+    the crew. Some captains regard them as valuable advisors, as their training
+    covers both culture and psychology, making them exceptionally good at
+    reading the moods and intentions of others.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: When you Assist a character suffering from a trait
+    representing a negative emotional state, you may re-roll your assist die.
+    Additionally, once per mission, you may spend a scene counseling a character
+    who has challenged one of their values during the current mission. At the
+    end of the scene, the character may rewrite their crossed-out value
+    immediately, rather than waiting until the end of the mission. If they do
+    this, they immediately gain 1 Determination as well.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: l1VFaqnHzWHLht8S
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!l1VFaqnHzWHLht8S'

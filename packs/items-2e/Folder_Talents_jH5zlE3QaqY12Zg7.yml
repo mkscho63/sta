@@ -1,0 +1,20 @@
+type: Item
+folder: null
+name: Talents
+color: null
+sorting: a
+_id: jH5zlE3QaqY12Zg7
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451281187
+  modifiedTime: 1765451281187
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_key: '!folders!jH5zlE3QaqY12Zg7'

@@ -1,0 +1,36 @@
+folder: vxwA3LkDPxUcWMFA
+name: Audio Receiver
+type: item
+img: systems/sta/assets/compendia/icons/plain-core/plain-comms.svg
+system:
+  description: >-
+    <p>(STANDARD ISSUE FOR COMMS OFFICER, OPPORTUNITY 1 OTHERWISE)<br>The audio
+    receiver ties into shipboard communication networks and allows the user to
+    listen to data coming across subspace frequencies typically used for
+    long-range communication and ship to surface, but also listening to computer
+    alerts and and data. The receiver can also be programmed to provide aural or
+    vibrational feedback, allowing sensor operators greater accuracy in their
+    duties. Characters using the audio receiver reduce the complication range of
+    tasks involving communications, starship operations, or sensor operations by
+    1.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: zxFAvw9t26OrOgrJ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!zxFAvw9t26OrOgrJ'

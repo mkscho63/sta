@@ -1,0 +1,36 @@
+name: Improved Reaction Control System
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> Conn 3+</p>
+
+    <p>The ship&rsquo;s maneuvering thrusters operate with greater precision,
+    allowing the ship to adjust its course more carefully. Whenever a Task to
+    move or maneuver the ship would increase in Difficulty because of obstacles
+    or hazards, reduce the Difficulty by 1 (to a minimum of the Task&rsquo;s
+    normal Difficulty).</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: 8cbKsgH6rvPwPquD
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!8cbKsgH6rvPwPquD'

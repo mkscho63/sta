@@ -1,0 +1,31 @@
+folder: lWBHbmoPN9FHtgLe
+name: Fast Targeting Systems
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-weapons.svg
+system:
+  description: >-
+    <p>When you use the Targeting Solution minor action, you&nbsp;may gain both
+    benefits: re-roll a d20 on the next attack and choose the system hit by the
+    attack.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: S5e4LC2tsKHlALMs
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!S5e4LC2tsKHlALMs'

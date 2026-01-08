@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Testing a Theory
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>When you attempt a task using Engineering or Science,&nbsp;the first
+    bonus d20 you purchase is free, so long as you succeeded at a previous task
+    covering the same scientific or technological field earlier in the same
+    adventure. If you created a trait that represents a hypothesis about an
+    unknown phenomenon, you may also re-roll one d20 on tasks related to that
+    hypothesis.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 2
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: jmNWaKGMZbBoApob
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!jmNWaKGMZbBoApob'

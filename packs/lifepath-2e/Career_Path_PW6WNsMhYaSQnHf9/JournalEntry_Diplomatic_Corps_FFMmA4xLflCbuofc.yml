@@ -1,0 +1,87 @@
+name: Diplomatic Corps
+pages:
+  - sort: 100000
+    name: Diplomatic Corps
+    type: text
+    _id: 4vn8mLYfD8Ygi5mF
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Whether you’ve spent a lifetime in politics and diplomacy, or you
+        became an honorary diplomat after an illustrious career, you are now
+        part of the network of ambassadors and envoys who connect distant worlds
+        and interstellar nations.</p><p>When entering diplomatic service, you
+        may speak on behalf of a single world, or on behalf of an interplanetary
+        entity such as the Federation. The most respected diplomats may be
+        roving ambassadors-at-large, leveraging their reputation and experience
+        to arrange summits and treaties and speak on major international
+        matters, constantly moving from place to place as the situation
+        demands.</p><p>Starfleet, and the militaries of other civilizations,
+        commonly provide protection and support for diplomatic missions, and
+        thus ambassadors can often be found on Starfleet vessels and
+        similar.</p><p></p><p>EXAMPLE CHARACTERS: Sarek (Star Trek), Curzon Dax
+        (Deep Space Nine)</p><p></p><ul><li><p>TRAIT: The character gains the
+        trait Diplomat or Ambassador. You may adjust this to reflect the
+        specifics of your diplomatic posting, noting who you represent, where
+        you’re posted, or both: for example, Federation Ambassador-at-large, or
+        Klingon Ambassador to Vulcan.</p></li><li><p>VALUE: The character gains
+        a single value, which should reflect some aspect of the character’s
+        beliefs that developed during their time in diplomatic service. Examples
+        include:</p><ul><li><p>Eventually, everyone comes back to the tableto
+        talk</p></li><li><p>The right words can shape countless
+        lives</p></li><li><p>You don’t get a better world if you don’t work for
+        it</p></li></ul></li><li><p>ATTRIBUTES: The character gains three
+        points, which may be split between two or three attributes (increase
+        three attributes by 1 each, or increase one by 2 and another by 1). The
+        character may pick these attributes freely.</p></li><li><p>DEPARTMENTS:
+        The player increases Command by 2. Then, choose any two other
+        departments, and increase them by 1 each. A character may not have any
+        department higher than 4 at this stage.</p></li><li><p>FOCUSES: The
+        character selects three focuses, at least one of which should relate to
+        whichever department was increased by 2. Examples
+        include:</p><ul><li><p>Anthropology, Composure, Diplomacy, Espionage,
+        History, Linguistics, Literature, Persuasion, Philosophy,
+        Politics</p></li></ul></li><li><p>TALENT: The character gains a single
+        talent.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!FFMmA4xLflCbuofc.4vn8mLYfD8Ygi5mF'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451988240
+  modifiedTime: 1765451988240
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: PW6WNsMhYaSQnHf9
+categories: []
+_id: FFMmA4xLflCbuofc
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!FFMmA4xLflCbuofc'

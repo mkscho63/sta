@@ -1,0 +1,37 @@
+folder: RW459khswQr1n6zj
+name: Don’t you Die on Me!
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>When a character is killed, you may spend&nbsp;Determination to make one
+    attempt to revive them. If they were killed instantly by an Attack, then
+    this may only be attempted within that scene. If the character suffered an
+    Injury and died because they didn&rsquo;t receive medical treatment in time,
+    this may be attempted before the end of the subsequent scene. This requires
+    a Daring + Medicine task, with a Difficulty of 3. If successful, the
+    character is brought back from the brink of death, though they will remain
+    Defeated for the remainder of the adventure. Failure means that your efforts
+    were unsuccessful and the character dies.</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 5
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: SQu4qkfWUQ5cC6ED
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!SQu4qkfWUQ5cC6ED'

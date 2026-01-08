@@ -1,0 +1,56 @@
+name: Learned Unique Language
+pages:
+  - sort: 100000
+    name: Learned Unique Language
+    type: text
+    _id: Lns7QSyI8oZpJXSD
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character encounters a species with an unusual form of
+        communication and learns to communicate with
+        them.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Insight</p></li><li><p>DEPARTMENT: + 1 Science</p></li><li><p>FOCUS
+        SUGGESTIONS: Linguistics, Cultural Studies, Negotiations</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!mky7bii545x6z4bq.Lns7QSyI8oZpJXSD'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: mky7bii545x6z4bq
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!mky7bii545x6z4bq'

@@ -1,0 +1,35 @@
+name: Sturdy
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-tellarite.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Tellarite.</p>
+
+    <p>You have a blend of physical resilience and mental fortitude such that
+    you&rsquo;re difficult to subdue. You reduce the cost to resist being
+    knocked prone by the Knockdown damage effect by one, to a minimum of 0, and
+    gain +1 Resistance against all non-lethal attacks</p>
+  talenttype:
+    typeenum: species
+    description: Tellarite
+    minimum: 0
+_id: HOC5m9zz0FwzQk0S
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!HOC5m9zz0FwzQk0S'

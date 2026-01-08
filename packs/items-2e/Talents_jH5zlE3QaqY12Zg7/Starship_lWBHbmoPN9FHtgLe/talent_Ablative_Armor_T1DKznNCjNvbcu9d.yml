@@ -1,0 +1,33 @@
+folder: lWBHbmoPN9FHtgLe
+name: Ablative Armor
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-structure.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 2368 onwards</p>
+
+    <p><br>The vessel&rsquo;s hull plating has an additional ablative layer that
+    disintegrates slowly under extreme temperatures. Increase the ship's
+    Resistance by 2.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: T1DKznNCjNvbcu9d
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!T1DKznNCjNvbcu9d'

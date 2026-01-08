@@ -1,0 +1,35 @@
+folder: RW459khswQr1n6zj
+name: Visit Every Star
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Conn 3+ and Science 2+</p>
+
+    <p><br>You gain an additional focus, and one of your focuses (either the one
+    gained from this talent, or an existing one) must relate to Astronavigation,
+    Stellar Cartography, or a similar field of space science. Further, when you
+    succeed at a navigation-related task, you gain 1 bonus Momentum due to your
+    knowledge and familiarity. Bonus Momentum cannot be saved.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: M4CHFw7CElbMuFT6
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!M4CHFw7CElbMuFT6'

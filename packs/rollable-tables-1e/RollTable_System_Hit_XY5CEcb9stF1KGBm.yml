@@ -1,0 +1,154 @@
+name: System Hit
+img: systems/sta/assets/compendia/icons/plain-core/plain-ship.svg
+description: >-
+  Used to determine which system is hit, when the ship suffers 5 or more points
+  of damage (after reduction from Resistance).
+results:
+  - type: document
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    img: systems/sta/assets/compendia/icons/damage-core/damage-hit-comms.svg
+    _id: damesZZYs1V37Ivp
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Communications (Impact)
+    documentUuid: Compendium.sta-compendia.damage-core.bnLXKiaYMfYizFNW
+    description: ''
+    _key: '!tables.results!XY5CEcb9stF1KGBm.damesZZYs1V37Ivp'
+  - type: document
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    img: systems/sta/assets/compendia/icons/damage-core/damage-hit-computers.svg
+    _id: kPBzxYltGYI2R8m2
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Computer (Impact)
+    documentUuid: Compendium.sta-compendia.damage-core.bTHhwoTP5G0VMQTl
+    description: ''
+    _key: '!tables.results!XY5CEcb9stF1KGBm.kPBzxYltGYI2R8m2'
+  - type: document
+    weight: 1
+    range:
+      - 3
+      - 6
+    drawn: false
+    img: systems/sta/assets/compendia/icons/damage-core/damage-hit-engines.svg
+    _id: psPVaq8G3rXG6okK
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Engines (Impact)
+    documentUuid: Compendium.sta-compendia.damage-core.aC7sTtfWayRI7QRK
+    description: ''
+    _key: '!tables.results!XY5CEcb9stF1KGBm.psPVaq8G3rXG6okK'
+  - type: document
+    weight: 1
+    range:
+      - 7
+      - 9
+    drawn: false
+    img: systems/sta/assets/compendia/icons/damage-core/damage-hit-sensors.svg
+    _id: B0JUkC03BgDnjy3x
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Sensors (Impact)
+    documentUuid: Compendium.sta-compendia.damage-core.pBLgluChBqLSr0wg
+    description: ''
+    _key: '!tables.results!XY5CEcb9stF1KGBm.B0JUkC03BgDnjy3x'
+  - type: document
+    weight: 1
+    range:
+      - 10
+      - 17
+    drawn: false
+    img: systems/sta/assets/compendia/icons/damage-core/damage-hit-structure.svg
+    _id: WpaGJ2s4Fm3DM3kh
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Structure (Impact)
+    documentUuid: Compendium.sta-compendia.damage-core.8FWm98t6R4UxJpP7
+    description: ''
+    _key: '!tables.results!XY5CEcb9stF1KGBm.WpaGJ2s4Fm3DM3kh'
+  - type: document
+    weight: 1
+    range:
+      - 18
+      - 20
+    drawn: false
+    img: systems/sta/assets/compendia/icons/damage-core/damage-hit-weapons.svg
+    _id: p9goIuGg5DHGdUXg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Weapons (Impact)
+    documentUuid: Compendium.sta-compendia.damage-core.EaB1wSNKAH1wKPtU
+    description: ''
+    _key: '!tables.results!XY5CEcb9stF1KGBm.p9goIuGg5DHGdUXg'
+formula: 1d20
+replacement: true
+displayRoll: true
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452265880
+  modifiedTime: 1765452265880
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+_id: XY5CEcb9stF1KGBm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!tables!XY5CEcb9stF1KGBm'

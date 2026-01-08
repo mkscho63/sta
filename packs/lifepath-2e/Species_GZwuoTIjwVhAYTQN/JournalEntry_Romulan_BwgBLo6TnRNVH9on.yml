@@ -1,0 +1,91 @@
+name: Romulan
+pages:
+  - sort: 200000
+    name: Romulan
+    type: text
+    _id: KnY7S27t4UBhm9nv
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>A divergent offshoot of the Vulcan species, Romulans fled their
+        original homeworld millennia ago. These Vulcans, “those who marched
+        beneath the Raptor’s wings,” refused to accept the teachings of Surak,
+        andthus did not embrace logic or stoicism, and eventually their ships
+        would reach the worlds known as Romulus and Remus. Much of what is known
+        about the Romulans has been pieced together from secondary and tertiary
+        sources, as the Romulans themselves are secretive bordering on paranoia
+        and do not disclose any information about themselves unless they deem it
+        vital. Indeed, the Federation didn’t even know what Romulans looked like
+        until a century after the EarthRomulan War.</p><p>To the Romulans, trust
+        is something to be placed in only a few, for misplaced trust can be a
+        deadly weapon. A Romulan trusts only their closest family members, and
+        places increasing layers of secrecy, obfuscation, and misdirection as
+        relationships grow more distant. There are exceptions to this, such as
+        the scrupulously candid order Qowat Milat, but most Romulans are highly
+        guarded and suspicious of everyone.</p><p></p><p>SAMPLE
+        VALUES:</p><ul><li><p>I give my life to the service of the
+        Empire</p></li><li><p>Secrecy is a shield against
+        betrayal</p></li><li><p>Every secret I discover is another weapon in my
+        arsenal</p></li><li><p>Even my secrets have
+        secrets!</p><p></p></li></ul><p>ATTRIBUTES: +1 Control, +1 Fitness, +1
+        Reason</p><p></p><p>TRAIT: Romulan. Romulan physiology is like that of
+        Vulcans, but subtly different in a variety of ways, enough to cause
+        difficulties in using medical techniques designed for Vulcans, and
+        enough that, with difficulty, sensors can distinguish between Vulcan and
+        Romulan life-signs. Psychologically and culturally, Romulans prize
+        cunning and strength of will, and are highly distrustful of outsiders.
+        Romulans have a reputation for manipulation, deception, and
+        betrayal.</p><p></p><p>PARANOIA (SPECIES ABILITY): When an action scene
+        begins, if the gamemaster wishes an adversary to take the first turn,
+        they must spend 1 Threat more than normal.</p><p></p><p>ROMULAN NAMES:
+        Romulans receive four names: a “true” name used among family, a “common”
+        name used for religious rituals and other traditional purposes, an
+        “Imperial” name used by the state, and an “open” name given to
+        outsiders. A Romulan may even change their “open” name on a whim and may
+        have several in different social contexts.</p><p></p><p>EXAMPLES: Almak,
+        Ayel, Chulak, Donatra, D’Tan, Hiren, J’Vini, Kabath, Laris, Livara,
+        Lovok, Mirok, M’Ret, Narek, Narissa, Neral, Nevala, Parem, Pel, Rakal,
+        Selok, Shira, Taris, Telek, Varel, Vreenak, Zani</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!BwgBLo6TnRNVH9on.KnY7S27t4UBhm9nv'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: BwgBLo6TnRNVH9on
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!BwgBLo6TnRNVH9on'

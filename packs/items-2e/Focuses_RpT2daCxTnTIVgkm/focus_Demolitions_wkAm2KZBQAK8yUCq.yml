@@ -1,0 +1,24 @@
+folder: RpT2daCxTnTIVgkm
+name: Demolitions
+type: focus
+img: systems/sta/assets/compendia/icons/focuses-core/focus-security.svg
+system:
+  description: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451182562
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: wkAm2KZBQAK8yUCq
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!wkAm2KZBQAK8yUCq'

@@ -1,0 +1,94 @@
+name: Ferengi
+pages:
+  - sort: 200000
+    name: Ferengi
+    type: text
+    _id: OVy5oUZ5vfkWxl2Y
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>An acquisitive species native to Ferenginar, the Ferengi are
+        unimposing beings, known mostly as merchants and traders. Their culture
+        promotes the accumulation of material wealth, and their society is
+        capitalistic, with most routine activities accompanied by an exchange of
+        money, typically in the form of gold-pressed latinum (a non-replicable
+        liquid metal, suspended within “slips,” “strips,” “bars,” and “bricks”
+        of gold). Ferengi society is strongly patriarchal, with female Ferengi
+        traditionally disallowed from owning property or even wearing clothing
+        (and male Ferengi often having deeply unpleasant attitudes towards
+        non-Ferengi women), though these attitudes start to change by the late
+        24th century.</p><p>Ferengi pride themselves on their ability to acquire
+        wealth, though there are many different approaches to this. For
+        centuries, Ferengi culture has been dominated by the philosophies and
+        lessons of the Rules of Acquisition, though these can be interpreted in
+        a variety of different ways and applied to a Ferengi’s
+        life.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>9TH RULE: Opportunity
+        plus instinct equals profit</p></li><li><p>62ND RULE: The riskier the
+        road, the greater the profit</p></li><li><p>125TH RULE: You can’t make a
+        deal if you’re dead</p></li><li><p>263RD RULE: Never allow doubt to
+        tarnish your lust for latinum</p><p></p></li></ul><p>ATTRIBUTES: +1
+        Control, +1 Insight, +1 Presence</p><p></p><p>TRAIT: Ferengi. Ferengi
+        physiology does not lend itself to physical activity, nor does their
+        culture value such hardship, though they have a resistance to many
+        common diseases. Ferengi have exceptional hearing, and highly sensitive
+        ears, though this also means that intense sounds (and physical force
+        applied to the ears) can inflict debilitating pain. Their unusual brain
+        structure means that telepaths cannot read Ferengi minds. Ferengi regard
+        the accumulation of wealth as the highest virtue, and while this has
+        given them a reputation as cunning negotiators, they are also often seen
+        as duplicitous and manipulative.</p><p></p><p>THE GREAT MATERIAL
+        CONTINUUM (SPECIES ABILITY): Once per session, when obtaining additional
+        equipment, you may reduce the Opportunity Cost of an item by 1, to a
+        minimum of 0.</p><p></p><p>FERENGI NAMES: Ferengi tend to have only a
+        single name, which tend to be only one or two syllables, though
+        exceptions exist. Among cultures who have family names, Ferengi will
+        occasionally refer to themselves as “son of…,” “daughter of…,” “child
+        of…,” and so forth, but as each Ferengi is expected to make their own
+        way in life, family names are unheard of among
+        Ferengi.</p><p></p><p>MASCULINE: Arridor, Berik, Bok, Broik, Frool,
+        Gaila, Gint, Gral, Letek, Nibor, Nog, Prak, Reyga, Tarr,
+        Zek</p><p>FEMININE: Bralik, Delka, Ishka, Jubbletta, Leyari, Lumba, Mes,
+        Nandi, Nilva, Parilka, Pel, Prinadora</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!4KdQmJq6s2X1rTyJ.OVy5oUZ5vfkWxl2Y'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: 4KdQmJq6s2X1rTyJ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!4KdQmJq6s2X1rTyJ'

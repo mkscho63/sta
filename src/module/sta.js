@@ -441,6 +441,33 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'observersHideCharacter', {
+    name: 'Observers do not see the Character tab:',
+    hint: 'Check this if you want Observers not to see the Character tab on the character sheet.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
+  game.settings.register('sta', 'observersHideDevelopment', {
+    name: 'Observers do not see the Development tab:',
+    hint: 'Check this if you want Observers not to see the Development tab on the character sheet.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
+  game.settings.register('sta', 'observersHideNotes', {
+    name: 'Observers do not see the Notes tab:',
+    hint: 'Check this if you want Observers not to see the Notes tab on the character sheet.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
   preloadHandlebarsTemplates();
 
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
@@ -485,10 +512,10 @@ Hooks.on('createActor', async (actor, options, userId) => {
   if (game.user.id !== userId) return;
 
   if (actor.type === 'character') {
-    const compendium2e = await game.packs.get('sta.equipment-crew');
-    const item1 = await compendium2e.getDocument('cxIi0Ltb1sUCFnzp');
-    const compendium1e = await game.packs.get('sta.personal-weapons-core');
-    const item2 = await compendium1e.getDocument('3PTFLawY0tCva3gG');
+    const compendium2e = await game.packs.get('sta.items-2e');
+    const item1 = await compendium2e.getDocument('RcpaoQs7XJsjobTT');
+    const compendium1e = await game.packs.get('sta.items-1e');
+    const item2 = await compendium1e.getDocument('M60WRHVMEcYEdQjv');
 
     if (item1 && item2) {
       const existingItems = actor.items.map((item) => item.name);

@@ -1,0 +1,51 @@
+name: Knife/Dagger
+type: characterweapon
+img: systems/sta/assets/compendia/icons/weapons-core/romulan-knife.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+system:
+  description: >-
+    <p>Bladed weapons such as the knife or dagger continue to be useful as tools
+    or for close combat situations. While projectile weapons and later energy
+    weapons have surpassed the destructive power of hand weapons, developments
+    over the centuries in materials science have given these weapons continued
+    use in nearly every service as backup weapons or as tools that can be used
+    in lieu of more specialist equipment.</p>
+  damage: 1
+  range: melee
+  hands: 1
+  qualities:
+    area: false
+    intense: false
+    knockdown: false
+    accurate: false
+    charge: false
+    cumbersome: false
+    deadly: true
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 1
+    piercingx: 0
+    viciousx: 1
+  opportunity: 1
+  escalation: null
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: hnMsQHUZZEAp4WJV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!hnMsQHUZZEAp4WJV'

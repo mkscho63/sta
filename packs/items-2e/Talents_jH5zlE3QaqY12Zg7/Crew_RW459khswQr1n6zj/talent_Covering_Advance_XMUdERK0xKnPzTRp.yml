@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Covering Advance
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>When you succeed at a task to maneuver your ship, you may spend 2
+    Momentum to provide cover for allied ships. When an enemy vessel next makes
+    an Attack, before the beginning of your next turn, if you are the closest
+    ship to that attacker but they do not target you,&nbsp;the difficulty of
+    their Attack is equal to your ship&rsquo;s Scale.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: XMUdERK0xKnPzTRp
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!XMUdERK0xKnPzTRp'

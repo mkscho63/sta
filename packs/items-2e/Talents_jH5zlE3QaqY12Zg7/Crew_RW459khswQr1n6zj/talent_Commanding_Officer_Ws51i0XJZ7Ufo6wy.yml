@@ -1,0 +1,45 @@
+folder: RW459khswQr1n6zj
+name: Commanding Officer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-commanding-officer.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>Even if the commanding officer does not hold the rank of captain, they
+    are usually referred to as captain by their subordinates aboard a starship.
+    Aboard stations, commanding officers are referred to by their rank.</p>
+
+    <p>Commanding officers are responsible for the ship or facility under their
+    command as well as executing the orders and directives from their
+    leadership.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: You may spend Determination to grant any other character
+    you can communicate with 1 Determination; this does not have to be linked to
+    using or challenging a value.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Ws51i0XJZ7Ufo6wy
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Ws51i0XJZ7Ufo6wy'

@@ -71,6 +71,9 @@ export class STASupportingSheet2e extends STAActors {
     if (hasMentalDiscipline) {
       stressTrackMax = parseInt(this.element.querySelector('#control')?.value || 0, 10);
     }
+    if (numValues === 1) {
+      stressTrackMax = Math.ceil(stressTrackMax / 2);
+    }
     const maxStressInput = this.element.querySelector('#max-stress');
     if (maxStressInput && maxStressInput.value != stressTrackMax) {
       maxStressInput.value = stressTrackMax;

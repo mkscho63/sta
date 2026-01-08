@@ -1,0 +1,18 @@
+type: Item
+folder: WdiLSf3QziT8KjtZ
+name: Crew
+color: null
+sorting: a
+_id: amh0sFyk303j8ph2
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  lastModifiedBy: null
+_key: '!folders!amh0sFyk303j8ph2'

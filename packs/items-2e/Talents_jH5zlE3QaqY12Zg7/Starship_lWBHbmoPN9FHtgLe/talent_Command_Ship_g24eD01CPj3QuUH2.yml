@@ -1,0 +1,32 @@
+folder: lWBHbmoPN9FHtgLe
+name: Command Ship
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>When a character on the ship succeeds at a Command task to create a
+    trait, they may always be assisted by the ship&rsquo;s Communications +
+    Command, and they may confer the trait to allied ships, landing parties, or
+    away teams with whom the ship maintains a communication link.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: g24eD01CPj3QuUH2
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!g24eD01CPj3QuUH2'

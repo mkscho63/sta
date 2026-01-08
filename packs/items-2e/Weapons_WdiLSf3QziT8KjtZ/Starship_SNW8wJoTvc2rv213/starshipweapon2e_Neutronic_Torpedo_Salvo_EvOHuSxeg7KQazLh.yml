@@ -1,0 +1,50 @@
+folder: SNW8wJoTvc2rv213
+name: Neutronic Torpedo Salvo
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-quantum-torpedo-salvo.svg
+system:
+  description: >-
+    <p>An evolution of the technology behind quantum torpedoes, neutronic
+    torpedoes douse a target with neutronic radiation, disrupting power
+    systems.</p>
+  damage: 5
+  range: long
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: true
+    cumbersome: false
+    dampening: true
+    depleting: false
+    devastating: false
+    highyield: false
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: false
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: torpedo
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: EvOHuSxeg7KQazLh
+ownership:
+  default: 0
+sort: 0
+_key: '!items!EvOHuSxeg7KQazLh'

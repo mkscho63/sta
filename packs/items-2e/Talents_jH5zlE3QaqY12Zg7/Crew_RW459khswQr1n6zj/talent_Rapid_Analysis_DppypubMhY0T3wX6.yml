@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Rapid Analysis
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Science 3+ and Daring 9+</p>
+
+    <p><br>When you succeed at a Science task, the cost of the Reduce Time
+    Momentum option is reduced to 1.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: DppypubMhY0T3wX6
+ownership:
+  default: 0
+sort: 0
+_key: '!items!DppypubMhY0T3wX6'

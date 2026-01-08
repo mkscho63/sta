@@ -1,0 +1,31 @@
+folder: vxwA3LkDPxUcWMFA
+name: Mass Spectrometer
+type: item
+img: systems/sta/assets/compendia/icons/plain-core/plain-operations.svg
+system:
+  description: >-
+    <p>A mass spectrometer can take a sample of material,&nbsp;break it down,
+    and provide an incredible amount of detail about the matter making it up.
+    While tricorders can provide similar data, mass spectrometers can provide
+    even more specific detail.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: bFym9ajfjmQrTL4b
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!bFym9ajfjmQrTL4b'

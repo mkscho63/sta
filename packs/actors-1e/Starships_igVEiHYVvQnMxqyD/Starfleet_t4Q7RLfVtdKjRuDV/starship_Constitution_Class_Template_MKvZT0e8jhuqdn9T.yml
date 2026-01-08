@@ -1,0 +1,511 @@
+name: Constitution Class Template
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/constitution-token.webp
+system:
+  notes: >-
+    <p><strong>Entered Service:</strong> 2243</p>
+
+    <p><strong>Overview:</strong> The Constitution-class starships defined and
+    helped continue to define Starfleet during the 23rd century and beyond. In
+    2235 Starfleet decided that, to better expand and protect the Federation as
+    a whole, a more rugged and multi-purpose exploration vessel was needed that
+    was able to stand up to the increasing threat of conflict with the Klingon
+    Empire. The design that resulted would be used in dozens of later classes of
+    starships; a saucer-like primary hull that contained the bridge and the
+    majority of weapon systems, a cylindrical secondary hull that housed the
+    class&rsquo;s warp core, navigational deflector and shuttlebay, and
+    connected to two warp nacelles held far away from the vessel on long
+    struts.</p>
+
+    <p><strong>Capabilities:</strong> As an exploratory vessel, the Constitution
+    class needed the best computer systems available, and was designed to use
+    the newly developed duotronic computer system created by Doctor Richard
+    Daystrom in 2243. This breakthrough in computing technology allowed the
+    computer of Constitution-class starships to develop a limited AI-like
+    personality that sometimes became too self-aware and would argue or bicker
+    with officers and crew instead of providing information and analysis. The
+    computer system was able to handle the input from as many sensors as was
+    typically seen on three starships of previous classes, giving
+    Constitutionclass vessels sensor resolution and accuracy unable to be
+    matched until the late 2290s. To aid in exploration, the design had a large
+    shuttlebay with four class-F shuttlecraft, but in an emergency situation
+    could host six. While the warp propulsion systems were not highly advanced,
+    they were made to be rugged and easily repaired, with many vessels warp
+    coils operating at high subspace field densities for 7&ndash;8 times the
+    recommended time for replacement. This resilience allowed Constitution-class
+    vessels to operate far above their rated safety limits, with U.S.S.
+    Enterprise achieving brief speeds of warp 14.1 in 2268, a speed record that
+    would hold until the 24th century. The warp reactor itself made highly
+    efficient use of antimatter by cycling warp plasma through networked reactor
+    cylinders housed behind main engineering. The class also had a powerful
+    multiple reactor fusion impulse system that was noted to be able to keep the
+    starship aloft even inside planetary atmospheres that the vessels were not
+    designed to enter. Automation of critical systems were not possible with the
+    technology of the time, and the Constitution class required over 400 crew
+    members for operation, with two-person teams crewing each of the
+    design&rsquo;s six phaser banks and four-person teams crewing each torpedo
+    launcher. To save on the already high number of crew on board, these teams
+    were made up of crew from the vessel&rsquo;s scientific teams that would not
+    typically be needed during combat operations. The success of the class meant
+    that as further refinements to warp technology and computer systems became
+    available, Constitution-class starships were often the first in line for
+    refitting at shipyards across the Federation. The introduction of the
+    Excelsior class began the slow decline of Constitution-class vessels, as the
+    ships&rsquo; newer spaceframes and larger size made them better suited for
+    deep space exploration missions.</p>
+  crew:
+    value: 0
+    max: 4
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 5
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 8
+    max: 8
+  refit: ''
+  resistance: 4
+  scale: 4
+  shields:
+    value: 13
+    max: 13
+  servicedate: ''
+  spaceframe: Constitution Class
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 7
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 7
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 8
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 8
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 8
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 8
+      selected: false
+      breaches: 0
+  traits: Federation Starship
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+prototypeToken:
+  name: Constitution
+  displayName: 30
+  actorLink: true
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/constitution-token.webp
+    scaleX: 1
+    scaleY: 1
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 2.5
+  height: 2.5
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: 1
+  displayBars: 30
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Rugged Design
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-operations.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The ship is designed with the frontier in mind, with a durable
+        construction and easy access to critical systems that allow repairs to
+        be made easily. Reduce the Difficulty of all Tasks to repair the ship by
+        1, to a minimum of 1.</p>
+      talenttype:
+        typeenum: general
+        description: science
+        minimum: 2
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: xwolAZCLDsxlJNKz
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!MKvZT0e8jhuqdn9T.xwolAZCLDsxlJNKz'
+  - name: Modular Laboratories
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The ship has considerable numbers of empty, multi-purpose
+        compartments that can be converted to laboratories as and when required.
+        At the start of an adventure, the crew may decide how the modular
+        laboratories are configured; this configuration counts as an Advantage
+        which applies to work performed within the laboratories.</p>
+      talenttype:
+        typeenum: discipline
+        description: science
+        minimum: 2
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: okpTTW2dfOFj86bP
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!MKvZT0e8jhuqdn9T.okpTTW2dfOFj86bP'
+  - name: Phaser Bank (Scale 4)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Banks are a collection of emitters, designed to fire in unison. They
+        produce a focused beam of energy that can inflict considerable damage.
+        Banks have a Range category of Medium, and increase the weapon&rsquo;s
+        damage by +1 Challenge Die.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 5
+      range: Medium
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: 6S9rjJ1IS7Aiik0U
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!MKvZT0e8jhuqdn9T.6S9rjJ1IS7Aiik0U'
+  - name: Photon Torpedo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+      damage: 3
+      range: Long
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 1
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: xcIIGojBobVT2qhH
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!MKvZT0e8jhuqdn9T.xcIIGojBobVT2qhH'
+  - name: Photon Torpedo Salvo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p>Torpedoes may be fired in a salvo: a volley of several torpedoes,
+        intended to have a much greater effect. Firing a salvo of torpedoes adds
+        2 Threat to the pool, along with the 1 point of Threat for a torpedo
+        attack, for a total of 3 Threat. Firing a salvo of torpedoes adds +3 to
+        Threat instead of +1, but it increases the attack&rsquo;s damage by +1
+        Challenge Die, and grants the Spread effect to the attack.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually</p>
+      damage: 4
+      range: Long
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 3
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: P9QBatwVLDMJ4ltV
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!MKvZT0e8jhuqdn9T.P9QBatwVLDMJ4ltV'
+  - name: Tractor Beam (Strength 3)
+    type: item
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The tactical officer engages a tractor beam at a nearby object or
+        vessel. This requires a <strong>Control + Security</strong> Task,
+        assisted by the ship&rsquo;s <strong>Structure + Security</strong> with
+        a Difficulty of 2, and can only be directed at a target within Close
+        range. If successful, the target vessel is immobilized and cannot move
+        unless it can break free, using their shield modulations, the raw power
+        of their engines, or disabling the tractor beam emitter (a Task in its
+        own right), with a Difficulty of 3.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: 0hMoUODspN6s8StV
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!MKvZT0e8jhuqdn9T.0hMoUODspN6s8StV'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450397815
+  modifiedTime: 1765450397815
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: t4Q7RLfVtdKjRuDV
+_id: MKvZT0e8jhuqdn9T
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!MKvZT0e8jhuqdn9T'

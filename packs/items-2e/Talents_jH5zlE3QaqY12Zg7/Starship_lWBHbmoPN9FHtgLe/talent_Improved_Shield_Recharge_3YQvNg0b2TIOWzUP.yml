@@ -1,0 +1,32 @@
+folder: lWBHbmoPN9FHtgLe
+name: Improved Shield Recharge
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-shields.svg
+system:
+  description: >-
+    <p>Whenever the Regenerate Shields action is successful, the ship regains
+    shields equal to the character&rsquo;s Engineering department rating +1,
+    plus 3 more by spending 1 Momentum (Repeatable), instead of the normal
+    amount.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 3YQvNg0b2TIOWzUP
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!3YQvNg0b2TIOWzUP'

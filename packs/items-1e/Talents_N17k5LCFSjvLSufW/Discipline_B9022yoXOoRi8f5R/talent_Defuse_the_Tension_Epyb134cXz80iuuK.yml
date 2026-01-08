@@ -1,0 +1,33 @@
+name: Defuse the Tension
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Command 3+</p>
+
+    <p>Whenever you attempt a Task to persuade someone not to resort to
+    violence, you may add a bonus d20 to your dice pool.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Epyb134cXz80iuuK
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Epyb134cXz80iuuK'

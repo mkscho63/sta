@@ -1,0 +1,37 @@
+folder: lWBHbmoPN9FHtgLe
+name: Hope Ship
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-custom.svg
+system:
+  description: >-
+    <p>This vessel&rsquo;s service has been spent responding to&nbsp;distress
+    calls and disasters, warping to the rescue of those in danger or subjected
+    to great hardship. The ship is heavily refitted for disaster relief,
+    evacuation, and medical catastrophes, and the crew often have additional
+    emergency medical training.</p>
+
+    <p><br>MISSION OF MERCY: The first time in a scene when an enemy makes an
+    attack against this ship, the gamemaster must spend 1 Threat. The hope ship
+    must add 1 Threat the first time in any scene it makes an attack.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Szguki8l5TwgmBiL
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Szguki8l5TwgmBiL'

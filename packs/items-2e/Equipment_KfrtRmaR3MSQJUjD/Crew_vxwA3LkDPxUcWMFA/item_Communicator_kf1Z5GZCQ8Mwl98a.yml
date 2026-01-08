@@ -1,0 +1,31 @@
+folder: vxwA3LkDPxUcWMFA
+name: Communicator
+type: item
+img: systems/sta/assets/compendia/icons/items-core/communicator.webp
+system:
+  description: >-
+    <p>During the 22nd and 23rd centuries, these devices were&nbsp;handheld and
+    allowed the user to communicate with a starship in orbit or another
+    communicator another communicator. By the 24th century, the communicator
+    was, making it small enough to be worn as a badge.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: kf1Z5GZCQ8Mwl98a
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!kf1Z5GZCQ8Mwl98a'

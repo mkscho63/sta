@@ -1,0 +1,542 @@
+folder: RequP5BfIEe9xvAT
+name: Constitution III
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/constitution-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: The first Constitution III-class ships entered service in 2396,
+    after a short development period. Many of the earliest vessels of the class
+    had their construction accelerated by repurposing many components from
+    vessels which had suffered catastrophic damage or were otherwise being
+    decommissioned. The overall design of the Constitution III-class, however,
+    owes more to a different legacy. Often referred to as the Neo-Constitution,
+    the design resembles the Constitution-class ships of the 23rd century,
+    particularly the refit (or Constitution II) design which entered service in
+    2270.</p>
+
+    <p>CAPABILITIES: Constitution III-class ships are built to function as
+    versatile exploratory craft, able to fulfil a wide range of mission
+    objectives. The design and construction coincided with new developments in
+    propulsion technology, which were integrated into the project development;
+    the result is a class with the highest Impulse power-to-geometry ratio in
+    the fleet, and a top speed of warp 9.99. This makes it ideal for rapidly
+    responding to emergencies and changing circumstances in densely populated
+    regions.</p>
+
+    <p>REFITS AND VARIANTS: The class is often regarded more as a refit project
+    than a dedicated class, blurring the line between creating a new ship and
+    rebuilding an existing one.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Multirole Explorer, Strategic and Diplomatic
+    Operations, Crisis and Emergency Response</p>
+
+    <p>NAMING CONVENTIONS: Constitution III-class vessels are mostly named after
+    previous Starfleet vessels, often the ones which contributed components to
+    the new design, such as the Titan.</p>
+  crew:
+    value: 0
+    max: 5
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 5
+  scale: 5
+  shields:
+    value: 0
+    max: 15
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2396'
+  spaceframe: Constitution III
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 9
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 10
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 11
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 10
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 10
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 10
+      selected: false
+      breaches: 0
+  traits: Federation Starship, Constitution III class, Legacy Components
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Constitution III
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/constitution-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 4)
+    type: item
+    _id: ul3gi4GIOCQkmvmy
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.ul3gi4GIOCQkmvmy'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Arrays
+    type: starshipweapon2e
+    _id: ysC8F5DsFqD66LrJ
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>Long linked strips of emitters allow the weapon to discharge at any
+        point along the strip, and often at multiple points along the strip if
+        needed. This versatility allows a vessel to fire at multiple targets, or
+        maintain fire on a moving target, from any direction.</p>
+      damage: 0
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: true
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: true
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.ysC8F5DsFqD66LrJ'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Banks
+    type: starshipweapon2e
+    _id: W5XBaatfDurvGXA8
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.W5XBaatfDurvGXA8'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: 8Roe90pBAlopdExf
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.8Roe90pBAlopdExf'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: ZcAtdOQajkyn3vTg
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.ZcAtdOQajkyn3vTg'
+  - folder: vmwcoPlFxxenIHcL
+    name: Extensive Shuttlebays
+    type: talent
+    _id: hSZ5un7J4WUKZ9Av
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>The vessel&rsquo;s shuttlebays are large, well-supplied,
+        and&nbsp;able to support a larger number of active shuttle missions
+        simultaneously. The ship&rsquo;s Small Craft Readiness is increased by
+        an amount equal to the ship&rsquo;s Scale minus 1, and it may carry up
+        to two Scale 2 small craft (typically runabouts).</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.hSZ5un7J4WUKZ9Av'
+  - folder: vmwcoPlFxxenIHcL
+    name: Improved Impulse Drive
+    type: talent
+    _id: q7Xd27JIdZoG6E65
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    system:
+      description: >-
+        <p>When a character uses the Impulse minor action while&nbsp;on this
+        ship, they may spend 2 Momentum to increase the Difficulty of attacks
+        against the ship by +1 until the start of that character&rsquo;s next
+        turn, due to the ship&rsquo;s rapid acceleration.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.q7Xd27JIdZoG6E65'
+  - folder: vmwcoPlFxxenIHcL
+    name: Improved Warp Drive
+    type: talent
+    _id: iPDDOnQtgKW3xAQg
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    system:
+      description: >-
+        <p>Whenever the ship takes the Warp major action, roll a&nbsp;d20; if
+        you roll equal to or under the ship&rsquo;s Engines, you do not spend
+        Reserve Power for the ship.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!dp09DlqBEXgg6GEM.iPDDOnQtgKW3xAQg'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: dp09DlqBEXgg6GEM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!dp09DlqBEXgg6GEM'

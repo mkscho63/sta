@@ -1,0 +1,33 @@
+folder: lWBHbmoPN9FHtgLe
+name: Electronic Warfare Systems
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-comms.svg
+system:
+  description: >-
+    <p>Whenever a character at the communications station on&nbsp;the ship
+    creates a trait to represent intercepting enemy communications, or to create
+    interference or jamming signals which would hinder enemy communications,
+    they may spend 1 Momentum to increase the Potency of that trait by one step,
+    or to affect a second enemy vessel.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: B3pXChXyeTLmVRvD
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!B3pXChXyeTLmVRvD'

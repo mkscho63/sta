@@ -1,0 +1,38 @@
+folder: lWBHbmoPN9FHtgLe
+name: Adaptable Energy Weapons
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-weapons.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 24th century or later</p>
+
+    <p>When you select this talent, select one of the energy weapons on your
+    ship, and choose a different energy weapon type (the emitter remains
+    unchanged). When you make an attack using that energy weapon, you may use
+    the alternate energy weapon type for the attack, but the complication range
+    of that attack is increased by 1.</p>
+
+    <p><br>You may select this talent multiple times, choosing a different
+    energy weapon type each time.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: K1yGKHOoJHaBKy4g
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!K1yGKHOoJHaBKy4g'

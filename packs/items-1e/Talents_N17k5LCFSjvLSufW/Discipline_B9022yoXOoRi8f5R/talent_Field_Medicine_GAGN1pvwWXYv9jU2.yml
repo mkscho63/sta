@@ -1,0 +1,34 @@
+name: Field Medicine
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>REQUIREMENT</strong>: None</p>
+
+    <p>When attempting a <strong>Medicine </strong>Task, you may ignore any
+    increase in Difficulty for working without the proper tools or
+    equipment.</p>
+  talenttype:
+    typeenum: general
+    description: medicine
+    minimum: 4
+_id: GAGN1pvwWXYv9jU2
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!GAGN1pvwWXYv9jU2'

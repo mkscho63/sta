@@ -1,0 +1,45 @@
+name: Jem'Hadar Plasma Pistol
+type: characterweapon
+img: systems/sta/assets/compendia/icons/weapons-core/jem-hadar-plasma-pistol.webp
+effects: []
+folder: 5H7sdMYRg61nwsDu
+flags:
+  core: {}
+system:
+  description: <p><strong>Not available</strong></p>
+  damage: 3
+  range: Nahkampf
+  hands: 1
+  qualities:
+    area: false
+    intense: false
+    knockdown: false
+    accurate: false
+    charge: false
+    cumbersome: false
+    deadly: false
+    debilitating: true
+    grenade: false
+    inaccurate: false
+    nonlethal: false
+    hiddenx: 0
+    piercingx: 0
+    viciousx: 1
+  opportunity: null
+  escalation: null
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450821451
+  modifiedTime: 1765450821451
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: g1bBeERLRdE3vhNq
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!g1bBeERLRdE3vhNq'

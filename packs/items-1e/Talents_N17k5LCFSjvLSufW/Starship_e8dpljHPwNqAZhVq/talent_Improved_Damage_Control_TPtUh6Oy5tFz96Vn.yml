@@ -1,0 +1,37 @@
+name: Improved Damage Control
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-operations.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The ship has more efficient damage reporting systems, and better-trained
+    teams of technicians, allowing the crew to respond more quickly to damage
+    during a crisis. When a character takes the <em>Damage Control</em> Task
+    aboard this ship, they may re-roll a single d20. If the repairs require an
+    Extended Task, then the characters also gain Progression 1, adding +1 to
+    Work done for each Effect rolled.</p>
+  talenttype:
+    typeenum: general
+    description: security
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: TPtUh6Oy5tFz96Vn
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!TPtUh6Oy5tFz96Vn'
