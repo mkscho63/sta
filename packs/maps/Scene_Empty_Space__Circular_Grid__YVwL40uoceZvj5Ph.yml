@@ -1,0 +1,107 @@
+name: Empty Space (Circular Grid)
+navigation: false
+navName: ''
+background:
+  src: systems/sta/assets/compendia/maps/empty-space-zones.webp
+  scaleX: 1
+  scaleY: 1
+  offsetX: 0
+  offsetY: 0
+  rotation: 0
+  tint: '#ffffff'
+  anchorX: 0
+  anchorY: 0
+  fit: fill
+  alphaThreshold: 0
+foreground: null
+foregroundElevation: 4
+thumb: worlds/sta/assets/scenes/YVwL40uoceZvj5Ph-thumb.webp
+width: 3200
+height: 3200
+padding: 0
+initial:
+  x: null
+  'y': null
+  scale: null
+backgroundColor: '#000000'
+grid:
+  type: 0
+  size: 100
+  color: '#000000'
+  alpha: 0.2
+  distance: 1
+  units: ''
+  style: solidLines
+  thickness: 1
+tokenVision: false
+drawings: []
+tokens: []
+lights: []
+notes: []
+sounds: []
+templates: []
+tiles: []
+walls: []
+playlist: null
+playlistSound: null
+journal: null
+journalEntryPage: null
+weather: ''
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450323548
+  modifiedTime: 1765450323548
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+regions: []
+environment:
+  globalLight:
+    luminosity: 0
+    enabled: false
+    darkness:
+      max: 1
+      min: 0
+    alpha: 0.5
+    bright: false
+    color: null
+    coloration: 1
+    saturation: 0
+    contrast: 0
+    shadows: 0
+  darknessLevel: 0
+  darknessLock: false
+  cycle: true
+  base:
+    hue: 0
+    intensity: 0
+    luminosity: 0
+    saturation: 0
+    shadows: 0
+  dark:
+    hue: 0.7138888888888889
+    intensity: 0
+    luminosity: -0.25
+    saturation: 0
+    shadows: 0
+fog:
+  exploration: false
+  reset: 1660769143211
+  overlay: null
+  colors:
+    explored: null
+    unexplored: null
+_id: YVwL40uoceZvj5Ph
+navOrder: 0
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+active: false
+sort: 0
+_key: '!scenes!YVwL40uoceZvj5Ph'

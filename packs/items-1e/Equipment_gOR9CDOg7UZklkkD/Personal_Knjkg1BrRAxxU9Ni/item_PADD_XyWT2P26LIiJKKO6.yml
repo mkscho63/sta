@@ -1,0 +1,40 @@
+name: PADD
+type: item
+img: systems/sta/assets/compendia/icons/items-core/padd.webp
+system:
+  description: >-
+    <p><strong>No Cost</strong></p>
+
+    <p>The &lsquo;Personal Access Display Device&rsquo; allows Starfleet crew to
+    access the database of the starship or starbase they are currently serving
+    on, tying them into the sub-space network stretching across the Federation.
+    This gives a user as much data access as they have clearance for, access to
+    sub-space communication and the ability to record and transmit text, audio,
+    and video recordings to anyone in the Federation. The primary role of a PADD
+    on a starship is to replace paper books, manuals, technical journals, and
+    act as a personal scheduler and as an aid to complete administrative work.
+    While nowhere near as powerful or complex as the main computer system on a
+    starship, a PADD is able to process and analyze data by itself, or serve as
+    an extension of a main computer to which it is connected.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: XyWT2P26LIiJKKO6
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!XyWT2P26LIiJKKO6'

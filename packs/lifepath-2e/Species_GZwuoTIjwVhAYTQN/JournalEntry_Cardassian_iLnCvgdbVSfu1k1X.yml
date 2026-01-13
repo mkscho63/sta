@@ -1,0 +1,90 @@
+name: Cardassian
+pages:
+  - sort: 200000
+    name: Cardassian
+    type: text
+    _id: yXFYn0kr4r82tB9U
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Often vilified and distrusted due to the actions of their government,
+        Cardassians have a reputation for being ruthless, deceitful, and
+        aggressive. Due to a dearth of natural resources and an economic
+        collapse, Cardassian culture was overtaken by an oppressive
+        authoritarian regime dominated by the military, which began a
+        decades-long campaign of expansion, conquest, and exploitation,
+        including the occupation of Bajor and a lengthy border conflict with the
+        Federation. In the aftermath of the Dominion War, with the military
+        government overthrown, the rebuilding of Cardassia was a difficult
+        process, not least because of long-held feelings of resentment towards
+        the Cardassians.</p><p>Cardassians are a creative, dedicated people,
+        with a strong cultural fascination with intrigue. Cardassians are
+        inclined to keep secrets, and to regard suspicion as wisdom, and the
+        uncovering of secrets is regarded as a valuable
+        skill.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>Everyone is guilty of
+        something, but who and of what?</p></li><li><p>State above family;
+        family above self</p></li><li><p>If you don't want me knowing, hide it
+        better</p></li><li><p>All my stories are true, especially the
+        lies</p><p></p></li></ul><p>ATTRIBUTES: +1 Control, +1 Presence, +1
+        Reason</p><p></p><p>TRAIT: Cardassian. Cardassians are a
+        pseudo-reptilian species, used to an environment somewhat warmer and
+        more humid than is comfortable for Humans, and tend to find bright light
+        uncomfortable. Their culture prizes mental discipline and obedience to
+        strict hierarchies and they have a reputation for arrogance, cruelty,
+        and smug superiority.</p><p></p><p>HEALTHY SUSPICIONS (SPECIES ABILITY):
+        You may add 1 Threat when interacting with an NPC to ask the gamemaster
+        if that NPC is lying about something. The gamemaster must answer either
+        Yes or No, and this answer must be accurate, but the gamemaster does not
+        have to specify what the NPC is lying about.</p><p></p><p>CARDASSIAN
+        NAMES: Cardassians follow a common pattern of personal name followed by
+        family name, though it is common for Cardassians to be referred to by
+        their family name more often than their personal name, with personal
+        names used by close friends and family.</p><p></p><p>FEMININE: Asha,
+        Gilora, Iliana, Jil, Mila, Natima, Rekelen, Siana, Ulani,
+        Ziyal</p><p>MASCULINE: Aamin, Crell, Elim, Joret, Kotan, Nanpart,
+        Silaran, Tavor, Tekeny</p><p>FAMILY: Belor, Broca, Corak, Darhe’el,
+        Dejar, Evek, Ghemor, Jasad, Kovat, Lang, Malor, Marratt, Nador, Preloc,
+        Rillak, Thrax, Trepar, Vornar.</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!iLnCvgdbVSfu1k1X.yXFYn0kr4r82tB9U'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: iLnCvgdbVSfu1k1X
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!iLnCvgdbVSfu1k1X'

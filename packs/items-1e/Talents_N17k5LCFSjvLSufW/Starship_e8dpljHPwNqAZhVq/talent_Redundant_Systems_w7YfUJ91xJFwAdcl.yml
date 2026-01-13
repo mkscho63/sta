@@ -1,0 +1,38 @@
+name: Redundant Systems
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The ship has multiple additional redundancies that allow it to withstand
+    severe damage more easily. Nominate a single System. When that system
+    becomes Damaged or Disabled, the crew may choose to activate the backups as
+    a Minor Action; if the System was Damaged, it is no longer Damaged. If it
+    was Disabled, it becomes Damaged instead. A System&rsquo;s backups may only
+    be activated once per adventure, so subsequent damage will have the normal
+    effect.</p>
+  talenttype:
+    typeenum: general
+    description: science
+    minimum: 2
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: w7YfUJ91xJFwAdcl
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!w7YfUJ91xJFwAdcl'

@@ -1,0 +1,29 @@
+folder: ishTQZvQcqdPDJR4
+name: (Runabout Module) Combat Mission
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p>Add 1 to damage of the runabout&rsquo;s weapons, and add 2 to the
+    ship&rsquo;s maximum Shields. This has an escalation cost 1.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 1
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451154214
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: f1QgaUy7u5S2sPJO
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!f1QgaUy7u5S2sPJO'

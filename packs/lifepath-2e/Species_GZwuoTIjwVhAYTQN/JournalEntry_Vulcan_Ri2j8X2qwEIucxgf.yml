@@ -1,0 +1,91 @@
+name: Vulcan
+pages:
+  - sort: 200000
+    name: Vulcan
+    type: text
+    _id: nKVPoOuSlFvIfEGL
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The first species to contact Humans, Vulcans are stoic, rational
+        people. Widely claimed to be emotionless, Vulcans in fact feel emotions
+        deeply and intensely, to their own detriment. Ancient Vulcans were prone
+        to murderous rage and fits of paranoia, and nearly destroyed themselves
+        millennia ago, before Surak taught logic and the purging of emotion. His
+        teachings led to peace among the Vulcans and the establishment of a
+        culture driven by reason.</p><p>Vulcans embrace science and logic, but
+        their lives are not purely devoted to such things: they have a deeply
+        philosophical and spiritual side, with art and music as vital to their
+        culture as logic. They are also an intensely private people, with many
+        aspects of their culture largely kept secret from
+        outsiders.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>Logic is the
+        beginning of wisdom, not the end</p></li><li><p>Nothing that is, is
+        unimportant</p></li><li><p>The needs of the many outweigh the needs of
+        the few or the one</p></li><li><p>In accepting the inevitable, one finds
+        peace</p><p></p></li></ul><p>ATTRIBUTES: +1 Control, +1 Fitness, +1
+        Reason</p><p></p><p>TRAIT: Vulcan. Vulcans have a naturally high
+        tolerance for extremes of heat, are resistant to dehydration, and can
+        shield their eyes from blinding light with a set of secondary eyelids.
+        Their auditory and olfactory senses are extremely keen, and the gravity
+        of their homeworld means an average Vulcan is about three times as
+        strong as a Human of similar size and weight. Vulcans are innately
+        telepathic, and through extensive training since childhood, Vulcan minds
+        can suppress their emotional responses, and even exert influence upon
+        biological processes, though this takes regular meditation to
+        maintain.</p><p></p><p>MENTAL DISCIPLINE (SPECIES ABILITY): While
+        Vulcans have some psychic capabilities, they require training to use it
+        effectively (see the Mind Meld talent, page 154). Further, your maximum
+        Stress is based on your Control rather than your Fitness, and you may
+        suffer 2 Stress to avoid suffering any trait that represents an
+        emotional state. However, if you become Fatigued, you increase the
+        Potency of any such emotion-related trait by 1.</p><p></p><p>VULCAN
+        NAMES: Vulcans have only a single name, in practical terms—while they do
+        have family names, these are not discussed among other species—and tend
+        to be traditional in the names they use.</p><p></p><p>MASCULINE: Aravik,
+        Delvolk, Kovar, Muroc, Rekan, Salok, Savel, Sevek, Skon, Soral, Sutok,
+        Syrran, Tekav, Tolek, Velik</p><p>FEMININE: Falor, Metana, Perren,
+        T’Karra, T’Laan, T’Lar, T’Les, T’Mal, T’Paal, T’Pan, T’Rel, T’Vran,
+        Seleya, Simora, V’La</p><p></p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!Ri2j8X2qwEIucxgf.nKVPoOuSlFvIfEGL'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: Ri2j8X2qwEIucxgf
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!Ri2j8X2qwEIucxgf'

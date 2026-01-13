@@ -1,0 +1,41 @@
+folder: RW459khswQr1n6zj
+name: Untapped Potential
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-career-young.svg
+system:
+  description: >-
+    <p>REQUIREMENT: Novice (only available during character creation)</p>
+
+    <p><br>Select one of your attributes when you receive this talent.
+    You&rsquo;re inexperienced, but talented and with a bright future. You may
+    not have or increase any attribute to above 11, or any department to above 4
+    while you have this talent (and may have to adjust attributes and
+    departments accordingly at the end of character creation). <br>Whenever you
+    succeed at a task for which you bought one or more additional dice (by any
+    means), roll a d20 after the roll. If you roll equal to or less than the
+    chosen attribute, gain 1 bonus Momentum; if you roll higher, add 1 Threat
+    instead. While you possess this talent, you cannot gain any higher rank than
+    Lieutenant (junior grade),&nbsp; or a higher enlisted rate than Petty
+    Officer.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: RzWvLR8QDs8f2vKx
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!RzWvLR8QDs8f2vKx'

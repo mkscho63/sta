@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Expedition Expert
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Science 3+ and Fitness 9+</p>
+
+    <p><br>Prior to participating in an away team mission, you may make
+    additional preparations by spending 2 Momentum (Immediate). During the
+    expedition, any member of the away team may re-roll a single d20 on any task
+    to navigate the terrain or circumvent a hazard or obstacle. The away team
+    may re-roll a total number of dice in this way equal to your Science
+    rating.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 4pp6SOQxupaT27ZK
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!4pp6SOQxupaT27ZK'

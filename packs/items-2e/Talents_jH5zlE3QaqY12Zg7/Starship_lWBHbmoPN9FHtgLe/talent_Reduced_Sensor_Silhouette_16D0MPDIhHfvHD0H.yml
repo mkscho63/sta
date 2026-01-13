@@ -1,0 +1,32 @@
+folder: lWBHbmoPN9FHtgLe
+name: Reduced Sensor Silhouette
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+system:
+  description: >-
+    <p>Through a combination of advanced alloys, EM shielding, and electronic
+    countermeasures, the starship is difficult to detect via electromagnetic
+    radiation and subspace sensors. Tasks attempting to scan or detect the
+    vessel increase in Difficulty by 1.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 16D0MPDIhHfvHD0H
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!16D0MPDIhHfvHD0H'

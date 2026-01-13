@@ -1,0 +1,34 @@
+name: Quantum Torpedos
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-torpedo.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> 2371 or later</p>
+
+    <p>The vessel has been equipped with the latest in ship-to-ship munitions:
+    the quantum torpedoes. The ship has quantum torpedoes in addition to any
+    other form of torpedo it carries.</p>
+  talenttype:
+    typeenum: general
+    description: science
+    minimum: 2
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: w5s6jXAHjbIZefbb
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!w5s6jXAHjbIZefbb'

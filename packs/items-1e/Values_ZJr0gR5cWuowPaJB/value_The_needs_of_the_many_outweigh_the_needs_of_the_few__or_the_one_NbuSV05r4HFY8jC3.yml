@@ -1,0 +1,25 @@
+name: The needs of the many outweigh the needs of the few, or the one
+type: value
+img: systems/sta/assets/compendia/icons/values-core/value-vulcan.svg
+effects: []
+folder: ZJr0gR5cWuowPaJB
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450946891
+  modifiedTime: 1765450946891
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: ''
+  used: false
+_id: NbuSV05r4HFY8jC3
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!NbuSV05r4HFY8jC3'

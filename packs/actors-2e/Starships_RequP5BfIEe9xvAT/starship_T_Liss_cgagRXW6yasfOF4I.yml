@@ -1,0 +1,450 @@
+folder: RequP5BfIEe9xvAT
+name: T'Liss
+type: starship
+img: systems/sta/assets/compendia/ships/romulan/bird-of-prey-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: For the hundred years since the Earth-Romulan War, the Empire
+    had continued to improve its weapon systems and ship building capabilities.
+    Covert acquisition of duotronic technology from the Federation meant a new
+    generation of warbirds would need to be built. The Romulan Senate gave
+    approval to the Imperial Navy&rsquo;s design that harkened back to the older
+    birds-of-prey used against the Coalition of Worlds, with the first leaving
+    Romulus orbit in late 2265, and first being seen by the Federation in 2266.
+    The T&rsquo;Liss class would continue to be manufactured by the Empire into
+    the early 24th century.</p>
+
+    <p>CAPABILITIES: T&rsquo;Liss class birds of prey are larger vessels than
+    their older counterparts. Four decks and crewed by 170, the vessel is both
+    compact and uses much of its habitable space efficiently through shared
+    bunks in officer and enlisted quarters. This highly compact habitable space
+    is needed as the powerful plasma torpedo system takes up nearly half the
+    internal volume of the vessel, with a significant percentage of the
+    remaining space taken by the ship&rsquo;s paired matter/antimatter warp
+    cores and dual fusion reactors. The ship also used a small and effective
+    cloaking device that was tied into the vessel&rsquo;s shield emitters to
+    reduce power demands.</p>
+
+    <p>REFITS AND VARIANTS: Romulan engineers continually improved the power
+    output of their matter/antimatter reactors and reduced the power needs of
+    the plasma torpedo system to the point that only a single reactor was
+    needed.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Espionage/Intelligence, Pathfinder and
+    Reconnaissance, Tactical Operations, Technical Testbed.</p>
+
+    <p>NAMING CONVENTIONS: T&rsquo;Liss warbirds are named after powerful
+    senators the navy wished to gain favour with, and concepts of martial
+    prowess.</p>
+  crew:
+    value: 0
+    max: 4
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 1
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 3
+  scale: 4
+  shields:
+    value: 0
+    max: 12
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2260'
+  spaceframe: T'Liss
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 6
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 8
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 7
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 9
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 7
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: Romulan Starship, T’Liss class, Bird of Prey, Experimental
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: T'Liss
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/romulan/bird-of-prey-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 3)
+    type: item
+    _id: Br302Ny82w8h11C0
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!cgagRXW6yasfOF4I.Br302Ny82w8h11C0'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Disruptor Banks
+    type: starshipweapon2e
+    _id: TtCjN8Sy1mf38PKa
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-bank.svg
+    system:
+      description: >-
+        <p>Disruptors are potent, damaging weapons favored by Klingons,
+        Romulans, and a variety of other civilizations&rsquo; fleets.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!cgagRXW6yasfOF4I.TtCjN8Sy1mf38PKa'
+  - folder: pS84k3Kl5ehfssKo
+    name: Plasma Torpedo
+    type: starshipweapon2e
+    _id: gegqxr2N5bC1EYg5
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-plasma-torpedo.svg
+    system:
+      description: >-
+        <p>A common armament of Romulan warships, plasma&nbsp;torpedoes generate
+        a field of destructive plasma around the target, which continues to
+        damage the target over time.</p>
+      damage: 5
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: true
+        cumbersome: true
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: true
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!cgagRXW6yasfOF4I.gegqxr2N5bC1EYg5'
+  - folder: pS84k3Kl5ehfssKo
+    name: Plasma Torpedo Salvo
+    type: starshipweapon2e
+    _id: 3MjyKFtFgncLANxw
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-plasma-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>A common armament of Romulan warships, plasma torpedoes generate a
+        field of destructive plasma around the target, which continues to damage
+        the target over time.</p>
+      damage: 6
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: true
+        cumbersome: true
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: true
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!cgagRXW6yasfOF4I.3MjyKFtFgncLANxw'
+  - folder: vmwcoPlFxxenIHcL
+    name: Cloaking Device (Prototype)
+    type: talent
+    _id: tUF6U6bVUlZqzEfU
+    img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+    system:
+      description: >-
+        <p>REQUIREMENT: Klingon or Romulan ship, or gamemaster&rsquo;s
+        discretion</p>
+
+        <p><br>Activating the device is a major action which requires Reserve
+        Power, and which requires a Control +&nbsp;Engineering task with a
+        Difficulty of 2, assisted by the ship&rsquo;s Engines + Security. This
+        is operated from the ship&rsquo;s Tactical position. If successful, the
+        vessel gains the Cloaked trait. While cloaked, the vessel cannot attempt
+        any attacks, nor can it be the target of an attack unless the attacker
+        has found some way of detecting the cloaked vessel. While cloaked, a
+        vessel&rsquo;s shields are down. Deactivating the cloaking device
+        requires a minor action.</p>
+
+        <p>&nbsp;</p>
+
+        <p>PROTOTYPE: The cloaking device employed on this&nbsp;vessel has some
+        notable limitations. The vessel cannot travel at warp while cloaked, and
+        the difficulty of the task roll to activate the cloak increases to
+        3.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!cgagRXW6yasfOF4I.tUF6U6bVUlZqzEfU'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: cgagRXW6yasfOF4I
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!cgagRXW6yasfOF4I'

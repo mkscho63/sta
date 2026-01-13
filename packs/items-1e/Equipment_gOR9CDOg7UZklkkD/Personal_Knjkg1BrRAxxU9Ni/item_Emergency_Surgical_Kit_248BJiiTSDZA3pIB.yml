@@ -1,0 +1,37 @@
+name: Emergency Surgical Kit
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>The standard Starfleet emergency surgical kit provides single use medical
+    supplies capable of allowing a trained physician the means to perform
+    complex surgical procedures in the field at the expense of equipment
+    durability. The casing contains a builtin PADD that gives readouts on basic
+    biological functions important to physicians such as blood pressure,
+    heartbeat, temperature, etc. The display will also walk even unskilled
+    civilians through steps to triage injured humanoids. An emergency surgical
+    kit is a single-use item, its resources expended after use.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: 248BJiiTSDZA3pIB
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!248BJiiTSDZA3pIB'

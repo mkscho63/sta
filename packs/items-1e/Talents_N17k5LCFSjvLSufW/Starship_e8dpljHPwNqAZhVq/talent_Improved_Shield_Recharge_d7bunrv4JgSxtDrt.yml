@@ -1,0 +1,36 @@
+name: Improved Shield Recharge
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-shields.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> Security 3+</p>
+
+    <p>The ship&rsquo;s deflector shields have redundant capacitors and emitter
+    arrays that allow the shields to be recharged and replenished much more
+    efficiently. Whenever the Regenerate Shields Task is successful, the ship
+    regains 3 points of Shields, plus 3 more for each Momentum spent
+    (Repeatable), instead of the normal amount.</p>
+  talenttype:
+    typeenum: discipline
+    description: security
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: d7bunrv4JgSxtDrt
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!d7bunrv4JgSxtDrt'

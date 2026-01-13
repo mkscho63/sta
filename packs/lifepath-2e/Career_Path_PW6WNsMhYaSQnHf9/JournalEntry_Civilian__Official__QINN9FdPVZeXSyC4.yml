@@ -1,0 +1,84 @@
+name: Civilian (Official)
+pages:
+  - sort: 100000
+    name: Civilian (Official)
+    type: text
+    _id: AzSywGFshcpZADPY
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>You are a civil servant, operating within the structure of a
+        civilization to ensure that if continues to function smoothly and to the
+        benefit of its people. Your role may be narrowly focused upon a specific
+        area of government, or you may be responsible for overseeing large
+        departments or ministries, your decisions impacting millions or even
+        billions of lives. Either way, your role is important, and you take
+        pride in the necessary work you carry out. Such officials may have
+        duties that require travel aboard a starship, or being stationed on a
+        starbase. Starbases often have a large civilian population,
+        necessitating a civilian administration parallel with a Starfleet or
+        military command.</p><p></p><p>EXAMPLE CHARACTERS: Nathan Samuels
+        (Enterprise), Shakaar Edon (Deep Space Nine)</p><p></p><ul><li><p>TRAIT:
+        The character gains a trait which reflects their title or role, such as
+        Administrator. This should be adjusted to fit the specific title the
+        character possesses.</p></li><li><p>VALUE: You gain a single value,
+        which should reflect the character’s beliefs developed during their
+        studies, or which led them to enter public service in the first place.
+        Examples include:</p><ul><li><p>Keeping the wheels of civilization
+        turning is vital</p></li><li><p>My decisions can affect a great many
+        people; I must choose carefully</p></li><li><p>The law should serve the
+        needs of the people</p></li></ul></li><li><p>ATTRIBUTES: You gain three
+        points, which may be divided among two or three attributes freely
+        (either one gets 2 and the other gets 1, or all three get 1). At least
+        one of the attributes you increase must be Insight or Presence, as good
+        instincts and a strong personality are valuable for getting into
+        office.</p></li><li><p>DEPARTMENTS: You increase your Command by 2, and
+        two other departments by 1. In addition, you may reduce one of your
+        other departments by 1 and add that point to any department not already
+        increased.</p></li><li><p>FOCUSES: You select three focuses. Examples
+        include:</p><ul><li><p>Bureaucracy, Diplomacy, Politics, Linguistics,
+        History, Philosophy, or something related to your role in public
+        service</p></li></ul></li><li><p>TALENT: The character gains a single
+        talent.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!QINN9FdPVZeXSyC4.AzSywGFshcpZADPY'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451988240
+  modifiedTime: 1765451988240
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: PW6WNsMhYaSQnHf9
+categories: []
+_id: QINN9FdPVZeXSyC4
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!QINN9FdPVZeXSyC4'

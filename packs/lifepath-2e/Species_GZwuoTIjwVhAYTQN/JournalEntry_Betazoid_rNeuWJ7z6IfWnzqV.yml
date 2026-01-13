@@ -1,0 +1,92 @@
+name: Betazoid
+pages:
+  - sort: 200000
+    name: Betazoid
+    type: text
+    _id: 3gV75JmF8dv1zZBk
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The peaceful Betazoid people hail from the idyllic, verdant world
+        Betazed. The world has long been a valued member of the Federation, and
+        its people can be found across Federation space, including Starfleet.
+        Betazoids appear almost identical to Humans but differ in one major way:
+        they are naturally telepathic, developing mental abilities during
+        adolescence. The potency of this ability varies between
+        individuals.</p><p>Due to their widespread telepathy, Betazoids have a
+        culture of honesty and directness—there is little reason to be evasive
+        or deceitful in a culture where everyone can read your mind and sense
+        your emotions. Among non-telepaths, and even telepaths of other species,
+        this can result in some Betazoids seeming blunt or even rude. Betazoids
+        who spend a lot of time among other cultures tend to either lean into
+        this notion or choose to temper their honesty with
+        tact.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>A lie is a story told in
+        bad faith</p></li><li><p>Do not be what others expect you to
+        be</p></li><li><p>I can feel your pain</p></li><li><p>I’m just saying
+        what you’re thinking</p></li></ul><p></p><p>ATTRIBUTES: +1 Insight, +1
+        Presence, +1 Reason</p><p></p><p>TRAIT: Betazoid. All Betazoids are
+        telepathic to varyingdegrees, and even when not actively using their
+        abilities, they are highly perceptive of others around them, but also
+        highly sensitive to telepathic disturbances and mental assaults. They
+        have little familiarity with lies and deception, due to their open
+        culture and ability to read the thoughts and emotions of others. As they
+        are sensitive to the minds of other living beings, they tend not to be
+        comfortable around animals, for fear of losing themselves in the minds
+        of wild creatures. Similarly, they can find species immune to telepathy
+        to be off-putting.</p><p></p><p>TELEPATHIC (SPECIES ABILITY): Betazoids
+        can sense the minds of living creatures in their vicinity and can read
+        the thoughts and emotions of others. Each Betazoid has either Telepathy
+        or Empathy (see page 155-page 156 for more details). Part-Betazoid
+        characters generally have Empathy rather than
+        Telepathy.</p><p></p><p>BETAZOID NAMES: Betazoids tend to have names
+        with at least two syllables and a melodic sound, with a personal name
+        followed by a family name. Betazoids are traditionally matriarchal, with
+        children taking their mother’s family name.</p><p></p><p>FEMININE:
+        Deanna, Ania, Kestra, Lwaxanna, Dalera, Gloranna, Abeana, Pekera,
+        Nissila, Lomestra, Ioza</p><p>MASCULINE: Konal, Reban, Xani, Enon, Dael,
+        Etas, Andal, Kolel, Atani, Devoni, Algar, Jensar, Nikael</p><p>FAMILY:
+        Grax, Hagen, Morganth, Stadi, Dutrax, Odutan, Nelan, Onovren, Kader,
+        Nostrun, Dulas, Konin, Ebesin</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!rNeuWJ7z6IfWnzqV.3gV75JmF8dv1zZBk'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: rNeuWJ7z6IfWnzqV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!rNeuWJ7z6IfWnzqV'

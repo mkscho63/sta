@@ -1,0 +1,549 @@
+folder: RequP5BfIEe9xvAT
+name: Intrepid
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/intrepid-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: Containing the best technology of the early 2370s and evolved
+    from the Nova class&rsquo;s design, the Intrepid class was a symbol of the
+    Federation Science Council&rsquo;s intent to have Starfleet return to its
+    goals of exploration and science. The Dominion War reduced the number of
+    hulls constructed, but the end of the war&mdash;and the return of U.S.S.
+    Voyager in 2378&mdash;meant renewed passion for this spaceframe. Many
+    Intrepid-class vessels remain in active service well into the 25th
+    century.</p>
+
+    <p>CAPABILITIES: The Intrepid class was designed around being as efficient
+    in its warp field geometry as possible, while also allowing for rapid
+    transit of turbulent space-time. The vessel also has variable geometry warp
+    nacelles that allow fine adjustment to the warp field, improving warp
+    stability, allowing high sustained warp speeds, and granting an impressive
+    maximum emergency speed of warp 9.975. Intrepid-class vessels were the first
+    to have bioneural computer components installed to augment the advanced
+    isolinear computer core. These bioneural systems allowed the ship to
+    &ldquo;learn&rdquo; as it formed data connections in a more efficient way
+    than standard isolinear indexing.</p>
+
+    <p>REFITS AND VARIANTS: Refits for the Intrepid class focused on improving
+    and expanding the sensor platforms.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Pathfinder and Reconnaissance Operations,
+    Scientific and Survey Operations, Technical Testbed.</p>
+
+    <p>NAMING CONVENTIONS: Intrepid-class vessels take names from mythology and
+    space exploration across the Federation. Pathfinder, Odysseus, and
+    Bellerophon are some examples.</p>
+  crew:
+    value: 0
+    max: 4
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 1
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 3
+  scale: 4
+  shields:
+    value: 0
+    max: 12
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2371'
+  spaceframe: Intrepid
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 9
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 11
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 11
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 10
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 8
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 8
+      selected: false
+      breaches: 0
+  traits: Federation Starship, Intrepid class, Advanced Warp Drive
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Intrepid
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/intrepid-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 3)
+    type: item
+    _id: u5gP2sYVj0TJxFdW
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.u5gP2sYVj0TJxFdW'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Arrays
+    type: starshipweapon2e
+    _id: AqZgHstQLsndq6Nj
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>Long linked strips of emitters allow the weapon to discharge at any
+        point along the strip, and often at multiple points along the strip if
+        needed. This versatility allows a vessel to fire at multiple targets, or
+        maintain fire on a moving target, from any direction.</p>
+      damage: 0
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: true
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: true
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.AqZgHstQLsndq6Nj'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: b76tcFSRRMyQ6b8n
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.b76tcFSRRMyQ6b8n'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: Dg2MahyBjC0l9Ytl
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.Dg2MahyBjC0l9Ytl'
+  - folder: vmwcoPlFxxenIHcL
+    name: Advanced Sensor Suites
+    type: talent
+    _id: FFNDSIWuGvZtNjad
+    img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+    system:
+      description: >-
+        <p>Whenever a character performs a task roll assisted by&nbsp;the
+        ship&rsquo;s Sensors, the ship may roll 2d20 for assistance rather than
+        only one (if Reserve Power is rerouted to Sensors, one of these dice is
+        set to a 1). This talent cannot be used if the ship is suffering one or
+        more breaches to Sensors.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.FFNDSIWuGvZtNjad'
+  - folder: vmwcoPlFxxenIHcL
+    name: Emergency Medical Hologram (EMH)
+    type: talent
+    _id: eE8O8riujgrR7naP
+    img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+    system:
+      description: >-
+        <p>REQUIREMENT: 2371&ndash;2380</p>
+
+        <p><br>The ship has one additional supporting character, an Emergency
+        Medical Hologram (EMH), using the attributes, departments, and so forth
+        as shown in the sidebar, which does not cost any Crew Support to
+        introduce, and which does not automatically improve when introduced.
+        This character can only go to locations on the ship which are equipped
+        with holo-emitters.</p>
+
+        <p><br>After 2380, this talent is obsolete, as all Starfleet vessels are
+        outfitted with an EMH.</p>
+
+        <p>&nbsp;</p>
+
+        <p>SUBSEQUENT EMH MODELS<br>For every three years after 2371, the
+        current model of EMH is replaced by a newer model (Mark II in 2374,
+        Mark<br>III in 2377, and Mark IV in 2380). After 2380, this talent is
+        replaced by Advanced Emergency Crew Holograms.<br>Apply the following
+        cumulative changes to these models:</p>
+
+        <ul>
+
+        <li>MARK II: +1 Presence</li>
+
+        <li>MARK III: +1 Medicine</li>
+
+        <li>MARK IV: Add the Technical Expertise talent (page 150)</li>
+
+        </ul>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.eE8O8riujgrR7naP'
+  - folder: vmwcoPlFxxenIHcL
+    name: Improved Warp Drive
+    type: talent
+    _id: 30dtZUhUwOV8AF1J
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    system:
+      description: >-
+        <p>Whenever the ship takes the Warp major action, roll a&nbsp;d20; if
+        you roll equal to or under the ship&rsquo;s Engines, you do not spend
+        Reserve Power for the ship.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.30dtZUhUwOV8AF1J'
+  - folder: V0BW4gsU31fGCghx
+    name: Landing Gear
+    type: talent
+    _id: hc5i5qPHGOnHJADU
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>The vessel is equipped to land safely on a planetary&nbsp;surface,
+        and can return to space afterward. To land a ship requires Reserve Power
+        be rerouted to Structure, and then requires someone at the helm to
+        attempt a Control + Conn task with a Difficulty equal to the
+        ship&rsquo;s Scale, assisted by the ship&rsquo;s Structure + Conn. This
+        can Succeed at Cost. Success means the ship lands on the planet&rsquo;s
+        surface. Taking off requires the same task attempt, but the Difficulty
+        is reduced by 2.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!AJBMKWtkQWeyi9U4.hc5i5qPHGOnHJADU'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: AJBMKWtkQWeyi9U4
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!AJBMKWtkQWeyi9U4'

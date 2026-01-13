@@ -1,0 +1,30 @@
+folder: RW459khswQr1n6zj
+name: No Pain, No Gain
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>When you fail a task (but not an opposed task) which used your Daring,
+    you may always choose to Succeed&nbsp;at Cost.</p>
+  talenttype:
+    typeenum: attribute
+    description: daring
+    minimum: 11
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: lKU3Ij9NzuzadYlC
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!lKU3Ij9NzuzadYlC'

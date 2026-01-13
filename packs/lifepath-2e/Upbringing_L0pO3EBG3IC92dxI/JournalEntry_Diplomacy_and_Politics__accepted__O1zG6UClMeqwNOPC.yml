@@ -1,0 +1,64 @@
+name: Diplomacy and Politics (accepted)
+pages:
+  - sort: 100000
+    name: Diplomacy and Politics (accepted)
+    type: text
+    _id: huaGoHdudiitxk14
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character has been exposed to the complexities of political
+        thought and the nuances of diplomacy since they were young, perhaps
+        because a family member was involved in those
+        fields.</p><p></p><p>ATTRIBUTES</p><p>If the character accepted this
+        Upbringing, they’re disciplined and well-versed in the arts of debate,
+        increasing their Control by 1 and their Presence by
+        2.</p><p></p><p>DEPARTMENTS, FOCUS, AND TALENT</p><p>The character’s
+        familiarity with the practices and perils of diplomacy, politics, and
+        the law allow them to increase any one of Command, Conn, or Security by
+        1.</p><p>The character’s focus should relate to the character’s
+        preferred way of applying their skills. Examples include: Composure,
+        Debate, Diplomacy, Espionage, Interrogation, Law, Philosophy, Starfleet
+        Protocol.</p><p>The character also gains a single talent.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!O1zG6UClMeqwNOPC.huaGoHdudiitxk14'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452028706
+  modifiedTime: 1765452028706
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: L0pO3EBG3IC92dxI
+categories: []
+_id: O1zG6UClMeqwNOPC
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!O1zG6UClMeqwNOPC'

@@ -1,0 +1,81 @@
+name: Vulcan
+pages:
+  - sort: 100000
+    name: Vulcan
+    type: text
+    _id: TtvsXY37zZTysXz9
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <img style="display:block;margin:0px auto"
+        src="systems/sta/assets/compendia/icons/plain-core/plain-vulcan.svg"
+        width="256" height="256" /><p><strong>Requirements:</strong>
+        None</p><p>The Vulcans are a stoic, rational people. Widely claimed to
+        be emotionless, in truth the Vulcans feel deeply and intensely, to their
+        own detriment. Their stoicism comes from a culture of logic and
+        self-discipline, where emotions are analyzed and dissected to rob them
+        of their potency, so that they cannot overwhelm or control the
+        individual. Vulcans embrace science and reason, but their lives are not
+        purely devoted to logic: they also have a deeply philosophical side,
+        with art and music as vital to their culture as logic. They are also an
+        intensely private people, with many aspects of their culture — such as
+        the rites of pon farr — which are not discussed amongst
+        outsiders.</p><p><strong>Example Value:</strong>
+        @UUID[Compendium.sta-compendia.values-core.QoKhoFmQ7WyNgV4F]{The needs
+        of the many outweigh the needs of the few, or the
+        one}</p><ul><li><p><strong>Attributes:</strong> +1 Control, +1 Fitness,
+        +1 Reason</p></li><li><p><strong>Trait:</strong> Vulcan. Due to the
+        harsh, arid, high-gravity world they come from, Vulcans are naturally
+        resistant to extreme heat and dehydration; they are also extremely
+        strong, with keen auditory and olfactory senses. They are also
+        telepathic, though this takes training to properly manifest, and they
+        learn mental discipline and emotional control from childhood. However,
+        this control takes regular meditation to maintain, and their controlled
+        nature and desire for privacy can distance them from others, and make
+        interactions awkward.</p></li><li><p><strong>Talents:</strong> The
+        character receives access to the following
+        talents:</p><ul><li><p>@UUID[Compendium.sta-compendia.species-talents-core.S8RRp09FKolhgX9L]{Kolinahr}</p></li><li><p>@UUID[Compendium.sta-compendia.species-talents-core.kU8vPjUtkgzGSdRp]{Mind-Meld}</p></li><li><p>@UUID[Compendium.sta-compendia.species-talents-core.MuGQY6cJH3jtDFJA]{Nerve
+        Pinch}</p></li></ul></li></ul>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!tIV0nY5oJoChOWvY.TtvsXY37zZTysXz9'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451925417
+  modifiedTime: 1765451925417
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: HkRr5Gk1P0pTwfaY
+categories: []
+_id: tIV0nY5oJoChOWvY
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!tIV0nY5oJoChOWvY'

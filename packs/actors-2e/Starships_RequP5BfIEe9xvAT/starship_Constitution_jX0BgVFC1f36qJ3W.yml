@@ -1,0 +1,496 @@
+folder: RequP5BfIEe9xvAT
+name: Constitution
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/constitution-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: The symbol of Starfleet in the mid-to-late 23rd century, the
+    Constitution class became legendary due to its five-year missions that
+    expanded the Federation&rsquo;s borders and its scientific knowledge. The
+    Constitution class became the testbed of new technologies in the early 2270s
+    developed out of the five-year missions and lessons learned from the brief
+    war with the Klingon Empire. The spaceframe continued in service until the
+    mid-24th century.</p>
+
+    <p>CAPABILITIES: The Constitution class defined what a starship should be
+    able to accomplish when on extended deep-space exploration assignments. The
+    spaceframe had accommodations for over 400 crew members, enough to provide
+    redundancy for crew positions ranging from astrocartographers to
+    xenobiologists, allowing for crew losses typical on five-year missions. The
+    ship had a spacious shuttlebay and cargo area at the aft of the secondary
+    hull that allowed the class to move large amounts of supplies or personnel
+    even without the use of transporters.</p>
+
+    <p>REFITS AND VARIANTS: Vessels produced by other founding members of the
+    Federation tended to focus on their own fleets&rsquo; specialties.
+    Andorian-built vessels had larger fusion reactors and Tellarite-built
+    vessels were sought after for their powerful duotronic computer networks.
+    Vulcan-produced vessels focused on improving sensors and communications.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Multirole Explorer, Strategic and Diplomatic
+    Operations, Flagship, Scientific and Survey Operations.</p>
+
+    <p>NAMING CONVENTIONS: Constitution-class vessels are often named after
+    famous Earth navy vessels and pre-warp spacecraft. Registry numbers range
+    between 1700 and 1799, though there are exceptions.</p>
+  crew:
+    value: 0
+    max: 4
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 1
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 3
+  scale: 4
+  shields:
+    value: 0
+    max: 12
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2243'
+  spaceframe: CONSTITUTION
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 7
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 7
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 8
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 8
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 7
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 7
+      selected: false
+      breaches: 0
+  traits: >-
+    Federation Starship, Constitution class, Member World Starship (depending on
+    species pri-marily crewing the vessel)
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Actor
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/constitution-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 3)
+    type: item
+    _id: GBnjMGWCJzHkMl0B
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!jX0BgVFC1f36qJ3W.GBnjMGWCJzHkMl0B'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Banks
+    type: starshipweapon2e
+    _id: GHcEJN9KRWzkPIh5
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!jX0BgVFC1f36qJ3W.GHcEJN9KRWzkPIh5'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: fsQzuMshyey1Whb8
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!jX0BgVFC1f36qJ3W.fsQzuMshyey1Whb8'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: OWdwA75gLcbqH9CK
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!jX0BgVFC1f36qJ3W.OWdwA75gLcbqH9CK'
+  - folder: vmwcoPlFxxenIHcL
+    name: Modular Laboratories
+    type: talent
+    _id: 4HhOH98h30rcotJq
+    img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+    system:
+      description: >-
+        <p>The opportunity cost of establishing a science lab (page 189) is
+        reduced to 0 for the first laboratory established, and to 1 for the
+        second.</p>
+      talenttype:
+        typeenum: discipline
+        description: science
+        minimum: 2
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!jX0BgVFC1f36qJ3W.4HhOH98h30rcotJq'
+  - folder: vmwcoPlFxxenIHcL
+    name: Rugged Design
+    type: talent
+    _id: va93JC7GmcqilHib
+    img: systems/sta/assets/compendia/icons/talents-core/talent-structure.svg
+    system:
+      description: >-
+        <p>Whenever a task roll is attempted to patch or repair a&nbsp;breach, a
+        d20 may be re-rolled. Further, if the task is successful, the crew may
+        spend Momentum to patch a second breach; this will cost 2 Momentum, +1
+        per additional step of Potency on that second breach.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!jX0BgVFC1f36qJ3W.va93JC7GmcqilHib'
+  - folder: V0BW4gsU31fGCghx
+    name: Sauder Separation
+    type: talent
+    _id: j0ZrDtKDxEkQPV9j
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>Vessels of this class have the capability to detach their&nbsp;saucer
+        section in an emergency. Once the saucer has detached, the two sections
+        of the ship cannot be reconnected outside of a drydock. Ship&rsquo;s
+        systems are halved (round up) for the saucer and the secondary hull when
+        separated, the saucer is unable to enter warp speeds or launch small
+        craft, and each section is considered a separate vessel with Scale 1
+        less than the original vessel; the secondary hull is commanded from main
+        engineering. The saucer can land on a planetary surface with emergency
+        landing gear.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!jX0BgVFC1f36qJ3W.j0ZrDtKDxEkQPV9j'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: jX0BgVFC1f36qJ3W
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!jX0BgVFC1f36qJ3W'

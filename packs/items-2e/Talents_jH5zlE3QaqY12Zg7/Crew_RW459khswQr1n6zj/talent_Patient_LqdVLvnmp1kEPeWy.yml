@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Patient
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-trill.svg
+system:
+  description: >-
+    <p>When you succeed at a task where you purchased one or more d20s by
+    spending Momentum, you generate 1 bonus Momentum for each&nbsp;d20
+    purchased. Bonus Momentum may not be saved.</p>
+  talenttype:
+    typeenum: species
+    description: Trill
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: LqdVLvnmp1kEPeWy
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!LqdVLvnmp1kEPeWy'

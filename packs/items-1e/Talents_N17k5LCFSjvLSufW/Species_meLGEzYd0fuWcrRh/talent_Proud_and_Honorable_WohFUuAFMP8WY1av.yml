@@ -1,0 +1,39 @@
+name: Proud and Honorable
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-andorian.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><span class="fontstyle2"><span
+    class="fontstyle0"><strong>Requirement</strong></span></span><span
+    class="fontstyle2"><span class="fontstyle0"><strong>:</strong> </span><span
+    class="fontstyle2">Andorian, or Gamemaster&rsquo;s
+    permission.</span></span></p>
+
+    <p><span class="fontstyle2">Your personal integrity is unimpeachable, and
+    you will not willingly break a promise made. Whenever you attempt a Task to
+    resist being coerced into breaking a promise, betraying your allies, or
+    otherwise acting dishonorably, you reduce the Difficulty by 1.</span></p>
+  talenttype:
+    typeenum: species
+    description: Andorian
+    minimum: 0
+_id: WohFUuAFMP8WY1av
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!WohFUuAFMP8WY1av'

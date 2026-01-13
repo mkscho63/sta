@@ -1,0 +1,38 @@
+name: Advanced Research Facilities
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-knowledge.svg
+effects: []
+folder: e8dpljHPwNqAZhVq
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> Science 3+</p>
+
+    <p>The vessel is equipped with additional laboratories and long-term
+    research facilities, which allow the crew to study phenomena over a
+    protracted period, and thus generate a wealth of useful information.
+    Whenever a character on board the ship attempts a Task to perform research,
+    and they are assisted by the ship&rsquo;s <strong>Computers +
+    Science</strong>, the character gains one bonus Momentum, which must be used
+    for the Obtain Information Momentum Spend.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 3
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: OJJ3f13wcRCaE6j4
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!OJJ3f13wcRCaE6j4'

@@ -1,0 +1,66 @@
+name: Another Species’ World
+pages:
+  - sort: 100000
+    name: Another Species’ World
+    type: text
+    _id: idZxaOjE1uw2gKKU
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character grew up among another species. They might have lived
+        among a small enclave of their ownkind, or they may have been orphaned
+        by some manner of disaster and raised by aliens. Whatever the situation,
+        the character may have unique perspectives on their own species and on
+        those they were raised alongside.</p><p></p><ul><li><p>VALUE: At this
+        step, the character gains a single value. This value should reflect the
+        environment and culture the character was raised within. Consider how
+        the character views their own culture, and how they connect—or possibly,
+        don’t connect—to the philosophies and traditions of their people.
+        Considering a value associated with the species your character was
+        raised among can be fitting here.</p></li><li><p>ATTRIBUTE: Choose or
+        randomly roll another species from Step One, then choose one of the
+        attributes that species increases and increase your rating in that
+        attribute by 1.</p></li><li><p>DEPARTMENT: Increase one department
+        rating by 1</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!n6B3ZNx8wV7DbZTT.idZxaOjE1uw2gKKU'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452001741
+  modifiedTime: 1765452001741
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Kjpd5UzKteKgjIqB
+categories: []
+_id: n6B3ZNx8wV7DbZTT
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!n6B3ZNx8wV7DbZTT'

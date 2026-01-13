@@ -1,0 +1,30 @@
+folder: vxwA3LkDPxUcWMFA
+name: Monitoring device
+type: item
+img: systems/sta/assets/compendia/icons/plain-core/plain-medical.svg
+system:
+  description: >-
+    <p>This device, placed on the patient, is able to scan a lifeform, determine
+    the function of a single vital organ or biological function, and what the
+    physiology suggests are normal readings for that organ or function.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: LHetGxXRZUG6ZxbX
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!LHetGxXRZUG6ZxbX'

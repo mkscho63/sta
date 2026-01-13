@@ -1,0 +1,26 @@
+name: '[Name  of other character] has always got my back'
+type: value
+img: systems/sta/assets/compendia/icons/values-core/value-relationship.svg
+effects: []
+folder: ZJr0gR5cWuowPaJB
+flags:
+  core: {}
+system:
+  description: ''
+  used: false
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450946891
+  modifiedTime: 1765450946891
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: W33BH61xW9WD1xyH
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!W33BH61xW9WD1xyH'

@@ -1,0 +1,102 @@
+name: Starfleet (Officer) Command
+pages:
+  - sort: 100000
+    name: Starfleet (Officer) Command
+    type: text
+    _id: zYKE35vEQrYEbJuO
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <section class="journal-page-content"><p>You are a Starfleet officer,
+        and a graduate of Starfleet Academy. After passing grueling entrance
+        exams, you spent four years at the Academy, dividing your time between
+        academic study, physical training, and gaining practical experience.
+        Much of your time was spent at the main campus in San Francisco on
+        Earth, but you probably also spent time at other facilities across the
+        Federation, as well as aboard starships and starbases. A graduate of the
+        Academy receives a commission as an officer of Starfleet, holding the
+        rank of ensign, after which they are assigned to their first posting.
+        Some cadets—particularly those pursuing a higher education, such as a
+        doctorate—extend their time at the Academy by a year or two, and
+        graduate at the rank of Lieutenant (junior grade).</p><p>The Academy
+        provides different training depending upon a cadet’s aptitudes and
+        desired role within Starfleet, referred to as track. When you select
+        this option, choose (or roll on the Random Starfleet Division table)
+        which Academy track the character pursues:</p><p>Command, Operations, or
+        Sciences.</p><p></p><p>COMMAND TRACK</p><p>The Command track is for
+        those cadets who aspire to command their own starship someday. It
+        focuses on leadership and interpersonal skills, diplomacy,
+        decision-making in crisis situations, an understanding of protocol and
+        procedure, and starship operations, which includes flight control. Many
+        Command track cadets begin their careers as flight control officers and
+        pilots, where their training can be put to the test on a smaller scale
+        while they gain the experience necessary for more authority and
+        responsibility. Command track cadets customarily undertake the infamous
+        Kobayashi Maru test during their final year.</p><p></p><p>EXAMPLE
+        CHARACTERS: James T. Kirk (Star Trek), Kathryn Janeway
+        (Voyager)</p><p></p><ul><li><p>TRAIT: The character gains the trait
+        Starfleet Officer.</p></li><li><p>VALUE: The character gains a single
+        value, which should reflect some aspect of the character’s beliefs that
+        developed during their time at the Academy. Examples
+        include:</p><ul><li><p>Starfleet is a promise: I’d give my life for you,
+        you’d give your life for me, and nobody gets left
+        behind.</p></li><li><p>The first duty of every Starfleet officer is to
+        the truth. The Prime Directive is there to remind us that we are not
+        gods, and should not act like them.</p></li></ul></li><li><p>ATTRIBUTES:
+        The character gains three points, which may be split between two or
+        three attributes (increase three attributes by 1 each, or increase one
+        by 2 and another by 1). The character may pick these attributes
+        freely.</p></li><li><p>DEPARTMENTS: The player must select either
+        Command or Conn as the character’s major—the subject they studied most
+        intensely. This department is increased by 2. Then, the player selects
+        two other departments—the character’s minor subjects—which are increased
+        by 1 each. A character may not have any department higher than 4 at this
+        stage.</p></li><li><p>FOCUSES: The character selects three focuses, at
+        least one of which should relate to the character’s chosen track.
+        Examples include:</p><ul><li><p>Astronavigation, Composure, Diplomacy,
+        Extra-Vehicular Activity, Evasive Action, Helm Operations, Inspiration,
+        Persuasion, Small Craft, Starship Recognition, Starfleet Protocols, Team
+        Dynamics</p></li></ul></li><li><p>TALENT: The character gains a single
+        talent.</p></li></ul></section>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!OlHDbXTybjIAN90h.zYKE35vEQrYEbJuO'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451988240
+  modifiedTime: 1765451988240
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: PW6WNsMhYaSQnHf9
+categories: []
+_id: OlHDbXTybjIAN90h
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!OlHDbXTybjIAN90h'

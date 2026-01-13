@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Healthy Suspicions
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-cardassian.svg
+system:
+  description: >-
+    <p>You may add 1 Threat when interacting with an NPC to ask the gamemaster
+    if that NPC is lying about something. The gamemaster must answer either Yes
+    or No, and this answer must be accurate, but the gamemaster does
+    not&nbsp;have to specify what the NPC is lying about.</p>
+  talenttype:
+    typeenum: species
+    description: Cardassian
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: fPotQ6WK8Ul87tCJ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!fPotQ6WK8Ul87tCJ'

@@ -1,0 +1,42 @@
+folder: vxwA3LkDPxUcWMFA
+name: Artificial Sensory Organs
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p>Using neurological reconditioning and isolinear networks overlaid into a
+    patient&rsquo;s sensory cortex, artificial sensory organs can replace
+    damaged or destroyed senses. This can mean the blind can see, the deaf can
+    hear, and even fingers can once again feel. Depending on what era the item
+    was made, the technology can look highly artificial or barely
+    noticeable.</p>
+
+    <p>This technology includes sensors and other devices a&nbsp;person may find
+    useful in their life. Work with the gamemaster to determine the device's
+    functionality, look, and usefulness. While these devices can be
+    advantageous, there are potential disadvantages too, such as charging the
+    device periodically, headaches due to data transfer, or the risk of the
+    device being lost or damaged.</p>
+
+    <p>&nbsp;</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Fmoa5ofSko0EvR89
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Fmoa5ofSko0EvR89'

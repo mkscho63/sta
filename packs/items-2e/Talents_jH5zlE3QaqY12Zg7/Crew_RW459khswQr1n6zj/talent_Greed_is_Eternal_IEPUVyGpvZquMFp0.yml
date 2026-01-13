@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Greed is Eternal
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ferengi.svg
+system:
+  description: >-
+    <p>When engaged in negotiations&mdash;including in social
+    conflict&mdash;that have the potential for you to profit
+    personally,&nbsp;you may add 1 Threat to re-roll your dice pool.</p>
+  talenttype:
+    typeenum: species
+    description: Ferengi
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: IEPUVyGpvZquMFp0
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!IEPUVyGpvZquMFp0'

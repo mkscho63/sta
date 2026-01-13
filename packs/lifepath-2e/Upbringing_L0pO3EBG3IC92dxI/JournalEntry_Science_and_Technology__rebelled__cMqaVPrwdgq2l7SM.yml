@@ -1,0 +1,68 @@
+name: Science and Technology (rebelled)
+pages:
+  - sort: 100000
+    name: Science and Technology (rebelled)
+    type: text
+    _id: C8TQ1OP23l4TaVWc
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character’s home was one filled with the potential of science,
+        and cutting-edge developments were familiar ground. Perhaps the
+        character was raised by scientists, engineers, or had mentors and
+        teachers who encouraged a talent for the
+        technical.</p><p></p><p>ATTRIBUTES</p><p>If the character rebelled
+        against this Upbringing, they don’t lack technical talent, but they
+        haven’t developed that talent and instead rely more on instinct,
+        increasing their Daring by 1 and their Insight by
+        2.</p><p></p><p>DEPARTMENTS, FOCUS, AND TALENT</p><p>The character’s
+        familiarity with cutting-edge science and the latest research allows
+        them to increase one of Conn, Engineering, Science, or Medicine by
+        1.</p><p>The character’s focus should relate to the character’s favored
+        fields of study and inquiry. Examples include: Astrophysics,
+        Astronavigation, Computers, Cybernetics, Power Systems, Genetics,
+        Physics, Subspace Communications, Surgery, Quantum Mechanics, Warp Field
+        Dynamics, Xenobiology.</p><p>The character also gains a single
+        talent.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!cMqaVPrwdgq2l7SM.C8TQ1OP23l4TaVWc'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452028706
+  modifiedTime: 1765452028706
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: L0pO3EBG3IC92dxI
+categories: []
+_id: cMqaVPrwdgq2l7SM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!cMqaVPrwdgq2l7SM'

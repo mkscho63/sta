@@ -1,0 +1,40 @@
+name: Communicator
+type: item
+img: systems/sta/assets/compendia/icons/items-core/communicator.webp
+effects: []
+folder: Knjkg1BrRAxxU9Ni
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Standard Issue</strong></p>
+
+    <p>The standard Starfleet communicator is a ubiquitous piece of technology.
+    During the 22nd and 23rd centuries, these devices were hand held and allowed
+    the user to communicate with a starship in orbit or another communicator
+    broadcasting on the same series of sub-space channels. By the 24th century
+    the communicator was further miniaturized with the introduction of isolinear
+    technologies, making it small enough to be worn as a pin on the uniform, as
+    well as allowing constant contact with a starships main computer and the
+    ability to communicate directly with any other crew member wearing a similar
+    device. The 23rd and 24th century versions of these devices also include a
+    small, but complex universal translator.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 8i6uFeA9mUyF91ru
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!8i6uFeA9mUyF91ru'

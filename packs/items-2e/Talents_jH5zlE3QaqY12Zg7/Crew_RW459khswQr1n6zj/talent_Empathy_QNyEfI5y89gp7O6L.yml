@@ -1,0 +1,37 @@
+folder: RW459khswQr1n6zj
+name: Empathy
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-presence.svg
+system:
+  description: >-
+    <p>You can sense the emotions of most living beings nearby, and can
+    communicate telepathically with other empaths and telepaths, as well as
+    those with whom you are extremely familiar. You cannot choose not to sense
+    the emotions of those nearby, except for those who are&nbsp;resistant to
+    telepathy. It may require effort and a task to pick out the emotions of a
+    specific individual in a crowd, or to block out the emotions of those
+    nearby. Increase the Difficulty of this task if the situation is stressful,
+    if there are a lot of beings present, if the target has resistance to
+    telepathy, and other relevant factors.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: QNyEfI5y89gp7O6L
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!QNyEfI5y89gp7O6L'

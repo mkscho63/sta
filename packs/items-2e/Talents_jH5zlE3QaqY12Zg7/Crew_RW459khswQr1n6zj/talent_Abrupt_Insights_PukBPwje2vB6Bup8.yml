@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Abrupt Insights
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-betazoid.svg
+system:
+  description: >-
+    <p>Your insight into the minds of others can give you an edge when
+    interacting with them, though not everyone is comfortable having someone
+    else speak their mind. When you attempt a task as part of a social conflict,
+    you can increase the complication range by 1, 2, or 3; if you succeed, you
+    generate bonus Momentum equal to the complication range increase. Bonus
+    Momentum may&nbsp;not be saved.</p>
+  talenttype:
+    typeenum: species
+    description: Betazoid
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: PukBPwje2vB6Bup8
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!PukBPwje2vB6Bup8'

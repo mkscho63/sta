@@ -1,0 +1,50 @@
+folder: SNW8wJoTvc2rv213
+name: Gravimetric Torpedo Salvo
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-plasma-torpedo-salvo.svg
+system:
+  description: >-
+    <p>A technology employed by the Borg&mdash;and likely taken from an
+    assimilated culture&mdash;gravimetric torpedoes use graviton inversion
+    fields to tear at an enemy&rsquo;s hull.</p>
+  damage: 6
+  range: long
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: true
+    cumbersome: true
+    dampening: false
+    depleting: false
+    devastating: false
+    highyield: true
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: true
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: torpedo
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: K0AlMYOfbrc5HBaq
+ownership:
+  default: 0
+sort: 0
+_key: '!items!K0AlMYOfbrc5HBaq'

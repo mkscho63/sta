@@ -1,0 +1,49 @@
+folder: vxwA3LkDPxUcWMFA
+name: Tricorder
+type: item
+img: systems/sta/assets/compendia/icons/items-core/tricorder.webp
+system:
+  description: >-
+    <p>&ldquo;Tricorder&rdquo; is a catch-all label given to devices
+    that&nbsp;sense, record, and analyze data.</p>
+
+    <p><br>During the 23rd century, there were two versions of the Starfleet
+    tricorder (science and medical), and a single highly-specialized version
+    (the psychotricorder). The psychotricorder was primarily used by
+    psychologists and law enforcement agencies to determine a humanoid&rsquo;s
+    behavioral and emotional state more accurately.</p>
+
+    <p><br>The more common medical and science tricorders differed in the range
+    and scope of their sensors and ability to use attachments. The medical
+    tricorder had fewer sensors and a shorter range as a tradeoff for
+    higher-resolution scans oriented toward biological functions. The science
+    tricorder had a large multi-discipline database and a built-in subspace
+    uplink that could connect to nearby Starfleet vessels for main computer
+    access when needed.</p>
+
+    <p><br>By the 24th century, tricorders were unified into a single design as
+    data storage and sensor design was further miniaturized, including more
+    specialist analysis capabilities for engineering teams.</p>
+
+    <p><br>Tricorders are standard issue, and do not have a cost.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: t4yQFH1G7TURnSAN
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!t4yQFH1G7TURnSAN'

@@ -1,0 +1,536 @@
+folder: RequP5BfIEe9xvAT
+name: Galaxy
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/galaxy-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: The Galaxy class was designed to surpass any exploration and
+    science vessel yet developed by Starfleet. This spaceframe also represented
+    a new philosophy for crew mental well-being on long duration assignments, as
+    Starfleet provided facilities for civilian dependents and volunteers. The
+    concept centered on not separating families from loved ones for years at a
+    time, and the morale on Galaxy-class vessels was correspondingly higher.</p>
+
+    <p>CAPABILITIES: As one of the largest spaceframes manufactured by
+    Starfleet, the interior volume of was often not fully allocated by the time
+    it began its first mission assignment. This modular customization meant
+    these vessels often had civilian specialists on board for even the most
+    obscure research paths. As the Galaxy class was meant to probe far away from
+    Federation space, the vessel had both the most powerful warp core of its day
+    and the most advanced warp coils, allowing even a ship of its size to
+    maintain a cruising warp velocity of 6 and a maximum velocity of warp 9.8.
+    Galaxy class vessels were also the first that could separate and re-dock
+    their primary hull to the engineering hull without the assistance of a
+    drydock or support vessels. This meant Galaxy-class vessels could split
+    their focus efficiently, or put civilians and dependents out of harm&rsquo;s
+    way in hostile situations.</p>
+
+    <p>REFITS AND VARIANTS: During the Dominion War, Galaxy-class vessels
+    nearing completion were repurposed as command-and-control vessels for rear
+    admirals to use in fleet actions.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Strategic and Diplomatic Operations,
+    Scientific and Survey Operations, Multirole Explorer.</p>
+
+    <p>NAMING CONVENTIONS: Galaxy-class vessels take their names from many
+    different cultures across the Federation. Most are associated with
+    exploration and scientific discovery. Odyssey, Hanson, and Surok are
+    examples. The U.S.S. Galaxy was NX/NCC-70637, and all vessels of the class
+    have registries higher than this, barring the Enterprise, which used its own
+    legacy number.</p>
+  crew:
+    value: 0
+    max: 12
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 1
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 5
+  scale: 6
+  shields:
+    value: 0
+    max: 16
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2359'
+  spaceframe: Galaxy
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 9
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 10
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 10
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 9
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 10
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 10
+      selected: false
+      breaches: 0
+  traits: Federation Starship, Galaxy class, A City in Space
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Galaxy
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/galaxy-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Arrays
+    type: starshipweapon2e
+    _id: jtCeSYUu2yCWFfTY
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>Long linked strips of emitters allow the weapon to discharge at any
+        point along the strip, and often at multiple points along the strip if
+        needed. This versatility allows a vessel to fire at multiple targets, or
+        maintain fire on a moving target, from any direction.</p>
+      damage: 0
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: true
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: true
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.jtCeSYUu2yCWFfTY'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: FAXb9D42g9J6Zeqo
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.FAXb9D42g9J6Zeqo'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: S7SWDLKow7Cgl9L3
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.S7SWDLKow7Cgl9L3'
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 5)
+    type: item
+    _id: r5Xsdsac3ba6ahxF
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.r5Xsdsac3ba6ahxF'
+  - folder: vmwcoPlFxxenIHcL
+    name: Modular Laboratories
+    type: talent
+    _id: 0u407XoZNVP5LfPQ
+    img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+    system:
+      description: >-
+        <p>The opportunity cost of establishing a science lab (page 189) is
+        reduced to 0 for the first laboratory established, and to 1 for the
+        second.</p>
+      talenttype:
+        typeenum: discipline
+        description: science
+        minimum: 2
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.0u407XoZNVP5LfPQ'
+  - folder: vmwcoPlFxxenIHcL
+    name: Redundant Systems (X)
+    type: talent
+    _id: VQktc2W7N9mFzx8e
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>Select a single system when this talent is chosen. When&nbsp;that
+        system suffers a breach, the crew may choose to activate this talent in
+        response; doing so immediately patches the breach inflicted. These
+        redundant systems may only be activated once per adventure.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.VQktc2W7N9mFzx8e'
+  - folder: V0BW4gsU31fGCghx
+    name: Abundant Personnel
+    type: talent
+    _id: r23pStgNiMaVPy1f
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>The ship&rsquo;s Crew Support is doubled, after any other modifiers,
+        and any effects or abilities which would increase Crew Support have
+        twice the normal effect aboard a ship with this special rule. Further,
+        when you introduce a supporting character, you may use one additional
+        Crew Support to grant them an improvement immediately</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.r23pStgNiMaVPy1f'
+  - folder: V0BW4gsU31fGCghx
+    name: Saucer Separation and Reconnect
+    type: talent
+    _id: hBH4RUI4nPQBle6K
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>The ship is designed so the saucer section can be separated from the
+        engineering section to operate as two distinct ships. Each section has
+        the same systems, talents, and weapons, but their Scale is 1 lower than
+        that of the original vessel (recalculate anything derived from Scale).
+        Further, if the ship suffered any breaches prior to separating, ongoing
+        effects of those breaches apply equally to both sections. The saucer
+        section, which usually contains the crew quarters and recreation areas,
+        does not have the capacity to go to warp. The secondary hull is
+        commanded from main engineering.<br>Separating is a major action
+        attempted from the bridge (Operations panel) or main engineering,
+        requiring a Control + Conn task with a Difficulty of 3, assisted by the
+        ship&rsquo;s Structure + Engineering. Reconnecting takes a major action,
+        but the process is automated and requires no task attempt. Separating
+        and reconnecting cannot be completed if the ship (or either part of it)
+        has suffered one or more breaches to Structure.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!VrZCPJRm5d5RpbIu.hBH4RUI4nPQBle6K'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: VrZCPJRm5d5RpbIu
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!VrZCPJRm5d5RpbIu'

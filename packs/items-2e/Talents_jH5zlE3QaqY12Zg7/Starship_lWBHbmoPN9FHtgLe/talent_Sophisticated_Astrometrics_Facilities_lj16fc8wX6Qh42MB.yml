@@ -1,0 +1,33 @@
+folder: lWBHbmoPN9FHtgLe
+name: Sophisticated Astrometrics Facilities
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-heritage.svg
+system:
+  description: >-
+    <p>When a character in the stellar cartography laboratory&nbsp;or at
+    navigation attempts a task to plot a course or map a large region of space,
+    they may re-roll a d20. Further, if such a task creates a trait to represent
+    a planned course or knowledge about the region, this trait automatically
+    increases its Potency by one step.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: lj16fc8wX6Qh42MB
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!lj16fc8wX6Qh42MB'

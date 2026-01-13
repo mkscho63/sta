@@ -1,0 +1,33 @@
+folder: lWBHbmoPN9FHtgLe
+name: Transport Inhibitors
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-sensors.svg
+system:
+  description: >-
+    <p>While transporter inhibitors are active on the ship,&nbsp;nobody may
+    transport onto or off the ship: all tasks to transport people or materials
+    to or from the ship immediately fail. This necessarily means that the
+    ship&rsquo;s own transporters are shut down, as they will not function
+    alongside the inhibitors.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: mVr9kTUy2e1vJuqd
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!mVr9kTUy2e1vJuqd'

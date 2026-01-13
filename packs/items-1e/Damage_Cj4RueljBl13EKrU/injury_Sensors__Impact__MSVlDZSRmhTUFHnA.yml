@@ -1,0 +1,31 @@
+name: Sensors (Impact)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-hit-sensors.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p>Whenever the Sensors system suffers one or more Breaches, it disrupts
+    those functions temporarily. Until the sensor operations officer performs
+    the <em>Restore </em>Minor Action, no Task can be attempted which will use
+    or be assisted by the ship&rsquo;s Sensors. Further, until that Minor Action
+    is performed, all Attacks made by the ship increase in Difficulty by 1.</p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: MSVlDZSRmhTUFHnA
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!MSVlDZSRmhTUFHnA'

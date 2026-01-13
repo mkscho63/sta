@@ -1,0 +1,35 @@
+name: Plasma Torch
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>Plasma torches are high energy cutting tools powered by an integral
+    energy cell and a compressed helium matter source. The helium is
+    super-heated and ionized before being focused by a magnetic field into a
+    microscopic beam, allowing the beam to cut through all but the strongest of
+    materials. Dependent on availability, other gases and energy sources are
+    used with the same capabilities</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: 8W9jNGH13ZqW13EO
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!8W9jNGH13ZqW13EO'

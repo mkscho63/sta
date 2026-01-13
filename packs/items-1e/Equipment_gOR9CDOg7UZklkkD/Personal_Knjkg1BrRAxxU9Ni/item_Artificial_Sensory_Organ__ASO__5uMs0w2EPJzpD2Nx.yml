@@ -1,0 +1,44 @@
+name: Artificial Sensory Organ (ASO)
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p>Using cutting edge neurological reconditioning and isolinear networks
+    overlaid into a patient&rsquo;s sensory cortex, artificial sensory organs
+    can replace damaged or destroyed senses. This can mean the blind can see,
+    the deaf can hear, and even nerve damaged fingers can once again feel.
+    Depending on when exactly the ASO is built (from about 2350 onwards) the
+    technology can look highly artificial or barely noticeable at all. This
+    technology is highly individual and includes sensors and other devices a
+    person may find useful in their life. It takes years to learn to control the
+    other functions besides the basic sensory input. A Player whose character
+    has an artificial sensory organ should work with the Gamemaster to determine
+    the functionality, look, and usefulness in certain situations of the ASO. It
+    is recommended that while these devices can be advantageous (such as
+    artificial eyes being able to scan across the entire EM spectrum, or touch
+    sensors being able to analyze a surfaces&rsquo; composition), there are
+    potential disadvantages too, such as needing to charge the device
+    periodically, headaches due to data transfer, or the risk of the device
+    being lost or damaged</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: 5uMs0w2EPJzpD2Nx
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!5uMs0w2EPJzpD2Nx'

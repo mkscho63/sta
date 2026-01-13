@@ -1,0 +1,649 @@
+folder: RequP5BfIEe9xvAT
+name: Sovereign
+type: starship
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  notes: >-
+    <p>OVERVIEW: The Sovereign class began development in 2368 after Starfleet
+    Command felt that starships probing deep space would need to be better
+    equipped to handle hostile and more technologically advanced races such as
+    the Borg. The first vessels were launched in the months before the conflict
+    with the Klingon Empire began. After the Dominion War, these vessels became
+    a part of Starfleet&rsquo;s renewed push to return to exploration and
+    research.</p>
+
+    <p>CAPABILITIES: The Sovereign class utilizes variable geometry warp drive,
+    able to replicate the same qualities of the Intrepid class&rsquo;s variable
+    pitch warp nacelles without the adjustable pylons. The Sovereign class has
+    extensive laboratories, sensor systems, and subspace transmitters that make
+    it an excellent deep-space explorer. The design includes significant
+    firepower, including a dedicated quantum torpedo launcher and multiple
+    Type-10a phaser strips.</p>
+
+    <p>REFITS AND VARIANTS: One major variant was designed and constructed at
+    the Andorian Imperial Ship Yards, named Sheetar, NCC-73850. The Andorian
+    engineers who designed her wanted to show a ship of exploration could also
+    double as a combat vessel when needed.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Strategic and Diplomatic Operations,
+    Scientific and Survey Operations, Multirole Explorer. Sovereign-class
+    starships are cutting-edge spaceframes capable of being outfitted for almost
+    any kind of mission Starfleet can imagine.</p>
+
+    <p>NAMING CONVENTIONS: Sovereign-class vessels are often named after famous
+    ships from Federation history. Farragut, Wasp, and Shran are all
+    examples.</p>
+  crew:
+    value: 0
+    max: 6
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 1
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 1
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 1
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 5
+  scale: 6
+  shields:
+    value: 0
+    max: 17
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2371'
+  spaceframe: Sovereign
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 10
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 9
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 10
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 10
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 10
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 10
+      selected: false
+      breaches: 0
+  traits: Federation Starship, Sovereign class
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Sovereign
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Arrays
+    type: starshipweapon2e
+    _id: rYbtuWAj3f9ljIvV
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-array.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>Long linked strips of emitters allow the weapon to discharge at any
+        point along the strip, and often at multiple points along the strip if
+        needed. This versatility allows a vessel to fire at multiple targets, or
+        maintain fire on a moving target, from any direction.</p>
+      damage: 0
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: true
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: true
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.rYbtuWAj3f9ljIvV'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo
+    type: starshipweapon2e
+    _id: S4txPIhSbyAd1iKg
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon&nbsp;torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 3
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.S4txPIhSbyAd1iKg'
+  - folder: pS84k3Kl5ehfssKo
+    name: Photon Torpedo Salvo
+    type: starshipweapon2e
+    _id: M9hicHg7Dco5KHR7
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Commonly used by many civilizations, photon torpedoes use a
+        controlled matter/antimatter reaction to create a devastating blast and
+        burst of energy.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.M9hicHg7Dco5KHR7'
+  - folder: pS84k3Kl5ehfssKo
+    name: Quantum Torpedo
+    type: starshipweapon2e
+    _id: lEIj66h0GKFtn0C7
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-quantum-torpedo.svg
+    system:
+      description: >-
+        <p>A more advanced torpedo developed by the Federation in the wake of
+        their clashes with the Borg, these destructive weapons add quantum
+        vacuum energy to the energy released from their matter/antimatter
+        reaction, giving them destructive power greater than the payload alone
+        would normally produce.</p>
+      damage: 4
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: true
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.lEIj66h0GKFtn0C7'
+  - folder: pS84k3Kl5ehfssKo
+    name: Quantum Torpedo Salvo
+    type: starshipweapon2e
+    _id: sDMEPQRGiwLTXzJd
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-quantum-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>A more advanced torpedo developed by the&nbsp;Federation in the wake
+        of their clashes with the Borg, these destructive weapons add quantum
+        vacuum energy to the energy released from their matter/antimatter
+        reaction, giving them destructive power greater than the payload alone
+        would normally produce.</p>
+      damage: 5
+      range: long
+      includescale: torpedo
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: true
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: true
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.sDMEPQRGiwLTXzJd'
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 5)
+    type: item
+    _id: CvlS530UAOv7BQtW
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.CvlS530UAOv7BQtW'
+  - folder: vmwcoPlFxxenIHcL
+    name: Command Ship
+    type: talent
+    _id: HXyeIe4FRqbu7s3F
+    img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+    system:
+      description: >-
+        <p>When a character on the ship succeeds at a Command task to create a
+        trait, they may always be assisted by the ship&rsquo;s Communications +
+        Command, and they may confer the trait to allied ships, landing parties,
+        or away teams with whom the ship maintains a communication link.</p>
+      talenttype:
+        typeenum: discipline
+        description: command
+        minimum: 3
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.HXyeIe4FRqbu7s3F'
+  - folder: vmwcoPlFxxenIHcL
+    name: Emergency Medical Hologram (EMH)
+    type: talent
+    _id: Zu5nEGOY9gb8bdSF
+    img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+    system:
+      description: >-
+        <p>REQUIREMENT: 2371&ndash;2380</p>
+
+        <p><br>The ship has one additional supporting character, an Emergency
+        Medical Hologram (EMH), using the attributes, departments, and so forth
+        as shown in the sidebar, which does not cost any Crew Support to
+        introduce, and which does not automatically improve when introduced.
+        This character can only go to locations on the ship which are equipped
+        with holo-emitters.</p>
+
+        <p><br>After 2380, this talent is obsolete, as all Starfleet vessels are
+        outfitted with an EMH.</p>
+
+        <p>&nbsp;</p>
+
+        <p>SUBSEQUENT EMH MODELS<br>For every three years after 2371, the
+        current model of EMH is replaced by a newer model (Mark II in 2374,
+        Mark<br>III in 2377, and Mark IV in 2380). After 2380, this talent is
+        replaced by Advanced Emergency Crew Holograms.<br>Apply the following
+        cumulative changes to these models:</p>
+
+        <ul>
+
+        <li>MARK II: +1 Presence</li>
+
+        <li>MARK III: +1 Medicine</li>
+
+        <li>MARK IV: Add the Technical Expertise talent (page 150)</li>
+
+        </ul>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.Zu5nEGOY9gb8bdSF'
+  - folder: vmwcoPlFxxenIHcL
+    name: Improved Warp Drive
+    type: talent
+    _id: 1X3hpIHC5GfRCQc5
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    system:
+      description: >-
+        <p>Whenever the ship takes the Warp major action, roll a&nbsp;d20; if
+        you roll equal to or under the ship&rsquo;s Engines, you do not spend
+        Reserve Power for the ship.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.1X3hpIHC5GfRCQc5'
+  - folder: V0BW4gsU31fGCghx
+    name: Sauder Separation
+    type: talent
+    _id: ONvVCZ8BCwMOC8FM
+    img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+    system:
+      description: >-
+        <p>Vessels of this class have the capability to detach their&nbsp;saucer
+        section in an emergency. Once the saucer has detached, the two sections
+        of the ship cannot be reconnected outside of a drydock. Ship&rsquo;s
+        systems are halved (round up) for the saucer and the secondary hull when
+        separated, the saucer is unable to enter warp speeds or launch small
+        craft, and each section is considered a separate vessel with Scale 1
+        less than the original vessel; the secondary hull is commanded from main
+        engineering. The saucer can land on a planetary surface with emergency
+        landing gear.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!DvCwtyLYWPXW6mA7.ONvVCZ8BCwMOC8FM'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: DvCwtyLYWPXW6mA7
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!DvCwtyLYWPXW6mA7'

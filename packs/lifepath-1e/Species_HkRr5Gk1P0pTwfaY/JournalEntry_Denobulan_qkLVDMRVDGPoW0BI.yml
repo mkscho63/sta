@@ -1,0 +1,80 @@
+name: Denobulan
+pages:
+  - sort: 100000
+    name: Denobulan
+    type: text
+    _id: TtvsXY37zZTysXz9
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <img style="display:block;margin:0px auto"
+        src="systems/sta/assets/compendia/icons/plain-core/plain-denobulan.svg"
+        width="256" height="256" /><p><strong>Requirements:</strong>
+        None</p><p>Hailing from the planet Denobula, Denobulans are a
+        gregarious, inquisitive people who have been allies of Humanity since
+        the 2130s. Though Denobula was not one of the founders of the
+        Federation, the Denobulans joined soon after. Denobulans are a sociable
+        people, with distinctive expressive features, who are used to living in
+        close, communal conditions, and whose extended family groups are large
+        and complex — a Denobulan may have several spouses, each of whom may
+        have several partners of their own, and dozens of children between them.
+        Culturally, they are intellectually curious, perceptive, and interested
+        in a wide range of philosophies, though their scholarly nature, large
+        families, and gregarious nature means that relatively few of them
+        venture far from their homeworld.</p><p><strong>Example Value:</strong>
+        @UUID[Compendium.sta-compendia.values-core.Oj8FqpOA1bQUMAoX]{Safety in
+        numbers}</p><ul><li><p><strong>Attributes:</strong> +1 Fitness, +1
+        Insight, +1 Reason</p></li><li><p><strong>Trait:</strong> Denobulan.
+        Denobulans have a robust immune system, but a vulnerability to various
+        forms of radiation poisoning. They are naturally adept climbers,
+        scuttling up sheer walls like some forms of terrestrial lizard.
+        Denobulans do not need to sleep, but must hibernate for several days
+        each year, becoming disoriented if kept awake during this
+        period.</p></li><li><p><strong>Talents:</strong> The character receives
+        access to the following
+        talents:</p><ul><li><p>@UUID[Compendium.sta-compendia.species-talents-core.godU2ajhoizwZhSU]{Cultural
+        Flexibility}</p></li><li><p>@UUID[Compendium.sta-compendia.species-talents-core.BmDoSMbO0kKyfQ6v]{Parent
+        Figure}</p></li></ul></li></ul>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!qkLVDMRVDGPoW0BI.TtvsXY37zZTysXz9'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451925417
+  modifiedTime: 1765451925417
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: HkRr5Gk1P0pTwfaY
+categories: []
+_id: qkLVDMRVDGPoW0BI
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!qkLVDMRVDGPoW0BI'

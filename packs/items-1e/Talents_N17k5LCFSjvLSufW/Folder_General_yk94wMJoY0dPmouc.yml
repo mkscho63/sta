@@ -1,0 +1,18 @@
+type: Item
+folder: N17k5LCFSjvLSufW
+name: General
+color: null
+sorting: a
+_id: yk94wMJoY0dPmouc
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  lastModifiedBy: null
+_key: '!folders!yk94wMJoY0dPmouc'

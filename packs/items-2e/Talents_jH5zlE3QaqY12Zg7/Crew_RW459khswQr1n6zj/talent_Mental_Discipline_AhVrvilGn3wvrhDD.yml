@@ -1,0 +1,33 @@
+folder: RW459khswQr1n6zj
+name: Mental Discipline
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-vulcan.svg
+system:
+  description: >-
+    <p>While Vulcans have some psychic capabilities, they require training to
+    use it effectively (see the Mind Meld talent, page 154). Further, your
+    maximum Stress is based on your Control rather than your Fitness, and you
+    may suffer 2 Stress to avoid suffering any trait that represents an
+    emotional state. However, if you become Fatigued, you increase the Potency
+    of any such emotion-related trait&nbsp;by 1.</p>
+  talenttype:
+    typeenum: species
+    description: Vulcan
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451182562
+  modifiedTime: 1765451308288
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: AhVrvilGn3wvrhDD
+ownership:
+  default: 0
+sort: 0
+_key: '!items!AhVrvilGn3wvrhDD'

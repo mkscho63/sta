@@ -1,0 +1,35 @@
+folder: lWBHbmoPN9FHtgLe
+name: Survivor of (X)
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-custom.svg
+system:
+  description: >-
+    <p>NOTE: Replace X with the name of a battle or war&nbsp;This ship was
+    involved in some of the fiercest battles, surviving the fighting, though not
+    without scars. The crew is battle-hardened and prepared for anything.</p>
+
+    <p><br>READY FOR BATTLE: During the first round of ship combat, the
+    gamemaster must spend 1 additional Threat to allow an enemy ship to take the
+    first turn.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Y7WM0h5bzrrSrL51
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Y7WM0h5bzrrSrL51'

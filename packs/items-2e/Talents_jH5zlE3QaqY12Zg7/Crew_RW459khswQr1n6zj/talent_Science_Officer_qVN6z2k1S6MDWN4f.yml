@@ -1,0 +1,43 @@
+folder: RW459khswQr1n6zj
+name: Science Officer
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-science-officer.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>The science officer (sometimes referred to as the chief science officer)
+    is responsible for advising the commanding officer on all scientific
+    matters, providing hypotheses concerning the unknown. The science officer is
+    also responsible for all science personnel on the ship or station.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: When you succeed at a task assisted by the ship&rsquo;s
+    Sensors or Computers, or a task using a tricorder or other sensing device,
+    you may ask one additional question as if you had spent Momentum on Obtain
+    Information.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: qVN6z2k1S6MDWN4f
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!qVN6z2k1S6MDWN4f'

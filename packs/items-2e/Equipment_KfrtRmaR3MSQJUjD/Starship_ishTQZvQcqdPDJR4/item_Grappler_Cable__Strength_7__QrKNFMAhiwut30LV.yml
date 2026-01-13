@@ -1,0 +1,39 @@
+folder: ishTQZvQcqdPDJR4
+name: Grappler Cable (Strength 7)
+type: item
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+system:
+  description: >-
+    <p>The ship utilizes a physical cable with a magnetic hook at the end, in
+    place of the graviton-based tractor beams used by ships in later eras. This
+    functions as a tractor beam, but if the target breaks free, roll a d20: if
+    you roll above the ship&rsquo;s Weapons system, the cable is damaged, and
+    cannot be used until repaired. Repairing the cable is treated as repairing a
+    breach.</p>
+
+    <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale minus
+    1. Trapping a target within the beam is a Difficulty 2 Control + Security
+    task assisted by the ship&rsquo;s Structure + Security. If successful, the
+    target is immobilized and cannot move until it can break free.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451154214
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: QrKNFMAhiwut30LV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!QrKNFMAhiwut30LV'

@@ -20,10 +20,18 @@
   {{#each actorValues as |v|}}
     <div class="row">
       <div class="col-name value-name">{{v.name}}</div>
-      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="unused" {{checked v.isUnused}}></div>
-      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="positive" {{checked v.isPositive}}></div>
-      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="negative" {{checked v.isNegative}}></div>
-      <div class="col-radio"><input type="radio" name="system.valueStates.{{v.id}}" value="challenged" {{checked v.isChallenged}}></div>
+      <div class="col-radio">
+        <label><input type="checkbox" data-action="onSelectValue" name="system.valueStates.{{v.id}}" value="unused" {{checked v.isUnused}}></label>
+      </div>
+      <div class="col-radio">
+        <label><input type="checkbox" data-action="onSelectValue" name="system.valueStates.{{v.id}}" value="positive" {{checked v.isPositive}}></label>
+      </div>
+      <div class="col-radio">
+        <label><input type="checkbox" data-action="onSelectValue" name="system.valueStates.{{v.id}}" value="negative" {{checked v.isNegative}}></label>
+      </div>
+      <div class="col-radio">
+        <label><input type="checkbox" data-action="onSelectValue" name="system.valueStates.{{v.id}}" value="challenged" {{checked v.isChallenged}}></label>
+      </div>
     </div>
   {{/each}}
 
