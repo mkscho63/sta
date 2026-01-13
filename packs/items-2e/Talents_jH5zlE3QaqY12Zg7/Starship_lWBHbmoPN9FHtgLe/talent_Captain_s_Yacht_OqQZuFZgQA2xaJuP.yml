@@ -1,0 +1,37 @@
+folder: lWBHbmoPN9FHtgLe
+name: Captain’s Yacht
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+system:
+  description: >-
+    <p>The vessel has a single additional support craft, normally mounted in a
+    dedicated port under the saucer of the ship. These craft, larger than most
+    shuttles, are often used for diplomatic missions and special excursions
+    special excursions.</p>
+
+    <p><br>The ship has one additional small craft, which does not count against
+    the ship&rsquo;s small craft capacity and does not launch from the
+    shuttlebay. The captain&rsquo;s yacht statistics can be found on page
+    235.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: OqQZuFZgQA2xaJuP
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!OqQZuFZgQA2xaJuP'

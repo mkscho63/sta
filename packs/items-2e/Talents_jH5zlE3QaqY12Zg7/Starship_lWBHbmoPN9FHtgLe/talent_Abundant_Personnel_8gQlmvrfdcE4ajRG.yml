@@ -1,0 +1,33 @@
+folder: lWBHbmoPN9FHtgLe
+name: Abundant Personnel
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+system:
+  description: >-
+    <p>The ship&rsquo;s Crew Support is doubled, after any other modifiers, and
+    any effects or abilities which would increase Crew Support have twice the
+    normal effect aboard a ship with this special rule. Further, when you
+    introduce a supporting character, you may use one additional Crew Support to
+    grant them an improvement immediately</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 8gQlmvrfdcE4ajRG
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!8gQlmvrfdcE4ajRG'

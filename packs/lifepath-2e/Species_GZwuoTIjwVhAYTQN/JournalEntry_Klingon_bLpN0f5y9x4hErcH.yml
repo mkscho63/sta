@@ -1,0 +1,85 @@
+name: Klingon
+pages:
+  - sort: 200000
+    name: Klingon
+    type: text
+    _id: 9tZw2354IlZ2fRyb
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Klingons are a proud, martial people, native to the planet Qo’noS in
+        the Beta Quadrant. Their tall, strong physiques, sharp teeth, and the
+        distinctive dense crest that runs from their brow, over their heads, and
+        down their spines, all contribute to an appearance that is synonymous
+        with martial prowess and ferocity. Hardy and aggressive, Klingons
+        combine a sense of pride and personal conviction with a fatalistic
+        streak, regarding honorable death to be preferable to what they would
+        deem a shameful or cowardly life.</p><p>Klingons embrace life and death
+        alike without fear. They are also a people with a powerful sense of
+        honor, both personal and familial, and they are quick to anger when
+        attacked; the greatest slights can result in generations-long blood
+        feuds.</p><p></p><p>SAMPLE VALUES:</p><ul><li><p>It is a good day to
+        die!</p></li><li><p>Own the day!</p></li><li><p>Revenge is a dish best
+        served cold</p></li><li><p>I am a Klingon warrior; if you doubt it, a
+        demonstration can be arranged!</p><p></p></li></ul><p>ATTRIBUTES: +1
+        Daring, +1 Fitness, +1 Presence</p><p></p><p>TRAIT: Klingon. Klingon
+        physiology is hardy, with a reinforced skeleton and many redundant
+        internal organs which allow them to withstand harm and numerous toxins
+        that would be deadly to other species, though this has the potential for
+        medical complications. They are significantly stronger and more
+        resilient than Humans, though they have less tolerance for the
+        cold.</p><p></p><p>BRAK’LUL (SPECIES ABILITY): You gain 1 Protection
+        which stacks with the benefits of any armor worn. Further, when another
+        character attempts First Aid to heal you, they may re-roll a
+        d20.</p><p></p><p>ONE NAME: Klingons have only a single name, but formal
+        Klingon forms of address include the name of a parent (“son of…,”
+        “daughter of…,” etc.), and then the name of their House—the extended
+        family or clan they belong to.</p><p></p><p>FEMININE: Azetbur, B’Elanna,
+        B’Etor, Bu’kah, Ch’Rega, Doran, Gi’ral, Grilka, Huss, K’Ehleyr, Krelik,
+        Kurak, L’Naan, Lukara, Lursa, Mara, Miral, Sirella,
+        Tavana</p><p>MASCULINE: A’trom, Barot, Chang, Gorkon, Huraga, Maltz,
+        M’Lind, Mogh, Pok, Kargan, Kang, Kerla, K’mpec, Koloth, Kor, Korax,
+        Ko’lek, Krell, T’vis, Toral, Torg, Klaa</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!bLpN0f5y9x4hErcH.9tZw2354IlZ2fRyb'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: bLpN0f5y9x4hErcH
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!bLpN0f5y9x4hErcH'

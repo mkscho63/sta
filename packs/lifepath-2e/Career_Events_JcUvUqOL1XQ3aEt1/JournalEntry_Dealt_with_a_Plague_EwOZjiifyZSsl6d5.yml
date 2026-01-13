@@ -1,0 +1,56 @@
+name: Dealt with a Plague
+pages:
+  - sort: 100000
+    name: Dealt with a Plague
+    type: text
+    _id: WjgzOvdvXIh4Gu62
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character’s ship was assigned to provide aid to a world dealing
+        with an epidemic.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Insight</p></li><li><p>DEPARTMENT: + 1 Medicine</p></li><li><p>FOCUS
+        SUGGESTIONS: Infectious Diseases, Emergency Medicine,
+        Triage</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!EwOZjiifyZSsl6d5.WjgzOvdvXIh4Gu62'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: EwOZjiifyZSsl6d5
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!EwOZjiifyZSsl6d5'

@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Indefatigable
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>When you fail a task, and attempt that task again during the same scene,
+    reduce the Difficulty of the second attempt (and any subsequent attempts if
+    you still fail) by 1.</p>
+  talenttype:
+    typeenum: attribute
+    description: fitness
+    minimum: 11
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: jTrKQZvZMRms9nB8
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!jTrKQZvZMRms9nB8'

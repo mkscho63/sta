@@ -1,0 +1,56 @@
+folder: lWBHbmoPN9FHtgLe
+name: Emergency Medical Hologram (EMH)
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 2371&ndash;2380</p>
+
+    <p><br>The ship has one additional supporting character, an Emergency
+    Medical Hologram (EMH), using the attributes, departments, and so forth as
+    shown in the sidebar, which does not cost any Crew Support to introduce, and
+    which does not automatically improve when introduced. This character can
+    only go to locations on the ship which are equipped with holo-emitters.</p>
+
+    <p><br>After 2380, this talent is obsolete, as all Starfleet vessels are
+    outfitted with an EMH.</p>
+
+    <p>&nbsp;</p>
+
+    <p>SUBSEQUENT EMH MODELS<br>For every three years after 2371, the current
+    model of EMH is replaced by a newer model (Mark II in 2374, Mark<br>III in
+    2377, and Mark IV in 2380). After 2380, this talent is replaced by Advanced
+    Emergency Crew Holograms.<br>Apply the following cumulative changes to these
+    models:</p>
+
+    <ul>
+
+    <li>MARK II: +1 Presence</li>
+
+    <li>MARK III: +1 Medicine</li>
+
+    <li>MARK IV: Add the Technical Expertise talent (page 150)</li>
+
+    </ul>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: LPlbpAIaQvFaZY7I
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!LPlbpAIaQvFaZY7I'

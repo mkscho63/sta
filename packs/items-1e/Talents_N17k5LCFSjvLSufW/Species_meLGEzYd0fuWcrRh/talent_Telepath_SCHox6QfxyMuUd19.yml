@@ -1,0 +1,42 @@
+name: Telepath
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-betazoid.svg
+effects: []
+folder: meLGEzYd0fuWcrRh
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement:</strong> Betazoid, or Gamemaster&rsquo;s Permission.
+    Character creation only.</p>
+
+    <p>You can sense the surface thoughts and emotions of most living beings
+    nearby, and can communicate telepathically with other empaths and telepaths,
+    as well as those with whom you are extremely familiar. Surface thoughts are
+    whatever a creature is thinking about at that precise moment. The character
+    cannot choose not to sense the emotions or read the surface thoughts of
+    those nearby, except for those who are resistant to telepathy. It will
+    require effort and a Task to pick out the emotions or thoughts of a specific
+    individual in a crowd, to search a creature&rsquo;s mind for specific
+    thoughts or memories, or to block out the minds of those nearby. Unwilling
+    targets may resist with an Opposed Task.</p>
+  talenttype:
+    typeenum: species
+    description: Betazoid
+    minimum: 0
+_id: SCHox6QfxyMuUd19
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!SCHox6QfxyMuUd19'

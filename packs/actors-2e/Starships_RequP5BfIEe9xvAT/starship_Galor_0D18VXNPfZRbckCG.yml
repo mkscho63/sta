@@ -1,0 +1,358 @@
+folder: RequP5BfIEe9xvAT
+name: Galor
+type: starship
+img: systems/sta/assets/compendia/ships/cardassian/galor-token.webp
+system:
+  notes: >-
+    <p>OVERVIEW: Designed and built during the middle of the long
+    Federation-Cardassian War of the mid-24th century, the Galor-class cruiser
+    was meant to be the answer to the effective Starfleet Ambassador- and
+    Excelsior-class vessels common along the frontier. Sacrifices in the design
+    had to be made as the Union lacked the same shipbuilding facilities as the
+    Federation. These cruisers were rarely seen alone, and often in small
+    squadrons of three to five. Through two wars, the Galor and her sister
+    classes were the backbone of the Cardassian Central Command.</p>
+
+    <p>CAPABILITIES: Simplicity, ease of maintenance and construction, and
+    having as small of a logistics need as possible were all important when the
+    Galor was designed. These cruisers do not have a torpedo system installed,
+    as Central Command felt wasting antimatter on weapons would limit the number
+    of starships they could produce. Instead, this class utilized two separate
+    energy weapon systems: phaser arrays spread across the outer hull and a
+    heavy forward mounted disruptor emitter.</p>
+
+    <p>REFITS AND VARIANTS: Central Command issued orders after the class came
+    into service to improve the weapon systems with any captured technology.
+    During the Dominion War, this focus changed to improvements to the outer
+    hull and warp propulsion.</p>
+
+    <p>SUGGESTED MISSION PROFILES: Espionage/Intelligence, Pathfinder and
+    Reconnaissance, Patrol, Reserve Fleet, Tactical Operations, Technical
+    Testbed.</p>
+
+    <p>NAMING CONVENTIONS: Galor class cruisers take their names from famous war
+    leaders of Cardassia&rsquo;s past, important cities on Cardassian Prime, and
+    war heroes.</p>
+  crew:
+    value: 0
+    max: 4
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 0
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 0
+    max: null
+  refit: ''
+  resistance: 3
+  scale: 4
+  shields:
+    value: 0
+    max: 12
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+  servicedate: '2348'
+  spaceframe: Galor
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 8
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 8
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 9
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 7
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 8
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: Cardassian Starship, Galor class
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+prototypeToken:
+  name: Galor
+  displayName: 50
+  actorLink: false
+  width: 1
+  height: 1
+  texture:
+    src: systems/sta/assets/compendia/ships/cardassian/galor-token.webp
+    offsetX: 0
+    offsetY: 0
+    scaleX: 1
+    scaleY: 1
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: -1
+  displayBars: 0
+  bar1:
+    attribute: null
+  bar2:
+    attribute: null
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Phaser Banks
+    type: starshipweapon2e
+    _id: 7z50TIOv7NoQSPNW
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and a few civilizations&rsquo; fleets, phasers
+        are a precise and adaptable weapon.</p>
+
+        <p>An energy weapon bank consists of multiple emitters packed together,
+        producing a focused beam or several longer pulses, inflicting damage to
+        enemies.</p>
+      damage: 1
+      range: medium
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: false
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: false
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 2
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!0D18VXNPfZRbckCG.7z50TIOv7NoQSPNW'
+  - folder: LX1qAWEGSqKOFIWJ
+    name: Disruptor Spinal Lance
+    type: starshipweapon2e
+    _id: sLCwBHNJ7pioWEMn
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-array-spread.svg
+    system:
+      description: >-
+        <p>Disruptors are potent, damaging weapons favored by Klingons,
+        Romulans, and&nbsp;a variety of other civilizations&rsquo; fleets.</p>
+
+        <p>Some ships integrate large weapon systems into their hulls, often
+        running the length of the ship. These weapons are very powerful, but
+        difficult to bring to bear against a target.</p>
+      damage: 3
+      range: long
+      includescale: energy
+      qualities:
+        energy: false
+        torpedo: false
+        area: false
+        calibration: false
+        cumbersome: true
+        dampening: false
+        depleting: false
+        devastating: false
+        highyield: false
+        intense: true
+        jamming: false
+        persistent: false
+        piercing: false
+        slowing: false
+        spread: false
+        hiddenx: 0
+        versatilex: 0
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!0D18VXNPfZRbckCG.sLCwBHNJ7pioWEMn'
+  - folder: ArdOhBErBI1lc5F7
+    name: Tractor Beam (Strength 3)
+    type: item
+    _id: PEr1WTQAqmRrtRKG
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The Strength of the tractor beam is equal to the ship&rsquo;s Scale
+        minus 1. Trapping a target within the beam is a Difficulty 2 Control +
+        Security task assisted by the ship&rsquo;s Structure + Security. If
+        successful, the target is immobilized and cannot move until it can break
+        free.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    sort: 0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!0D18VXNPfZRbckCG.PEr1WTQAqmRrtRKG'
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450468317
+  modifiedTime: 1765450468317
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 0D18VXNPfZRbckCG
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!0D18VXNPfZRbckCG'

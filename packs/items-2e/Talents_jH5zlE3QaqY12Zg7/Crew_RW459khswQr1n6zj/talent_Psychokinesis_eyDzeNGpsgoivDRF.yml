@@ -1,0 +1,42 @@
+folder: RW459khswQr1n6zj
+name: Psychokinesis
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-presence.svg
+system:
+  description: >-
+    <p>You can manipulate and control objects using only the power of the mind.
+    You may exert a psychic force upon an object within Close range equivalent
+    to the force that you would normally be able to exert physically, though
+    this takes concentration and cannot be done violently. You may spend 1
+    Momentum (Immediate, Repeatable) to increase the magnitude of the force you
+    apply, with each Momentum spent counting as an additional person&rsquo;s
+    worth of force applied (that is, you can move or manipulate objects that
+    would take two people to move or manipulate by spending 1 Momentum).
+    Momentum (Immediate) may also be spent to increase the range of this: 1
+    Momentum to affect objects in Medium range, 2 Momentum to affect objects at
+    Long range, and gamemaster&rsquo;s discretion for distances beyond. To apply
+    force violently instead, add 1 Threat to make a Control + Security task with
+    a Difficulty of 2 to strike an opponent (as a Ranged Attack), inflicting a
+    Stun or Deadly Injury&nbsp;with a Severity of 3.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: eyDzeNGpsgoivDRF
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!eyDzeNGpsgoivDRF'

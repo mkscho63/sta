@@ -1,0 +1,36 @@
+folder: lWBHbmoPN9FHtgLe
+name: Automatic Return
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-computers.svg
+system:
+  description: >-
+    <p>REQUIREMENT: 23rd century or later</p>
+
+    <p><br>The ship&rsquo;s computer is programmed to recognize a starbase,
+    colony, or some other location as its home base. The shuttles on board have
+    the same programming and recognize the ship as their home base. If the
+    ship&rsquo;s Computers system goes for 10 days without commands from the
+    crew, it will automatically pilot the ship back to the home base at maximum
+    impulse.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Krt51Gbkf65LUkIr
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Krt51Gbkf65LUkIr'

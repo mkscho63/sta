@@ -1,0 +1,20 @@
+type: JournalEntry
+folder: null
+name: Career Events
+color: null
+sorting: a
+_id: JcUvUqOL1XQ3aEt1
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451964817
+  modifiedTime: 1765451964817
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_key: '!folders!JcUvUqOL1XQ3aEt1'

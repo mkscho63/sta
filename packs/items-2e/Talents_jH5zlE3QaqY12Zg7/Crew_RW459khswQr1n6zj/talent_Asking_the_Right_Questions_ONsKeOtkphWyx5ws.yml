@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: Asking the Right Questions
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-tellarite.svg
+system:
+  description: >-
+    <p>When you attempt a task that relates to information you&rsquo;ve received
+    from Obtain Information questions in the&nbsp;current scene, you may re-roll
+    1d20.</p>
+  talenttype:
+    typeenum: species
+    description: Tellarite
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ONsKeOtkphWyx5ws
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ONsKeOtkphWyx5ws'

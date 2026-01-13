@@ -1,0 +1,52 @@
+folder: SNW8wJoTvc2rv213
+name: Phased Polaron Cannon
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-polaron-cannon.svg
+system:
+  description: >-
+    <p>Favored by the Dominion, phased polaron weapons are highly effective
+    at<br>cutting through deflector shields and other starship defenses.</p>
+
+    <p>Compact weapon systems designed to produce short, powerful pulses or
+    bolts of energy at the target.</p>
+  damage: 2
+  range: close
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: false
+    cumbersome: false
+    dampening: false
+    depleting: false
+    devastating: false
+    highyield: false
+    intense: true
+    jamming: false
+    persistent: false
+    piercing: true
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: energy
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 4NfN5aJNshqQLtQK
+ownership:
+  default: 0
+sort: 0
+_key: '!items!4NfN5aJNshqQLtQK'

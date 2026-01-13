@@ -1,0 +1,43 @@
+folder: vxwA3LkDPxUcWMFA
+name: Anesthetic Hypospray
+type: characterweapon2e
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: ''
+  damage: 3
+  range: melee
+  hands: 1
+  severity: 0
+  qualities:
+    deadly: false
+    stun: true
+    accurate: false
+    area: false
+    charge: false
+    cumbersome: true
+    debilitating: false
+    grenade: false
+    inaccurate: false
+    intense: true
+    piercingx: false
+    hiddenx: 0
+    opportunity: 1
+    escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 2zL8y071PMIt1x88
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2zL8y071PMIt1x88'

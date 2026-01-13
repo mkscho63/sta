@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-1800,-300)">
-        <g transform="matrix(1,0,0,1,1800,300)">
-            <rect id="ally-starfleet-token" x="0" y="0" width="256" height="256" style="fill:none;"/>
-            <g id="ally-starfleet-token1" serif:id="ally-starfleet-token">
-                <circle cx="128" cy="128" r="128"/>
-                <path d="M128,0C198.645,0 256,57.355 256,128C256,198.645 198.645,256 128,256C57.355,256 0,198.645 0,128C0,57.355 57.355,0 128,0ZM128,8C61.77,8 8,61.77 8,128C8,194.23 61.77,248 128,248C194.23,248 248,194.23 248,128C248,61.77 194.23,8 128,8Z" style="fill:rgb(0,119,175);"/>
-                <g transform="matrix(4.30856,0,0,4.30856,-3868,21.453)">
-                    <g id="Starfleet-Delta" serif:id="Starfleet Delta">
-                        <path id="Starfleet-Delta1" serif:id="Starfleet Delta" d="M930.959,28.599C932.949,28.512 939.469,42.872 939.44,42.267C938.835,29.806 928.882,5.232 927.542,5.233C926.201,5.234 916.249,30.152 915.47,42.354C915.436,42.879 925.925,28.818 930.959,28.599Z" style="fill:rgb(184,211,224);"/>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" viewBox="0 0 256 256"><path d="M0 0h256v256H0z" style="fill:none"/><g><circle cx="128" cy="128" r="128"/><path d="M128 0c70.645 0 128 57.355 128 128s-57.355 128-128 128S0 198.645 0 128 57.355 0 128 0m0 8C61.77 8 8 61.77 8 128s53.77 120 120 120 120-53.77 120-120S194.23 8 128 8" style="fill:#0077af"/><path d="M930.959 28.599c1.99-.087 8.51 14.273 8.481 13.668-.605-12.461-10.558-37.035-11.898-37.034-1.341.001-11.293 24.919-12.072 37.121-.034.525 10.455-13.536 15.489-13.755" style="fill:#b8d3e0" transform="translate(-3868 21.453)scale(4.30856)"/></g></svg>

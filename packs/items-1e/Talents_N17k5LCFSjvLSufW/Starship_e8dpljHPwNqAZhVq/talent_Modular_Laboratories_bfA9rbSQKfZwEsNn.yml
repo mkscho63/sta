@@ -1,0 +1,36 @@
+name: Modular Laboratories
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirements:</strong> None</p>
+
+    <p>The ship has considerable numbers of empty, multi-purpose compartments
+    that can be converted to laboratories as and when required. At the start of
+    an adventure, the crew may decide how the modular laboratories are
+    configured; this configuration counts as an Advantage which applies to work
+    performed within the laboratories.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 2
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450873023
+  modifiedTime: 1765450873023
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: e8dpljHPwNqAZhVq
+_id: bfA9rbSQKfZwEsNn
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!bfA9rbSQKfZwEsNn'

@@ -1,0 +1,32 @@
+folder: vxwA3LkDPxUcWMFA
+name: Anabolic Protoplaser / Dermal Regenerator
+type: item
+img: systems/sta/assets/compendia/icons/plain-core/plain-medical.svg
+system:
+  description: >-
+    <p>(PART OF MEDKIT)</p>
+
+    <p>The dermal regenerator stimulates an injured humanoid's natural healing
+    process to accelerate the production of new skin cells and connective
+    tissue.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ONGxozG1ZNme2nCf
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ONGxozG1ZNme2nCf'

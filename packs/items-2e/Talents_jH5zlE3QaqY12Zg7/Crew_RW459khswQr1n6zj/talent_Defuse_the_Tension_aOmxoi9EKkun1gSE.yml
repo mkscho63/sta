@@ -1,0 +1,30 @@
+folder: RW459khswQr1n6zj
+name: Defuse the Tension
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>Whenever you attempt a task to persuade someone not to resort to
+    violence, the first d20 you purchase for that&nbsp;task is free.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: aOmxoi9EKkun1gSE
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!aOmxoi9EKkun1gSE'

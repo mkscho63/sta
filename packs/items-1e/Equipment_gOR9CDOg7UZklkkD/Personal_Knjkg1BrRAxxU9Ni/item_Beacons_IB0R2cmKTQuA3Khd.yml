@@ -1,0 +1,38 @@
+name: Beacons
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>Like most battery powered light sources dating back to the 20th century,
+    the standard issue Starfleet beacon has a wider range of functions including
+    changing the frequency of the light emitted from the near infrared to
+    long-wave ultraviolet or providing a &lsquo;white&rsquo; light for species
+    that evolved with different natural light. Beacons can also be set to emit
+    entirely in the near infrared, providing a short-term heat source in a
+    survival situation. Standard Starfleet beacons are worn on the wrist and are
+    held in place with a strap, but also can be hand-held, mounted on helmets,
+    or fitted to phaser type-3.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: IB0R2cmKTQuA3Khd
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!IB0R2cmKTQuA3Khd'

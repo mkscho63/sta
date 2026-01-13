@@ -1,0 +1,31 @@
+folder: RW459khswQr1n6zj
+name: No Hesitation
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>At the start of any round in an action scene, you may add 1 Threat to
+    take the first turn, regardless of who would&nbsp;otherwise have acted
+    first.</p>
+  talenttype:
+    typeenum: attribute
+    description: daring
+    minimum: 9
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: hjvZeqUphFiLZq3N
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!hjvZeqUphFiLZq3N'

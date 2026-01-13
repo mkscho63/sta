@@ -1,0 +1,31 @@
+folder: vxwA3LkDPxUcWMFA
+name: Laser Scalpel
+type: item
+img: systems/sta/assets/compendia/icons/plain-core/plain-medical.svg
+system:
+  description: >-
+    <p>(PART OF MEDKIT)</p>
+
+    <p>Laser scalpels, also known as exoscalpels use a thin low-power laser beam
+    to cleanly cut through tissue to a predetermined depth.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 2l74R00Q9GSITIpZ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2l74R00Q9GSITIpZ'

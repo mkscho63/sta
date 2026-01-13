@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Quick Survey
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+system:
+  description: >-
+    <p>At the start of a scene, you may immediately ask one question, as if you
+    had spent 1 Momentum on the Obtain Information Momentum Spend. The answer
+    can only provide information that you could obtain with your own senses: you
+    cannot gain information from equipment in&nbsp;such a short time.</p>
+  talenttype:
+    typeenum: attribute
+    description: insight
+    minimum: 9
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 2o3qHEd9MWFbUCKF
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2o3qHEd9MWFbUCKF'

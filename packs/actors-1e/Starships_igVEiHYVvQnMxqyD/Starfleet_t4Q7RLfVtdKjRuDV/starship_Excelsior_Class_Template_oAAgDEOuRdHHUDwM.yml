@@ -1,0 +1,513 @@
+name: Excelsior Class Template
+type: starship
+img: systems/sta/assets/compendia/ships/starfleet/excelsior-token.webp
+system:
+  notes: >-
+    <p><strong>Entered Service:</strong> 2285</p>
+
+    <p><strong>Overview:</strong> The Excelsior class was hailed as &lsquo;The
+    Great Experiment&rsquo; by many scientists and engineers across the
+    Federation. It was to be the first class of starship to utilize
+    &lsquo;transwarp drive&rsquo; technology, a theoretical next step in
+    propulsion technology that had shown repeated laboratory and simulated
+    successes. The first attempted full-scale use of U.S.S. Excelsior and its
+    transwarp systems in 2285 resulted in a complete failure of all propulsion
+    systems from a combination of sabotage and failure of the vessel&rsquo;s
+    capability to generate and maintain a transwarp field. The prototype was
+    brought back into space dock for redesign using standard warp propulsion
+    technologies, and by 2290 the &lsquo;bugs&rsquo; had been worked out of the
+    design, resulting in a highly adaptable and capable starship for the late
+    23rd century and beyond.</p>
+
+    <p><strong>Capabilities:</strong> The ship-wide failure of U.S.S. Excelsior
+    caused engineers at the San Francisco Ship Yards to overengineer nearly
+    every system on the ship. The design&rsquo;s long transwarp nacelles were no
+    longer needed after the failure of the experiment, but engineers elected to
+    keep them so extra warp coils could be installed, giving the large starship
+    both a robust warp field and a high maximum sustained warp speed.
+    Excelsior-class vessels could often sustain dangerous warp speeds for
+    periods long enough that the warp cores would overload or the ship&rsquo;s
+    structural integrity field would begin to fail long before the coils
+    themselves would begin to malfunction. Sublight propulsion was far in excess
+    of what was needed, giving the massive cruiser accelerations typically seen
+    on vessels half its size. The redundant fusion reactors also assisted in
+    powering the ship&rsquo;s impressive shielding systems, capable of greater
+    defensive power absorption than the Constitution class over a much greater
+    surface area. Tactical systems were also improved over the older heavy
+    cruiser, with five dual type-8 phaser banks on the primary hull, and a
+    single dual bank tied directly into the impulse reactor array. Further, two
+    phaser banks are located on either side of the &lsquo;neck&rsquo; connecting
+    the primary and secondary hull, and a bank of phasers is located on the
+    dorsal secondary hull between the warp nacelle pylons. Additionally, two
+    forward and two aft mounted photon torpedo launchers gave the Excelsior
+    class enough firepower to give pause to any commander of a hostile vessel
+    encountering it, though at least one tube is kept loaded with probes while
+    on exploratory and research assignments. The redesign also allowed the
+    installation of the final generation of duotronic computer processors before
+    the introduction of isolinear systems in the early 24th century. This gave
+    Excelsior-class vessels unrivalled sensor and data processing abilities
+    compared to other starships of its era. As the redesign of the class was so
+    extensive, designers on the project ended up inadvertently ensuring the
+    class would be in use even today with large sections of the primary and
+    secondary hull able to be removed and replaced with the systems they
+    contain. Refits of the class since its introduction have kept a high demand
+    for Excelsior-class starships in Starfleet, and allowed their continual use
+    in an exploratory, border patrol, and even combat roles.</p>
+  crew:
+    value: 0
+    max: 5
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 5
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 0
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 2
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 0
+      selected: false
+  designation: ''
+  missionprofile: ''
+  power:
+    value: 14
+    max: 14
+  refit: ''
+  resistance: 5
+  scale: 5
+  shields:
+    value: 9
+    max: 9
+  servicedate: ''
+  spaceframe: Excelsior Class
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 8
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 8
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 9
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 8
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 9
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 9
+      selected: false
+      breaches: 0
+  traits: ''
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  shieldmod: 0
+  crwmod: 0
+  reservepower: true
+  shaken: false
+prototypeToken:
+  name: Excelsior Class Template
+  displayName: 30
+  actorLink: true
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/excelsior-token.webp
+    scaleX: 1.1
+    scaleY: 1.1
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 3
+  height: 3
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: 1
+  displayBars: 30
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Improved Impulse Drive
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+    effects: []
+    folder: null
+    sort: 0
+    flags:
+      core: {}
+    _id: z3uiMvl1be2BROlD
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p>The ship&rsquo;s Impulse drives are more powerful than on most ships,
+        allowing the ship to accelerate much more quickly. When the flight
+        controller succeeds at the <em>Impulse</em>, <em>Attack Pattern</em>,
+        <em>Evasive Action</em>, or <em>Ramming Speed</em> Tasks, they may spend
+        2 Momentum to increase the Difficulty of attacks against the ship by 1
+        until the start of the flight controller&rsquo;s next Turn, due to the
+        ship&rsquo;s rapid acceleration.</p>
+      talenttype:
+        typeenum: general
+        description: ''
+        minimum: 0
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    ownership:
+      default: 0
+    _key: '!actors.items!oAAgDEOuRdHHUDwM.z3uiMvl1be2BROlD'
+  - name: Secondary Reactors
+    type: talent
+    img: systems/sta/assets/compendia/icons/talents-core/talent-power.svg
+    effects: []
+    flags:
+      core: {}
+    system:
+      description: >-
+        <p><strong>Requirements:</strong> None</p>
+
+        <p><span class="fontstyle0">The ship has additional impulse and fusion
+        reactors, that<br>allow the ship to generate far greater quantities of
+        energy.<br>Increase the ship&rsquo;s normal Power capacity by
+        5.</span></p>
+      talenttype:
+        typeenum: general
+        description: science
+        minimum: 2
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: 4ynqbKZSw4eVZjsK
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!oAAgDEOuRdHHUDwM.4ynqbKZSw4eVZjsK'
+  - name: Phaser Bank (Scale 5)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Banks are a collection of emitters, designed to fire in unison. They
+        produce a focused beam of energy that can inflict considerable damage.
+        Banks have a Range category of Medium, and increase the weapon&rsquo;s
+        damage by +1 Challenge Die.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 6
+      range: Medium
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: x22d77wJYgHPrWcD
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!oAAgDEOuRdHHUDwM.x22d77wJYgHPrWcD'
+  - name: Photon Torpedo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+      damage: 3
+      range: Long
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 1
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: WPdRLaefIYCkCLge
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!oAAgDEOuRdHHUDwM.WPdRLaefIYCkCLge'
+  - name: Photon Torpedo Salvo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p>Torpedoes may be fired in a salvo: a volley of several torpedoes,
+        intended to have a much greater effect. Firing a salvo of torpedoes adds
+        2 Threat to the pool, along with the 1 point of Threat for a torpedo
+        attack, for a total of 3 Threat. Firing a salvo of torpedoes adds +3 to
+        Threat instead of +1, but it increases the attack&rsquo;s damage by +1
+        Challenge Die, and grants the Spread effect to the attack.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually</p>
+      damage: 4
+      range: Long
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 3
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: YAzWmF4NlPWJk3uL
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!oAAgDEOuRdHHUDwM.YAzWmF4NlPWJk3uL'
+  - name: Tractor Beam (Strength 4)
+    type: item
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The tactical officer engages a tractor beam at a nearby object or
+        vessel. This requires a <strong>Control + Security</strong> Task,
+        assisted by the ship&rsquo;s <strong>Structure + Security</strong> with
+        a Difficulty of 2, and can only be directed at a target within Close
+        range. If successful, the target vessel is immobilized and cannot move
+        unless it can break free, using their shield modulations, the raw power
+        of their engines, or disabling the tractor beam emitter (a Task in its
+        own right), with a Difficulty of 4.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: 558xvMOojyVgUq3q
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!oAAgDEOuRdHHUDwM.558xvMOojyVgUq3q'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450397815
+  modifiedTime: 1765450397815
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: t4Q7RLfVtdKjRuDV
+_id: oAAgDEOuRdHHUDwM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!oAAgDEOuRdHHUDwM'

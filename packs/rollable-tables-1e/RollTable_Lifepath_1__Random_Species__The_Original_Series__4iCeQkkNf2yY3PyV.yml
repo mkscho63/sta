@@ -1,0 +1,154 @@
+name: 'Lifepath 1: Random Species (The Original Series)'
+img: systems/sta/assets/compendia/icons/plain-core/plain-career-young.svg
+description: >-
+  Rolls a random playable species appropriate for the mid-23nd century era of
+  "Star Trek: The Original Series".
+results:
+  - type: document
+    weight: 1
+    range:
+      - 1
+      - 2
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: nBSUxxhVOHyaXj1f
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Andorian
+    documentUuid: Compendium.sta-compendia.playable-species-core.sil5Jw4x14VUuQ43
+    description: ''
+    _key: '!tables.results!4iCeQkkNf2yY3PyV.nBSUxxhVOHyaXj1f'
+  - type: document
+    weight: 1
+    range:
+      - 3
+      - 4
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: MaxRAqzogvlZ3T9k
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Denobulan
+    documentUuid: Compendium.sta-compendia.playable-species-core.sG5HrEknva6YKg9s
+    description: ''
+    _key: '!tables.results!4iCeQkkNf2yY3PyV.MaxRAqzogvlZ3T9k'
+  - type: document
+    weight: 1
+    range:
+      - 5
+      - 14
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: AUAEwZgp5bh1qTvd
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Human
+    documentUuid: Compendium.sta-compendia.playable-species-core.TMdKQrtijCM6OpUl
+    description: ''
+    _key: '!tables.results!4iCeQkkNf2yY3PyV.AUAEwZgp5bh1qTvd'
+  - type: document
+    weight: 1
+    range:
+      - 15
+      - 16
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: Js7PBjVfzcXRkvXt
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Tellarite
+    documentUuid: Compendium.sta-compendia.playable-species-core.p8oOfmUoVgzKg9D4
+    description: ''
+    _key: '!tables.results!4iCeQkkNf2yY3PyV.Js7PBjVfzcXRkvXt'
+  - type: document
+    weight: 1
+    range:
+      - 17
+      - 18
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: aXwEYN7iT6LQX52X
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Trill
+    documentUuid: Compendium.sta-compendia.playable-species-core.FBF4jshFMMZGGMm3
+    description: ''
+    _key: '!tables.results!4iCeQkkNf2yY3PyV.aXwEYN7iT6LQX52X'
+  - type: document
+    weight: 1
+    range:
+      - 19
+      - 20
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: chNJeE9P7fj5AB1x
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Vulcan
+    documentUuid: Compendium.sta-compendia.playable-species-core.3xqHCdPKjQwI3JfK
+    description: ''
+    _key: '!tables.results!4iCeQkkNf2yY3PyV.chNJeE9P7fj5AB1x'
+formula: 1d20
+replacement: true
+displayRoll: true
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452265880
+  modifiedTime: 1765452265880
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+_id: 4iCeQkkNf2yY3PyV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!tables!4iCeQkkNf2yY3PyV'

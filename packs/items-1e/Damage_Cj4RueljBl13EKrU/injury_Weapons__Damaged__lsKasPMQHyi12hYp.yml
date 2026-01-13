@@ -1,0 +1,33 @@
+name: Weapons (Damaged)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-damaged-weapons.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p><span class="fontstyle0">If the total number of Breaches the
+    Weapons<br>System has suffered is equal to or greater than half the
+    Scale<br>of the ship, then the System has been significantly
+    Damaged.<br>This increases the Difficulty of all Tasks that involve or
+    are<br>assisted by the ship&rsquo;s Weapons by +2 until repaired
+    &mdash;<br>naturally, this includes attacks. The Difficulty to repair this
+    is 3.</span></p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: lsKasPMQHyi12hYp
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!lsKasPMQHyi12hYp'

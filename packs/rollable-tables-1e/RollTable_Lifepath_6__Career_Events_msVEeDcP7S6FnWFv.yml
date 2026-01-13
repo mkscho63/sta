@@ -1,0 +1,426 @@
+name: 'Lifepath 6: Career Events'
+img: systems/sta/assets/compendia/icons/plain-core/plain-starfleet.svg
+description: Rolls a random career event for a player character.
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: 2OM2oYH7nxna7ZjQ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Ship Destroyed
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.2OM2oYH7nxna7ZjQ'
+  - type: text
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: 6d1oO3hJX5cQv9Np
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Death of A Friend
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.6d1oO3hJX5cQv9Np'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: mfoubk4IeXRPOcSV
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Lauded by Another Culture
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.mfoubk4IeXRPOcSV'
+  - type: text
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: xhG7IXHNwntde0Nu
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Negotiate A Treaty
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.xhG7IXHNwntde0Nu'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: mnNx06i3lvIMrwRp
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Required to Take Command
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.mnNx06i3lvIMrwRp'
+  - type: text
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: IpNXThXBK1gF7wVU
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Encounter with A Truly Alien Being
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.IpNXThXBK1gF7wVU'
+  - type: text
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    _id: wnxNNDTYxFButLxf
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Serious Injury
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.wnxNNDTYxFButLxf'
+  - type: text
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    _id: iiwm9smrl0z4r5mE
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Conflict with A Hostile Creature
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.iiwm9smrl0z4r5mE'
+  - type: text
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    _id: QV3qKMUrN8LZKiLU
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Mentored
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.QV3qKMUrN8LZKiLU'
+  - type: text
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    _id: JhYxnsOcNhZXXlyx
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Transporter Accident
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.JhYxnsOcNhZXXlyx'
+  - type: text
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    _id: f7hZRDt7ixU2J6Vw
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Dealing with A Plague
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.f7hZRDt7ixU2J6Vw'
+  - type: text
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    _id: AONAFvxNT4s2mWCc
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Betrayed Ideals for A Superior
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.AONAFvxNT4s2mWCc'
+  - type: text
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    _id: 1xjUT5a8v0qL2pHM
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Called Out a Superior
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.1xjUT5a8v0qL2pHM'
+  - type: text
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    _id: 2otqPPzXXR5S4Bft
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: New Battle Strategy
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.2otqPPzXXR5S4Bft'
+  - type: text
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    _id: 9XP6HC4OD7PtredJ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Learns Unique Language
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.9XP6HC4OD7PtredJ'
+  - type: text
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    _id: VGkxn6IuuLDJBvSq
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Discovers an Artefact
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.VGkxn6IuuLDJBvSq'
+  - type: text
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    _id: DYlxiWWzRzn4bEGC
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Special Commendation
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.DYlxiWWzRzn4bEGC'
+  - type: text
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    _id: NX76lzzYlgbJsBga
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Solved an Engineering Crisis
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.NX76lzzYlgbJsBga'
+  - type: text
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    _id: 37437gn5n4IwpMGh
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Breakthrough or Invention
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.37437gn5n4IwpMGh'
+  - type: text
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    _id: wyN0xKxRFurcTocL
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: First Contact
+    name: ''
+    _key: '!tables.results!msVEeDcP7S6FnWFv.wyN0xKxRFurcTocL'
+formula: 1d20
+replacement: true
+displayRoll: true
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452265880
+  modifiedTime: 1765452265880
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+_id: msVEeDcP7S6FnWFv
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!tables!msVEeDcP7S6FnWFv'

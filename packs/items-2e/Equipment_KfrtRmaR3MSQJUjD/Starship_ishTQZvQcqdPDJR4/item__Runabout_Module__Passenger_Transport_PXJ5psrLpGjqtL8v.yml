@@ -1,0 +1,29 @@
+folder: ishTQZvQcqdPDJR4
+name: (Runabout Module) Passenger Transport
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p>The runabout may carry up to 10 passengers, or up to 40 in an emergency,
+    for a maximum of 2 hours.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451154214
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: PXJ5psrLpGjqtL8v
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!PXJ5psrLpGjqtL8v'

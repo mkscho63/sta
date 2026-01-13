@@ -1,0 +1,197 @@
+name: 'Lifepath 1: Random Species (The Next Generation)'
+img: systems/sta/assets/compendia/icons/plain-core/plain-career-young.svg
+description: >-
+  Rolls a random playable species appropriate for the mid-24nd century era of
+  "Star Trek: The Next Generation", "Star Trek: Deep Space Nine", and "Star
+  Trek: Voyager".
+results:
+  - type: document
+    weight: 1
+    range:
+      - 1
+      - 2
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: nBSUxxhVOHyaXj1f
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Andorian
+    documentUuid: Compendium.sta-compendia.playable-species-core.sil5Jw4x14VUuQ43
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.nBSUxxhVOHyaXj1f'
+  - type: document
+    weight: 1
+    range:
+      - 3
+      - 4
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: rw6xK0JkH7o9kHgD
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Bajoran
+    documentUuid: Compendium.sta-compendia.playable-species-core.0QU5mv0fOR8aWo8Z
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.rw6xK0JkH7o9kHgD'
+  - type: document
+    weight: 1
+    range:
+      - 5
+      - 6
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: SvLumRxLwyqcvbCC
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Betazoid
+    documentUuid: Compendium.sta-compendia.playable-species-core.B8Cqu2zYTjI3Sohw
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.SvLumRxLwyqcvbCC'
+  - type: document
+    weight: 1
+    range:
+      - 7
+      - 8
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: UBL64CGABsKzPP8q
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Denobulan
+    documentUuid: Compendium.sta-compendia.playable-species-core.sG5HrEknva6YKg9s
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.UBL64CGABsKzPP8q'
+  - type: document
+    weight: 1
+    range:
+      - 9
+      - 14
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: WGHlZhdyN4fnKZA0
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Human
+    documentUuid: Compendium.sta-compendia.playable-species-core.TMdKQrtijCM6OpUl
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.WGHlZhdyN4fnKZA0'
+  - type: document
+    weight: 1
+    range:
+      - 15
+      - 16
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: b0MdvDfvpqAiiylS
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Tellarite
+    documentUuid: Compendium.sta-compendia.playable-species-core.p8oOfmUoVgzKg9D4
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.b0MdvDfvpqAiiylS'
+  - type: document
+    weight: 1
+    range:
+      - 17
+      - 18
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: n7CmRq5FXuFVEDD2
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Trill
+    documentUuid: Compendium.sta-compendia.playable-species-core.FBF4jshFMMZGGMm3
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.n7CmRq5FXuFVEDD2'
+  - type: document
+    weight: 1
+    range:
+      - 19
+      - 20
+    drawn: false
+    img: icons/svg/d20-black.svg
+    _id: YFgmoWhVnTWiZbhi
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    name: Vulcan
+    documentUuid: Compendium.sta-compendia.playable-species-core.3xqHCdPKjQwI3JfK
+    description: ''
+    _key: '!tables.results!VRUY3if4DONXB8ZY.YFgmoWhVnTWiZbhi'
+formula: 1d20
+replacement: true
+displayRoll: true
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452265880
+  modifiedTime: 1765452265880
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+_id: VRUY3if4DONXB8ZY
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!tables!VRUY3if4DONXB8ZY'

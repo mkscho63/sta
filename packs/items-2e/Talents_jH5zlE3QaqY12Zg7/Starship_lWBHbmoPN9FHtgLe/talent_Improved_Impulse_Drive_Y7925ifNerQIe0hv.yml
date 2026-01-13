@@ -1,0 +1,32 @@
+folder: lWBHbmoPN9FHtgLe
+name: Improved Impulse Drive
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-engines.svg
+system:
+  description: >-
+    <p>When a character uses the Impulse minor action while&nbsp;on this ship,
+    they may spend 2 Momentum to increase the Difficulty of attacks against the
+    ship by +1 until the start of that character&rsquo;s next turn, due to the
+    ship&rsquo;s rapid acceleration.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Y7925ifNerQIe0hv
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Y7925ifNerQIe0hv'

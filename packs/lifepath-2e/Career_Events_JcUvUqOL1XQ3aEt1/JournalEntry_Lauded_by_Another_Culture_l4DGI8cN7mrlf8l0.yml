@@ -1,0 +1,61 @@
+name: Lauded by Another Culture
+pages:
+  - sort: 100000
+    name: Lauded by Another Culture
+    type: text
+    _id: vWJxml0SEmMm1UXO
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character was involved in a mission that earned the official
+        praise of a non-Federation culture; they are now considered to be a
+        friend to those people.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Presence</p></li><li><p>DEPARTMENT: + 1 Science</p></li><li><p>FOCUS
+        SUGGESTIONS: A focus of X Culture, replacing the X with the name of that
+        culture or any that represent skills or techniques specific to that
+        culture.</p></li><li><p>TRAIT: A good example might be Friend to the X,
+        replacing the X with the name of the culture. This reflects the
+        character’s renown among that culture, and the benefits and problems
+        such status brings.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!l4DGI8cN7mrlf8l0.vWJxml0SEmMm1UXO'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: l4DGI8cN7mrlf8l0
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!l4DGI8cN7mrlf8l0'

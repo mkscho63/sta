@@ -1,0 +1,67 @@
+name: Business or Trade (rebelled)
+pages:
+  - sort: 100000
+    name: Business or Trade (rebelled)
+    type: text
+    _id: Q6iocoqxwgZPMLGS
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character’s family may have connections on countless worlds,
+        overseeing and directing some grand business endeavor. They might have
+        been traders or involved in interplanetary freight. Either way, the
+        character has grown up encountering people from all walks of life,
+        including those from outside their civilization, and their outlook on
+        life has been shaped accordingly.</p><p></p><p>ATTRIBUTES</p><p>If the
+        character rebelled against this Upbringing, stepping away from the
+        family business to find their own identity increases their Insight by 2
+        and their Reason by 1.</p><p></p><p>DEPARTMENTS, FOCUS, AND
+        TALENT</p><p>The character’s experiences with their family business
+        allows them to increase any one of Command, Engineering, or
+        Science.</p><p>The character’s focus should relate to the nature of
+        their family’s business, covering skills that are valuable during trade,
+        or which were useful to the family business in other ways. Examples
+        include: Finances, Geology, Linguistics, Manufacturing, Metallurgy,
+        Negotiation, Survey.</p><p>The character also gains a single talent.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!JY0pg4ryHkTvGn2Z.Q6iocoqxwgZPMLGS'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452028706
+  modifiedTime: 1765452028706
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: L0pO3EBG3IC92dxI
+categories: []
+_id: JY0pg4ryHkTvGn2Z
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!JY0pg4ryHkTvGn2Z'

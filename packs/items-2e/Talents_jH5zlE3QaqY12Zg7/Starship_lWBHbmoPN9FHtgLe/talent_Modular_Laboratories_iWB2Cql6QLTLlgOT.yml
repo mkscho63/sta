@@ -1,0 +1,30 @@
+folder: lWBHbmoPN9FHtgLe
+name: Modular Laboratories
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>The opportunity cost of establishing a science lab (page 189) is reduced
+    to 0 for the first laboratory established, and to 1 for the second.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 2
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: iWB2Cql6QLTLlgOT
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!iWB2Cql6QLTLlgOT'

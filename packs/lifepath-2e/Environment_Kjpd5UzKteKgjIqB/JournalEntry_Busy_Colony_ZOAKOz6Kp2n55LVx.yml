@@ -1,0 +1,66 @@
+name: Busy Colony
+pages:
+  - sort: 100000
+    name: Busy Colony
+    type: text
+    _id: Et5P9zgfFQIYhg11
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The character comes from one of their culture’s oldest or most
+        prosperous colonies, which may be another world within their home
+        system—such as Luna or Mars for Humans—or one of the first worlds
+        colonized after the culture achieved interstellar flight. These colonies
+        often develop a fiercely independent outlook, often having developed
+        with little direct aid from their home world, and a sense of pride that
+        accompanies being among the first of their kind to tame another
+        world.</p><p></p><ul><li><p>VALUE: At this step, the character gains a
+        single value. This value should reflect the environment and culture the
+        character was raised within. Consider how the character views their own
+        culture, and how they connect—or possibly, don’t connect—to the
+        philosophies and traditions of their people.</p></li><li><p>ATTRIBUTE:
+        Choose one of the following attributes and increase it by 1: Daring or
+        Presence</p></li><li><p>DEPARTMENT: Choose one of Command, Security, or
+        Science; the character increases that department by 1.</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!ZOAKOz6Kp2n55LVx.Et5P9zgfFQIYhg11'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452001741
+  modifiedTime: 1765452001741
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Kjpd5UzKteKgjIqB
+categories: []
+_id: ZOAKOz6Kp2n55LVx
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!ZOAKOz6Kp2n55LVx'

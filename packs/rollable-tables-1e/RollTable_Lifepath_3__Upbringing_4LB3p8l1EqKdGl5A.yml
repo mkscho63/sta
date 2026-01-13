@@ -1,0 +1,146 @@
+name: 'Lifepath 3: Upbringing'
+img: systems/sta/assets/compendia/icons/plain-core/plain-relationship.svg
+description: Rolls a random upbringing for a player character.
+results:
+  - type: text
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    _id: 2OM2oYH7nxna7ZjQ
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Starfleet
+    name: ''
+    _key: '!tables.results!4LB3p8l1EqKdGl5A.2OM2oYH7nxna7ZjQ'
+  - type: text
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    _id: AjdQMxdrjvj9dVMW
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Business or Trade
+    name: ''
+    _key: '!tables.results!4LB3p8l1EqKdGl5A.AjdQMxdrjvj9dVMW'
+  - type: text
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    _id: XdeDgByRuKzd1SnM
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Agriculture or Rural
+    name: ''
+    _key: '!tables.results!4LB3p8l1EqKdGl5A.XdeDgByRuKzd1SnM'
+  - type: text
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    _id: OsZAuqpBn9bQa3T0
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Science and Technology
+    name: ''
+    _key: '!tables.results!4LB3p8l1EqKdGl5A.OsZAuqpBn9bQa3T0'
+  - type: text
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    _id: ZsiaOnH1ImyLMjWe
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Artistic and Creative
+    name: ''
+    _key: '!tables.results!4LB3p8l1EqKdGl5A.ZsiaOnH1ImyLMjWe'
+  - type: text
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    _id: j6mxmU6sssOKuWJF
+    img: icons/svg/d20-black.svg
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    description: Diplomacy and Politics
+    name: ''
+    _key: '!tables.results!4LB3p8l1EqKdGl5A.j6mxmU6sssOKuWJF'
+formula: 1d6
+replacement: true
+displayRoll: true
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452265880
+  modifiedTime: 1765452265880
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: null
+_id: 4LB3p8l1EqKdGl5A
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!tables!4LB3p8l1EqKdGl5A'

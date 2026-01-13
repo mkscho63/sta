@@ -1,0 +1,58 @@
+name: Mentored
+pages:
+  - sort: 100000
+    name: Mentored
+    type: text
+    _id: w0NK0NAdmFreGi9C
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>A highly-respected officer took notice of the character’s career. For
+        a time, the character served as the officer’s pilot and aide, gaining
+        the benefit of the officer’s experiences and
+        lessons.</p><p></p><ul><li><p>ATTRIBUTE: +1
+        Any</p></li><li><p>DEPARTMENT: + 1 Conn</p></li><li><p>FOCUS
+        SUGGESTIONS: Composure or Etiquette, any focus reflecting the officer’s
+        specialties</p></li></ul>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!SK8Rw4CbkmabmnHd.w0NK0NAdmFreGi9C'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451971794
+  modifiedTime: 1765451971794
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: JcUvUqOL1XQ3aEt1
+categories: []
+_id: SK8Rw4CbkmabmnHd
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!SK8Rw4CbkmabmnHd'

@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Multi-tasking
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>When you attempt the Override major action while at a bridge station that
+    includes one or both helm or navigator positions, you may use your Conn
+    department&nbsp;instead of the department usually required for that
+    task.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: KPzUaqDW2Kwprlx1
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!KPzUaqDW2Kwprlx1'

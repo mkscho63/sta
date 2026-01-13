@@ -1,0 +1,56 @@
+name: Tricorder
+type: item
+img: systems/sta/assets/compendia/icons/items-core/tricorder.webp
+effects: []
+folder: Knjkg1BrRAxxU9Ni
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Standard Issue</strong></p>
+
+    <p>&lsquo;Tricorder&rsquo; is the label given to a class of versatile
+    devices in use across the Federation. Their name is derived from the
+    original early 22nd century name for the device, &lsquo;Tri-function
+    Recorder,&rsquo; able to sense, record, and analyze data from a variety of
+    sensors attached to the device, dependent on the primary use. During the
+    23rd century there were two primary versions of the Starfleet tricorder
+    (science and medical), and a single highly specialized version (the
+    psychotricorder). The psychotricorder was primarily used by psychologists
+    and law enforcement agencies as a device to more accurately determine a
+    humanoid&rsquo;s behavioral and emotional state, aiding in helping
+    physicians provide accurate diagnoses of trauma and useful treatments. Law
+    enforcement would use these devices as a way to determine truthfulness of
+    statements or in aiding officers in finding mentally disturbed individuals.
+    The more common medical and science tricorders only differed in the range
+    and scope of their sensors and ability to use tricorder attachments. The
+    medical tricorder typically had fewer sensors and a shorter range as a
+    tradeoff for higher resolution scans more specialized towards biological
+    functions and a greater capacity for specialist attachments. The science
+    tricorder had a large multi-discipline database and a built in sub-space
+    uplink that could connect to nearby Starfleet vessels for main computer
+    access when needed. By the 24th century tricorders were unified into a
+    single design as data storage and sensor design was further miniaturized by
+    the development of isolinear computing technologies, even including more
+    specialist analysis capabilities for engineering teams. Without a tricorder,
+    Starfleet crewmembers would have difficulty diagnosing medical ailments,
+    engineering glitches, or scientific curiosities</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: M296vLu7w3d0ZpQU
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!M296vLu7w3d0ZpQU'

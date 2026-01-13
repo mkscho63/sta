@@ -1,0 +1,25 @@
+name: Starfleet Protocol
+type: focus
+img: systems/sta/assets/compendia/icons/focuses-core/focus-starfleet.svg
+system:
+  description: ''
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450651891
+  modifiedTime: 1765450651891
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: 8vY0DBXh5lBFnJ6q
+_id: xXoQHWwsEIUUlSDe
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!xXoQHWwsEIUUlSDe'

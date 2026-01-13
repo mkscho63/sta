@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Psychoanalyst
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-medical.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Medicine 3+ and a psychology-related focus</p>
+
+    <p><br>When you use Medicine during a social conflict, you may increase the
+    complication range of your task by 1, 2, or 3. For each step of complication
+    range increased, you may ask a single question as if you&rsquo;d spent
+    Momentum on Obtain Information. Any Complications generated from this task
+    results in the individual you are interacting with becoming offended or
+    upset with being &ldquo;analyzed.&rdquo;</p>
+  talenttype:
+    typeenum: discipline
+    description: medicine
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 9CNyfpC4VuZpHQXb
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!9CNyfpC4VuZpHQXb'

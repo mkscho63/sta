@@ -1,0 +1,85 @@
+name: Aenar
+pages:
+  - sort: 200000
+    name: Aenar
+    type: text
+    _id: uuNpMRfUoYYKHMaY
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>The Aenar are a subspecies of Andorians originally native to an
+        isolated region of the northern wastes of Andoria. Though typically
+        blind, they are telepathic, and their other senses are heightened. Once
+        believed to be a myth, the Aenar are few and most prefer to remain
+        within their isolated settlements, and they rarely bother themselves
+        with matters outside their own communities. They lack the distinctive
+        blue skin pigmentation of other Andorians, instead having skin tones
+        that range from white, to ice blue, to pale gray. Aenar deplore
+        violence, and commonly follow a strictly pacifist
+        ideology.</p><p>Compared to their Andorian kin, Aenar often seem calm
+        and restrained. They are no less proud of their heritage, but they
+        express that pride differently, often taking great pride in their skills
+        and the work they do. The few Aenar who leave their homeworld often come
+        off as highly motivated and sure of themselves, maintaining their sense
+        of self even when far from their families.</p><p></p><p>SAMPLE
+        VALUES:</p><ul><li><p>Do not mistake my blindness for
+        helplessness</p></li><li><p>I perceive things your eyes do
+        not</p></li><li><p>Life is incomplete without
+        purpose</p></li><li><p>Pacifism is not
+        passive</p><p></p></li></ul><p>ATTRIBUTES: +1 Control, +1 Insight, +1
+        Presence</p><p></p><p>TRAIT: Aenar. Biologically similar to Andorians,
+        Aenar differ in a number of ways. Aenar are typically blind, but their
+        other senses are heightened to a degree that more than compensates for
+        their lack of sight. They are also telepathic which further contributes
+        to their awareness of their environment. Aenar are typically pacifists,
+        and thus may be reluctant, or even outright refuse, to carry out violent
+        acts.</p><p></p><p>TELEPATHIC (SPECIES ABILITY): Aenar can sense the
+        minds of other living creatures in their vicinity, and can read the
+        thoughts of others, though they have strict taboos about reading a mind
+        without permission. See the Telepathy talent on page 156 for more
+        details.</p><p></p><p>AENAR NAMES: Aenar names are much like Andorian
+        names (see opposite page), though the Aenar place less emphasis on their
+        clan names.</p>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!sSMHPyy7iYPdIlbR.uuNpMRfUoYYKHMaY'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765452014116
+  modifiedTime: 1765452014116
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: GZwuoTIjwVhAYTQN
+categories: []
+_id: sSMHPyy7iYPdIlbR
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!sSMHPyy7iYPdIlbR'

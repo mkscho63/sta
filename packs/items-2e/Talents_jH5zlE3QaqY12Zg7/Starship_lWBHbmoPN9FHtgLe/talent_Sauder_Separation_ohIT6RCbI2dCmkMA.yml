@@ -1,0 +1,36 @@
+folder: lWBHbmoPN9FHtgLe
+name: Sauder Separation
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-ship.svg
+system:
+  description: >-
+    <p>Vessels of this class have the capability to detach their&nbsp;saucer
+    section in an emergency. Once the saucer has detached, the two sections of
+    the ship cannot be reconnected outside of a drydock. Ship&rsquo;s systems
+    are halved (round up) for the saucer and the secondary hull when separated,
+    the saucer is unable to enter warp speeds or launch small craft, and each
+    section is considered a separate vessel with Scale 1 less than the original
+    vessel; the secondary hull is commanded from main engineering. The saucer
+    can land on a planetary surface with emergency landing gear.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ohIT6RCbI2dCmkMA
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!ohIT6RCbI2dCmkMA'

@@ -1,0 +1,34 @@
+folder: RW459khswQr1n6zj
+name: Mental Repository
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Science 3+ and Reason 10+</p>
+
+    <p><br>Using extensive mental conditioning, you have access to memories with
+    unprecedented clarity and accuracy. You may treat Obtain Information as if
+    it were an Immediate Momentum spend, but the answers to these questions can
+    only come from information you would already know and remember.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Nex6EvVBnzzBCJfJ
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Nex6EvVBnzzBCJfJ'

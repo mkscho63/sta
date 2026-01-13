@@ -9,6 +9,9 @@ const stringify = require('json-stringify-pretty-compact');
 const argv = require('yargs').argv;
 const chalk = require('chalk');
 
+// Required to build the packs
+const {compilePack} = require('@foundryvtt/foundryvtt-cli');
+
 gulp.task('sass', function(cb) {
   gulp
     .src('src/styles/*.scss')
@@ -73,10 +76,39 @@ function buildSASS() {
 }
 
 /* Build packs for system.json */
-// async function replaceTokenSystemJson() {
-//   return gulp
-//     .src(src.)
-// }
+async function buildPacks() {
+  const yaml = true;
+  const folders = true;
+  
+  try {
+    // Ensure the packs directory exists
+    const packsDir = './packs';
+    if (!fs.existsSync(packsDir)) {
+      console.log('No packs directory found');
+      return;
+    }
+    
+    // Read all pack directories
+    const packs = await fs.readdir(packsDir);
+    for (const pack of packs) {
+      if (pack.startsWith('.')) continue;
+      console.log('Packing ' + pack);
+      
+      // Create destination directory if it doesn't exist
+      const destDir = `./src/assets/packs/${pack}`;
+      await fs.ensureDir(destDir);
+      
+      await compilePack(
+        `./packs/${pack}`,
+        `./src/assets/packs/${pack}`,
+        {yaml, recursive: folders}
+      );
+    }
+  } catch (err) {
+    console.error('Error building packs:', err);
+    throw err;
+  }
+}
 
 /* Copy Files */
 async function copyFiles() {
@@ -86,7 +118,6 @@ async function copyFiles() {
     'module',
     'templates',
     'system.json',
-    'template.json',
   ];
   try {
     for (const file of statics) {
@@ -124,7 +155,6 @@ async function clean() {
     'module',
     `${name}.js`,
     'system.json',
-    'template.json'
   );
 
 
@@ -385,7 +415,8 @@ function gitTag() {
 
 const execGit = gulp.series(gitAdd, gitCommit, gitTag);
 
-const execBuild = gulp.parallel(buildSASS, copyFiles);
+// Updated build task to include pack building
+const execBuild = gulp.series(buildSASS, buildPacks, copyFiles);
 
 exports.build = gulp.series(clean, execBuild);
 exports.watch = buildWatch;

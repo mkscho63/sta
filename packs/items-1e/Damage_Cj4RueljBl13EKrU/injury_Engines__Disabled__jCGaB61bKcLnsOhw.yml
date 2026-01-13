@@ -1,0 +1,33 @@
+name: Engines (Disabled)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-disabled-engines.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p>If the total number of Breaches the Engines system has suffered is equal
+    to the Scale of the ship, then the system has been Disabled. The Engines
+    System cannot be used to perform or assist any Tasks (even those that would
+    normally be Difficulty 0), loss of power generation means that the ship
+    loses 2 Power at the end of every Round. The Difficulty to repair this is 5,
+    though at the Gamemaster&rsquo;s discretion this may be replaced with an
+    Extended Task (Work 10, Magnitude 3, Resistance 2, base Difficulty 2).</p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: jCGaB61bKcLnsOhw
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!jCGaB61bKcLnsOhw'

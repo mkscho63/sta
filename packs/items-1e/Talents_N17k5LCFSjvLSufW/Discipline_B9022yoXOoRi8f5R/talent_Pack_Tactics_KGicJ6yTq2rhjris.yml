@@ -1,0 +1,33 @@
+name: Pack Tactics
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-security.svg
+effects: []
+folder: B9022yoXOoRi8f5R
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450572135
+  modifiedTime: 1765450572135
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirement:</strong> None</p>
+
+    <p>Whenever you assist another character during combat, the character you
+    assisted gains one bonus Momentum if they succeed.</p>
+  talenttype:
+    typeenum: general
+    description: security
+    minimum: 3
+_id: KGicJ6yTq2rhjris
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!KGicJ6yTq2rhjris'

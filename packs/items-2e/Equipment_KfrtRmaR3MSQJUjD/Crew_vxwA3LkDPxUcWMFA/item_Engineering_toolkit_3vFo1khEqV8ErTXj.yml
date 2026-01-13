@@ -1,0 +1,36 @@
+folder: vxwA3LkDPxUcWMFA
+name: Engineering toolkit
+type: item
+img: systems/sta/assets/compendia/icons/items-core/engineering_kit.webp
+system:
+  description: >-
+    <p>(STANDARD ISSUE FOR ENGINEERS, OPPORTUNITY 1 OTHERWISE)</p>
+
+    <p><br>The engineering multi-tool acted as a tricorder-like device to detect
+    and diagnose system faults and could be used as a multi-purpose tool. With
+    the advent of isolinear systems, the multi-tool was rendered obsolete and
+    many of the device&rsquo;s uses were supplanted by the tricorder. Tools were
+    still needed to maintain and repair damaged equipment, so the engineering
+    toolkit was introduced to provide nearly every tool a damage control or
+    engineering team may usually need.</p>
+  quantity: 1
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451139602
+  modifiedTime: 1765451139602
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 3vFo1khEqV8ErTXj
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!3vFo1khEqV8ErTXj'

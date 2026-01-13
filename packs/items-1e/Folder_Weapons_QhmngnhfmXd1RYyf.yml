@@ -1,0 +1,20 @@
+type: Item
+folder: null
+name: Weapons
+color: null
+sorting: a
+_id: QhmngnhfmXd1RYyf
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450806838
+  modifiedTime: 1765450806838
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_key: '!folders!QhmngnhfmXd1RYyf'

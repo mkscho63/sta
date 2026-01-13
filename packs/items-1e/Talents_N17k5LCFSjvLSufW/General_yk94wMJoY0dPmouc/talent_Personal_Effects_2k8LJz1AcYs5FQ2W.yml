@@ -1,0 +1,38 @@
+name: Personal Effects
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-core.svg
+effects: []
+folder: yk94wMJoY0dPmouc
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450670543
+  modifiedTime: 1765450670543
+  lastModifiedBy: h6PQP2LANMyAy0DY
+system:
+  description: >-
+    <p><strong>Requirements</strong>: Main Character</p>
+
+    <p>The character possesses some significant and uncommon item or device
+    which is not part of Starfleet&rsquo;s standard issue, but which is
+    nevertheless useful for missions. The character may select one item with an
+    Opportunity Cost of 2, or two items with an Opportunity Cost of 1 each.
+    Neither items may have an Escalation Cost greater than 1. See <em>Chapter 8:
+    Equipment and Technology</em> for more details. A character may select this
+    multiple times.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+_id: 2k8LJz1AcYs5FQ2W
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2k8LJz1AcYs5FQ2W'

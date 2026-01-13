@@ -1,0 +1,77 @@
+name: Engines (Destroyed)
+type: injury
+img: systems/sta/assets/compendia/icons/damage-core/damage-destroyed-engines.svg
+effects: []
+folder: Cj4RueljBl13EKrU
+flags:
+  core: {}
+system:
+  description: >-
+    <p>If the total number of Breaches the Engines system has suffered exceeds
+    the ship&rsquo;s Scale, then the system has been destroyed, and cannot be
+    repaired. The ship cannot move or maneuver, it loses 3 Power at the end of
+    every Round, and it has a normal Power capacity of 0 (meaning it will begin
+    the subsequent scenes with 0 Power). Further, roll a number of Challenge
+    Dice equal to the number of Breaches that Engines have suffered beyond the
+    ship&rsquo;s Scale (so, if the ship&rsquo;s Scale is 4, and it has suffered
+    6 Breaches to Engines, roll 2 Challenge Dice). If any Effects are rolled,
+    the ship&rsquo;s warp engines lose containment, and may explode, as
+    described in the &ldquo;Warp Core Breach Imminent!&rdquo; sidebar.
+    Subsequent Breaches caused to Engines trigger another roll to see if the
+    reactors lose containment.</p>
+
+    <h1>Warp Core Breach Imminent!</h1>
+
+    <p>Catastrophic damage to the engines is a serious matter, increasing the
+    risk of losing containment over the volatile reactors that power the ship.
+    The ships of many cultures, including the Federation, rely on powerful
+    matter/antimatter reactions, which can cause catastrophic explosions if
+    uncontrolled, while the Romulans use a similarly-dangerous artificial
+    singularity to power their warp engines.</p>
+
+    <p>If the ship suffers a loss of containment, then the reactors may explode
+    at any moment; roll one or more Challenge Dice at the end of each Round,
+    starting with 1 Challenge Die at the end of the Round in which the
+    containment loss began, and increasing by +1 Challenge Die for each
+    successive Round (so, 2 Challenge Dice for the second round, 3 Challenge
+    Dice for the third, and so forth). If one or more Effects are rolled, the
+    reactors explode, destroying the ship immediately, killing all aboard, and
+    inflicting 3 Piercing 2 damage to all other ships within Close range. Add a
+    number of additional to this damage equal to the exploding ship&rsquo;s
+    Scale (bigger ships have bigger reactors).</p>
+
+    <p>This can, however, be avoided. Characters in engineering may attempt to
+    stabilize the reactor, or they may try to eject the reactor entirely (though
+    not all ships have the capability to eject their reactors, so their crews
+    may wish to abandon ship).</p>
+
+    <p><strong>Stabilize the reactor:</strong> This is an Extended Task, with
+    Work 8, Magnitude 3, Resistance 2, and a Base Difficulty of 3. Succeeding at
+    this Extended Task prevents the reactor from exploding. Common combinations
+    for this will be <strong>Daring or Control</strong>, plus
+    <strong>Engineering</strong>.</p>
+
+    <p><strong>Eject the reactor:</strong> This is a <strong>Daring +
+    Engineering Task</strong>, with a Difficulty of 2. Success means that the
+    reactor is successfully ejected. If ejected, continue to roll to see if it
+    explodes; when it does, it will not destroy the ship (as it&rsquo;s been
+    ejected and is no longer within the ship), but all ships, including the one
+    that ejected it, within Close range will still suffer damage when it
+    detonates.</p>
+  quantity: 1
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450541082
+  modifiedTime: 1765450541082
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: aajH1yMYdk2D29Ot
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!aajH1yMYdk2D29Ot'

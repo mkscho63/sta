@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Student of War
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Science 4+ and Security 3+</p>
+
+    <p><br>You have conducted extensive research into numerous kinds of conflict
+    and has devoted your academic career to the study of war. While this
+    knowledge may be purely theoretical, such information, when placed into the
+    hands of more capable combatants, can be truly devastating. When you Assist
+    a character making an Attack or taking the Guard action in combat, they may
+    re-roll one d20.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Yk1lx0oh0jyXZf4B
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Yk1lx0oh0jyXZf4B'

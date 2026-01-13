@@ -1,0 +1,37 @@
+name: Flight Controller
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-flight-controller.svg
+system:
+  description: >-
+    <p><strong>Requirements:</strong> Conn department only.</p>
+
+    <p>Not a typical senior staff role, some captains, particularly those
+    operating in uncharted space, choose the most senior helmsman or flight
+    control officer to serve as senior staff as well.</p>
+
+    <p>When the flight controller is required to analyze or repair technology
+    related to flight or propulsion, they may use the Conn Discipline instead of
+    Engineering.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450837129
+  modifiedTime: 1765450837129
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: 4gcvHW4L36BO5AID
+_id: XGA6AYx5VmLoBPOV
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!XGA6AYx5VmLoBPOV'

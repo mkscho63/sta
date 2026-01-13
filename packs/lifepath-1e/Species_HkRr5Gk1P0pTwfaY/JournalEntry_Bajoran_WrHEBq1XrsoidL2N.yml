@@ -1,0 +1,80 @@
+name: Bajoran
+pages:
+  - sort: 100000
+    name: Bajoran
+    type: text
+    _id: TtvsXY37zZTysXz9
+    title:
+      show: false
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <img style="display:block;margin:0px auto"
+        src="systems/sta/assets/compendia/icons/plain-core/plain-bajoran.svg"
+        width="256" height="256" /><p><strong>Requirements:</strong> The Next
+        Generation era only</p><p>A spiritual, dauntless people from the planet
+        Bajor, the Bajorans have lost much after decades of occupation by the
+        Cardassian Union. Many Bajorans were scattered across the Alpha Quadrant
+        during the occupation, while those who remained on Bajor often acted as
+        insurgents or toiled in labor camps under Cardassian rule. The
+        occupation ended a few years ago, but the scars it left will take
+        generations to heal. Bajor is not a member of the Federation, but many
+        Bajorans scattered by the diaspora have found their way into Starfleet.
+        Bajoran culture places a strong belief in the Prophets, celestial beings
+        who are said to have watched over Bajor for millennia; modern religious
+        doctrine states that the Bajoran Wormhole is the Prophets’ Celestial
+        Temple.</p><p><strong>Example Value:</strong>
+        @UUID[Compendium.sta-compendia.values-core.J8UiDmD9608lhHfZ]{Faith in
+        the Prophets}</p><ul><li><p><strong>Attributes:</strong> +1 Control, +1
+        Daring, +1 Insight</p></li><li><p><strong>Trait:</strong> Bajoran. For
+        obvious reasons, Bajorans tend to be hostile towards Cardassians, and
+        resentful of those who are dismissive of, or turned a blind eye to, the
+        suffering of the Bajoran people. While not all Bajorans are spiritual or
+        religious to the same degree, most have a cultural understanding of the
+        Prophets’ place in Bajoran
+        society.</p></li><li><p><strong>Talents:</strong> The character receives
+        access to the following
+        talents:</p><ul><li><p>@UUID[Compendium.sta-compendia.species-talents-core.I131lVQRIUaE4Hqp]{Orb
+        Experience}</p></li><li><p>@UUID[Compendium.sta-compendia.species-talents-core.92O6cedMkmGgCRdT]{Strong
+        Pagh}</p></li></ul></li></ul>
+      markdown: ''
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    system: {}
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    category: null
+    ownership:
+      default: -1
+    _key: '!journal.pages!WrHEBq1XrsoidL2N.TtvsXY37zZTysXz9'
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451925417
+  modifiedTime: 1765451925417
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: HkRr5Gk1P0pTwfaY
+categories: []
+_id: WrHEBq1XrsoidL2N
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!journal!WrHEBq1XrsoidL2N'

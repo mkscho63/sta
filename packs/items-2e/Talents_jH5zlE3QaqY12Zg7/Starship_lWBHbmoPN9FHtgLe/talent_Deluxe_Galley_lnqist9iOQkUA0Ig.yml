@@ -1,0 +1,36 @@
+folder: lWBHbmoPN9FHtgLe
+name: Deluxe Galley
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-custom.svg
+system:
+  description: >-
+    <p>The ship&rsquo;s mess hall is equipped with top-of-the-line food
+    preparation systems as well as vast stores of non-replicated food.</p>
+
+    <p><br>Once per adventure, you may create a Fine Dining trait for free when
+    the ship is visited by a VIP, diplomat, or other important guest. When a
+    character attempts a task using Presence and/or Command and benefits from
+    this trait, the character receives 1 bonus Momentum, which may not be
+    saved.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: lnqist9iOQkUA0Ig
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!lnqist9iOQkUA0Ig'

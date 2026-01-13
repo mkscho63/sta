@@ -1,0 +1,402 @@
+name: Danube Class Runabout  (Passenger Module) Template
+type: smallcraft
+img: systems/sta/assets/compendia/ships/starfleet/danube-runabout-token.webp
+system:
+  departments:
+    command:
+      label: sta.actor.starship.department.command
+      value: 0
+      selected: true
+    conn:
+      label: sta.actor.starship.department.conn
+      value: 2
+      selected: false
+    engineering:
+      label: sta.actor.starship.department.engineering
+      value: 1
+      selected: false
+    medicine:
+      label: sta.actor.starship.department.medicine
+      value: 0
+      selected: false
+    science:
+      label: sta.actor.starship.department.science
+      value: 0
+      selected: false
+    security:
+      label: sta.actor.starship.department.security
+      value: 1
+      selected: false
+  missionprofile: ''
+  power:
+    value: 4
+    max: 4
+  resistance: 2
+  scale: 2
+  shields:
+    value: 4
+    max: 4
+  spaceframe: DANUBE CLASS RUNABOUT
+  systems:
+    communications:
+      label: sta.actor.starship.system.communications
+      value: 9
+      selected: true
+      breaches: 0
+    computers:
+      label: sta.actor.starship.system.computers
+      value: 8
+      selected: false
+      breaches: 0
+    engines:
+      label: sta.actor.starship.system.engines
+      value: 7
+      selected: false
+      breaches: 0
+    sensors:
+      label: sta.actor.starship.system.sensors
+      value: 7
+      selected: false
+      breaches: 0
+    structure:
+      label: sta.actor.starship.system.structure
+      value: 7
+      selected: false
+      breaches: 0
+    weapons:
+      label: sta.actor.starship.system.weapons
+      value: 7
+      selected: false
+      breaches: 0
+  traits: Small Craft
+  notes: >-
+    <p><strong>Requirements:</strong> The Next Generation only</p>
+
+    <p>These larger auxiliary craft are used for independent operations from
+    larger starships and starbases. They are capable of warp 5, contain a small
+    transporter and a replicator, and are fitted with phaser arrays for defense.
+    A modular construction allows them to be converted to serve different
+    purposes.</p>
+
+    <p><strong>Crew Complement:</strong> 1 to 4</p>
+  departmentorder:
+    - command
+    - conn
+    - security
+    - engineering
+    - science
+    - medicine
+  departmentorder2e:
+    - command
+    - conn
+    - engineering
+    - security
+    - medicine
+    - science
+  refit: ''
+  parentShip: ''
+  reservepower: true
+  shaken: false
+  shieldmod: 0
+  servicedate: ''
+  designation: ''
+prototypeToken:
+  name: Runabout
+  displayName: 30
+  actorLink: true
+  texture:
+    src: systems/sta/assets/compendia/ships/starfleet/danube-runabout-token.webp
+    scaleX: 0.6
+    scaleY: 0.6
+    offsetX: 0
+    offsetY: 0
+    rotation: 0
+    tint: '#ffffff'
+    anchorX: 0.5
+    anchorY: 0.5
+    fit: contain
+    alphaThreshold: 0.75
+  width: 1.5
+  height: 1.5
+  lockRotation: false
+  rotation: 0
+  alpha: 1
+  disposition: 1
+  displayBars: 30
+  bar1:
+    attribute: shields
+  bar2:
+    attribute: power
+  light:
+    alpha: 0.5
+    angle: 360
+    bright: 0
+    color: null
+    coloration: 1
+    dim: 0
+    attenuation: 0.5
+    luminosity: 0.5
+    saturation: 0
+    contrast: 0
+    shadows: 0
+    animation:
+      type: null
+      speed: 5
+      intensity: 5
+      reverse: false
+    darkness:
+      min: 0
+      max: 1
+    negative: false
+    priority: 0
+  sight:
+    enabled: false
+    range: 0
+    angle: 360
+    visionMode: basic
+    color: null
+    attenuation: 0.1
+    brightness: 0
+    saturation: 0
+    contrast: 0
+  detectionModes: []
+  flags: {}
+  randomImg: false
+  occludable:
+    radius: 0
+  ring:
+    enabled: false
+    colors:
+      ring: null
+      background: null
+    effects: 1
+    subject:
+      scale: 1
+      texture: null
+  turnMarker:
+    mode: 1
+    animation: null
+    src: null
+    disposition: false
+  movementAction: null
+  appendNumber: false
+  prependAdjective: false
+items:
+  - name: Phaser Bank (Scale 2)
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-phaser-bank.svg
+    system:
+      description: >-
+        <p>Common to Starfleet and Cardassian vessels, phasers are a precise and
+        adaptable weapon.</p>
+
+        <p>Banks are a collection of emitters, designed to fire in unison. They
+        produce a focused beam of energy that can inflict considerable damage.
+        Banks have a Range category of Medium, and increase the weapon&rsquo;s
+        damage by +1 Challenge Die.</p>
+
+        <p><strong>Versatile 2:</strong> The attack gains 2 points of bonus
+        Momentum if successful.</p>
+      damage: 3
+      range: Medium
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: false
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 2
+      opportunity: null
+      escalation: null
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: VBY0lAi3t085PFPe
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!orupag36NaMEvYq7.VBY0lAi3t085PFPe'
+  - name: Micro-Torpedo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+      damage: 3
+      range: Long
+      qualities:
+        area: false
+        spread: false
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 1
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: zt5tBPJhNb5WzIjr
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!orupag36NaMEvYq7.zt5tBPJhNb5WzIjr'
+  - name: Micro-Torpedo Salvo
+    type: starshipweapon
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+    system:
+      description: >-
+        <p>Photon torpedoes use a simple payload of matter and anti-matter to
+        create a large and devastating explosion. They&rsquo;re commonly used by
+        many cultures, including the Klingons, the Cardassians, and the
+        Federation. They have a base Damage of 3 Challenge Dice, with the
+        High-Yield Quality.</p>
+
+        <p>Torpedoes may be fired in a salvo: a volley of several torpedoes,
+        intended to have a much greater effect. Firing a salvo of torpedoes adds
+        2 Threat to the pool, along with the 1 point of Threat for a torpedo
+        attack, for a total of 3 Threat. Firing a salvo of torpedoes adds +3 to
+        Threat instead of +1, but it increases the attack&rsquo;s damage by +1
+        Challenge Die, and grants the Spread effect to the attack.</p>
+
+        <p><strong>High-Yield:</strong> The weapon inflicts massive damage to
+        enemy vessels; if the Attack inflicts one or more Breaches to a system,
+        it inflicts one additional Breach.</p>
+
+        <p><strong>Spread:</strong> The Attack inflicts additional damage
+        elsewhere on the target. If one or more Effects is rolled, the Attack
+        inflicts one additional hit to a random system (even if the Attack was
+        targeting a specific system), which deals half the damage of the initial
+        hit, rounding up, +1 for every Effect rolled after the first. This
+        additional hit is resolved separately, and each hit against the target
+        is reduced by Resistance, reduces Shields, and potentially causes
+        Breaches, individually</p>
+      damage: 4
+      range: Long
+      qualities:
+        area: false
+        spread: true
+        dampening: false
+        calibration: false
+        devastating: false
+        highyield: true
+        persistentx: 0
+        piercingx: 0
+        viciousx: 0
+        hiddenx: 0
+        versatilex: 0
+      opportunity: null
+      escalation: 3
+      includescale: false
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: pnXZWGyeOHJSUxdw
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!orupag36NaMEvYq7.pnXZWGyeOHJSUxdw'
+  - name: Tractor Beam (Strength 1)
+    type: item
+    img: >-
+      systems/sta/assets/compendia/icons/starshipweapons-core/weapon-tractor-beam.svg
+    system:
+      description: >-
+        <p>The tactical officer engages a tractor beam at a nearby object or
+        vessel. This requires a <strong>Control + Security</strong> Task,
+        assisted by the ship&rsquo;s <strong>Structure + Security</strong> with
+        a Difficulty of 2, and can only be directed at a target within Close
+        range. If successful, the target vessel is immobilized and cannot move
+        unless it can break free, using their shield modulations, the raw power
+        of their engines, or disabling the tractor beam emitter (a Task in its
+        own right), with a Difficulty of 1.</p>
+      quantity: 1
+      opportunity: 0
+      escalation: 0
+    effects: []
+    flags:
+      core: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      exportSource: null
+      coreVersion: '13.351'
+      systemId: sta
+      systemVersion: 2.4.5
+      lastModifiedBy: null
+    _id: 4YtAVc5wq2SgaUCb
+    folder: null
+    sort: 0
+    ownership:
+      default: 0
+    _key: '!actors.items!orupag36NaMEvYq7.4YtAVc5wq2SgaUCb'
+effects: []
+flags:
+  core: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450397815
+  modifiedTime: 1765450397815
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: t4Q7RLfVtdKjRuDV
+_id: orupag36NaMEvYq7
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!actors!orupag36NaMEvYq7'

@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Proud and Honorable
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-andorian.svg
+system:
+  description: >-
+    <p>Whenever you attempt a task to resist being coerced into breaking a
+    promise, betraying your allies, or otherwise acting dishonorably, you may
+    add Threat to immediately succeed at the task. The amount of Threat you
+    add&nbsp;is equal to the task&rsquo;s Difficulty.</p>
+  talenttype:
+    typeenum: species
+    description: Andorian
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: MWyZSRskgL4BD4HI
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!MWyZSRskgL4BD4HI'

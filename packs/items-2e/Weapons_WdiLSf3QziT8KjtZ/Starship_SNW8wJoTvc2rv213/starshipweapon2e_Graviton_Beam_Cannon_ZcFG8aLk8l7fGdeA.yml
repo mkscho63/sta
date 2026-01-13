@@ -1,0 +1,52 @@
+folder: SNW8wJoTvc2rv213
+name: Graviton Beam Cannon
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-disruptor-cannon.svg
+system:
+  description: >-
+    <p>These weapons fire high-energy gravitons intended to inflict intense
+    gravitational stresses on a target&rsquo;s superstructure.</p>
+
+    <p>Compact weapon systems designed to produce short, powerful pulses or
+    bolts of energy at the target.</p>
+  damage: 2
+  range: close
+  qualities:
+    energy: false
+    torpedo: false
+    area: false
+    calibration: false
+    cumbersome: false
+    dampening: false
+    depleting: false
+    devastating: true
+    highyield: false
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: true
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: energy
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: ZcFG8aLk8l7fGdeA
+ownership:
+  default: 0
+sort: 0
+_key: '!items!ZcFG8aLk8l7fGdeA'

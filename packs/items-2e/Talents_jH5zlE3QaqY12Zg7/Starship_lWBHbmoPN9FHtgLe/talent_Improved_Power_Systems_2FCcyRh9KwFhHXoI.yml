@@ -1,0 +1,31 @@
+folder: lWBHbmoPN9FHtgLe
+name: Improved Power Systems
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-power.svg
+system:
+  description: >-
+    <p>When a character attempts the Regain Power action,&nbsp;the Difficulty is
+    reduced by 1, to a minimum of 1, and you may spend 1 Momentum (Immediate) to
+    ignore complications suffered on that task roll.</p>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451323441
+  modifiedTime: 1765451323441
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: 2FCcyRh9KwFhHXoI
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!2FCcyRh9KwFhHXoI'

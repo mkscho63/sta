@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Open Book
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-betazoid.svg
+system:
+  description: >-
+    <p>When a character enters a scene, you may spend 1 Momentum (Immediate) to
+    immediately ask the gamemaster one question about that character&rsquo;s
+    current emotions or surface thoughts. You cannot do this for&nbsp;characters
+    immune to telepathy.</p>
+  talenttype:
+    typeenum: species
+    description: Betazoid
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: T4KtVwET7d2kATwH
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!T4KtVwET7d2kATwH'

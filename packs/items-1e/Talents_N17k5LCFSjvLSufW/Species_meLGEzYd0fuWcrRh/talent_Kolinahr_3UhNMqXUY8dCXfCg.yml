@@ -1,0 +1,35 @@
+name: Kolinahr
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-vulcan.svg
+effects: []
+flags:
+  core: {}
+system:
+  description: >-
+    <p><strong>Requirement</strong>: Vulcan, or Gamemaster&rsquo;s
+    permission.</p>
+
+    <p>You have undergone the ritual journey to purge all emotion. You reduce
+    the Difficulty of all Tasks to resist coercion, mental intrusion, pain, and
+    other mental attacks by two.</p>
+  talenttype:
+    typeenum: species
+    description: Vulcan
+    minimum: 0
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450853505
+  modifiedTime: 1765450853505
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: meLGEzYd0fuWcrRh
+_id: 3UhNMqXUY8dCXfCg
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!3UhNMqXUY8dCXfCg'

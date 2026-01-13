@@ -1,0 +1,52 @@
+folder: SNW8wJoTvc2rv213
+name: Tricobalt Torpedo Salvo
+type: starshipweapon2e
+img: >-
+  systems/sta/assets/compendia/icons/starshipweapons-core/weapon-photon-torpedo-salvo.svg
+system:
+  description: >-
+    <p>Borderline illegal due to potential subspace&nbsp;interactions, tricobalt
+    explosives can be delivered as a torpedo payload. The resultant device is
+    potent for demolitions&mdash;destroying stationary facilities, asteroids,
+    comets, and other targets far larger than starships&mdash;but tend to be
+    unwieldy for use in combat.</p>
+  damage: 7
+  range: long
+  qualities:
+    energy: false
+    torpedo: false
+    area: true
+    calibration: true
+    cumbersome: true
+    dampening: false
+    depleting: false
+    devastating: false
+    highyield: false
+    intense: false
+    jamming: false
+    persistent: false
+    piercing: false
+    slowing: false
+    spread: false
+    hiddenx: 0
+    versatilex: 0
+  includescale: torpedo
+  opportunity: 0
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451154214
+  modifiedTime: 1765451777999
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Sl3tPP17HumbQv3C
+ownership:
+  default: 0
+sort: 0
+_key: '!items!Sl3tPP17HumbQv3C'

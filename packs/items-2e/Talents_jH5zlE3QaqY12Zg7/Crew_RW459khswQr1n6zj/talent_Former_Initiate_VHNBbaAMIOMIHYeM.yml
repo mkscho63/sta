@@ -1,0 +1,36 @@
+folder: RW459khswQr1n6zj
+name: Former Initiate
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-trill.svg
+system:
+  description: >-
+    <p>You joined the Initiate Program, hoping to be chosen by the Symbiosis
+    Commission to become Joined. As there are far more Initiates than there are
+    symbionts, you were one of many who failed, but the capabilities of even a
+    failed Initiate are highly sought after by Starfleet and other
+    organizations. When you attempt a task using Control or Reason, and you
+    spend Determination to set a die as a 1, you may also re-roll your dice pool
+    after the roll. You cannot select this&nbsp;talent if you have the Joined
+    talent.</p>
+  talenttype:
+    typeenum: species
+    description: Trill
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: VHNBbaAMIOMIHYeM
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!VHNBbaAMIOMIHYeM'

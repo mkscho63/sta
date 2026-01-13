@@ -1,0 +1,32 @@
+folder: RW459khswQr1n6zj
+name: Lab Rat
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-science.svg
+system:
+  description: >-
+    <p>REQUIREMENTS: Science 3+ and Engineering 3+</p>
+
+    <p><br>When attempting an extended task while using a laboratory, increase
+    your Impact by 1.</p>
+  talenttype:
+    typeenum: discipline
+    description: science
+    minimum: 3
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: Clh7rkBxScmEREzm
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!Clh7rkBxScmEREzm'

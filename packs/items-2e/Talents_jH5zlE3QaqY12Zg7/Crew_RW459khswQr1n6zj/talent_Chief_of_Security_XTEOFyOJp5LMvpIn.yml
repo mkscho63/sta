@@ -1,0 +1,43 @@
+folder: RW459khswQr1n6zj
+name: Chief of Security
+type: talent
+img: systems/sta/assets/compendia/icons/roles-core/role-chief-of-security.svg
+system:
+  description: >-
+    <section class="journal-page-content">
+
+    <p>The chief of security oversees the ship&rsquo;s security department and
+    is responsible for ensuring the safety of the ship and crew during missions,
+    for the investigation of disciplinary and criminal matters, and for
+    overseeing the protection of important persons aboard the ship.</p>
+
+    <p>&nbsp;</p>
+
+    <p>ROLE BENEFIT: You reduce the opportunity cost of weapons and security
+    teams by 1, to a minimum of 0. Further, when you succeed at an Attack
+    against an enemy during personal combat, you may spend 1 Momentum to
+    increase the Difficulty of that enemy&rsquo;s next Attack by 1.</p>
+
+    </section>
+  talenttype:
+    typeenum: general
+    description: ''
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1765451308312
+  lastModifiedBy: h6PQP2LANMyAy0DY
+_id: XTEOFyOJp5LMvpIn
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!XTEOFyOJp5LMvpIn'

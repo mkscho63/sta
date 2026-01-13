@@ -1,0 +1,44 @@
+name: Emergency Transponder
+type: item
+img: systems/sta/assets/compendia/icons/items-core/placeholder.webp
+system:
+  description: >-
+    <p><strong>Opportunity 1</strong></p>
+
+    <p>Also known by transporter operation officers as &lsquo;The
+    Screamer&rsquo;, emergency transponders are small hand-held devices capable
+    of transmitting very strong sub-space singles with limited amounts of data.
+    This data usually consists of just a waveguide that allows starship sensors
+    to detect the transmitter from light-years away when there is no
+    interference, and from AU&rsquo;s away with sub-space background scattering.
+    While this does not allow for transporter systems to lock onto and beam a
+    person using the transponder from distances or through material it normally
+    wouldn&rsquo;t (without the aid of pattern enhancers), it does allow for
+    high accuracy in transports and acts as a SOS signal recognized by most
+    governments across the Alpha and Beta quadrants. Characters using an
+    emergency transponder gain the ability to show their position to any vessel
+    currently using sub-space sensors within a radius determined by the GM, but
+    usually very long distances measuring between a few hundred thousand
+    kilometers and light-years.</p>
+  quantity: 1
+  opportunity: 1
+  escalation: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765450762016
+  modifiedTime: 1765450762016
+  lastModifiedBy: h6PQP2LANMyAy0DY
+folder: Knjkg1BrRAxxU9Ni
+_id: 4aohgeLjtuTmnFgr
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 0
+_key: '!items!4aohgeLjtuTmnFgr'
