@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { createRequire } from 'module';
+import {createRequire} from 'module';
 const require = createRequire(import.meta.url);
 
 import sass from 'gulp-sass';
@@ -10,11 +10,11 @@ import git from 'gulp-git';
 import archiver from 'archiver';
 import stringify from 'json-stringify-pretty-compact';
 import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+import {hideBin} from 'yargs/helpers';
 import chalk from 'chalk';
 
 // Required to build the packs
-import { compilePack } from '@foundryvtt/foundryvtt-cli';
+import {compilePack} from '@foundryvtt/foundryvtt-cli';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -433,4 +433,10 @@ const publishTask = gulp.series(
 );
 
 // Export tasks for gulp
-export { buildTask as build, buildWatch as watch, clean, copyUserData as copy, packageBuild as package, updateManifest as update, publishTask as publish };
+export {buildTask as build};
+export {buildWatch as watch};
+export {clean};
+export {copyUserData as copy};
+export {packageBuild as package};
+export {updateManifest as update};
+export {publishTask as publish};
