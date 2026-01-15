@@ -372,6 +372,11 @@ $foundrylightthemetext: rgb(34, 34, 34);
   text-decoration: line-through;
 }
 
+.item-list-scrollable {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
 // ######################################################
 // #                                                    #
 // #                    Characters                      #
