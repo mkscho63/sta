@@ -244,6 +244,9 @@ $foundrylightthemetext: rgb(34, 34, 34);
       background-color: $palestblue;
     }
   }
+  .item-list-scrollable {
+    scrollbar-color: $palestblue transparent;
+  }
 }
 
 .section {
@@ -370,6 +373,12 @@ $foundrylightthemetext: rgb(34, 34, 34);
 
 .strike-through {
   text-decoration: line-through;
+}
+
+.item-list-scrollable {
+  max-height: 150px;
+  overflow-y: auto;
+  scrollbar-color: $darkestblue transparent;
 }
 
 // ######################################################
