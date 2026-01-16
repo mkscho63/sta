@@ -1,21 +1,29 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const eslint = require('gulp-eslint');
-const fs = require('fs-extra');
-const path = require('path');
-const git = require('gulp-git');
-const archiver = require('archiver');
-const stringify = require('json-stringify-pretty-compact');
-const argv = require('yargs').argv;
-const chalk = require('chalk');
+import gulp from 'gulp';
+import {createRequire} from 'module';
+const require = createRequire(import.meta.url);
+
+import sass from 'gulp-sass';
+import eslint from 'gulp-eslint';
+import fs from 'fs-extra';
+import path from 'path';
+import git from 'gulp-git';
+import archiver from 'archiver';
+import stringify from 'json-stringify-pretty-compact';
+import yargs from 'yargs';
+import {hideBin} from 'yargs/helpers';
+import chalk from 'chalk';
 
 // Required to build the packs
-const {compilePack} = require('@foundryvtt/foundryvtt-cli');
+import {compilePack} from '@foundryvtt/foundryvtt-cli';
+
+const argv = yargs(hideBin(process.argv)).argv;
+
+const sassCompiler = sass(require('sass'));
 
 gulp.task('sass', function(cb) {
   gulp
     .src('src/styles/*.scss')
-    .pipe(sass())
+    .pipe(sassCompiler())
     .pipe(
       gulp.dest(function(f) {
         return f.base;
@@ -27,7 +35,7 @@ gulp.task('sass', function(cb) {
 gulp.task(
   'default',
   gulp.series('sass', function(cb) {
-    gulp.watch('styles/*.scss', gulp.series('sass'));
+    gulp.watch('src/styles/*.scss', gulp.series('sass'));
     cb();
   })
 );
@@ -71,7 +79,7 @@ function getManifest() {
 function buildSASS() {
   return gulp
     .src('src/styles/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sassCompiler().on('error', sassCompiler.logError))
     .pipe(gulp.dest('dist')).pipe(gulp.dest('src'));
 }
 
@@ -127,7 +135,7 @@ async function copyFiles() {
     }
     return Promise.resolve();
   } catch (err) {
-    Promise.reject(err);
+    return Promise.reject(err);
   }
 }
 
@@ -157,8 +165,6 @@ async function clean() {
     'system.json',
   );
 
-
-  // If the project uses SASS push SASS
   if (fs.existsSync(path.join('src', 'styles', `${name}.scss`))) {
     files.push(`${name}.css`);
   }
@@ -173,7 +179,7 @@ async function clean() {
     }
     return Promise.resolve();
   } catch (err) {
-    Promise.reject(err);
+    return Promise.reject(err);
   }
 }
 
@@ -186,7 +192,7 @@ function defaultDataPath() {
   case 'darwin':
     return path.resolve(process.env.HOME, 'Library', 'Application Support', 'FoundryVTT');
   default:
-    throw Error('No known default for platform ${process.platform}');
+    throw Error(`No known default for platform ${process.platform}`);
   }
 }
 
@@ -237,7 +243,7 @@ async function copyUserData() {
     return Promise.resolve();
   } catch (err) {
     console.log(err);
-    Promise.reject(err);
+    return Promise.reject(err);
   }
 }
 
@@ -415,19 +421,22 @@ function gitTag() {
 
 const execGit = gulp.series(gitAdd, gitCommit, gitTag);
 
-// Updated build task to include pack building
 const execBuild = gulp.series(buildSASS, buildPacks, copyFiles);
 
-exports.build = gulp.series(clean, execBuild);
-exports.watch = buildWatch;
-exports.clean = clean;
-exports.copy = copyUserData;
-exports.package = packageBuild;
-exports.update = updateManifest;
-exports.publish = gulp.series(
+const buildTask = gulp.series(clean, execBuild);
+const publishTask = gulp.series(
   clean,
   updateManifest,
   execBuild,
   packageBuild,
   execGit
 );
+
+// Export tasks for gulp
+export {buildTask as build};
+export {buildWatch as watch};
+export {clean};
+export {copyUserData as copy};
+export {packageBuild as package};
+export {updateManifest as update};
+export {publishTask as publish};
