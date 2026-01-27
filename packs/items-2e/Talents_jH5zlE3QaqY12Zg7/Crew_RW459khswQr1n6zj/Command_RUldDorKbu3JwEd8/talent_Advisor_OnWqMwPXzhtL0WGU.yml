@@ -1,0 +1,30 @@
+folder: RUldDorKbu3JwEd8
+name: Advisor
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-command.svg
+system:
+  description: >-
+    <p>Whenever you Assist another character using your&nbsp;Command, the
+    assisted character may re-roll one d20.</p>
+  talenttype:
+    typeenum: discipline
+    description: command
+    minimum: 2
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1769437948122
+  lastModifiedBy: BsQYuBoOZwvCjdMe
+_id: OnWqMwPXzhtL0WGU
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 200000
+_key: '!items!OnWqMwPXzhtL0WGU'

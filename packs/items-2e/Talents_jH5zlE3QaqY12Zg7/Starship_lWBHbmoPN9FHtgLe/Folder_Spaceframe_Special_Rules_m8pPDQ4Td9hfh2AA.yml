@@ -1,0 +1,18 @@
+type: Item
+folder: lWBHbmoPN9FHtgLe
+name: Spaceframe Special Rules
+color: null
+sorting: a
+_id: m8pPDQ4Td9hfh2AA
+description: ''
+sort: 0
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  lastModifiedBy: null
+_key: '!folders!m8pPDQ4Td9hfh2AA'

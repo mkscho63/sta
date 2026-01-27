@@ -1,0 +1,30 @@
+folder: 3F9N33AStALknt2O
+name: Attack Run
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-conn.svg
+system:
+  description: >-
+    <p>Whenever you succeed at the Attack Pattern major action, enemy Attacks
+    against you do not reduce in&nbsp;Difficulty due to that action.</p>
+  talenttype:
+    typeenum: discipline
+    description: conn
+    minimum: 4
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1769438025334
+  lastModifiedBy: BsQYuBoOZwvCjdMe
+_id: QUCQXaWq00QpfMFP
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 100000
+_key: '!items!QUCQXaWq00QpfMFP'
