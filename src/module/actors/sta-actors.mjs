@@ -200,10 +200,10 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       el.setAttribute('data-tooltip-direction', 'UP');
     }
 
-    if (!Array.isArray(this._dragDrop) || !this._dragDrop.length) {
-      this._dragDrop = this._createDragDropHandlers();
+    if (!Array.isArray(this._dragDropHandlers) || !this._dragDropHandlers.length) {
+      this._dragDropHandlers = this._createDragDropHandlers();
     }
-    this._dragDrop.forEach((d) => d.bind(this.element));
+    this._dragDropHandlers.forEach((d) => d.bind(this.element));
 
     this.element.querySelectorAll('a.edit[data-action="onItemEdit"], a.delete[data-action="onItemDelete"], img.chat[data-action="onItemtoChat"]')?.forEach((li) => {
       li.setAttribute('draggable', 'true');
@@ -1344,7 +1344,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   }
 
   get dragDrop() {
-    return this._dragDrop || [];
+    return this._dragDropHandlers || [];
   }
 
   _createDragDropHandlers() {
