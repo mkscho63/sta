@@ -680,6 +680,10 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     event.preventDefault();
     const item = this.actor.items.get(itemId);
     const staRoll = new STARoll();
+    if (item.name.toLowerCase().match(/\([0-9a-z]cd\)/i)) { 
+      STAActors._onItemtoWeapon(item, this.actor);
+      return;
+    }
     switch (itemType) {
     case 'item':
       staRoll.performItemRoll(item, this.actor);
@@ -723,6 +727,68 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     default:
       console.warn(`Unhandled item type: ${itemType}`);
     }
+  }
+
+  static async _onItemtoWeapon(item, actor) {
+    const regex = /\((.cd)\)/i;
+    const match = item.name.toLowerCase().match(regex);
+    let challengeDice = 1; // Default value
+    
+    if (match) {
+      const x = match[1][0];
+        
+      if (x === 'x') {
+        const defaultValue = 1;
+        const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
+        const html = await foundry.applications.handlebars.renderTemplate(template, {
+          defaultValue
+        });
+        const formData = await api.DialogV2.wait({
+          window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
+          position: {height: 'auto', width: 350},
+          content: html,
+          classes: ['dialogue'],
+          buttons: [{
+            action: 'roll',
+            default: true,
+            label: game.i18n.localize('sta.apps.rolldice'),
+            callback: (event, button, dialog) => {
+              const challengeDiceInput = dialog.element.querySelector('#dicePoolValue');
+              return {
+                challengeDice: challengeDiceInput?.valueAsNumber || 1
+              };
+            }
+          }],
+          close: () => null
+        });
+
+        challengeDice = formData.challengeDice;
+      } else if (!isNaN(x) && x >= '0' && x <= '9') {
+        // Set challengedice to the number
+        challengeDice = parseInt(x);
+        console.log('Challengedice set to:', challengeDice);
+      }
+    }
+
+    const itemData = { 
+      name: item.name,
+      img: item.img,
+      type: item.type,
+      system: {
+        includescale: false,
+        damage: challengeDice,
+        description: item.system?.description || '',
+      },
+    };
+    itemData.toObject = () => foundry.utils.deepClone(itemData);  
+
+    const newactor = {
+      name: actor.name,
+      system: {disciplines: {security: {value: 0}}},
+    };
+
+    const staRoll = new STARoll();
+    staRoll.performWeaponRoll(itemData, newactor);
   }
 
   static async _onSmallCraft(event) {
