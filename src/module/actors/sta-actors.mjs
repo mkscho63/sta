@@ -680,7 +680,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     event.preventDefault();
     const item = this.actor.items.get(itemId);
     const staRoll = new STARoll();
-    if (item.name.toLowerCase().match(/\([0-9a-z]cd\)/i)) { 
+    if (item.system.description.toLowerCase().match(/\([0-9a-z]cd\)/i)) { 
       STAActors._onItemtoWeapon(item, this.actor);
       return;
     }
@@ -731,7 +731,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   static async _onItemtoWeapon(item, actor) {
     const regex = /\((.cd)\)/i;
-    const match = item.name.toLowerCase().match(regex);
+    const match = item.system.description.toLowerCase().match(regex);
     let challengeDice = 1; // Default value
     
     if (match) {
