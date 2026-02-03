@@ -1,0 +1,19 @@
+type: Item
+folder: RW459khswQr1n6zj
+name: Roles
+color: null
+sorting: a
+_id: zrgKomtOJlkkPvDL
+description: ''
+sort: 1000000
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  lastModifiedBy: BsQYuBoOZwvCjdMe
+  modifiedTime: 1769510917014
+_key: '!folders!zrgKomtOJlkkPvDL'
