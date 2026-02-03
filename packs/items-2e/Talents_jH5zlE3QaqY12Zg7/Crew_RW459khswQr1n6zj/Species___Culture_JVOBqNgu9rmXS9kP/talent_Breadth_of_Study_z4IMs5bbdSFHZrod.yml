@@ -1,0 +1,28 @@
+folder: JVOBqNgu9rmXS9kP
+name: Breadth of Study
+type: talent
+img: systems/sta/assets/compendia/icons/talents-core/talent-denobulan.svg
+system:
+  description: <p>You may&nbsp;select two additional focuses.</p>
+  talenttype:
+    typeenum: species
+    description: Denobulan
+    minimum: 0
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  createdTime: 1765451308312
+  modifiedTime: 1769511010482
+  lastModifiedBy: BsQYuBoOZwvCjdMe
+_id: z4IMs5bbdSFHZrod
+ownership:
+  default: 0
+  h6PQP2LANMyAy0DY: 3
+sort: 3500000
+_key: '!items!z4IMs5bbdSFHZrod'

@@ -1,0 +1,19 @@
+type: Item
+folder: RW459khswQr1n6zj
+name: General
+color: null
+sorting: a
+_id: HL7IqlgCkXR6hTEs
+description: ''
+sort: 1100000
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  exportSource: null
+  coreVersion: '13.351'
+  systemId: sta
+  systemVersion: 2.4.5
+  lastModifiedBy: BsQYuBoOZwvCjdMe
+  modifiedTime: 1769510917014
+_key: '!folders!HL7IqlgCkXR6hTEs'
