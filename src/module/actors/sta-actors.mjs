@@ -381,10 +381,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // #                                                    #
   // ######################################################
 
-  // Attribute test for 2e character - overridden in other sheets
+  // Perform Task
   async _onAttributeTest(event) {
     event.preventDefault();
 
+    const speaker = this.actor;
     const reputationValue = parseInt(this.element.querySelector('#total-rep')?.value, 10) || 0;
     const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]')?.checked ?? false;
 
@@ -392,20 +393,23 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     let selectedAttributeValue = 0;
     let selectedDiscipline = null;
     let selectedDisciplineValue = 0;
+    let selectedSystem = null;
+    let selectedSystemValue = 0;
     let selectedDepartment = null;
     let selectedDepartmentValue = 0;
 
-    const systemCheckboxes = this.element.querySelectorAll('.attribute-block .selector.attribute');
-    systemCheckboxes.forEach((checkbox) => {
+    const attributeCheckboxes = this.element.querySelectorAll('.attribute-block .selector.attribute');
+    attributeCheckboxes.forEach((checkbox) => {
       if (checkbox.checked) {
-        const systemId = checkbox.id.replace('.selector', '');
-        selectedAttribute = systemId;
-        const systemValueInput = this.element.querySelector(`#${systemId}`);
-        if (systemValueInput) {
-          selectedAttributeValue = parseInt(systemValueInput.value, 10) || 0;
+        const attributeId = checkbox.id.replace('.selector', '');
+        selectedAttribute = attributeId;
+        const attributeValueInput = this.element.querySelector(`#${attributeId}`);
+        if (attributeValueInput) {
+          selectedAttributeValue = parseInt(attributeValueInput.value, 10) || 0;
         }
       }
     });
+
     const disciplineCheckboxes = this.element.querySelectorAll('.discipline-block .selector.discipline');
     disciplineCheckboxes.forEach((checkbox) => {
       if (checkbox.checked) {
@@ -417,6 +421,19 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         }
       }
     });
+
+    const systemCheckboxes = this.element.querySelectorAll('.systems-block .selector.system');
+    systemCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const systemId = checkbox.id.replace('.selector', '');
+        selectedSystem = systemId;
+        const systemValueInput = this.element.querySelector(`#${systemId}`);
+        if (systemValueInput) {
+          selectedSystemValue = parseInt(systemValueInput.value, 10) || 0;
+        }
+      }
+    });
+
     const departmentCheckboxes = this.element.querySelectorAll('.departments-block .selector.department');
     departmentCheckboxes.forEach((checkbox) => {
       if (checkbox.checked) {
@@ -430,12 +447,23 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
 
     const taskData = {
+      speakername: speaker.name,
+      reputationValue: reputationValue,
+      useReputationInstead: useReputationInstead,
       selectedAttribute: selectedAttribute,
-      selectedAttributeValue: selectedAttributeValue
+      selectedAttributeValue: selectedAttributeValue,
+      selectedDiscipline: selectedDiscipline,
+      selectedSystem: selectedSystem,
+      selectedSystemValue: selectedSystemValue,
+      selectedDisciplineValue: selectedDisciplineValue,
+      selectedDepartment: selectedDepartment,
+      selectedDepartmentValue: selectedDepartmentValue,
+      template: this.taskRollData.template,
+      rolltype: this.taskRollData.rolltype,
     };
 
-    // Return taskData so sub classes can use it
-    return taskData;
+    const staRoll = new STARoll();
+    await staRoll.rollTask(taskData);
   }
 
   // Challenge test for all sheets

@@ -464,9 +464,9 @@ Hooks.once('init', function() {
   });
 
   Hooks.once('renderSidebar', function() {
-    const t = new STATracker();
+    const tracker = new STATracker();
     foundry.applications.handlebars.renderTemplate('systems/sta/templates/apps/tracker.hbs').then((html) => {
-      t.render(true);
+      tracker.render(true);
     });
   });
 
