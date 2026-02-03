@@ -39,4 +39,20 @@ export class STACharacterSheet2e extends STAActors {
       'trait'
     ]);
   }
+
+  async _onAttributeTest(event) {
+    const taskData = await super._onAttributeTest(event);
+    
+    const template = 'systems/sta/templates/apps/dicepool-attribute2e.hbs';
+    const charactertype = 'character2e';
+    
+    const taskRollData = {
+      ...taskData,
+      template: template,
+      charactertype: charactertype
+    };
+
+    const staRoll = new STARoll();
+    await staRoll.rollTask(taskRollData);
+  }
 }

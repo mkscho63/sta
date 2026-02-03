@@ -19,7 +19,7 @@
 			"flags": {}
 		}
 	],
-	"esmodules": ["module/sta.js"],
+	"esmodules": ["module/sta.mjs"],
 	"flags": {
 		"hotReload": {
 			"extensions": [

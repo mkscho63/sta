@@ -1,4 +1,33 @@
 export class STARoll {
+
+  async rollTask(taskRollData) {
+    console.log('Enhanced task data:', taskRollData);
+    // Your processing logic here
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   async performAttributeTest(dicePool, usingFocus, usingDedicatedFocus, usingDetermination,
     selectedAttribute, selectedAttributeValue, selectedDiscipline,
     selectedDisciplineValue, complicationRange, speaker) {

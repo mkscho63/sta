@@ -85,7 +85,7 @@ import {
 } from './apps/reroll.mjs';
 import {
   STARoll
-} from './apps/roll.js';
+} from './apps/roll.mjs';
 
 import {
   CharacterData,
@@ -93,7 +93,7 @@ import {
   ExtendedTaskData,
   SmallCraftData,
   SceneTraitsData
-} from './data-models.js';
+} from './data-models.mjs';
 
 import {
   ItemData,
@@ -110,13 +110,12 @@ import {
   SmallCraftContainerData,
   TraitData,
   LogData
-} from './data-models.js';
+} from './data-models.mjs';
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 Hooks.once('init', function() {
-  const versionInfo = game.world.coreVersion;
   // Splash Screen
   console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
                  .
@@ -301,15 +300,6 @@ Hooks.once('init', function() {
   });
 
   // Register system settings
-  game.settings.register('sta', 'multipleComplications', {
-    name: 'Multiple Complications:',
-    hint: 'The rulebook states "Any die which rolled 20 causes a complication". This is slightly unclear and as of Version 8 of the PDF, this is still not clear - likely due to the incredible rarity. Enabling this will allow roles to display "There were x Complications" if multiple 20s are rolled. Disabling will just state a single complication.',
-    scope: 'world',
-    type: Boolean,
-    default: true,
-    config: true
-  });
-
   game.settings.register('sta', 'threatPermissionLevel', {
     name: 'Threat Tracker User Role:',
     hint: 'Who should be allowed to amend the threat tracker?',
@@ -468,8 +458,6 @@ Hooks.once('init', function() {
     config: true
   });
 
-  preloadHandlebarsTemplates();
-
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
     RerollHandler.attachListeners(html);
@@ -492,13 +480,6 @@ Hooks.once('init', function() {
     CONFIG.Combat.documentClass = Combat2d20;
   }
 });
-
-async function preloadHandlebarsTemplates() {
-  const paths = {
-    ['sta.chat.weapon-roll']: 'systems/sta/templates/chat/challenge-roll.hbs',
-  };
-  return foundry.applications.handlebars.loadTemplates(paths);
-}
 
 Hooks.on('preCreateItem', (item, options, userId) => {
   if (!item.img || item.img === 'icons/svg/item-bag.svg') {
