@@ -68,7 +68,7 @@ export class STARoll {
       flavor = game.i18n.format('sta.actor.character.attribute.' + taskData.selectedAttribute) + ' ' + game.i18n.format('sta.actor.character.discipline.' + taskData.selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
       break;
       case 'starship':
-      flavor = game.i18n.format('sta.actor.starship.system.' + taskData.selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + taskData.selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
+      flavor = game.i18n.format('sta.actor.starship.system.' + taskData.selectedSystem) + ' ' + game.i18n.format('sta.actor.starship.department.' + taskData.selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
       break;
     case 'sidebar':
       flavor = game.i18n.format('sta.roll.task.name');

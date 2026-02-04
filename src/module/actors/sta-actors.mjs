@@ -385,7 +385,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   async _onAttributeTest(event) {
     event.preventDefault();
     const staRoll = new STARoll();
-    const defaultValue = '2';
+    const defaultValue = this.taskRollData.defaultValue;
     let dicePool = defaultValue;
     let usingFocus = false;
     let usingDedicatedFocus = false;

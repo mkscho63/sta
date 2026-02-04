@@ -44,6 +44,7 @@ export class STACharacterSheet extends STAActors {
     return {
       template: 'systems/sta/templates/apps/dicepool-attribute1e.hbs',
       rolltype: 'character1e',
+      defaultValue: '2',
     };
   }
 

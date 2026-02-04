@@ -73,7 +73,6 @@ export class STARoller {
   static async _onChallengeRoll(event) {
     event.preventDefault();
     const defaultValue = 2;
-    const speaker = game.user;
     const weaponName = '';
     const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
@@ -108,42 +107,13 @@ export class STARoller {
 
   static async _onNPCRoll(event) {
     event.preventDefault();
-    const i18nKey = 'sta.roll.complicationroller';
-    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
-    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
-    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
-    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
-    const sceneComplicationBonus = (() => {
-      try {
-        const scene = game.scenes?.active;
-        if (!scene) return 0;
-        let bonus = 0;
-        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
-        for (const tok of tokens) {
-          const actor = tok?.actor;
-          if (!actor || actor.type !== 'scenetraits') continue;
-          for (const item of actor.items ?? []) {
-            const m = compRx.exec(item.name ?? '');
-            if (m) bonus += Number(m[1]) || 0;
-          }
-        }
-        return bonus;
-      } catch (err) {
-        console.error('Scene complication bonus error:', err);
-        return 0;
-      }
-    })();
-    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
+    const staRoll = new STARoll();
+    const calculatedComplicationRange  = await staRoll._sceneComplications();
     const selectedTokens = canvas.tokens.controlled;
     const characterToken = selectedTokens.find((t) => t.actor?.type === 'character');
     const starshipToken = selectedTokens.find((t) => ['starship', 'smallcraft'].includes(t.actor?.type));
     const character = characterToken?.actor ?? {type: 'npccharacter'};
     const starship = starshipToken?.actor ?? {type: 'npcship'};
-
-    if (starshipToken?.actor?.type === 'smallcraft') {
-      starship.type = 'starship';
-    }
 
     const attributes = ['control', 'daring', 'fitness', 'insight', 'presence', 'reason'];
     const disciplines = ['command', 'conn', 'engineering', 'security', 'medicine', 'science'];
@@ -304,43 +274,41 @@ export class STARoller {
         label: game.i18n.localize('sta.apps.rolldice'),
         class: 'button100',
         callback: (event, button, dialog) => {
-          return {
-            selectedAttribute: dialog.element.querySelector('#attribute')?.value,
-            selectedDiscipline: dialog.element.querySelector('#discipline')?.value,
-            selectedSystem: dialog.element.querySelector('#system')?.value,
-            selectedDepartment: dialog.element.querySelector('#department')?.value,
-            charDicePool: parseInt(dialog.element.querySelector('#char-dice-pool')?.value),
-            ComplicationRange: parseInt(dialog.element.querySelector('#complication-range')?.value),
-            usingFocus: dialog.element.querySelector('#usingFocus')?.checked || false,
-            usingDedicatedFocus: dialog.element.querySelector('#usingDedicatedFocus')?.checked,
-            usingDetermination: dialog.element.querySelector('#usingDetermination')?.checked,
-            skillLevel: dialog.element.querySelector('input[name="skillLevel"]:checked')?.value,
-            systemValue: parseInt(dialog.element.querySelector('input[name="systemValue"]')?.value),
-            departmentValue: parseInt(dialog.element.querySelector('input[name="departmentValue"]')?.value),
-            selectedRoll: dialog.element.querySelector('#rollList')?.value,
-          };
-        }
-      }],
-      close: () => null
+          const form = dialog.element.querySelector('form');
+          return form ? new FormData(form) : null;
+        },
+      },],
+      close: () => null,
     });
 
-    if (!formData) return;
-
-    let {
-      selectedAttribute,
-      selectedDiscipline,
-      selectedSystem,
-      selectedDepartment,
-      charDicePool,
-      ComplicationRange,
-      usingFocus,
-      usingDedicatedFocus,
-      usingDetermination,
-      skillLevel,
-      systemValue,
-      departmentValue,
-      selectedRoll
-    } = formData;
+    let selectedAttribute = '';
+    let selectedDiscipline = '';
+    let selectedSystem = '';
+    let selectedDepartment = '';
+    let charDicePool = '';
+    let ComplicationRange = '';
+    let usingFocus = '';
+    let usingDedicatedFocus = '';
+    let usingDetermination = '';
+    let skillLevel = '';
+    let systemValue = '';
+    let departmentValue = '';
+    let selectedRoll = '';
+    if (formData) {
+      selectedAttribute = formData.get('#attribute')?.value;
+      selectedDiscipline = formData.get('#discipline')?.value;
+      selectedSystem = formData.get('#system')?.value;
+      selectedDepartment = formData.get('#department')?.value;
+      charDicePool = parseInt(formData.get('#char-dice-pool')?.value);
+      ComplicationRange = parseInt(formData.get('#complication-range')?.value);
+      usingFocus = formData.get('#usingFocus')?.checked || false;
+      usingDedicatedFocus = formData.get('#usingDedicatedFocus')?.checked;
+      usingDetermination = formData.get('#usingDetermination')?.checked;
+      skillLevel = formData.get('input[name="skillLevel"]:checked')?.value;
+      systemValue = parseInt(formData.get('input[name="systemValue"]')?.value);
+      departmentValue = parseInt(formData.get('input[name="departmentValue"]')?.value);
+      selectedRoll = formData.get('#rollList')?.value;
+    }
 
     const rollPresets = {
       melee: ['daring', 'security', 'none', 'none'],
@@ -364,7 +332,7 @@ export class STARoller {
       scanforweakness: ['control', 'science', 'sensors', 'security'],
       sensorsweep: ['reason', 'science', 'sensors', 'science'],
       defensivefire: ['daring', 'security', 'weapons', 'security'],
-      tractorbeam: ['control', 'security', 'structure', 'security']
+      tractorbeam: ['control', 'security', 'structure', 'security'],
     };
 
     if (rollPresets[selectedRoll]) {
@@ -399,32 +367,28 @@ export class STARoller {
       charDicePool = Math.max(1, charDicePool - 1);
     }
 
-    roller.performAttributeTest(
-      charDicePool,
-      usingFocus,
-      usingDedicatedFocus,
-      usingDetermination,
-      selectedAttribute,
-      AttributeValue,
-      selectedDiscipline,
-      DisciplineValue,
-      ComplicationRange,
-      character
-    );
-
-    if (selectedDepartment !== 'none') {
-      roller.performAttributeTest(
-        1,
-        true,
-        false,
-        false,
+    if (selectedDepartment === 'none') {
+      const taskData = {
+        speakername: character.name,
+        reputationValue,
+        useReputationInstead,
+        selectedAttribute,
+        selectedAttributeValue,
+        selectedDiscipline,
+        selectedDisciplineValue,
         selectedSystem,
-        SystemValue,
+        selectedSystemValue,
         selectedDepartment,
-        DepartmentValue,
-        ComplicationRange,
-        starship
-      );
+        selectedDepartmentValue,
+        rolltype: this.taskRollData.rolltype,
+        dicePool,
+        usingFocus,
+        usingDedicatedFocus,
+        usingDetermination,
+        complicationRange,
+    };
+
+    await staRoll.rollTask(taskData);
     }
   }
 }

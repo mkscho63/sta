@@ -40,6 +40,7 @@ export class STANPCSheet2e extends STAActors {
     return {
       template: 'systems/sta/templates/apps/dicepool-attribute2e.hbs',
       rolltype: 'character2e',
+      defaultValue: '2',
     };
   }
 
