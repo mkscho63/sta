@@ -36,6 +36,13 @@ export class STANPCSheet2e extends STAActors {
     ]);
   }
 
+  get  taskRollData() {
+    return {
+      template: 'systems/sta/templates/apps/dicepool-attribute2e.hbs',
+      rolltype: 'character2e',
+    };
+  }
+
   _onStressTrackUpdate(event) {
     if (event) {
       const clickedStress = event.target;

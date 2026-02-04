@@ -8,8 +8,12 @@ export class STARoll {
   // #                                                    #
   // ######################################################
 
-  async rollTask(taskdata) {
-    const chatData  = await this._performRollTask(taskdata);
+  async rollTask(taskData) {
+    const taskRollData  = await this._performRollTask(taskData);
+    taskData = {...taskData, ...taskRollData};
+    const taskresult = await this._taskResult(taskData);
+    taskData = {...taskData, ...taskresult};
+    const chatData = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/attribute-test.hbs', taskData);
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
@@ -21,128 +25,37 @@ export class STARoll {
     };
   }
 
+  //assemble the required numbers and make the roll
   async _performRollTask(taskData) {
-    //Collect the data to make the roll
-    const defaultValue = '2';
-    let dicePool = defaultValue;
-    let usingFocus = false;
-    let usingDedicatedFocus = false;
-    let usingDetermination = false;
-    let complicationRange = 1;
-    let chattemplate = 'systems/sta/templates/chat/attribute-test.hbs';
-    const calculatedComplicationRange  = await this._sceneComplications();
-    const template = taskData.template;
-    const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue, calculatedComplicationRange
-    });
+    let diceString = '';
+    let diceOutcome = [];
+    let success = 0;
 
-    const formData = await api.DialogV2.wait({
-      window: {
-        title: game.i18n.localize('sta.apps.dicepoolwindow')
-      },
-      position: {
-        height: 'auto',
-        width: 350
-      },
-      content: html,
-      classes: ['dialogue'],
-      buttons: [{
-        action: 'roll',
-        default: true,
-        label: game.i18n.localize('sta.apps.rolldice'),
-        callback: (event, button, dialog) => {
-          const form = dialog.element.querySelector('form');
-          return form ? new FormData(form) : null;
-        },
-      },],
-      close: () => null,
-    });
-
-    if (formData) {
-      dicePool = parseInt(formData.get('dicePoolSlider'), 10);
-      usingFocus = formData.get('usingFocus') === 'on';
-      usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-      usingDetermination = formData.get('usingDetermination') === 'on';
-      complicationRange = parseInt(formData.get('complicationRange'), 10);
-    }
- 
-    //pre-roll calculations
     if (taskData.useReputationInstead) {
       selectedDiscipline = 'reputation';
       selectedDisciplineValue = taskData.reputationValue;
     }
     const checkTarget = taskData.selectedAttributeValue + taskData.selectedDisciplineValue + taskData.selectedSystemValue + taskData.selectedDepartmentValue;
     const doubleDiscipline = taskData.selectedDisciplineValue + taskData.selectedDisciplineValue;  
-    const complicationMinimumValue = 20 - complicationRange;
-    let diceToRoll = dicePool;
-    if (usingDetermination && taskData.actortype !== 'character1e') {
-      diceToRoll = dicePool - 1;
+    const complicationMinimumValue = 20 - taskData.complicationRange;
+    let diceToRoll = taskData.dicePool;
+    if (taskData.usingDetermination && taskData.rolltype !== 'character1e') {
+      diceToRoll = taskData.dicePool - 1;
     }
-
-    //do the roll
-    const taskRolled = await new Roll(diceToRoll + 'd20').evaluate({});
-
-    //work out the results
-    let i;
-    let result = 0;
-    let diceString = '';
-    let diceOutcome = [];
-    let success = 0;
-    let complication = 0;
     let withDetermination = '';
-    for (i = 0; i < diceToRoll; i++) {
-      result = taskRolled.terms[0].results[i].result;
-      // If using focus and the result is less than or equal to the discipline, that counts as 2 successes and we want to show the dice as green.
-      if ((usingFocus && result <= taskData.selectedDisciplineValue) || result == 1) {
-        diceString += '<li class="roll die d20 max">' + result + '</li>';
-        diceOutcome.push(result);
-        success += 2;
-      // If using dedicated focus and the result is less than or equal to double the discipline, that counts as 2 successes and we want to show the dice as green.
-      } else if ((usingDedicatedFocus && result <= doubleDiscipline) || result == 1) {
-        diceString += '<li class="roll die d20 max">' + result + '</li>';
-        diceOutcome.push(result);
-        success += 2;
-        // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
-      } else if (result <= checkTarget) {
-        diceString += '<li class="roll die d20">' + result + '</li>';
-        diceOutcome.push(result);
-        success += 1;
-        // If the result is greater than or equal to the complication range, then we want to count it as a complication. We also want to show it as red!
-      } else if (result >= complicationMinimumValue) {
-        diceString += '<li class="roll die d20 min">' + result + '</li>';
-        diceOutcome.push(result);
-        complication += 1;
-        // If none of the above is true, the dice failed to do anything and is treated as normal.
-      } else {
-        diceString += '<li class="roll die d20">' + result + '</li>';
-        diceOutcome.push(result);
-      }
-    }
-    if (usingDetermination) {
+    if (taskData.usingDetermination) {
       diceString += '<li class="roll die d20 max">' + 1 + '</li>';
       diceOutcome.push(1);
       success += 2;
       withDetermination = ', ' + game.i18n.format('sta.actor.character.determination');
     }
-    if (usingFocus) {
+    let withFocus = '';
+    if (taskData.usingFocus) {
       withFocus = ', ' + game.i18n.format('sta.actor.belonging.focus.title');
     }
-    if (usingDedicatedFocus) {
+    let withDedicatedFocus = '';
+    if (taskData.usingDedicatedFocus) {
       withDedicatedFocus = withDedicatedFocus = ', ' + game.i18n.format('sta.roll.dedicatedfocus');
-    }
-
-    // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
-    let successText = '';
-    if (success == 1) {
-      successText = success + ' ' + game.i18n.format('sta.roll.success');
-    } else {
-      successText = success + ' ' + game.i18n.format('sta.roll.successPlural');
-    }
-
-    let complicationText = '';
-    if (complication >= 1) {
-      const localisedPluralisation = game.i18n.format('sta.roll.complicationPlural');
-      complicationText = '<h4 class="dice-total failure"> ' + localisedPluralisation.replace('|#|', complication) + '</h4>';
     }
 
     //add flavor for the roll card
@@ -151,11 +64,14 @@ export class STARoll {
     case 'character2e':
       flavor = game.i18n.format('sta.actor.character.attribute.' + taskData.selectedAttribute) + ' ' + game.i18n.format('sta.actor.character.discipline.' + taskData.selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
       break;
-    case 'starship':
+    case 'character1e':
+      flavor = game.i18n.format('sta.actor.character.attribute.' + taskData.selectedAttribute) + ' ' + game.i18n.format('sta.actor.character.discipline.' + taskData.selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
+      break;
+      case 'starship':
       flavor = game.i18n.format('sta.actor.starship.system.' + taskData.selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + taskData.selectedDiscipline) + ' ' + game.i18n.format('sta.roll.task.name');
       break;
     case 'sidebar':
-      flavor = game.i18n.format('sta.apps.staroller') + ' ' + game.i18n.format('sta.roll.task.name');
+      flavor = game.i18n.format('sta.roll.task.name');
       break;
     case 'npccharacter':
       flavor = game.i18n.format('sta.roll.npccrew' + taskData.selectedAttribute) + ' ' + game.i18n.format('sta.roll.npccrew') + ' ' + game.i18n.format('sta.roll.task.name');
@@ -169,12 +85,24 @@ export class STARoll {
       break;
     }
 
+    //do the roll
+    const taskRolled = await new Roll(diceToRoll + 'd20').evaluate({});
+
     //assemble the data for the chat card
-    const chatData = { 
-      chattemplate: chattemplate,
-      speakername: taskData.speakername,
-    }
-    return chatData;
+    return {
+      diceString,
+      diceOutcome,
+      success,
+      diceToRoll,
+      taskRolled,
+      checkTarget,
+      doubleDiscipline,
+      complicationMinimumValue,
+      withDetermination,
+      withFocus,
+      withDedicatedFocus,
+      flavor,
+    };
   }
 
   // get the complication range from scenetraits
@@ -209,10 +137,59 @@ export class STARoll {
     return calculatedComplicationRange;
   }
 
-
-
-
-
+  async _taskResult(taskData) {
+    let i;
+    let result = 0;
+    let complication = 0;
+    for (i = 0; i < taskData.diceToRoll; i++) {
+      result = taskData.taskRolled.terms[0].results[i].result;
+      // If using focus and the result is less than or equal to the discipline, that counts as 2 successes and we want to show the dice as green.
+      if ((taskData.usingFocus && result <= taskData.selectedDisciplineValue) || result == 1) {
+        taskData.diceString += '<li class="roll die d20 max">' + result + '</li>';
+        taskData.diceOutcome.push(result);
+        taskData.success += 2;
+      // If using dedicated focus and the result is less than or equal to double the discipline, that counts as 2 successes and we want to show the dice as green.
+      } else if ((taskData.usingDedicatedFocus && result <= taskData.doubleDiscipline) || result == 1) {
+        taskData.diceString += '<li class="roll die d20 max">' + result + '</li>';
+        taskData.diceOutcome.push(result);
+        taskData.success += 2;
+        // If the result is less than or equal to the target (the discipline and attribute added together), that counts as 1 success but we want to show the dice as normal.
+      } else if (result <= taskData.checkTarget) {
+        taskData.diceString += '<li class="roll die d20">' + result + '</li>';
+        taskData.diceOutcome.push(result);
+        taskData.success += 1;
+        // If the result is greater than or equal to the complication range, then we want to count it as a complication. We also want to show it as red!
+      } else if (result >= taskData.complicationMinimumValue) {
+        taskData.diceString += '<li class="roll die d20 min">' + result + '</li>';
+        taskData.diceOutcome.push(result);
+        complication += 1;
+        // If none of the above is true, the dice failed to do anything and is treated as normal.
+      } else {
+        taskData.diceString += '<li class="roll die d20">' + result + '</li>';
+        taskData.diceOutcome.push(result);
+      }
+    }
+    // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
+    let successText = '';
+    if (taskData.success == 1) {
+      successText = taskData.success + ' ' + game.i18n.format('sta.roll.success');
+    } else {
+      successText = taskData.success + ' ' + game.i18n.format('sta.roll.successPlural');
+    }
+    let complicationText = '';
+    if (complication === 1) {
+      complicationText = '<h4 class="dice-total failure"> ' + game.i18n.format('sta.roll.complication') + '</h4>';
+    }
+    if (complication > 1) {
+      const localisedPluralisation = game.i18n.format('sta.roll.complicationPlural');
+      complicationText = '<h4 class="dice-total failure"> ' + localisedPluralisation.replace('|#|', complication) + '</h4>';
+    }
+    return {
+      complication,
+      successText,
+      complicationText
+    };
+  }
 
   // ######################################################
   // #                                                    #
@@ -223,29 +200,44 @@ export class STARoll {
   async sendToChat(chatData) {
     const rollMode = game.settings.get('core', 'rollMode');
     const messageProps = {
-      user: game.user.id,
-      speaker: chatData.speakername,
-//      content: content,
-//      sound: sound,
-//      flags: {},
+      content: chatData,
+      flags: {
+        'sta': {
+      speakername: chatData.speakername,
+      reputationValue: chatData.reputationValue,
+      useReputationInstead: chatData.useReputationInstead,
+      selectedAttribute: chatData.selectedAttribute,
+      selectedAttributeValue: chatData.selectedAttributeValue,
+      selectedDiscipline: chatData.selectedDiscipline,
+      selectedSystem: chatData.selectedSystem,
+      selectedSystemValue: chatData.selectedSystemValue,
+      selectedDisciplineValue: chatData.selectedDisciplineValue,
+      selectedDepartment: chatData.selectedDepartment,
+      selectedDepartmentValue: chatData.selectedDepartmentValue,
+      rolltype: chatData.rolltype,
+      dicePool: chatData.dicePool,
+      usingFocus: chatData.usingFocus,
+      usingDedicatedFocus: chatData.usingDedicatedFocus,
+      usingDetermination: chatData.usingDetermination,
+      complicationRange: chatData.complicationRange,
+      diceString: chatData.diceString,
+      diceOutcome: chatData.diceOutcome,
+      success: chatData.success,
+      diceToRoll: chatData.diceToRoll,
+      taskRolled: chatData.taskRolled,
+      checkTarget: chatData.checkTarget,
+      doubleDiscipline: chatData.doubleDiscipline,
+      complicationMinimumValue: chatData.complicationMinimumValue,
+      withDetermination: chatData.withDetermination,
+      withFocus: chatData.withFocus,
+      withDedicatedFocus: chatData.withDedicatedFocus,
+      flavor: chatData.flavor,
+      complication: chatData.complication,
+      successText: chatData.successText,
+      complicationText: chatData.complicationText,
+        }
+      }
     };
-//    if (typeof item != 'undefined') {
-//      messageProps.flags.sta = {
-//        itemData: item.toObject(),
-//      };
-//    }
-//    if (chatData) {
-//      messageProps.flags.sta = {
-//        ...messageProps.flags.sta,
-//        chatData: chatData,
-//      };
-//    }
-//    if (typeof roll != 'undefined') {
-//      messageProps.roll = roll;
-//    }
-//    if (typeof flavor != 'undefined') {
-//      messageProps.flavor = flavor;
-//    }
     // Apply the roll mode to automatically adjust visibility settings
     ChatMessage.applyRollMode(messageProps, rollMode);
     // Send the chat message

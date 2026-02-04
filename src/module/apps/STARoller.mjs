@@ -1,45 +1,22 @@
 const api = foundry.applications.api;
+
 export class STARoller {
+
   static async _onTaskRoll(event) {
     event.preventDefault();
-    const i18nKey = 'sta.roll.complicationroller';
-    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
-    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range'; // fallback
-    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*'); // flexible whitespace
-    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
-    const sceneComplicationBonus = (() => {
-      try {
-        const scene = game.scenes?.active;
-        if (!scene) return 0;
-        let bonus = 0;
-        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
-        for (const tok of tokens) {
-          const actor = tok?.actor;
-          if (!actor || actor.type !== 'scenetraits') continue;
-          for (const item of actor.items ?? []) {
-            const m = compRx.exec(item.name ?? '');
-            if (m) bonus += Number(m[1]) || 0;
-          }
-        }
-        return bonus;
-      } catch (err) {
-        console.error('Scene complication bonus error:', err);
-        return 0;
-      }
-    })();
-    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
-    const selectedAttribute = null;
-    const selectedDiscipline = null;
-
-    const defaultValue = 2;
-    const speaker = {
-      type: 'sidebar'
-    };
+    const staRoll = new STARoll();
+    const defaultValue = '2';
+    let dicePool = defaultValue;
+    let usingFocus = false;
+    let usingDedicatedFocus = false;
+    let usingDetermination = false;
+    let complicationRange = 1;
+    const calculatedComplicationRange  = await staRoll._sceneComplications();
     const template = 'systems/sta/templates/apps/dicepool-attribroller.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue, calculatedComplicationRange
     });
+
     const formData = await api.DialogV2.wait({
       window: {
         title: game.i18n.localize('sta.apps.dicepoolwindow')
@@ -61,31 +38,36 @@ export class STARoller {
       },],
       close: () => null,
     });
+
     if (formData) {
-      let dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
-      const selectedAttributeValue = parseInt(document.getElementById('selectedAttributeValue').value, 10) || 0;
-      const selectedDisciplineValue = parseInt(document.getElementById('selectedDisciplineValue').value, 10) || 0;
-      const usingFocus = formData.get('usingFocus') === 'on';
-      const usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-      const usingDetermination = formData.get('usingDetermination') === 'on';
-      const complicationRange = parseInt(formData.get('complicationRange'), 10) || 1;
-      if (usingDetermination) {
-        dicePool = dicePool - 1;
-      }
-      const staRoll = new STARoll();
-      staRoll.performAttributeTest(
-        dicePool,
-        usingFocus,
-        usingDedicatedFocus,
-        usingDetermination,
-        selectedAttribute,
-        selectedAttributeValue,
-        selectedDiscipline,
-        selectedDisciplineValue,
-        complicationRange,
-        speaker
-      );
+      dicePool = parseInt(formData.get('dicePoolSlider'), 10);
+      usingFocus = formData.get('usingFocus') === 'on';
+      usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
+      usingDetermination = formData.get('usingDetermination') === 'on';
+      complicationRange = parseInt(formData.get('complicationRange'), 10);
     }
+
+    const selectedAttributeValue = parseInt(document.getElementById('selectedAttributeValue').value, 10) || 0;
+    const selectedDisciplineValue = parseInt(document.getElementById('selectedDisciplineValue').value, 10) || 0;
+
+    const taskData = {
+      speakername: 'STARoller',
+      selectedAttribute: '',
+      selectedAttributeValue,
+      selectedDiscipline: '',
+      selectedDisciplineValue,
+      selectedSystem: '',
+      selectedSystemValue: 0,
+      selectedDepartment: '',
+      selectedDepartmentValue: 0,
+      rolltype: 'sidebar',
+      dicePool,
+      usingFocus,
+      usingDedicatedFocus,
+      usingDetermination,
+      complicationRange,
+    };
+    await staRoll.rollTask(taskData);
   }
 
   static async _onChallengeRoll(event) {

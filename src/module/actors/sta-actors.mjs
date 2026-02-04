@@ -384,6 +384,48 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // Perform Task
   async _onAttributeTest(event) {
     event.preventDefault();
+    const staRoll = new STARoll();
+    const defaultValue = '2';
+    let dicePool = defaultValue;
+    let usingFocus = false;
+    let usingDedicatedFocus = false;
+    let usingDetermination = false;
+    let complicationRange = 1;
+    const calculatedComplicationRange  = await staRoll._sceneComplications();
+    const template = this.taskRollData.template;
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
+      defaultValue, calculatedComplicationRange
+    });
+
+    const formData = await api.DialogV2.wait({
+      window: {
+        title: game.i18n.localize('sta.apps.dicepoolwindow')
+      },
+      position: {
+        height: 'auto',
+        width: 350
+      },
+      content: html,
+      classes: ['dialogue'],
+      buttons: [{
+        action: 'roll',
+        default: true,
+        label: game.i18n.localize('sta.apps.rolldice'),
+        callback: (event, button, dialog) => {
+          const form = dialog.element.querySelector('form');
+          return form ? new FormData(form) : null;
+        },
+      },],
+      close: () => null,
+    });
+
+    if (formData) {
+      dicePool = parseInt(formData.get('dicePoolSlider'), 10);
+      usingFocus = formData.get('usingFocus') === 'on';
+      usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
+      usingDetermination = formData.get('usingDetermination') === 'on';
+      complicationRange = parseInt(formData.get('complicationRange'), 10);
+    }
 
     const speaker = this.actor;
     const reputationValue = parseInt(this.element.querySelector('#total-rep')?.value, 10) || 0;
@@ -448,21 +490,24 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
     const taskData = {
       speakername: speaker.name,
-      reputationValue: reputationValue,
-      useReputationInstead: useReputationInstead,
-      selectedAttribute: selectedAttribute,
-      selectedAttributeValue: selectedAttributeValue,
-      selectedDiscipline: selectedDiscipline,
-      selectedSystem: selectedSystem,
-      selectedSystemValue: selectedSystemValue,
-      selectedDisciplineValue: selectedDisciplineValue,
-      selectedDepartment: selectedDepartment,
-      selectedDepartmentValue: selectedDepartmentValue,
-      template: this.taskRollData.template,
+      reputationValue,
+      useReputationInstead,
+      selectedAttribute,
+      selectedAttributeValue,
+      selectedDiscipline,
+      selectedDisciplineValue,
+      selectedSystem,
+      selectedSystemValue,
+      selectedDepartment,
+      selectedDepartmentValue,
       rolltype: this.taskRollData.rolltype,
+      dicePool,
+      usingFocus,
+      usingDedicatedFocus,
+      usingDetermination,
+      complicationRange,
     };
 
-    const staRoll = new STARoll();
     await staRoll.rollTask(taskData);
   }
 

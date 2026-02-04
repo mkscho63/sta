@@ -1,4 +1,5 @@
-<div class="sta roll chat card" data-token-id="{{tokenId}}" data-speaker-id="{{speakerId}}" data-roll-id="{{rollId}}">
+<div class="sta roll chat card">
+  {{speakername}} - {{flavor}}
   <div class="dice-roll collapsible">
     <div class="dice-result">
       <div class="dice-formula">
@@ -11,11 +12,11 @@
       <div class="tooltip">
         <section class="tooltip-part collapsible-content">
           <div class="dice">
-            <ol class="dice-rolls">{{{diceHtml}}}</ol>
+            <ol class="dice-rolls">{{{diceString}}}</ol>
           </div>
         </section>
       </div>
-      {{{complicationHtml}}}
+      {{{complicationText}}}
       <h4 class="dice-total">{{successText}}</h4>
     </div>
   </div>
