@@ -489,7 +489,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
 
     const taskData = {
-      speakername: speaker.name,
+      speakerName: speaker.name,
       reputationValue,
       useReputationInstead,
       selectedAttribute,
