@@ -16,20 +16,15 @@ export class STARoll {
     taskData = { ...taskData, ...taskResult };
 
     const taskResultText = await this._taskResultText(taskData);
-    taskData = { ...taskData, ...taskResultText };
-
-    const chatData = await foundry.applications.handlebars.renderTemplate(
-      'systems/sta/templates/chat/attribute-test.hbs',
-      taskData
-    );
+    taskData = { ...taskData, ...taskResultText, rollType: 'task' };
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d
         .showForRoll(taskRolled, game.user, true)
-        .then(() => this.sendToChat(chatData));
+        .then(() => this.sendToChat(taskData));
     } else {
-      this.sendToChat(chatData);
+      this.sendToChat(taskData);
     }
   }
   
@@ -75,15 +70,12 @@ export class STARoll {
 
     let shipData = '';
     let chatData = '';
+    let crewshipData = '';
 
     if (taskData.selectedSystem === 'none') {
       const crewtaskResultText = await this._taskResultText(crewData);
-      crewData = { ...crewData, ...crewtaskResultText };
+      crewshipData = { ...crewData, ...crewtaskResultText, rollType: 'task' };
 
-      chatData = await foundry.applications.handlebars.renderTemplate(
-        'systems/sta/templates/chat/attribute-test.hbs',
-        crewData
-      );
     } else {
       shipData = {
         speakerName: taskData.starshipName,
@@ -105,7 +97,7 @@ export class STARoll {
       const shiptaskResult = await this._taskResult(shipData);
       shipData = { ...shipData, ...shiptaskResult };
 
-      let crewshipData = {
+      crewshipData = {
         ...taskData,
         diceStringcrew: crewData.diceString,
         diceStringship: shipData.diceString,
@@ -126,21 +118,16 @@ export class STARoll {
       };
 
       const crewshiptaskResultText = await this._taskResultText(crewshipData);
-      crewshipData = { ...crewshipData, ...crewshiptaskResultText };
-
-      chatData = await foundry.applications.handlebars.renderTemplate(
-        'systems/sta/templates/chat/attribute-test-npc.hbs',
-        crewshipData
-      );
+      crewshipData = { ...crewshipData, ...crewshiptaskResultText, rollType: 'npc' };
     }
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d
         .showForRoll(taskRolled, game.user, true)
-        .then(() => this.sendToChat(chatData));
+        .then(() => this.sendToChat(crewshipData));
     } else {
-      this.sendToChat(chatData);
+      this.sendToChat(crewshipData);
     }
   }
 
@@ -355,20 +342,15 @@ export class STARoll {
     const diceString = await this._getDiceImageListFromChallengeRoll(rolledChallenge);
     const flavor = `${challengeData.challengeName} ${game.i18n.format('sta.roll.challenge.name')}`;
 
-    challengeData = { ...challengeData, ...getSuccessesEffects, diceString, flavor };
-
-    const chatData = await foundry.applications.handlebars.renderTemplate(
-      'systems/sta/templates/chat/challenge-roll.hbs',
-      challengeData
-    );
+    challengeData = { ...challengeData, ...getSuccessesEffects, diceString, flavor, rollType: 'challenge' };
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d
         .showForRoll(rolledChallenge, game.user, true)
-        .then(() => this.sendToChat(chatData));
+        .then(() => this.sendToChat(challengeData));
     } else {
-      this.sendToChat(chatData);
+      this.sendToChat(challengeData);
     }
   }
 
@@ -447,20 +429,51 @@ export class STARoll {
   }
 
   // #########################################################
-  // #                                                         #
-  // #                  Send to Chat                          #
-  // #                                                         #
+  // #                                                       #
+  // #                  Send to Chat                         #
+  // #                                                       #
   // #########################################################
 
-  async sendToChat(chatData) {
+  async sendToChat(rollData) {
+
+    let chatData = '';
+    switch (rollData.rollType) {
+      case 'task':
+        chatData = await foundry.applications.handlebars.renderTemplate(
+          'systems/sta/templates/chat/attribute-test.hbs',
+           rollData
+        );
+        break;
+      case 'challenge':
+        chatData = await foundry.applications.handlebars.renderTemplate(
+          'systems/sta/templates/chat/challenge-roll.hbs',
+           rollData
+         );
+        break;
+      case 'npc':
+        chatData = await foundry.applications.handlebars.renderTemplate(
+          'systems/sta/templates/chat/attribute-test-npc.hbs',
+          rollData
+        );
+        break;
+      case 'npc':
+        chatData = await foundry.applications.handlebars.renderTemplate(
+          'systems/sta/templates/chat/reroll.hbs',
+          rollData
+        );
+        break;
+      default:
+        break;
+      }
+
     const rollMode = game.settings.get('core', 'rollMode');
     const messageProps = {
       content: chatData,
       flags: {
-        /* 'sta': {
-          // speakerName: chatData.speakerName,
-          // ... all other custom flags
-        } */
+        'sta': {
+          speakerName: rollData.speakerName,
+          diceOutcome: rollData.diceOutcome,
+        }
       },
     };
 

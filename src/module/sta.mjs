@@ -79,10 +79,10 @@ import {
 } from './apps/dice-so-nice.js';
 import {
   Collapsible
-} from './apps/Collapsible.mjs';
+} from './apps/chatcards.mjs';
 import {
   RerollHandler
-} from './apps/reroll.mjs';
+} from './apps/chatcards.mjs';
 import {
   STARoll
 } from './apps/roll.mjs';

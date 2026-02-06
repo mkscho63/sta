@@ -45,13 +45,13 @@ export class STARoller {
       close: () => null,
     });
 
-    if (formData) {
+    if (!formData) return;
+
       dicePool = parseInt(formData.get('dicePoolSlider'), 10);
       usingFocus = formData.get('usingFocus') === 'on';
       usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
       usingDetermination = formData.get('usingDetermination') === 'on';
       complicationRange = parseInt(formData.get('complicationRange'), 10);
-    }
 
     const selectedAttributeValue = parseInt(
       document.getElementById('selectedAttributeValue').value,
@@ -354,7 +354,7 @@ export class STARoller {
     /* --------------------------------------------------------------------- */
     /* Show dialog and collect form data                                     */
     /* --------------------------------------------------------------------- */
-    const formData = await foundry.applications.api.DialogV2.wait({
+    const formData = await api.DialogV2.wait({
       window: {
         title: game.i18n.localize('sta.roll.npcshipandcrewroll'),
       },
@@ -375,7 +375,7 @@ export class STARoller {
       ],
       close: () => null,
     });
-
+    if (!formData) return;
     /* --------------------------------------------------------------------- */
     /* Default values & state                                                */
     /* --------------------------------------------------------------------- */
@@ -397,9 +397,8 @@ export class STARoller {
     let npcRating = '';
 
     /* --------------------------------------------------------------------- */
-    /* Pull data from form if present                                       */
+    /* Pull data from form                                                   */
     /* --------------------------------------------------------------------- */
-    if (formData) {
       selectedAttribute = formData.get('attribute');
       selectedDiscipline = formData.get('discipline');
       selectedSystem = formData.get('system');
@@ -413,7 +412,6 @@ export class STARoller {
       selectedSystemValue = parseInt(formData.get('systemValue')) || 7;
       selectedDepartmentValue = parseInt(formData.get('departmentValue')) || 2;
       selectedRoll = formData.get('rollList');
-    }
 
     /* --------------------------------------------------------------------- */
     /* Roll presets logic                                                   */
