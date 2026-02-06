@@ -308,88 +308,30 @@ if (taskData.starshipName === 'NPC Ship') {
   // #                                                    #
   // ######################################################
 
-  async performChallengeRoll(dicePool, challengeName, speaker = null) {
-    // Foundry will soon make rolling async only, setting it up as such now avoids a warning. 
-    const rolledChallenge = await new Roll(dicePool + 'd6').evaluate({});
-    const flavor = challengeName + ' ' + game.i18n.format('sta.roll.challenge.name');
-    let successes = getSuccessesChallengeRoll(rolledChallenge);
-    successes += speaker.previousSuccess || 0;
-    let effects = getEffectsFromChallengeRoll(rolledChallenge);
-    effects += speaker.previousEffect || 0;
-    const diceString = getDiceImageListFromChallengeRoll(rolledChallenge);
-    // pluralize success string
-    let successText = '';
-    successText = successes + ' ' + i18nPluralize(successes, 'sta.roll.success');
-    // pluralize effect string
-    let effectText = '';
-    if (effects >= 1) {
-      effectText = '<h4 class="dice-total effect"> ' + i18nPluralize(effects, 'sta.roll.effect') + '</h4>';
-    }
-    const chatData = {
-      speakerId: speaker && speaker.id,
-      tokenId: speaker && speaker.token ? speaker.token.uuid : null,
-      dicePool,
-      diceHtml: diceString,
-      successText,
-      effectHtml: effectText,
-	  previousRoll: speaker.previousRoll,
-      rollType: 'challenge'
-    };
-    let html = '';
-    if (speaker.type === 'reroll') {
-      html = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/reroll.hbs', chatData);
-    } else {
-      html =
-        `<div class="sta roll chat card" 
-              data-token-id="${chatData.tokenId}" 
-              data-speaker-id="${chatData.speakerId}">
-                ${await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/challenge-roll.hbs', chatData)}
-        </div>`;
-    };
+  async performChallengeRoll(challengeData) {
+    const rolledChallenge = await new Roll(challengeData.dicePool + 'd6').evaluate({});
+    const getSuccessesEffects = await this._getSuccessesEffects(rolledChallenge);
+    const diceString = await this._getDiceImageListFromChallengeRoll(rolledChallenge);
+    const flavor = challengeData.challengeName + ' ' + game.i18n.format('sta.roll.challenge.name');
+    challengeData = {...challengeData, ...getSuccessesEffects, diceString, flavor};
+
+
+
+    let chatData = await foundry.applications.handlebars.renderTemplate('systems/sta/templates/chat/challenge-roll.hbs', challengeData);
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that and then send to chat after the roll has finished. If not just send to chat.
     if (game.dice3d) {
       game.dice3d.showForRoll(rolledChallenge, game.user, true).then((displayed) => {
-        this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, '', chatData);
+        this.sendToChat(chatData);
       });
     } else {
-      this.sendToChat(speaker, html, undefined, rolledChallenge, flavor, 'sounds/dice.wav', chatData);
+      this.sendToChat(chatData);
     };
   }
 
 /*
-  Returns the number of successes in a d6 challenge die roll
-*/
- getSuccessesChallengeRoll(roll) {
-  let dice = roll.terms[0].results.map((die) => die.result);
-  dice = dice.map((die) => {
-    if (die == 2) {
-      return 2;
-    } else if (die == 1 || die == 5 || die == 6) {
-      return 1;
-    }
-    return 0;
-  });
-  return dice.reduce((a, b) => a + b, 0);
-}
-
-/*
-  Returns the number of effects in a  d6 challenge die roll
-*/
- getEffectsFromChallengeRoll(roll) {
-  let dice = roll.terms[0].results.map((die) => die.result);
-  dice = dice.map((die) => {
-    if (die >= 5) {
-      return 1;
-    }
-    return 0;
-  });
-  return dice.reduce((a, b) => a + b, 0);
-}
-
-/*
   Creates an HTML list of die face images from the results of a challenge roll
 */
- getDiceImageListFromChallengeRoll(roll) {
+ async _getDiceImageListFromChallengeRoll(rolledChallenge) {
   let diceString = '';
   const diceFaceTable = [
     '<li class="roll die d6"><img src="systems/sta/assets/icons/ChallengeDie_Success1_small.png" /></li>',
@@ -399,21 +341,71 @@ if (taskData.starshipName === 'NPC Ship') {
     '<li class="roll die d6"><img src="systems/sta/assets/icons/ChallengeDie_Effect_small.png" /></li>',
     '<li class="roll die d6"><img src="systems/sta/assets/icons/ChallengeDie_Effect_small.png" /></li>'
   ];
-  diceString = roll.terms[0].results.map((die) => die.result).map((result) => diceFaceTable[result - 1]).join(' ');
+  diceString = rolledChallenge.terms[0].results.map((die) => die.result).map((result) => diceFaceTable[result - 1]).join(' ');
   return diceString;
 }
 
 /*
-  grabs the nationalized local reference, switching to the plural form if count > 1, also, replaces |#| with count, then returns the resulting string. 
+  Returns the number of successes in a d6 challenge die roll
 */
- i18nPluralize(count, localizationReference) {
-  if (count > 1) {
-    return game.i18n.format(localizationReference + 'Plural').replace('|#|', count);
-  }
-  return game.i18n.format(localizationReference).replace('|#|', count);
-}
+ async _getSuccessesEffects(rolledChallenge) {
+let successes = 0;
+let effects = 0;
+let diceOutcome = [];
+  let dice = rolledChallenge.terms[0].results.map((die) => die.result);
+  dice = dice.map((die) => {
+    switch (die) {
+      case 1:
+        successes += 1;
+        diceOutcome.push(1);
+        break;
+      case 2:
+        successes += 2;
+        diceOutcome.push(2);
+        break;
+      case 3:
+        diceOutcome.push(3);
+        break;
+      case 4:
+        diceOutcome.push(4);
+        break;
+      case 5:
+        successes += 1;
+        effects += 1;
+        diceOutcome.push(5)
+        break;
+      case 6:
+        successes += 1;
+        effects += 1;
+        diceOutcome.push(6)
+        break;
+      default:
+        break;
+    }
+  });
 
-  // ######################################################
+  let successText = '';
+  if (successes === 1) {
+    successText = successes + ' ' + game.i18n.format('sta.roll.success');
+  } else {
+    successText = successes + ' ' + game.i18n.format('sta.roll.successPlural');
+  };
+
+  let effectText = '';
+  if (effects === 1) {
+    effectText = effects + ' ' + game.i18n.format('sta.roll.effect');
+    } else {
+    effectText = effects + ' ' + game.i18n.format('sta.roll.effectPlural');
+  };
+
+  return {
+    successes,
+    effects,
+    successText,
+    effectText,
+  };
+
+}  // ######################################################
   // #                                                    #
   // #                  Send to Chat                      #
   // #                                                    #

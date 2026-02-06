@@ -516,7 +516,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     event.preventDefault();
     const defaultValue = 2;
     const speaker = this.actor;
-    const weaponName = '';
+    const challengeName = '';
     const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
@@ -544,8 +544,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
     if (!formData) return;
     const dicePool = formData?.get('dicePoolValue') || defaultValue;
+    const challengeData = {
+      speakerName: speaker.name,
+      dicePool,
+      challengeName,
+    };
     const staRoll = new STARoll();
-    staRoll.performChallengeRoll(dicePool, weaponName, speaker);
+    staRoll.performChallengeRoll(challengeData);
   }
 
   // Reputation roll for 1e and 2e characters
