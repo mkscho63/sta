@@ -642,13 +642,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // Cheat sheet for 2e characters overridden in 1e sheet
+  // Cheat sheet version pulled from character sheet
   async _onCheatSheet(event) {
     event?.preventDefault?.();
-    const tmpl = 'systems/sta/templates/apps/cheat-sheet.hbs';
+    const tmpl = this.cheatsheet.tmpl;
     const content = await foundry.applications.handlebars.renderTemplate(tmpl);
     new foundry.applications.api.DialogV2({
-      window: {title: game.i18n.localize('sta.apps.cheatsheet') + ' - 2e'},
+      window: {title: game.i18n.localize('sta.apps.cheatsheet') + this.cheatsheet.version},
       content,
       classes: ['dialogue'],
       position: {width: 450, height: 'auto'},
@@ -908,12 +908,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // ######################################################
 
   // Stress track for 2e characters, overridden in every other sheet
-  _onStressTrackUpdate(event) {
-    const localizedValues = {
-      tough: game.i18n.localize('sta.actor.character.talents.tough'),
-      resolute: game.i18n.localize('sta.actor.character.talents.resolute'),
-      mentaldiscipline: game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
-    };
+  async _onStressTrackUpdate(event) {
+
     if (event) {
       const clickedStress = event.target;
       const stressValue = parseInt(clickedStress.textContent, 10);
@@ -925,23 +921,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
     const fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
     const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
-    let stressTrackMax = fitnessValue + stressModValue;
-    const hasTough = this.element.querySelector(`[data-talent-name*="${localizedValues.tough}"]`);
-    if (hasTough) {
-      stressTrackMax += 2;
-    }
-    const hasResolute = this.element.querySelector(`[data-talent-name*="${localizedValues.resolute}"]`);
-    if (hasResolute) {
-      stressTrackMax += parseInt(this.element.querySelector('#command')?.value || 0, 10);
-    }
-    const hasMentalDiscipline = this.element.querySelector(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`);
-    if (hasMentalDiscipline) {
-      stressTrackMax = parseInt(this.element.querySelector('#control')?.value || 0, 10);
-    }
+    const stressTrackMax = await this._StressTrackMax();
+
     const maxStressInput = this.element.querySelector('#max-stress');
     if (maxStressInput && maxStressInput.value != stressTrackMax) {
       maxStressInput.value = stressTrackMax;
     }
+
     const barRenderer = this.element.querySelector('#bar-stress-renderer');
     barRenderer.innerHTML = '';
     const totalStressValue = this.actor?.system?.stress?.value || parseInt(this.element.querySelector('#total-stress')?.value || 0, 10);
@@ -966,6 +952,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Determination track for characters
   _onDeterminationTrackUpdate(event) {
+    const numValues = this.actor.itemTypes.value.length;
+    if (!numValues) return;
     if (event) {
       const clickedDetermination = event.target;
       const determinationValue = parseInt(clickedDetermination.textContent, 10);
@@ -1007,7 +995,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.reputation = reputationValue;
       }
     }
-    const reputationTrackMax = game.settings.get('sta', 'maxNumberOfReputation2e');
+    const reputationTrackMax = this.reputationTrackMax.value;
     const barRenderer = this.element.querySelector('#bar-rep-renderer');
     barRenderer.innerHTML = '';
     const totalReputationValue = this.actor?.system?.reputation || parseInt(this.element.querySelector('#total-rep')?.value || 0, 10);
@@ -1088,10 +1076,6 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Shields track for 2e starships & small craft, overridden in 1e ship sheets
   async _onShieldTrackUpdate(event) {
-    const localizedValues = {
-      advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
-      polarizedhullplating: game.i18n.localize('sta.actor.starship.talents.polarizedhullplating'),
-    };
     if (event) {
       const clickedShield = event.target;
       const shieldValue = parseInt(clickedShield.textContent, 10);
@@ -1101,19 +1085,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.shields.value = shieldValue;
       }
     }
-    const structureValue = parseInt(this.element.querySelector('#structure')?.value || 0, 10);
-    const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);
-    const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
-    const shieldModValue = parseInt(this.element.querySelector('#shieldmod')?.value || 0, 10);
-    let shieldsTrackMax = structureValue + securityValue + scaleValue + shieldModValue;
-    const hasAdvancedShields = this.element.querySelector(`[data-talent-name*="${localizedValues.advancedshields}"]`);
-    if (hasAdvancedShields) {
-      shieldsTrackMax += 5;
-    }
-    const hasPolarizedHullPlating = this.element.querySelector(`[data-talent-name*="${localizedValues.polarizedhullplating}"]`);
-    if (hasPolarizedHullPlating) {
-      shieldsTrackMax = structureValue + shieldModValue;
-    }
+    const shieldsTrackMax = await this._shieldsTrackMax();
     const maxShieldsInput = this.element.querySelector('#max-shields');
     if (maxShieldsInput && maxShieldsInput.value != shieldsTrackMax) {
       maxShieldsInput.value = shieldsTrackMax;
@@ -1140,13 +1112,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // Crew track for 2e starships, overridden in 1e ship sheets
+  // Crew track for starships
   async _onCrewTrackUpdate(event) {
-    const localizedValues = {
-      extensiveautomation: game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
-      abundantpersonnel: game.i18n.localize('sta.actor.starship.talents.abundantpersonnel'),
-      agingrelic: game.i18n.localize('sta.actor.starship.talents.agingrelic'),
-    };
     if (event) {
       const clickedCrew = event.target;
       const crewValue = parseInt(clickedCrew.textContent, 10);
@@ -1156,21 +1123,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.crew.value = crewValue;
       }
     }
-    const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
-    const crwModValue = parseInt(this.element.querySelector('#crwmod')?.value || 0, 10);
-    let crewTrackMax = scaleValue + crwModValue;
-    const hasAgingRelic = this.element.querySelector(`[data-talent-name*="${localizedValues.agingrelic}"]`);
-    if (hasAgingRelic) {
-      crewTrackMax += 1;
-    }
-    const hasExtensiveAutomation = this.element.querySelector(`[data-talent-name*="${localizedValues.extensiveautomation}"]`);
-    if (hasExtensiveAutomation) {
-      crewTrackMax = Math.ceil(crewTrackMax / 2);
-    }
-    const hasAbundantPersonnel = this.element.querySelector(`[data-talent-name*="${localizedValues.abundantpersonnel}"]`);
-    if (hasAbundantPersonnel) {
-      crewTrackMax *= 2;
-    }
+    const crewTrackMax = await this._crewTrackMax();
     const maxCrewInput = this.element.querySelector('#max-crew');
     if (maxCrewInput && maxCrewInput.value != crewTrackMax) {
       maxCrewInput.value = crewTrackMax;
@@ -1199,9 +1152,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Power track for 1e starships and small craft
   async _onPowerTrackUpdate(event) {
-    const localizedValues = {
-      secondaryreactors: game.i18n.localize('sta.actor.starship.talents.secondaryreactors'),
-    };
+
     if (event) {
       const clickedPower = event.target;
       const powerValue = parseInt(clickedPower.textContent, 10);
@@ -1211,12 +1162,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.power.value = powerValue;
       }
     }
-    const engineValue = parseInt(this.element.querySelector('#engines')?.value || 0, 10);
-    let powerTrackMax = engineValue;
-    const hasSecondaryReactors = this.element.querySelector(`[data-talent-name*="${localizedValues.secondaryreactors}"]`);
-    if (hasSecondaryReactors) {
-      powerTrackMax += 5;
-    }
+    const powerTrackMax = await this._powerTrackMax();
     const maxPowerInput = this.element.querySelector('#max-power');
     if (maxPowerInput && maxPowerInput.value != powerTrackMax) {
       maxPowerInput.value = powerTrackMax;

@@ -45,19 +45,11 @@ export class STASmallCraftSheet extends STAActors {
     };
   }
 
-  async _onShieldTrackUpdate(event) {
+  async _shieldsTrackMax() {
     const localizedValues = {
       advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
     };
-    if (event) {
-      const clickedShield = event.target;
-      const shieldValue = parseInt(clickedShield.textContent, 10);
-      if (shieldValue === 1 && clickedShield.classList.contains('selected') && this.actor.system.shields.value === 1) {
-        this.actor.system.shields.value = 0;
-      } else {
-        this.actor.system.shields.value = shieldValue;
-      }
-    }
+
     const structureValue = parseInt(this.element.querySelector('#structure')?.value || 0, 10);
     const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);
     const shieldModValue = parseInt(this.element.querySelector('#shieldmod')?.value || 0, 10);
@@ -66,75 +58,21 @@ export class STASmallCraftSheet extends STAActors {
     if (hasAdvancedShields) {
       shieldsTrackMax += 5;
     }
-    const maxShieldsInput = this.element.querySelector('#max-shields');
-    if (maxShieldsInput && maxShieldsInput.value != shieldsTrackMax) {
-      maxShieldsInput.value = shieldsTrackMax;
-    }
-    const barRenderer = this.element.querySelector('#bar-shields-renderer');
-    barRenderer.innerHTML = '';
-    const totalShieldsValue = this.actor?.system?.shields?.value || parseInt(this.element.querySelector('#total-shields')?.value || 0, 10);
-    for (let i = 1; i <= shieldsTrackMax; i++) {
-      const div = document.createElement('div');
-      div.className = 'box shields';
-      div.id = `shields-${i}`;
-      div.textContent = i;
-      div.style.width = `calc(100% / ${shieldsTrackMax})`;
-      div.setAttribute('data-action', 'onShieldTrackUpdate');
-      if (i <= totalShieldsValue) {
-        div.classList.add('selected');
-      }
-      barRenderer.appendChild(div);
-    }
-    if (!this.document.isOwner) return;
-    this.actor?.update({
-      'system.shields.value': this.actor.system.shields.value,
-      'system.shields.max': shieldsTrackMax,
-    });
+    return shieldsTrackMax;
   }
 
-  async _onPowerTrackUpdate(event) {
+  async _powerTrackMax() {
     const localizedValues = {
       secondaryreactors: game.i18n.localize('sta.actor.starship.talents.secondaryreactors'),
     };
-    if (event) {
-      const clickedPower = event.target;
-      const powerValue = parseInt(clickedPower.textContent, 10);
-      if (powerValue === 1 && clickedPower.classList.contains('selected') && this.actor.system.power.value === 1) {
-        this.actor.system.power.value = 0;
-      } else {
-        this.actor.system.power.value = powerValue;
-      }
-    }
+
     const engineValue = parseInt(this.element.querySelector('#engines')?.value || 0, 10);
     let powerTrackMax = Math.ceil(engineValue / 2);
     const hasSecondaryReactors = this.element.querySelector(`[data-talent-name*="${localizedValues.secondaryreactors}"]`);
     if (hasSecondaryReactors) {
       powerTrackMax += 5;
     }
-    const maxPowerInput = this.element.querySelector('#max-power');
-    if (maxPowerInput && maxPowerInput.value != powerTrackMax) {
-      maxPowerInput.value = powerTrackMax;
-    }
-    const barRenderer = this.element.querySelector('#bar-power-renderer');
-    barRenderer.innerHTML = '';
-    const totalPowerValue = this.actor?.system?.power?.value || parseInt(this.element.querySelector('#total-power')?.value || 0, 10);
-    for (let i = 1; i <= powerTrackMax; i++) {
-      const div = document.createElement('div');
-      div.className = 'box power';
-      div.id = `power-${i}`;
-      div.textContent = i;
-      div.style.width = `calc(100% / ${powerTrackMax})`;
-      div.setAttribute('data-action', 'onPowerTrackUpdate');
-      if (i <= totalPowerValue) {
-        div.classList.add('selected');
-      }
-      barRenderer.appendChild(div);
-    }
-    if (!this.document.isOwner) return;
-    this.actor?.update({
-      'system.power.value': this.actor.system.power.value,
-      'system.power.max': powerTrackMax,
-    });
+    return powerTrackMax;
   }
 
   _updateWeaponValues() {

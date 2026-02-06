@@ -43,4 +43,26 @@ export class STASmallCraftSheet2e extends STAActors {
       defaultValue: '1',
     };
   }
+
+  async _shieldsTrackMax() {
+    const localizedValues = {
+      advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+      polarizedhullplating: game.i18n.localize('sta.actor.starship.talents.polarizedhullplating'),
+    };
+
+    const structureValue = parseInt(this.element.querySelector('#structure')?.value || 0, 10);
+    const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);
+    const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
+    const shieldModValue = parseInt(this.element.querySelector('#shieldmod')?.value || 0, 10);
+    let shieldsTrackMax = structureValue + securityValue + scaleValue + shieldModValue;
+    const hasAdvancedShields = this.element.querySelector(`[data-talent-name*="${localizedValues.advancedshields}"]`);
+    if (hasAdvancedShields) {
+      shieldsTrackMax += 5;
+    }
+    const hasPolarizedHullPlating = this.element.querySelector(`[data-talent-name*="${localizedValues.polarizedhullplating}"]`);
+    if (hasPolarizedHullPlating) {
+      shieldsTrackMax = structureValue + shieldModValue;
+    }
+    return shieldsTrackMax;
+  }  
 }
