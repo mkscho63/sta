@@ -300,6 +300,7 @@
   "sta.roll.npccrewtalented": "Experta",
   "sta.roll.npccrewexceptional": "Excepcional",
   "sta.roll.npcship": "Nave PNJ",
+  "sta.roll.npcshipassist": "Asistir",
   "sta.roll.shipassisting": "¿La nave está ayudando?",
   "sta.roll.complicationroller": "Margen de Complicación",
   "sta.roll.npcshipandcrewroll": "Tirada de Tripulación y Nave PNJ",

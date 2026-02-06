@@ -300,6 +300,7 @@
   "sta.roll.npccrewtalented": "Talentueux",
   "sta.roll.npccrewexceptional": "Exceptionnel",
   "sta.roll.npcship": "Vaisseau NPC",
+  "sta.roll.npcshipassist": "Assister",
   "sta.roll.shipassisting": "Le vaisseau aide-t-il?",
   "sta.roll.complicationroller": "Plage de Complication",
   "sta.roll.npcshipandcrewroll": "Jet d'équipage et de vaisseau NPC",
