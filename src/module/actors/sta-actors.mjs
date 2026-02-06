@@ -564,7 +564,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       this.element.querySelector('#total-rep')?.value || 0,
       10
     );
-    const speaker = ChatMessage.getSpeaker({actor: this.actor});
+    const speaker = this.actor;
     const formData = await api.DialogV2.wait({
       window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
       position: {height: 'auto', width: 350},
@@ -615,16 +615,16 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       const acclaim = totalSuccesses - negativeInfluences;
       outcomeText = game.i18n.format('sta.roll.gainacclaim', {0: acclaim});
     } else {
-      const reprimand = negativeInfluences - totalSuccesses + complications;
+      const reprimand = negativeInfluences - totalSuccesses;
       if (reprimand > 0) {
-        outcomeText = game.i18n.format('sta.roll.gainreprimand', {0: reprimand});
+        outcomeText = game.i18n.format('sta.roll.gainreprimand', {0: reprimand + complications});
       } else {
         outcomeText = game.i18n.localize('sta.roll.nochange');
       }
     }
     const chatData = {
-      speakerId: speaker.actor?.id ?? speaker.id,
-      tokenId: speaker.token?.uuid ?? null,
+      speakerName: speaker.name,
+      flavor: game.i18n.format('sta.actor.character.acclaim'),
       dicePool: positiveInfluences,
       diceHtml,
       outcomeText,
@@ -642,7 +642,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // Cheat sheet version pulled from character sheet
+  // Cheat sheet on character sheet
   async _onCheatSheet(event) {
     event?.preventDefault?.();
     const tmpl = this.cheatsheet.tmpl;
@@ -907,7 +907,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // #                                                    #
   // ######################################################
 
-  // Stress track for 2e characters, overridden in every other sheet
+  // Stress track characters
   async _onStressTrackUpdate(event) {
 
     if (event) {
@@ -984,7 +984,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // Reputation track for 1e and 2e characters
+  // Reputation track for characters
   _onReputationTrackUpdate(event) {
     if (event) {
       const clickedReputation = event.target;
@@ -1074,7 +1074,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     this.submit();
   }
 
-  // Shields track for 2e starships & small craft, overridden in 1e ship sheets
+  // Shields track for starships & small craft
   async _onShieldTrackUpdate(event) {
     if (event) {
       const clickedShield = event.target;
