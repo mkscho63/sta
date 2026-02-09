@@ -38,107 +38,59 @@ export class STAStarshipSheet2e extends STAActors {
     ]);
   }
 
-  async _onAttributeTest(event) {
-    event.preventDefault();
-    const i18nKey = 'sta.roll.complicationroller';
-    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
-    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range';
-    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*');
-    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
-    const sceneComplicationBonus = (() => {
-      try {
-        const scene = game.scenes?.active;
-        if (!scene) return 0;
-        let bonus = 0;
-        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
-        for (const tok of tokens) {
-          const actor = tok?.actor;
-          if (!actor || actor.type !== 'scenetraits') continue;
-          for (const item of actor.items ?? []) {
-            const m = compRx.exec(item.name ?? '');
-            if (m) bonus += Number(m[1]) || 0;
-          }
-        }
-        return bonus;
-      } catch (err) {
-        console.error('Scene complication bonus error:', err);
-        return 0;
-      }
-    })();
-    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
-    let selectedAttribute = null;
-    let selectedAttributeValue = 0;
-    let selectedDiscipline = null;
-    let selectedDisciplineValue = 0;
-    const systemCheckboxes = this.element.querySelectorAll('.systems-block .selector.system');
-    systemCheckboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
-        const systemId = checkbox.id.replace('.selector', '');
-        selectedAttribute = systemId;
-        const systemValueInput = this.element.querySelector(`#${systemId}`);
-        if (systemValueInput) {
-          selectedAttributeValue = parseInt(systemValueInput.value, 10) || 0;
-        }
-      }
-    });
-    const departmentCheckboxes = this.element.querySelectorAll('.departments-block .selector.department');
-    departmentCheckboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
-        const departmentId = checkbox.id.replace('.selector', '');
-        selectedDiscipline = departmentId;
-        const departmentValueInput = this.element.querySelector(`#${departmentId}`);
-        if (departmentValueInput) {
-          selectedDisciplineValue = parseInt(departmentValueInput.value, 10) || 0;
-        }
-      }
-    });
-    const defaultValue = 1;
-    const speaker = this.actor;
-    const template = 'systems/sta/templates/apps/dicepool-attributess.hbs';
-    const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue, calculatedComplicationRange
-    });
-    const formData = await api.DialogV2.wait({
-      window: {
-        title: game.i18n.localize('sta.apps.dicepoolwindow')
-      },
-      position: {
-        height: 'auto',
-        width: 350
-      },
-      content: html,
-      classes: ['dialogue'],
-      buttons: [{
-        action: 'roll',
-        default: true,
-        label: game.i18n.localize('sta.apps.rolldice'),
-        callback: (event, button, dialog) => {
-          const form = dialog.element.querySelector('form');
-          return form ? new FormData(form) : null;
-        },
-      },],
-      close: () => null,
-    });
-    if (formData) {
-      const dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
-      const usingFocus = formData.get('usingFocus') === 'on';
-      const usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-      const usingDetermination = formData.get('usingDetermination') === 'on';
-      const complicationRange = parseInt(formData.get('complicationRange'), 10) || 1;
-      const staRoll = new STARoll();
-      staRoll.performAttributeTest(
-        dicePool,
-        usingFocus,
-        usingDedicatedFocus,
-        usingDetermination,
-        selectedAttribute,
-        selectedAttributeValue,
-        selectedDiscipline,
-        selectedDisciplineValue,
-        complicationRange,
-        speaker
-      );
+  get  taskRollData() {
+    return {
+      template: 'systems/sta/templates/apps/dicepool-attributess.hbs',
+      rolltype: 'starship',
+      defaultValue: '1',
+    };
+  }
+
+  async _shieldsTrackMax() {
+    const localizedValues = {
+      advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
+      polarizedhullplating: game.i18n.localize('sta.actor.starship.talents.polarizedhullplating'),
+    };
+
+    const structureValue = parseInt(this.element.querySelector('#structure')?.value || 0, 10);
+    const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);
+    const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
+    const shieldModValue = parseInt(this.element.querySelector('#shieldmod')?.value || 0, 10);
+    let shieldsTrackMax = structureValue + securityValue + scaleValue + shieldModValue;
+    const hasAdvancedShields = this.element.querySelector(`[data-talent-name*="${localizedValues.advancedshields}"]`);
+    if (hasAdvancedShields) {
+      shieldsTrackMax += 5;
     }
+    const hasPolarizedHullPlating = this.element.querySelector(`[data-talent-name*="${localizedValues.polarizedhullplating}"]`);
+    if (hasPolarizedHullPlating) {
+      shieldsTrackMax = structureValue + shieldModValue;
+    }
+    return shieldsTrackMax;
+  }
+
+  async _crewTrackMax() {
+    const localizedValues = {
+      extensiveautomation: game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
+      abundantpersonnel: game.i18n.localize('sta.actor.starship.talents.abundantpersonnel'),
+      agingrelic: game.i18n.localize('sta.actor.starship.talents.agingrelic'),
+    };
+
+    const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
+    const crwModValue = parseInt(this.element.querySelector('#crwmod')?.value || 0, 10);
+    let crewTrackMax = scaleValue + crwModValue;
+    const hasAgingRelic = this.element.querySelector(`[data-talent-name*="${localizedValues.agingrelic}"]`);
+    if (hasAgingRelic) {
+      crewTrackMax += 1;
+    }
+    const hasExtensiveAutomation = this.element.querySelector(`[data-talent-name*="${localizedValues.extensiveautomation}"]`);
+    if (hasExtensiveAutomation) {
+      crewTrackMax = Math.ceil(crewTrackMax / 2);
+    }
+    const hasAbundantPersonnel = this.element.querySelector(`[data-talent-name*="${localizedValues.abundantpersonnel}"]`);
+    if (hasAbundantPersonnel) {
+      crewTrackMax *= 2;
+    }
+    const maxCrewInput = this.element.querySelector('#max-crew');
+    return crewTrackMax;
   }
 }

@@ -381,75 +381,22 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // #                                                    #
   // ######################################################
 
-  // Attribute test for 2e character - overridden in other sheets
+  // Perform Task
   async _onAttributeTest(event) {
     event.preventDefault();
-    const i18nKey = 'sta.roll.complicationroller';
-    let localizedLabel = game.i18n.localize(i18nKey)?.trim();
-    if (!localizedLabel || localizedLabel === i18nKey) localizedLabel = 'Complication Range';
-    const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const labelPattern = escRe(localizedLabel).replace(/\s+/g, '\\s*');
-    const compRx = new RegExp(`${labelPattern}\\s*\\+\\s*(\\d+)`, 'i');
-    const sceneComplicationBonus = (() => {
-      try {
-        const scene = game.scenes?.active;
-        if (!scene) return 0;
-        let bonus = 0;
-        const tokens = scene.tokens?.contents ?? scene.tokens ?? [];
-        for (const tok of tokens) {
-          const actor = tok?.actor;
-          if (!actor || actor.type !== 'scenetraits') continue;
-          for (const item of actor.items ?? []) {
-            const m = compRx.exec(item.name ?? '');
-            if (m) bonus += Number(m[1]) || 0;
-          }
-        }
-        return bonus;
-      } catch (err) {
-        console.error('Scene complication bonus error:', err);
-        return 0;
-      }
-    })();
-    const calculatedComplicationRange = Math.min(5, Math.max(1, 1 + sceneComplicationBonus));
-    let selectedAttribute = null;
-    let selectedAttributeValue = 0;
-    let selectedDiscipline = null;
-    let selectedDisciplineValue = 0;
-    const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]')?.checked ?? false;
-    const reputationValue = parseInt(this.element.querySelector('#total-rep')?.value, 10) || 0;
-    const systemCheckboxes = this.element.querySelectorAll('.attribute-block .selector.attribute');
-    systemCheckboxes.forEach((checkbox) => {
-      if (checkbox.checked) {
-        const systemId = checkbox.id.replace('.selector', '');
-        selectedAttribute = systemId;
-        const systemValueInput = this.element.querySelector(`#${systemId}`);
-        if (systemValueInput) {
-          selectedAttributeValue = parseInt(systemValueInput.value, 10) || 0;
-        }
-      }
-    });
-    if (useReputationInstead) {
-      selectedDiscipline = 'reputation';
-      selectedDisciplineValue = reputationValue;
-    } else {
-      const departmentCheckboxes = this.element.querySelectorAll('.discipline-block .selector.discipline');
-      departmentCheckboxes.forEach((checkbox) => {
-        if (checkbox.checked) {
-          const departmentId = checkbox.id.replace('.selector', '');
-          selectedDiscipline = departmentId;
-          const departmentValueInput = this.element.querySelector(`#${departmentId}`);
-          if (departmentValueInput) {
-            selectedDisciplineValue = parseInt(departmentValueInput.value, 10) || 0;
-          }
-        }
-      });
-    }
-    const defaultValue = 2;
-    const speaker = this.actor;
-    const template = 'systems/sta/templates/apps/dicepool-attribute2e.hbs';
+    const staRoll = new STARoll();
+    const defaultValue = this.taskRollData.defaultValue;
+    let dicePool = defaultValue;
+    let usingFocus = false;
+    let usingDedicatedFocus = false;
+    let usingDetermination = false;
+    let complicationRange = 1;
+    const calculatedComplicationRange  = await staRoll._sceneComplications();
+    const template = this.taskRollData.template;
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue, calculatedComplicationRange
     });
+
     const formData = await api.DialogV2.wait({
       window: {
         title: game.i18n.localize('sta.apps.dicepoolwindow')
@@ -471,29 +418,97 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       },],
       close: () => null,
     });
+
     if (formData) {
-      let dicePool = parseInt(formData.get('dicePoolSlider'), 10) || defaultValue;
-      const usingFocus = formData.get('usingFocus') === 'on';
-      const usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-      const usingDetermination = formData.get('usingDetermination') === 'on';
-      const complicationRange = parseInt(formData.get('complicationRange'), 10) || 1;
-      if (usingDetermination) {
-        dicePool = dicePool - 1;
-      }
-      const staRoll = new STARoll();
-      staRoll.performAttributeTest(
-        dicePool,
-        usingFocus,
-        usingDedicatedFocus,
-        usingDetermination,
-        selectedAttribute,
-        selectedAttributeValue,
-        selectedDiscipline,
-        selectedDisciplineValue,
-        complicationRange,
-        speaker
-      );
+      dicePool = parseInt(formData.get('dicePoolSlider'), 10);
+      usingFocus = formData.get('usingFocus') === 'on';
+      usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
+      usingDetermination = formData.get('usingDetermination') === 'on';
+      complicationRange = parseInt(formData.get('complicationRange'), 10);
     }
+
+    const speaker = this.actor;
+    const reputationValue = parseInt(this.element.querySelector('#total-rep')?.value, 10) || 0;
+    const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]')?.checked ?? false;
+
+    let selectedAttribute = null;
+    let selectedAttributeValue = 0;
+    let selectedDiscipline = null;
+    let selectedDisciplineValue = 0;
+    let selectedSystem = null;
+    let selectedSystemValue = 0;
+    let selectedDepartment = null;
+    let selectedDepartmentValue = 0;
+
+    const attributeCheckboxes = this.element.querySelectorAll('.attribute-block .selector.attribute');
+    attributeCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const attributeId = checkbox.id.replace('.selector', '');
+        selectedAttribute = attributeId;
+        const attributeValueInput = this.element.querySelector(`#${attributeId}`);
+        if (attributeValueInput) {
+          selectedAttributeValue = parseInt(attributeValueInput.value, 10) || 0;
+        }
+      }
+    });
+
+    const disciplineCheckboxes = this.element.querySelectorAll('.discipline-block .selector.discipline');
+    disciplineCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const disciplineId = checkbox.id.replace('.selector', '');
+        selectedDiscipline = disciplineId;
+        const disciplineValueInput = this.element.querySelector(`#${disciplineId}`);
+        if (disciplineValueInput) {
+          selectedDisciplineValue = parseInt(disciplineValueInput.value, 10) || 0;
+        }
+      }
+    });
+
+    const systemCheckboxes = this.element.querySelectorAll('.systems-block .selector.system');
+    systemCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const systemId = checkbox.id.replace('.selector', '');
+        selectedSystem = systemId;
+        const systemValueInput = this.element.querySelector(`#${systemId}`);
+        if (systemValueInput) {
+          selectedSystemValue = parseInt(systemValueInput.value, 10) || 0;
+        }
+      }
+    });
+
+    const departmentCheckboxes = this.element.querySelectorAll('.departments-block .selector.department');
+    departmentCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const departmentId = checkbox.id.replace('.selector', '');
+        selectedDiscipline = departmentId;
+        const departmentValueInput = this.element.querySelector(`#${departmentId}`);
+        if (departmentValueInput) {
+          selectedDisciplineValue = parseInt(departmentValueInput.value, 10) || 0;
+        }
+      }
+    });
+
+    const taskData = {
+      speakerName: speaker.name,
+      reputationValue,
+      useReputationInstead,
+      selectedAttribute,
+      selectedAttributeValue,
+      selectedDiscipline,
+      selectedDisciplineValue,
+      selectedSystem,
+      selectedSystemValue,
+      selectedDepartment,
+      selectedDepartmentValue,
+      rolltype: this.taskRollData.rolltype,
+      dicePool,
+      usingFocus,
+      usingDedicatedFocus,
+      usingDetermination,
+      complicationRange,
+    };
+
+    await staRoll.rollTask(taskData);
   }
 
   // Challenge test for all sheets
@@ -501,7 +516,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     event.preventDefault();
     const defaultValue = 2;
     const speaker = this.actor;
-    const weaponName = '';
+    const challengeName = '';
     const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       defaultValue
@@ -529,8 +544,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
     if (!formData) return;
     const dicePool = formData?.get('dicePoolValue') || defaultValue;
+    const challengeData = {
+      speakerName: speaker.name,
+      dicePool,
+      challengeName,
+    };
     const staRoll = new STARoll();
-    staRoll.performChallengeRoll(dicePool, weaponName, speaker);
+    staRoll.performChallengeRoll(challengeData);
   }
 
   // Reputation roll for 1e and 2e characters
@@ -544,7 +564,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       this.element.querySelector('#total-rep')?.value || 0,
       10
     );
-    const speaker = ChatMessage.getSpeaker({actor: this.actor});
+    const speaker = this.actor;
     const formData = await api.DialogV2.wait({
       window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
       position: {height: 'auto', width: 350},
@@ -595,16 +615,16 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       const acclaim = totalSuccesses - negativeInfluences;
       outcomeText = game.i18n.format('sta.roll.gainacclaim', {0: acclaim});
     } else {
-      const reprimand = negativeInfluences - totalSuccesses + complications;
+      const reprimand = negativeInfluences - totalSuccesses;
       if (reprimand > 0) {
-        outcomeText = game.i18n.format('sta.roll.gainreprimand', {0: reprimand});
+        outcomeText = game.i18n.format('sta.roll.gainreprimand', {0: reprimand + complications});
       } else {
         outcomeText = game.i18n.localize('sta.roll.nochange');
       }
     }
     const chatData = {
-      speakerId: speaker.actor?.id ?? speaker.id,
-      tokenId: speaker.token?.uuid ?? null,
+      speakerName: speaker.name,
+      flavor: game.i18n.format('sta.actor.character.acclaim'),
       dicePool: positiveInfluences,
       diceHtml,
       outcomeText,
@@ -622,13 +642,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // Cheat sheet for 2e characters overridden in 1e sheet
+  // Cheat sheet on character sheet
   async _onCheatSheet(event) {
     event?.preventDefault?.();
-    const tmpl = 'systems/sta/templates/apps/cheat-sheet.hbs';
+    const tmpl = this.cheatsheet.tmpl;
     const content = await foundry.applications.handlebars.renderTemplate(tmpl);
     new foundry.applications.api.DialogV2({
-      window: {title: game.i18n.localize('sta.apps.cheatsheet') + ' - 2e'},
+      window: {title: game.i18n.localize('sta.apps.cheatsheet') + this.cheatsheet.version},
       content,
       classes: ['dialogue'],
       position: {width: 450, height: 'auto'},
@@ -887,13 +907,9 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // #                                                    #
   // ######################################################
 
-  // Stress track for 2e characters, overridden in every other sheet
-  _onStressTrackUpdate(event) {
-    const localizedValues = {
-      tough: game.i18n.localize('sta.actor.character.talents.tough'),
-      resolute: game.i18n.localize('sta.actor.character.talents.resolute'),
-      mentaldiscipline: game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
-    };
+  // Stress track characters
+  async _onStressTrackUpdate(event) {
+
     if (event) {
       const clickedStress = event.target;
       const stressValue = parseInt(clickedStress.textContent, 10);
@@ -905,23 +921,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     }
     const fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
     const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
-    let stressTrackMax = fitnessValue + stressModValue;
-    const hasTough = this.element.querySelector(`[data-talent-name*="${localizedValues.tough}"]`);
-    if (hasTough) {
-      stressTrackMax += 2;
-    }
-    const hasResolute = this.element.querySelector(`[data-talent-name*="${localizedValues.resolute}"]`);
-    if (hasResolute) {
-      stressTrackMax += parseInt(this.element.querySelector('#command')?.value || 0, 10);
-    }
-    const hasMentalDiscipline = this.element.querySelector(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`);
-    if (hasMentalDiscipline) {
-      stressTrackMax = parseInt(this.element.querySelector('#control')?.value || 0, 10);
-    }
+    const stressTrackMax = await this._StressTrackMax();
+
     const maxStressInput = this.element.querySelector('#max-stress');
     if (maxStressInput && maxStressInput.value != stressTrackMax) {
       maxStressInput.value = stressTrackMax;
     }
+
     const barRenderer = this.element.querySelector('#bar-stress-renderer');
     barRenderer.innerHTML = '';
     const totalStressValue = this.actor?.system?.stress?.value || parseInt(this.element.querySelector('#total-stress')?.value || 0, 10);
@@ -946,6 +952,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Determination track for characters
   _onDeterminationTrackUpdate(event) {
+    const numValues = this.actor.itemTypes.value.length;
+    if (!numValues) return;
     if (event) {
       const clickedDetermination = event.target;
       const determinationValue = parseInt(clickedDetermination.textContent, 10);
@@ -976,7 +984,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // Reputation track for 1e and 2e characters
+  // Reputation track for characters
   _onReputationTrackUpdate(event) {
     if (event) {
       const clickedReputation = event.target;
@@ -987,7 +995,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.reputation = reputationValue;
       }
     }
-    const reputationTrackMax = game.settings.get('sta', 'maxNumberOfReputation2e');
+    const reputationTrackMax = this.reputationTrackMax.value;
     const barRenderer = this.element.querySelector('#bar-rep-renderer');
     barRenderer.innerHTML = '';
     const totalReputationValue = this.actor?.system?.reputation || parseInt(this.element.querySelector('#total-rep')?.value || 0, 10);
@@ -1066,12 +1074,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     this.submit();
   }
 
-  // Shields track for 2e starships & small craft, overridden in 1e ship sheets
+  // Shields track for starships & small craft
   async _onShieldTrackUpdate(event) {
-    const localizedValues = {
-      advancedshields: game.i18n.localize('sta.actor.starship.talents.advancedshields'),
-      polarizedhullplating: game.i18n.localize('sta.actor.starship.talents.polarizedhullplating'),
-    };
     if (event) {
       const clickedShield = event.target;
       const shieldValue = parseInt(clickedShield.textContent, 10);
@@ -1081,19 +1085,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.shields.value = shieldValue;
       }
     }
-    const structureValue = parseInt(this.element.querySelector('#structure')?.value || 0, 10);
-    const securityValue = parseInt(this.element.querySelector('#security')?.value || 0, 10);
-    const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
-    const shieldModValue = parseInt(this.element.querySelector('#shieldmod')?.value || 0, 10);
-    let shieldsTrackMax = structureValue + securityValue + scaleValue + shieldModValue;
-    const hasAdvancedShields = this.element.querySelector(`[data-talent-name*="${localizedValues.advancedshields}"]`);
-    if (hasAdvancedShields) {
-      shieldsTrackMax += 5;
-    }
-    const hasPolarizedHullPlating = this.element.querySelector(`[data-talent-name*="${localizedValues.polarizedhullplating}"]`);
-    if (hasPolarizedHullPlating) {
-      shieldsTrackMax = structureValue + shieldModValue;
-    }
+    const shieldsTrackMax = await this._shieldsTrackMax();
     const maxShieldsInput = this.element.querySelector('#max-shields');
     if (maxShieldsInput && maxShieldsInput.value != shieldsTrackMax) {
       maxShieldsInput.value = shieldsTrackMax;
@@ -1120,13 +1112,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     });
   }
 
-  // Crew track for 2e starships, overridden in 1e ship sheets
+  // Crew track for starships
   async _onCrewTrackUpdate(event) {
-    const localizedValues = {
-      extensiveautomation: game.i18n.localize('sta.actor.starship.talents.extensiveautomation'),
-      abundantpersonnel: game.i18n.localize('sta.actor.starship.talents.abundantpersonnel'),
-      agingrelic: game.i18n.localize('sta.actor.starship.talents.agingrelic'),
-    };
     if (event) {
       const clickedCrew = event.target;
       const crewValue = parseInt(clickedCrew.textContent, 10);
@@ -1136,21 +1123,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.crew.value = crewValue;
       }
     }
-    const scaleValue = parseInt(this.element.querySelector('#scale')?.value || 0, 10);
-    const crwModValue = parseInt(this.element.querySelector('#crwmod')?.value || 0, 10);
-    let crewTrackMax = scaleValue + crwModValue;
-    const hasAgingRelic = this.element.querySelector(`[data-talent-name*="${localizedValues.agingrelic}"]`);
-    if (hasAgingRelic) {
-      crewTrackMax += 1;
-    }
-    const hasExtensiveAutomation = this.element.querySelector(`[data-talent-name*="${localizedValues.extensiveautomation}"]`);
-    if (hasExtensiveAutomation) {
-      crewTrackMax = Math.ceil(crewTrackMax / 2);
-    }
-    const hasAbundantPersonnel = this.element.querySelector(`[data-talent-name*="${localizedValues.abundantpersonnel}"]`);
-    if (hasAbundantPersonnel) {
-      crewTrackMax *= 2;
-    }
+    const crewTrackMax = await this._crewTrackMax();
     const maxCrewInput = this.element.querySelector('#max-crew');
     if (maxCrewInput && maxCrewInput.value != crewTrackMax) {
       maxCrewInput.value = crewTrackMax;
@@ -1179,9 +1152,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Power track for 1e starships and small craft
   async _onPowerTrackUpdate(event) {
-    const localizedValues = {
-      secondaryreactors: game.i18n.localize('sta.actor.starship.talents.secondaryreactors'),
-    };
+
     if (event) {
       const clickedPower = event.target;
       const powerValue = parseInt(clickedPower.textContent, 10);
@@ -1191,12 +1162,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         this.actor.system.power.value = powerValue;
       }
     }
-    const engineValue = parseInt(this.element.querySelector('#engines')?.value || 0, 10);
-    let powerTrackMax = engineValue;
-    const hasSecondaryReactors = this.element.querySelector(`[data-talent-name*="${localizedValues.secondaryreactors}"]`);
-    if (hasSecondaryReactors) {
-      powerTrackMax += 5;
-    }
+    const powerTrackMax = await this._powerTrackMax();
     const maxPowerInput = this.element.querySelector('#max-power');
     if (maxPowerInput && maxPowerInput.value != powerTrackMax) {
       maxPowerInput.value = powerTrackMax;
