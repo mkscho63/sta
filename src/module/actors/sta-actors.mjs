@@ -393,8 +393,38 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     let complicationRange = 1;
     const calculatedComplicationRange  = await staRoll._sceneComplications();
     const template = this.taskRollData.template;
+
+    const visibleStarships = game.actors.filter(a =>
+      (a.type === "starship" || a.type === "smallcraft") &&
+      a.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)
+      ).sort((a, b) => {
+      return (b.system?.scale || 0) - (a.system?.scale || 0);
+    });
+
+    const systems = [
+      'communications',
+      'computers',
+      'engines',
+      'sensors',
+      'structure',
+      'weapons',
+    ];
+    const departments = [
+      'command',
+      'conn',
+      'engineering',
+      'security',
+      'medicine',
+      'science',
+    ];
+
     const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue, calculatedComplicationRange
+      defaultValue, 
+      calculatedComplicationRange, 
+      starships: visibleStarships,
+      selectedStarshipId: visibleStarships[0]?.id,
+      systems,
+      departments
     });
 
     const formData = await api.DialogV2.wait({
@@ -407,6 +437,15 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       },
       content: html,
       classes: ['dialogue'],
+      render: (event, dialog) => {
+        const checkbox = dialog.element.querySelector('#starshipAssisting');
+        const section  = dialog.element.querySelector('.starshipAssisting');
+        if (!checkbox || !section) return;
+        checkbox.addEventListener("change", () => {
+          section.classList.toggle("hidden", !checkbox.checked);
+          dialog.setPosition({ height: "auto" });
+        });
+      },
       buttons: [{
         action: 'roll',
         default: true,
@@ -415,17 +454,16 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
           const form = dialog.element.querySelector('form');
           return form ? new FormData(form) : null;
         },
-      },],
+      }],
       close: () => null,
     });
 
-    if (formData) {
-      dicePool = parseInt(formData.get('dicePoolSlider'), 10);
-      usingFocus = formData.get('usingFocus') === 'on';
-      usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-      usingDetermination = formData.get('usingDetermination') === 'on';
-      complicationRange = parseInt(formData.get('complicationRange'), 10);
-    }
+    if (!formData) return; 
+    dicePool = parseInt(formData.get('dicePoolSlider'), 10);
+    usingFocus = formData.get('usingFocus') === 'on';
+    usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
+    usingDetermination = formData.get('usingDetermination') === 'on';
+    complicationRange = parseInt(formData.get('complicationRange'), 10);
 
     const speaker = this.actor;
     const reputationValue = parseInt(this.element.querySelector('#total-rep')?.value, 10) || 0;
@@ -480,16 +518,27 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     departmentCheckboxes.forEach((checkbox) => {
       if (checkbox.checked) {
         const departmentId = checkbox.id.replace('.selector', '');
-        selectedDiscipline = departmentId;
+        selectedDepartment = departmentId;
         const departmentValueInput = this.element.querySelector(`#${departmentId}`);
         if (departmentValueInput) {
-          selectedDisciplineValue = parseInt(departmentValueInput.value, 10) || 0;
+          selectedDepartmentValue = parseInt(departmentValueInput.value, 10) || 0;
         }
       }
     });
 
+    let starship = '';
+    if (formData.get('starshipAssisting') === 'on') {
+      const starshipId = formData.get('starship');
+      starship = game.actors.get(starshipId);
+      selectedSystem = formData.get('system');
+      selectedDepartment = formData.get('department');
+      selectedSystemValue = starship.system.systems[selectedSystem]?.value ?? 0;
+      selectedDepartmentValue = starship.system.departments[selectedDepartment]?.value ?? 0;
+    }
+
     const taskData = {
       speakerName: speaker.name,
+      starshipName: starship.name,
       reputationValue,
       useReputationInstead,
       selectedAttribute,
@@ -508,7 +557,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       complicationRange,
     };
 
-    await staRoll.rollTask(taskData);
+    if (formData.get('starshipAssisting') === 'on') {
+      await staRoll.rollNPCTask(taskData);
+    } else {
+      await staRoll.rollTask(taskData);
+    }
   }
 
   // Challenge test for all sheets
@@ -631,15 +684,12 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       targetNumber,
       complicationThreshold,
       negativeInfluences,
+      rollType: 'acclaim',
+      dice3dRoll: roll,
     };
-    const chatHtml = await foundry.applications.handlebars.renderTemplate(
-      'systems/sta/templates/chat/reputation-roll.hbs',
-      chatData
-    );
-    ChatMessage.create({
-      speaker,
-      content: chatHtml,
-    });
+
+    const staRoll = new STARoll();
+    staRoll.sendToChat(chatData);
   }
 
   // Cheat sheet on character sheet
@@ -701,7 +751,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     const item = this.actor.items.get(itemId);
     const staRoll = new STARoll();
     if (item.system.description.toLowerCase().match(/\([0-9a-z]cd\)/i)) { 
-      STAActors._onItemtoWeapon(item, this.actor);
+      staRoll.onItemtoWeapon(item, this.actor);
       return;
     }
     switch (itemType) {
@@ -715,13 +765,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       staRoll.performValueRoll(item, this.actor);
       break;
     case 'characterweapon':
-      staRoll.performWeaponRoll(item, this.actor);
+      staRoll.performWeaponRoll1e(item, this.actor);
       break;
     case 'characterweapon2e':
       staRoll.performWeaponRoll2e(item, this.actor);
       break;
     case 'starshipweapon':
-      staRoll.performWeaponRoll(item, this.actor);
+      staRoll.performStarshipWeaponRoll1e(item, this.actor);
       break;
     case 'starshipweapon2e':
       staRoll.performStarshipWeaponRoll2e(item, this.actor);
@@ -747,68 +797,6 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     default:
       console.warn(`Unhandled item type: ${itemType}`);
     }
-  }
-
-  static async _onItemtoWeapon(item, actor) {
-    const regex = /\((.cd)\)/i;
-    const match = item.system.description.toLowerCase().match(regex);
-    let challengeDice = 1; // Default value
-    
-    if (match) {
-      const x = match[1][0];
-        
-      if (x === 'x') {
-        const defaultValue = 1;
-        const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
-        const html = await foundry.applications.handlebars.renderTemplate(template, {
-          defaultValue
-        });
-        const formData = await api.DialogV2.wait({
-          window: {title: game.i18n.localize('sta.apps.dicepoolwindow')},
-          position: {height: 'auto', width: 350},
-          content: html,
-          classes: ['dialogue'],
-          buttons: [{
-            action: 'roll',
-            default: true,
-            label: game.i18n.localize('sta.apps.rolldice'),
-            callback: (event, button, dialog) => {
-              const challengeDiceInput = dialog.element.querySelector('#dicePoolValue');
-              return {
-                challengeDice: challengeDiceInput?.valueAsNumber || 1
-              };
-            }
-          }],
-          close: () => null
-        });
-
-        challengeDice = formData.challengeDice;
-      } else if (!isNaN(x) && x >= '0' && x <= '9') {
-        // Set challengedice to the number
-        challengeDice = parseInt(x);
-        console.log('Challengedice set to:', challengeDice);
-      }
-    }
-
-    const itemData = { 
-      name: item.name,
-      img: item.img,
-      type: item.type,
-      system: {
-        includescale: false,
-        damage: challengeDice,
-        description: item.system?.description || '',
-      },
-    };
-    itemData.toObject = () => foundry.utils.deepClone(itemData);  
-
-    const newactor = {
-      name: actor.name,
-      system: {disciplines: {security: {value: 0}}},
-    };
-
-    const staRoll = new STARoll();
-    staRoll.performWeaponRoll(itemData, newactor);
   }
 
   static async _onSmallCraft(event) {

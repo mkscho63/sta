@@ -44,6 +44,13 @@ export class STANPCSheet2e extends STAActors {
     };
   }
 
+  get cheatsheet() {
+    return {
+      tmpl: 'systems/sta/templates/apps/cheat-sheet.hbs',
+      version: ' - 2e',
+    };
+  }
+
   async _StressTrackMax() {
     const npcType =
       this.actor?.system?.npcType ??

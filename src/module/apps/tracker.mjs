@@ -183,7 +183,8 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       STATracker.chatMessageTimeout = setTimeout(() => {
         const momentumDiff = STATracker.accumulatedChanges.momentum;
         const threatDiff = STATracker.accumulatedChanges.threat;
-        let chatMessage = '';
+        let momentumMessage = '';
+        let threatMessage = '';
         if (momentumDiff !== 0) {
           const momentumAction = momentumDiff > 0 ?
             game.i18n.format('sta.apps.addmomentum', {
@@ -192,7 +193,7 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
             game.i18n.format('sta.apps.removemomentum', {
               0: Math.abs(momentumDiff)
             });
-          chatMessage += `${game.user.name} ${momentumAction}. `;
+          momentumMessage += `${momentumAction}. `;
         }
         if (threatDiff !== 0) {
           const threatAction = threatDiff > 0 ?
@@ -202,14 +203,19 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
             game.i18n.format('sta.apps.removethreat', {
               0: Math.abs(threatDiff)
             });
-          chatMessage += `${game.user.name} ${threatAction}.`;
+          threatMessage += `${threatAction}.`;
         }
-        if (chatMessage && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
+        if ((momentumMessage || threatMessage) && game.settings.get('sta', 'sendMomemtumThreatToChat')) {
+          let chatContent = `
+            <div class="chatcard tracker">
+              <div class="heading">
+              </div>
+              <div class="momentumtext">${momentumMessage}</div>
+              <div class="threattext">${threatMessage}</div>
+            </div>
+          `;
           ChatMessage.create({
-            speaker: {
-              alias: 'STA'
-            },
-            content: chatMessage
+            content: chatContent
           });
         }
         STATracker.accumulatedChanges.momentum = 0;

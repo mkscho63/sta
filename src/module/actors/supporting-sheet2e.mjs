@@ -45,6 +45,13 @@ export class STASupportingSheet2e extends STAActors {
       defaultValue: '2',
     };
   }
+
+  get cheatsheet() {
+    return {
+      tmpl: 'systems/sta/templates/apps/cheat-sheet.hbs',
+      version: ' - 2e',
+    };
+  }
   
   async _StressTrackMax() {
     const numValues = this.actor.itemTypes.value.length;

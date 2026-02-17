@@ -1,33 +1,65 @@
 <div id="dice-pool-form" class="dialogue">
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.apps.focus'}}</div>
+    <input type="checkbox" name="usingFocus" id="usingFocus">
+  </div>
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.apps.determination'}}</div>
+    <input type="checkbox" name="usingDetermination" id="usingDetermination">
+  </div>
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.apps.complicationrange'}}</div>
+    <input class="numeric-entry" type="number" name="complicationRange" value="{{calculatedComplicationRange}}" id="complicationRange">
+  </div>
+  <div class="row">
+    <div class="flex-1">
+      <div class="tracktitle">{{localize 'sta.apps.pool'}}</div>
+    </div>
+    <div class="flex-column flex-1">
+      <div class="row">
+        <span class="label align-left flex-1">{{localize 'sta.counting.one'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.two'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.three'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.four'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.five'}}</span>
+      </div>
+      <input type="range" name="dicePoolSlider" min="1" max="5" value="{{defaultValue}}" class="slider" id="dicePoolSlider">
+    </div>
+  </div>
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.roll.shipassisting'}}</div>
+    <input type="checkbox" name="starshipAssisting" id="starshipAssisting">
+  </div>
+  <div class="starshipAssisting hidden">
     <div class="row">
-        <div class="tracktitle">{{localize 'sta.apps.focus'}}</div>
-        <input type="checkbox" name="usingFocus" id="usingFocus">
+      <div class="tracktitle">{{localize 'TYPES.Actor.starship'}}</div>
+      <select id="starship" name="starship" class="form-select">
+        {{#each starships}}
+          <option value="{{this.id}}">
+            {{this.name}}
+          </option>
+        {{/each}}
+      </select>
     </div>
     <div class="row">
-        <div class="tracktitle">{{localize 'sta.apps.determination'}}</div>
-        <input type="checkbox" name="usingDetermination" id="usingDetermination">
+      <div class="tracktitle">{{localize 'sta.actor.starship.system.title'}}</div>
+      <select id="system" name="system" class="form-select">
+        {{#each systems}}
+          <option value="{{this}}">{{localize (concat 'sta.actor.starship.system.' this)}}</option>
+        {{/each}}
+      </select>
     </div>
     <div class="row">
-        <div class="tracktitle">{{localize 'sta.apps.complicationrange'}}</div>
-        <input class="numeric-entry" type="number" name="complicationRange" value="{{calculatedComplicationRange}}" id="complicationRange">
+      <div class="tracktitle">{{localize 'sta.actor.starship.department.title'}}</div>
+      <select id="department" name="department" class="form-select">
+        {{#each departments}}
+          <option value="{{this}}">{{localize (concat 'sta.actor.starship.department.' this)}}</option>
+        {{/each}}
+      </select>
     </div>
-    <div class="row">
-        <div class="flex-1">
-            <div class="tracktitle">{{localize 'sta.apps.pool'}}</div>
-        </div>
-        <div class="flex-column flex-1">
-            <div class="row">
-                <span class="label align-left flex-1">{{localize 'sta.counting.one'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.two'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.three'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.four'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.five'}}</span>
-            </div>
-            <input type="range" name="dicePoolSlider" min="1" max="5" value="{{defaultValue}}" class="slider" id="dicePoolSlider">
-        </div>
-    </div>
+  </div>
 </div>

@@ -32,7 +32,8 @@
   <div class="split-section">
     <div class="bottom-left-column">
       <div class="attribute-block">
-        <div class="title">{{localize 'sta.actor.character.attribute.title'}}</div>
+        <div class="title">{{localize 'sta.actor.character.attribute.title'}}
+        <a class="control create" title="Cheat Sheet" data-action="onCheatSheet"><i class="fa-solid fa-circle-info"></i></a></div>
         {{#each attributes as |attribute key|}}
           <div class="row-right">
             <div class="list-entry">{{localize attribute.label}}</div>
@@ -53,10 +54,6 @@
             </div>
           {{/with}}
         {{/each}}
-      </div>
-
-      <div class="rollrepnotdis">
-        <a class="control create" title="Cheat Sheet" data-action="onCheatSheet"><i class="fa-solid fa-circle-info"></i></a>
       </div>
 
       <div class="buttons">

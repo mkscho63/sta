@@ -64,14 +64,8 @@ export class STARoller {
 
     const taskData = {
       speakerName: 'STARoller',
-      selectedAttribute: '',
       selectedAttributeValue,
-      selectedDiscipline: '',
       selectedDisciplineValue,
-      selectedSystem: '',
-      selectedSystemValue: 0,
-      selectedDepartment: '',
-      selectedDepartmentValue: 0,
       rolltype: 'sidebar',
       dicePool,
       usingFocus,
@@ -217,13 +211,13 @@ export class STARoller {
   <div class="title">${character.name}</div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.actor.character.attribute.title`)}</div>
-    <select id="attribute" class="form-select">
+    <select id="attribute" name="attribute" class="form-select">
       ${attributes.map((attr) => `<option value="${attr}">${game.i18n.localize(`sta.actor.character.attribute.${attr}`)}</option>`).join('')}
     </select>
   </div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.actor.character.discipline.title`)}</div>
-    <select id="discipline" class="form-select">
+    <select id="discipline" name="discipline" class="form-select">
       ${disciplines.map((disc) => `<option value="${disc}">${game.i18n.localize(`sta.actor.character.discipline.${disc}`)}</option>`).join('')}
     </select>
   </div>
@@ -238,13 +232,13 @@ export class STARoller {
     <div class="title">${starship.name}</div>
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.starship.system.title`)}</div>
-      <select id="system" class="form-select">
+      <select id="system" name="system" class="form-select">
         ${systems.map((system) => `<option value="${system}">${game.i18n.localize(`sta.actor.starship.system.${system}`)}</option>`).join('')}
       </select>
     </div>
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.starship.department.title`)}</div>
-      <select id="department" class="form-select">
+      <select id="department" name="department" class="form-select">
         ${departments.map((dept) => `<option value="${dept}">${game.i18n.localize(`sta.actor.starship.department.${dept}`)}</option>`).join('')}
       </select>
     </div>
@@ -327,7 +321,7 @@ export class STARoller {
   </div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.roll.task.name`)}</div>
-    <select id="rollList" class="form-select">
+    <select id="rollList" name="rollList" class="form-select">
       ${rollList.map((item) => `<option value="${item}">${game.i18n.localize(`sta.roll.${item}`)}</option>`).join('')}
     </select>
   </div>
@@ -348,9 +342,6 @@ export class STARoller {
       template = starshipSheet + characterSheet + commonForm;
     }
 
-    // Wrap the entire template in a form element
-    template = `<form>${template}</form>`;
-
     /* --------------------------------------------------------------------- */
     /* Show dialog and collect form data                                     */
     /* --------------------------------------------------------------------- */
@@ -361,57 +352,37 @@ export class STARoller {
       position: { height: 'auto', width: 450 },
       content: template,
       classes: ['dialogue'],
-      buttons: [
-        {
-          action: 'roll',
-          default: true,
-          label: game.i18n.localize('sta.apps.rolldice'),
-          class: 'button100',
-          callback: (event, button, dialog) => {
-            const form = dialog.element.querySelector('form');
-            return form ? new FormData(form) : null;
-          },
+      buttons: [{
+        action: 'roll',
+        default: true,
+        label: game.i18n.localize('sta.apps.rolldice'),
+        callback: (event, button, dialog) => {
+          const form = dialog.element.querySelector('form');
+          return form ? new FormData(form) : null;
         },
-      ],
+      },],
       close: () => null,
     });
     if (!formData) return;
-    /* --------------------------------------------------------------------- */
-    /* Default values & state                                                */
-    /* --------------------------------------------------------------------- */
-    let selectedAttributeValue = 7;
-    let selectedDisciplineValue = 2;
-    let selectedSystemValue = 7;
-    let selectedDepartmentValue = 2;
-    let selectedAttribute = '';
-    let selectedDiscipline = '';
-    let selectedSystem = '';
-    let selectedDepartment = '';
-    let dicePool = 2;
-    let complicationRange = calculatedComplicationRange;
-    let usingFocus = false;
-    let usingDedicatedFocus = false;
-    let usingDetermination = false;
-    let skillLevel = 'basic';
-    let selectedRoll = '';
-    let npcRating = '';
 
     /* --------------------------------------------------------------------- */
     /* Pull data from form                                                   */
     /* --------------------------------------------------------------------- */
-      selectedAttribute = formData.get('attribute');
-      selectedDiscipline = formData.get('discipline');
-      selectedSystem = formData.get('system');
-      selectedDepartment = formData.get('department');
-      dicePool = parseInt(formData.get('charDicePool')) || 2;
-      complicationRange = parseInt(formData.get('complicationRange')) || calculatedComplicationRange;
-      usingFocus = formData.get('usingFocus') === 'on';
-      usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-      usingDetermination = formData.get('usingDetermination') === 'on';
-      skillLevel = formData.get('skillLevel') || 'basic';
-      selectedSystemValue = parseInt(formData.get('systemValue')) || 7;
-      selectedDepartmentValue = parseInt(formData.get('departmentValue')) || 2;
-      selectedRoll = formData.get('rollList');
+    let selectedAttributeValue = 7;
+    let selectedDisciplineValue = 2;
+    let selectedSystemValue = parseInt(formData.get('systemValue')) || 7;
+    let selectedDepartmentValue = parseInt(formData.get('departmentValue')) || 2;
+    let selectedAttribute = formData.get('attribute') || '';
+    let selectedDiscipline = formData.get('discipline') || '';
+    let selectedSystem = formData.get('system') || '';
+    let selectedDepartment = formData.get('department') || '';
+    let dicePool = parseInt(formData.get('charDicePool')) || 2;
+    let complicationRange = parseInt(formData.get('complicationRange')) || calculatedComplicationRange;
+    let usingFocus = formData.get('usingFocus') === 'on' || false;
+    let usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on' || false;
+    let usingDetermination = formData.get('usingDetermination') === 'on' || false;
+    let skillLevel = formData.get('skillLevel') || 'basic';
+    let selectedRoll = formData.get('rollList') || '';
 
     /* --------------------------------------------------------------------- */
     /* Roll presets logic                                                   */
@@ -489,6 +460,7 @@ export class STARoller {
     const taskData = {
       speakerName: character.name || 'NPC Crew',
       starshipName: starship.name || 'NPC Ship',
+      rolltype: 'character2e',
       selectedAttribute,
       selectedAttributeValue,
       selectedDiscipline,
