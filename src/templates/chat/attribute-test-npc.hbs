@@ -3,7 +3,7 @@
     <div class="name">
       {{speakerName}}
     </div>
-    <div class="flavor task">
+    <div class="flavor npc">
       {{flavor}}
     </div>
   </div>
@@ -35,13 +35,40 @@
   <div class="dice">
     <ol class="dice-rolls">{{{diceString}}}</ol>
   </div>
+  <div class="heading">
+    <div class="name">
+      {{starshipName}}
+    </div>
+    <div class="flavor npc">
+      {{flavorship}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="columna">
+      {{localize "sta.apps.dicepoolwindow"}}
+    </div>
+    <div class="columna">
+      {{localize "sta.roll.target"}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="columnb">
+      <div class="goldtext">1d20</div>
+    </div>
+    <div class="columnb">
+      <div class="goldtext">{{checkTargetship}}</div>
+    </div>
+  </div>
+  <div class="dice">
+    <ol class="dice-rolls">{{{diceStringship}}}</ol>
+  </div>
   <div class="row">
     <div class="greentext">{{successText}}</div>
   </div>
   <div class="row">
     <div class="redtext">{{complicationText}}</div>
   </div>
-  <div class="reroll-button">
+  <div class="reroll-button" data-message-id="{{_id}}">
     {{localize "sta.roll.rerollresults"}}
   </div>
 </div>

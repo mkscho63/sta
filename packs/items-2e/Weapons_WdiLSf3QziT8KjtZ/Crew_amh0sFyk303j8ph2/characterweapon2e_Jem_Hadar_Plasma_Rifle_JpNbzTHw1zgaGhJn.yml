@@ -8,6 +8,8 @@ system:
   range: ranged
   hands: 2
   severity: 0
+  opportunity: 0
+  escalation: 0
   qualities:
     deadly: true
     stun: false
@@ -21,8 +23,6 @@ system:
     intense: false
     piercingx: false
     hiddenx: 0
-    opportunity: 0
-    escalation: 0
 effects: []
 flags: {}
 _stats:

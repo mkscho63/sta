@@ -36,7 +36,52 @@ export class STACharacterSheet2e extends STAActors {
       'milestone',
       'log',
       'injury',
-      'trait'
+      'trait',
     ]);
+  }
+
+  get taskRollData() {
+    return {
+      template: 'systems/sta/templates/apps/dicepool-attribute2e.hbs',
+      rolltype: 'character2e',
+      defaultValue: '2',
+    };
+  }
+
+  get cheatsheet() {
+    return {
+      tmpl: 'systems/sta/templates/apps/cheat-sheet.hbs',
+      version: ' - 2e',
+    };
+  }
+
+  async _StressTrackMax() {
+    const localizedValues = {
+      tough: game.i18n.localize('sta.actor.character.talents.tough'),
+      resolute: game.i18n.localize('sta.actor.character.talents.resolute'),
+      mentaldiscipline: game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
+    };
+    const fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
+    const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
+    let stressTrackMax = fitnessValue + stressModValue;
+    const hasTough = this.element.querySelector(`[data-talent-name*="${localizedValues.tough}"]`);
+    if (hasTough) {
+      stressTrackMax += 2;
+    }
+    const hasResolute = this.element.querySelector(`[data-talent-name*="${localizedValues.resolute}"]`);
+    if (hasResolute) {
+      stressTrackMax += parseInt(this.element.querySelector('#command')?.value || 0, 10);
+    }
+    const hasMentalDiscipline = this.element.querySelector(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`);
+    if (hasMentalDiscipline) {
+      stressTrackMax = parseInt(this.element.querySelector('#control')?.value || 0, 10);
+    }
+    return stressTrackMax;
+  }
+
+  get reputationTrackMax() {
+    return {
+      value: game.settings.get('sta', 'maxNumberOfReputation2e'),
+    };
   }
 }
