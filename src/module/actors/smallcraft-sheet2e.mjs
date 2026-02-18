@@ -36,7 +36,7 @@ export class STASmallCraftSheet2e extends STAActors {
     ]);
   }
 
-  get  taskRollData() {
+  get taskRollData() {
     return {
       template: 'systems/sta/templates/apps/dicepool-attributess.hbs',
       rolltype: 'starship',

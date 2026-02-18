@@ -39,7 +39,7 @@ export class STAStarshipSheet extends STAActors {
     ]);
   }
 
-  get  taskRollData() {
+  get taskRollData() {
     return {
       template: 'systems/sta/templates/apps/dicepool-attributess.hbs',
       rolltype: 'starship',
@@ -82,7 +82,7 @@ export class STAStarshipSheet extends STAActors {
     if (hasSecondaryReactors) {
       powerTrackMax += 5;
     }
-     return powerTrackMax;
+    return powerTrackMax;
   }
 
   _updateWeaponValues() {

@@ -47,11 +47,11 @@ export class STARoller {
 
     if (!formData) return;
 
-      dicePool = parseInt(formData.get('dicePoolSlider'), 10);
-      usingFocus = formData.get('usingFocus') === 'on';
-      usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-      usingDetermination = formData.get('usingDetermination') === 'on';
-      complicationRange = parseInt(formData.get('complicationRange'), 10);
+    dicePool = parseInt(formData.get('dicePoolSlider'), 10);
+    usingFocus = formData.get('usingFocus') === 'on';
+    usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
+    usingDetermination = formData.get('usingDetermination') === 'on';
+    complicationRange = parseInt(formData.get('complicationRange'), 10);
 
     const selectedAttributeValue = parseInt(
       document.getElementById('selectedAttributeValue').value,
@@ -142,8 +142,8 @@ export class STARoller {
       ['starship', 'smallcraft'].includes(t.actor?.type)
     );
 
-    const character = characterToken?.actor ?? { type: 'npccharacter' };
-    const starship = starshipToken?.actor ?? { type: 'npcship' };
+    const character = characterToken?.actor ?? {type: 'npccharacter'};
+    const starship = starshipToken?.actor ?? {type: 'npcship'};
 
     const attributes = [
       'control',
@@ -349,7 +349,7 @@ export class STARoller {
       window: {
         title: game.i18n.localize('sta.roll.npcshipandcrewroll'),
       },
-      position: { height: 'auto', width: 450 },
+      position: {height: 'auto', width: 450},
       content: template,
       classes: ['dialogue'],
       buttons: [{
@@ -376,13 +376,13 @@ export class STARoller {
     let selectedDiscipline = formData.get('discipline') || '';
     let selectedSystem = formData.get('system') || '';
     let selectedDepartment = formData.get('department') || '';
-    let dicePool = parseInt(formData.get('charDicePool')) || 2;
-    let complicationRange = parseInt(formData.get('complicationRange')) || calculatedComplicationRange;
-    let usingFocus = formData.get('usingFocus') === 'on' || false;
-    let usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on' || false;
-    let usingDetermination = formData.get('usingDetermination') === 'on' || false;
-    let skillLevel = formData.get('skillLevel') || 'basic';
-    let selectedRoll = formData.get('rollList') || '';
+    const dicePool = parseInt(formData.get('charDicePool')) || 2;
+    const complicationRange = parseInt(formData.get('complicationRange')) || calculatedComplicationRange;
+    const usingFocus = formData.get('usingFocus') === 'on' || false;
+    const usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on' || false;
+    const usingDetermination = formData.get('usingDetermination') === 'on' || false;
+    const skillLevel = formData.get('skillLevel') || 'basic';
+    const selectedRoll = formData.get('rollList') || '';
 
     /* --------------------------------------------------------------------- */
     /* Roll presets logic                                                   */

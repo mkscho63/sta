@@ -391,13 +391,13 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     let usingDedicatedFocus = false;
     let usingDetermination = false;
     let complicationRange = 1;
-    const calculatedComplicationRange  = await staRoll._sceneComplications();
+    const calculatedComplicationRange = await staRoll._sceneComplications();
     const template = this.taskRollData.template;
 
-    const visibleStarships = game.actors.filter(a =>
-      (a.type === "starship" || a.type === "smallcraft") &&
+    const visibleStarships = game.actors.filter((a) =>
+      (a.type === 'starship' || a.type === 'smallcraft') &&
       a.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER)
-      ).sort((a, b) => {
+    ).sort((a, b) => {
       return (b.system?.scale || 0) - (a.system?.scale || 0);
     });
 
@@ -439,11 +439,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       classes: ['dialogue'],
       render: (event, dialog) => {
         const checkbox = dialog.element.querySelector('#starshipAssisting');
-        const section  = dialog.element.querySelector('.starshipAssisting');
+        const section = dialog.element.querySelector('.starshipAssisting');
         if (!checkbox || !section) return;
-        checkbox.addEventListener("change", () => {
-          section.classList.toggle("hidden", !checkbox.checked);
-          dialog.setPosition({ height: "auto" });
+        checkbox.addEventListener('change', () => {
+          section.classList.toggle('hidden', !checkbox.checked);
+          dialog.setPosition({height: 'auto'});
         });
       },
       buttons: [{
@@ -897,7 +897,6 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Stress track characters
   async _onStressTrackUpdate(event) {
-
     if (event) {
       const clickedStress = event.target;
       const stressValue = parseInt(clickedStress.textContent, 10);
@@ -1140,7 +1139,6 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   // Power track for 1e starships and small craft
   async _onPowerTrackUpdate(event) {
-
     if (event) {
       const clickedPower = event.target;
       const powerValue = parseInt(clickedPower.textContent, 10);

@@ -38,7 +38,7 @@ export class STASupportingSheet2e extends STAActors {
     ]);
   }
 
-  get  taskRollData() {
+  get taskRollData() {
     return {
       template: 'systems/sta/templates/apps/dicepool-attribute2e.hbs',
       rolltype: 'character2e',

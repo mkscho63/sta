@@ -463,7 +463,7 @@ Hooks.once('init', function() {
     RerollHandler.attachListeners(html);
   });
 
-  Hooks.once('renderSidebar', async function () {
+  Hooks.once('renderSidebar', async function() {
     if (game.STATracker) return;
     const tracker = new STATracker();
     game.STATracker = tracker;
