@@ -1774,7 +1774,12 @@ $trackerchatborder: #FF9900;
       border-top: 1px solid $borderbluedark;
       border-bottom: 1px solid $borderbluedark;
     }
-
+    
+    .toggle-icon{
+      font-size: 0.8rem;
+      padding-top: 3px;
+    }
+    
     .row {
       display: flex;
       width: 100%;
@@ -1929,18 +1934,18 @@ $trackerchatborder: #FF9900;
         background: $borderbluedark;
       }
     }
-  }
 
-  .tags {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-align: center;
+    .tags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-align: center;
 
-    .tag {
-      border: 1px solid $borderbluedark;
-      flex-grow: 1;
-      width: calc(100% / 3);
+      .tag {
+        border: 1px solid $borderbluedark;
+        flex-grow: 1;
+        width: calc(100% / 3);
+      }
     }
   }
 }
