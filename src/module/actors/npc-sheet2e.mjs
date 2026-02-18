@@ -36,16 +36,22 @@ export class STANPCSheet2e extends STAActors {
     ]);
   }
 
-  _onStressTrackUpdate(event) {
-    if (event) {
-      const clickedStress = event.target;
-      const stressValue = parseInt(clickedStress.textContent, 10);
-      if (stressValue === 1 && clickedStress.classList.contains('selected') && this.actor.system.stress.value === 1) {
-        this.actor.system.stress.value = 0;
-      } else {
-        this.actor.system.stress.value = stressValue;
-      }
-    }
+  get taskRollData() {
+    return {
+      template: 'systems/sta/templates/apps/dicepool-attribute2e.hbs',
+      rolltype: 'character2e',
+      defaultValue: '2',
+    };
+  }
+
+  get cheatsheet() {
+    return {
+      tmpl: 'systems/sta/templates/apps/cheat-sheet.hbs',
+      version: ' - 2e',
+    };
+  }
+
+  async _StressTrackMax() {
     const npcType =
       this.actor?.system?.npcType ??
       this.element.querySelector('input[name="system.npcType"]:checked')?.value ??
@@ -60,30 +66,6 @@ export class STANPCSheet2e extends STAActors {
 
     const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
     const stressTrackMax = fitnessValue + stressModValue;
-
-    const maxStressInput = this.element.querySelector('#max-stress');
-    if (maxStressInput && maxStressInput.value != stressTrackMax) {
-      maxStressInput.value = stressTrackMax;
-    }
-    const barRenderer = this.element.querySelector('#bar-stress-renderer');
-    barRenderer.innerHTML = '';
-    const totalStressValue = this.actor?.system?.stress?.value || parseInt(this.element.querySelector('#total-stress')?.value || 0, 10);
-    for (let i = 1; i <= stressTrackMax; i++) {
-      const div = document.createElement('div');
-      div.className = 'box stress';
-      div.id = `stress-${i}`;
-      div.textContent = i;
-      div.style.width = `calc(100% / ${stressTrackMax})`;
-      div.setAttribute('data-action', 'onStressTrackUpdate');
-      if (i <= totalStressValue) {
-        div.classList.add('selected');
-      }
-      barRenderer.appendChild(div);
-    }
-    if (!this.document.isOwner) return;
-    this.actor?.update({
-      'system.stress.value': this.actor.system.stress.value,
-      'system.stress.max': stressTrackMax,
-    });
+    return stressTrackMax;
   }
 }

@@ -7,7 +7,7 @@ function createAttributeSchema(labelKey, initialValue = 7, selected = false) {
   return new fields.SchemaField({
     label: new fields.StringField({initial: labelKey}),
     value: new fields.NumberField({required: true, integer: true, initial: initialValue}),
-    selected: new fields.BooleanField({initial: selected})
+    selected: new fields.BooleanField({initial: selected}),
   });
 }
 
@@ -16,7 +16,7 @@ function createDisciplineSchema(labelKey, initialValue = 0, selected = false) {
   return new fields.SchemaField({
     label: new fields.StringField({initial: labelKey}),
     value: new fields.NumberField({required: true, integer: true, initial: initialValue}),
-    selected: new fields.BooleanField({initial: selected})
+    selected: new fields.BooleanField({initial: selected}),
   });
 }
 
@@ -26,7 +26,7 @@ function createSystemSchema(labelKey, initialValue = 7, selected = false) {
     label: new fields.StringField({initial: labelKey}),
     value: new fields.NumberField({required: true, integer: true, initial: initialValue}),
     selected: new fields.BooleanField({initial: selected}),
-    breaches: new fields.NumberField({required: true, integer: true, initial: 0})
+    breaches: new fields.NumberField({required: true, integer: true, initial: 0}),
   });
 }
 
@@ -56,7 +56,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
         fitness: createAttributeSchema('sta.actor.character.attribute.fitness'),
         insight: createAttributeSchema('sta.actor.character.attribute.insight'),
         presence: createAttributeSchema('sta.actor.character.attribute.presence'),
-        reason: createAttributeSchema('sta.actor.character.attribute.reason')
+        reason: createAttributeSchema('sta.actor.character.attribute.reason'),
       }),
 
       disciplines: new fields.SchemaField({
@@ -65,17 +65,17 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
         engineering: createDisciplineSchema('sta.actor.character.discipline.engineering'),
         medicine: createDisciplineSchema('sta.actor.character.discipline.medicine'),
         science: createDisciplineSchema('sta.actor.character.discipline.science'),
-        security: createDisciplineSchema('sta.actor.character.discipline.security')
+        security: createDisciplineSchema('sta.actor.character.discipline.security'),
       }),
 
       determination: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 1}),
-        max: new fields.NumberField({required: true, integer: true, initial: 3})
+        max: new fields.NumberField({required: true, integer: true, initial: 3}),
       }),
 
       stress: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       }),
 
       reputation: new fields.NumberField({required: true, integer: true, initial: 3}),
@@ -106,7 +106,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
       rollrepnotdis: new fields.BooleanField({initial: false}),
       upbringing: new fields.StringField({initial: ''}),
       npcType: new fields.StringField({initial: 'minor'}),
-      showklingon: new fields.BooleanField({initial: false})
+      showklingon: new fields.BooleanField({initial: false}),
     };
   }
 }
@@ -132,7 +132,7 @@ export class StarshipData extends foundry.abstract.TypeDataModel {
         engineering: createDisciplineSchema('sta.actor.starship.department.engineering'),
         medicine: createDisciplineSchema('sta.actor.starship.department.medicine'),
         science: createDisciplineSchema('sta.actor.starship.department.science'),
-        security: createDisciplineSchema('sta.actor.starship.department.security')
+        security: createDisciplineSchema('sta.actor.starship.department.security'),
       }),
 
       systems: new fields.SchemaField({
@@ -141,22 +141,22 @@ export class StarshipData extends foundry.abstract.TypeDataModel {
         engines: createSystemSchema('sta.actor.starship.system.engines'),
         sensors: createSystemSchema('sta.actor.starship.system.sensors'),
         structure: createSystemSchema('sta.actor.starship.system.structure'),
-        weapons: createSystemSchema('sta.actor.starship.system.weapons')
+        weapons: createSystemSchema('sta.actor.starship.system.weapons'),
       }),
 
       crew: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       }),
 
       power: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       }),
 
       shields: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       }),
 
       designation: new fields.StringField({initial: ''}),
@@ -171,7 +171,7 @@ export class StarshipData extends foundry.abstract.TypeDataModel {
       servicedate: new fields.StringField({initial: ''}),
       spaceframe: new fields.StringField({initial: ''}),
       notes: new fields.StringField({initial: ''}),
-      traits: new fields.StringField({initial: ''})
+      traits: new fields.StringField({initial: ''}),
     };
   }
 }
@@ -187,12 +187,12 @@ export class ExtendedTaskData extends foundry.abstract.TypeDataModel {
 
       breakthroughs: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       }),
 
       workprogress: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       })
     };
   }
@@ -219,7 +219,7 @@ export class SmallCraftData extends foundry.abstract.TypeDataModel {
         engineering: createDisciplineSchema('sta.actor.starship.department.engineering'),
         medicine: createDisciplineSchema('sta.actor.starship.department.medicine'),
         science: createDisciplineSchema('sta.actor.starship.department.science'),
-        security: createDisciplineSchema('sta.actor.starship.department.security')
+        security: createDisciplineSchema('sta.actor.starship.department.security'),
       }),
 
       systems: new fields.SchemaField({
@@ -228,17 +228,17 @@ export class SmallCraftData extends foundry.abstract.TypeDataModel {
         engines: createSystemSchema('sta.actor.starship.system.engines'),
         sensors: createSystemSchema('sta.actor.starship.system.sensors'),
         structure: createSystemSchema('sta.actor.starship.system.structure'),
-        weapons: createSystemSchema('sta.actor.starship.system.weapons')
+        weapons: createSystemSchema('sta.actor.starship.system.weapons'),
       }),
 
       power: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       }),
 
       shields: new fields.SchemaField({
         value: new fields.NumberField({required: true, integer: true, initial: 0}),
-        max: new fields.NumberField({required: true, integer: true, initial: 0})
+        max: new fields.NumberField({required: true, integer: true, initial: 0}),
       }),
 
       refit: new fields.StringField({initial: ''}),
@@ -253,7 +253,7 @@ export class SmallCraftData extends foundry.abstract.TypeDataModel {
       servicedate: new fields.StringField({initial: ''}),
       designation: new fields.StringField({initial: ''}),
       notes: new fields.StringField({initial: ''}),
-      traits: new fields.StringField({initial: ''})
+      traits: new fields.StringField({initial: ''}),
     };
   }
 }
@@ -294,7 +294,7 @@ export class CharacterWeaponData extends foundry.abstract.TypeDataModel {
         nonlethal: new fields.BooleanField({initial: false}),
         hiddenx: new fields.NumberField({required: true, integer: true, initial: 0}),
         piercingx: new fields.NumberField({required: true, integer: true, initial: 0}),
-        viciousx: new fields.NumberField({required: true, integer: true, initial: 0})
+        viciousx: new fields.NumberField({required: true, integer: true, initial: 0}),
       })
     };
   }
@@ -309,6 +309,8 @@ export class CharacterWeapon2eData extends foundry.abstract.TypeDataModel {
       hands: new fields.NumberField({required: true, integer: true, initial: 1}),
       severity: new fields.NumberField({required: true, integer: true, initial: 0}),
       description: new fields.StringField({initial: ''}),
+      opportunity: new fields.NumberField({required: true, integer: true, initial: 0}),
+      escalation: new fields.NumberField({required: true, integer: true, initial: 0}),
       
       qualities: new fields.SchemaField({
         deadly: new fields.BooleanField({initial: false}),
@@ -323,8 +325,6 @@ export class CharacterWeapon2eData extends foundry.abstract.TypeDataModel {
         intense: new fields.BooleanField({initial: false}),
         piercingx: new fields.BooleanField({initial: false}),
         hiddenx: new fields.NumberField({required: true, integer: true, initial: 0}),
-        opportunity: new fields.NumberField({required: true, integer: true, initial: 0}),
-        escalation: new fields.NumberField({required: true, integer: true, initial: 0})
       })
     };
   }
@@ -352,7 +352,7 @@ export class StarshipWeaponData extends foundry.abstract.TypeDataModel {
         piercingx: new fields.NumberField({required: true, integer: true, initial: 0}),
         viciousx: new fields.NumberField({required: true, integer: true, initial: 0}),
         hiddenx: new fields.NumberField({required: true, integer: true, initial: 0}),
-        versatilex: new fields.NumberField({required: true, integer: true, initial: 0})
+        versatilex: new fields.NumberField({required: true, integer: true, initial: 0}),
       })
     };
   }
@@ -386,7 +386,7 @@ export class StarshipWeapon2eData extends foundry.abstract.TypeDataModel {
         slowing: new fields.BooleanField({initial: false}),
         spread: new fields.BooleanField({initial: false}),
         hiddenx: new fields.NumberField({required: true, integer: true, initial: 0}),
-        versatilex: new fields.NumberField({required: true, integer: true, initial: 0})
+        versatilex: new fields.NumberField({required: true, integer: true, initial: 0}),
       })
     };
   }
@@ -399,7 +399,7 @@ export class ItemData extends foundry.abstract.TypeDataModel {
       quantity: new fields.NumberField({required: true, integer: true, initial: 1}),
       opportunity: new fields.NumberField({required: true, integer: true, initial: 0}),
       escalation: new fields.NumberField({required: true, integer: true, initial: 0}),
-      description: new fields.StringField({initial: ''})
+      description: new fields.StringField({initial: ''}),
     };
   }
 }
@@ -408,7 +408,7 @@ export class FocusData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     const fields = foundry.data.fields;
     return {
-      description: new fields.StringField({initial: ''})
+      description: new fields.StringField({initial: ''}),
     };
   }
 }
@@ -418,7 +418,7 @@ export class ValueData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     return {
       used: new fields.BooleanField({initial: false}),
-      description: new fields.StringField({initial: ''})
+      description: new fields.StringField({initial: ''}),
     };
   }
 }
@@ -430,7 +430,7 @@ export class ArmorData extends foundry.abstract.TypeDataModel {
       equipped: new fields.BooleanField({initial: true}),
       opportunity: new fields.NumberField({required: true, integer: true, initial: 0}),
       escalation: new fields.NumberField({required: true, integer: true, initial: 0}),
-      description: new fields.StringField({initial: ''})
+      description: new fields.StringField({initial: ''}),
     };
   }
 }
@@ -444,7 +444,7 @@ export class TalentData extends foundry.abstract.TypeDataModel {
         typeenum: new fields.StringField({initial: ''}),
         description: new fields.StringField({initial: ''}),
         minimum: new fields.NumberField({required: true, integer: true, initial: 0})
-      })
+      }),
     };
   }
 }
@@ -457,7 +457,7 @@ export class MilestoneData extends foundry.abstract.TypeDataModel {
       arc: new fields.SchemaField({
         isArc: new fields.BooleanField({initial: false}),
         steps: new fields.NumberField({required: true, integer: true, initial: 3, max: 26})
-      })
+      }),
     };
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     for (const letter of letters) {
@@ -472,7 +472,7 @@ export class InjuryData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     return {
       description: new fields.StringField({initial: ''}),
-      quantity: new fields.NumberField({required: true, integer: true, initial: 1})
+      quantity: new fields.NumberField({required: true, integer: true, initial: 1}),
     };
   }
 }
@@ -483,7 +483,7 @@ export class SmallCraftContainerData extends foundry.abstract.TypeDataModel {
     return {
       description: new fields.StringField({initial: ''}),
       quantity: new fields.NumberField({required: true, integer: true, initial: 1}),
-      child: new fields.StringField({initial: ''})
+      child: new fields.StringField({initial: ''}),
     };
   }
 }
@@ -493,7 +493,7 @@ export class TraitData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     return {
       description: new fields.StringField({initial: ''}),
-      quantity: new fields.NumberField({required: true, integer: true, initial: 1})
+      quantity: new fields.NumberField({required: true, integer: true, initial: 1}),
     };
   }
 }
@@ -504,7 +504,7 @@ export class LogData extends foundry.abstract.TypeDataModel {
     return {
       used: new fields.BooleanField({initial: false}),
       description: new fields.StringField({initial: ''}),
-      valueStates: new fields.ObjectField({initial: {}})
+      valueStates: new fields.ObjectField({initial: {}}),
     };
   }
 }

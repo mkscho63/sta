@@ -8,6 +8,8 @@ system:
   range: melee
   hands: 2
   severity: 0
+  opportunity: 1
+  escalation: 1
   qualities:
     deadly: true
     stun: false
@@ -21,8 +23,6 @@ system:
     intense: true
     piercingx: false
     hiddenx: 0
-    opportunity: 1
-    escalation: 1
 effects: []
 flags: {}
 _stats:

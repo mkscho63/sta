@@ -1,22 +1,83 @@
-<div class="sta roll chat card" data-token-id="{{tokenId}}" data-speaker-id="{{speakerId}}" data-roll-id="{{rollId}}">
-  <div class="dice-roll collapsible">
-    <div class="dice-result">
-      <div class="dice-formula">
-        {{localize "sta.roll.rerollresults"}}
-      </div>
-      <div class="tooltip">
-        <section class="tooltip-part collapsible-content">
-          <div class="dice">
-            {{localize "sta.roll.previousdicerolls"}}:
-            <ol class="dice-rolls">{{{previousRoll}}}</ol>
-            {{localize "sta.roll.newdicerolls"}}:
-            <ol class="dice-rolls">{{{diceHtml}}}</ol>
-          </div>
-        </section>
-      </div>
-      {{{effectHtml}}}
-      {{{complicationHtml}}}
-      <h4 class="dice-total">{{successText}}</h4>
+<div class="chatcard reroll">
+  <div class="heading">
+    <div class="name">
+      {{speakerName}}
+    </div>
+    <div class="flavor {{originalRollType}}">
+      {{flavor}}
     </div>
   </div>
+
+  <div class="row">
+    <div class="columna">
+      {{localize "sta.roll.previousdicerolls"}}
+    </div>
+    <div class="columna">
+      {{localize "sta.roll.newdicerolls"}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columnb">
+      <ol class="dice-rolls">{{{retainedRoll}}}</ol>
+    </div>
+    <div class="columnb">
+      <ol class="dice-rolls">{{{rerolledRoll}}}</ol>
+    </div>
+  </div>
+
+  {{#if isTaskReroll}}
+    <div class="row">
+      <div class="greentext">{{successText}}</div>
+    </div>
+    <div class="row">
+      <div class="redtext">{{complicationText}}</div>
+    </div>
+  {{/if}}
+
+  {{#if isChallengeReroll}}
+    <div class="row">
+      <div class="columnc">
+        <div class="greentext">{{successText}}</div>
+      </div>
+      <div class="columnc">
+        <div class="redtext">{{effectText}}</div>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if isNPCReroll}}
+    <div class="heading">
+      <div class="name">
+        {{starshipName}}
+      </div>
+      <div class="flavor {{originalRollType}}">
+        {{flavorship}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="columna">
+        {{localize "sta.roll.previousdicerolls"}}
+      </div>
+      <div class="columna">
+        {{localize "sta.roll.newdicerolls"}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columnb">
+        <ol class="dice-rolls">{{{shipretainedRoll}}}</ol>
+      </div>
+      <div class="columnb">
+        <ol class="dice-rolls">{{{shiprerolledRoll}}}</ol>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="greentext">{{successText}}</div>
+    </div>
+    <div class="row">
+      <div class="redtext">{{complicationText}}</div>
+    </div>
+  {{/if}}
 </div>
