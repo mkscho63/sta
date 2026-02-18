@@ -1665,7 +1665,7 @@ $trackerchatborder: #FF9900;
 //   }
 // }
 
-.chat-message.message.flexcol {
+.chat-message.message.flexcol:has(.chatcard) {
   background: black;
   color: white;
   padding-top: 0px;
