@@ -1341,7 +1341,7 @@ export class STARoll {
       break;
     }
 
-    const rollMode = game.settings.get('core', 'rollMode');
+    const messageMode = game.settings.get('core', 'messageMode');
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that.
     if (game.dice3d && rollData.dice3dRoll) {
@@ -1377,7 +1377,7 @@ export class STARoll {
     };
 
     // Apply the roll mode to automatically adjust visibility settings
-    ChatMessage.applyRollMode(messageProps, rollMode);
+    ChatMessage.applyMode(messageProps, messageMode);
 
     // Send the chat message
     return await ChatMessage.create(messageProps);
