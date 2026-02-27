@@ -1374,10 +1374,14 @@ export class STARoll {
       },
     };
 
-    const mode = game.settings.get('core', 'messageMode') ?? game.settings.get('core', 'rollMode');
+    const hasMessageMode = game.settings.settings.has("core.messageMode");
 
-    // Call whichever method exists (v14 first, fallback to v13)
-    (ChatMessage.applyMode ?? ChatMessage.applyRollMode)(messageProps, mode);
+    const mode = hasMessageMode
+      ? game.settings.get("core", "messageMode")
+      : game.settings.get("core", "rollMode");
+
+    const apply = ChatMessage.applyMode ?? ChatMessage.applyRollMode;
+    apply.call(ChatMessage, messageProps, mode);
 
     // Send the chat message
     return await ChatMessage.create(messageProps);
