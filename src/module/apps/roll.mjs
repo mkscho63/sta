@@ -681,7 +681,7 @@ export class STARoll {
     }
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
@@ -767,7 +767,7 @@ export class STARoll {
     }
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
@@ -862,7 +862,7 @@ export class STARoll {
     const diceString = await this._getDiceImageListFromChallengeRoll(rolledChallenge);
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
@@ -960,7 +960,7 @@ export class STARoll {
     }
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
