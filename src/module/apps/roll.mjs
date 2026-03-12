@@ -1391,11 +1391,11 @@ export class STARoll {
       },
     };
 
-    const hasMessageMode = game.settings.settings.has("core.messageMode");
+    const hasMessageMode = game.settings.settings.has('core.messageMode');
 
-    const mode = hasMessageMode
-      ? game.settings.get("core", "messageMode")
-      : game.settings.get("core", "rollMode");
+    const mode = hasMessageMode ?
+      game.settings.get('core', 'messageMode') :
+      game.settings.get('core', 'rollMode');
 
     const apply = ChatMessage.applyMode ?? ChatMessage.applyRollMode;
     apply.call(ChatMessage, messageProps, mode);
