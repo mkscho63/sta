@@ -681,7 +681,9 @@ export class STARoll {
     }
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speaker,
+      item,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
@@ -767,7 +769,9 @@ export class STARoll {
     }
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speaker,
+      item,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
@@ -862,7 +866,9 @@ export class STARoll {
     const diceString = await this._getDiceImageListFromChallengeRoll(rolledChallenge);
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speaker,
+      item,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
@@ -960,7 +966,9 @@ export class STARoll {
     }
 
     const itemData = {
-      speakerName: speaker.alias ?? speaker.name,
+      speaker,
+      item,
+      speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
       name: item.name,
@@ -1336,12 +1344,19 @@ export class STARoll {
         'systems/sta/templates/chat/generic-item.hbs',
         rollData
       );
+
+      // Automated Animations integration
+      if (typeof AutomatedAnimations !== 'undefined' && rollData.speaker && rollData.item) {
+        const sourceToken = canvas.tokens.get(rollData.speaker.token?.id);
+        const aaItem = rollData.item;
+        if (sourceToken && aaItem) {
+          AutomatedAnimations.playAnimation(sourceToken, aaItem);
+        }
+      }
       break;
     default:
       break;
     }
-
-    const rollMode = game.settings.get('core', 'rollMode');
 
     // Check if the dice3d module exists (Dice So Nice). If it does, post a roll in that.
     if (game.dice3d && rollData.dice3dRoll) {
@@ -1376,8 +1391,14 @@ export class STARoll {
       },
     };
 
-    // Apply the roll mode to automatically adjust visibility settings
-    ChatMessage.applyRollMode(messageProps, rollMode);
+    const hasMessageMode = game.settings.settings.has('core.messageMode');
+
+    const mode = hasMessageMode ?
+      game.settings.get('core', 'messageMode') :
+      game.settings.get('core', 'rollMode');
+
+    const apply = ChatMessage.applyMode ?? ChatMessage.applyRollMode;
+    apply.call(ChatMessage, messageProps, mode);
 
     // Send the chat message
     return await ChatMessage.create(messageProps);
