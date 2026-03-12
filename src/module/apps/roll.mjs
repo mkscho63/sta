@@ -681,6 +681,8 @@ export class STARoll {
     }
 
     const itemData = {
+      speaker,
+      item,
       speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
@@ -767,6 +769,8 @@ export class STARoll {
     }
 
     const itemData = {
+      speaker,
+      item,
       speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
@@ -862,6 +866,8 @@ export class STARoll {
     const diceString = await this._getDiceImageListFromChallengeRoll(rolledChallenge);
 
     const itemData = {
+      speaker,
+      item,
       speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
@@ -960,6 +966,8 @@ export class STARoll {
     }
 
     const itemData = {
+      speaker,
+      item,
       speakerName: speaker.name,
       img: item.img,
       flavor: game.i18n.localize(`sta.actor.belonging.${item.type}.title`),
@@ -1336,6 +1344,15 @@ export class STARoll {
         'systems/sta/templates/chat/generic-item.hbs',
         rollData
       );
+
+      // Automated Animations integration
+      if (typeof AutomatedAnimations !== 'undefined' && rollData.speaker && rollData.item) {
+        const sourceToken = canvas.tokens.get(rollData.speaker.token?.id);
+        const aaItem = rollData.item;
+        if (sourceToken && aaItem) {
+          AutomatedAnimations.playAnimation(sourceToken, aaItem);
+        }
+      }
       break;
     default:
       break;
