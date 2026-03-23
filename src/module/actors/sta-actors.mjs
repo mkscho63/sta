@@ -532,14 +532,14 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     if (formData.get('starshipAssisting') === 'on') {
       if (skillLevel) {
         const npcValues = {
-          basic:       [8, 1],
-          proficient:  [9, 2],
-          talented:    [10, 3],
+          basic: [8, 1],
+          proficient: [9, 2],
+          talented: [10, 3],
           exceptional: [11, 4],
         };
         [selectedAttributeValue, selectedDisciplineValue] = npcValues[skillLevel] ?? [8, 1];
-        starship = speaker
-        speaker = {name:'NPC Crew'}
+        starship = speaker;
+        speaker = {name: 'NPC Crew'};
       } else {
         const starshipId = formData.get('starship');
         starship = game.actors.get(starshipId);
