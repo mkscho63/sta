@@ -1,29 +1,42 @@
 <div id="dice-pool-form" class="dialogue">
-    <div class="row">
+  <div class="row">
         <div class="tracktitle">{{localize 'sta.apps.focus'}}</div>
         <input type="checkbox" name="usingFocus" id="usingFocus" checked>
-    </div>
+  </div>
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.roll.npcship'}}?</div>
+    <input type="checkbox" name="starshipAssisting" id="starshipAssisting">
+  </div>
+  <div class="starshipAssisting hidden">
     <div class="row">
-        <div class="tracktitle">{{localize 'sta.apps.complicationrange'}}</div>
-        <input class="numeric-entry" type="number" name="complicationRange" value="{{calculatedComplicationRange}}" id="complicationRange">
+      <div class="tracktitle">{{localize 'sta.roll.npccrew'}}</div>
+      <label>{{localize 'sta.roll.npccrewbasic'}}<input type="radio" name="skillLevel" value="basic" checked></label><br>
+      <label>{{localize 'sta.roll.npccrewproficient'}}<input type="radio" name="skillLevel" value="proficient"></label><br>
+      <label>{{localize 'sta.roll.npccrewtalented'}}<input type="radio" name="skillLevel" value="talented"></label><br>
+      <label>{{localize 'sta.roll.npccrewexceptional'}}<input type="radio" name="skillLevel" value="exceptional"></label>
     </div>
-    <div class="row">
-        <div class="flex-1">
-            <div class="tracktitle">{{localize 'sta.apps.pool'}}</div>
-        </div>
-        <div class="flex-column flex-1">
-            <div class="row">
-                <span class="label align-left flex-1">{{localize 'sta.counting.one'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.two'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.three'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.four'}}</span>
-                <span class="centered flex-1"></span>
-                <span class="label centered flex-1">{{localize 'sta.counting.five'}}</span>
-            </div>
-            <input type="range" name="dicePoolSlider" min="1" max="5" value="{{defaultValue}}" class="slider" id="dicePoolSlider">
-        </div>
+  </div>  
+  <div class="row">
+    <div class="tracktitle">{{localize 'sta.apps.complicationrange'}}</div>
+    <input class="numeric-entry" type="number" name="complicationRange" value="{{calculatedComplicationRange}}" id="complicationRange">
+  </div>
+  <div class="row">
+    <div class="flex-1">
+      <div class="tracktitle">{{localize 'sta.apps.pool'}}</div>
     </div>
+    <div class="flex-column flex-1">
+      <div class="row">
+        <span class="label align-left flex-1">{{localize 'sta.counting.one'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.two'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.three'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.four'}}</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">{{localize 'sta.counting.five'}}</span>
+      </div>
+      <input type="range" name="dicePoolSlider" min="1" max="5" value="{{defaultValue}}" class="slider" id="dicePoolSlider">
+    </div>
+  </div>
 </div>

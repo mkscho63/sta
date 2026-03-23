@@ -249,6 +249,7 @@
   "sta.item.talent.houselegacy": "House",
   "sta.item.talent.houserequired": "House Legacy of",
   "sta.item.talent.type.attribute": "Attribute",
+  "sta.item.talent.type.npc": "NPC",
 
   "sta.item.house.legacy.title": "House Legacy",
   "sta.item.house.legacy.leaders": "Leaders",
