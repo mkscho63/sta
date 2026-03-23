@@ -249,6 +249,7 @@
   "sta.item.talent.houselegacy": "Haus",
   "sta.item.talent.houserequired": "Hausvermächtnis von",
   "sta.item.talent.type.attribute": "Attribut",
+  "sta.item.talent.type.npc": "NSC",
 
   "sta.item.house.legacy.title": "Hausvermächtnis",
   "sta.item.house.legacy.leaders": "Führer",

@@ -4,7 +4,7 @@
 	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
 	"version": "2.5.2",
 	"compatibility": {
-		"verified": "13",
+		"verified": "14",
 		"minimum": "13"
 	},
 	"authors": [

@@ -393,6 +393,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     let complicationRange = 1;
     const calculatedComplicationRange = await staRoll._sceneComplications();
     const template = this.taskRollData.template;
+    let skillLevel = '';
 
     const visibleStarships = game.actors.filter((a) =>
       (a.type === 'starship' || a.type === 'smallcraft') &&
@@ -464,8 +465,9 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
     usingDetermination = formData.get('usingDetermination') === 'on';
     complicationRange = parseInt(formData.get('complicationRange'), 10);
+    skillLevel = formData.get('skillLevel');
 
-    const speaker = this.actor;
+    let speaker = this.actor;
     const reputationValue = parseInt(this.element.querySelector('#total-rep')?.value, 10) || 0;
     const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]')?.checked ?? false;
 
@@ -528,12 +530,24 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
     let starship = '';
     if (formData.get('starshipAssisting') === 'on') {
-      const starshipId = formData.get('starship');
-      starship = game.actors.get(starshipId);
-      selectedSystem = formData.get('system');
-      selectedDepartment = formData.get('department');
-      selectedSystemValue = starship.system.systems[selectedSystem]?.value ?? 0;
-      selectedDepartmentValue = starship.system.departments[selectedDepartment]?.value ?? 0;
+      if (skillLevel) {
+        const npcValues = {
+          basic: [8, 1],
+          proficient: [9, 2],
+          talented: [10, 3],
+          exceptional: [11, 4],
+        };
+        [selectedAttributeValue, selectedDisciplineValue] = npcValues[skillLevel] ?? [8, 1];
+        starship = speaker;
+        speaker = {name: 'NPC Crew'};
+      } else {
+        const starshipId = formData.get('starship');
+        starship = game.actors.get(starshipId);
+        selectedSystem = formData.get('system');
+        selectedDepartment = formData.get('department');
+        selectedSystemValue = starship.system.systems[selectedSystem]?.value ?? 0;
+        selectedDepartmentValue = starship.system.departments[selectedDepartment]?.value ?? 0;
+      }
     }
 
     const taskData = {
@@ -555,6 +569,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       usingDedicatedFocus,
       usingDetermination,
       complicationRange,
+      skillLevel,
     };
 
     if (formData.get('starshipAssisting') === 'on') {
