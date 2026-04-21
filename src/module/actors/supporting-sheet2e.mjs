@@ -55,7 +55,7 @@ export class STASupportingSheet2e extends STAActors {
   
   async _StressTrackMax() {
     const numValues = this.actor.itemTypes.value.length;
-    if (!numValues) return;
+    if (!numValues) return 0;
 
     const localizedValues = {
       tough: game.i18n.localize('sta.actor.character.talents.tough'),
