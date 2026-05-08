@@ -1987,15 +1987,30 @@ $trackerchatborder: #FF9900;
 }
 
 .tracker-container {
-  .combadge {
+  %svg-icon {
     display: inline-block;
-    background-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
     height: 1em;
-    transform: translateY(+2px);
-    width: 1em;
+    transform: translateY(2px);
+    width: calc(1em + 4px);
+  }
+
+  .combadge {
+    @extend %svg-icon;
+    mask-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
+  }
+
+  .d6 {
+    @extend %svg-icon;
+    mask-image: url("../../../icons/svg/d6-grey.svg");
+  }
+
+  .d20 {
+    @extend %svg-icon;
+    mask-image: url("../../../icons/svg/d20-grey.svg");
   }
 
   .icon-container {
@@ -2018,7 +2033,7 @@ $trackerchatborder: #FF9900;
     .roll-npc i,
     .roll-task i {
       display: inline-block;
-      color: $background;
+      color: $chatcardvars;
       font-size: 1.5em;
 
       &:hover {

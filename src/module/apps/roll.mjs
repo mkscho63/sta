@@ -1233,7 +1233,7 @@ export class STARoll {
 
       // SHIP
       const shipretainedTaskDice = {
-        checkTarget: rollData.checkTarget,
+        checkTarget: rollData.checkTargetship,
         complicationMinimumValue: rollData.complicationMinimumValue,
         shipdisDepTarget: rollData.shipdisDepTarget,
         usingFocus: true,
@@ -1244,7 +1244,7 @@ export class STARoll {
       shiptaskRolled = await this._performRollTask({dicePool: shiprerolled.length});
 
       const shiprerolledTaskDice = {
-        checkTarget: rollData.checkTarget,
+        checkTarget: rollData.checkTargetship,
         complicationMinimumValue: rollData.complicationMinimumValue,
         shipdisDepTarget: rollData.shipdisDepTarget,
         usingFocus: rollData.usingFocus,
@@ -1381,6 +1381,7 @@ export class STARoll {
           dicePool: rollData.dicePool,
           complicationMinimumValue: rollData.complicationMinimumValue,
           checkTarget: rollData.checkTarget,
+          checkTargetship: rollData.checkTargetship,
           disDepTarget: rollData.disDepTarget,
           shipdisDepTarget: rollData.shipdisDepTarget,
           flavor: rollData.flavor,
