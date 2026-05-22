@@ -1999,8 +1999,13 @@ $trackerchatborder: #FF9900;
   }
 
   .combadge {
-    @extend %svg-icon;
-    mask-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
+    display: inline-block;
+    background-image: url("/systems/sta/assets/icons/voyagercombadgeicon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 1em;
+    height: 1em;
   }
 
   .d6 {
@@ -2037,7 +2042,7 @@ $trackerchatborder: #FF9900;
       font-size: 1.5em;
 
       &:hover {
-        color: $borderblue;
+        filter: brightness(1.3);
       }
     }
   }
