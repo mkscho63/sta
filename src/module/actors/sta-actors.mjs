@@ -337,6 +337,8 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   }
 
   _onSelectDiscipline(event) {
+    const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]');
+    useReputationInstead.checked = false;
     const clickedCheckbox = event.target;
     if (!clickedCheckbox.checked) {
       clickedCheckbox.checked = true;
@@ -441,9 +443,15 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       render: (event, dialog) => {
         const checkbox = dialog.element.querySelector('#starshipAssisting');
         const section = dialog.element.querySelector('.starshipAssisting');
-        if (!checkbox || !section) return;
+        const dicePoolSlider = dialog.element.querySelector('#dicePoolSlider');
+        if (!checkbox || !section || !dicePoolSlider) return;
         checkbox.addEventListener('change', () => {
           section.classList.toggle('hidden', !checkbox.checked);
+          if (checkbox.checked) {
+            dicePoolSlider.value = 2;
+          } else {
+            dicePoolSlider.value = 1;
+          }
           dialog.setPosition({height: 'auto'});
         });
       },
