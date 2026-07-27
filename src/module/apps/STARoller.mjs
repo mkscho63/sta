@@ -207,19 +207,41 @@ export class STARoller {
     /* --------------------------------------------------------------------- */
     /* Templates                                                             */
     /* --------------------------------------------------------------------- */
+    const sheetStart = `
+  <div>
+    <div class="row">
+      <div class="tracktitle">${game.i18n.localize(`sta.roll.task.name`)}</div>
+      <select id="rollList" name="rollList" class="form-select">
+        ${rollList.map((item) => `<option value="${item}">${game.i18n.localize(`sta.roll.${item}`)}</option>`).join('')}
+      </select>
+    </div>
+`;
+
+    const selectedAttr = attributes.find((attr) => characterToken?.actor?.system?.attributes?.[attr]?.selected) ?? '';
+    const selectedDisc = disciplines.find((disc) => characterToken?.actor?.system?.disciplines?.[disc]?.selected) ?? '';
     const characterSheet = `
   <div class="title">${character.name}</div>
-  <div class="row">
-    <div class="tracktitle">${game.i18n.localize(`sta.actor.character.attribute.title`)}</div>
-    <select id="attribute" name="attribute" class="form-select">
-      ${attributes.map((attr) => `<option value="${attr}">${game.i18n.localize(`sta.actor.character.attribute.${attr}`)}</option>`).join('')}
-    </select>
-  </div>
-  <div class="row">
-    <div class="tracktitle">${game.i18n.localize(`sta.actor.character.discipline.title`)}</div>
-    <select id="discipline" name="discipline" class="form-select">
-      ${disciplines.map((disc) => `<option value="${disc}">${game.i18n.localize(`sta.actor.character.discipline.${disc}`)}</option>`).join('')}
-    </select>
+  <div class="characterRollList">
+    <div class="row">
+      <div class="tracktitle">${game.i18n.localize(`sta.actor.character.attribute.title`)}</div>
+      <select id="attribute" name="attribute" class="form-select">
+        ${attributes.map((attr) =>
+    `<option value="${attr}" ${attr === selectedAttr ? 'selected' : ''}>
+            ${game.i18n.localize(`sta.actor.character.attribute.${attr}`)}
+          </option>`
+  ).join('')}
+      </select>
+    </div>
+    <div class="row">
+      <div class="tracktitle">${game.i18n.localize(`sta.actor.character.discipline.title`)}</div>
+      <select id="discipline" name="discipline" class="form-select">
+        ${disciplines.map((disc) =>
+    `<option value="${disc}" ${disc === selectedDisc ? 'selected' : ''}>
+            ${game.i18n.localize(`sta.actor.character.discipline.${disc}`)}
+          </option>`
+  ).join('')}
+      </select>
+    </div>
   </div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.apps.focus`)}</div>
@@ -227,21 +249,32 @@ export class STARoller {
   </div>
 `;
 
+    const selectedSys = systems.find((sys) => starshipToken?.actor?.system?.systems?.[sys]?.selected) ?? '';
+    const selectedDept = departments.find((dept) => starshipToken?.actor?.system?.departments?.[dept]?.selected) ?? '';
     const starshipSheet = `
-  <div>
-    <div class="title">${starship.name}</div>
+  <div class="title">${starship.name}</div>
+  <div class="starshipRollList">
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.starship.system.title`)}</div>
       <select id="system" name="system" class="form-select">
-        ${systems.map((system) => `<option value="${system}">${game.i18n.localize(`sta.actor.starship.system.${system}`)}</option>`).join('')}
+        ${systems.map((system) =>
+    `<option value="${system}" ${system === selectedSys ? 'selected' : ''}>
+            ${game.i18n.localize(`sta.actor.starship.system.${system}`)}
+          </option>`
+  ).join('')}
       </select>
     </div>
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.starship.department.title`)}</div>
       <select id="department" name="department" class="form-select">
-        ${departments.map((dept) => `<option value="${dept}">${game.i18n.localize(`sta.actor.starship.department.${dept}`)}</option>`).join('')}
+        ${departments.map((dept) =>
+    `<option value="${dept}" ${dept === selectedDept ? 'selected' : ''}>
+       ${game.i18n.localize(`sta.actor.starship.department.${dept}`)}
+          </option>`
+  ).join('')}
       </select>
     </div>
+  </div>
 `;
 
     const characterNPCSheet = `
@@ -260,7 +293,6 @@ export class STARoller {
 `;
 
     const starshipNPCSheet = `
-  <div>
     <div class="title">${game.i18n.localize(`sta.roll.npcship`)}</div>
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.starship.system.title`)}</div>
@@ -282,6 +314,10 @@ export class STARoller {
     <input type="checkbox" name="usingDetermination" id="usingDetermination">
   </div>
   <div class="row">
+    <div class="tracktitle">${game.i18n.localize(`sta.apps.complicationrange`)}</div>
+    <input class="numeric-entry" type="number" name="complicationRange" value="${calculatedComplicationRange}" id="complicationRange">
+  </div>
+  <div class="row">
     <div class="flex-1">
       <div class="tracktitle">${game.i18n.localize(`sta.apps.pool`)}</div>
     </div>
@@ -300,31 +336,6 @@ export class STARoller {
       <input type="range" name="charDicePool" min="1" max="5" value="2" class="slider" id="char-dice-pool">
     </div>
   </div>
-  <div class="row">
-    <div class="flex-1">
-      <div class="tracktitle">${game.i18n.localize(`sta.roll.complicationrange`)}</div>
-    </div>
-    <div class="flex-column flex-1">
-      <div class="row">
-        <span class="label align-left flex-1">20</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">19+</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">18+</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">17+</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">16+</span>
-      </div>
-      <input type="range" name="complicationRange" min="1" max="5" value="${calculatedComplicationRange}" class="slider" id="complication-range">
-    </div>
-  </div>
-  <div class="row">
-    <div class="tracktitle">${game.i18n.localize(`sta.roll.task.name`)}</div>
-    <select id="rollList" name="rollList" class="form-select">
-      ${rollList.map((item) => `<option value="${item}">${game.i18n.localize(`sta.roll.${item}`)}</option>`).join('')}
-    </select>
-  </div>
 </div>
 `;
 
@@ -333,13 +344,13 @@ export class STARoller {
     /* --------------------------------------------------------------------- */
     let template = '';
     if (!characterToken && !starshipToken) {
-      template = starshipNPCSheet + characterNPCSheet + commonForm;
+      template = sheetStart + starshipNPCSheet + characterNPCSheet + commonForm;
     } else if (!characterToken && starshipToken) {
-      template = starshipSheet + characterNPCSheet + commonForm;
+      template = sheetStart + starshipSheet + characterNPCSheet + commonForm;
     } else if (characterToken && !starshipToken) {
-      template = starshipNPCSheet + characterSheet + commonForm;
+      template = sheetStart + starshipNPCSheet + characterSheet + commonForm;
     } else {
-      template = starshipSheet + characterSheet + commonForm;
+      template = sheetStart + starshipSheet + characterSheet + commonForm;
     }
 
     /* --------------------------------------------------------------------- */
@@ -352,6 +363,23 @@ export class STARoller {
       position: {height: 'auto', width: 450},
       content: template,
       classes: ['dialogue'],
+      render: (event, dialog) => {
+        const checkbox = dialog.element.querySelector('#rollList');
+        const characterSection = dialog.element.querySelector('.characterRollList');
+        const starshipSection = dialog.element.querySelector('.starshipRollList');
+        checkbox.addEventListener('change', () => {
+          const value = checkbox.value;
+          const isBoth = value === 'justrollboth';
+          const isCrew = value === 'justrollcrew';
+          if (characterSection) {
+            characterSection.classList.toggle('hidden', !(isBoth || isCrew));
+          }
+          if (starshipSection) {
+            starshipSection.classList.toggle('hidden', !isBoth);
+          }
+          dialog.setPosition({height: 'auto'});
+        });
+      },
       buttons: [{
         action: 'roll',
         default: true,
