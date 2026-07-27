@@ -207,28 +207,28 @@ export class STARoller {
     /* --------------------------------------------------------------------- */
     /* Templates                                                             */
     /* --------------------------------------------------------------------- */
-    const selectedAttr = attributes.find(attr => characterToken?.actor?.system?.attributes?.[attr]?.selected) ?? "";
-    const selectedDisc = disciplines.find(disc => characterToken?.actor?.system?.disciplines?.[disc]?.selected) ?? "";
+    const selectedAttr = attributes.find((attr) => characterToken?.actor?.system?.attributes?.[attr]?.selected) ?? '';
+    const selectedDisc = disciplines.find((disc) => characterToken?.actor?.system?.disciplines?.[disc]?.selected) ?? '';
     const characterSheet = `
   <div class="title">${character.name}</div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.actor.character.attribute.title`)}</div>
     <select id="attribute" name="attribute" class="form-select">
-      ${attributes.map(attr =>
-        `<option value="${attr}" ${attr === selectedAttr ? "selected" : ""}>
+      ${attributes.map((attr) =>
+    `<option value="${attr}" ${attr === selectedAttr ? 'selected' : ''}>
           ${game.i18n.localize(`sta.actor.character.attribute.${attr}`)}
         </option>`
-      ).join('')}
+  ).join('')}
     </select>
   </div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.actor.character.discipline.title`)}</div>
     <select id="discipline" name="discipline" class="form-select">
-      ${disciplines.map(disc =>
-        `<option value="${disc}" ${disc === selectedDisc ? "selected" : ""}>
+      ${disciplines.map((disc) =>
+    `<option value="${disc}" ${disc === selectedDisc ? 'selected' : ''}>
           ${game.i18n.localize(`sta.actor.character.discipline.${disc}`)}
         </option>`
-      ).join('')}
+  ).join('')}
     </select>
   </div>
   <div class="row">
@@ -237,29 +237,29 @@ export class STARoller {
   </div>
 `;
 
-    const selectedSys = systems.find(sys => starshipToken?.actor?.system?.systems?.[sys]?.selected) ?? "";
-    const selectedDept = departments.find(dept => starshipToken?.actor?.system?.departments?.[dept]?.selected) ?? "";
+    const selectedSys = systems.find((sys) => starshipToken?.actor?.system?.systems?.[sys]?.selected) ?? '';
+    const selectedDept = departments.find((dept) => starshipToken?.actor?.system?.departments?.[dept]?.selected) ?? '';
     const starshipSheet = `
   <div>
     <div class="title">${starship.name}</div>
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.starship.system.title`)}</div>
       <select id="system" name="system" class="form-select">
-        ${systems.map(system =>
-          `<option value="${system}" ${system === selectedSys ? "selected" : ""}>
+        ${systems.map((system) =>
+    `<option value="${system}" ${system === selectedSys ? 'selected' : ''}>
             ${game.i18n.localize(`sta.actor.starship.system.${system}`)}
           </option>`
-        ).join('')}
+  ).join('')}
       </select>
     </div>
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.starship.department.title`)}</div>
       <select id="department" name="department" class="form-select">
-        ${departments.map(dept =>
-          `<option value="${dept}" ${dept === selectedDept ? "selected" : ""}>
+        ${departments.map((dept) =>
+    `<option value="${dept}" ${dept === selectedDept ? 'selected' : ''}>
             ${game.i18n.localize(`sta.actor.starship.department.${dept}`)}
           </option>`
-        ).join('')}
+  ).join('')}
       </select>
     </div>
   </div>

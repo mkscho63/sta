@@ -338,7 +338,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   _onSelectDiscipline(event) {
     const useReputationInstead = this.element.querySelector('.rollrepnotdis input[type="checkbox"]');
-      useReputationInstead.checked = false;
+    useReputationInstead.checked = false;
     const clickedCheckbox = event.target;
     if (!clickedCheckbox.checked) {
       clickedCheckbox.checked = true;
@@ -452,7 +452,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
           } else {
             dicePoolSlider.value = 1;
           }
-          dialog.setPosition({ height: 'auto' });
+          dialog.setPosition({height: 'auto'});
         });
       },
       buttons: [{
