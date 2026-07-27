@@ -282,6 +282,10 @@ export class STARoller {
     <input type="checkbox" name="usingDetermination" id="usingDetermination">
   </div>
   <div class="row">
+    <div class="tracktitle">${game.i18n.localize(`sta.apps.complicationrange`)}</div>
+    <input class="numeric-entry" type="number" name="complicationRange" value="${calculatedComplicationRange}" id="complicationRange">
+  </div>
+  <div class="row">
     <div class="flex-1">
       <div class="tracktitle">${game.i18n.localize(`sta.apps.pool`)}</div>
     </div>
@@ -298,25 +302,6 @@ export class STARoller {
         <span class="label centered flex-1">5</span>
       </div>
       <input type="range" name="charDicePool" min="1" max="5" value="2" class="slider" id="char-dice-pool">
-    </div>
-  </div>
-  <div class="row">
-    <div class="flex-1">
-      <div class="tracktitle">${game.i18n.localize(`sta.roll.complicationrange`)}</div>
-    </div>
-    <div class="flex-column flex-1">
-      <div class="row">
-        <span class="label align-left flex-1">20</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">19+</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">18+</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">17+</span>
-        <span class="centered flex-1"></span>
-        <span class="label centered flex-1">16+</span>
-      </div>
-      <input type="range" name="complicationRange" min="1" max="5" value="${calculatedComplicationRange}" class="slider" id="complication-range">
     </div>
   </div>
   <div class="row">
