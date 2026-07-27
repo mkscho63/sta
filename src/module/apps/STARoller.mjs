@@ -226,20 +226,20 @@ export class STARoller {
       <div class="tracktitle">${game.i18n.localize(`sta.actor.character.attribute.title`)}</div>
       <select id="attribute" name="attribute" class="form-select">
         ${attributes.map((attr) =>
-      `<option value="${attr}" ${attr === selectedAttr ? 'selected' : ''}>
+    `<option value="${attr}" ${attr === selectedAttr ? 'selected' : ''}>
             ${game.i18n.localize(`sta.actor.character.attribute.${attr}`)}
           </option>`
-    ).join('')}
+  ).join('')}
       </select>
     </div>
     <div class="row">
       <div class="tracktitle">${game.i18n.localize(`sta.actor.character.discipline.title`)}</div>
       <select id="discipline" name="discipline" class="form-select">
         ${disciplines.map((disc) =>
-      `<option value="${disc}" ${disc === selectedDisc ? 'selected' : ''}>
+    `<option value="${disc}" ${disc === selectedDisc ? 'selected' : ''}>
             ${game.i18n.localize(`sta.actor.character.discipline.${disc}`)}
           </option>`
-    ).join('')}
+  ).join('')}
       </select>
     </div>
   </div>
