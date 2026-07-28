@@ -161,6 +161,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   async _onRender(context, options) {
     if (this.document.limited) return;
+    if (this.actor.pack) return;
 
     if (!this.document.isOwner) this._setObserver();
 
