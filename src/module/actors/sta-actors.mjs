@@ -161,6 +161,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
 
   async _onRender(context, options) {
     if (this.document.limited) return;
+    if (this.actor.pack) return;
 
     if (!this.document.isOwner) this._setObserver();
 
@@ -441,16 +442,16 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       content: html,
       classes: ['dialogue'],
       render: (event, dialog) => {
+        const root = dialog.element.querySelector('#dice-pool-form');
+        const templateType = root?.dataset.template;
         const checkbox = dialog.element.querySelector('#starshipAssisting');
         const section = dialog.element.querySelector('.starshipAssisting');
         const dicePoolSlider = dialog.element.querySelector('#dicePoolSlider');
-        if (!checkbox || !section || !dicePoolSlider) return;
+        if (!checkbox || !section) return;
         checkbox.addEventListener('change', () => {
           section.classList.toggle('hidden', !checkbox.checked);
-          if (checkbox.checked) {
-            dicePoolSlider.value = 2;
-          } else {
-            dicePoolSlider.value = 1;
+          if (templateType === 'starship' && dicePoolSlider) {
+            dicePoolSlider.value = checkbox.checked ? 2 : 1;
           }
           dialog.setPosition({height: 'auto'});
         });
