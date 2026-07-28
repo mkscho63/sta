@@ -453,7 +453,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
           if (templateType === 'starship' && dicePoolSlider) {
             dicePoolSlider.value = checkbox.checked ? 2 : 1;
           }
-          dialog.setPosition({ height: 'auto' });
+          dialog.setPosition({height: 'auto'});
         });
       },
       buttons: [{
