@@ -281,8 +281,8 @@ export class STARoller {
   <div class="title">${game.i18n.localize(`sta.roll.npccrew`)}</div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.roll.npccrew`)}</div>
-    <label><input type="radio" name="skillLevel" value="basic" checked>${game.i18n.localize(`sta.roll.npccrewbasic`)}</label><br>
-    <label><input type="radio" name="skillLevel" value="proficient">${game.i18n.localize(`sta.roll.npccrewproficient`)}</label><br>
+    <label><input type="radio" name="skillLevel" value="basic">${game.i18n.localize(`sta.roll.npccrewbasic`)}</label><br>
+    <label><input type="radio" name="skillLevel" value="proficient" checked>${game.i18n.localize(`sta.roll.npccrewproficient`)}</label><br>
     <label><input type="radio" name="skillLevel" value="talented">${game.i18n.localize(`sta.roll.npccrewtalented`)}</label><br>
     <label><input type="radio" name="skillLevel" value="exceptional">${game.i18n.localize(`sta.roll.npccrewexceptional`)}</label>
   </div>
