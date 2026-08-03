@@ -178,10 +178,10 @@ export default class Combat2d20 extends Combat {
     return this.update(updateData, updateOptions);
   }
 
-//custom initiative from here
+  // custom initiative from here
   async createEmbeddedDocuments(embeddedName, data, options = {}) {
     const docs = await super.createEmbeddedDocuments(embeddedName, data, options);
-    if (embeddedName === "Combatant") {
+    if (embeddedName === 'Combatant') {
       for (const c of docs) {
         await this._applyCustomInitiative(c);
       }
@@ -202,19 +202,19 @@ export default class Combat2d20 extends Combat {
       roll.evaluateSync();
       result = roll.total;
     } catch (err) {
-      console.warn("STA custom initiative formula failed:", err, "| resolved formula:", resolvedFormula);
+      console.warn('STA custom initiative formula failed:', err, '| resolved formula:', resolvedFormula);
       return;
     }
     if (Number.isFinite(result)) {
-      await actor.update({ "system.customInitiative": result });
-      await combatant.update({ initiative: result });
+      await actor.update({'system.customInitiative': result});
+      await combatant.update({initiative: result});
     }
   }
 
   _sanitizeItemKey(name) {
     return name
-      .normalize("NFKD")
-      .replace(/[^a-zA-Z0-9]/g, "")
+      .normalize('NFKD')
+      .replace(/[^a-zA-Z0-9]/g, '')
       .toLowerCase();
   }
 
