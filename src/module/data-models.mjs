@@ -107,6 +107,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
       upbringing: new fields.StringField({initial: ''}),
       npcType: new fields.StringField({initial: 'minor'}),
       showklingon: new fields.BooleanField({initial: false}),
+      customInitiative: new fields.NumberField({required: true, integer: true, initial: 0}),
     };
   }
 }
@@ -172,6 +173,7 @@ export class StarshipData extends foundry.abstract.TypeDataModel {
       spaceframe: new fields.StringField({initial: ''}),
       notes: new fields.StringField({initial: ''}),
       traits: new fields.StringField({initial: ''}),
+      customInitiative: new fields.NumberField({required: true, integer: true, initial: 0}),
     };
   }
 }
@@ -254,6 +256,7 @@ export class SmallCraftData extends foundry.abstract.TypeDataModel {
       designation: new fields.StringField({initial: ''}),
       notes: new fields.StringField({initial: ''}),
       traits: new fields.StringField({initial: ''}),
+      customInitiative: new fields.NumberField({required: true, integer: true, initial: 0}),
     };
   }
 }

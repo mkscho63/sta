@@ -458,6 +458,15 @@ Hooks.once('init', function() {
     config: true
   });
 
+  game.settings.register('sta', 'useCustomInitiative', {
+    name: 'Custom Initiative Formula',
+    hint: 'Type your custom formula for Initiative value here, select the "customInitiative" value in the tracker',
+    scope: 'world',
+    type: String,
+    default: '',
+    config: true,
+  });
+
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
     Collapsible.attachHeaderListener(html);
     RerollHandler.attachListeners(html);
