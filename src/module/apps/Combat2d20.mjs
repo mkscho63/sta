@@ -177,4 +177,61 @@ export default class Combat2d20 extends Combat {
     Hooks.callAll('combatTurn', this, updateData, updateOptions);
     return this.update(updateData, updateOptions);
   }
+
+  // custom initiative from here
+  async createEmbeddedDocuments(embeddedName, data, options = {}) {
+    const docs = await super.createEmbeddedDocuments(embeddedName, data, options);
+    if (embeddedName === 'Combatant') {
+      for (const c of docs) {
+        await this._applyCustomInitiative(c);
+      }
+    }
+    return docs;
+  }
+
+  async _applyCustomInitiative(combatant) {
+    const rawFormula = game.settings.get('sta', 'useCustomInitiative');
+    if (!rawFormula || typeof rawFormula !== 'string' || !rawFormula.trim()) return;
+    const actor = combatant.actor;
+    if (!actor) return;
+    const data = actor.getRollData();
+    const resolvedFormula = this._resolveItemBonuses(rawFormula, actor);
+    let result = null;
+    try {
+      const roll = new Roll(resolvedFormula, data);
+      roll.evaluateSync();
+      result = roll.total;
+    } catch (err) {
+      console.warn('STA custom initiative formula failed:', err, '| resolved formula:', resolvedFormula);
+      return;
+    }
+    if (Number.isFinite(result)) {
+      await actor.update({'system.customInitiative': result});
+      await combatant.update({initiative: result});
+    }
+  }
+
+  _sanitizeItemKey(name) {
+    return name
+      .normalize('NFKD')
+      .replace(/[^a-zA-Z0-9]/g, '')
+      .toLowerCase();
+  }
+
+  _resolveItemBonuses(formula, actor) {
+    const ownedCounts = {};
+    for (const item of actor.items) {
+      const key = this._sanitizeItemKey(item.name);
+      if (!key) continue;
+      ownedCounts[key] = (ownedCounts[key] ?? 0) + 1;
+    }
+    const pattern = /@items\.([A-Za-z0-9_]+)\(([+-]?\d+(?:\.\d+)?)\)/g;
+    return formula.replace(pattern, (match, rawKey, rawValue) => {
+      const key = rawKey.toLowerCase();
+      const bonusPerItem = Number(rawValue);
+      const count = ownedCounts[key] ?? 0;
+      const total = count * bonusPerItem;
+      return String(total);
+    });
+  }
 }

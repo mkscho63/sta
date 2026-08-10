@@ -300,6 +300,20 @@ Hooks.once('init', function() {
   });
 
   // Register system settings
+  game.settings.register('sta', 'threat', {
+    scope: 'world',
+    type: Number,
+    default: 0,
+    config: false
+  });
+
+  game.settings.register('sta', 'momentum', {
+    scope: 'world',
+    type: Number,
+    default: 0,
+    config: false
+  });
+
   game.settings.register('sta', 'threatPermissionLevel', {
     name: 'Threat Tracker User Role:',
     hint: 'Who should be allowed to amend the threat tracker?',
@@ -330,24 +344,6 @@ Hooks.once('init', function() {
     }
   });
 
-  game.settings.register('sta', 'maxNumberOfReputation', {
-    name: 'Maximum Reputation (1st ed):',
-    hint: 'Max number of reputation that can be given to a character, 20 is default.',
-    scope: 'world',
-    type: Number,
-    default: 20,
-    config: true
-  });
-
-  game.settings.register('sta', 'maxNumberOfReputation2e', {
-    name: 'Maximum Reputation (2nd ed):',
-    hint: 'Max number of reputation that can be given to a character, 5 is default.',
-    scope: 'world',
-    type: Number,
-    default: 5,
-    config: true
-  });
-
   game.settings.register('sta', 'maxNumberOfMomentum', {
     name: 'Maximum amount of Momentum:',
     hint: 'Max amount of momentum the players can have at a time. 6 is default.',
@@ -355,20 +351,6 @@ Hooks.once('init', function() {
     type: Number,
     default: 6,
     config: true
-  });
-
-  game.settings.register('sta', 'threat', {
-    scope: 'world',
-    type: Number,
-    default: 0,
-    config: false
-  });
-
-  game.settings.register('sta', 'momentum', {
-    scope: 'world',
-    type: Number,
-    default: 0,
-    config: false
   });
 
   game.settings.register('sta', 'momentumTrackerPosition', {
@@ -395,30 +377,30 @@ Hooks.once('init', function() {
     config: true
   });
 
-  game.settings.register('sta', 'useSTAPopcornCombat', {
-    name: 'Use the built in STA Popcorn combat tracker:',
-    hint: 'Uncheck this if you do not want to use the built in combact tracker.',
-    scope: 'world',
-    type: Boolean,
-    default: true,
-    config: true
-  });
-
-  game.settings.register('sta', 'characterActionsPerRound', {
-    name: 'Number of character turns per combat round:',
-    hint: '1 is default, but some people like 2 to track minor and major actions, etc.',
-    scope: 'world',
-    type: Number,
-    default: 1,
-    config: true
-  });
-
-  game.settings.register('sta', 'showNotesInLimited', {
-    name: 'Show notes in limited view:',
-    hint: 'Check this if you want to display character notes in the limited view.',
+  game.settings.register('sta', 'showAssistantSuccesses', {
+    name: 'Show assistant successes if task fails:',
+    hint: 'Check this if you want to see the number of assistant successes when the task failed.',
     scope: 'world',
     type: Boolean,
     default: false,
+    config: true
+  });
+
+  game.settings.register('sta', 'maxNumberOfReputation', {
+    name: 'Maximum Reputation (1st ed):',
+    hint: 'Max number of reputation that can be given to a character, 20 is default.',
+    scope: 'world',
+    type: Number,
+    default: 20,
+    config: true
+  });
+
+  game.settings.register('sta', 'maxNumberOfReputation2e', {
+    name: 'Maximum Reputation (2nd ed):',
+    hint: 'Max number of reputation that can be given to a character, 5 is default.',
+    scope: 'world',
+    type: Number,
+    default: 5,
     config: true
   });
 
@@ -456,6 +438,42 @@ Hooks.once('init', function() {
     type: Boolean,
     default: false,
     config: true
+  });
+
+  game.settings.register('sta', 'showNotesInLimited', {
+    name: 'Show notes in limited view:',
+    hint: 'Check this if you want to display character notes in the limited view.',
+    scope: 'world',
+    type: Boolean,
+    default: false,
+    config: true
+  });
+
+  game.settings.register('sta', 'useSTAPopcornCombat', {
+    name: 'Use the built in STA Popcorn combat tracker:',
+    hint: 'Uncheck this if you do not want to use the built in combact tracker.',
+    scope: 'world',
+    type: Boolean,
+    default: true,
+    config: true
+  });
+
+  game.settings.register('sta', 'characterActionsPerRound', {
+    name: 'Number of character turns per combat round:',
+    hint: '1 is default, but some people like 2 to track minor and major actions, etc.',
+    scope: 'world',
+    type: Number,
+    default: 1,
+    config: true
+  });
+
+  game.settings.register('sta', 'useCustomInitiative', {
+    name: 'Custom Initiative Formula',
+    hint: 'Type your custom formula for Initiative value here, select the "customInitiative" value in the combat tracker',
+    scope: 'world',
+    type: String,
+    default: '',
+    config: true,
   });
 
   Hooks.on('renderChatMessageHTML', (msg, html, data) => {
