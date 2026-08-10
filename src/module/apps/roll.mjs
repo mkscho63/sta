@@ -99,13 +99,18 @@ export class STARoll {
       const shiptaskResult = await this._taskResult(shipData);
       shipData = {...shipData, ...shiptaskResult};
 
+      let success = crewData.success + shipData.success;
+      if (crewData.success === 0 && !game.settings.get('sta', 'showAssistantSuccesses')) {
+        success = 0;
+      };
+
       crewshipData = {
         ...taskData,
         diceString: crewData.diceString,
         diceStringship: shipData.diceString,
         diceOutcome: crewData.diceOutcome,
         shipdiceOutcome: shipData.diceOutcome,
-        success: crewData.success + shipData.success,
+        success,
         checkTarget: crewData.checkTarget,
         checkTargetship: shipData.checkTarget,
         disDepTarget: crewData.disDepTarget,
@@ -1252,11 +1257,16 @@ export class STARoll {
       };
       shiprerolledResult = await this._taskResult(shiprerolledTaskDice);
 
+      let success = shipretainedResult.success + 
+        shiprerolledResult.success + 
+        retainedResult.success + 
+        rerolledResult.success;
+      if ((retainedResult.success + rerolledResult.success) === 0 && !game.settings.get('sta', 'showAssistantSuccesses')) {
+        success = 0;
+      };
+
       const shipcrewData = {
-        success: shipretainedResult.success + 
-          shiprerolledResult.success + 
-          retainedResult.success + 
-          rerolledResult.success,
+        success,
         complication: shipretainedResult.complication + 
           shiprerolledResult.complication + 
           retainedResult.complication + 
