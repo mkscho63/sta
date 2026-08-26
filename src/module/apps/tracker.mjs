@@ -1,6 +1,9 @@
 import {
   STARoller
 } from './STARoller.mjs';
+import {
+  ShipRoster
+} from './ShipRoster.mjs';
 
 const api = foundry.applications.api;
 
@@ -21,8 +24,8 @@ export class STATracker extends api.HandlebarsApplicationMixin(api.ApplicationV2
       onMinimise: STATracker._onMinimise,
       onMaximise: STATracker._onMaximise,
       onTaskRoll: STARoller._onTaskRoll,
-      onChallengeRoll: STARoller._onChallengeRoll,
       onNPCRoll: STARoller._onNPCRoll,
+      onShipRoster: ShipRoster._onShipRoster,
     },
     form: {
       submitOnChange: true,

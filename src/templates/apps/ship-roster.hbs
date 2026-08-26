@@ -1,0 +1,394 @@
+<div class="console-container">
+  <nav class="tabs" data-group="primary">
+    {{#each tabs}}
+      <a class="item {{#if active}}active{{/if}}"
+         data-action="tab"
+         data-tab="{{id}}"
+         data-group="primary">
+        {{name}}
+      </a>
+    {{/each}}
+  </nav>
+
+  <div class="split-section">
+    <div class="left-column">
+      <section class="console-content">
+        {{#each tabs}}
+          <div class="tab {{#if active}}active{{/if}}"
+               data-tab="{{id}}"
+               data-group="primary">
+            <div class="starship-header row"
+                 data-action="openActor"
+                 data-actor-id="{{actor.id}}"
+                 title="{{name}}">
+              <img src="{{img}}" alt="{{name}}" />
+              <div class="tracktitle shipname">{{name}}</div>
+              {{characterCount}} {{localize "sta.apps.characters"}}<br />
+              {{supportingCount}} {{localize "sta.apps.supportingcharacters"}}<br />
+              {{npcCount}} {{localize "sta.apps.npcs"}}
+              <div class="check-button btn3 acclaim rollerbutton" data-action="onChangeView">
+                {{localize 'sta.apps.viewroller'}}
+              </div>
+            </div>
+
+            {{#if groups.character.length}}
+              <section class="crew-group">
+                <div class="title">{{localize "sta.apps.characters"}}</div>
+                <div class="crew-list">
+                  {{#each groups.character}}
+                    <div class="crew-selection-container">
+                      <div class="crew-row">
+                        <input type="radio"
+                               class="crew-radio"
+                               name="selectedCrewMember-{{../id}}"
+                               value="{{id}}"
+                               title="{{name}}"
+                               {{#if (eq id ../defaultCrewMember)}}checked{{/if}} />
+
+                        <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
+                          <img src="{{img}}" alt="{{name}}" />
+                          <div class="crew-name">{{name}}</div>
+
+                          <div class="stat-columns">
+                            <div class="stat-col-left">
+                              <div class="attributes">
+                                {{localize "sta.actor.character.attribute.control"}}: {{system.attributes.control.value}},
+                                {{localize "sta.actor.character.attribute.daring"}}: {{system.attributes.daring.value}},
+                                {{localize "sta.actor.character.attribute.fitness"}}: {{system.attributes.fitness.value}},
+                                {{localize "sta.actor.character.attribute.insight"}}: {{system.attributes.insight.value}},
+                                {{localize "sta.actor.character.attribute.presence"}}: {{system.attributes.presence.value}},
+                                {{localize "sta.actor.character.attribute.reason"}}: {{system.attributes.reason.value}}
+                              </div>
+
+                              <div class="disciplines">
+                                {{localize "sta.actor.character.discipline.command"}}: {{system.disciplines.command.value}},
+                                {{localize "sta.actor.character.discipline.conn"}}: {{system.disciplines.conn.value}},
+                                {{localize "sta.actor.character.discipline.engineering"}}: {{system.disciplines.engineering.value}},
+                                {{localize "sta.actor.character.discipline.medicine"}}: {{system.disciplines.medicine.value}},
+                                {{localize "sta.actor.character.discipline.science"}}: {{system.disciplines.science.value}},
+                                {{localize "sta.actor.character.discipline.security"}}: {{system.disciplines.security.value}}
+                              </div>
+
+                              <div class="value-line">
+                                <b>{{localize "sta.actor.value.title"}}:</b>
+                                {{#each valueItems}}
+                                  {{name}}{{#unless @last}}, {{/unless}}
+                                {{/each}}
+                              </div>
+
+                              <div class="focus-line">
+                                <b>{{localize "sta.actor.focus.title"}}:</b>
+                                {{#each focusItems}}
+                                  {{name}}{{#unless @last}}, {{/unless}}
+                                {{/each}}
+                              </div>
+                            </div>
+
+                            <div class="stat-col-right">
+                              <div class="stress">
+                                {{localize "sta.apps.stress"}}: {{system.stress.value}} / {{system.stress.max}}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="separator"></div>
+                  {{/each}}
+                </div>
+              </section>
+            {{/if}}
+
+            {{#if groups.supporting.length}}
+              <section class="crew-group">
+                <div class="title">{{localize "sta.apps.supportingcharacters"}}</div>
+                <div class="crew-list">
+                  {{#each groups.supporting}}
+                    <div class="crew-selection-container">
+                      <div class="crew-row">
+                        <input type="radio"
+                               class="crew-radio"
+                               name="selectedCrewMember-{{../id}}"
+                               value="{{id}}"
+                               title="{{name}}"
+                               {{#if (eq id ../defaultCrewMember)}}checked{{/if}} />
+
+                        <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
+                          <img src="{{img}}" alt="{{name}}" />
+                          <div class="crew-name">{{name}}</div>
+
+                          <div class="stat-columns">
+                            <div class="stat-col-left">
+                              <div class="attributes">
+                                {{localize "sta.actor.character.attribute.control"}}: {{system.attributes.control.value}},
+                                {{localize "sta.actor.character.attribute.daring"}}: {{system.attributes.daring.value}},
+                                {{localize "sta.actor.character.attribute.fitness"}}: {{system.attributes.fitness.value}},
+                                {{localize "sta.actor.character.attribute.insight"}}: {{system.attributes.insight.value}},
+                                {{localize "sta.actor.character.attribute.presence"}}: {{system.attributes.presence.value}},
+                                {{localize "sta.actor.character.attribute.reason"}}: {{system.attributes.reason.value}}
+                              </div>
+
+                              <div class="disciplines">
+                                {{localize "sta.actor.character.discipline.command"}}: {{system.disciplines.command.value}},
+                                {{localize "sta.actor.character.discipline.conn"}}: {{system.disciplines.conn.value}},
+                                {{localize "sta.actor.character.discipline.engineering"}}: {{system.disciplines.engineering.value}},
+                                {{localize "sta.actor.character.discipline.medicine"}}: {{system.disciplines.medicine.value}},
+                                {{localize "sta.actor.character.discipline.science"}}: {{system.disciplines.science.value}},
+                                {{localize "sta.actor.character.discipline.security"}}: {{system.disciplines.security.value}}
+                              </div>
+
+                              <div class="value-line">
+                                <b>{{localize "sta.actor.value.title"}}:</b>
+                                {{#each valueItems}}
+                                  {{name}}{{#unless @last}}, {{/unless}}
+                                {{/each}}
+                              </div>
+
+                              <div class="focus-line">
+                                <b>{{localize "sta.actor.focus.title"}}:</b>
+                                {{#each focusItems}}
+                                  {{name}}{{#unless @last}}, {{/unless}}
+                                {{/each}}
+                              </div>
+                            </div>
+
+                            <div class="stat-col-right">
+                              <div class="stress">
+                                {{localize "sta.apps.stress"}}: {{system.stress.value}} / {{system.stress.max}}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="separator"></div>
+                  {{/each}}
+                </div>
+              </section>
+            {{/if}}
+
+            {{#if groups.npc.length}}
+              <section class="crew-group">
+                <div class="title">{{localize "sta.apps.npcs"}}</div>
+                <div class="crew-list">
+                  {{#each groups.npc}}
+                    <div class="crew-selection-container">
+                      <div class="crew-row">
+                        <input type="radio"
+                               class="crew-radio"
+                               name="selectedCrewMember-{{../id}}"
+                               value="{{id}}"
+                               title="{{name}}"
+                               {{#if (eq id ../defaultCrewMember)}}checked{{/if}} />
+
+                        <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
+                          <img src="{{img}}" alt="{{name}}" />
+                          <div class="crew-name">{{name}}</div>
+
+                          <div class="stat-columns">
+                            <div class="stat-col-left">
+                              <div class="attributes">
+                                {{localize "sta.actor.character.attribute.control"}}: {{system.attributes.control.value}},
+                                {{localize "sta.actor.character.attribute.daring"}}: {{system.attributes.daring.value}},
+                                {{localize "sta.actor.character.attribute.fitness"}}: {{system.attributes.fitness.value}},
+                                {{localize "sta.actor.character.attribute.insight"}}: {{system.attributes.insight.value}},
+                                {{localize "sta.actor.character.attribute.presence"}}: {{system.attributes.presence.value}},
+                                {{localize "sta.actor.character.attribute.reason"}}: {{system.attributes.reason.value}}
+                              </div>
+
+                              <div class="disciplines">
+                                {{localize "sta.actor.character.discipline.command"}}: {{system.disciplines.command.value}},
+                                {{localize "sta.actor.character.discipline.conn"}}: {{system.disciplines.conn.value}},
+                                {{localize "sta.actor.character.discipline.engineering"}}: {{system.disciplines.engineering.value}},
+                                {{localize "sta.actor.character.discipline.medicine"}}: {{system.disciplines.medicine.value}},
+                                {{localize "sta.actor.character.discipline.science"}}: {{system.disciplines.science.value}},
+                                {{localize "sta.actor.character.discipline.security"}}: {{system.disciplines.security.value}}
+                              </div>
+
+                              <div class="value-line">
+                                <b>{{localize "sta.actor.value.title"}}:</b>
+                                {{#each valueItems}}
+                                  {{name}}{{#unless @last}}, {{/unless}}
+                                {{/each}}
+                              </div>
+
+                              <div class="focus-line">
+                                <b>{{localize "sta.actor.focus.title"}}:</b>
+                                {{#each focusItems}}
+                                  {{name}}{{#unless @last}}, {{/unless}}
+                                {{/each}}
+                              </div>
+                            </div>
+
+                            <div class="stat-col-right">
+                              <div class="stress">
+                                {{localize "sta.apps.stress"}}: {{system.stress.value}} / {{system.stress.max}}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="separator"></div>
+                  {{/each}}
+                </div>
+              </section>
+            {{/if}}
+
+            <div class="no-crew">
+              <div class="title">{{localize "sta.roll.npccrew"}}</div>
+              <label>
+                <input type="radio"
+                       name="selectedCrewMember-{{id}}"
+                       value="poor"
+                       {{#if (eq "basic" defaultCrewMember)}}checked{{/if}} />
+                {{localize 'sta.roll.npccrewpoor'}}
+              </label><br />
+              <label>
+                <input type="radio"
+                       name="selectedCrewMember-{{id}}"
+                       value="basic"
+                       {{#if (eq "basic" defaultCrewMember)}}checked{{/if}} />
+                {{localize "sta.roll.npccrewbasic"}}
+              </label><br />
+              <label>
+                <input type="radio"
+                       name="selectedCrewMember-{{id}}"
+                       value="proficient"
+                       {{#if (eq "proficient" defaultCrewMember)}}checked{{/if}} />
+                {{localize "sta.roll.npccrewproficient"}}
+              </label><br />
+              <label>
+                <input type="radio"
+                       name="selectedCrewMember-{{id}}"
+                       value="talented"
+                       {{#if (eq "talented" defaultCrewMember)}}checked{{/if}} />
+                {{localize "sta.roll.npccrewtalented"}}
+              </label><br />
+              <label>
+                <input type="radio"
+                       name="selectedCrewMember-{{id}}"
+                       value="exceptional"
+                       {{#if (eq "exceptional" defaultCrewMember)}}checked{{/if}} />
+                {{localize "sta.roll.npccrewexceptional"}}
+              </label>
+            </div>
+          </div>
+        {{/each}}
+      </section>
+    </div>
+
+    <div class="right-column">
+      <div class="row">
+        <div class="tracktitle">{{localize "sta.roll.task.name"}}</div>
+        <select id="rollList" name="rollList" class="form-select">
+          {{#each rollList as |item|}}
+            <option value="{{item}}">{{localize (concat "sta.roll." item)}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="title">{{localize "sta.apps.crewselection"}}</div>
+      <div class="characterRollList">
+        <div class="row">
+          <div class="tracktitle">{{localize "sta.actor.character.attribute.title"}}</div>
+          <select id="attribute" name="attribute" class="form-select">
+            {{#each attributes as |attr|}}
+              <option value="{{attr}}">{{localize (concat "sta.actor.character.attribute." attr)}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="row">
+          <div class="tracktitle">{{localize "sta.actor.character.discipline.title"}}</div>
+          <select id="discipline" name="discipline" class="form-select">
+            {{#each disciplines as |disc|}}
+              <option value="{{disc}}">{{localize (concat "sta.actor.character.discipline." disc)}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="tracktitle">{{localize "sta.apps.focus"}}</div>
+        <input type="checkbox" name="usingFocus" id="usingFocus" checked />
+      </div>
+      <div class="row">
+        <div class="tracktitle">{{localize "sta.apps.dedicatedfocus"}}</div>
+        <input type="checkbox" name="usingDedicatedFocus" id="usingDedicatedFocus" />
+      </div>
+      <div class="row">
+        <div class="tracktitle">{{localize "sta.apps.determination"}}</div>
+        <input type="checkbox" name="usingDetermination" id="usingDetermination" />
+      </div>
+      <div class="row">
+        <div class="tracktitle">{{localize "sta.apps.complicationrange"}}</div>
+        <input class="numeric-entry" type="number" name="complicationRange"
+               value="{{calculatedComplicationRange}}" id="complicationRange" />
+      </div>
+      <div class="row">
+        <div class="flex-1"><div class="tracktitle">{{localize "sta.apps.pool"}}</div></div>
+        <div class="flex-column flex-1">
+          <div class="row">
+            <span class="label align-left flex-1">{{localize "sta.counting.one"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.two"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.three"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.four"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.five"}}</span>
+          </div>
+          <input type="range" name="PoolSlider" min="1" max="5" value="2"
+                 class="slider" id="dicePoolSlider" />
+        </div>
+      </div>
+      <div class="title">{{localize "sta.apps.shipselection"}}</div>
+      <div class="starshipRollList">
+        <div class="row">
+          <div class="tracktitle">{{localize "sta.actor.starship.system.title"}}</div>
+          <select id="system" name="system" class="form-select">
+            {{#each systems as |sys|}}
+              <option value="{{sys}}">{{localize (concat "sta.actor.starship.system." sys)}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="row">
+          <div class="tracktitle">{{localize "sta.actor.starship.department.title"}}</div>
+          <select id="department" name="department" class="form-select">
+            {{#each departments as |dept|}}
+              <option value="{{dept}}">{{localize (concat "sta.actor.starship.department." dept)}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="flex-1"><div class="tracktitle">{{localize "sta.apps.pool"}}</div></div>
+        <div class="flex-column flex-1">
+          <div class="row">
+            <span class="label align-left flex-1">{{localize "sta.counting.one"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.two"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.three"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.four"}}</span>
+            <span class="centered flex-1"></span>
+            <span class="label centered flex-1">{{localize "sta.counting.five"}}</span>
+          </div>
+          <input type="range" name="assistPoolSlider" min="1" max="5" value="1"
+                 class="slider" id="assistPoolSlider" />
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="check-button btn attribute" data-action="onAttributeTest">
+          {{localize "sta.actor.attdis.task"}}
+        </div>
+        <div class="check-button btn3 acclaim" data-action="onChangeView">
+          {{localize 'sta.apps.viewroster'}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -396,6 +396,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     let complicationRange = 1;
     const calculatedComplicationRange = await staRoll._sceneComplications();
     const template = this.taskRollData.template;
+    const squadDice = this.taskRollData.squadDice;
     let skillLevel = '';
 
     const visibleStarships = game.actors.filter((a) =>
@@ -541,6 +542,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     if (formData.get('starshipAssisting') === 'on') {
       if (skillLevel) {
         const npcValues = {
+          poor: [7, 0],
           basic: [8, 1],
           proficient: [9, 2],
           talented: [10, 3],
@@ -579,6 +581,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       usingDetermination,
       complicationRange,
       skillLevel,
+      squadDice,
     };
 
     if (formData.get('starshipAssisting') === 'on') {
@@ -1101,9 +1104,18 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     if (maxShieldsInput && maxShieldsInput.value != shieldsTrackMax) {
       maxShieldsInput.value = shieldsTrackMax;
     }
+    const storedValue = this.actor?.system?.shields?.value ?? 0;
+    const inputEl = this.element.querySelector('#total-shields');
+    const inputValue = inputEl ? parseInt(inputEl.value, 10) : null;
+    const totalShieldsValue = isNaN(storedValue) ? 
+      (isNaN(inputValue) ? 0 : inputValue) :
+      storedValue;
     const barRenderer = this.element.querySelector('#bar-shields-renderer');
+    if (!barRenderer) return;
     barRenderer.innerHTML = '';
-    const totalShieldsValue = this.actor?.system?.shields?.value || parseInt(this.element.querySelector('#total-shields')?.value || 0, 10);
+    const quarterIndex = Math.ceil(shieldsTrackMax / 4);
+    const halfIndex = Math.ceil(shieldsTrackMax / 2);
+    const gapAfterIndices = new Set([quarterIndex, halfIndex]);
     for (let i = 1; i <= shieldsTrackMax; i++) {
       const div = document.createElement('div');
       div.className = 'box shields';
@@ -1115,6 +1127,11 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         div.classList.add('selected');
       }
       barRenderer.appendChild(div);
+      if (gapAfterIndices.has(i) && i < shieldsTrackMax) {
+        const gap = document.createElement('div');
+        gap.className = 'shield-gap';
+        barRenderer.appendChild(gap);
+      }
     }
     if (!this.document.isOwner) return;
     this.actor?.update({
@@ -1223,10 +1240,27 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       if (element.dataset.itemIncludescale === 'energy' && scaleInput) {
         scaleDamage = parseInt(scaleInput.value, 10) || 0;
       }
-      const attackDamageValue = weaponDamage + weaponValue + scaleDamage;
+      const squadDice = this.taskRollData.squadDice;
+      let squadMod = 0;
+      if (squadDice && this.actor.type === 'smallcraft') {
+        squadMod = squadDice - 1;
+      }
+      const isMine = element.dataset.itemIncludescale === 'mine';
+      const calculatedDamage = isMine ?
+        weaponDamage :
+        weaponDamage + weaponValue + scaleDamage + squadMod;
       const damageElement = element.querySelector('.damage');
       if (damageElement) {
-        damageElement.innerText = attackDamageValue;
+        damageElement.innerText = calculatedDamage;
+      }
+      const itemId = element.dataset.itemId;
+      if (itemId) {
+        const item = this.actor.items.get(itemId);
+        if (item) {
+          item.update({
+            'system.calculatedDamage': calculatedDamage
+          });
+        }
       }
     });
   }

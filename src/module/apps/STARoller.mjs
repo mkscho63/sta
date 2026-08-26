@@ -1,18 +1,14 @@
 const api = foundry.applications.api;
 
 export class STARoller {
-  /* Roll a task. */
+  /* --------------------------------------------------------------------- */
+  /* Roll a task or a challenge.                                      */
+  /* --------------------------------------------------------------------- */
   static async _onTaskRoll(event) {
     event.preventDefault();
 
     const staRoll = new STARoll();
     const defaultValue = '2';
-    let dicePool = defaultValue;
-    let usingFocus = false;
-    let usingDedicatedFocus = false;
-    let usingDetermination = false;
-    let complicationRange = 1;
-
     const calculatedComplicationRange = await staRoll._sceneComplications();
 
     const template = 'systems/sta/templates/apps/dicepool-attribroller.hbs';
@@ -33,34 +29,56 @@ export class STARoller {
       classes: ['dialogue'],
       buttons: [
         {
-          action: 'roll',
+          action: 'task',
           default: true,
-          label: game.i18n.localize('sta.apps.rolldice'),
+          label: game.i18n.localize('sta.actor.attdis.task'),
           callback: (event, button, dialog) => {
             const form = dialog.element.querySelector('form');
-            return form ? new FormData(form) : null;
+            return {action: 'task', data: form ? new FormData(form) : null};
           },
         },
+        {
+          action: 'challenge',
+          label: game.i18n.localize('sta.actor.challenge.roll'),
+          callback: (event, button, dialog) => {
+            const form = dialog.element.querySelector('form');
+            return {action: 'challenge', data: form ? new FormData(form) : null};
+          },
+        }
       ],
       close: () => null,
     });
 
     if (!formData) return;
 
-    dicePool = parseInt(formData.get('dicePoolSlider'), 10);
-    usingFocus = formData.get('usingFocus') === 'on';
-    usingDedicatedFocus = formData.get('usingDedicatedFocus') === 'on';
-    usingDetermination = formData.get('usingDetermination') === 'on';
-    complicationRange = parseInt(formData.get('complicationRange'), 10);
+    const {action, data} = formData;
 
-    const selectedAttributeValue = parseInt(
-      document.getElementById('selectedAttributeValue').value,
-      10
-    ) || 0;
-    const selectedDisciplineValue = parseInt(
-      document.getElementById('selectedDisciplineValue').value,
-      10
-    ) || 0;
+    // Shared dice pool
+    const dicePool = parseInt(data.get('dicePoolSlider'), 10) || 2;
+
+    if (action === 'challenge') {
+    // Challenge roll
+      const challengeData = {
+        speakerName: 'STARoller',
+        dicePool,
+        challengeName: ''
+      };
+
+      const staRoll = new STARoll();
+      return staRoll.performChallengeRoll(challengeData);
+    }
+
+    // Task roll
+    const usingFocus = data.get('usingFocus') === 'on';
+    const usingDedicatedFocus = data.get('usingDedicatedFocus') === 'on';
+    const usingDetermination = data.get('usingDetermination') === 'on';
+    const complicationRange = parseInt(data.get('complicationRange'), 10);
+
+    const selectedAttributeValue =
+    parseInt(document.getElementById('selectedAttributeValue').value, 10) || 0;
+
+    const selectedDisciplineValue =
+    parseInt(document.getElementById('selectedDisciplineValue').value, 10) || 0;
 
     const taskData = {
       speakerName: 'STARoller',
@@ -77,71 +95,36 @@ export class STARoller {
     await staRoll.rollTask(taskData);
   }
 
-  /* Roll a challenge. */
-  static async _onChallengeRoll(event) {
-    event.preventDefault();
-
-    const defaultValue = 2;
-    const challengeName = '';
-    const template = 'systems/sta/templates/apps/dicepool-challenge.hbs';
-    const html = await foundry.applications.handlebars.renderTemplate(template, {
-      defaultValue,
-    });
-
-    const formData = await api.DialogV2.wait({
-      window: {
-        title: game.i18n.localize('sta.apps.dicepoolwindow'),
-      },
-      position: {
-        height: 'auto',
-        width: 350,
-      },
-      content: html,
-      classes: ['dialogue'],
-      buttons: [
-        {
-          action: 'roll',
-          default: true,
-          label: game.i18n.localize('sta.apps.rolldice'),
-          callback: (event, button, dialog) => {
-            const form = dialog.element.querySelector('form');
-            return form ? new FormData(form) : null;
-          },
-        },
-      ],
-      close: () => null,
-    });
-
-    if (!formData) return;
-
-    const dicePool = formData?.get('dicePoolValue') ?? defaultValue;
-    const challengeData = {
-      speakerName: 'STARoller',
-      dicePool,
-      challengeName,
-    };
-    const staRoll = new STARoll();
-    staRoll.performChallengeRoll(challengeData);
-  }
-
-  /* Roll a task for NPC or starship. */
+  /* --------------------------------------------------------------------- */
+  /* Roll a task for NPC or starship.                                      */
+  /* --------------------------------------------------------------------- */
   static async _onNPCRoll(event) {
     event.preventDefault();
 
-    const staRoll = new STARoll();
-    const calculatedComplicationRange = await staRoll._sceneComplications();
-
-    /* --------------------------------------------------------------------- */
-    /* Gather tokens, actors and common data                                 */
-    /* --------------------------------------------------------------------- */
     const selectedTokens = canvas.tokens.controlled;
     const characterToken = selectedTokens.find(
       (t) => t.actor?.type === 'character'
     );
-    const starshipToken = selectedTokens.find((t) =>
+    const starshipTokens = selectedTokens.filter((t) =>
       ['starship', 'smallcraft'].includes(t.actor?.type)
     );
 
+    if (starshipTokens.length > 1) {
+      STARoller._rollAllTokens(characterToken, starshipTokens);
+    } else {
+      STARoller._rollOneToken(characterToken, starshipTokens);
+    }
+  }
+
+  /* --------------------------------------------------------------------- */
+  /* Roll a single starship         .                                      */
+  /* --------------------------------------------------------------------- */
+  static async _rollOneToken(characterToken, starshipTokens) {
+    event.preventDefault();
+    const staRoll = new STARoll();
+    const calculatedComplicationRange = await staRoll._sceneComplications();
+
+    const starshipToken = starshipTokens[0];
     const character = characterToken?.actor ?? {type: 'npccharacter'};
     const starship = starshipToken?.actor ?? {type: 'npcship'};
 
@@ -279,12 +262,12 @@ export class STARoller {
 
     const characterNPCSheet = `
   <div class="title">${game.i18n.localize(`sta.roll.npccrew`)}</div>
-  <div class="row">
-    <div class="tracktitle">${game.i18n.localize(`sta.roll.npccrew`)}</div>
-    <label><input type="radio" name="skillLevel" value="basic">${game.i18n.localize(`sta.roll.npccrewbasic`)}</label><br>
-    <label><input type="radio" name="skillLevel" value="proficient" checked>${game.i18n.localize(`sta.roll.npccrewproficient`)}</label><br>
-    <label><input type="radio" name="skillLevel" value="talented">${game.i18n.localize(`sta.roll.npccrewtalented`)}</label><br>
-    <label><input type="radio" name="skillLevel" value="exceptional">${game.i18n.localize(`sta.roll.npccrewexceptional`)}</label>
+  <div class="row NPC">
+      <label>${game.i18n.localize(`sta.roll.npccrewpoor`)}<input type="radio" name="skillLevel" value="poor"></label>
+      <label>${game.i18n.localize(`sta.roll.npccrewbasic`)}<input type="radio" name="skillLevel" value="basic"></label>
+      <label>${game.i18n.localize(`sta.roll.npccrewproficient`)}<input type="radio" name="skillLevel" value="proficient" checked></label>
+      <label>${game.i18n.localize(`sta.roll.npccrewtalented`)}<input type="radio" name="skillLevel" value="talented"></label>
+      <label>${game.i18n.localize(`sta.roll.npccrewexceptional`)}<input type="radio" name="skillLevel" value="exceptional"></label>
   </div>
   <div class="row">
     <div class="tracktitle">${game.i18n.localize(`sta.apps.focus`)}</div>
@@ -456,6 +439,7 @@ export class STARoller {
     /* --------------------------------------------------------------------- */
     if (!characterToken) {
       const npcValues = {
+        poor: [7, 0],
         basic: [8, 1],
         proficient: [9, 2],
         talented: [10, 3],
@@ -509,5 +493,191 @@ export class STARoller {
     /* Send the NPC roll to STARoll                                          */
     /* --------------------------------------------------------------------- */
     await staRoll.rollNPCTask(taskData);
+  }
+
+  /* --------------------------------------------------------------------- */
+  /* Roll a group of starships                                             */
+  /* --------------------------------------------------------------------- */
+  static async _rollAllTokens(characterToken, starshipTokens) {
+    event.preventDefault();
+
+    const staRoll = new STARoll();
+    const calculatedComplicationRange = await staRoll._sceneComplications();
+
+    const systems = [
+      'communications',
+      'computers',
+      'engines',
+      'sensors',
+      'structure',
+      'weapons',
+    ];
+    const departments = [
+      'command',
+      'conn',
+      'engineering',
+      'security',
+      'medicine',
+      'science',
+    ];
+    const rollList = [
+      'justrollboth',
+      'transport',
+      'attackpattern',
+      'evasiveaction',
+      'maneuver',
+      'ram',
+      'warp',
+      'regenerateshields',
+      'reveal',
+      'scanforweakness',
+      'sensorsweep',
+      'defensivefire',
+      'tractorbeam',
+    ];
+
+    const rollOptions = rollList
+      .map((item) => `<option value="${item}">${game.i18n.localize(`sta.roll.${item}`)}</option>`)
+      .join('');
+
+    const systemOptions = systems
+      .map((system) => `<option value="${system}">${game.i18n.localize(`sta.actor.starship.system.${system}`)}</option>`)
+      .join('');
+
+    const deptOptions = departments
+      .map((dept) => `<option value="${dept}">${game.i18n.localize(`sta.actor.starship.department.${dept}`)}</option>`)
+      .join('');
+
+    const template = 'systems/sta/templates/apps/roll-multiple-tokens.hbs';
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
+      rollOptions,
+      systemOptions,
+      deptOptions,
+      complicationRange: calculatedComplicationRange,
+    });
+
+    /* --------------------------------------------------------------------- */
+    /* Show dialog and collect form data                                     */
+    /* --------------------------------------------------------------------- */
+    const formData = await api.DialogV2.wait({
+      window: {
+        title: game.i18n.localize('sta.roll.npcshipandcrewroll'),
+      },
+      position: {height: 'auto', width: 450},
+      content: html,
+      classes: ['dialogue'],
+      render: (event, dialog) => {
+        const checkbox = dialog.element.querySelector('#rollList');
+        const starshipSection = dialog.element.querySelector('.starshipRollList');
+        checkbox.addEventListener('change', () => {
+          const value = checkbox.value;
+          const isBoth = value === 'justrollboth';
+          if (starshipSection) {
+            starshipSection.classList.toggle('hidden', !isBoth);
+          }
+          dialog.setPosition({height: 'auto'});
+        });
+      },
+      buttons: [{
+        action: 'roll',
+        default: true,
+        label: game.i18n.localize('sta.apps.rollalltokendice'),
+        callback: (event, button, dialog) => {
+          const form = dialog.element.querySelector('form');
+          return form ? new FormData(form) : null;
+        },
+      },],
+      close: () => null,
+    });
+    if (!formData) return;
+
+    /* --------------------------------------------------------------------- */
+    /* Pull data from form                                                   */
+    /* --------------------------------------------------------------------- */
+    const selectedSystemValue = parseInt(formData.get('systemValue')) || 7;
+    const selectedDepartmentValue = parseInt(formData.get('departmentValue')) || 2;
+    let selectedSystem = formData.get('system') || '';
+    let selectedDepartment = formData.get('department') || '';
+    const dicePool = parseInt(formData.get('charDicePool')) || 2;
+    const complicationRange = parseInt(formData.get('complicationRange')) || calculatedComplicationRange;
+    const skillLevel = formData.get('skillLevel') || 'basic';
+    const selectedRoll = formData.get('rollList') || '';
+
+    /* --------------------------------------------------------------------- */
+    /* Roll presets logic                                                    */
+    /* --------------------------------------------------------------------- */
+    const rollPresets = {
+      attack: ['weapons', 'security'],
+      transport: ['sensors', 'science'],
+      attackpattern: ['engines', 'conn'],
+      evasiveaction: ['structure', 'conn'],
+      maneuver: ['engines', 'conn'],
+      ram: ['engines', 'conn'],
+      warp: ['engines', 'conn'],
+      regenerateshields: ['structure', 'engineering'],
+      reveal: ['sensors', 'science'],
+      scanforweakness: ['sensors', 'security'],
+      sensorsweep: ['sensors', 'science'],
+      defensivefire: ['weapons', 'security'],
+      tractorbeam: ['structure', 'security'],
+    };
+
+    if (rollPresets[selectedRoll]) {
+      [
+        selectedSystem,
+        selectedDepartment,
+      ] = rollPresets[selectedRoll];
+    }
+
+    let selectedAttributeValue = 0;
+    let selectedDisciplineValue = 0;
+    const npcValues = {
+      poor: [7, 0],
+      basic: [8, 1],
+      proficient: [9, 2],
+      talented: [10, 3],
+      exceptional: [11, 4],
+    };
+    [
+      selectedAttributeValue,
+      selectedDisciplineValue,
+    ] = npcValues[skillLevel] ?? [8, 1];
+
+    /* --------------------------------------------------------------------- */
+    /* Starship values                                                       */
+    /* --------------------------------------------------------------------- */
+    for (const starshipToken of starshipTokens) {
+      const starship = starshipToken.actor;
+      const selectedSystemValue = starship.system.systems[selectedSystem]?.value ?? 0;
+      const selectedDepartmentValue = starship.system.departments[selectedDepartment]?.value ?? 0;
+
+      /* --------------------------------------------------------------------- */
+      /* Assemble final task data                                              */
+      /* --------------------------------------------------------------------- */
+      const taskData = {
+        speakerName: 'NPC Crew',
+        starshipName: starship.name,
+        rolltype: 'character2e',
+        selectedAttribute: '',
+        selectedAttributeValue,
+        selectedDiscipline: '',
+        selectedDisciplineValue,
+        selectedSystem,
+        selectedSystemValue,
+        selectedDepartment,
+        selectedDepartmentValue,
+        dicePool: 2,
+        usingFocus: true,
+        usingDedicatedFocus: false,
+        usingDetermination: false,
+        complicationRange,
+        skillLevel,
+      };
+
+      /* --------------------------------------------------------------------- */
+      /* Send the NPC roll to STARoll                                          */
+      /* --------------------------------------------------------------------- */
+      await staRoll.rollNPCTask(taskData);
+    }
   }
 }

@@ -75,6 +75,11 @@ $trackerchatborder: #FF9900;
     width: 100%;
     padding-left: 2px;
   }
+
+  .shield-gap {
+    width: 6px;
+    background: transparent;
+  }
 }
 
 .track .bar .box {
@@ -1440,6 +1445,11 @@ $trackerchatborder: #FF9900;
     padding-top: 3px;
   }
 
+  .row.NPC {
+    justify-content: space-evenly;
+    padding-bottom: 3px;
+  }  
+
   .title {
     margin-top: 5px;
     font-size: 1.25rem;
@@ -1464,6 +1474,14 @@ $trackerchatborder: #FF9900;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    align-items: flex-end;
+    padding-bottom: 5px;
+  }
+
+  .column label {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
   }
 
   .column.value {
@@ -1485,6 +1503,14 @@ $trackerchatborder: #FF9900;
     margin-top: 5px;
     font-weight: bold;
     margin-right: 5px;
+  }
+
+  .row.NPC label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin: 0 10px;
   }
 
   .form-select {
@@ -2008,6 +2034,16 @@ $trackerchatborder: #FF9900;
     height: 1em;
   }
 
+  .shiproster {
+    display: inline-block;
+    background-image: url("/systems/sta/assets/icons/ship_icon2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 1em;
+    height: 1em;
+  }
+
   .d6 {
     @extend %svg-icon;
     mask-image: url("../../../icons/svg/d6-grey.svg");
@@ -2030,19 +2066,23 @@ $trackerchatborder: #FF9900;
       margin-top: 15px;
     }
 
+    .roll-roster i {
+      margin-top: 6px;
+    }
+
     .roll-task i {
       padding: 8px;
     }
 
-    .roll-challenge i,
     .roll-npc i,
+    .roll-roster i,
     .roll-task i {
       display: inline-block;
       color: $chatcardvars;
       font-size: 1.5em;
 
       &:hover {
-        filter: brightness(1.3);
+        filter: brightness(1.5);
       }
     }
   }
@@ -2067,7 +2107,6 @@ $trackerchatborder: #FF9900;
       display: none;
     }
   }
-
 
   .row {
     display: flex;
@@ -2133,6 +2172,319 @@ $trackerchatborder: #FF9900;
       .momentum-input {
         color: $borderblue;
       }
+    }
+  }
+}
+
+// ######################################################
+// #                                                    #
+// #                 Console Container                  #
+// #                                                    #
+// ######################################################
+
+.console-container::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 100%;
+  background-color: $borderbluedark;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.theme-light {
+  .console-container::before {
+    background-color: $borderblue;
+  }
+  .console-container {
+    background: $background;
+
+    .window-header {
+      background-color: $borderblue;
+    }
+    .header-control {
+      color: $foundrylightthemetext;
+    }
+    .window-title {
+      color: $foundrylightthemetext;
+	  }
+    .text-entry {
+      border-color: $borderblue;
+    }
+    .numeric-entry {
+      border-color: $borderblue !important;
+    }
+    .title {
+      background-color: $borderblue;
+      box-shadow: -6px 0 0 $borderblue;
+    }
+    .left-column {
+      scrollbar-color: $palestblue transparent;
+    }
+    .right-column::before {
+      background-color: $borderblue;
+    }
+    nav.tabs {
+      background-color: $borderblue;
+      box-shadow: -6px 0 0 $borderblue;
+    }
+    nav.tabs a.item {
+      border-right: 3px solid $background;
+    }
+    nav.tabs a.item:nth-child(7n + 1) {
+      border-left: 3px solid $background;
+    }
+    nav.tabs a.item.active {
+      background-color: $palestblue;
+      text-shadow: none;
+    }
+    nav.tabs a.item:hover {
+      text-shadow: 0 0 10px $palestblue, 0 0 10px $palestblue;
+    }
+    &.roster {
+      .separator {
+        border-bottom: 2px solid $palestblue;
+      }
+    }
+  }
+}
+
+.console-container {
+  .window-header {
+    background-color: $borderbluedark;
+    border: none;
+  }
+
+  .split-section {
+    display: flex;
+    width: 100%;
+  }
+
+  .left-column {
+    width: 360px;
+    align-self: flex-start;
+    padding-right: 5px;
+    height: 600px;
+    overflow-y: scroll;
+    scrollbar-color: $darkestblue transparent;
+  }
+
+  .right-column {
+    width: 350px;
+    align-self: flex-start;
+    position: relative;
+    padding-left: 15px;
+  }
+
+  .right-column::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -100px;
+    width: 9px;
+    background-color: $borderbluedark;
+  }
+
+  .title {
+    margin-top: 5px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-right: 2px;
+    background-color: $borderbluedark;
+    border-radius: 0px 100px 100px 0px;
+    box-shadow: -6px 0 0 $borderbluedark;
+  }
+
+  .tracktitle {
+    font-weight: bold;
+    margin-right: 5px;
+    &.shipname {
+      max-width: 140px;
+    }
+  }
+
+  .starship-header img {
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .check-button.btn3.acclaim.rollerbutton {
+    display: none;
+  }
+
+  .crew-list img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    object-fit: cover;
+    object-position: top;
+  }
+  
+  .numeric-entry {
+    border-color: $borderbluedark;
+    margin-right: 5px;
+    text-align: right;
+    width: 40px;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 3px;
+  }
+
+  .crew-group .row {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 3px;
+  }
+
+  .form-select {
+    flex: 0 0 75%;
+  }
+
+  .crew-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .crew-name {
+    font-weight: bold;
+    margin-right: 5px;
+    width: 280px;
+  }
+
+  .crew-member {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .stat-columns {
+    display: none;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-color: $darkestblue transparent;
+  }
+
+  .stat-col-left {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    font-size: 0.75rem;
+    width: 390px;
+  }
+
+  .stat-col-right {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    font-size: 0.75rem;
+    width: 80px;
+  }
+
+  .stress {
+    align-self: flex-end;
+  }
+
+  .attributes,
+  .disciplines,
+  .value-line,
+  .focus-line,
+  .stress {
+    white-space: nowrap;
+    margin-bottom: 2px;
+  }
+
+  nav.tabs {
+    background-color: $borderbluedark;
+    border-bottom: none;
+    border-top: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    box-shadow: -6px 0 0 $borderbluedark;
+    max-width: 712px;
+  }
+
+  nav.tabs a.item {
+   flex: 0 0 100px;
+    width: 100px;
+    height: 45px;
+    display: inline-block;
+    line-clamp: 2;
+    overflow: hidden;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.2;
+    padding: 12px 0px;
+    border-right: 3px solid $textgrey;
+  }
+
+  nav.tabs a.item:nth-child(7n + 1) {
+    border-left: 3px solid $textgrey;
+  }
+
+  nav.tabs a.item.active {
+    text-shadow: none;
+    background-color: $palestbluedark;
+  }
+
+  nav.tabs a.item:hover {
+    text-shadow: 0 0 10px $borderblue, 0 0 10px $borderblue;
+  }
+
+  &.roster {
+    .right-column {
+      display: none;
+    }
+
+    .left-column {
+      width: 710px;
+    }
+
+    .check-button.btn3.acclaim.rollerbutton {
+      display: block;
+    }
+
+    .stat-columns {
+      display: flex;
+    }
+
+    .crew-list img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .crew-name {
+      width: 120px;
+    }
+
+    .separator {
+      border-bottom: 2px solid $darkestblue;
+      padding-bottom: 3px;
+      margin-bottom: 3px;
     }
   }
 }
