@@ -7,19 +7,24 @@ function clamp(value, min, max) {
 }
 
 function getActorScale(actor) {
-  const s = actor?.system ?? {};
-  const candidates = [
-    s.scale,
-    s?.ship?.scale,
-    s?.attributes?.scale,
-    s?.attributes?.scale?.value,
+  if (!actor) return 1;
+
+  const squadNames = [
+    game.i18n.localize('sta.actor.starship.squadron')
   ];
-  for (const v of candidates) {
-    const n = typeof v === 'object' ? Number(v?.value ?? v?.current ?? v?.max) : Number(v);
-    if (Number.isFinite(n) && n > 0) return n;
+
+  const squadItem = actor.items.find((i) => squadNames.includes(i.name));
+
+  if (squadItem) {
+    const qty = Number(squadItem.system?.quantity);
+    if (qty > 0) return qty;
   }
-  return 1;
+
+  const s = actor.system?.scale;
+  const n = Number(s?.value ?? s?.current ?? s?.max ?? s);
+  return n > 0 ? n : 1;
 }
+
 
 function getSettingInt(namespace, key, fallback) {
   const raw = Number(game.settings.get(namespace, key));

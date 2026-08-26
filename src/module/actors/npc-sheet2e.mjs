@@ -37,10 +37,24 @@ export class STANPCSheet2e extends STAActors {
   }
 
   get taskRollData() {
+    const localizedValues = {
+      squad: game.i18n.localize('sta.actor.character.squad'),
+      squadron: game.i18n.localize('sta.actor.starship.squadron'),
+    };
+
+    const squadNameEl =
+      this.element.querySelector(`[data-talent-name="${localizedValues.squad}"]`) ||
+      this.element.querySelector(`[data-talent-name="${localizedValues.squadron}"]`);
+
+    const squadRow = squadNameEl?.closest('li.row.entry');
+    const quantityValue = squadRow?.querySelector('.item-quantity')?.value;
+    const squadDice = quantityValue !== undefined ? parseInt(quantityValue, 10) : undefined;
+
     return {
       template: 'systems/sta/templates/apps/dicepool-attribute2e.hbs',
       rolltype: 'character2e',
       defaultValue: '2',
+      squadDice,
     };
   }
 

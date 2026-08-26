@@ -34,6 +34,7 @@
       <select name="system.includescale">
         <option value="energy" {{#if (eq item.system.includescale "energy")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.energy'}}</option>
         <option value="torpedo" {{#if (eq item.system.includescale "torpedo")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.torpedo'}}</option>
+        <option value="mine" {{#if (eq item.system.includescale "mine")}}selected{{/if}}>{{localize 'sta.actor.belonging.weapon.mine'}}</option>
       </select>
     </div>
     <div class="columnx4">
@@ -50,7 +51,12 @@
         <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.torpedo'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</div>
         {{item.system.damage}} + {{localize 'sta.actor.belonging.weapon.dbfwr'}}
       </div>
-    {{/if}} 
+    {{else if (eq item.system.includescale "mine")}}
+      <div class="columnx4">
+        <div class="tracktitle">{{localize 'sta.actor.belonging.weapon.mine'}} {{localize 'sta.actor.belonging.weapon.damage'}} =</div>
+        {{item.system.damage}}
+      </div>
+    {{/if}}
   </div>
 
   <div class="row">

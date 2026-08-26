@@ -1,0 +1,56 @@
+<div>
+  <div class="row">
+    <div class="tracktitle">{{localize "sta.roll.task.name"}}</div>
+    <select id="rollList" name="rollList" class="form-select">
+      {{{rollOptions}}} <!-- Note triple curlies for safe HTML -->
+    </select>
+  </div>
+
+  <div class="title">{{localize "sta.roll.shiptokens"}}</div>
+  <div class="starshipRollList">
+    <div class="row">
+      <div class="tracktitle">{{localize "sta.actor.starship.system.title"}}</div>
+      <select id="system" name="system" class="form-select">
+        {{{systemOptions}}}
+      </select>
+    </div>
+    <div class="row">
+      <div class="tracktitle">{{localize "sta.actor.starship.department.title"}}</div>
+      <select id="department" name="department" class="form-select">
+        {{{deptOptions}}}
+      </select>
+    </div>
+  </div>
+
+  <div class="title">{{localize "sta.roll.npccrew"}}</div>
+  <div class="row NPC">
+    <label>{{localize 'sta.roll.npccrewpoor'}}<input type="radio" name="skillLevel" value="poor"></label>
+    <label>{{localize "sta.roll.npccrewbasic"}}<input type="radio" name="skillLevel" value="basic"></label>
+    <label>{{localize "sta.roll.npccrewproficient"}}<input type="radio" name="skillLevel" value="proficient" checked></label>
+    <label>{{localize "sta.roll.npccrewtalented"}}<input type="radio" name="skillLevel" value="talented"></label>
+    <label>{{localize "sta.roll.npccrewexceptional"}}<input type="radio" name="skillLevel" value="exceptional"></label>
+  </div>
+  <div class="row">
+    <div class="tracktitle">{{localize "sta.apps.complicationrange"}}</div>
+    <input class="numeric-entry" type="number" name="complicationRange" value="{{complicationRange}}" id="complicationRange">
+  </div>
+  <div class="row">
+    <div class="flex-1">
+      <div class="tracktitle">{{localize "sta.apps.pool"}}</div>
+    </div>
+    <div class="flex-column flex-1">
+      <div class="row">
+        <span class="label align-left flex-1">1</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">2</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">3</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">4</span>
+        <span class="centered flex-1"></span>
+        <span class="label centered flex-1">5</span>
+      </div>
+      <input type="range" name="charDicePool" min="1" max="5" value="2" class="slider" id="char-dice-pool">
+    </div>
+  </div>
+</div>
