@@ -366,6 +366,7 @@ export class StarshipWeapon2eData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     return {
       damage: new fields.NumberField({required: true, integer: true, initial: 0}),
+      calculatedDamage: new fields.NumberField({required: true, integer: true, initial: 0}),
       range: new fields.StringField({initial: 'close'}),
       includescale: new fields.StringField({initial: 'energy'}),
       description: new fields.StringField({initial: ''}),
