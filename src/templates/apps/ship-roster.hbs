@@ -1,4 +1,13 @@
 <div class="console-container">
+
+  <div class="checkbox-row">
+    <input type="checkbox" name="showOnlyInScene" id="showOnlyInScene" data-action="onChangeShowOnlyInScene" {{#if showOnlyInScene}}checked{{/if}} />
+    {{localize "sta.apps.onlyinscene"}}
+    <div class="buttongap"></div>
+    <input type="checkbox" name="includeSmallCraft" id="includeSmallCraft" data-action="onIncludeSmallCraft" {{#if includeSmallCraft}}checked{{/if}} />
+    {{localize "sta.apps.includesmallcraft"}}
+  </div>
+
   <nav class="tabs" data-group="primary">
     {{#each tabs}}
       <a class="item {{#if active}}active{{/if}}"
@@ -47,7 +56,10 @@
 
                         <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
                           <img src="{{img}}" alt="{{name}}" />
-                          <div class="crew-name">{{name}}</div>
+                          <div class="name-rank">
+                            <div class="crew-rank">{{system.rank}}</div>
+                            <div class="crew-name">{{name}}</div>
+                          </div>
 
                           <div class="stat-columns">
                             <div class="stat-col-left">
@@ -116,7 +128,10 @@
 
                         <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
                           <img src="{{img}}" alt="{{name}}" />
-                          <div class="crew-name">{{name}}</div>
+                          <div class="name-rank">
+                            <div class="crew-rank">{{system.rank}}</div>
+                            <div class="crew-name">{{name}}</div>
+                          </div>
 
                           <div class="stat-columns">
                             <div class="stat-col-left">
@@ -185,7 +200,10 @@
 
                         <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
                           <img src="{{img}}" alt="{{name}}" />
-                          <div class="crew-name">{{name}}</div>
+                          <div class="name-rank">
+                            <div class="crew-rank">{{system.rank}}</div>
+                            <div class="crew-name">{{name}}</div>
+                          </div>
 
                           <div class="stat-columns">
                             <div class="stat-col-left">
@@ -224,7 +242,7 @@
 
                             <div class="stat-col-right">
                               <div class="stress">
-                                {{localize "sta.apps.stress"}}: {{system.stress.value}} / {{system.stress.max}}
+                                {{localize "sta.actor.character.personalthreat"}}: {{system.stress.value}} / {{system.stress.max}}
                               </div>
                             </div>
                           </div>
