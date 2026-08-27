@@ -2182,6 +2182,12 @@ $trackerchatborder: #FF9900;
 // #                                                    #
 // ######################################################
 
+.window-content:has(.console-container) {
+  padding-top: 0;
+  padding-right: 5px;
+  padding-bottom:5px;
+}
+
 .console-container::before {
   content: "";
   display: block;
@@ -2228,6 +2234,7 @@ $trackerchatborder: #FF9900;
     nav.tabs {
       background-color: $borderblue;
       box-shadow: -6px 0 0 $borderblue;
+      scrollbar-color: $palestblue transparent;
     }
     nav.tabs a.item {
       border-right: 3px solid $background;
@@ -2262,16 +2269,16 @@ $trackerchatborder: #FF9900;
   }
 
   .left-column {
-    width: 360px;
+    width: 365px;
     align-self: flex-start;
     padding-right: 5px;
-    height: 600px;
     overflow-y: scroll;
     scrollbar-color: $darkestblue transparent;
+    height: 600px;
   }
 
   .right-column {
-    width: 350px;
+    width: 360px;
     align-self: flex-start;
     position: relative;
     padding-left: 15px;
@@ -2285,6 +2292,10 @@ $trackerchatborder: #FF9900;
     bottom: -100px;
     width: 9px;
     background-color: $borderbluedark;
+  }
+
+  .buttongap{
+    margin-right: 50px;
   }
 
   .title {
@@ -2348,6 +2359,17 @@ $trackerchatborder: #FF9900;
     padding-top: 3px;
   }
 
+  .checkbox-row {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+.checkbox-row input[type="checkbox"] {
+  padding: 0px;
+}
+  
   .crew-group .row {
     align-items: center;
     display: flex;
@@ -2367,10 +2389,22 @@ $trackerchatborder: #FF9900;
     width: 100%;
   }
 
+  .name-rank {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
   .crew-name {
     font-weight: bold;
     margin-right: 5px;
-    width: 280px;
+    width: 195px;
+  }
+
+  .crew-rank {
+    font-size: 0.8rem;
+    margin-right: 5px;
+    width: 80px;
   }
 
   .crew-member {
@@ -2391,7 +2425,7 @@ $trackerchatborder: #FF9900;
     flex-direction: column;
     line-height: 1.2;
     font-size: 0.75rem;
-    width: 390px;
+    width: 375px;
   }
 
   .stat-col-right {
@@ -2399,11 +2433,7 @@ $trackerchatborder: #FF9900;
     flex-direction: column;
     line-height: 1.2;
     font-size: 0.75rem;
-    width: 80px;
-  }
-
-  .stress {
-    align-self: flex-end;
+    width: 105px;
   }
 
   .attributes,
@@ -2425,7 +2455,10 @@ $trackerchatborder: #FF9900;
     justify-content: flex-start;
     padding-left: 10px;
     box-shadow: -6px 0 0 $borderbluedark;
-    max-width: 712px;
+    max-width: 725px;
+    max-height: 110px;
+    overflow-y: scroll;
+    scrollbar-color: $darkestblue transparent;
   }
 
   nav.tabs a.item {
@@ -2461,7 +2494,7 @@ $trackerchatborder: #FF9900;
     }
 
     .left-column {
-      width: 710px;
+      width: 720px;
     }
 
     .check-button.btn3.acclaim.rollerbutton {
@@ -2475,6 +2508,16 @@ $trackerchatborder: #FF9900;
     .crew-list img {
       width: 60px;
       height: 60px;
+    }
+
+    .name-rank {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .crew-rank {
+      margin-bottom: 2px;
     }
 
     .crew-name {

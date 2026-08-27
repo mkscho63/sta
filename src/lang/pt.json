@@ -293,6 +293,8 @@
   "sta.apps.stress": "Stress",
   "sta.apps.viewroster": "Ship Roster View",
   "sta.apps.viewroller": "Ship Roller View",
+  "sta.apps.onlyinscene": "Show only the ships active in scene",
+  "sta.apps.includesmallcraft": "Include small craft",
 
   "sta.roll.success": "Sucesso",
   "sta.roll.successPlural": "Sucessos",

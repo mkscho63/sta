@@ -26,6 +26,8 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       openActor: ShipRoster._onOpenActor,
       onAttributeTest: ShipRoster._onAttributeTest,
       onChangeView: ShipRoster._onChangeView,
+      onChangeShowOnlyInScene: ShipRoster._onChangeShowOnlyInScene,
+      onIncludeSmallCraft: ShipRoster._onIncludeSmallCraft,
     },
     form: {
       submitOnChange: true,
@@ -48,29 +50,67 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
   constructor(...args) {
     super(...args);
     this.options.window.title = game.i18n.localize('sta.apps.roster');
+
+    this.showOnlyInScene = false;
+    this.includeSmallCraft = false;
+    this._hookIds = [];
+  }
+
+  _isShipInCurrentScene(starship, characters, sceneActors) {
+    if (sceneActors.has(starship.id)) return true;
+
+    const shipName = String(starship.name ?? '').trim().toLowerCase();
+
+    return characters.some((character) => {
+      const assignment = String(character.system.assignment ?? '')
+        .trim()
+        .toLowerCase();
+
+      return assignment === shipName && sceneActors.has(character.id);
+    });
   }
 
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
-
     const staRoll = new STARoll();
     const calculatedComplicationRange = await staRoll._sceneComplications();
-
-    const starships = game.actors.filter((a) => a.type === 'starship');
+    const shipTypes = this.includeSmallCraft ? ['starship', 'smallcraft'] : ['starship'];
+    const starships = game.actors.filter((a) => shipTypes.includes(a.type));
     const characters = game.actors.filter(
       (a) => a.type === 'character' && a.system.assignment
     );
 
-    let tabs = starships.map((starship) => {
+    const sceneActors = new Set(
+      game.scenes.current?.tokens
+        .map((token) => token.actor?.id)
+        .filter(Boolean) ?? []
+    );
+
+    const shipsToDisplay = this.showOnlyInScene
+      ? starships.filter((starship) =>
+          this._isShipInCurrentScene(starship, characters, sceneActors)
+        )
+      : starships;
+
+    let tabs = shipsToDisplay.map((starship) => {
       const shipName = String(starship.name ?? '').trim().toLowerCase();
+
       const assigned = characters.filter((char) => {
-        const assignment = String(char.system.assignment ?? '').trim().toLowerCase();
+        const assignment = String(char.system.assignment ?? '')
+          .trim()
+          .toLowerCase();
+
         const matchesShip = assignment === shipName;
         const canSeeCrew = char.testUserPermission(game.user, 'OBSERVER');
+
         return matchesShip && canSeeCrew;
       });
 
-      const groups = {character: [], supporting: [], npc: []};
+      const groups = {
+        character: [],
+        supporting: [],
+        npc: [],
+      };
 
       for (const actor of assigned) {
         actor.focusItems = actor.items
@@ -82,9 +122,12 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
           .map((item) => ({name: item.name}));
 
         const sheetClass = actor.sheet?.constructor;
+
         if (sheetClass === game.sta.applications.STANPCSheet2e) {
           groups.npc.push(actor);
-        } else if (sheetClass === game.sta.applications.STASupportingSheet2e) {
+        } else if (
+          sheetClass === game.sta.applications.STASupportingSheet2e
+        ) {
           groups.supporting.push(actor);
         } else {
           groups.character.push(actor);
@@ -92,6 +135,7 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       }
 
       let defaultCrewMember = null;
+
       if (groups.character.length) {
         defaultCrewMember = groups.character[0].id;
       } else if (groups.supporting.length) {
@@ -114,7 +158,9 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
         supportingCount: groups.supporting.length,
         npcCount: groups.npc.length,
         totalCount:
-          groups.character.length + groups.supporting.length + groups.npc.length,
+          groups.character.length +
+          groups.supporting.length +
+          groups.npc.length,
         canSeeShip: starship.testUserPermission(game.user, 'OBSERVER'),
         defaultCrewMember,
       };
@@ -127,19 +173,75 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       this.tabGroups.primary = tabs[0].id;
     }
 
-    for (const tab of tabs) tab.active = tab.id === this.tabGroups.primary;
+    for (const tab of tabs) {
+      tab.active = tab.id === this.tabGroups.primary;
+    }
 
-    const activeTab = tabs.find((t) => t.id === this.tabGroups.primary);
-    const attributes = ['control', 'daring', 'fitness', 'insight', 'presence', 'reason'];
-    const disciplines = ['command', 'conn', 'engineering', 'security', 'medicine', 'science'];
-    const systems = ['communications', 'computers', 'engines', 'sensors', 'structure', 'weapons'];
-    const departments = ['command', 'conn', 'engineering', 'security', 'medicine', 'science'];
+    const activeTab = tabs.find(
+      (t) => t.id === this.tabGroups.primary
+    );
+
+    const attributes = [
+      'control',
+      'daring',
+      'fitness',
+      'insight',
+      'presence',
+      'reason',
+    ];
+
+    const disciplines = [
+      'command',
+      'conn',
+      'engineering',
+      'security',
+      'medicine',
+      'science',
+    ];
+
+    const systems = [
+      'communications',
+      'computers',
+      'engines',
+      'sensors',
+      'structure',
+      'weapons',
+    ];
+
+    const departments = [
+      'command',
+      'conn',
+      'engineering',
+      'security',
+      'medicine',
+      'science',
+    ];
+
     const rollList = [
-      'justrollboth', 'justrollcrew', 'melee', 'ranged', 'attack', 'firstaid',
-      'direct', 'guard', 'sprint', 'rally', 'damagecontrol', 'transport',
-      'attackpattern', 'evasiveaction', 'maneuver', 'ram', 'warp',
-      'regainpower', 'regenerateshields', 'reveal', 'scanforweakness',
-      'sensorsweep', 'defensivefire', 'tractorbeam'
+      'justrollboth',
+      'justrollcrew',
+      'melee',
+      'ranged',
+      'attack',
+      'firstaid',
+      'direct',
+      'guard',
+      'sprint',
+      'rally',
+      'damagecontrol',
+      'transport',
+      'attackpattern',
+      'evasiveaction',
+      'maneuver',
+      'ram',
+      'warp',
+      'regainpower',
+      'regenerateshields',
+      'reveal',
+      'scanforweakness',
+      'sensorsweep',
+      'defensivefire',
+      'tractorbeam',
     ];
 
     return {
@@ -153,40 +255,57 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       departments,
       rollList,
       calculatedComplicationRange,
+      showOnlyInScene: this.showOnlyInScene,
+      includeSmallCraft: this.includeSmallCraft,
     };
   }
 
   static _onOpenActor(event, target) {
     event.preventDefault();
+
     const actorId = target.dataset.actorId;
     if (!actorId) return;
 
     const actor = game.actors.get(actorId);
+
     if (!actor) {
       console.warn(`STA Console | Could not find Actor ${actorId}`);
       return;
     }
+
     actor.sheet?.render(true);
   }
 
   static async _onAttributeTest(event, target) {
     event.preventDefault();
+
     const form = target.closest('.console-container');
-    const activeTab = form.querySelector('.tab.active[data-group="primary"]');
+    const activeTab = form.querySelector(
+      '.tab.active[data-group="primary"]'
+    );
 
     const data = {
       actor:
-        activeTab?.querySelector('input[name^="selectedCrewMember-"]:checked')
-          ?.value,
-      starship: activeTab?.querySelector('[data-actor-id]')?.dataset.actorId,
+        activeTab?.querySelector(
+          'input[name^="selectedCrewMember-"]:checked'
+        )?.value,
+
+      starship:
+        activeTab?.querySelector('[data-actor-id]')?.dataset.actorId,
+
       attribute: form.querySelector('select[name="attribute"]').value,
       discipline: form.querySelector('select[name="discipline"]').value,
       usingFocus: form.querySelector('#usingFocus').checked,
-      usingDedicatedFocus: form.querySelector('#usingDedicatedFocus').checked,
-      usingDetermination: form.querySelector('#usingDetermination').checked,
-      complicationRange: Number(form.querySelector('#complicationRange').value),
-      dicePool: Number(form.querySelector('#dicePoolSlider').value),
-      assistPool: Number(form.querySelector('#assistPoolSlider').value),
+      usingDedicatedFocus:
+        form.querySelector('#usingDedicatedFocus').checked,
+      usingDetermination:
+        form.querySelector('#usingDetermination').checked,
+      complicationRange:
+        Number(form.querySelector('#complicationRange').value),
+      dicePool:
+        Number(form.querySelector('#dicePoolSlider').value),
+      assistPool:
+        Number(form.querySelector('#assistPoolSlider').value),
       system: form.querySelector('select[name="system"]').value,
       department: form.querySelector('select[name="department"]').value,
       rollList: form.querySelector('select[name="rollList"]').value,
@@ -194,14 +313,17 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
 
     const character = game.actors.get(data.actor);
     const starship = game.actors.get(data.starship);
+
     let selectedAttributeValue = null;
     let selectedDisciplineValue = null;
     let selectedSystemValue = null;
     let selectedDepartmentValue = null;
+
     let selectedAttribute = data.attribute;
     let selectedDiscipline = data.discipline;
     let selectedSystem = data.system;
     let selectedDepartment = data.department;
+
     let speakerName = null;
 
     const rollPresets = {
@@ -221,9 +343,19 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       ram: ['daring', 'conn', 'engines', 'conn'],
       warp: ['control', 'conn', 'engines', 'conn'],
       regainpower: ['control', 'engineering', 'none', 'none'],
-      regenerateshields: ['control', 'engineering', 'structure', 'engineering'],
+      regenerateshields: [
+        'control',
+        'engineering',
+        'structure',
+        'engineering',
+      ],
       reveal: ['reason', 'science', 'sensors', 'science'],
-      scanforweakness: ['control', 'science', 'sensors', 'security'],
+      scanforweakness: [
+        'control',
+        'science',
+        'sensors',
+        'security',
+      ],
       sensorsweep: ['reason', 'science', 'sensors', 'science'],
       defensivefire: ['daring', 'security', 'weapons', 'security'],
       tractorbeam: ['control', 'security', 'structure', 'security'],
@@ -242,10 +374,13 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
 
     selectedSystemValue =
       starship?.system.systems[selectedSystem]?.value ?? null;
+
     selectedDepartmentValue =
       starship?.system.departments[selectedDepartment]?.value ?? null;
+
     selectedAttributeValue =
       character?.system.attributes[selectedAttribute]?.value ?? null;
+
     selectedDisciplineValue =
       character?.system.disciplines[selectedDiscipline]?.value ?? null;
 
@@ -254,6 +389,7 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
     if (!character) {
       skillLevel = data.actor;
       speakerName = 'NPC Crew';
+
       const npcValues = {
         poor: [7, 0],
         basic: [8, 1],
@@ -261,6 +397,7 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
         talented: [10, 3],
         exceptional: [11, 4],
       };
+
       [
         selectedAttributeValue,
         selectedDisciplineValue,
@@ -298,4 +435,50 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
     const el = this.element;
     el.classList.toggle('roster');
   }
+
+  static async _onChangeShowOnlyInScene(event, target) {
+    this.showOnlyInScene = target.checked;
+    await this.render(false);
+  }
+
+  static async _onIncludeSmallCraft(event, target) {
+    this.includeSmallCraft = target.checked;
+    await this.render(false);
+  }
+
+  _scheduleRerender = foundry.utils.debounce(() => {
+    if (this.rendered) this.render(false);
+  }, 100);
+
+  async _onFirstRender(context, options) {
+    await super._onFirstRender(context, options);
+
+    const rerenderOn = (hookName) => {
+      const id = Hooks.on(hookName, () => this._scheduleRerender());
+      this._hookIds.push({ hookName, id });
+    };
+
+    rerenderOn('updateActor');
+    rerenderOn('createActor');
+    rerenderOn('deleteActor');
+    rerenderOn('updateItem');
+    rerenderOn('createItem');
+    rerenderOn('deleteItem');
+    rerenderOn('canvasReady');
+    rerenderOn('updateScene');
+    rerenderOn('controlToken');
+    rerenderOn('createToken');
+    rerenderOn('deleteToken');
+    rerenderOn('updateToken');
+  }
+
+  async _onClose(options) {
+    for (const { hookName, id } of this._hookIds) {
+      Hooks.off(hookName, id);
+    }
+    this._hookIds = [];
+
+    await super._onClose(options);
+  }
+
 }
