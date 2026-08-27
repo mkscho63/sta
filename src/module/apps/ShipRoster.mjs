@@ -86,11 +86,11 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
         .filter(Boolean) ?? []
     );
 
-    const shipsToDisplay = this.showOnlyInScene
-      ? starships.filter((starship) =>
-          this._isShipInCurrentScene(starship, characters, sceneActors)
-        )
-      : starships;
+    const shipsToDisplay = this.showOnlyInScene ?
+      starships.filter((starship) =>
+        this._isShipInCurrentScene(starship, characters, sceneActors)
+      ) :
+      starships;
 
     let tabs = shipsToDisplay.map((starship) => {
       const shipName = String(starship.name ?? '').trim().toLowerCase();
@@ -455,7 +455,7 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
 
     const rerenderOn = (hookName) => {
       const id = Hooks.on(hookName, () => this._scheduleRerender());
-      this._hookIds.push({ hookName, id });
+      this._hookIds.push({hookName, id});
     };
 
     rerenderOn('updateActor');
@@ -473,12 +473,11 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
   }
 
   async _onClose(options) {
-    for (const { hookName, id } of this._hookIds) {
+    for (const {hookName, id} of this._hookIds) {
       Hooks.off(hookName, id);
     }
     this._hookIds = [];
 
     await super._onClose(options);
   }
-
 }
