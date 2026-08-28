@@ -2366,9 +2366,9 @@ $trackerchatborder: #FF9900;
     width: 100%;
   }
 
-.checkbox-row input[type="checkbox"] {
-  padding: 0px;
-}
+  .checkbox-row input[type="checkbox"] {
+    padding: 0px;
+  }
   
   .crew-group .row {
     align-items: center;
@@ -2410,6 +2410,17 @@ $trackerchatborder: #FF9900;
   .crew-member {
     display: flex;
     align-items: flex-start;
+  }
+
+  .name-des-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .designation,
+  .spaceframe {
+    font-size: 0.8rem;
   }
 
   .stat-columns {

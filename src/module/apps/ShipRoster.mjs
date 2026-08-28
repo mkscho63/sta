@@ -151,6 +151,8 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
         name: starship.name,
         actor: starship,
         img: starship.img,
+        designation: starship.system.designation,
+        spaceframe: starship.system.spaceframe,
         active: false,
         radioGroup: `selectedCrewMember-${starship.id}`,
         groups,

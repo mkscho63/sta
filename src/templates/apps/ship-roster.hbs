@@ -31,7 +31,11 @@
                  data-actor-id="{{actor.id}}"
                  title="{{name}}">
               <img src="{{img}}" alt="{{name}}" />
-              <div class="tracktitle shipname">{{name}}</div>
+              <div class="name-des-frame">
+                <div class="tracktitle shipname">{{name}}</div>
+                <div class="designation">{{designation}}</div>
+                <div class="spaceframe">{{spaceframe}}</div>
+              </div>
               {{characterCount}} {{localize "sta.apps.characters"}}<br />
               {{supportingCount}} {{localize "sta.apps.supportingcharacters"}}<br />
               {{npcCount}} {{localize "sta.apps.npcs"}}
