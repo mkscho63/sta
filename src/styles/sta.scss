@@ -2549,25 +2549,92 @@ $trackerchatborder: #FF9900;
 // #                                                    #
 // ######################################################
 
-.combat-tracker .combatant[class*="dispo-"] {
-  position: relative;
-}
-.combat-tracker .combatant[class*="dispo-"]::before {
-  background: var(--disposition-color, currentColor);
-  border-radius: 2px;
-  content: "";
-  left: 0; top: 0; bottom: 0;
-  opacity: 0.9;
-  position: absolute;
-  width: 4px;
+
+.theme-light {
+  .combat-tracker {
+    .combatant .combatant-controls .department-list {
+      background: $background;
+    }
+  }
 }
 
-.combat-tracker .token-turn-completed .sta-combatant-control {
-  color: var(--disposition-color);
-  transition: color 120ms ease;
-}
+.combat-tracker {
+  .combatant[class*="dispo-"] {
+    position: relative;
 
-.combat-tracker .token-turn-completed .sta-combatant-control:hover,
-.combat-tracker .token-turn-completed .sta-combatant-control:focus {
-  opacity: 0.9;
+    &::before {
+      background: var(--disposition-color, currentColor);
+      border-radius: 2px;
+      content: "";
+      left: 0; top: 0; bottom: 0;
+      opacity: 0.9;
+      position: absolute;
+      width: 4px;
+    }
+  }
+
+  .token-turn-completed .sta-combatant-control {
+    color: var(--disposition-color);
+    transition: color 120ms ease;
+
+    &:hover,
+    &:focus {
+      opacity: 0.9;
+    }
+  }
+
+  .department-toggle {
+    transition: transform 0.15s ease;
+
+    &.expanded {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .combatant .combatant-controls {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    position: relative;
+  }
+
+  .combatant .combatant-controls {
+    position: relative;
+  }
+
+  .combatant .combatant-controls .department-list {
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: max-content;
+    min-width: 200px;
+    max-width: 300px;
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 4px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px 8px;
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.15s ease, opacity 0.15s ease;
+    background: $rolltext;
+
+    &.collapsed {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .department-item label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--font-size-12, 12px);
+    cursor: pointer;
+    white-space: nowrap;
+  }
 }
