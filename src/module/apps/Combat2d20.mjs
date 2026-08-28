@@ -1,3 +1,5 @@
+const DEPARTMENT_KEYS = ['command', 'conn', 'security', 'engineering', 'science', 'medicine'];
+
 function clamp(value, min, max) {
   let v = Number(value);
   if (!Number.isFinite(v)) v = 0;
@@ -89,7 +91,14 @@ export default class Combat2d20 extends Combat {
     for (const c of this.combatants) {
       const id = c.id;
       if (map[id] == null) map[id] = this.actionsPerRoundFor(c);
-      clears.push(c.setFlag('sta', 'turnDone', false).catch(() => {}));
+      clears.push(c.setFlag('sta', 'turnDone', false).catch((err) => {
+        console.error('STA 2d20: failed to reset turnDone flag', err);
+      }));
+
+      const resetDepartments = Object.fromEntries(DEPARTMENT_KEYS.map((k) => [k, false]));
+      clears.push(c.setFlag('sta', 'departmentsUsed', resetDepartments).catch((err) => {
+        console.error('STA 2d20: failed to reset departmentsUsed flag', err);
+      }));
     }
 
     const all = this.actionsRemainingFlag;
