@@ -1,10 +1,23 @@
+const DEPARTMENT_KEYS = ['command', 'conn', 'security', 'engineering', 'science', 'medicine'];
+
 export default class CombatTracker2d20V2 extends foundry.applications.sidebar.tabs.CombatTracker {
+  expandedDepartments = new Set();
+
   static DEFAULT_OPTIONS = {
     actions: {
       toggleCombatantTurnDone: CombatTracker2d20V2._onCombatantControl,
       incAction: CombatTracker2d20V2._onCombatantPlus,
+      toggleDepartments: CombatTracker2d20V2._onToggleDepartments,
+      toggleDepartmentUsed: CombatTracker2d20V2._onToggleDepartmentUsed,
     },
   };
+
+  static _getDepartments() {
+    return DEPARTMENT_KEYS.map((key) => ({
+      key,
+      label: game.i18n.localize(`sta.actor.starship.department.${key}`),
+    }));
+  }
 
   static PARTS = {
     header: {
@@ -123,6 +136,70 @@ export default class CombatTracker2d20V2 extends foundry.applications.sidebar.ta
     ui.combat?.render(true);
   }
 
+  static _onToggleDepartments(event, target) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const li = target.closest('li.combatant');
+    const list = li?.querySelector('.department-list'); 
+    if (!list) return;
+
+    const {combatantId} = li.dataset;
+    const isCollapsed = list.classList.toggle('collapsed');
+    target.classList.toggle('expanded', !isCollapsed);
+    target.setAttribute('aria-expanded', String(!isCollapsed));
+
+    if (isCollapsed) {
+      this.expandedDepartments.delete(combatantId);
+    } else {
+      this.expandedDepartments.add(combatantId);
+    }
+  }
+
+
+  static async _onToggleDepartmentUsed(event, target) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!game.user.isGM) return;
+
+    const {combatantId} = target?.closest('[data-combatant-id]')?.dataset ?? {};
+    if (!combatantId) return;
+
+    const combat = this.viewed;
+    const combatant = combat?.combatants.get(combatantId);
+    if (!combatant) return;
+
+    const dept = target.dataset.department;
+    if (!dept) return;
+
+    const current = combatant.getFlag('sta', 'departmentsUsed') ?? {};
+    const next = {...current, [dept]: target.checked};
+    await combatant.setFlag('sta', 'departmentsUsed', next);
+  }
+
+  _onRender(context, options) {
+    super._onRender?.(context, options);
+    this._syncDepartmentCheckboxes();
+  }
+
+  _syncDepartmentCheckboxes() {
+    const combat = this.viewed;
+    if (!combat) return;
+
+    const rows = this.element?.querySelectorAll?.('li.combatant[data-combatant-id]') ?? [];
+    for (const li of rows) {
+      const combatant = combat.combatants.get(li.dataset.combatantId);
+      if (!combatant) continue;
+
+      const used = combatant.getFlag('sta', 'departmentsUsed') ?? {};
+      for (const checkbox of li.querySelectorAll('.department-checkbox')) {
+        const dept = checkbox.dataset.department;
+        checkbox.checked = !!used[dept];
+      }
+    }
+  }
+
   async _prepareTrackerContext(context, options) {
     await super._prepareTrackerContext(context, options);
     const combat = this.viewed;
@@ -168,6 +245,10 @@ export default class CombatTracker2d20V2 extends foundry.applications.sidebar.ta
 
       const basis = (turn.resource != null && turn.resource !== '') ? turn.resource : turn.actionsRemaining;
       turn._resourceSort = resourceToNumber(basis);
+
+      const used = c.getFlag('sta', 'departmentsUsed') ?? {};
+      turn.departments = CombatTracker2d20V2._getDepartments().map((d) => ({...d, used: !!used[d.key]}));
+      turn.departmentsExpanded = this.expandedDepartments.has(c.id);
     }
 
     context.turns.sort((a, b) => {

@@ -1,38 +1,78 @@
 <ol class="combat-tracker">
     {{#each turns}}
-      <li class="combatant {{ css }} dispo-{{ disposition.name }}"
+    <li class="combatant {{ css }} dispo-{{ disposition.name }}"
         {{#if disposition.color}}style="--disposition-color: {{ disposition.color }};"{{/if}}
-        data-combatant-id="{{ id }}" data-action="activateCombatant">
+        data-combatant-id="{{ id }}"
+        data-action="activateCombatant">
 
         <img class="token-image" src="{{ img }}" alt="{{ name }}" loading="lazy">
 
         {{!-- Name & Controls --}}
         <div class="token-name">
             <strong class="name">{{ name }}</strong>
+
             <div class="combatant-controls">
                 {{#if @root.user.isGM}}
-                <button type="button" class="inline-control combatant-control icon fa-solid fa-eye-slash {{#if hidden}}active{{/if}}"
-                        data-action="toggleHidden" data-tooltip aria-label="{{ localize (ifThen hidden "COMBATANT.Show" "COMBATANT.Hide") }}"></button>
-                <button type="button" class="inline-control combatant-control icon fa-solid fa-skull {{#if isDefeated}}active{{/if}}"
-                        data-action="toggleDefeated" data-tooltip
+                <button type="button"
+                        class="inline-control combatant-control icon fa-solid fa-eye-slash {{#if hidden}}active{{/if}}"
+                        data-action="toggleHidden"
+                        data-tooltip
+                        aria-label="{{ localize (ifThen hidden "COMBATANT.Show" "COMBATANT.Hide") }}"></button>
+
+                <button type="button"
+                        class="inline-control combatant-control icon fa-solid fa-skull {{#if isDefeated}}active{{/if}}"
+                        data-action="toggleDefeated"
+                        data-tooltip
                         aria-label="{{ localize (ifThen isDefeated "COMBATANT.UnmarkDefeated" "COMBATANT.MarkDefeated") }}"></button>
                 {{/if}}
+
                 {{#if canPing}}
-                <button type="button" class="inline-control combatant-control icon fa-solid fa-bullseye-arrow"
-                        data-action="pingCombatant" data-tooltip
+                <button type="button"
+                        class="inline-control combatant-control icon fa-solid fa-bullseye-arrow"
+                        data-action="pingCombatant"
+                        data-tooltip
                         aria-label="{{ localize "COMBATANT.Ping" }}"></button>
                 {{/if}}
+
                 {{#unless @root.user.isGM}}
-                <button type="button" class="inline-control combatant-control icon fa-solid fa-arrows-to-eye"
-                        data-action="panToCombatant" data-tooltip
+                <button type="button"
+                        class="inline-control combatant-control icon fa-solid fa-arrows-to-eye"
+                        data-action="panToCombatant"
+                        data-tooltip
                         aria-label="{{ localize "COMBATANT.PanTo" }}"></button>
                 {{/unless}}
+
                 {{!-- TODO: Target Control --}}
+
                 <div class="token-effects" data-tooltip-html="{{ effects.tooltip }}">
                     {{#each effects.icons}}
-                    <img class="token-effect" src="{{ img }}" alt="{{ name }}">
+                        <img class="token-effect" src="{{ img }}" alt="{{ name }}">
                     {{/each}}
                 </div>
+
+                <button type="button"
+                        class="inline-control combatant-control icon fa-solid fa-chevron-down department-toggle{{#if departmentsExpanded}} expanded{{/if}}"
+                        data-action="toggleDepartments"
+                        data-tooltip
+                        aria-label="{{ localize 'sta.actor.starship.department.title' }}"
+                        aria-expanded="{{departmentsExpanded}}"></button>
+
+                {{!-- Department checklist (toggled via the chevron above; open/closed state persists across re-renders) --}}
+                <ul class="department-list{{#unless departmentsExpanded}} collapsed{{/unless}}">
+                    {{#each departments}}
+                    <li class="department-item">
+                        <label>
+                            <input type="checkbox"
+                                   class="department-checkbox"
+                                   data-action="toggleDepartmentUsed"
+                                   data-department="{{ key }}"
+                                   {{#if used}}checked{{/if}}
+                                   {{#unless @root.user.isGM}}disabled{{/unless}}>
+                            <span>{{ label }}</span>
+                        </label>
+                    </li>
+                    {{/each}}
+                </ul>
             </div>
         </div>
 
@@ -45,36 +85,34 @@
 
         {{!-- Actions Remaining --}}
         <div class="token-actions-remaining" data-tooltip="{{ localize 'sta.combat.restoreaction' }}">
-          {{#if @root.user.isGM}}
-            <button type="button" class="inline-control combatant-control icon fa-solid fa-circle-plus" data-action="incAction"
-            aria-label="{{ localize 'sta.combat.grantOneAction' }}"></button>
-          {{/if}}
-          <span class="actions-remaining">
-            {{ actionsRemaining }} / {{ actionsPerRound }}
-          </span>
+            {{#if @root.user.isGM}}
+            <button type="button"
+                    class="inline-control combatant-control icon fa-solid fa-circle-plus"
+                    data-action="incAction"
+                    aria-label="{{ localize 'sta.combat.grantOneAction' }}"></button>
+            {{/if}}
+            <span class="actions-remaining">
+                {{ actionsRemaining }} / {{ actionsPerRound }}
+            </span>
         </div>
 
         {{!-- Turn Completed Toggle Button --}}
-		<div class="token-turn-completed">
-			<a
-				class="sta-combatant-control"
-				{{#if turnDone}}
-					style="color: var(--color-text-subtle);"
-				{{/if}}
-				{{#if @root.user.isGM}}
-					data-tooltip="{{localize 'sta.combat.togglecombatantsturndone'}}"
-				{{else}}
-					{{#if turnDone}}
-						data-tooltip="{{localize 'sta.combat.combatantsturndone'}}"
-					{{else}}
-						data-tooltip="{{localize 'sta.combat.combatantsturnnotdone'}}"
-					{{/if}}
-				{{/if}}
-				data-action="toggleCombatantTurnDone"
-			>
-				<i class="fa-solid fa-circle-check fa-xl"></i>
-			</a>
-		</div>
+        <div class="token-turn-completed">
+            <a class="sta-combatant-control"
+               {{#if turnDone}} style="color: var(--color-text-subtle);" {{/if}}
+               {{#if @root.user.isGM}}
+                   data-tooltip="{{localize 'sta.combat.togglecombatantsturndone'}}"
+               {{else}}
+                   {{#if turnDone}}
+                       data-tooltip="{{localize 'sta.combat.combatantsturndone'}}"
+                   {{else}}
+                       data-tooltip="{{localize 'sta.combat.combatantsturnnotdone'}}"
+                   {{/if}}
+               {{/if}}
+               data-action="toggleCombatantTurnDone">
+                <i class="fa-solid fa-circle-check fa-xl"></i>
+            </a>
+        </div>
     </li>
     {{/each}}
 </ol>
