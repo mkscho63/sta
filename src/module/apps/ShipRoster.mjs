@@ -327,12 +327,12 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
     if (isNpc || isSmallCraft) {
       const squadItem =
         character?.items.find(
-          item =>
+          (item) =>
             item.type === 'trait' &&
             squadNames.includes(item.name)
         ) ??
         starship?.items.find(
-          item =>
+          (item) =>
             item.type === 'trait' &&
             squadNames.includes(item.name)
         );
