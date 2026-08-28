@@ -313,6 +313,29 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
 
     const character = game.actors.get(data.actor);
     const starship = game.actors.get(data.starship);
+    const squadNames = [
+      game.i18n.localize('sta.actor.character.squad'),
+      game.i18n.localize('sta.actor.starship.squadron'),
+    ];
+    const isNpc =
+      character?.flags?.core?.sheetClass === 'sta.STANPCSheet2e';
+    const isSmallCraft = starship?.type === 'smallcraft';
+    let squadDice = 0;
+
+    if (isNpc || isSmallCraft) {
+      const squadItem =
+        character?.items.find(
+          item =>
+            item.type === 'trait' &&
+            squadNames.includes(item.name)
+        ) ??
+        starship?.items.find(
+          item =>
+            item.type === 'trait' &&
+            squadNames.includes(item.name)
+        );
+      squadDice = Number(squadItem?.system.quantity) || 0;
+    }
 
     let selectedAttributeValue = null;
     let selectedDisciplineValue = null;
@@ -425,6 +448,7 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       usingDetermination: data.usingDetermination,
       complicationRange: data.complicationRange,
       skillLevel,
+      squadDice,
     };
 
     const staRoll = new STARoll();
