@@ -40,7 +40,7 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       height: 'auto',
     },
     dragDrop: [
-      { dragSelector: '.starship-header img, .crew-member img', dropSelector: null },
+      {dragSelector: '.starship-header img, .crew-member img', dropSelector: null},
     ],
   };
 
@@ -88,7 +88,7 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       return;
     }
 
-    const dragData = actor.toDragData?.() ?? { type: 'Actor', uuid: actor.uuid };
+    const dragData = actor.toDragData?.() ?? {type: 'Actor', uuid: actor.uuid};
     event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
   }
 
