@@ -39,6 +39,9 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
       width: 'auto',
       height: 'auto',
     },
+    dragDrop: [
+      {dragSelector: '.starship-header img, .crew-member img', dropSelector: null},
+    ],
   };
 
   static PARTS = {
@@ -47,6 +50,8 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
     },
   };
 
+  #dragDrop;
+
   constructor(...args) {
     super(...args);
     this.options.window.title = game.i18n.localize('sta.apps.roster');
@@ -54,6 +59,37 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
     this.showOnlyInScene = false;
     this.includeSmallCraft = false;
     this._hookIds = [];
+
+    this.#dragDrop = this.#createDragDropHandlers();
+  }
+
+  #createDragDropHandlers() {
+    return this.options.dragDrop.map((cfg) => {
+      cfg.permissions = {
+        dragstart: () => true,
+        drop: () => false, // the roster only initiates drags, it doesn't accept drops
+      };
+      cfg.callbacks = {
+        dragstart: this._onDragStart.bind(this),
+      };
+      return new foundry.applications.ux.DragDrop(cfg);
+    });
+  }
+
+  _onDragStart(event) {
+    const row = event.currentTarget.closest('[data-actor-id]');
+    const actorId = row?.dataset.actorId;
+    const actor = actorId && game.actors.get(actorId);
+
+    if (!actor) return;
+
+    if (!actor.testUserPermission(game.user, 'OBSERVER')) {
+      event.preventDefault();
+      return;
+    }
+
+    const dragData = actor.toDragData?.() ?? {type: 'Actor', uuid: actor.uuid};
+    event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
   }
 
   _isShipInCurrentScene(starship, characters, sceneActors) {
@@ -496,6 +532,11 @@ export class ShipRoster extends api.HandlebarsApplicationMixin(api.ApplicationV2
     rerenderOn('createToken');
     rerenderOn('deleteToken');
     rerenderOn('updateToken');
+  }
+
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    this.#dragDrop.forEach((d) => d.bind(this.element));
   }
 
   async _onClose(options) {

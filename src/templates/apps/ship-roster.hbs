@@ -30,7 +30,7 @@
                  data-action="openActor"
                  data-actor-id="{{actor.id}}"
                  title="{{name}}">
-              <img src="{{img}}" alt="{{name}}" />
+              <img src="{{img}}" alt="{{name}}" draggable="true" />
               <div class="name-des-frame">
                 <div class="tracktitle shipname">{{name}}</div>
                 <div class="designation">{{designation}}</div>
@@ -59,7 +59,7 @@
                                {{#if (eq id ../defaultCrewMember)}}checked{{/if}} />
 
                         <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
-                          <img src="{{img}}" alt="{{name}}" />
+                          <img src="{{img}}" alt="{{name}}" draggable="true" />
                           <div class="name-rank">
                             <div class="crew-rank">{{system.rank}}</div>
                             <div class="crew-name">{{name}}</div>
@@ -131,7 +131,7 @@
                                {{#if (eq id ../defaultCrewMember)}}checked{{/if}} />
 
                         <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
-                          <img src="{{img}}" alt="{{name}}" />
+                          <img src="{{img}}" alt="{{name}}" draggable="true" />
                           <div class="name-rank">
                             <div class="crew-rank">{{system.rank}}</div>
                             <div class="crew-name">{{name}}</div>
@@ -203,7 +203,7 @@
                                {{#if (eq id ../defaultCrewMember)}}checked{{/if}} />
 
                         <div class="crew-member row" data-action="openActor" data-actor-id="{{id}}">
-                          <img src="{{img}}" alt="{{name}}" />
+                          <img src="{{img}}" alt="{{name}}" draggable="true" />
                           <div class="name-rank">
                             <div class="crew-rank">{{system.rank}}</div>
                             <div class="crew-name">{{name}}</div>
