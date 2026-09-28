@@ -2592,25 +2592,21 @@ $trackerchatborder: #FF9900;
   }
 
   .combatant .combatant-controls {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 0px;
-    position: relative;
-  }
-
-  .combatant .combatant-controls {
-    position: relative;
   }
 
   .combatant .combatant-controls .system-list {
     position: absolute;
-    top: 100%; 
-    left: 70%;
+    top: 100%;
+    left: 65%;
     transform: translateX(-50%);
     z-index: 10;
     width: max-content;
-    min-width: 200px;
-    max-width: 300px;
+    min-width: 300px;
+    max-width: 100%;
     list-style: none;
     margin: 4px 0 0;
     padding: 4px 0 0;
