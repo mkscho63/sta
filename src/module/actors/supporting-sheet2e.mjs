@@ -57,6 +57,11 @@ export class STASupportingSheet2e extends STAActors {
     const numValues = this.actor.itemTypes.value.length;
     if (!numValues) return 0;
 
+    const npcType =
+      this.actor?.system?.npcType ??
+      this.element.querySelector('input[name="system.npcType"]:checked')?.value ??
+      'supporting';
+
     const localizedValues = {
       tough: game.i18n.localize('sta.actor.character.talents.tough'),
       resolute: game.i18n.localize('sta.actor.character.talents.resolute'),
@@ -77,7 +82,7 @@ export class STASupportingSheet2e extends STAActors {
     if (hasResolute) {
       stressTrackMax += parseInt(this.element.querySelector('#command')?.value || 0, 10);
     }
-    if (numValues === 1) {
+    if (numValues === 1 && npcType === "supporting") {
       stressTrackMax = Math.ceil(stressTrackMax / 2);
     }
     return stressTrackMax;
