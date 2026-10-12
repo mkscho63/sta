@@ -761,24 +761,29 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
   // ######################################################
 
   static PALETTES = [
-    { id: "default", label: "Default", colors: { borderblue: "#89CFF0", borderbluedark: "#003399", darkestblue: "#00273f", palestblue: "#E2FFFF", palestbluedark: "#6699ff" } },
-    { id: "tos", label: "TOS / Command Gold", colors: { borderblue: "#F2C94C", borderbluedark: "#8A6A00", darkestblue: "#3A2D00", palestblue: "#FFF5D1", palestbluedark: "#B58500" } },
-    { id: "vulcan", label: "Vulcan", colors: { borderblue: "#E08A5C", borderbluedark: "#8F3B1B", darkestblue: "#35150A", palestblue: "#FFE6D9", palestbluedark: "#C4572B" } },
-    { id: "andorian", label: "Andorian", colors: { borderblue: "#7FE3F0", borderbluedark: "#006B80", darkestblue: "#002B33", palestblue: "#E0FBFF", palestbluedark: "#1596AD" } },
-    { id: "betazoid", label: "Betazoid", colors: { borderblue: "#B9A3E8", borderbluedark: "#4B2E91", darkestblue: "#1E1238", palestblue: "#EFE8FF", palestbluedark: "#7A5AD1" } },
-    { id: "klingon", label: "Klingon", colors: { borderblue: "#E04A3A", borderbluedark: "#8B1A1A", darkestblue: "#2E0A0A", palestblue: "#FFDAD3", palestbluedark: "#B22D20" } },
-    { id: "romulan", label: "Romulan", colors: { borderblue: "#8FBF9F", borderbluedark: "#2F5D44", darkestblue: "#0F241A", palestblue: "#E4F4E9", palestbluedark: "#4F8A66" } },
-    { id: "cardassian", label: "Cardassian", colors: { borderblue: "#BDB3A0", borderbluedark: "#5C5446", darkestblue: "#25221C", palestblue: "#F1EEE6", palestbluedark: "#8C8268" } },
-    { id: "ferengi", label: "Ferengi", colors: { borderblue: "#F59E42", borderbluedark: "#A34E00", darkestblue: "#3A1C00", palestblue: "#FFEBD2", palestbluedark: "#D9731A" } },
-    { id: "bajoran", label: "Bajoran", colors: { borderblue: "#E0A0B0", borderbluedark: "#7A1F3D", darkestblue: "#2B0A15", palestblue: "#FBE3EA", palestbluedark: "#A8325A" } },
-    { id: "orion", label: "Orion", colors: { borderblue: "#4FD18B", borderbluedark: "#0B7A4B", darkestblue: "#052E1C", palestblue: "#D9FFEC", palestbluedark: "#1FA866" } },
-    { id: "borg", label: "Borg", colors: { borderblue: "#B4FF4D", borderbluedark: "#4A7A0A", darkestblue: "#0C1404", palestblue: "#F0FFD6", palestbluedark: "#6FA800" } },
+    { id: "default", label: "Default", colors: { borderblue: "#89CFF0", borderbluedark: "#003399", darkestblue: "#00273F", palestblue: "#E2FFFF", palestbluedark: "#6699FF" } },
+    { id: "tos-command", label: "TOS Command", colors: { borderblue: "#C9B84C", borderbluedark: "#71631A", darkestblue: "#292506", palestblue: "#F7F1CF", palestbluedark: "#A18D25" } },
+    { id: "tos-science", label: "TOS Science", colors: { borderblue: "#5797D4", borderbluedark: "#174A86", darkestblue: "#081E3A", palestblue: "#E1EEFC", palestbluedark: "#3978B8" } },
+    { id: "tos-engineering", label: "TOS Engineering", colors: { borderblue: "#E96757", borderbluedark: "#9B271E", darkestblue: "#350C09", palestblue: "#FFE5E0", palestbluedark: "#C94336" } },
+    { id: "tng-command", label: "TNG Command", colors: { borderblue: "#C95159", borderbluedark: "#781D2B", darkestblue: "#290810", palestblue: "#F8E0E2", palestbluedark: "#A93442" } },
+    { id: "tng-science", label: "TNG Science", colors: { borderblue: "#5B8FE0", borderbluedark: "#204A96", darkestblue: "#0A1940", palestblue: "#E3ECFC", palestbluedark: "#386CC4" } },
+    { id: "tng-engineering", label: "TNG Engineering", colors: { borderblue: "#E6BE43", borderbluedark: "#8A6815", darkestblue: "#302400", palestblue: "#FFF3CE", palestbluedark: "#B68A20" } },
+    { id: "vulcan", label: "Vulcan", colors: { borderblue: "#D58B62", borderbluedark: "#874323", darkestblue: "#30170C", palestblue: "#F8E6DA", palestbluedark: "#B9693D" } },
+    { id: "andorian", label: "Andorian", colors: { borderblue: "#79D9E8", borderbluedark: "#087486", darkestblue: "#00282F", palestblue: "#DFF8FC", palestbluedark: "#168FA4" } },
+    { id: "betazoid", label: "Betazoid", colors: { borderblue: "#B5A0E1", borderbluedark: "#604493", darkestblue: "#211432", palestblue: "#F0E9FC", palestbluedark: "#8262C2" } },
+    { id: "klingon", label: "Klingon", colors: { borderblue: "#DC5146", borderbluedark: "#8E211C", darkestblue: "#300907", palestblue: "#FBE0DC", palestbluedark: "#B9372D" } },
+    { id: "romulan", label: "Romulan", colors: { borderblue: "#8BB99A", borderbluedark: "#365D46", darkestblue: "#10271B", palestblue: "#E5F2E8", palestbluedark: "#568267" } },
+    { id: "cardassian", label: "Cardassian", colors: { borderblue: "#B9AD98", borderbluedark: "#655B49", darkestblue: "#27231C", palestblue: "#F0EDE5", palestbluedark: "#8C806A" } },
+    { id: "ferengi", label: "Ferengi", colors: { borderblue: "#EAA04B", borderbluedark: "#965019", darkestblue: "#351B07", palestblue: "#FFF0DB", palestbluedark: "#C67828" } },
+    { id: "bajoran", label: "Bajoran", colors: { borderblue: "#D99CAF", borderbluedark: "#812B49", darkestblue: "#2D0B19", palestblue: "#F9E5EC", palestbluedark: "#AC4568" } },
+    { id: "orion", label: "Orion", colors: { borderblue: "#55C98A", borderbluedark: "#14764A", darkestblue: "#06291A", palestblue: "#DDF8E9", palestbluedark: "#23965F" } },
+    { id: "borg", label: "Borg", colors: { borderblue: "#B4E65A", borderbluedark: "#587F17", darkestblue: "#111B05", palestblue: "#F0F8D9", palestbluedark: "#7BAA29" } },
   ];
 
   async _onColourPalette(event, target) {
     const palettes = STAActors.PALETTES;
     const defaults = STAActors.DEFAULT_COLORS;
-    const current = this.document.getFlag("sta", "palette") ?? "default";
+    const current = this.document.system.palette ?? "default";
 
     const rows = palettes.map(p => {
       const c = { ...defaults, ...p.colors };
@@ -811,12 +816,12 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         }
       ],
     });
-    if (choice) await this.document.setFlag("sta", "palette", choice);
+    if (choice) await this.document.update({ "system.palette": choice });
   }
 
   _applyPalette() {
     const palettes = STAActors.PALETTES;
-    const id = this.document.getFlag("sta", "palette") ?? "default";
+    const id = this.document.system.palette ?? "default";
     const palette = palettes.find(p => p.id === id) ?? palettes[0];
     const style = this.element.style;
 
