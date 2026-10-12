@@ -72,6 +72,10 @@
   "sta.actor.character.careerevents": "Career Events",
   "sta.actor.character.careerpath": "Career Path",
   "sta.actor.character.pastimes": "Pastimes",
+  "sta.actor.character.palette": "Colour Palette",
+  "sta.actor.character.crewtype": "Crew Type",
+  "sta.actor.character.linked": "Token Linked",
+  "sta.actor.character.unlinked": "Token Unlinked",
   "sta.actor.focus.title": "Focuses",
   "sta.actor.value.title": "Values",
   "sta.actor.value.used": "Chal?",
@@ -295,6 +299,7 @@
   "sta.apps.viewroller": "Ship Roller View",
   "sta.apps.onlyinscene": "Show only the ships active in scene",
   "sta.apps.includesmallcraft": "Include small craft",
+  "sta.apps.apply": "Apply",
 
   "sta.roll.success": "Success",
   "sta.roll.successPlural": "Successes",

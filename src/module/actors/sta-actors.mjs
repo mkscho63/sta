@@ -804,7 +804,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       buttons: [
         {
           action: "apply",
-          label: "Apply",
+          label: game.i18n.localize("sta.apps.apply"),
           icon: "fa-solid fa-check",
           default: true,
           callback: (event, button) => button.form.elements.palette.value,
@@ -882,7 +882,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       rejectClose: false,
       content,
       ok: {
-        label: game.i18n.localize("Confirm"),
+        label: game.i18n.localize("sta.apps.apply"),
         callback: (event, button) => button.form.elements.sheet.value
       },
     });
