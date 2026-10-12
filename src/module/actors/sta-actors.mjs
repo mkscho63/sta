@@ -10,6 +10,15 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
       onItemtoChat: STAActors._onItemtoChat,
       onStrikeThrough: STAActors._onStrikeThrough,
       onSmallCraft: STAActors._onSmallCraft,
+      onColourPalette: function(ev) {
+        return this._onColourPalette(ev);
+      },
+      onCrewType: function(ev) {
+        return this._onCrewType(ev);
+      },
+      onLinked: function(ev) {
+        return this._onLinked(ev);
+      },
       onSelectAttribute: function(ev) {
         return this._onSelectAttribute(ev);
       },
@@ -175,6 +184,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     if (this.tracks.power) this._onPowerTrackUpdate();
     if (this.tracks.weapon) this._updateWeaponValues();
     if (this.tracks.breach) this._updateBreachValues();
+    this._applyPalette();
 
     document.querySelectorAll('.item-name').forEach((input) => {
       input.addEventListener('change', this._onItemNameChange.bind(this));
@@ -739,6 +749,154 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         }
       ]
     }).render(true);
+  }
+
+  // ######################################################
+  // #                                                    #
+  // #         Character/Starship Sheet Buttons           #
+  // #                                                    #
+  // ######################################################
+
+  static PALETTES = [
+    { id: "default", label: "Default", colors: { borderblue: "#89CFF0", borderbluedark: "#003399", darkestblue: "#00273f", palestblue: "#E2FFFF", palestbluedark: "#6699ff" } },
+    { id: "tos", label: "TOS / Command Gold", colors: { borderblue: "#F2C94C", borderbluedark: "#8A6A00", darkestblue: "#3A2D00", palestblue: "#FFF5D1", palestbluedark: "#B58500" } },
+    { id: "vulcan", label: "Vulcan", colors: { borderblue: "#E08A5C", borderbluedark: "#8F3B1B", darkestblue: "#35150A", palestblue: "#FFE6D9", palestbluedark: "#C4572B" } },
+    { id: "andorian", label: "Andorian", colors: { borderblue: "#7FE3F0", borderbluedark: "#006B80", darkestblue: "#002B33", palestblue: "#E0FBFF", palestbluedark: "#1596AD" } },
+    { id: "betazoid", label: "Betazoid", colors: { borderblue: "#B9A3E8", borderbluedark: "#4B2E91", darkestblue: "#1E1238", palestblue: "#EFE8FF", palestbluedark: "#7A5AD1" } },
+    { id: "klingon", label: "Klingon", colors: { borderblue: "#E04A3A", borderbluedark: "#8B1A1A", darkestblue: "#2E0A0A", palestblue: "#FFDAD3", palestbluedark: "#B22D20" } },
+    { id: "romulan", label: "Romulan", colors: { borderblue: "#8FBF9F", borderbluedark: "#2F5D44", darkestblue: "#0F241A", palestblue: "#E4F4E9", palestbluedark: "#4F8A66" } },
+    { id: "cardassian", label: "Cardassian", colors: { borderblue: "#BDB3A0", borderbluedark: "#5C5446", darkestblue: "#25221C", palestblue: "#F1EEE6", palestbluedark: "#8C8268" } },
+    { id: "ferengi", label: "Ferengi", colors: { borderblue: "#F59E42", borderbluedark: "#A34E00", darkestblue: "#3A1C00", palestblue: "#FFEBD2", palestbluedark: "#D9731A" } },
+    { id: "bajoran", label: "Bajoran", colors: { borderblue: "#E0A0B0", borderbluedark: "#7A1F3D", darkestblue: "#2B0A15", palestblue: "#FBE3EA", palestbluedark: "#A8325A" } },
+    { id: "orion", label: "Orion", colors: { borderblue: "#4FD18B", borderbluedark: "#0B7A4B", darkestblue: "#052E1C", palestblue: "#D9FFEC", palestbluedark: "#1FA866" } },
+    { id: "borg", label: "Borg", colors: { borderblue: "#B4FF4D", borderbluedark: "#4A7A0A", darkestblue: "#0C1404", palestblue: "#F0FFD6", palestbluedark: "#6FA800" } },
+  ];
+
+  async _onColourPalette(event, target) {
+    const palettes = STAActors.PALETTES;
+    const defaults = STAActors.DEFAULT_COLORS;
+    const current = this.document.getFlag("sta", "palette") ?? "default";
+
+    const rows = palettes.map(p => {
+      const c = { ...defaults, ...p.colors };
+      return `
+        <label class="palette-row">
+          <input type="radio" name="palette" value="${p.id}" ${p.id === current ? "checked" : ""}>
+          <span class="palette-swatch">
+            <i style="background:${c.borderblue}"></i>
+            <i style="background:${c.borderbluedark}"></i>
+            <i style="background:${c.darkestblue}"></i>
+            <i style="background:${c.palestbluedark}"></i>
+          </span>
+          <span class="palette-name">${p.label}</span>
+        </label>`;
+    }).join("");
+
+    const choice = await foundry.applications.api.DialogV2.wait({
+      window: { title: game.i18n.localize("sta.actor.character.palette") },
+      classes: ["dialogue"],
+      position: { left: event.clientX, top: event.clientY, width: 320 },
+      rejectClose: false,
+      content: `<div class="palette-list">${rows}</div>`,
+      buttons: [
+        {
+          action: "apply",
+          label: "Apply",
+          icon: "fa-solid fa-check",
+          default: true,
+          callback: (event, button) => button.form.elements.palette.value,
+        }
+      ],
+      render: (event, dialog) => {
+        dialog.element.querySelectorAll(".palette-row").forEach(row => {
+          row.addEventListener("dblclick", () =>
+            dialog.element.querySelector('button[data-action="apply"]')?.click());
+        });
+      },
+    });
+    if (choice) await this.document.setFlag("sta", "palette", choice);
+  }
+
+  _applyPalette() {
+    const palettes = STAActors.PALETTES;
+    const id = this.document.getFlag("sta", "palette") ?? "default";
+    const palette = palettes.find(p => p.id === id) ?? palettes[0];
+    const style = this.element.style;
+
+    for (const p of palettes) {
+      for (const key of Object.keys(p.colors)) style.removeProperty(`--sta-${key}`);
+    }
+    for (const [key, value] of Object.entries(palette.colors)) {
+      style.setProperty(`--sta-${key}`, value);
+    }
+  }
+
+  static async #onColourPalette(event, target) {
+    const current = this.document.getFlag("sta", "palette") ?? "default";
+
+    const choice = await foundry.applications.api.DialogV2.wait({
+      window: { title: game.i18n.localize("sta.actor.character.palette") },
+      classes: ["sta", "palette-picker-app"],
+      position: { left: event.clientX, top: event.clientY, width: 260 },
+      rejectClose: false,
+      buttons: PALETTES.map(p => ({
+        action: p.id,
+        label: p.label,
+        class: `palette-option palette-${p.id} ${p.id === current ? "active" : ""}`,
+        default: p.id === current,
+        callback: () => p.id,
+      })),
+    });
+
+    if (choice) await this.document.setFlag("sta", "palette", choice);
+  }
+
+  async _onCrewType(event) {
+    const actor = this.document;
+    const sheets = Object.values(CONFIG.Actor.sheetClasses[actor.type] ?? {})
+      .filter(s => s.canConfigure !== false);
+
+    const defaultSheet = sheets.find(s => s.default);
+    const currentId = actor.getFlag("core", "sheetClass") || "";
+    const options = [
+      { id: "", label: `${game.i18n.localize("SHEETS.DefaultSheet")}${defaultSheet ? ` (${game.i18n.localize(defaultSheet.label)})` : ""}` },
+      ...sheets.map(s => ({ id: s.id, label: game.i18n.localize(s.label) }))
+    ];
+
+    const content = `
+      <div class="dialogue">
+        ${options.map(o => `
+          <label class="crewtype-option ${o.id === currentId ? "active" : ""}">
+            <input type="radio" name="sheet" value="${o.id}" ${o.id === currentId ? "checked" : ""}>
+            <span>${o.label}</span>
+          </label>`).join("")}
+      </div>`;
+
+    const choice = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.localize("sta.actor.character.crewtype") },
+      classes: ["dialogue"],
+      position: { left: event.clientX, top: event.clientY, width: 300 },
+      rejectClose: false,
+      content,
+      ok: {
+        label: game.i18n.localize("Confirm"),
+        callback: (event, button) => button.form.elements.sheet.value
+      },
+    });
+
+    if (choice === null || choice === undefined || choice === currentId) return;
+    if (choice === "") await actor.unsetFlag("core", "sheetClass");
+    else await actor.setFlag("core", "sheetClass", choice);
+
+    await this.close();
+    actor.sheet.render({ force: true });
+  }
+
+  async _onLinked(event) {
+    const actor = this.document;
+    await actor.update({
+      "prototypeToken.actorLink": !actor.prototypeToken.actorLink
+    });
   }
 
   // ######################################################
