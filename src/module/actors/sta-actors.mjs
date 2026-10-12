@@ -810,12 +810,6 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
           callback: (event, button) => button.form.elements.palette.value,
         }
       ],
-      render: (event, dialog) => {
-        dialog.element.querySelectorAll(".palette-row").forEach(row => {
-          row.addEventListener("dblclick", () =>
-            dialog.element.querySelector('button[data-action="apply"]')?.click());
-        });
-      },
     });
     if (choice) await this.document.setFlag("sta", "palette", choice);
   }
