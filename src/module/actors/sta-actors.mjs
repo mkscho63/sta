@@ -151,6 +151,9 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     const showLimitedProse = game.settings.get('sta', 'showNotesInLimited');
     context.showProseMirror = isLimited ? showLimitedProse : true;
 
+    const isGM = game.user?.isGM ?? false;
+    context.isGM = isGM;
+
     return context;
   }
 

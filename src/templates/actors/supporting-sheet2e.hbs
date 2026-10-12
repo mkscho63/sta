@@ -15,8 +15,8 @@
 
         <div class="icon-column">
           <i class="palette"  title="{{localize 'sta.actor.character.palette'}}"  data-action="onColourPalette"></i>
-          <i class="crewtype" title="{{localize 'sta.actor.character.crewtype'}}" data-action="onCrewType"></i>
-          <i class="linked {{#unless actor.prototypeToken.actorLink}}unlinked{{/unless}}"
+          <i class="crewtype {{#unless isGM}}hidden{{/unless}}" title="{{localize 'sta.actor.character.crewtype'}}" data-action="onCrewType"></i>
+          <i class="linked {{#unless actor.prototypeToken.actorLink}}unlinked{{/unless}} {{#unless isGM}}hidden{{/unless}}"
              title="{{#if actor.prototypeToken.actorLink}}{{localize 'sta.actor.character.linked'}}{{else}}{{localize 'sta.actor.character.unlinked'}}{{/if}}"
              data-action="onLinked"></i>
         </div>
