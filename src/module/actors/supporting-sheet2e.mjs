@@ -82,7 +82,7 @@ export class STASupportingSheet2e extends STAActors {
     if (hasResolute) {
       stressTrackMax += parseInt(this.element.querySelector('#command')?.value || 0, 10);
     }
-    if (numValues === 1 && npcType === "supporting") {
+    if (numValues === 1 && npcType === 'supporting') {
       stressTrackMax = Math.ceil(stressTrackMax / 2);
     }
     return stressTrackMax;
