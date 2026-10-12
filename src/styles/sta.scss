@@ -239,6 +239,31 @@ $trackerchatborder: #FF9900;
   }
 }
 
+%character-svg-icon {
+  display: inline-block;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  height: 0.85em;
+  width: 0.85em;
+}
+
+.palette {
+  @extend %character-svg-icon;
+  mask-image: url("/systems/sta/assets/icons/palette-solid-full.svg");
+}
+
+.crewtype {
+  @extend %character-svg-icon;
+  mask-image: url("/systems/sta/assets/icons/users-gear-solid-full.svg");
+}
+
+.linked {
+  @extend %character-svg-icon;
+  mask-image: url("/systems/sta/assets/icons/link-solid-full.svg");
+}
+
 // ######################################################
 // #                                                    #
 // #               Items on Actor Sheets                #
@@ -248,17 +273,17 @@ $trackerchatborder: #FF9900;
 .theme-light {
   .section {
     .header {
-      background-color: $palestblue;
+      background-color: var(--sta-palestblue, #{$palestblue});
     }
   }
   .item-list-scrollable {
-    scrollbar-color: $palestblue transparent;
+    scrollbar-color: var(--sta-palestblue, #{$palestblue}) transparent;
   }
 }
 
 .section {
   .header {
-    background-color: $palestbluedark;
+    background-color: var(--sta-palestbluedark, #{$palestbluedark});
     border-radius: 0px 100px 100px 0px;
   }
   .row {
@@ -385,7 +410,7 @@ $trackerchatborder: #FF9900;
 .item-list-scrollable {
   max-height: 150px;
   overflow-y: auto;
-  scrollbar-color: $darkestblue transparent;
+  scrollbar-color: var(--sta-darkestblue, #{$darkestblue}) transparent;
 }
 
 // ######################################################
@@ -400,22 +425,22 @@ $trackerchatborder: #FF9900;
 
 .theme-light {
   .character-sheet {
-    scrollbar-color: $palestblue transparent;
+    scrollbar-color: var(--sta-palestblue, #{$palestblue}) transparent;
     background: $background;
     .title {
-      background-color: $borderblue;
+      background-color: var(--sta-borderblue, #{$borderblue});
     }
     .text-entry {
-      border-color: $borderblue;
+      border-color: var(--sta-borderblue, #{$borderblue});
     }
     .numeric-entry {
-      border-color: $borderblue !important;
+      border-color: var(--sta-borderblue, #{$borderblue}) !important;
     }
     .bottom-right-column {
-      border-left: 16px solid $borderblue;
+      border-left: 16px solid var(--sta-borderblue, #{$borderblue});
     }
     nav.sheet-tabs.tabs {
-      background-color: $borderblue;
+      background-color: var(--sta-borderblue, #{$borderblue});
     }
     nav.sheet-tabs.tabs a.item {
       border-right: 3px solid $background;
@@ -424,27 +449,28 @@ $trackerchatborder: #FF9900;
       border-left: 3px solid $background;
     }
     nav.sheet-tabs.tabs a.item.active {
-      background-color: $palestblue;
+      background-color: var(--sta-palestblue, #{$palestblue});
       text-shadow: none;
     }
     nav.sheet-tabs.tabs a.item:hover {
-      text-shadow: 0 0 10px $palestblue, 0 0 10px $palestblue;
+      text-shadow: 0 0 10px var(--sta-palestblue, #{$palestblue}), 0 0 10px var(--sta-palestblue, #{$palestblue});
     }
   }
 }
 
 .character-sheet {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding-left: 7px;
-  scrollbar-color: $darkestblue transparent;
+  scrollbar-color: var(--sta-darkestblue, #{$darkestblue}) transparent;
 
   .text-entry {
-    border-color: $borderbluedark;
+    border-color: var(--sta-borderbluedark, #{$borderbluedark});
   }
 
   .title {
     margin-top: 5px;
-    background-color: $borderbluedark;
+    background-color: var(--sta-borderbluedark, #{$borderbluedark});
     font-weight: bold;
     border-radius: 0px 100px 100px 0px;
     padding-left: 5px;
@@ -468,7 +494,7 @@ $trackerchatborder: #FF9900;
   }
 
   .top-right-column {
-    flex: 0 0 625px;
+    flex: 1 0 625px;
     align-self: flex-start;
     padding-left: 5px;
   }
@@ -480,9 +506,9 @@ $trackerchatborder: #FF9900;
   }
 
   .bottom-right-column {
-    flex: 0 0 680px;
+    flex: 1 0 680px;
     align-self: flex-start;
-    border-left: 16px solid $borderbluedark;
+    border-left: 16px solid var(--sta-borderbluedark, #{$borderbluedark});
     border-top-left-radius: 16px;
   }
 
@@ -650,7 +676,7 @@ $trackerchatborder: #FF9900;
     align-items: center;
 
     .numeric-entry {
-        border-color: $borderbluedark;
+        border-color: var(--sta-borderbluedark, #{$borderbluedark});
         height: 28px;
         text-align: right;
         width: 32px;
@@ -751,6 +777,29 @@ $trackerchatborder: #FF9900;
     height: 3rem;
   }
 
+  .name-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .name-field-left {
+    flex: 1;
+  }
+
+  .icon-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    padding-top: 8px;
+  }
+
+  .icon-column .linked.unlinked {
+    opacity: 0.35;
+  }
+
   /* Note Field Styling */
   .tab .note {
     height: 553px;
@@ -763,7 +812,7 @@ $trackerchatborder: #FF9900;
   }
 
   nav.sheet-tabs.tabs {
-    background-color: $borderbluedark;
+    background-color: var(--sta-borderbluedark, #{$borderbluedark});
     border-bottom: none;
     border-top: none;
     display: flex;
@@ -784,11 +833,11 @@ $trackerchatborder: #FF9900;
 
   nav.sheet-tabs.tabs a.item.active {
     text-shadow: none;
-    background-color: $palestbluedark;
+    background-color: var(--sta-borderbluedark, #{$borderbluedark});
   }
 
   nav.sheet-tabs.tabs a.item:hover {
-    text-shadow: 0 0 10px $borderblue, 0 0 10px $borderblue;
+    text-shadow: 0 0 10px var(--sta-borderblue, #{$borderblue}), 0 0 10px var(--sta-borderblue, #{$borderblue});
   }
 }
 
@@ -804,38 +853,39 @@ $trackerchatborder: #FF9900;
 
 .theme-light {
   .starship-sheet {
-    scrollbar-color: $palestblue transparent;
+    scrollbar-color: var(--sta-palestblue, #{$palestblue}) transparent;
     background: $background;
     .title {
-      background-color: $borderblue;
+      background-color: var(--sta-borderblue, #{$borderblue});
     }
   .right-column::before {
-    background-color: $borderblue;
+    background-color: var(--sta-borderblue, #{$borderblue});
   }
     .text-entry {
-      border-color: $borderblue;
+      border-color: var(--sta-borderblue, #{$borderblue});
     }
     .numeric-entry {
-      border-color: $borderblue !important;
+      border-color: var(--sta-borderblue, #{$borderblue}) !important;
     }
     .systems-block .stat.header.row {
-      background-color: $palestblue;
+      background-color: var(--sta-palestblue, #{$palestblue});
     }
   }
 }
 
 .starship-sheet {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding-left: 7px;
-  scrollbar-color: $darkestblue transparent;
+  scrollbar-color: var(--sta-darkestblue, #{$darkestblue}) transparent;
 
   .text-entry {
-    border-color: $borderbluedark;
+    border-color: var(--sta-borderbluedark, #{$borderbluedark});
   }
 
   .title {
     margin-top: 5px;
-    background-color: $borderbluedark;
+    background-color: var(--sta-borderbluedark, #{$borderbluedark});
     font-weight: bold;
     border-radius: 0px 100px 100px 0px;
     padding-left: 5px;
@@ -859,7 +909,7 @@ $trackerchatborder: #FF9900;
   }
 
   .right-column {
-    flex: 0 0 625px;
+    flex: 1 0 625px;
     align-self: flex-start;
     position: relative;
     padding-left: 9px;
@@ -872,7 +922,7 @@ $trackerchatborder: #FF9900;
     top: 5px;
     bottom: 0;
     width: 9px;
-    background-color: $borderbluedark;
+    background-color: var(--sta-borderbluedark, #{$borderbluedark});
     border-top-left-radius: 9px;
   }
 
@@ -973,6 +1023,29 @@ $trackerchatborder: #FF9900;
     height: 3rem;
   }
 
+  .name-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .name-field-left {
+    flex: 1;
+  }
+
+  .icon-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    padding-top: 8px;
+  }
+
+  .icon-column .linked.unlinked {
+    opacity: 0.35;
+  }
+
   /* Main Row Field Styling */
   .big-row {
     display: flex;
@@ -1029,14 +1102,14 @@ $trackerchatborder: #FF9900;
 
   .numeric-entry {
     width: 32px;
-    border-color: $borderbluedark;
+    border-color: var(--sta-borderbluedark, #{$borderbluedark});
     height: 28px;
     text-align: right;
   }
 
   .systems-block .field.breaches {
     width: 32px;
-    border-color: $borderbluedark;
+    border-color: var(--sta-borderbluedark, #{$borderbluedark});
     margin-left: auto;
     text-align: right;
   }
@@ -1044,7 +1117,7 @@ $trackerchatborder: #FF9900;
   .systems-block .stat.header.row {
     display: flex;
     align-items: center;
-    background-color: $palestbluedark;
+    background-color: var(--sta-palestbluedark, #{$palestbluedark});
     justify-content: space-between;
   }
 
@@ -1617,6 +1690,55 @@ $trackerchatborder: #FF9900;
       }
     }
   }
+
+  .crewtype-picker {
+    display: flex;
+    flex-direction: column;
+  }
+  .crewtype-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .crewtype-option:hover { background: rgb(255 255 255 / 0.08); }
+
+    .palette-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .palette-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 8px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover { background: rgba(255, 255, 255, 0.08); }
+
+      input { position: absolute; opacity: 0; pointer-events: none; }
+      &:has(input:checked) { border-color: currentColor; background: rgba(255, 255, 255, 0.12); }
+      &:has(input:focus-visible) { outline: 2px solid currentColor; }
+    }
+
+    .palette-swatch {
+      display: flex;
+      flex: none;
+      width: 72px;
+      height: 20px;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+
+      i { flex: 1; }
+    }
+
+    .palette-name { flex: 1; }
 }
 
 // ######################################################

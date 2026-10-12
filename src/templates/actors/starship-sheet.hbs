@@ -53,8 +53,18 @@
 
     <div class="right-column">
       <div class="name-field">
-        <div class="title">{{localize 'sta.actor.starship.name'}}</div>
-        <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.starship.name'}}" />
+        <div class="name-field-left">
+          <div class="title">{{localize 'sta.actor.starship.name'}}</div>
+          <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'sta.actor.starship.name'}}" />
+        </div>
+
+        <div class="icon-column">
+          <i class="palette"  title="{{localize 'sta.actor.character.palette'}}"  data-action="onColourPalette"></i>
+          <i class="crewtype {{#unless isGM}}hidden{{/unless}}" title="{{localize 'sta.actor.character.crewtype'}}" data-action="onCrewType"></i>
+          <i class="linked {{#unless actor.prototypeToken.actorLink}}unlinked{{/unless}} {{#unless isGM}}hidden{{/unless}}"
+             title="{{#if actor.prototypeToken.actorLink}}{{localize 'sta.actor.character.linked'}}{{else}}{{localize 'sta.actor.character.unlinked'}}{{/if}}"
+             data-action="onLinked"></i>
+        </div>
       </div>
 
       <div class="tracktitle">{{localize 'sta.actor.starship.crew'}}</div>
