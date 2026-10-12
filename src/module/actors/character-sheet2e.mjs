@@ -61,8 +61,12 @@ export class STACharacterSheet2e extends STAActors {
       resolute: game.i18n.localize('sta.actor.character.talents.resolute'),
       mentaldiscipline: game.i18n.localize('sta.actor.character.talents.mentaldiscipline')
     };
-    const fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
+    let fitnessValue = parseInt(this.element.querySelector('#fitness')?.value || 0, 10);
     const stressModValue = parseInt(this.element.querySelector('#strmod')?.value || 0, 10);
+    const hasMentalDiscipline = this.element.querySelector(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`);
+    if (hasMentalDiscipline) {
+      fitnessValue = parseInt(this.element.querySelector('#control')?.value || 0, 10);
+    }
     let stressTrackMax = fitnessValue + stressModValue;
     const hasTough = this.element.querySelector(`[data-talent-name*="${localizedValues.tough}"]`);
     if (hasTough) {
@@ -71,10 +75,6 @@ export class STACharacterSheet2e extends STAActors {
     const hasResolute = this.element.querySelector(`[data-talent-name*="${localizedValues.resolute}"]`);
     if (hasResolute) {
       stressTrackMax += parseInt(this.element.querySelector('#command')?.value || 0, 10);
-    }
-    const hasMentalDiscipline = this.element.querySelector(`[data-talent-name*="${localizedValues.mentaldiscipline}"]`);
-    if (hasMentalDiscipline) {
-      stressTrackMax = parseInt(this.element.querySelector('#control')?.value || 0, 10);
     }
     return stressTrackMax;
   }
