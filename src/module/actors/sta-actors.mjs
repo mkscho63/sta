@@ -892,11 +892,30 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     actor.sheet.render({ force: true });
   }
 
-  async _onLinked(event) {
+  async _onLinked(event, target) {
     const actor = this.document;
-    await actor.update({
-      "prototypeToken.actorLink": !actor.prototypeToken.actorLink
-    });
+    const token = actor.isToken ? actor.token : null;
+    const base = actor.isToken
+      ? (token?.baseActor ?? game.actors.get(actor.id))
+      : actor;
+
+    const linked = token
+      ? Boolean(token.actorLink)
+      : Boolean(base?.prototypeToken?.actorLink);
+    const next = !linked;
+
+    if (token) {
+      await token.update({ actorLink: next });
+      if (base) await base.update({ "prototypeToken.actorLink": next });  // keep prototype in sync
+
+      await this.close();
+      token.actor?.sheet.render(true);
+      return;
+    }
+
+    await base.update({ "prototypeToken.actorLink": next });
+    const tokens = base.getActiveTokens(false, true);
+    await Promise.all(tokens.map(t => t.update({ actorLink: next })));
   }
 
   // ######################################################

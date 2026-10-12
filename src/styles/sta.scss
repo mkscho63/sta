@@ -796,9 +796,9 @@ $trackerchatborder: #FF9900;
     padding-top: 8px;
   }
 
-.icon-column .linked.unlinked {
-  opacity: 0.35;
-}
+  .icon-column .linked.unlinked {
+    opacity: 0.35;
+  }
 
   /* Note Field Styling */
   .tab .note {
@@ -1040,6 +1040,10 @@ $trackerchatborder: #FF9900;
     gap: 8px;
     font-size: 1.2rem;
     padding-top: 8px;
+  }
+
+  .icon-column .linked.unlinked {
+    opacity: 0.35;
   }
 
   /* Main Row Field Styling */
