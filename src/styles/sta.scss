@@ -246,10 +246,11 @@ $trackerchatborder: #FF9900;
   mask-position: center;
   mask-size: contain;
   height: 0.85em;
-  width: 0.85em;
+  width: 1em;
+  padding-right: 8px;
 }
 
-.palette {
+.colourpalette {
   @extend %character-svg-icon;
   mask-image: url("/systems/sta/assets/icons/palette-solid-full.svg");
 }
@@ -381,6 +382,12 @@ $trackerchatborder: #FF9900;
       cursor: default;
     }
   }
+
+  .row.entry {
+    box-sizing: border-box;
+    width: calc(100% - 6px);
+    min-width: 0;
+  }
 }
 
 .value-used {
@@ -460,7 +467,6 @@ $trackerchatborder: #FF9900;
 
 .character-sheet {
   overflow-y: scroll;
-  overflow-x: hidden;
   padding-left: 7px;
   scrollbar-color: var(--sta-darkestblue, #{$darkestblue}) transparent;
 
@@ -875,7 +881,6 @@ $trackerchatborder: #FF9900;
 
 .starship-sheet {
   overflow-y: scroll;
-  overflow-x: hidden;
   padding-left: 7px;
   scrollbar-color: var(--sta-darkestblue, #{$darkestblue}) transparent;
 
@@ -1471,7 +1476,7 @@ $trackerchatborder: #FF9900;
     }
     .window-title {
       color: $foundrylightthemetext;
-	}
+	  }
     .text-entry {
       border-color: $borderblue;
     }
@@ -1499,11 +1504,15 @@ $trackerchatborder: #FF9900;
     nav.sheet-tabs.tabs a.item:hover {
       text-shadow: 0 0 10px $palestblue, 0 0 10px $palestblue;
     }
+    .palette-list {
+      scrollbar-color: $palestblue transparent;
+    }
   }
 }
 
 .dialogue {
   width: 100%;
+  scrollbar-color: $darkestblue transparent;
 
   .window-header {
     background-color: $borderbluedark;
@@ -1703,6 +1712,7 @@ $trackerchatborder: #FF9900;
   .crewtype-option:hover { background: rgb(255 255 255 / 0.08); }
 
     .palette-list {
+      scrollbar-color: $darkestblue transparent;
       display: flex;
       flex-direction: column;
       gap: 4px;

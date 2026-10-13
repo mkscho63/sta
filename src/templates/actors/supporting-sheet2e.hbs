@@ -14,7 +14,7 @@
         </div>
 
         <div class="icon-column">
-          <i class="palette"  title="{{localize 'sta.actor.character.palette'}}"  data-action="onColourPalette"></i>
+          <i class="colourpalette"  title="{{localize 'sta.actor.character.palette'}}"  data-action="onColourPalette"></i>
           <i class="crewtype {{#unless isGM}}hidden{{/unless}}" title="{{localize 'sta.actor.character.crewtype'}}" data-action="onCrewType"></i>
           <i class="linked {{#unless actor.prototypeToken.actorLink}}unlinked{{/unless}} {{#unless isGM}}hidden{{/unless}}"
              title="{{#if actor.prototypeToken.actorLink}}{{localize 'sta.actor.character.linked'}}{{else}}{{localize 'sta.actor.character.unlinked'}}{{/if}}"
@@ -25,7 +25,7 @@
       <div class="npc-block">
         <div class="row">
             {{localize 'sta.apps.supportingcharacters'}}<input type="radio" name="system.npcType" value="supporting" {{checked (eq actor.system.npcType "supporting")}}>
-            {{localize 'sta.apps.supervisorycharacters'}}<input type="radio" name="system.npcType" value="supervising" {{checked (eq actor.system.npcType "supervising")}}>
+            {{localize 'sta.apps.supervisorycharacters'}}<input type="radio" name="system.npcType" value="supervising" {{#unless (eq actor.system.npcType "supporting")}}checked{{/unless}}>
         </div>
       </div>
 
