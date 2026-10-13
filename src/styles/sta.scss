@@ -1476,7 +1476,7 @@ $trackerchatborder: #FF9900;
     }
     .window-title {
       color: $foundrylightthemetext;
-	}
+	  }
     .text-entry {
       border-color: $borderblue;
     }
@@ -1504,11 +1504,15 @@ $trackerchatborder: #FF9900;
     nav.sheet-tabs.tabs a.item:hover {
       text-shadow: 0 0 10px $palestblue, 0 0 10px $palestblue;
     }
+    .palette-list {
+      scrollbar-color: $palestblue transparent;
+    }
   }
 }
 
 .dialogue {
   width: 100%;
+  scrollbar-color: $darkestblue transparent;
 
   .window-header {
     background-color: $borderbluedark;
@@ -1708,6 +1712,7 @@ $trackerchatborder: #FF9900;
   .crewtype-option:hover { background: rgb(255 255 255 / 0.08); }
 
     .palette-list {
+      scrollbar-color: $darkestblue transparent;
       display: flex;
       flex-direction: column;
       gap: 4px;
