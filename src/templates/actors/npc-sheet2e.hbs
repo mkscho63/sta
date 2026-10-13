@@ -27,7 +27,7 @@
         <div class="row">
           <div class="column">
             {{localize 'sta.actor.character.npc.minor'}}
-            <input type="radio" name="system.npcType" value="minor" {{checked (eq actor.system.npcType "minor")}}>
+            <input type="radio" name="system.npcType" value="minor" {{#unless (or (eq actor.system.npcType "notable") (eq actor.system.npcType "major"))}}checked{{/unless}}>
           </div>
           <div class="column">
             {{localize 'sta.actor.character.npc.notable'}}

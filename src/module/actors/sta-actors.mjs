@@ -778,6 +778,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     {id: 'bajoran', label: 'Bajoran', colors: {borderblue: '#D99CAF', borderbluedark: '#812B49', darkestblue: '#2D0B19', palestblue: '#F9E5EC', palestbluedark: '#AC4568'}},
     {id: 'orion', label: 'Orion', colors: {borderblue: '#55C98A', borderbluedark: '#14764A', darkestblue: '#06291A', palestblue: '#DDF8E9', palestbluedark: '#23965F'}},
     {id: 'borg', label: 'Borg', colors: {borderblue: '#B4E65A', borderbluedark: '#587F17', darkestblue: '#111B05', palestblue: '#F0F8D9', palestbluedark: '#7BAA29'}},
+    {id: "tellarite", label: "Tellarite", colors: { borderblue: "#C58F91", borderbluedark: "#75484D", darkestblue: "#29171B", palestblue: "#F5E5E5", palestbluedark: "#A9676D"}},
   ];
 
   async _onColourPalette(event, target) {

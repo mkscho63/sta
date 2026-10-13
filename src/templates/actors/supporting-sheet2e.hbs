@@ -25,7 +25,7 @@
       <div class="npc-block">
         <div class="row">
             {{localize 'sta.apps.supportingcharacters'}}<input type="radio" name="system.npcType" value="supporting" {{checked (eq actor.system.npcType "supporting")}}>
-            {{localize 'sta.apps.supervisorycharacters'}}<input type="radio" name="system.npcType" value="supervising" {{checked (eq actor.system.npcType "supervising")}}>
+            {{localize 'sta.apps.supervisorycharacters'}}<input type="radio" name="system.npcType" value="supervising" {{#unless (eq actor.system.npcType "supporting")}}checked{{/unless}}>
         </div>
       </div>
 
