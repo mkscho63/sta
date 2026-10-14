@@ -768,6 +768,7 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     {id: 'tng-command', label: 'TNG Command', colors: {borderblue: '#C95159', borderbluedark: '#781D2B', darkestblue: '#290810', palestblue: '#F8E0E2', palestbluedark: '#A93442'}},
     {id: 'tng-science', label: 'TNG Science', colors: {borderblue: '#5B8FE0', borderbluedark: '#204A96', darkestblue: '#0A1940', palestblue: '#E3ECFC', palestbluedark: '#386CC4'}},
     {id: 'tng-engineering', label: 'TNG Engineering', colors: {borderblue: '#E6BE43', borderbluedark: '#8A6815', darkestblue: '#302400', palestblue: '#FFF3CE', palestbluedark: '#B68A20'}},
+    {id: 'section-31', label: 'Section 31', colors: {borderblue: '#A6AAAE', borderbluedark: '#555B61', darkestblue: '#17191C', palestblue: '#E8E9EA', palestbluedark: '#858B91'}},
     {id: 'vulcan', label: 'Vulcan', colors: {borderblue: '#D58B62', borderbluedark: '#874323', darkestblue: '#30170C', palestblue: '#F8E6DA', palestbluedark: '#B9693D'}},
     {id: 'andorian', label: 'Andorian', colors: {borderblue: '#79D9E8', borderbluedark: '#087486', darkestblue: '#00282F', palestblue: '#DFF8FC', palestbluedark: '#168FA4'}},
     {id: 'betazoid', label: 'Betazoid', colors: {borderblue: '#B5A0E1', borderbluedark: '#604493', darkestblue: '#211432', palestblue: '#F0E9FC', palestbluedark: '#8262C2'}},
@@ -792,11 +793,12 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
         <label class="palette-row">
           <input type="radio" name="palette" value="${p.id}" ${p.id === current ? 'checked' : ''}>
           <span class="palette-swatch">
-            <i style="background:${c.borderblue}"></i>
             <i style="background:${c.borderbluedark}"></i>
-            <i style="background:${c.darkestblue}"></i>
             <i style="background:${c.palestbluedark}"></i>
-          </span>
+            <i style="background:${c.darkestblue}"></i>
+            <i style="background:${c.borderblue}"></i>
+            <i style="background:${c.palestblue}"></i>
+            </span>
           <span class="palette-name">${p.label}</span>
         </label>`;
     }).join('');
