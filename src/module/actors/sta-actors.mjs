@@ -782,9 +782,9 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     {id: 'tellarite', label: 'Tellarite', colors: {borderblue: '#C58F91', borderbluedark: '#75484D', darkestblue: '#29171B', palestblue: '#F5E5E5', palestbluedark: '#A9676D'}},
   ];
 
-async _onColourPalette(event, target) {
+  async _onColourPalette(event, target) {
     const palettes = STAActors.PALETTES;
-    const defaults = palettes.find(p => p.id === 'default').colors;
+    const defaults = palettes.find((p) => p.id === 'default').colors;
     const current = this.document.system.palette ?? 'default';
     const storageKeys = [
       'borderblue',
@@ -794,11 +794,11 @@ async _onColourPalette(event, target) {
       'palestbluedark'
     ];
     const colourFields = [
-      { key: 'borderbluedark', label: 'Border' },
-      { key: 'palestbluedark', label: 'Accent' },
-      { key: 'darkestblue', label: 'Scrollbars' },
-      { key: 'borderblue', label: 'Border' },
-      { key: 'palestblue', label: 'Accent & Scrollbars' }
+      {key: 'borderbluedark', label: 'Border'},
+      {key: 'palestbluedark', label: 'Accent'},
+      {key: 'darkestblue', label: 'Scrollbars'},
+      {key: 'borderblue', label: 'Border'},
+      {key: 'palestblue', label: 'Accent & Scrollbars'}
     ];
 
     const isCustom = current.startsWith('custom|');
@@ -814,12 +814,12 @@ async _onColourPalette(event, target) {
       })
     );
 
-    const swatches = colors => colourFields.map(({ key }) =>
+    const swatches = (colors) => colourFields.map(({key}) =>
       `<i style="background:${colors[key]}"></i>`
     ).join('');
 
-    const rows = palettes.map(palette => {
-      const colors = { ...defaults, ...palette.colors };
+    const rows = palettes.map((palette) => {
+      const colors = {...defaults, ...palette.colors};
 
       return `
         <label class="palette-row">
@@ -831,11 +831,11 @@ async _onColourPalette(event, target) {
     }).join('');
 
     const customControls = colourFields.map((field, index) => {
-      const heading = index === 0
-        ? '<div class="custom-colour-heading">Dark mode</div>'
-        : index === 3
-          ? '<div class="custom-colour-heading">Light mode</div>'
-          : '';
+      const heading = index === 0 ?
+        '<div class="custom-colour-heading">Dark mode</div>' :
+        index === 3 ?
+          '<div class="custom-colour-heading">Light mode</div>' :
+          '';
 
       return `
         ${heading}
@@ -864,9 +864,9 @@ async _onColourPalette(event, target) {
       </div>`;
 
     const choice = await foundry.applications.api.DialogV2.wait({
-      window: { title: game.i18n.localize('sta.actor.character.palette') },
+      window: {title: game.i18n.localize('sta.actor.character.palette')},
       classes: ['dialogue'],
-      position: { left: event?.clientX, top: event?.clientY, width: 320 },
+      position: {left: event?.clientX, top: event?.clientY, width: 320},
       rejectClose: false,
       content,
       buttons: [
@@ -885,7 +885,7 @@ async _onColourPalette(event, target) {
             if (!selected) return null;
             if (selected !== 'custom') return selected;
 
-            const values = storageKeys.map(key => {
+            const values = storageKeys.map((key) => {
               const picker = form.querySelector(`[name="colour-${key}"]`);
               return (picker?.value ?? defaults[key]).toUpperCase();
             });
@@ -900,7 +900,7 @@ async _onColourPalette(event, target) {
         const updatePreview = () => {
           const chips = root.querySelectorAll('.custom-swatch i');
 
-          colourFields.forEach(({ key }, index) => {
+          colourFields.forEach(({key}, index) => {
             const picker = root.querySelector(`[name="colour-${key}"]`);
             if (picker && chips[index]) {
               chips[index].style.backgroundColor = picker.value;
@@ -908,7 +908,7 @@ async _onColourPalette(event, target) {
           });
         };
 
-        for (const { key } of colourFields) {
+        for (const {key} of colourFields) {
           root.querySelector(`[name="colour-${key}"]`)
             ?.addEventListener('input', updatePreview);
         }
@@ -924,7 +924,7 @@ async _onColourPalette(event, target) {
           }
         };
 
-        root.querySelectorAll('input[name="palette"]').forEach(radio => {
+        root.querySelectorAll('input[name="palette"]').forEach((radio) => {
           radio.addEventListener('change', updateCustomVisibility);
         });
 
@@ -934,13 +934,13 @@ async _onColourPalette(event, target) {
     });
 
     if (choice) {
-      await this.document.update({ 'system.palette': choice });
+      await this.document.update({'system.palette': choice});
     }
   }
 
   _applyPalette() {
     const palettes = STAActors.PALETTES;
-    const defaults = palettes.find(p => p.id === 'default').colors;
+    const defaults = palettes.find((p) => p.id === 'default').colors;
     const current = this.document.system.palette ?? 'default';
 
     const storageKeys = [
@@ -964,9 +964,9 @@ async _onColourPalette(event, target) {
         })
       );
     } else {
-      const palette = palettes.find(p => p.id === current)
-        ?? palettes.find(p => p.id === 'default');
-      colors = { ...defaults, ...palette.colors };
+      const palette = palettes.find((p) => p.id === current) ??
+        palettes.find((p) => p.id === 'default');
+      colors = {...defaults, ...palette.colors};
     }
 
     const style = this.element.style;
