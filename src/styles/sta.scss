@@ -1711,44 +1711,74 @@ $trackerchatborder: #FF9900;
   }
   .crewtype-option:hover { background: rgb(255 255 255 / 0.08); }
 
-    .palette-list {
-      scrollbar-color: $darkestblue transparent;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      max-height: 60vh;
-      overflow-y: auto;
-    }
+  .palette-list {
+    scrollbar-color: $darkestblue transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
 
-    .palette-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 8px;
-      border: 1px solid transparent;
-      border-radius: 4px;
+  .palette-row {
+    font-weight: normal;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover { background: rgba(255, 255, 255, 0.08); }
+    input { position: absolute; opacity: 0; pointer-events: none; }
+    &:has(input:checked) { border-color: currentColor; background: rgba(255, 255, 255, 0.12); }
+    &:has(input:focus-visible) { outline: 2px solid currentColor; }
+  }
+
+  .palette-swatch,
+  .custom-swatch {
+    display: flex;
+    flex: none;
+    width: 72px;
+    height: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+
+    i { flex: 1; display: block; height: 100%; }
+  }
+
+  .palette-name { flex: 1; }
+
+  .custom-colours {
+    padding: 4px 12px 8px;
+
+    .custom-colour-heading {
+      margin: 10px 0 4px;
+      padding-bottom: 4px;
+      font-size: 1.25em;
+      border-bottom: 1px solid currentColor;
+    }
+  }
+
+  .custom-colour-row {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0;
+
+    input[type="color"] {
+      width: 48px;
+      height: 28px;
+      padding: 2px;
       cursor: pointer;
-
-      &:hover { background: rgba(255, 255, 255, 0.08); }
-
-      input { position: absolute; opacity: 0; pointer-events: none; }
-      &:has(input:checked) { border-color: currentColor; background: rgba(255, 255, 255, 0.12); }
-      &:has(input:focus-visible) { outline: 2px solid currentColor; }
     }
-
-    .palette-swatch {
-      display: flex;
-      flex: none;
-      width: 72px;
-      height: 20px;
-      border-radius: 3px;
-      overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
-
-      i { flex: 1; }
-    }
-
-    .palette-name { flex: 1; }
+  }
 }
 
 // ######################################################
