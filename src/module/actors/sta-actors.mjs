@@ -782,78 +782,199 @@ export class STAActors extends api.HandlebarsApplicationMixin(sheets.ActorSheetV
     {id: 'tellarite', label: 'Tellarite', colors: {borderblue: '#C58F91', borderbluedark: '#75484D', darkestblue: '#29171B', palestblue: '#F5E5E5', palestbluedark: '#A9676D'}},
   ];
 
-  async _onColourPalette(event, target) {
+async _onColourPalette(event, target) {
     const palettes = STAActors.PALETTES;
-    const defaults = STAActors.DEFAULT_COLORS;
+    const defaults = palettes.find(p => p.id === 'default').colors;
     const current = this.document.system.palette ?? 'default';
+    const storageKeys = [
+      'borderblue',
+      'borderbluedark',
+      'darkestblue',
+      'palestblue',
+      'palestbluedark'
+    ];
+    const colourFields = [
+      { key: 'borderbluedark', label: 'Border' },
+      { key: 'palestbluedark', label: 'Accent' },
+      { key: 'darkestblue', label: 'Scrollbars' },
+      { key: 'borderblue', label: 'Border' },
+      { key: 'palestblue', label: 'Accent & Scrollbars' }
+    ];
 
-    const rows = palettes.map((p) => {
-      const c = {...defaults, ...p.colors};
+    const isCustom = current.startsWith('custom|');
+    const customValues = isCustom ? current.split('|').slice(1) : [];
+
+    const customColors = Object.fromEntries(
+      storageKeys.map((key, index) => {
+        const value = customValues[index];
+        return [
+          key,
+          /^#[0-9a-fA-F]{6}$/.test(value ?? '') ? value : defaults[key]
+        ];
+      })
+    );
+
+    const swatches = colors => colourFields.map(({ key }) =>
+      `<i style="background:${colors[key]}"></i>`
+    ).join('');
+
+    const rows = palettes.map(palette => {
+      const colors = { ...defaults, ...palette.colors };
+
       return `
         <label class="palette-row">
-          <input type="radio" name="palette" value="${p.id}" ${p.id === current ? 'checked' : ''}>
-          <span class="palette-swatch">
-            <i style="background:${c.borderbluedark}"></i>
-            <i style="background:${c.palestbluedark}"></i>
-            <i style="background:${c.darkestblue}"></i>
-            <i style="background:${c.borderblue}"></i>
-            <i style="background:${c.palestblue}"></i>
-            </span>
-          <span class="palette-name">${p.label}</span>
+          <input type="radio" name="palette" value="${palette.id}"
+            ${!isCustom && current === palette.id ? 'checked' : ''}>
+          <span class="palette-swatch">${swatches(colors)}</span>
+          <span class="palette-name">${palette.label}</span>
         </label>`;
     }).join('');
 
+    const customControls = colourFields.map((field, index) => {
+      const heading = index === 0
+        ? '<div class="custom-colour-heading">Dark mode</div>'
+        : index === 3
+          ? '<div class="custom-colour-heading">Light mode</div>'
+          : '';
+
+      return `
+        ${heading}
+        <label class="custom-colour-row">
+          <span>${field.label}</span>
+          <input type="color"
+            name="colour-${field.key}"
+            value="${customColors[field.key]}">
+        </label>`;
+    }).join('');
+
+    const content = `
+      <div class="palette-list">
+        ${rows}
+
+        <label class="palette-row">
+          <input type="radio" name="palette" value="custom"
+            ${isCustom ? 'checked' : ''}>
+          <span class="custom-swatch">${swatches(customColors)}</span>
+          <span class="palette-name">Custom</span>
+        </label>
+
+        <div class="custom-colours">
+          ${customControls}
+        </div>
+      </div>`;
+
     const choice = await foundry.applications.api.DialogV2.wait({
-      window: {title: game.i18n.localize('sta.actor.character.palette')},
+      window: { title: game.i18n.localize('sta.actor.character.palette') },
       classes: ['dialogue'],
-      position: {left: event.clientX, top: event.clientY, width: 320},
+      position: { left: event?.clientX, top: event?.clientY, width: 320 },
       rejectClose: false,
-      content: `<div class="palette-list">${rows}</div>`,
+      content,
       buttons: [
         {
-          action: 'apply',
-          label: game.i18n.localize('sta.apps.apply'),
+          action: 'save',
+          label: 'Save',
           icon: 'fa-solid fa-check',
           default: true,
-          callback: (event, button) => button.form.elements.palette.value,
+          callback: (event, button, dialog) => {
+            const form = button.form ?? dialog.element;
+
+            const selected = form.querySelector(
+              'input[name="palette"]:checked'
+            )?.value;
+
+            if (!selected) return null;
+            if (selected !== 'custom') return selected;
+
+            const values = storageKeys.map(key => {
+              const picker = form.querySelector(`[name="colour-${key}"]`);
+              return (picker?.value ?? defaults[key]).toUpperCase();
+            });
+
+            return `custom|${values.join('|')}`;
+          }
         }
       ],
+      render: (event, dialog) => {
+        const root = dialog.element;
+
+        const updatePreview = () => {
+          const chips = root.querySelectorAll('.custom-swatch i');
+
+          colourFields.forEach(({ key }, index) => {
+            const picker = root.querySelector(`[name="colour-${key}"]`);
+            if (picker && chips[index]) {
+              chips[index].style.backgroundColor = picker.value;
+            }
+          });
+        };
+
+        for (const { key } of colourFields) {
+          root.querySelector(`[name="colour-${key}"]`)
+            ?.addEventListener('input', updatePreview);
+        }
+
+        const customRadio = root.querySelector(
+          'input[name="palette"][value="custom"]'
+        );
+        const customColours = root.querySelector('.custom-colours');
+
+        const updateCustomVisibility = () => {
+          if (customColours) {
+            customColours.style.display = customRadio?.checked ? '' : 'none';
+          }
+        };
+
+        root.querySelectorAll('input[name="palette"]').forEach(radio => {
+          radio.addEventListener('change', updateCustomVisibility);
+        });
+
+        updateCustomVisibility();
+        updatePreview();
+      }
     });
-    if (choice) await this.document.update({'system.palette': choice});
+
+    if (choice) {
+      await this.document.update({ 'system.palette': choice });
+    }
   }
 
   _applyPalette() {
     const palettes = STAActors.PALETTES;
-    const id = this.document.system.palette ?? 'default';
-    const palette = palettes.find((p) => p.id === id) ?? palettes[0];
+    const defaults = palettes.find(p => p.id === 'default').colors;
+    const current = this.document.system.palette ?? 'default';
+
+    const storageKeys = [
+      'borderblue',
+      'borderbluedark',
+      'darkestblue',
+      'palestblue',
+      'palestbluedark'
+    ];
+
+    let colors;
+    if (current.startsWith('custom|')) {
+      const values = current.split('|').slice(1);
+      colors = Object.fromEntries(
+        storageKeys.map((key, index) => {
+          const value = values[index];
+          return [
+            key,
+            /^#[0-9a-fA-F]{6}$/.test(value ?? '') ? value : defaults[key]
+          ];
+        })
+      );
+    } else {
+      const palette = palettes.find(p => p.id === current)
+        ?? palettes.find(p => p.id === 'default');
+      colors = { ...defaults, ...palette.colors };
+    }
+
     const style = this.element.style;
 
-    for (const p of palettes) {
-      for (const key of Object.keys(p.colors)) style.removeProperty(`--sta-${key}`);
-    }
-    for (const [key, value] of Object.entries(palette.colors)) {
+    for (const key of storageKeys) style.removeProperty(`--sta-${key}`);
+    for (const [key, value] of Object.entries(colors)) {
       style.setProperty(`--sta-${key}`, value);
     }
-  }
-
-  static async #onColourPalette(event, target) {
-    const current = this.document.getFlag('sta', 'palette') ?? 'default';
-
-    const choice = await foundry.applications.api.DialogV2.wait({
-      window: {title: game.i18n.localize('sta.actor.character.palette')},
-      classes: ['sta', 'palette-picker-app'],
-      position: {left: event.clientX, top: event.clientY, width: 260},
-      rejectClose: false,
-      buttons: PALETTES.map((p) => ({
-        action: p.id,
-        label: p.label,
-        class: `palette-option palette-${p.id} ${p.id === current ? 'active' : ''}`,
-        default: p.id === current,
-        callback: () => p.id,
-      })),
-    });
-
-    if (choice) await this.document.setFlag('sta', 'palette', choice);
   }
 
   async _onCrewType(event) {
